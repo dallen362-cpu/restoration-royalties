@@ -154,6 +154,30 @@
   .pill-row{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
   .ec{font-size:11px;background:rgba(123,97,255,.14);border:1px solid rgba(123,97,255,.4);color:#cbb8ff;border-radius:999px;padding:4px 10px}
 
+  .tourbtn{background:linear-gradient(90deg,var(--cyan),var(--lime));color:#04121c;border:none;border-radius:999px;
+    font-weight:800;font-size:12.5px;padding:8px 14px;cursor:pointer;transition:transform .12s}
+  .tourbtn:hover{transform:scale(1.05)}
+  .tourbtn.live{background:var(--red);color:#fff}
+
+  /* auto-tour bar */
+  .tourbar{position:fixed;left:236px;right:0;bottom:0;z-index:8;background:linear-gradient(180deg,#0c1428,#0a1020);
+    border-top:2px solid var(--cyan);padding:0;transform:translateY(102%);transition:transform .3s ease;box-shadow:0 -14px 40px rgba(0,0,0,.5)}
+  .tourbar.show{transform:translateY(0)}
+  .tourbar .prog{height:4px;background:var(--line)}
+  .tourbar .prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--lime))}
+  .tourbar .body{display:flex;align-items:center;gap:16px;padding:12px 24px}
+  .tourbar .step{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--cyan);font-weight:800;white-space:nowrap}
+  .tourbar .txt{flex:1}
+  .tourbar .txt h4{font-size:15px;margin-bottom:2px}
+  .tourbar .txt p{font-size:13px;color:var(--muted);line-height:1.4}
+  .tourbar .ctl{display:flex;gap:8px;flex-shrink:0}
+  .tourbar .ctl button{background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:8px;
+    padding:8px 12px;font-size:13px;cursor:pointer;font-weight:700}
+  .tourbar .ctl button:hover{border-color:var(--cyan)}
+  .tourbar .ctl .x{color:var(--red)}
+  body.tour-on .demo-bar{display:none}
+  @media(max-width:820px){.tourbar{left:0}}
+
   .demo-bar{position:fixed;bottom:0;left:236px;right:0;background:rgba(255,194,75,.12);border-top:1px solid var(--amber);padding:8px 24px;font-size:11.5px;color:var(--amber);display:flex;align-items:center;gap:10px;z-index:5}
   @media(max-width:820px){ .app{grid-template-columns:1fr} .side{display:none} .demo-bar{left:0} .hero{grid-template-columns:repeat(2,1fr)} .conduit{grid-template-columns:1fr} }
 </style>
@@ -165,6 +189,7 @@
     <div class="logo"><span class="dot"></span><span>TEL<b>VERGENCE</b></span></div>
     <span class="demo-badge">● LIVE DEMO</span>
     <div class="right">
+      <button class="tourbtn" id="tourBtn">▶ Auto-Tour</button>
       <div class="clock" id="clock"></div>
       <div class="live-tag"><span class="blip"></span> Streaming</div>
       <div class="avatar">RR</div>
@@ -482,6 +507,19 @@
   </main>
 </div>
 
+<div class="tourbar" id="tourbar">
+  <div class="prog"><i id="tourProg"></i></div>
+  <div class="body">
+    <div class="step" id="tourStep">1 / 10</div>
+    <div class="txt"><h4 id="tourTitle"></h4><p id="tourNarr"></p></div>
+    <div class="ctl">
+      <button id="tourPause">⏸ Pause</button>
+      <button id="tourNext">⏭ Next</button>
+      <button class="x" id="tourExit">✖ Exit</button>
+    </div>
+  </div>
+</div>
+
 <div class="demo-bar">
   <span>🎬 <b>Interactive demo</b> — all metrics, names, and figures are illustrative sample data for demonstration only, not actual performance, financials, or certifications. Economics content is educational framing drawn from standard introductory textbooks.</span>
 </div>
@@ -612,6 +650,66 @@
     setTimeout(()=>b.querySelector('.col').style.height=v+'%',120*i+150);});
 
   animateCounts(document.getElementById('v-dash'));
+
+  // ---- guided auto-tour ----
+  const TOUR=[
+    {v:'dash',s:10,t:'Command Center',n:'The real-time heartbeat — every customer interaction across every channel, streaming live. Watch the velocity counter climb.'},
+    {v:'conduit',s:11,t:'Omnichannel Conduit',n:'One bi-directional pipe: inbound on the left, outbound on the right, across all 12 channels — SMS, voice, email, push, ringless VM, geofencing, 2FA and more.'},
+    {v:'lifecycle',s:10,t:'Customer Lifecycle',n:'We move people from Reach to Advocate — and see the volume and the speed at every stage of the journey.'},
+    {v:'ivr',s:10,t:'PBX / IVR Routing',n:'How an inbound contact flows: AI triage, emergency priority, opt-in capture — every branch written back to one unified timeline.'},
+    {v:'ai',s:11,t:'AI Assistant',n:'Live transcription, sentiment and intent routing. Here it turns a distressed emergency caller into a dispatched crew in seconds.'},
+    {v:'demo-graphics',s:9,t:'Demographics',n:'Who we reach, where they are, what device they prefer, and exactly when they respond.'},
+    {v:'econ',s:13,t:'Market Economics',n:'The model: create demand, control supply, set the price — grounded in standard supply-and-demand theory, and our 3 E’s, T’s and C’s credo.'},
+    {v:'brands',s:9,t:'Brands',n:'Every white-label brand running on the very same platform you’re looking at.'},
+    {v:'customers',s:9,t:'Customers',n:'Retention, low churn, and the accounts driving recurring revenue.'},
+    {v:'revenue',s:10,t:'Revenue',n:'Recurring revenue and revenue-per-interaction — the model, monetized.'},
+  ];
+  const tourbar=document.getElementById('tourbar'), tourBtn=document.getElementById('tourBtn');
+  const tStep=document.getElementById('tourStep'), tTitle=document.getElementById('tourTitle'),
+        tNarr=document.getElementById('tourNarr'), tProg=document.getElementById('tourProg');
+  const tPause=document.getElementById('tourPause');
+  let tIdx=0, tElapsed=0, tTimer=null, tPaused=false, tActive=false;
+
+  function loadStep(i){
+    tIdx=(i+TOUR.length)%TOUR.length; tElapsed=0;
+    const step=TOUR[tIdx];
+    show(step.v);
+    tStep.textContent=(tIdx+1)+' / '+TOUR.length;
+    tTitle.textContent=step.t; tNarr.textContent=step.n;
+    tProg.style.width='0%';
+  }
+  function tourLoop(){
+    if(tPaused||!tActive)return;
+    tElapsed+=0.1;
+    const dur=TOUR[tIdx].s;
+    tProg.style.width=Math.min(100,(tElapsed/dur)*100)+'%';
+    if(tElapsed>=dur) loadStep(tIdx+1);
+  }
+  function startTour(){
+    tActive=true; tPaused=false;
+    document.body.classList.add('tour-on');
+    tourbar.classList.add('show');
+    tourBtn.classList.add('live'); tourBtn.textContent='■ Stop Tour';
+    loadStep(0);
+    clearInterval(tTimer); tTimer=setInterval(tourLoop,100);
+  }
+  function stopTour(){
+    tActive=false; clearInterval(tTimer);
+    document.body.classList.remove('tour-on');
+    tourbar.classList.remove('show');
+    tourBtn.classList.remove('live'); tourBtn.textContent='▶ Auto-Tour';
+  }
+  tourBtn.onclick=()=>{ tActive?stopTour():startTour(); };
+  tPause.onclick=()=>{ tPaused=!tPaused; tPause.textContent=tPaused?'▶ Resume':'⏸ Pause'; };
+  document.getElementById('tourNext').onclick=()=>loadStep(tIdx+1);
+  document.getElementById('tourExit').onclick=stopTour;
+  document.addEventListener('keydown',e=>{
+    if(!tActive)return;
+    if(e.key==='Escape')stopTour();
+    else if(e.key===' '){e.preventDefault();tPause.click();}
+    else if(e.key==='ArrowRight')loadStep(tIdx+1);
+    else if(e.key==='ArrowLeft')loadStep(tIdx-1);
+  });
 </script>
 </body>
 </html>
