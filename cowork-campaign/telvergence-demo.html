@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TELVERGENCE — Live Operations Demo</title>
+<style>
+  :root{
+    --midnight:#0A0E1A; --navy:#0e1730; --panel:#121c36; --card:#16213d; --line:#26345a;
+    --cyan:#00D4FF; --lime:#00FF88; --violet:#7B61FF; --amber:#ffc24b; --red:#ff5d73;
+    --ink:#eaf2ff; --muted:#8ea3c9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;background:var(--midnight);color:var(--ink);height:100vh;overflow:hidden}
+  .app{display:grid;grid-template-columns:240px 1fr;grid-template-rows:60px 1fr;height:100vh}
+
+  /* top bar */
+  .top{grid-column:1/3;display:flex;align-items:center;gap:16px;padding:0 20px;
+    background:var(--navy);border-bottom:1px solid var(--line)}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:.5px}
+  .logo .dot{width:14px;height:14px;border-radius:50%;
+    background:conic-gradient(var(--cyan),var(--lime),var(--violet),var(--cyan));box-shadow:0 0 12px var(--cyan)}
+  .logo b{background:linear-gradient(90deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .demo-badge{font-size:11px;font-weight:800;letter-spacing:1px;color:#04121c;background:var(--amber);
+    padding:4px 10px;border-radius:999px}
+  .search{flex:1;max-width:420px;margin-left:8px}
+  .search input{width:100%;background:var(--card);border:1px solid var(--line);border-radius:999px;
+    padding:9px 16px;color:var(--ink);font-size:13px}
+  .top .right{margin-left:auto;display:flex;align-items:center;gap:14px}
+  .live-tag{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--lime)}
+  .live-tag .blip{width:9px;height:9px;border-radius:50%;background:var(--lime);animation:pulse 1.6s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(0,255,136,.6)}70%{box-shadow:0 0 0 9px rgba(0,255,136,0)}100%{box-shadow:0 0 0 0 rgba(0,255,136,0)}}
+  .avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--cyan));
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+
+  /* sidebar */
+  .side{background:var(--navy);border-right:1px solid var(--line);padding:14px 10px;overflow-y:auto}
+  .nav-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:14px 12px 6px}
+  .nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;color:var(--muted);
+    text-decoration:none;font-size:14px;cursor:pointer;transition:.15s}
+  .nav a .i{width:20px;text-align:center;font-size:16px}
+  .nav a:hover{background:var(--card);color:var(--ink)}
+  .nav a.on{background:linear-gradient(90deg,rgba(0,212,255,.16),rgba(123,97,255,.1));color:var(--ink);
+    box-shadow:inset 3px 0 0 var(--cyan)}
+  .side .upsell{margin:16px 8px 4px;padding:14px;border-radius:12px;border:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(123,97,255,.14),transparent)}
+  .side .upsell h4{font-size:13px;margin-bottom:6px}
+  .side .upsell p{font-size:11px;color:var(--muted);margin-bottom:10px}
+  .side .upsell button{width:100%;background:var(--cyan);color:#04121c;border:none;border-radius:8px;
+    padding:8px;font-weight:800;font-size:12px;cursor:pointer}
+
+  /* main */
+  .main{overflow-y:auto;padding:22px 26px 60px}
+  .page-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px}
+  .page-head h1{font-size:24px}
+  .page-head p{color:var(--muted);font-size:13px;margin-top:3px}
+  .seg{display:flex;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px}
+  .seg button{background:transparent;border:none;color:var(--muted);padding:6px 12px;border-radius:7px;font-size:12px;cursor:pointer}
+  .seg button.on{background:var(--cyan);color:#04121c;font-weight:700}
+
+  .view{display:none;animation:fade .35s ease}
+  .view.on{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+  @media(max-width:1100px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;position:relative;overflow:hidden}
+  .kpi .lbl{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+  .kpi .val{font-size:30px;font-weight:800;margin:6px 0 2px}
+  .kpi .chg{font-size:12px;font-weight:700}
+  .up{color:var(--lime)} .down{color:var(--red)}
+  .kpi svg{position:absolute;right:10px;bottom:8px;opacity:.8}
+
+  .grid2{display:grid;grid-template-columns:1.6fr 1fr;gap:14px}
+  @media(max-width:1100px){.grid2{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+  .panel h3{font-size:15px;margin-bottom:4px}
+  .panel .sub{font-size:12px;color:var(--muted);margin-bottom:14px}
+
+  .bars{display:flex;align-items:flex-end;gap:10px;height:170px;padding-top:10px}
+  .bars .b{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px}
+  .bars .b .col{width:60%;border-radius:6px 6px 0 0;background:linear-gradient(180deg,var(--cyan),var(--violet));transition:height .6s ease}
+  .bars .b small{color:var(--muted);font-size:11px}
+
+  .feed{display:flex;flex-direction:column;gap:0}
+  .ev{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px;animation:fade .4s}
+  .ev:last-child{border-bottom:none}
+  .ev .ic{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+  .ev .t{color:var(--muted);font-size:11px;margin-left:auto;white-space:nowrap}
+  .ic.c{background:rgba(0,212,255,.15)} .ic.g{background:rgba(0,255,136,.15)} .ic.v{background:rgba(123,97,255,.15)} .ic.a{background:rgba(255,194,75,.15)}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{text-align:left;color:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:8px 10px;border-bottom:1px solid var(--line)}
+  td{padding:11px 10px;border-bottom:1px solid var(--line)}
+  tr:last-child td{border-bottom:none}
+  .tag{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px}
+  .t-live{background:rgba(0,255,136,.15);color:var(--lime)}
+  .t-warn{background:rgba(255,194,75,.15);color:var(--amber)}
+  .t-verify{background:rgba(0,212,255,.15);color:var(--cyan)}
+  .bar-mini{height:7px;border-radius:999px;background:var(--line);overflow:hidden;width:90px}
+  .bar-mini i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--lime))}
+
+  .brandgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+  .brand{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;transition:.15s}
+  .brand:hover{border-color:var(--cyan);transform:translateY(-3px)}
+  .brand .em{font-size:26px} .brand h4{font-size:15px;margin:8px 0 2px} .brand p{font-size:12px;color:var(--muted)}
+  .brand .row{display:flex;justify-content:space-between;margin-top:12px;font-size:12px}
+  .brand .row b{color:var(--cyan)}
+
+  .ai-msg{display:flex;gap:12px;margin-bottom:14px}
+  .ai-msg .who{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+  .ai-msg.bot .who{background:linear-gradient(135deg,var(--cyan),var(--violet))}
+  .ai-msg.cust .who{background:var(--line)}
+  .ai-msg .bub{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:11px 14px;font-size:13px;max-width:80%}
+  .ai-msg.bot .bub{border-color:rgba(0,212,255,.4)}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+  .chip{font-size:11px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:5px 11px;color:var(--muted)}
+
+  .demo-bar{position:fixed;bottom:0;left:240px;right:0;background:rgba(255,194,75,.12);
+    border-top:1px solid var(--amber);padding:9px 26px;font-size:12px;color:var(--amber);display:flex;align-items:center;gap:10px;z-index:5}
+  @media(max-width:820px){
+    .app{grid-template-columns:1fr} .side{display:none} .demo-bar{left:0}
+    .kpis{grid-template-columns:repeat(2,1fr)}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- TOP -->
+  <div class="top">
+    <div class="logo"><span class="dot"></span><span>TEL<b>VERGENCE</b></span></div>
+    <span class="demo-badge">● DEMO</span>
+    <div class="search"><input placeholder="Search numbers, customers, campaigns…  (demo)"></div>
+    <div class="right">
+      <div class="live-tag"><span class="blip"></span> Live</div>
+      <div class="avatar">RR</div>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <nav class="side">
+    <div class="nav" id="nav">
+      <div class="nav-label">Operations</div>
+      <a data-view="dash" class="on"><span class="i">📊</span> Dashboard</a>
+      <a data-view="numbers"><span class="i">☎️</span> Phone Numbers</a>
+      <a data-view="calls"><span class="i">📞</span> Calls & Quality</a>
+      <a data-view="messages"><span class="i">💬</span> Messages</a>
+      <div class="nav-label">Intelligence</div>
+      <a data-view="ai"><span class="i">🤖</span> AI Assistant</a>
+      <a data-view="weather"><span class="i">🌪️</span> Weather & E911</a>
+      <div class="nav-label">Business</div>
+      <a data-view="brands"><span class="i">🏷️</span> Your Brands</a>
+      <a data-view="customers"><span class="i">👥</span> Customers</a>
+      <a data-view="revenue"><span class="i">💰</span> Revenue</a>
+    </div>
+    <div class="upsell">
+      <h4>📈 Enterprise tier</h4>
+      <p>White-label, blockchain call records & multi-location.</p>
+      <button onclick="alert('Demo only — this is where an upgrade/contact flow would go.')">Talk to Sales</button>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- DASHBOARD -->
+    <section class="view on" id="v-dash">
+      <div class="page-head">
+        <div><h1>Operations Dashboard</h1><p>Real-time view across every brand and number · sample data</p></div>
+        <div class="seg"><button class="on">Today</button><button>7 days</button><button>30 days</button></div>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><div class="lbl">📡 Active Phone Lines</div><div class="val" data-count="12847">0</div><div class="chg up">▲ 3.2% vs yesterday</div></div>
+        <div class="kpi"><div class="lbl">📞 Live Calls Now</div><div class="val" id="liveCalls">2341</div><div class="chg up">▲ live</div></div>
+        <div class="kpi"><div class="lbl">💬 Messages Today</div><div class="val" data-count="89412">0</div><div class="chg up">▲ 8.1%</div></div>
+        <div class="kpi"><div class="lbl">🤖 AI-Handled</div><div class="val" data-count="47891">0</div><div class="chg up">▲ 12.4%</div></div>
+      </div>
+      <div class="grid2">
+        <div>
+          <div class="panel">
+            <h3>Call Volume (last 8 hours)</h3><div class="sub">Calls connected per hour across all brands</div>
+            <div class="bars" id="bars"></div>
+          </div>
+          <div class="panel">
+            <h3>Network Health</h3><div class="sub">Carrier uptime & call quality</div>
+            <table>
+              <tr><td>Platform uptime</td><td style="width:120px"><div class="bar-mini"><i style="width:99.9%"></i></div></td><td><b class="up">99.997%</b></td></tr>
+              <tr><td>Avg. audio clarity (MOS)</td><td><div class="bar-mini"><i style="width:92%"></i></div></td><td><b>4.6 / 5.0</b></td></tr>
+              <tr><td>STIR/SHAKEN verified</td><td><div class="bar-mini"><i style="width:97%"></i></div></td><td><b class="up">97%</b></td></tr>
+              <tr><td>Concurrent capacity used</td><td><div class="bar-mini"><i style="width:41%"></i></div></td><td><b>41%</b></td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Live Activity</h3><div class="sub">Streaming events</div>
+          <div class="feed" id="feed"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUMBERS -->
+    <section class="view" id="v-numbers">
+      <div class="page-head"><div><h1>Phone Numbers</h1><p>Local, toll-free & branded DIDs · sample data</p></div></div>
+      <div class="kpis">
+        <div class="kpi"><div class="lbl">Total Numbers</div><div class="val" data-count="12847">0</div><div class="chg up">▲ 142 this week</div></div>
+        <div class="kpi"><div class="lbl">Toll-Free</div><div class="val" data-count="1903">0</div><div class="chg">stable</div></div>
+        <div class="kpi"><div class="lbl">Branded Caller ID</div><div class="val" data-count="9624">0</div><div class="chg up">▲ verified</div></div>
+        <div class="kpi"><div class="lbl">Pending Port-In</div><div class="val" data-count="38">0</div><div class="chg">in progress</div></div>
+      </div>
+      <div class="panel">
+        <h3>Number Inventory</h3><div class="sub">A sampling of provisioned numbers</div>
+        <table>
+          <thead><tr><th>Number</th><th>Brand</th><th>Type</th><th>Caller ID</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>(305) 555-0142</td><td>Restoration Royalty</td><td>Local</td><td>✅ Verified</td><td><span class="tag t-live">Active</span></td></tr>
+            <tr><td>1-800-STORM-99</td><td>StormCrew</td><td>Toll-Free</td><td>✅ Verified</td><td><span class="tag t-live">Active</span></td></tr>
+            <tr><td>(407) 555-0188</td><td>CrewCommand</td><td>Local</td><td>✅ Verified</td><td><span class="tag t-live">Active</span></td></tr>
+            <tr><td>(321) 555-0173</td><td>Beverly Wicks Wellness</td><td>Local</td><td>⏳ Pending</td><td><span class="tag t-warn">Porting</span></td></tr>
+            <tr><td>1-888-WEATHER-1</td><td>Predictive Weather</td><td>Toll-Free</td><td>✅ Verified</td><td><span class="tag t-live">Active</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- CALLS -->
+    <section class="view" id="v-calls">
+      <div class="page-head"><div><h1>Calls & Quality</h1><p>Connection stability & audio analytics · sample data</p></div></div>
+      <div class="kpis">
+        <div class="kpi"><div class="lbl">Calls Today</div><div class="val" data-count="38204">0</div><div class="chg up">▲ 6.7%</div></div>
+        <div class="kpi"><div class="lbl">Avg. Answer Time</div><div class="val">3.2s</div><div class="chg up">▼ faster</div></div>
+        <div class="kpi"><div class="lbl">Dropped Calls</div><div class="val">0.03%</div><div class="chg up">▼ excellent</div></div>
+        <div class="kpi"><div class="lbl">Answered by AI</div><div class="val">61%</div><div class="chg up">▲ 4%</div></div>
+      </div>
+      <div class="panel">
+        <h3>Recent Calls</h3><div class="sub">Live transcription & sentiment</div>
+        <table>
+          <thead><tr><th>Caller</th><th>Brand</th><th>Duration</th><th>Handled by</th><th>Sentiment</th></tr></thead>
+          <tbody>
+            <tr><td>(786) •••• 2210</td><td>StormCrew</td><td>4:12</td><td>🤖 AI → Agent</td><td><span class="tag t-live">Positive</span></td></tr>
+            <tr><td>(305) •••• 8841</td><td>Restoration Royalty</td><td>2:38</td><td>🤖 AI</td><td><span class="tag t-live">Positive</span></td></tr>
+            <tr><td>(407) •••• 0192</td><td>CrewCommand</td><td>6:54</td><td>👤 Agent</td><td><span class="tag t-warn">Neutral</span></td></tr>
+            <tr><td>(321) •••• 5567</td><td>Beverly Wicks</td><td>1:47</td><td>🤖 AI</td><td><span class="tag t-live">Positive</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- MESSAGES -->
+    <section class="view" id="v-messages">
+      <div class="page-head"><div><h1>Messages</h1><p>SMS / MMS delivery & campaigns · sample data</p></div></div>
+      <div class="kpis">
+        <div class="kpi"><div class="lbl">Sent Today</div><div class="val" data-count="89412">0</div><div class="chg up">▲ 8.1%</div></div>
+        <div class="kpi"><div class="lbl">Delivery Rate</div><div class="val">98.7%</div><div class="chg up">▲ healthy</div></div>
+        <div class="kpi"><div class="lbl">Active Campaigns</div><div class="val" data-count="17">0</div><div class="chg">running</div></div>
+        <div class="kpi"><div class="lbl">Opt-out Rate</div><div class="val">0.4%</div><div class="chg up">compliant</div></div>
+      </div>
+      <div class="panel">
+        <h3>Campaigns</h3><div class="sub">Attribution-tracked outbound</div>
+        <table>
+          <thead><tr><th>Campaign</th><th>Brand</th><th>Sent</th><th>Replies</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Storm Season Prep</td><td>StormCrew</td><td>14,302</td><td>2,118</td><td><span class="tag t-live">Active</span></td></tr>
+            <tr><td>Mold Inspection Reminder</td><td>Restoration Royalty</td><td>8,940</td><td>1,034</td><td><span class="tag t-live">Active</span></td></tr>
+            <tr><td>Wellness Check-in</td><td>Beverly Wicks</td><td>3,221</td><td>612</td><td><span class="tag t-warn">Scheduled</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- AI -->
+    <section class="view" id="v-ai">
+      <div class="page-head"><div><h1>AI Assistant</h1><p>Transcription · sentiment · smart routing · sample conversation</p></div></div>
+      <div class="grid2">
+        <div class="panel">
+          <h3>Live Call Transcript</h3><div class="sub">StormCrew · inbound · auto-routing</div>
+          <div class="ai-msg cust"><div class="who">👤</div><div class="bub">Hi, a tree just came through my roof and it's raining inside — I need someone today.</div></div>
+          <div class="ai-msg bot"><div class="who">🤖</div><div class="bub">I'm so sorry — that's an emergency, and we can help. I have a crew 12 minutes from you. I'm booking an emergency tarp-and-assess now and texting you a confirmation. Can I get the property address?
+            <div class="chips"><span class="chip">Intent: Emergency</span><span class="chip">Sentiment: Distressed → Reassured</span><span class="chip">Routed: Dispatch</span></div>
+          </div></div>
+          <div class="ai-msg cust"><div class="who">👤</div><div class="bub">Yes — 4412 Palm Bay Rd.</div></div>
+          <div class="ai-msg bot"><div class="who">🤖</div><div class="bub">Got it. Crew dispatched ✅ ETA 14 min. Confirmation texted. Staying on the line until they arrive.</div></div>
+        </div>
+        <div class="panel">
+          <h3>AI Performance</h3><div class="sub">Last 24h</div>
+          <table>
+            <tr><td>Calls fully handled by AI</td><td><b>61%</b></td></tr>
+            <tr><td>Avg. resolution time</td><td><b>2m 41s</b></td></tr>
+            <tr><td>Escalated to human</td><td><b>14%</b></td></tr>
+            <tr><td>Sentiment improved</td><td><b class="up">+38%</b></td></tr>
+            <tr><td>After-hours captured</td><td><b class="up">100%</b></td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEATHER -->
+    <section class="view" id="v-weather">
+      <div class="page-head"><div><h1>Weather & E911</h1><p>NOAA / GOES-18 / NWS feeds with automated rerouting · sample data</p></div></div>
+      <div class="kpis">
+        <div class="kpi"><div class="lbl">Protected Locations</div><div class="val" data-count="8412">0</div><div class="chg up">E911 mapped</div></div>
+        <div class="kpi"><div class="lbl">Active Weather Alerts</div><div class="val">3</div><div class="chg down">⚠ FL coast</div></div>
+        <div class="kpi"><div class="lbl">Auto-Reroutes Today</div><div class="val" data-count="218">0</div><div class="chg up">storm protocol</div></div>
+        <div class="kpi"><div class="lbl">Capacity Reserved</div><div class="val">2x</div><div class="chg up">surge-ready</div></div>
+      </div>
+      <div class="panel">
+        <h3>Active Protocols</h3><div class="sub">Triggered automatically by severe-weather feeds</div>
+        <table>
+          <thead><tr><th>Region</th><th>Event</th><th>Action</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Brevard County, FL</td><td>Severe Thunderstorm</td><td>Surge lines + priority dispatch</td><td><span class="tag t-live">Active</span></td></tr>
+            <tr><td>Tampa Bay, FL</td><td>Flood Watch</td><td>Pre-stage crews, SMS blast</td><td><span class="tag t-warn">Watching</span></td></tr>
+            <tr><td>Orlando Metro, FL</td><td>High Wind</td><td>Caller-ID priority routing</td><td><span class="tag t-verify">Armed</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- BRANDS -->
+    <section class="view" id="v-brands">
+      <div class="page-head"><div><h1>Your Brands</h1><p>White-label tenants on the platform · sample data</p></div></div>
+      <div class="brandgrid">
+        <div class="brand"><div class="em">🌪️</div><h4>StormCrew</h4><p>Storm response roofing</p><div class="row"><span>Lines</span><b>3,204</b></div><div class="row"><span>Status</span><span class="tag t-live">Live</span></div></div>
+        <div class="brand"><div class="em">🚁</div><h4>CrewCommand</h4><p>AI roofing operations</p><div class="row"><span>Lines</span><b>2,910</b></div><div class="row"><span>Status</span><span class="tag t-live">Live</span></div></div>
+        <div class="brand"><div class="em">🏠</div><h4>Restoration Royalty</h4><p>Mold & water mitigation</p><div class="row"><span>Lines</span><b>2,488</b></div><div class="row"><span>Status</span><span class="tag t-live">Live</span></div></div>
+        <div class="brand"><div class="em">💚</div><h4>Beverly Wicks</h4><p>Telemedicine wellness</p><div class="row"><span>Lines</span><b>1,377</b></div><div class="row"><span>Status</span><span class="tag t-live">Live</span></div></div>
+        <div class="brand"><div class="em">🌦️</div><h4>Predictive Weather</h4><p>Weather intelligence</p><div class="row"><span>Lines</span><b>2,868</b></div><div class="row"><span>Status</span><span class="tag t-live">Live</span></div></div>
+        <div class="brand" style="border-style:dashed;opacity:.85"><div class="em">➕</div><h4>Add a Brand</h4><p>Spin up a white-label tenant</p><div class="row"><span>Setup</span><b>~1 day</b></div><div class="row"><span></span><span class="tag t-verify">New</span></div></div>
+      </div>
+    </section>
+
+    <!-- CUSTOMERS -->
+    <section class="view" id="v-customers">
+      <div class="page-head"><div><h1>Customers</h1><p>Accounts across all tenants · sample data</p></div></div>
+      <div class="kpis">
+        <div class="kpi"><div class="lbl">Total Customers</div><div class="val" data-count="1247">0</div><div class="chg up">▲ 31 this month</div></div>
+        <div class="kpi"><div class="lbl">Churn Rate</div><div class="val">0.8%</div><div class="chg up">▼ low</div></div>
+        <div class="kpi"><div class="lbl">Net Revenue Retention</div><div class="val">128%</div><div class="chg up">▲ expanding</div></div>
+        <div class="kpi"><div class="lbl">Avg. Lifetime</div><div class="val">3.4 yr</div><div class="chg up">sticky</div></div>
+      </div>
+      <div class="panel">
+        <h3>Top Accounts</h3><div class="sub">By monthly recurring revenue</div>
+        <table>
+          <thead><tr><th>Account</th><th>Plan</th><th>Lines</th><th>MRR</th><th>Health</th></tr></thead>
+          <tbody>
+            <tr><td>StormCrew HQ</td><td>Enterprise</td><td>3,204</td><td>$2,499</td><td><span class="tag t-live">Excellent</span></td></tr>
+            <tr><td>Restoration Royalty</td><td>Growth</td><td>2,488</td><td>$999</td><td><span class="tag t-live">Excellent</span></td></tr>
+            <tr><td>CrewCommand</td><td>Growth</td><td>2,910</td><td>$999</td><td><span class="tag t-warn">Watch</span></td></tr>
+            <tr><td>Beverly Wicks Wellness</td><td>Starter</td><td>1,377</td><td>$499</td><td><span class="tag t-live">Good</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- REVENUE -->
+    <section class="view" id="v-revenue">
+      <div class="page-head"><div><h1>Revenue & Billing</h1><p>Recurring revenue across the platform · sample data</p></div></div>
+      <div class="kpis">
+        <div class="kpi"><div class="lbl">MRR</div><div class="val">$<span data-count="487350">0</span></div><div class="chg up">▲ 9.4%</div></div>
+        <div class="kpi"><div class="lbl">ARR (run-rate)</div><div class="val">$5.8M</div><div class="chg up">▲ growing</div></div>
+        <div class="kpi"><div class="lbl">Collected (mo.)</div><div class="val">99.2%</div><div class="chg up">on-time</div></div>
+        <div class="kpi"><div class="lbl">Setup Fees (mo.)</div><div class="val">$28.5k</div><div class="chg up">▲ new logos</div></div>
+      </div>
+      <div class="panel">
+        <h3>MRR by Brand</h3><div class="sub">Contribution to monthly recurring revenue</div>
+        <table>
+          <tr><td>StormCrew</td><td style="width:200px"><div class="bar-mini" style="width:100%"><i style="width:88%"></i></div></td><td><b>$148,200</b></td></tr>
+          <tr><td>Predictive Weather</td><td><div class="bar-mini" style="width:100%"><i style="width:72%"></i></div></td><td><b>$121,400</b></td></tr>
+          <tr><td>CrewCommand</td><td><div class="bar-mini" style="width:100%"><i style="width:60%"></i></div></td><td><b>$96,800</b></td></tr>
+          <tr><td>Restoration Royalty</td><td><div class="bar-mini" style="width:100%"><i style="width:48%"></i></div></td><td><b>$74,300</b></td></tr>
+          <tr><td>Beverly Wicks</td><td><div class="bar-mini" style="width:100%"><i style="width:28%"></i></div></td><td><b>$46,650</b></td></tr>
+        </table>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="demo-bar">
+  <span>🎬 <b>Interactive demo</b> — all figures are illustrative sample data. Click the left menu to explore every screen. Built for prospect walkthroughs.</span>
+</div>
+
+<script>
+  // ---- nav switching ----
+  const links=[...document.querySelectorAll('#nav a')];
+  const views={dash:'v-dash',numbers:'v-numbers',calls:'v-calls',messages:'v-messages',
+    ai:'v-ai',weather:'v-weather',brands:'v-brands',customers:'v-customers',revenue:'v-revenue'};
+  function show(v){
+    links.forEach(a=>a.classList.toggle('on',a.dataset.view===v));
+    Object.values(views).forEach(id=>document.getElementById(id).classList.remove('on'));
+    document.getElementById(views[v]).classList.add('on');
+    document.querySelector('.main').scrollTop=0;
+    animateCounts(document.getElementById(views[v]));
+  }
+  links.forEach(a=>a.addEventListener('click',()=>show(a.dataset.view)));
+
+  // ---- count-up animation (per view) ----
+  function animateCounts(scope){
+    scope.querySelectorAll('[data-count]').forEach(el=>{
+      if(el.dataset.done)return; el.dataset.done='1';
+      const target=+el.dataset.count; const dur=900; const t0=performance.now();
+      (function step(t){
+        const p=Math.min(1,(t-t0)/dur); const e=1-Math.pow(1-p,3);
+        el.textContent=Math.round(target*e).toLocaleString();
+        if(p<1)requestAnimationFrame(step);
+      })(performance.now());
+    });
+  }
+  animateCounts(document.getElementById('v-dash'));
+
+  // ---- live calls jitter ----
+  const lc=document.getElementById('liveCalls'); let base=2341;
+  setInterval(()=>{ base+=Math.round((Math.sin(Date.now()/3000)*8)+ (Math.random()*10-5));
+    lc.textContent=base.toLocaleString(); }, 1500);
+
+  // ---- bar chart ----
+  const bars=document.getElementById('bars');
+  const hrs=['9a','10a','11a','12p','1p','2p','3p','4p'];
+  const seed=[42,55,61,48,73,88,79,64];
+  hrs.forEach((h,i)=>{
+    const b=document.createElement('div');b.className='b';
+    b.innerHTML='<div class="col" style="height:0%"></div><small>'+h+'</small>';
+    bars.appendChild(b);
+    setTimeout(()=>{b.querySelector('.col').style.height=seed[i]+'%';}, 120*i+150);
+  });
+
+  // ---- live activity feed ----
+  const feed=document.getElementById('feed');
+  const evs=[
+    {ic:'g',e:'📞',txt:'Emergency call routed — <b>StormCrew</b>'},
+    {ic:'c',e:'🤖',txt:'AI booked appointment — <b>Restoration Royalty</b>'},
+    {ic:'v',e:'💬',txt:'SMS campaign reply — <b>CrewCommand</b>'},
+    {ic:'a',e:'🌪️',txt:'Weather protocol armed — <b>Brevard Co.</b>'},
+    {ic:'g',e:'✅',txt:'Call record verified — <b>148,291 total</b>'},
+    {ic:'c',e:'☎️',txt:'New branded number provisioned'},
+    {ic:'v',e:'👤',txt:'New customer onboarded — <b>Beverly Wicks</b>'},
+    {ic:'g',e:'📈',txt:'Lead captured after-hours — <b>+1 booking</b>'},
+  ];
+  let ei=0;
+  function addEv(){
+    const ev=evs[ei%evs.length]; ei++;
+    const row=document.createElement('div'); row.className='ev';
+    row.innerHTML='<div class="ic '+ev.ic+'">'+ev.e+'</div><div>'+ev.txt+'</div><div class="t">just now</div>';
+    feed.prepend(row);
+    [...feed.children].forEach((c,i)=>{const t=c.querySelector('.t'); if(i>0&&t)t.textContent=i+'m ago';});
+    while(feed.children.length>7)feed.removeChild(feed.lastChild);
+  }
+  for(let i=0;i<5;i++)addEv();
+  setInterval(addEv, 3200);
+</script>
+</body>
+</html>
