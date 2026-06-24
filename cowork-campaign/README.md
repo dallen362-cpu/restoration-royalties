@@ -18,7 +18,7 @@ account. Built on the `claude/github-telvergence-consolidate-x00shp` branch.
 
 | Area | State |
 |---|---|
-| Site links for the GitHub account | ✅ Done (`SITES.md`) |
+| Site links for the GitHub account | ✅ Done + live status verified 2026-06-24 (`SITES.md`) — 7 live, 1 stub (`crewcommand`), 1 minimal (`Body-Wellness-Connection`) |
 | TELVERGENCE.com material on GitHub | ✅ Consolidated (`TELVERGENCE-CONSOLIDATION.md`) |
 | Brand portfolio → repo mapping | ✅ Done |
 | ViciDial / BOSS CRM / LMS / skills / Perplexity output | ⛔ Not reachable — needs intake (`INTAKE-CHECKLIST.md`) |
