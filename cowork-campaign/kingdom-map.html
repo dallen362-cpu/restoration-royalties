@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The TELVERGENCE Kingdom Map</title>
+<style>
+  :root{
+    --midnight:#0A0E1A; --navy:#10182e; --cyan:#00D4FF; --lime:#00FF88; --violet:#7B61FF;
+    --ink:#e8f0ff; --muted:#8aa0c6; --card:#141d33; --line:#243150;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);
+    background:radial-gradient(1200px 600px at 50% -10%,#1a2547 0%,var(--midnight) 60%);
+    padding:32px 18px 60px;line-height:1.5;
+  }
+  .wrap{max-width:1080px;margin:0 auto}
+  .crown{text-align:center;margin-bottom:8px}
+  .kicker{letter-spacing:3px;font-size:12px;color:var(--cyan);text-transform:uppercase}
+  h1{font-size:clamp(28px,5vw,46px);margin:6px 0;
+    background:linear-gradient(90deg,var(--cyan),var(--lime),var(--violet));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 28px}
+
+  .castle{
+    border:2px solid var(--cyan);border-radius:18px;padding:22px;text-align:center;
+    background:linear-gradient(180deg,rgba(0,212,255,.10),rgba(123,97,255,.06));
+    box-shadow:0 0 40px rgba(0,212,255,.18);position:relative;margin-bottom:10px}
+  .castle .badge{font-size:34px}
+  .castle h2{font-size:26px;margin:4px 0}
+  .castle a{color:var(--cyan);text-decoration:none;font-weight:600}
+  .castle p{color:var(--muted);font-size:14px}
+  .arm{height:34px;width:2px;background:linear-gradient(var(--cyan),transparent);margin:0 auto}
+
+  .section-label{display:flex;align-items:center;gap:10px;margin:26px 0 14px}
+  .section-label h3{font-size:16px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
+  .section-label .bar{height:1px;background:var(--line);flex:1}
+  .c-cyan{color:var(--cyan)} .c-lime{color:var(--lime)} .c-violet{color:var(--violet)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+  .village{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;
+    transition:transform .15s ease,border-color .15s ease}
+  .village:hover{transform:translateY(-3px);border-color:var(--cyan)}
+  .village .top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .village h4{font-size:15px}
+  .village .emoji{font-size:22px}
+  .village a{color:var(--cyan);text-decoration:none;font-size:12px;word-break:break-all}
+  .pill{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
+  .live{background:rgba(0,255,136,.15);color:var(--lime);border:1px solid rgba(0,255,136,.4)}
+  .warn{background:rgba(255,196,0,.13);color:#ffc400;border:1px solid rgba(255,196,0,.4)}
+  .future{font-size:12px;color:var(--muted);margin-top:8px}
+
+  .panels{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+  @media(max-width:720px){.panels{grid-template-columns:1fr}}
+  .panel{border-radius:16px;padding:20px;border:1px solid var(--line);background:var(--card)}
+  .panel.shield{border-color:var(--lime);box-shadow:0 0 30px rgba(0,255,136,.12)}
+  .panel.locked{border-color:var(--violet);box-shadow:0 0 30px rgba(123,97,255,.12)}
+  .panel h3{font-size:18px;margin-bottom:6px}
+  .panel ul{list-style:none;margin-top:10px}
+  .panel li{padding:6px 0 6px 26px;position:relative;font-size:14px;color:#d2dcf2}
+  .panel li::before{position:absolute;left:0;top:5px}
+  .shield li::before{content:"🛡️"}
+  .locked li::before{content:"🔑"}
+  .truth{margin-top:12px;font-size:12px;color:var(--muted);font-style:italic;
+    border-left:3px solid var(--cyan);padding-left:10px}
+
+  .footer{text-align:center;color:var(--muted);font-size:12px;margin-top:34px}
+  .stamp{display:inline-block;margin-top:10px;padding:8px 16px;border:1px dashed var(--line);
+    border-radius:999px;color:var(--lime);font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="crown">
+    <div class="kicker">The Co-Work Campaign · Kingdom Map</div>
+    <h1>👑 The TELVERGENCE Kingdom 👑</h1>
+  </div>
+  <p class="sub">One big castle, lots of little villages, a magic shield, and a couple of locked treasure boxes. Here's the whole kingdom on one page!</p>
+
+  <!-- THE CASTLE -->
+  <div class="castle">
+    <div class="badge">🏰</div>
+    <h2>TELVERGENCE</h2>
+    <p>The King Castle — the platform every village reports to</p>
+    <p><a href="https://telvergence.com">telvergence.com</a> &nbsp;·&nbsp; <a href="https://telvergence.com/app.html">control-room dashboard</a> &nbsp;·&nbsp; built with 🤖 Perplexity Computer</p>
+  </div>
+  <div class="arm"></div>
+
+  <!-- THE VILLAGES -->
+  <div class="section-label"><h3 class="c-cyan">🏘️ The Villages (your 9 sites)</h3><div class="bar"></div></div>
+  <div class="grid">
+
+    <div class="village">
+      <div class="top"><span class="emoji">🌪️</span><span class="pill live">AWAKE</span></div>
+      <h4>StormCrew</h4>
+      <a href="https://dallen362-cpu.github.io/stormcrew/">stormcrew</a>
+    </div>
+
+    <div class="village">
+      <div class="top"><span class="emoji">🚁</span><span class="pill live">AWAKE</span></div>
+      <h4>CrewCommand 1</h4>
+      <a href="https://dallen362-cpu.github.io/crewcommand1/">crewcommand1</a>
+      <div class="future">⭐ the canonical CrewCommand</div>
+    </div>
+
+    <div class="village">
+      <div class="top"><span class="emoji">🏠</span><span class="pill live">AWAKE</span></div>
+      <h4>Restoration Royalty</h4>
+      <a href="https://dallen362-cpu.github.io/restoration-royalties/">restoration-royalties</a>
+    </div>
+
+    <div class="village">
+      <div class="top"><span class="emoji">💚</span><span class="pill live">AWAKE</span></div>
+      <h4>Beverly Wicks Wellness</h4>
+      <a href="https://dallen362-cpu.github.io/bweverly-wicks/">bweverly-wicks</a>
+      <div class="future">⭐ the canonical wellness site</div>
+    </div>
+
+    <div class="village">
+      <div class="top"><span class="emoji">🌦️</span><span class="pill live">AWAKE</span></div>
+      <h4>Predictive Weather</h4>
+      <a href="https://dallen362-cpu.github.io/Predictive-Weather-Intelligence/">Predictive-Weather-Intelligence</a>
+    </div>
+
+    <div class="village">
+      <div class="top"><span class="emoji">🚁</span><span class="pill live">AWAKE</span></div>
+      <h4>CrewCommand 2</h4>
+      <a href="https://dallen362-cpu.github.io/crewcommand2/">crewcommand2</a>
+      <div class="future">↪️ duplicate — fold into CrewCommand 1</div>
+    </div>
+
+    <div class="village">
+      <div class="top"><span class="emoji">😴</span><span class="pill warn">ASLEEP</span></div>
+      <h4>CrewCommand (stub)</h4>
+      <a href="https://dallen362-cpu.github.io/crewcommand/">crewcommand</a>
+      <div class="future">⚠️ blank page — needs content or retire</div>
+    </div>
+
+    <div class="village">
+      <div class="top"><span class="emoji">🥱</span><span class="pill warn">BARELY</span></div>
+      <h4>Body Wellness Connection</h4>
+      <a href="https://dallen362-cpu.github.io/Body-Wellness-Connection/">Body-Wellness-Connection</a>
+      <div class="future">↪️ twin of Beverly Wicks — retire/redirect</div>
+    </div>
+
+  </div>
+
+  <!-- THE TWO PLANS -->
+  <div class="section-label"><h3 class="c-lime">🛡️ The Shield &nbsp; &amp; &nbsp; <span class="c-violet">🔒 The Locked Boxes</span></h3><div class="bar"></div></div>
+  <div class="panels">
+
+    <div class="panel shield">
+      <h3 class="c-lime">🛡️ The Super-Shield Plan</h3>
+      <p style="color:var(--muted);font-size:13px">Cloudflare guard-dog 🐕 — look, but don't steal the notebook.</p>
+      <ul>
+        <li>Lock the code so repos can't be copied</li>
+        <li>Keep demos viewable for visitors</li>
+        <li>Everyone enters through the castle gate: telvergence.com</li>
+        <li>Scare away copycat robots &amp; scrapers</li>
+        <li>Optional secret password gate for demos</li>
+      </ul>
+      <div class="truth">Honest truth: anything shown in a browser can be peeked at — this <b>deters</b> copying, it can't make it impossible.</div>
+    </div>
+
+    <div class="panel locked">
+      <h3 class="c-violet">🔒 Treasure in Other Boxes</h3>
+      <p style="color:var(--muted);font-size:13px">In your other Claude chats — only YOU have the key 🗝️</p>
+      <ul>
+        <li>Storm-dispatch robot brains</li>
+        <li>ViciDial phone-dialer wiring</li>
+        <li>BOSS back-end CRM</li>
+        <li>LMS (the learning system)</li>
+        <li>The skills &amp; older code + Perplexity output</li>
+      </ul>
+      <div class="truth">Bring these into a repo I can reach, and I'll snap them right into the kingdom! 🧩</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    The Co-Work Campaign · all of this is saved in the <b>cowork-campaign</b> folder &amp; sealed in Pull Request #1 🎁
+    <br><span class="stamp">✅ KINGDOM MAPPED &amp; ORGANIZED</span>
+  </div>
+
+</div>
+</body>
+</html>
