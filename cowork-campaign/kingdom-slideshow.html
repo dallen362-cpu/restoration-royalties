@@ -52,6 +52,19 @@
   .dot.on{background:var(--lime);transform:scale(1.25)}
   .count{position:fixed;top:18px;right:24px;color:var(--muted);font-size:14px;letter-spacing:1px}
   .hint{position:fixed;top:18px;left:24px;color:var(--muted);font-size:13px}
+
+  /* presenter notes */
+  .notes{position:fixed;left:0;right:0;bottom:0;background:rgba(8,12,24,.97);
+    border-top:2px solid var(--violet);padding:18px 24px 78px;max-height:46vh;overflow:auto;
+    transform:translateY(102%);transition:transform .28s ease;text-align:left}
+  .notes.show{transform:translateY(0)}
+  .notes .tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--violet);font-weight:800}
+  .notes h4{font-size:18px;margin:4px 0 10px;color:var(--ink)}
+  .notes p{font-size:16px;color:#cdd9f2;margin:0 auto 8px;max-width:820px;text-align:left}
+  .notes .say{border-left:3px solid var(--lime);padding-left:12px}
+  body.notes-open .stage{transform:scale(.78) translateY(-9vh);transition:transform .28s ease}
+  .stage{transition:transform .28s ease}
+  button.ghost{background:transparent;color:var(--violet);border:1px solid var(--violet)}
 </style>
 </head>
 <body>
@@ -149,10 +162,17 @@
 
 </div>
 
+<aside class="notes" id="notes">
+  <div class="tag">📝 Speaker Notes</div>
+  <h4 id="notesTitle"></h4>
+  <p class="say" id="notesBody"></p>
+</aside>
+
 <div class="ui">
   <button id="prev">‹ Back</button>
   <div class="dots" id="dots"></div>
   <button id="next">Next ›</button>
+  <button id="notesBtn" class="ghost" title="Toggle speaker notes (N)">📝 Notes</button>
 </div>
 
 <script>
@@ -160,7 +180,22 @@
   const dotsBox=document.getElementById('dots');
   const count=document.getElementById('count');
   const prev=document.getElementById('prev'), next=document.getElementById('next');
+  const notes=document.getElementById('notes'), notesBtn=document.getElementById('notesBtn');
+  const notesTitle=document.getElementById('notesTitle'), notesBody=document.getElementById('notesBody');
   let i=0;
+
+  // What to SAY out loud on each slide (kept short & friendly).
+  const SPEAKER_NOTES=[
+    {t:"Open with energy",s:"Welcome everyone! Today I'll show you how we took nine scattered websites and turned them into one organized 'kingdom' built around our main platform. It'll take about two minutes."},
+    {t:"Introduce the platform",s:"This is TELVERGENCE — our main platform at telvergence.com. Think of it as the headquarters that handles every call, text, and customer. Every other site we own is a 'village' that reports up to it. It even has an operator dashboard, and it was originally built with an AI helper called Perplexity Computer."},
+    {t:"Show the breadth",s:"For the first time, all nine of our sites are listed in one place with working links — StormCrew, CrewCommand, Restoration Royalty, Beverly Wicks Wellness, Predictive Weather, and more. No more guessing what we own or where it lives."},
+    {t:"Be honest about the audit",s:"We actually visited every site and checked it. Seven are fully live and look great. One — a CrewCommand page — is blank, and one is a bare-bones duplicate. So we found two we can either finish or retire to keep things clean. Knowing this is a win, not a problem."},
+    {t:"Explain the protection plan",s:"Next, the protection plan using Cloudflare. In plain terms: lock the source code so competitors can't copy our work, keep the demos viewable for prospects, route everyone through one front door — telvergence.com — and automatically block copycat bots and scrapers."},
+    {t:"Set honest expectations",s:"One honest point I always make: anything shown on the public web can technically be viewed — that's just how browsers work. Our plan strongly DETERS copying and protects the actual code, but no public page is ever 100% un-copyable. I'd rather you hear that from me than from a salesperson promising magic."},
+    {t:"Name the next inputs",s:"There's more value waiting in our other project notes — the storm-dispatch logic, the phone-dialer wiring, the CRM, and the training system. Those just need to be exported into one place, and then they snap right into this same structure."},
+    {t:"Reassure it's all saved",s:"Everything I've shown is organized in one folder and saved in a single, reviewable package — nothing is lost, nothing is scattered, and it's all ready whenever we want to move forward."},
+    {t:"Close strong",s:"Bottom line: nine scattered sites are now one mapped, audited, and protected kingdom — with a clear plan for what's next. Thank you! Happy to answer any questions."}
+  ];
   slides.forEach((_,n)=>{
     const d=document.createElement('div');d.className='dot'+(n===0?' on':'');
     d.onclick=()=>go(n);dotsBox.appendChild(d);
@@ -172,11 +207,20 @@
     dots.forEach((d,k)=>d.classList.toggle('on',k===i));
     count.textContent=(i+1)+' / '+slides.length;
     prev.disabled=(i===0); next.disabled=(i===slides.length-1);
+    const note=SPEAKER_NOTES[i]||{t:'',s:''};
+    notesTitle.textContent=note.t; notesBody.textContent=note.s;
+  }
+  function toggleNotes(){
+    const open=notes.classList.toggle('show');
+    document.body.classList.toggle('notes-open',open);
+    notesBtn.textContent=open?'✕ Notes':'📝 Notes';
   }
   prev.onclick=()=>go(i-1); next.onclick=()=>go(i+1);
+  notesBtn.onclick=toggleNotes;
   document.addEventListener('keydown',e=>{
     if(e.key==='ArrowRight'||e.key===' ')go(i+1);
     if(e.key==='ArrowLeft')go(i-1);
+    if(e.key==='n'||e.key==='N')toggleNotes();
   });
   go(0);
 </script>
