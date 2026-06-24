@@ -22,6 +22,8 @@ account. Built on the `claude/github-telvergence-consolidate-x00shp` branch.
 | TELVERGENCE.com material on GitHub | ✅ Consolidated (`TELVERGENCE-CONSOLIDATION.md`) |
 | Brand portfolio → repo mapping | ✅ Done |
 | ViciDial / BOSS CRM / LMS / skills / Perplexity output | ⛔ Not reachable — needs intake (`INTAKE-CHECKLIST.md`) |
+| Storm dispatch (from other chats/projects) | ⛔ Not reachable — needs intake; live baseline on stormcrew + crewcommand |
+| Hosting: public demos under telvergence.com w/ protected source | 📋 Plan + Cloudflare templates ready (`HOSTING-AND-ACCESS-PLAN.md`, `cloudflare/`). Chosen: **Cloudflare Pages + Access**. Execution (DNS, private repos, CF dashboard) is on you — see `cloudflare/RUNBOOK.md` |
 
 ## Why some material is missing
 
