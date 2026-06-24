@@ -1,0 +1,13 @@
+# Cloudflare Pages — security/anti-scrape headers for DEMO sub-sites.
+# Place this file at the site root (Cloudflare Pages serves it automatically).
+# NOTE: keeps demos out of search engines/caches and adds clickjacking/MIME protection.
+#       Do NOT use noindex on the MAIN telvergence.com marketing site — only on demos.
+
+/*
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet
+  X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: frame-ancestors 'self' https://telvergence.com https://*.telvergence.com
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: browsing-topics=()
+  Cache-Control: no-store
