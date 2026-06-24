@@ -117,6 +117,26 @@
   .c-net{background:linear-gradient(180deg,var(--violet),var(--amber))}
   .c-netnet{background:linear-gradient(180deg,var(--amber),var(--lime));box-shadow:0 0 18px rgba(0,255,136,.4)}
 
+  /* storm dispatch map */
+  .win-flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .win-flow .wn{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:12.5px;display:flex;flex-direction:column;gap:1px}
+  .win-flow .wn b{font-size:13px} .win-flow .wn small{color:var(--muted);font-size:10.5px}
+  .win-flow .wn.src{border-color:var(--cyan)} .win-flow .wn.win{border-color:var(--violet);box-shadow:0 0 16px rgba(123,97,255,.25)} .win-flow .wn.cmd{border-color:var(--amber);box-shadow:0 0 16px rgba(255,194,75,.22)} .win-flow .wn.bz{border-color:var(--lime)}
+  .win-flow .ar{color:var(--cyan);font-size:18px}
+  .usgrid{display:grid;grid-template-columns:repeat(14,1fr);gap:3px;background:var(--panel);border-radius:10px;padding:10px}
+  .cell{aspect-ratio:1/1;border-radius:3px;background:transparent;position:relative}
+  .cell.land{background:#1c2748;border:1px solid #29365a}
+  .cell.w1{background:rgba(255,194,75,.55);border-color:rgba(255,194,75,.7)}
+  .cell.w2{background:rgba(255,122,80,.75);border-color:rgba(255,122,80,.9)}
+  .cell.w3{background:rgba(255,93,115,.92);border-color:#ff5d73;animation:stormpulse 1.4s infinite}
+  @keyframes stormpulse{0%,100%{box-shadow:0 0 0 0 rgba(255,93,115,.6)}50%{box-shadow:0 0 0 5px rgba(255,93,115,0)}}
+  .cell .pin{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:10px}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:11.5px;color:var(--muted)}
+  .legend .sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px;border:1px solid var(--line)}
+  .corr{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px}
+  .corr .pill{background:rgba(0,212,255,.12);border:1px solid rgba(0,212,255,.4);border-radius:999px;padding:6px 12px;color:#bfe9ff;font-weight:600}
+  .corr .ar{color:var(--lime);font-weight:800}
+
   /* funnel */
   .funnel{display:flex;flex-direction:column;gap:7px}
   .stage{display:flex;align-items:center;gap:12px}
@@ -228,6 +248,8 @@
       <a data-view="lifecycle"><span class="i">♻️</span> Customer Lifecycle</a>
       <a data-view="ivr"><span class="i">🌳</span> PBX / IVR Routing</a>
       <a data-view="ai"><span class="i">🤖</span> AI Assistant</a>
+      <div class="nav-label">Weather Ops</div>
+      <a data-view="stormmap"><span class="i">🌪️</span> Storm Dispatch Map</a>
       <div class="nav-label">Intelligence</div>
       <a data-view="demo-graphics"><span class="i">📊</span> Demographics</a>
       <a data-view="econ"><span class="i">📈</span> Market Economics</a>
@@ -420,6 +442,64 @@
       </div>
     </section>
 
+    <!-- STORM DISPATCH MAP -->
+    <section class="view" id="v-stormmap">
+      <div class="page-head">
+        <div><h1>🌪️ Storm Dispatch Command Center</h1><p>NOAA + NASA feeds → Weather Intelligence Network (WIN) → dispatch → brands · nationwide · illustrative</p></div>
+        <div class="seg"><button class="on">Live</button><button>24h</button><button>7d</button></div>
+      </div>
+
+      <div class="panel">
+        <h3>Intelligence → Dispatch Pipeline</h3><div class="sub">how weather becomes work, in real time</div>
+        <div class="win-flow">
+          <div class="wn src"><b>🛰️ NOAA</b><small>NWS alerts · GOES-18</small></div>
+          <div class="ar">→</div>
+          <div class="wn src"><b>🌍 NASA</b><small>satellite imagery</small></div>
+          <div class="ar">→</div>
+          <div class="wn win"><b>🧠 WIN</b><small>Weather Intelligence Network</small></div>
+          <div class="ar">→</div>
+          <div class="wn cmd"><b>🚨 Storm Dispatch</b><small>Command Center</small></div>
+          <div class="ar">→</div>
+          <div class="wn bz"><b>🏠 Brands</b><small>StormCrew · Roofing Crew · Restoration Royalty</small></div>
+        </div>
+      </div>
+
+      <div class="hero">
+        <div class="kpi"><div class="lbl">🌀 Storm Systems Tracked</div><div class="val" id="wSystems">0</div><div class="chg up">NOAA/NASA → WIN</div></div>
+        <div class="kpi"><div class="lbl">⚠️ Regions on Alert</div><div class="val" id="wRegions">0</div><div class="chg down">live</div></div>
+        <div class="kpi"><div class="lbl">🚚 Crews Dispatched</div><div class="val" id="wCrews">0</div><div class="chg up">▲ auto-routed</div></div>
+        <div class="kpi"><div class="lbl">💰 Weather-Driven Rev · today</div><div class="val" id="wRev">$0</div><div class="chg up">▲ live</div></div>
+      </div>
+
+      <div class="grid2">
+        <div class="panel">
+          <h3>Nationwide Weather &amp; Demand Grid</h3><div class="sub">severity by region — storm cells drive demand &amp; dispatch</div>
+          <div class="usgrid" id="usgrid"></div>
+          <div class="legend">
+            <span><span class="sw" style="background:#1c2748"></span>Calm</span>
+            <span><span class="sw" style="background:rgba(255,194,75,.6)"></span>Watch</span>
+            <span><span class="sw" style="background:rgba(255,122,80,.8)"></span>Severe</span>
+            <span><span class="sw" style="background:rgba(255,93,115,.95)"></span>Extreme · active dispatch 🌀</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Active Storm Systems</h3><div class="sub">correlated to demand, dispatch &amp; revenue</div>
+          <table><thead><tr><th>System / Region</th><th>Sev</th><th>Demand</th><th>Crews</th><th>Est. rev</th></tr></thead><tbody id="stormBody"></tbody></table>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>The Correlation — weather intelligence → revenue</h3><div class="sub">the whole platform, in one line</div>
+        <div class="corr">
+          <span class="pill">🛰️ Severe weather detected</span><span class="ar">→</span>
+          <span class="pill">📈 Demand index ↑</span><span class="ar">→</span>
+          <span class="pill">🚨 Auto-dispatch crews</span><span class="ar">→</span>
+          <span class="pill">🏠 Jobs onboarded</span><span class="ar">→</span>
+          <span class="pill">💵 Net-Net ↑</span>
+        </div>
+      </div>
+    </section>
+
     <!-- DEMOGRAPHICS -->
     <section class="view" id="v-demo-graphics">
       <div class="page-head"><div><h1>📊 Demographics</h1><p>Who you're reaching, where, and how · illustrative segments</p></div></div>
@@ -587,7 +667,7 @@
   // ---- nav ----
   const links=[...document.querySelectorAll('#nav a')];
   const ids={dash:'v-dash',conduit:'v-conduit',lifecycle:'v-lifecycle',ivr:'v-ivr',ai:'v-ai',
-    'demo-graphics':'v-demo-graphics',econ:'v-econ',brands:'v-brands',customers:'v-customers',revenue:'v-revenue'};
+    stormmap:'v-stormmap','demo-graphics':'v-demo-graphics',econ:'v-econ',brands:'v-brands',customers:'v-customers',revenue:'v-revenue'};
   function show(v){
     links.forEach(a=>a.classList.toggle('on',a.dataset.view===v));
     Object.values(ids).forEach(id=>document.getElementById(id).classList.remove('on'));
@@ -654,6 +734,7 @@
     elV.textContent=burst;
     elA.textContent=Math.max(1800,active).toLocaleString();
     updateProfit();
+    updateStorm();
   }
 
   // ---- profit step-down (KOIs), tied to live revenue ----
@@ -695,6 +776,47 @@
   document.getElementById('tierBody').innerHTML=TIERS.map(t=>
     `<tr><td>${t[0]}</td><td>${t[1].toLocaleString()}</td><td><b>$${t[2].toLocaleString()}</b></td>`+
     `<td><div class="bar-mini"><i style="width:${(t[2]/maxTier*100).toFixed(0)}%"></i></div></td></tr>`).join('');
+
+  // ---- Storm Dispatch map (NOAA/NASA → WIN → dispatch → brands) ----
+  const MASK=[
+    ".############.",
+    "##############",
+    "##############",
+    "##############",
+    ".###########..",
+    "..########..#.",
+    "....###.....#.",
+  ];
+  const STORM_CELLS={'5,12':3,'6,12':3,'4,11':2,'5,9':1,'4,7':2,'3,2':1,'2,9':1};
+  (function buildGrid(){
+    let html='';
+    for(let r=0;r<MASK.length;r++){
+      for(let c=0;c<14;c++){
+        const land=MASK[r][c]==='#'; let cls='cell';
+        if(land){cls+=' land'; const sv=STORM_CELLS[r+','+c]; if(sv)cls+=' w'+sv;}
+        const pin=(land&&STORM_CELLS[r+','+c]===3)?'<span class="pin">🌀</span>':'';
+        html+=`<div class="${cls}">${pin}</div>`;
+      }
+    }
+    document.getElementById('usgrid').innerHTML=html;
+  })();
+  const STORMS=[
+    ['🌀 Hurricane Watch — FL Atlantic','High','t-warn','×3.4',28,486000,'StormCrew · Restoration Royalty'],
+    ['⛈️ Severe T-Storm — Tampa Bay','Med','t-verify','×2.1',16,214000,'Roofing Crew'],
+    ['🧊 Hail — Dallas–Ft Worth','Med','t-verify','×1.8',11,168000,'CrewCommand'],
+    ['🌊 Flood Watch — Gulf Coast','Low','t-live','×1.3',6,61000,'Restoration Royalty'],
+  ];
+  document.getElementById('stormBody').innerHTML=STORMS.map(s=>
+    `<tr><td>${s[0]}<br><small style="color:var(--muted)">${s[6]}</small></td>`+
+    `<td><span class="tag ${s[2]}">${s[1]}</span></td><td><b>${s[3]}</b></td><td>${s[4]}</td><td><b>$${s[5].toLocaleString()}</b></td></tr>`).join('');
+  let wCrews=61;
+  function updateStorm(){
+    setTxt('wSystems',STORMS.length);
+    setTxt('wRegions','7');
+    wCrews+=Math.round(Math.random()*3-1); if(wCrews<55)wCrews=55;
+    setTxt('wCrews',wCrews);
+    setTxt('wRev',money(interactions*REV_PER_INTERACTION*0.38));
+  }
 
   liveTick(); setInterval(liveTick,1000);
 
@@ -759,6 +881,7 @@
     {v:'lifecycle',s:10,t:'Customer Lifecycle',n:'We move people from Reach to Advocate — and see the volume and the speed at every stage of the journey.'},
     {v:'ivr',s:10,t:'PBX / IVR Routing',n:'How an inbound contact flows: AI triage, emergency priority, opt-in capture — every branch written back to one unified timeline.'},
     {v:'ai',s:11,t:'AI Assistant',n:'Live transcription, sentiment and intent routing. Here it turns a distressed emergency caller into a dispatched crew in seconds.'},
+    {v:'stormmap',s:13,t:'Storm Dispatch Command Center',n:'This is the magic: NOAA and NASA feeds flow into our Weather Intelligence Network, the nationwide grid lights up where storms hit, and the Storm Dispatch Command Center auto-routes crews to StormCrew, Roofing Crew and Restoration Royalty — turning weather into work and revenue.'},
     {v:'demo-graphics',s:9,t:'Demographics',n:'Who we reach, where they are, what device they prefer, and exactly when they respond.'},
     {v:'econ',s:13,t:'Market Economics',n:'The model: create demand, control supply, set the price — grounded in standard supply-and-demand theory, and our 3 E’s, T’s and C’s credo.'},
     {v:'brands',s:9,t:'Brands',n:'Every white-label brand running on the very same platform you’re looking at.'},
