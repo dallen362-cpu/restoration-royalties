@@ -137,6 +137,18 @@
   .corr .pill{background:rgba(0,212,255,.12);border:1px solid rgba(0,212,255,.4);border-radius:999px;padding:6px 12px;color:#bfe9ff;font-weight:600}
   .corr .ar{color:var(--lime);font-weight:800}
 
+  /* live weather alert ticker */
+  .ticker{display:flex;align-items:center;background:#0c1428;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:14px}
+  .ticker .lbl{display:flex;align-items:center;gap:7px;background:var(--red);color:#fff;font-weight:800;font-size:11px;letter-spacing:1px;padding:10px 12px;white-space:nowrap;flex-shrink:0}
+  .ticker .lbl .d{width:8px;height:8px;border-radius:50%;background:#fff;animation:pulse 1.4s infinite}
+  .ticker .track{flex:1;overflow:hidden}
+  .ticker .move{display:inline-flex;white-space:nowrap;animation:tickerscroll 46s linear infinite}
+  .ticker:hover .move{animation-play-state:paused}
+  @keyframes tickerscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .ticker .al{display:inline-flex;align-items:center;gap:7px;padding:10px 22px;font-size:12.5px;border-right:1px solid var(--line)}
+  .ticker .al .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+  .ticker .al small{color:var(--muted)}
+
   /* funnel */
   .funnel{display:flex;flex-direction:column;gap:7px}
   .stage{display:flex;align-items:center;gap:12px}
@@ -447,6 +459,11 @@
       <div class="page-head">
         <div><h1>🌪️ Storm Dispatch Command Center</h1><p>NOAA + NASA feeds → Weather Intelligence Network (WIN) → dispatch → brands · nationwide · illustrative</p></div>
         <div class="seg"><button class="on">Live</button><button>24h</button><button>7d</button></div>
+      </div>
+
+      <div class="ticker">
+        <div class="lbl"><span class="d"></span> LIVE NWS FEED</div>
+        <div class="track"><div class="move" id="tickerMove"></div></div>
       </div>
 
       <div class="panel">
@@ -800,6 +817,19 @@
     }
     document.getElementById('usgrid').innerHTML=html;
   })();
+  // live weather-alert ticker
+  const ALERTS=[
+    ['#ff5d73','EXTREME','Hurricane Watch — FL Atlantic Coast (Brevard, Indian River)'],
+    ['#ff7a50','SEVERE','Severe Thunderstorm Warning — Tampa Bay'],
+    ['#ff7a50','SEVERE','Tornado Watch — Central Florida'],
+    ['#ffc24b','WATCH','Flood Watch — Gulf Coast (Pinellas → Sarasota)'],
+    ['#ffc24b','WATCH','Hail Advisory — Dallas–Fort Worth'],
+    ['#00D4FF','ADVISORY','High Wind Advisory — Orlando Metro'],
+    ['#00FF88','CLEARING','Storm cell weakening — Jacksonville'],
+  ];
+  function alertHtml(){return ALERTS.map(a=>
+    `<span class="al"><span class="dot" style="background:${a[0]}"></span><b>${a[1]}</b><small>${a[2]}</small></span>`).join('');}
+  document.getElementById('tickerMove').innerHTML=alertHtml()+alertHtml();
   const STORMS=[
     ['🌀 Hurricane Watch — FL Atlantic','High','t-warn','×3.4',28,486000,'StormCrew · Restoration Royalty'],
     ['⛈️ Severe T-Storm — Tampa Bay','Med','t-verify','×2.1',16,214000,'Roofing Crew'],
