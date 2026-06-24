@@ -130,6 +130,13 @@
   .cell.w2{background:rgba(255,122,80,.75);border-color:rgba(255,122,80,.9)}
   .cell.w3{background:rgba(255,93,115,.92);border-color:#ff5d73;animation:stormpulse 1.4s infinite}
   @keyframes stormpulse{0%,100%{box-shadow:0 0 0 0 rgba(255,93,115,.6)}50%{box-shadow:0 0 0 5px rgba(255,93,115,0)}}
+  .cell.a3{background:rgba(0,255,136,.7);border-color:rgba(0,255,136,.9)}
+  .cell.a2{background:rgba(0,212,255,.55);border-color:rgba(0,212,255,.75)}
+  .cell.a1{background:rgba(255,194,75,.5);border-color:rgba(255,194,75,.7)}
+  .cell.a0{background:#1c2748}
+  .cell.cv2{background:rgba(0,255,136,.6);border-color:rgba(0,255,136,.85)}
+  .cell.cv1{background:rgba(0,212,255,.45);border-color:rgba(0,212,255,.7)}
+  .cell.cv0{background:rgba(255,93,115,.72);border-color:#ff5d73;animation:stormpulse 1.9s infinite}
   .cell .pin{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:10px}
   .legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:11.5px;color:var(--muted)}
   .legend .sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px;border:1px solid var(--line)}
@@ -458,7 +465,7 @@
     <section class="view" id="v-stormmap">
       <div class="page-head">
         <div><h1>🌪️ Storm Dispatch Command Center</h1><p>NOAA + NASA feeds → Weather Intelligence Network (WIN) → dispatch → brands · nationwide · illustrative</p></div>
-        <div class="seg"><button class="on">Live</button><button>24h</button><button>7d</button></div>
+        <div class="seg" id="layerSeg"><button data-layer="weather" class="on">🌩️ Weather</button><button data-layer="assets">🚚 Assets</button><button data-layer="coverage">🛡️ Coverage</button></div>
       </div>
 
       <div class="ticker">
@@ -488,16 +495,18 @@
         <div class="kpi"><div class="lbl">💰 Weather-Driven Rev · today</div><div class="val" id="wRev">$0</div><div class="chg up">▲ live</div></div>
       </div>
 
+      <div class="hero">
+        <div class="kpi"><div class="lbl">🧰 Dispatchable Technicians</div><div class="val" id="wTechs">0</div><div class="chg up">field-ready, nationwide</div></div>
+        <div class="kpi"><div class="lbl">🤝 Network Partners</div><div class="val" id="wPartners">0</div><div class="chg up">branded service providers</div></div>
+        <div class="kpi"><div class="lbl">🛡️ National Coverage</div><div class="val" id="wCoverage">0%</div><div class="chg up">of active service grid</div></div>
+        <div class="kpi"><div class="lbl">➕ Areas Needing Vendors</div><div class="val" id="wGaps">0</div><div class="chg down">recruitment priority</div></div>
+      </div>
+
       <div class="grid2">
         <div class="panel">
-          <h3>Nationwide Weather &amp; Demand Grid</h3><div class="sub">severity by region — storm cells drive demand &amp; dispatch</div>
+          <h3>Nationwide Service Grid — live flux</h3><div class="sub">toggle layers: storm severity · dispatchable assets · partner coverage &amp; vendor gaps</div>
           <div class="usgrid" id="usgrid"></div>
-          <div class="legend">
-            <span><span class="sw" style="background:#1c2748"></span>Calm</span>
-            <span><span class="sw" style="background:rgba(255,194,75,.6)"></span>Watch</span>
-            <span><span class="sw" style="background:rgba(255,122,80,.8)"></span>Severe</span>
-            <span><span class="sw" style="background:rgba(255,93,115,.95)"></span>Extreme · active dispatch 🌀</span>
-          </div>
+          <div class="legend" id="legendBox"></div>
         </div>
         <div class="panel">
           <h3>Active Storm Systems</h3><div class="sub">correlated to demand, dispatch &amp; revenue</div>
@@ -514,6 +523,11 @@
           <span class="pill">🏠 Jobs onboarded</span><span class="ar">→</span>
           <span class="pill">💵 Net-Net ↑</span>
         </div>
+      </div>
+
+      <div class="panel">
+        <h3>➕ Vendor Recruitment Priorities — under-served areas</h3><div class="sub">where demand outpaces our network — onboard essential service providers here</div>
+        <table><thead><tr><th>Area</th><th>Why</th><th>Vendors needed</th><th>Priority</th></tr></thead><tbody id="gapsBody"></tbody></table>
       </div>
     </section>
 
@@ -805,18 +819,64 @@
     "....###.....#.",
   ];
   const STORM_CELLS={'5,12':3,'6,12':3,'4,11':2,'5,9':1,'4,7':2,'3,2':1,'2,9':1};
-  (function buildGrid(){
-    let html='';
-    for(let r=0;r<MASK.length;r++){
-      for(let c=0;c<14;c++){
-        const land=MASK[r][c]==='#'; let cls='cell';
-        if(land){cls+=' land'; const sv=STORM_CELLS[r+','+c]; if(sv)cls+=' w'+sv;}
-        const pin=(land&&STORM_CELLS[r+','+c]===3)?'<span class="pin">🌀</span>':'';
-        html+=`<div class="${cls}">${pin}</div>`;
-      }
-    }
-    document.getElementById('usgrid').innerHTML=html;
-  })();
+  // national grid model: weather (fluxes) + dispatchable assets + partner coverage
+  const NC=14, cells=[];
+  const REGION={'5,12':'FL Atlantic','6,12':'South FL','4,11':'SE Coast','5,9':'Gulf Coast','4,7':'Texas','3,2':'Pacific NW','2,9':'Midwest','1,1':'Pacific NW','3,11':'Carolinas'};
+  for(let r=0;r<MASK.length;r++)for(let c=0;c<NC;c++){
+    const land=MASK[r][c]==='#', s=((r*31+c*17)%13);
+    cells.push({r,c,land,wx:STORM_CELLS[r+','+c]||0,
+      assets: land?2+(s%9):0,                       // dispatchable techs 2..10
+      cov: land?(s%5===0?0:(s%2===0?2:1)):1});       // 0 gap, 1 partial, 2 covered
+  }
+  let layer='weather';
+  function cellClass(c){ if(!c.land)return 'cell'; let x='cell land';
+    if(layer==='weather'){ if(c.wx)x+=' w'+c.wx; }
+    else if(layer==='assets'){ x+=' '+(c.assets>=8?'a3':c.assets>=5?'a2':c.assets>=2?'a1':'a0'); }
+    else x+=' cv'+c.cov;
+    return x; }
+  function cellPin(c){ if(!c.land)return '';
+    if(layer==='weather'&&c.wx===3)return '<span class="pin">🌀</span>';
+    if(layer==='assets'&&c.assets>=8)return '<span class="pin">🚚</span>';
+    if(layer==='coverage'&&c.cov===0)return '<span class="pin">➕</span>';
+    return ''; }
+  function cellTitle(c){ if(!c.land)return '';
+    const reg=REGION[c.r+','+c.c]||('Sector '+c.r+'-'+c.c);
+    return `${reg} · Weather: ${['Calm','Watch','Severe','Extreme'][c.wx]} · Dispatchable techs: ${c.assets} · Coverage: ${['NEEDS VENDORS','Partial','Covered'][c.cov]}`; }
+  const LEGENDS={
+    weather:[['#1c2748','Calm'],['rgba(255,194,75,.6)','Watch'],['rgba(255,122,80,.8)','Severe'],['rgba(255,93,115,.95)','Extreme · dispatch 🌀']],
+    assets:[['#1c2748','None'],['rgba(255,194,75,.5)','Low 2–4'],['rgba(0,212,255,.55)','Med 5–7'],['rgba(0,255,136,.7)','High 8+ 🚚']],
+    coverage:[['rgba(0,255,136,.6)','Covered'],['rgba(0,212,255,.45)','Partial'],['rgba(255,93,115,.72)','Needs vendors ➕']],
+  };
+  function renderGrid(){
+    document.getElementById('usgrid').innerHTML=cells.map(c=>
+      `<div class="${cellClass(c)}" title="${cellTitle(c)}">${cellPin(c)}</div>`).join('');
+    const lb=document.getElementById('legendBox');
+    if(lb)lb.innerHTML=LEGENDS[layer].map(l=>`<span><span class="sw" style="background:${l[0]}"></span>${l[1]}</span>`).join('');
+  }
+  renderGrid();
+  document.querySelectorAll('#layerSeg button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('#layerSeg button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on'); layer=b.dataset.layer; renderGrid();
+  }));
+  // live storm flux — disturbances intensify, decay, and spawn
+  function fluxStorms(){
+    cells.forEach(c=>{ if(!c.land)return;
+      if(c.wx>0 && Math.random()<0.25)c.wx=Math.max(0,c.wx-1);
+      else if(c.wx<3 && Math.random()<0.10)c.wx=Math.min(3,c.wx+1); });
+    if(Math.random()<0.5){const ld=cells.filter(c=>c.land); const t=ld[(Date.now()/1000|0)%ld.length]; if(t)t.wx=3;}
+    if(layer==='weather')renderGrid();
+  }
+  setInterval(fluxStorms,2600);
+  // vendor recruitment priorities (under-served areas)
+  const GAPS=[
+    ['Texas Panhandle','High storm risk, thin network','Roofing · Water mitigation','★★★'],
+    ['Carolinas Coast','Hurricane corridor','Field techs · Tarp crews','★★★'],
+    ['Gulf Coast (LA / MS)','Flood-prone, rising demand','Restoration · Mold','★★☆'],
+    ['Mountain West','Hail belt','Roofing contractors','★★☆'],
+    ['Upper Midwest','Wind / ice events','General contractors','★☆☆'],
+  ];
+  const gb=document.getElementById('gapsBody');
+  if(gb)gb.innerHTML=GAPS.map(g=>`<tr><td><b>${g[0]}</b></td><td><small style="color:var(--muted)">${g[1]}</small></td><td>${g[2]}</td><td>${g[3]}</td></tr>`).join('');
   // live weather-alert ticker
   const ALERTS=[
     ['#ff5d73','EXTREME','Hurricane Watch — FL Atlantic Coast (Brevard, Indian River)'],
@@ -842,10 +902,15 @@
   let wCrews=61;
   function updateStorm(){
     setTxt('wSystems',STORMS.length);
-    setTxt('wRegions','7');
+    setTxt('wRegions',cells.filter(c=>c.land&&c.wx>0).length);
     wCrews+=Math.round(Math.random()*3-1); if(wCrews<55)wCrews=55;
     setTxt('wCrews',wCrews);
     setTxt('wRev',money(interactions*REV_PER_INTERACTION*0.38));
+    const land=cells.filter(c=>c.land).length;
+    setTxt('wTechs',cells.reduce((s,c)=>s+(c.land?c.assets:0),0).toLocaleString());
+    setTxt('wPartners','342');
+    setTxt('wCoverage',Math.round(cells.filter(c=>c.land&&c.cov>=1).length/land*100)+'%');
+    setTxt('wGaps',cells.filter(c=>c.land&&c.cov===0).length);
   }
 
   liveTick(); setInterval(liveTick,1000);
