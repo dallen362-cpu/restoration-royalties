@@ -25,6 +25,11 @@ into the consolidation. For chat/Perplexity transcripts: paste them here or save
       committed to a repo.
 - [ ] **Perplexity Max (Computer mode) output** — the transcripts/output used to set up
       the dialer wiring and the TELVERGENCE sub-branded functionality.
+- [ ] **Storm dispatch work** from other Claude chats / sessions / project folders —
+      dispatch logic, agent scripts, routing rules, "Smart DID" setup, weather-trigger
+      automation. Drop into `cowork-campaign/storm-dispatch/` or paste transcripts.
+      (Reachable baseline already live on stormcrew + crewcommand1/2; the deeper
+      chat/project work is what's missing.)
 
 ## Open questions for you
 
