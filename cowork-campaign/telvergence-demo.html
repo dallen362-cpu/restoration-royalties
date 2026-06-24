@@ -269,6 +269,7 @@
       <a data-view="ai"><span class="i">🤖</span> AI Assistant</a>
       <div class="nav-label">Weather Ops</div>
       <a data-view="stormmap"><span class="i">🌪️</span> Storm Dispatch Map</a>
+      <a data-view="recruit"><span class="i">🧲</span> Partner Recruitment</a>
       <div class="nav-label">Intelligence</div>
       <a data-view="demo-graphics"><span class="i">📊</span> Demographics</a>
       <a data-view="econ"><span class="i">📈</span> Market Economics</a>
@@ -531,6 +532,39 @@
       </div>
     </section>
 
+    <!-- PARTNER RECRUITMENT -->
+    <section class="view" id="v-recruit">
+      <div class="page-head">
+        <div><h1>🧲 Partner Recruitment — Open Territories</h1><p>Where live weather is hitting but we have no branded partner yet — vendors to onboard onto TELVERGENCE</p></div>
+      </div>
+
+      <div class="hero">
+        <div class="kpi"><div class="lbl">📍 Open Territories</div><div class="val" id="rTerr">0</div><div class="chg up">active weather · no coverage</div></div>
+        <div class="kpi"><div class="lbl">🏢 Prospective Vendors</div><div class="val" id="rProspects">0</div><div class="chg up">ready to recruit</div></div>
+        <div class="kpi"><div class="lbl">💰 Pipeline MRR (est.)</div><div class="val" id="rPipeline">$0</div><div class="chg up">if onboarded</div></div>
+        <div class="kpi"><div class="lbl">🎯 Avg Lead Value</div><div class="val" id="rLead">$0</div><div class="chg up">per territory / mo</div></div>
+      </div>
+
+      <div class="panel">
+        <h3>Open Territories — active weather, no partner</h3><div class="sub">live NWS alerts ∩ our coverage gaps · areas are real, prospect figures illustrative</div>
+        <table><thead><tr><th>Area</th><th>Active event</th><th>Severity</th><th>Recommended plan</th><th>Est. lead value / mo</th></tr></thead><tbody id="territoryBody"></tbody></table>
+      </div>
+
+      <div class="panel">
+        <h3>Target Vendor Prospects</h3><div class="sub">businesses that would benefit from the lead-generating Dispatch Command Center · sample prospect list</div>
+        <table><thead><tr><th>Business</th><th>Trade</th><th>Territory</th><th>Plan</th><th>Why they win</th></tr></thead><tbody id="prospectBody"></tbody></table>
+      </div>
+
+      <div class="panel">
+        <h3>The Offer — three ways to onboard a partner</h3><div class="sub">sell each new vendor on the plan that fits · one-time setup $1,499</div>
+        <div class="credo">
+          <div class="c"><h4><b>Starter</b> · $499/mo</h4><ul><li>Business phone + AI answering</li><li>Unlimited calling &amp; messaging</li><li>Branded caller ID (STIR/SHAKEN)</li><li>Best for 1–25 staff · single market</li></ul></div>
+          <div class="c"><h4><b>Growth</b> · $999/mo</h4><ul><li>Everything in Starter</li><li>Call transcription &amp; sentiment</li><li>CRM integration + campaign tracking</li><li>Best for 25–100 staff · multi-crew</li></ul></div>
+          <div class="c"><h4><b>Enterprise</b> · $2,499/mo</h4><ul><li>Everything in Growth</li><li>White-label platform</li><li>Blockchain records · multi-location</li><li>Best for 100+ · regional networks</li></ul></div>
+        </div>
+      </div>
+    </section>
+
     <!-- DEMOGRAPHICS -->
     <section class="view" id="v-demo-graphics">
       <div class="page-head"><div><h1>📊 Demographics</h1><p>Who you're reaching, where, and how · illustrative segments</p></div></div>
@@ -698,7 +732,7 @@
   // ---- nav ----
   const links=[...document.querySelectorAll('#nav a')];
   const ids={dash:'v-dash',conduit:'v-conduit',lifecycle:'v-lifecycle',ivr:'v-ivr',ai:'v-ai',
-    stormmap:'v-stormmap','demo-graphics':'v-demo-graphics',econ:'v-econ',brands:'v-brands',customers:'v-customers',revenue:'v-revenue'};
+    stormmap:'v-stormmap',recruit:'v-recruit','demo-graphics':'v-demo-graphics',econ:'v-econ',brands:'v-brands',customers:'v-customers',revenue:'v-revenue'};
   function show(v){
     links.forEach(a=>a.classList.toggle('on',a.dataset.view===v));
     Object.values(ids).forEach(id=>document.getElementById(id).classList.remove('on'));
@@ -879,6 +913,35 @@
   ];
   const gb=document.getElementById('gapsBody');
   if(gb)gb.innerHTML=GAPS.map(g=>`<tr><td><b>${g[0]}</b></td><td><small style="color:var(--muted)">${g[1]}</small></td><td>${g[2]}</td><td>${g[3]}</td></tr>`).join('');
+
+  // ---- partner recruitment: open territories = active weather ∩ no coverage ----
+  const TIER={Extreme:['Enterprise','$2,499',2499,60000],Severe:['Growth','$999',999,28000],Moderate:['Starter','$499',499,12000]};
+  function tierFor(s){return TIER[s]||TIER.Moderate;}
+  const TRADES={Extreme:'Storm Restoration',Severe:'Roofing & Exterior',Moderate:'General Contractor'};
+  const NAMEA=['Apex','Summit','Coastal','Frontier','Liberty','Ironclad','BlueSky','Patriot','Cardinal','Evergreen','Lone Star','Granite','Vanguard','Keystone'];
+  const NAMEZ=['Roofing','Restoration','Exteriors','Contracting','Services','Builders','Storm Pros','Construction'];
+  function bizName(i,trade){return `${NAMEA[i%NAMEA.length]} ${trade.split(' ')[0]} ${NAMEZ[(i*3)%NAMEZ.length]}`;}
+  const rtag=s=>s==='Extreme'?'t-warn':s==='Severe'?'t-verify':'t-live';
+  function buildRecruit(targets){
+    const seen=new Set(),list=[];
+    targets.forEach(t=>{if(t.area&&!seen.has(t.area)){seen.add(t.area);list.push(t);}});
+    const top=list.slice(0,12);
+    document.getElementById('territoryBody').innerHTML = top.length? top.map(t=>{
+      const tf=tierFor(t.sev);
+      return `<tr><td><b>${t.area}</b></td><td>${t.event}</td><td><span class="tag ${rtag(t.sev)}">${t.sev}</span></td><td>${tf[0]} (${tf[1]}/mo)</td><td><b>$${tf[3].toLocaleString()}</b></td></tr>`;
+    }).join('') : '<tr><td colspan="5" style="color:var(--muted)">No open territories with active weather right now — coverage is current 🎉</td></tr>';
+    document.getElementById('prospectBody').innerHTML = top.length? top.map((t,i)=>{
+      const tf=tierFor(t.sev), trade=TRADES[t.sev]||'Contractor';
+      const why=`Active ${t.event} — no local partner. Capture the lead surge via the Dispatch Command Center.`;
+      return `<tr><td><b>${bizName(i,trade)}</b></td><td>${trade}</td><td>${t.area}</td><td>${tf[0]} ${tf[1]}/mo</td><td><small style="color:var(--muted)">${why}</small></td></tr>`;
+    }).join('') : '<tr><td colspan="5" style="color:var(--muted)">—</td></tr>';
+    setTxt('rTerr',top.length); setTxt('rProspects',top.length);
+    setTxt('rPipeline',money(top.reduce((s,t)=>s+tierFor(t.sev)[2],0)));
+    setTxt('rLead',money(top.length?Math.round(top.reduce((s,t)=>s+tierFor(t.sev)[3],0)/top.length):0));
+  }
+  // initial fallback (simulated gaps) until live NWS data arrives
+  buildRecruit(GAPS.map((g,i)=>({area:g[0],event:'Severe weather risk',sev:i<2?'Extreme':'Severe'})));
+
   // live weather-alert ticker
   const ALERTS=[
     ['#ff5d73','EXTREME','Hurricane Watch — FL Atlantic Coast (Brevard, Indian River)'],
@@ -947,6 +1010,13 @@
         if(cell&&!cell.land)cell=nearestLand(r,c);
         if(cell&&cell.land){const w=SEVWX[f.sev]||1; if(w>cell.wx)cell.wx=w;} });
       if(layer==='weather')renderGrid();
+      // recruitment targets: real alerts landing on uncovered (gap) cells
+      const rtargets=[];
+      feats.forEach(f=>{const rc=repCoord(f.geom); if(!rc)return;
+        const [r,c]=lonLatCell(rc[0],rc[1]); let cell=cellAt(r,c);
+        if(cell&&!cell.land)cell=nearestLand(r,c);
+        if(cell&&cell.land&&cell.cov===0)rtargets.push({area:f.area,event:f.event,sev:f.sev}); });
+      if(rtargets.length)buildRecruit(rtargets);
       const sorted=feats.slice().sort((a,b)=>(SEVORD[a.sev]??9)-(SEVORD[b.sev]??9));
       const top=sorted.slice(0,40);
       const html=top.map(f=>`<span class="al"><span class="dot" style="background:${SEVCOL[f.sev]||'#8ea3c9'}"></span><b>${(f.sev||'').toUpperCase()}</b><small>${f.event} — ${f.area}</small></span>`).join('');
@@ -1029,6 +1099,7 @@
     {v:'ivr',s:10,t:'PBX / IVR Routing',n:'How an inbound contact flows: AI triage, emergency priority, opt-in capture — every branch written back to one unified timeline.'},
     {v:'ai',s:11,t:'AI Assistant',n:'Live transcription, sentiment and intent routing. Here it turns a distressed emergency caller into a dispatched crew in seconds.'},
     {v:'stormmap',s:13,t:'Storm Dispatch Command Center',n:'This is the magic: NOAA and NASA feeds flow into our Weather Intelligence Network, the nationwide grid lights up where storms hit, and the Storm Dispatch Command Center auto-routes crews to StormCrew, Roofing Crew and Restoration Royalty — turning weather into work and revenue.'},
+    {v:'recruit',s:13,t:'Partner Recruitment',n:'And here is the growth engine: we cross live weather against the areas we do NOT cover yet, surface the open territories, and produce a list of vendor businesses to recruit — each matched to a Starter, Growth, or Enterprise plan. Weather creates demand; this turns that demand into new partners on TELVERGENCE.'},
     {v:'demo-graphics',s:9,t:'Demographics',n:'Who we reach, where they are, what device they prefer, and exactly when they respond.'},
     {v:'econ',s:13,t:'Market Economics',n:'The model: create demand, control supply, set the price — grounded in standard supply-and-demand theory, and our 3 E’s, T’s and C’s credo.'},
     {v:'brands',s:9,t:'Brands',n:'Every white-label brand running on the very same platform you’re looking at.'},
