@@ -94,6 +94,29 @@
   .bars .b .col{width:62%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,var(--cyan),var(--violet));transition:height .5s ease}
   .bars .b small{color:var(--muted);font-size:10px}
 
+  /* profit step-down (KOI) */
+  .pnl-head{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end;margin-bottom:16px}
+  .pnl-head .big-stat{display:flex;flex-direction:column}
+  .pnl-head .big-stat .k{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+  .pnl-head .big-stat .v{font-size:32px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--lime)}
+  .pnl-head .big-stat.alt .v{font-size:24px;color:var(--cyan)}
+  .pnl-head .big-stat .m{font-size:12px;color:var(--muted)}
+  .pnl{display:flex;align-items:flex-end;gap:4px;height:215px}
+  .pnl .step{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:7px;height:100%}
+  .pnl .amt{font-weight:800;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .pnl .colwrap{width:78%;height:128px;display:flex;align-items:flex-end}
+  .pnl .col{width:100%;border-radius:6px 6px 0 0;transition:height .5s ease}
+  .pnl .cap{font-size:11px;color:var(--muted);text-align:center;line-height:1.35}
+  .pnl .cap b{display:block;color:var(--ink);font-size:12px}
+  .pnl .cap span{color:var(--cyan);font-weight:800}
+  .pnl .ded{flex:0 0 58px;align-self:center;font-size:10px;color:var(--red);text-align:center;line-height:1.3}
+  .pnl .ded .ar{font-size:14px;color:var(--muted);display:block}
+  .c-rev{background:linear-gradient(180deg,#37c0ff,var(--cyan))}
+  .c-gross{background:linear-gradient(180deg,var(--cyan),var(--lime))}
+  .c-op{background:linear-gradient(180deg,var(--lime),var(--violet))}
+  .c-net{background:linear-gradient(180deg,var(--violet),var(--amber))}
+  .c-netnet{background:linear-gradient(180deg,var(--amber),var(--lime));box-shadow:0 0 18px rgba(0,255,136,.4)}
+
   /* funnel */
   .funnel{display:flex;flex-direction:column;gap:7px}
   .stage{display:flex;align-items:center;gap:12px}
@@ -229,6 +252,42 @@
         <div class="kpi"><div class="lbl">💬 Active Conversations</div><div class="val" id="kActive">0</div><div class="chg up">across 12 channels</div></div>
         <div class="kpi"><div class="lbl">🔌 Channels Online</div><div class="val">12 / 12</div><div class="chg up">100% conduit health</div></div>
       </div>
+
+      <div class="panel">
+        <h3>💵 Profit Step-Down — Real-Time KOIs</h3><div class="sub">Gross → Operating → Net → Net-Net, recalculated live as revenue flows · illustrative model</div>
+        <div class="pnl-head">
+          <div class="big-stat"><span class="k">Net Profit · today</span><span class="v" id="pNetBig">$0</span><span class="m" id="pNetMargin">26% net margin</span></div>
+          <div class="big-stat alt"><span class="k">Net-Net (retained)</span><span class="v" id="pNetNetBig">$0</span><span class="m" id="pNetNetMargin">18% after reserves</span></div>
+          <div class="big-stat alt"><span class="k">Gross Profit</span><span class="v" id="pGrossBig" style="color:var(--lime)">$0</span><span class="m">68% gross margin</span></div>
+        </div>
+        <div class="pnl">
+          <div class="step"><div class="amt" id="pRev">$0</div><div class="colwrap"><div class="col c-rev" style="height:100%"></div></div><div class="cap"><b>Revenue</b><span>100%</span></div></div>
+          <div class="ded"><span class="ar">▼</span>− COGS<br>32%</div>
+          <div class="step"><div class="amt" id="pGross">$0</div><div class="colwrap"><div class="col c-gross" style="height:68%"></div></div><div class="cap"><b>Gross Profit</b><span>68%</span></div></div>
+          <div class="ded"><span class="ar">▼</span>− OpEx<br>34%</div>
+          <div class="step"><div class="amt" id="pOp">$0</div><div class="colwrap"><div class="col c-op" style="height:34%"></div></div><div class="cap"><b>Operating</b><span>34%</span></div></div>
+          <div class="ded"><span class="ar">▼</span>− Tax/Int<br>8%</div>
+          <div class="step"><div class="amt" id="pNet">$0</div><div class="colwrap"><div class="col c-net" style="height:26%"></div></div><div class="cap"><b>Net Profit</b><span>26%</span></div></div>
+          <div class="ded"><span class="ar">▼</span>− Reserve/Dist<br>8%</div>
+          <div class="step"><div class="amt" id="pNetNet">$0</div><div class="colwrap"><div class="col c-netnet" style="height:18%"></div></div><div class="cap"><b>Net-Net</b><span>18%</span></div></div>
+        </div>
+      </div>
+
+      <div class="hero">
+        <div class="kpi"><div class="lbl">📈 ROI (marketing)</div><div class="val" id="pROI">0×</div><div class="chg up" id="pROIm">live</div></div>
+        <div class="kpi"><div class="lbl">🎯 Cost per Lead</div><div class="val" id="pCPL">$0</div><div class="chg up">blended, all channels</div></div>
+        <div class="kpi"><div class="lbl">🧾 Avg Gross Rev / Job</div><div class="val">$1,840</div><div class="chg up">▲ 5.2%</div></div>
+        <div class="kpi"><div class="lbl">👤 Avg Gross Rev / Customer</div><div class="val">$11,600</div><div class="chg up">▲ 7.0%</div></div>
+      </div>
+
+      <div class="panel">
+        <h3>📊 Average Gross Revenue by Onboarded Level</h3><div class="sub">Per-unit economics across the partner ladder — job → network partner · illustrative</div>
+        <table>
+          <thead><tr><th>Onboarded level</th><th>Onboarded</th><th>Avg gross revenue</th><th>Relative</th></tr></thead>
+          <tbody id="tierBody"></tbody>
+        </table>
+      </div>
+
       <div class="grid2">
         <div>
           <div class="panel">
@@ -594,7 +653,49 @@
     elI.textContent=interactions.toLocaleString();
     elV.textContent=burst;
     elA.textContent=Math.max(1800,active).toLocaleString();
+    updateProfit();
   }
+
+  // ---- profit step-down (KOIs), tied to live revenue ----
+  const REV_PER_INTERACTION=0.21;   // illustrative
+  const M_GROSS=0.68, M_OP=0.34, M_NET=0.26, M_NETNET=0.18;  // margins of revenue
+  const money=v=>'$'+Math.round(v).toLocaleString();
+  function setTxt(id,val){const el=document.getElementById(id);if(el)el.textContent=val;}
+  function updateProfit(){
+    const rev=interactions*REV_PER_INTERACTION;
+    setTxt('pRev',money(rev));
+    setTxt('pGross',money(rev*M_GROSS));
+    setTxt('pOp',money(rev*M_OP));
+    setTxt('pNet',money(rev*M_NET));
+    setTxt('pNetNet',money(rev*M_NETNET));
+    setTxt('pNetBig',money(rev*M_NET));
+    setTxt('pNetNetBig',money(rev*M_NETNET));
+    setTxt('pGrossBig',money(rev*M_GROSS));
+    // ROI + cost per lead, live
+    const spend=interactions*0.03;
+    const leads=Math.max(1,Math.round(interactions*0.006));
+    const roi=spend>0?(rev*M_NET)/spend:0;
+    setTxt('pROI',roi.toFixed(1)+'×');
+    setTxt('pROIm','▲ '+Math.round(roi*100)+'% on spend');
+    setTxt('pCPL','$'+(spend/leads).toFixed(2));
+  }
+
+  // ---- average gross revenue by onboarded level (partner ladder) ----
+  const TIERS=[
+    ['Job',3420,1840],
+    ['Project',940,7250],
+    ['Customer',1247,11600],
+    ['Client (managed)',312,28400],
+    ['Vendor',86,4300],
+    ['Service Provider',41,64000],
+    ['White-Label Wholesale Distributor',12,185000],
+    ['Network Solution Provider (Partner)',5,420000],
+  ];
+  const maxTier=Math.max(...TIERS.map(t=>t[2]));
+  document.getElementById('tierBody').innerHTML=TIERS.map(t=>
+    `<tr><td>${t[0]}</td><td>${t[1].toLocaleString()}</td><td><b>$${t[2].toLocaleString()}</b></td>`+
+    `<td><div class="bar-mini"><i style="width:${(t[2]/maxTier*100).toFixed(0)}%"></i></div></td></tr>`).join('');
+
   liveTick(); setInterval(liveTick,1000);
 
   // ---- throughput bars ----
@@ -653,7 +754,7 @@
 
   // ---- guided auto-tour ----
   const TOUR=[
-    {v:'dash',s:10,t:'Command Center',n:'The real-time heartbeat — every customer interaction across every channel, streaming live. Watch the velocity counter climb.'},
+    {v:'dash',s:13,t:'Command Center',n:'The real-time heartbeat — every interaction across every channel, streaming live. And the Profit Step-Down KOIs recalculate live: Revenue → Gross → Operating → Net → Net-Net, right as the money flows.'},
     {v:'conduit',s:11,t:'Omnichannel Conduit',n:'One bi-directional pipe: inbound on the left, outbound on the right, across all 12 channels — SMS, voice, email, push, ringless VM, geofencing, 2FA and more.'},
     {v:'lifecycle',s:10,t:'Customer Lifecycle',n:'We move people from Reach to Advocate — and see the volume and the speed at every stage of the journey.'},
     {v:'ivr',s:10,t:'PBX / IVR Routing',n:'How an inbound contact flows: AI triage, emergency priority, opt-in capture — every branch written back to one unified timeline.'},
