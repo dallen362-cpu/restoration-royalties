@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TELVERGENCE Kingdom — Presentation Kit</title>
+<style>
+  :root{
+    --midnight:#0A0E1A; --cyan:#00D4FF; --lime:#00FF88; --violet:#7B61FF;
+    --ink:#eaf2ff; --muted:#9fb3d6; --line:#2a3a5e; --card:#141d33;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);min-height:100vh;
+    background:radial-gradient(1100px 640px at 50% -10%,#1a2547,var(--midnight) 60%);
+    padding:46px 20px 70px;display:flex;flex-direction:column;align-items:center}
+  .kicker{letter-spacing:4px;font-size:13px;text-transform:uppercase;color:var(--cyan);text-align:center}
+  .big{font-size:78px;text-align:center;margin:8px 0}
+  h1{font-size:clamp(30px,6vw,52px);text-align:center;line-height:1.05;
+    background:linear-gradient(90deg,var(--cyan),var(--lime),var(--violet));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--muted);text-align:center;max-width:620px;margin:14px auto 36px;font-size:18px}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;
+    max-width:920px;width:100%}
+  a.card{display:block;text-decoration:none;color:inherit;background:var(--card);
+    border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .15s,border-color .15s,box-shadow .15s}
+  a.card:hover{transform:translateY(-5px);border-color:var(--cyan);box-shadow:0 14px 40px rgba(0,212,255,.16)}
+  a.card .ico{font-size:46px}
+  a.card h2{font-size:22px;margin:12px 0 6px}
+  a.card p{color:var(--muted);font-size:14px;line-height:1.5}
+  a.card .go{margin-top:14px;display:inline-block;font-weight:800;color:var(--cyan)}
+  .c1:hover{border-color:var(--cyan)} .c2:hover{border-color:var(--lime)} .c3:hover{border-color:var(--violet)}
+
+  .strip{max-width:920px;width:100%;margin-top:34px;background:rgba(255,255,255,.03);
+    border:1px solid var(--line);border-radius:16px;padding:22px 26px}
+  .strip h3{font-size:15px;letter-spacing:1px;text-transform:uppercase;color:var(--lime);margin-bottom:10px}
+  .strip .links{display:flex;flex-wrap:wrap;gap:10px}
+  .strip a{font-size:13px;color:var(--cyan);text-decoration:none;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px}
+  .strip a:hover{border-color:var(--cyan)}
+  .foot{color:var(--muted);font-size:13px;margin-top:34px;text-align:center;max-width:680px}
+  .stamp{display:inline-block;margin-top:14px;padding:9px 18px;border:1px dashed var(--lime);
+    border-radius:999px;color:var(--lime);font-weight:800;font-size:13px}
+</style>
+</head>
+<body>
+
+  <div class="kicker">The Co-Work Campaign</div>
+  <div class="big">👑🏰👑</div>
+  <h1>TELVERGENCE Kingdom — Presentation Kit</h1>
+  <p class="sub">One place for everything. Pick how you want to explore or present the kingdom.</p>
+
+  <div class="cards">
+    <a class="card c1" href="kingdom-map.html">
+      <div class="ico">🗺️</div>
+      <h2>The Kingdom Map</h2>
+      <p>One colorful page showing the castle, all 9 villages with their live/asleep status, the shield plan, and the locked treasure boxes.</p>
+      <span class="go">Open the map →</span>
+    </a>
+
+    <a class="card c2" href="kingdom-slideshow.html">
+      <div class="ico">🎬</div>
+      <h2>The Slideshow</h2>
+      <p>A 9-slide click-through story — with built-in 📝 speaker notes (press <b>N</b>) so anyone can present it confidently.</p>
+      <span class="go">Start the show →</span>
+    </a>
+
+    <a class="card c3" href="poster.html">
+      <div class="ico">📄</div>
+      <h2>The Poster (PDF)</h2>
+      <p>A print-ready one-sheet summary. Open it and choose <b>“Save as PDF”</b> to hand out or pin on the wall.</p>
+      <span class="go">Open the poster →</span>
+    </a>
+  </div>
+
+  <div class="strip">
+    <h3>📚 The Details (for the curious)</h3>
+    <div class="links">
+      <a href="README.md">Campaign README</a>
+      <a href="SITES.md">All site links</a>
+      <a href="TELVERGENCE-CONSOLIDATION.md">TELVERGENCE material</a>
+      <a href="HOSTING-AND-ACCESS-PLAN.md">Shield / hosting plan</a>
+      <a href="cloudflare/RUNBOOK.md">Cloudflare runbook</a>
+      <a href="INTAKE-CHECKLIST.md">What's still needed</a>
+    </div>
+  </div>
+
+  <div class="foot">
+    Everything here is self-contained — no internet required. Saved in the <b>cowork-campaign</b> folder and sealed in Pull Request #1.
+    <br><span class="stamp">✅ COMPLETE PRESENTATION KIT</span>
+  </div>
+
+</body>
+</html>
