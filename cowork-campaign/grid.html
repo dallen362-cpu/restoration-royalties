@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>WIN National Grid — Authorized Dedicated Providers & Saturation</title>
+<style>
+  :root{--midnight:#0A0E1A;--navy:#10182e;--card:#16213d;--line:#26345a;
+    --cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--amber:#ffc24b;--red:#ff5d73;--ink:#eaf2ff;--muted:#8ea3c9;
+    --g:"Segoe UI",system-ui,Arial,sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--g);color:var(--ink);background:var(--midnight);line-height:1.5}
+  .grad{background:linear-gradient(90deg,var(--cyan),var(--lime),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+  a{color:var(--cyan)}
+  .bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:11px 18px;background:rgba(10,14,26,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar .logo{font-weight:800;letter-spacing:1px}.bar .logo b{color:var(--cyan)}
+  .bar .right{margin-left:auto;display:flex;gap:8px}
+  .btn{border:none;cursor:pointer;font-family:var(--g);font-weight:800;border-radius:10px;padding:11px 17px;font-size:13.5px;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+  .btn-primary{background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c}
+  .btn-ghost{background:rgba(255,255,255,.06);color:var(--ink);border:1px solid var(--line)}
+  .btn-sm{padding:8px 13px;font-size:12.5px}
+  .btn-claim{background:var(--cyan);color:#04121c}.btn-cycle{background:var(--violet);color:#fff}
+
+  .hero{padding:32px 0 8px;text-align:center;position:relative}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(900px 360px at 50% -10%,#1c2a52,var(--midnight) 60%)}
+  .kick{letter-spacing:3px;font-size:12px;text-transform:uppercase;color:var(--cyan);font-weight:700}
+  .hero h1{font-size:clamp(24px,4.6vw,40px);margin:8px auto 6px;max-width:20ch}
+  .hero p{color:#cdddf6;max-width:660px;margin:0 auto;font-size:15.5px}
+
+  .sat{max-width:680px;margin:20px auto 6px}
+  .sat .top{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px}
+  .sat .top b{color:var(--lime);font-size:18px}
+  .satbar{height:16px;border-radius:999px;background:var(--navy);border:1px solid var(--line);overflow:hidden}
+  .satbar i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--lime));transition:width .6s}
+
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin:18px 0}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px;text-align:center}
+  .kpi .v{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}.kpi .l{font-size:11px;color:var(--muted);margin-top:3px}
+  .kpi.l2 .v{color:var(--lime)}.kpi.c .v{color:var(--cyan)}.kpi.a .v{color:var(--amber)}.kpi.m .v{color:var(--muted)}
+
+  .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-left:auto}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+  .l-open{background:#1b2748;border:1px solid var(--line)}
+  .l-other{background:var(--cyan)}.l-mine{background:var(--lime)}.l-risk{background:var(--amber)}.l-pend{background:var(--violet)}
+
+  .layout{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start;padding-bottom:40px}
+  @media(max-width:880px){.layout{grid-template-columns:1fr}}
+  .gridbox{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px}
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:4px}
+  .cell{aspect-ratio:1;border-radius:4px;background:#1b2748;border:1px solid #243357;cursor:pointer;transition:transform .1s,box-shadow .1s;position:relative}
+  .cell:hover{transform:scale(1.18);z-index:2;box-shadow:0 0 0 2px var(--ink)}
+  .cell.other{background:var(--cyan)}.cell.mine{background:var(--lime)}
+  .cell.risk{background:var(--amber);animation:pulse 1.4s infinite}
+  .cell.pend{background:var(--violet);animation:pulse 1.4s infinite}
+  .cell.sel{box-shadow:0 0 0 2px #fff}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
+
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;position:sticky;top:70px}
+  .panel h2{font-size:15px;margin-bottom:4px}.panel .lead{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .terr{font-size:26px;font-weight:800;font-family:var(--g)}
+  .stat{display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid #16233f}
+  .stat b{font-variant-numeric:tabular-nums}
+  .perf{height:10px;border-radius:999px;background:var(--navy);border:1px solid var(--line);overflow:hidden;margin:8px 0 4px}
+  .perf i{display:block;height:100%}
+  .badge{display:inline-block;font-size:11px;font-weight:800;border-radius:999px;padding:3px 10px;margin-bottom:10px}
+  .b-open{background:rgba(142,163,201,.16);color:var(--muted)}
+  .b-other{background:rgba(0,212,255,.16);color:var(--cyan)}
+  .b-mine{background:rgba(0,255,136,.16);color:var(--lime)}
+  .b-risk{background:rgba(255,194,75,.18);color:var(--amber)}
+  .b-pend{background:rgba(123,97,255,.18);color:#b9a9ff}
+  .panel .btn{width:100%;justify-content:center;margin-top:8px}
+
+  .twoway{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 30px}
+  @media(max-width:700px){.twoway{grid-template-columns:1fr}}
+  .ww{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .ww h3{font-size:14px;margin-bottom:6px}.ww p{font-size:12.5px;color:var(--muted)}
+  .ww .flowrow{display:flex;align-items:center;gap:8px;font-size:12px;margin-top:10px;color:var(--ink)}
+  .ww .ar{color:var(--cyan);font-weight:800}
+  h2.sec{font-size:13px;letter-spacing:1px;text-transform:uppercase;margin:8px 0 14px;display:flex;align-items:center;gap:10px;color:var(--cyan)}
+  h2.sec::after{content:"";flex:1;height:1px;background:var(--line)}
+  .disc{background:#0b1426;border-top:1px solid var(--line);padding:16px 0;font-size:11.5px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="logo"><b>WIN</b> National Grid</div>
+  <div class="right">
+    <a class="btn btn-ghost btn-sm" href="partner.html">💰 Partner</a>
+    <a class="btn btn-ghost btn-sm" href="funnel.html">⚡ Activate</a>
+    <a class="btn btn-ghost btn-sm" href="telvergence-demo.html">🛰️ Dashboard</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kick">Authorized Dedicated Providers · national grid saturation</div>
+    <h1>One territory. One <span class="grad">WIN Authorized Dedicated Provider.</span></h1>
+    <p>Every grid area is awarded to a single provider who qualifies and performs. Claim your territory, earn your wholesale regional position, and keep it by performing — together driving toward total national grid saturation.</p>
+    <div class="sat">
+      <div class="top"><span>National grid saturation</span><b id="satPct">0%</b></div>
+      <div class="satbar"><i id="satBar" style="width:0%"></i></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="kpis">
+    <div class="kpi l2"><div class="v" id="kMine">0</div><div class="l">Your dedicated grids</div></div>
+    <div class="kpi c"><div class="v" id="kOther">0</div><div class="l">Other providers</div></div>
+    <div class="kpi a"><div class="v" id="kRisk">0</div><div class="l">At-risk (open to challenge)</div></div>
+    <div class="kpi m"><div class="v" id="kOpen">0</div><div class="l">Open territories</div></div>
+  </div>
+
+  <div class="controls">
+    <button class="btn btn-cycle btn-sm" id="cycleBtn">▶ Run national sales cycle</button>
+    <button class="btn btn-ghost btn-sm" id="resetBtn" style="color:var(--red);border-color:rgba(255,93,115,.5)">↻ Reset</button>
+    <div class="legend">
+      <span><i class="l-mine"></i>You (authorized)</span>
+      <span><i class="l-other"></i>Other provider</span>
+      <span><i class="l-pend"></i>Qualifying</span>
+      <span><i class="l-risk"></i>At-risk</span>
+      <span><i class="l-open"></i>Open</span>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="gridbox"><div class="grid" id="grid"></div></div>
+    <div>
+      <div class="panel" id="panel">
+        <h2>Select a territory</h2>
+        <div class="lead">Click any grid cell to inspect its provider, performance, and status — or claim an open one.</div>
+        <div id="detail" style="display:none"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sec">🔁 The two-way dialer marketplace</h2>
+  <div class="twoway">
+    <div class="ww">
+      <h3>🏢 Business → end users</h3>
+      <p>Every business uses the WIN dialer/contact system to prospect end users in its grid — SMS, calls, ringless VM, the full omnichannel conduit.</p>
+      <div class="flowrow">Business <span class="ar">→ dialer →</span> prospective end users</div>
+    </div>
+    <div class="ww">
+      <h3>🏠 End user → local business</h3>
+      <p>Every subscriber is also a distributor: end users access the same dialer to solicit local businesses for services — and earn commissions on what they originate.</p>
+      <div class="flowrow">End user <span class="ar">→ dialer →</span> local business <span class="ar">+</span> 10% commission</div>
+    </div>
+  </div>
+</div>
+
+<div class="disc">
+  <div class="wrap">
+    💡 <b>Illustrative grid-saturation model.</b> Territories, providers, performance scores, and saturation are sample data. The "WIN Authorized Dedicated Provider" exclusivity, wholesale/resale distributor roles, and commission structure are concepts to validate. <b>Exclusive territory grants, wholesale distribution, and consumer commissions on restoration/insurance work are regulated by state and by franchise/antitrust law — verify with counsel before launch.</b> No SSN is used. · <a href="partner.html">Partner portal</a> · <a href="funnel.html">Activate</a>
+  </div>
+</div>
+
+<script>
+  var KEY='telv_grid_v1', COLS=12, ROWS=8, N=COLS*ROWS, THRESH=60, RISK=40;
+  var OTHERS=['Apex Restoration','Summit Roofing','DryFast Co','Coastal GC','Timberline','BrightSky','Ironclad Exteriors','StormGuard','Premier Mitigation'];
+  function rnd(a,b){ return a+Math.floor(Math.random()*(b-a+1)); }
+  function seed(){
+    var cells=[];
+    for(var i=0;i<N;i++){
+      var r=Math.random(), c={id:i, status:'open', perf:0, prov:''};
+      if(r<0.34){ c.status='other'; c.prov=OTHERS[rnd(0,OTHERS.length-1)]; c.perf=rnd(55,96); }
+      else if(r<0.42){ c.status='risk'; c.prov=OTHERS[rnd(0,OTHERS.length-1)]; c.perf=rnd(18,39); }
+      cells.push(c);
+    }
+    // give the user two starter authorized grids
+    [28,41].forEach(function(ix){ cells[ix]={id:ix,status:'mine',perf:rnd(70,90),prov:'You'}; });
+    return {cells:cells, sel:null};
+  }
+  var S=load();
+  function load(){ try{var x=localStorage.getItem(KEY); if(x)return JSON.parse(x);}catch(e){} return seed(); }
+  function save(){ try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){} }
+  var $=function(id){return document.getElementById(id);};
+  function gid(i){ return 'G-'+String(i+1).padStart(3,'0'); }
+
+  function counts(){
+    var mine=0,other=0,risk=0,open=0,pend=0;
+    S.cells.forEach(function(c){ if(c.status==='mine')mine++; else if(c.status==='other')other++;
+      else if(c.status==='risk')risk++; else if(c.status==='pend')pend++; else open++; });
+    return {mine:mine,other:other,risk:risk,open:open,pend:pend};
+  }
+  function render(){
+    var g=$('grid'); if(!g.children.length){
+      S.cells.forEach(function(c){ var d=document.createElement('div'); d.className='cell'; d.dataset.i=c.id; g.appendChild(d); });
+    }
+    [].forEach.call(g.children,function(d){ var c=S.cells[+d.dataset.i];
+      d.className='cell '+(c.status==='open'?'':c.status)+(S.sel===c.id?' sel':''); });
+    var k=counts();
+    $('kMine').textContent=k.mine; $('kOther').textContent=k.other+k.pend; $('kRisk').textContent=k.risk; $('kOpen').textContent=k.open;
+    var covered=N-k.open, pct=Math.round(covered/N*100);
+    $('satPct').textContent=pct+'%'; $('satBar').style.width=pct+'%';
+    renderDetail();
+  }
+  function renderDetail(){
+    var d=$('detail'), p=$('panel');
+    if(S.sel===null){ d.style.display='none'; p.querySelector('h2').textContent='Select a territory'; return; }
+    p.querySelector('h2').textContent='Territory '+gid(S.sel);
+    p.querySelector('.lead').style.display='none';
+    var c=S.cells[S.sel];
+    var badge={open:['b-open','Open territory'],other:['b-other','Held by another provider'],
+      mine:['b-mine','Your authorized dedicated grid'],risk:['b-risk','At-risk — open to challenge'],pend:['b-pend','Qualifying…']}[c.status];
+    var perfColor=c.perf>=THRESH?'var(--lime)':c.perf>=RISK?'var(--amber)':'var(--red)';
+    var html='<div class="terr">'+gid(c.id)+'</div>'+
+      '<span class="badge '+badge[0]+'">'+badge[1]+'</span>'+
+      '<div class="stat"><span>Provider</span><b>'+(c.prov||'— none —')+'</b></div>'+
+      '<div class="stat"><span>Status</span><b>'+badge[1]+'</b></div>';
+    if(c.status!=='open'){
+      html+='<div class="stat" style="border:none"><span>Performance score</span><b>'+c.perf+'/100</b></div>'+
+        '<div class="perf"><i style="width:'+c.perf+'%;background:'+perfColor+'"></i></div>'+
+        '<div class="lead" style="display:block;margin:4px 0 0">Hold threshold '+THRESH+' · below '+RISK+' = at-risk</div>';
+    }
+    // actions
+    if(c.status==='open'){
+      html+='<button class="btn btn-claim" data-act="claim">Claim this grid — become the WIN provider</button>';
+    } else if(c.status==='pend'||c.status==='mine'){
+      html+='<button class="btn btn-cycle" data-act="work">▶ Run a sales cycle here</button>';
+    } else if(c.status==='risk'){
+      html+='<button class="btn btn-claim" data-act="challenge">Challenge & take this at-risk grid</button>';
+    } else { // other
+      html+='<div class="lead" style="display:block">Held by '+c.prov+'. You can take it only if it falls to <b>at-risk</b>.</div>';
+    }
+    d.innerHTML=html; d.style.display='block';
+  }
+
+  $('grid').addEventListener('click',function(e){ var d=e.target.closest('.cell'); if(!d)return; S.sel=+d.dataset.i; render(); });
+  $('detail').addEventListener('click',function(e){
+    var b=e.target.closest('[data-act]'); if(!b||S.sel===null)return; var c=S.cells[S.sel], act=b.dataset.act;
+    if(act==='claim'||act==='challenge'){ c.status='pend'; c.prov='You'; c.perf=rnd(30,45); }
+    else if(act==='work'){ c.perf=Math.min(100,c.perf+rnd(10,22));
+      if(c.perf>=THRESH){ c.status='mine'; } else { c.status='pend'; } }
+    save(); render();
+  });
+
+  $('cycleBtn').onclick=function(){
+    S.cells.forEach(function(c){
+      if(c.status==='mine'||c.status==='pend'){ c.perf=Math.min(100,c.perf+rnd(4,12)); if(c.perf>=THRESH)c.status='mine'; }
+      else if(c.status==='other'){ c.perf+=rnd(-9,5); if(c.perf<RISK){ c.status='risk'; } }
+      else if(c.status==='risk'){ c.perf+=rnd(-6,7); }
+    });
+    save(); render();
+  };
+  $('resetBtn').onclick=function(){ if(confirm('Reset the grid?')){ localStorage.removeItem(KEY); S=load(); $('grid').innerHTML=''; render(); } };
+  render();
+</script>
+<script src="assets/telv-track.js"></script>
+</body>
+</html>
