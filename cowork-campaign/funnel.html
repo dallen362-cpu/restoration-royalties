@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>TELVERGENCE — Instant Smart DID · Intake & Activation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --midnight:#0A0E1A; --navy:#10182e; --card:#16213d; --card2:#1b2748; --line:#26345a;
+    --cyan:#00D4FF; --lime:#00FF88; --violet:#7B61FF; --amber:#ffc24b; --red:#ff5d73;
+    --stripe:#635bff; --ink:#eaf2ff; --muted:#8ea3c9;
+    --g-sans:"Google Sans","Segoe UI",system-ui,Arial,sans-serif;
+    --roboto:"Roboto","Segoe UI",system-ui,Arial,sans-serif;
+    --shadow1:0 1px 2px rgba(0,0,0,.4),0 2px 6px rgba(0,0,0,.3);
+    --shadow2:0 6px 22px rgba(0,0,0,.45);
+    --shadow3:0 18px 48px rgba(0,0,0,.55);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--roboto);color:var(--ink);background:var(--midnight);overflow-x:hidden;line-height:1.6}
+  h1,h2,h3,h4,.g{font-family:var(--g-sans)}
+  .grad{background:linear-gradient(90deg,var(--cyan),var(--lime),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  section{position:relative;padding:78px 0}
+  .kicker{letter-spacing:3px;font-size:12px;text-transform:uppercase;color:var(--cyan);font-weight:700}
+  .muted{color:var(--muted)}
+  .center{text-align:center}
+
+  /* ---- top app bar (Material) ---- */
+  .bar{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;
+    padding:12px 20px;background:rgba(10,14,26,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .bar .logo{font-family:var(--g-sans);font-weight:700;letter-spacing:1px;font-size:16px}
+  .bar .logo b{color:var(--cyan)}
+  .bar .nav{display:flex;gap:6px;align-items:center}
+  .bar .nav a{color:var(--muted);text-decoration:none;font-size:13px;padding:8px 12px;border-radius:8px}
+  .bar .nav a:hover{color:var(--ink);background:rgba(255,255,255,.05)}
+  .bar .cta{background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c !important;font-weight:700}
+  @media(max-width:720px){.bar .nav a.hideSm{display:none}}
+
+  /* ---- buttons w/ ripple ---- */
+  .btn{position:relative;overflow:hidden;border:none;cursor:pointer;font-family:var(--g-sans);font-weight:700;
+    border-radius:12px;padding:15px 26px;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:9px;
+    transition:transform .12s,box-shadow .15s}
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c;box-shadow:var(--shadow2)}
+  .btn-primary:hover{box-shadow:0 10px 34px rgba(0,212,255,.4)}
+  .btn-ghost{background:rgba(255,255,255,.06);color:var(--ink);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--cyan)}
+  .btn-stripe{background:var(--stripe);color:#fff;box-shadow:var(--shadow2)}
+  .ripple{position:absolute;border-radius:50%;transform:scale(0);background:rgba(255,255,255,.45);animation:rip .6s linear;pointer-events:none}
+  @keyframes rip{to{transform:scale(4);opacity:0}}
+
+  /* ---- hero ---- */
+  .hero{padding-top:60px;text-align:center;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-2;
+    background:radial-gradient(1200px 600px at 50% -8%,#1c2a52,var(--midnight) 62%)}
+  .hero .pulse{position:absolute;left:50%;top:-60px;transform:translateX(-50%);z-index:-1;width:760px;height:760px;border-radius:50%;
+    background:radial-gradient(circle,rgba(0,212,255,.16),transparent 60%);animation:breathe 5s ease-in-out infinite}
+  @keyframes breathe{0%,100%{opacity:.55;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.08)}}
+  .hero h1{font-size:clamp(34px,6.4vw,66px);line-height:1.04;margin:16px auto 0;max-width:14ch;font-weight:700}
+  .hero p.lead{font-size:clamp(17px,2.4vw,21px);color:#cdddf6;max-width:680px;margin:20px auto 8px}
+  .hero .save{display:inline-flex;align-items:center;gap:8px;margin:18px auto;color:var(--lime);font-weight:700;
+    border:1px solid rgba(0,255,136,.4);border-radius:999px;padding:8px 18px;font-size:14px;background:rgba(0,255,136,.07)}
+  .hero .acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+  .trust{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-top:40px;color:var(--muted);font-size:13px}
+  .trust b{color:var(--ink)}
+
+  /* live phone mock in hero */
+  .phonewrap{margin:46px auto 0;max-width:340px;position:relative}
+  .phone{background:#05101f;border:8px solid #1d2a48;border-radius:36px;padding:18px 16px 22px;box-shadow:var(--shadow3);position:relative}
+  .phone .notch{width:120px;height:20px;background:#1d2a48;border-radius:0 0 14px 14px;margin:-18px auto 12px}
+  .phone .row{display:flex;align-items:center;gap:10px;padding:9px 0;font-size:13px;border-bottom:1px solid #15233f}
+  .phone .row:last-child{border:none}
+  .phone .dot{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);flex:none}
+  .phone .num{font-family:var(--roboto);font-weight:700;color:var(--cyan);font-variant-numeric:tabular-nums}
+  .ring{margin-left:auto;color:var(--lime);font-weight:700;animation:flash 1.1s ease-in-out infinite}
+  @keyframes flash{0%,100%{opacity:.35}50%{opacity:1}}
+
+  /* ---- scroll reveal ---- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---- section heads ---- */
+  .shead{max-width:760px;margin:0 auto 44px;text-align:center}
+  .shead h2{font-size:clamp(26px,4.4vw,40px);font-weight:700;margin:10px 0}
+  .shead p{color:var(--muted);font-size:17px}
+
+  /* ---- clip grid (animated "video" cards) ---- */
+  .clips{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+  .clip{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow1)}
+  .clip .screen{position:relative;height:188px;background:#05101f;overflow:hidden}
+  .clip .badge{position:absolute;top:10px;left:10px;z-index:3;font-size:10px;font-weight:700;letter-spacing:1px;
+    text-transform:uppercase;color:#04121c;background:var(--lime);border-radius:6px;padding:3px 8px;display:flex;align-items:center;gap:5px}
+  .clip .badge .rec{width:7px;height:7px;border-radius:50%;background:#04121c;animation:flash 1.2s infinite}
+  .clip .cap{padding:16px 18px 20px}
+  .clip .cap h4{font-size:17px;margin-bottom:6px}
+  .clip .cap p{font-size:13.5px;color:var(--muted)}
+  .clip .prog{height:3px;background:rgba(255,255,255,.08)}
+  .clip .prog i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--lime));width:0;animation:scrub 6s linear infinite}
+  @keyframes scrub{0%{width:0}100%{width:100%}}
+
+  /* clip 1 — storm map */
+  .map{position:absolute;inset:0;background:
+    linear-gradient(rgba(0,212,255,.07) 1px,transparent 1px) 0 0/100% 22px,
+    linear-gradient(90deg,rgba(0,212,255,.07) 1px,transparent 1px) 0 0/30px 100%}
+  .storm{position:absolute;border-radius:50%;filter:blur(1px)}
+  .s1{width:46px;height:46px;left:24%;top:42%;background:radial-gradient(circle,var(--red),transparent 70%);animation:pop 3s ease-in-out infinite}
+  .s2{width:34px;height:34px;left:58%;top:30%;background:radial-gradient(circle,var(--amber),transparent 70%);animation:pop 3s ease-in-out .8s infinite}
+  .s3{width:40px;height:40px;left:70%;top:58%;background:radial-gradient(circle,var(--red),transparent 70%);animation:pop 3s ease-in-out 1.6s infinite}
+  @keyframes pop{0%,100%{transform:scale(.6);opacity:.5}50%{transform:scale(1.15);opacity:1}}
+  .ping{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime)}
+  .ping.a{left:35%;top:55%;animation:travel 4s ease-in-out infinite}
+  @keyframes travel{0%{left:24%;top:46%}50%{left:55%;top:34%}100%{left:24%;top:46%}}
+
+  /* clip 2 — DID provisioning */
+  .term{position:absolute;inset:0;padding:16px;font-family:var(--roboto);font-size:12px;color:#bfe9ff}
+  .term .ln{opacity:0;animation:type .5s forwards}
+  .term .ln span{color:var(--cyan)}.term .ln em{color:var(--lime);font-style:normal}
+  .l1{animation-delay:.3s}.l2{animation-delay:1.1s}.l3{animation-delay:2s}.l4{animation-delay:3s}.l5{animation-delay:4s}
+  @keyframes type{to{opacity:1}}
+  .didnum{position:absolute;left:16px;right:16px;bottom:16px;text-align:center;font-family:var(--g-sans);font-weight:700;
+    font-size:22px;color:var(--lime);opacity:0;animation:type .6s 4.6s forwards}
+
+  /* clip 3 — call forward */
+  .cf{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-around;padding:0 22px}
+  .cf .node{text-align:center;font-size:11px;color:var(--muted)}
+  .cf .node .ic{font-size:34px;display:block;margin-bottom:6px}
+  .cf .arrow{flex:1;height:2px;background:linear-gradient(90deg,var(--cyan),var(--lime));position:relative;margin:0 6px;align-self:center}
+  .cf .arrow::after{content:"";position:absolute;top:-3px;width:8px;height:8px;border-radius:50%;background:var(--lime);
+    box-shadow:0 0 10px var(--lime);animation:flow 1.8s linear infinite}
+  @keyframes flow{0%{left:0}100%{left:100%}}
+
+  /* clip 4 — economics flip */
+  .flip{position:absolute;inset:0;display:flex;align-items:flex-end;gap:20px;padding:26px 30px 30px;justify-content:center}
+  .flip .col{width:74px;text-align:center;font-size:11px;color:var(--muted)}
+  .flip .bar{width:100%;border-radius:8px 8px 0 0;margin-bottom:8px;transition:height 1s}
+  .flip .old .bar{height:38px;background:var(--red);animation:shrink 6s ease-in-out infinite}
+  .flip .new .bar{height:150px;background:linear-gradient(180deg,var(--lime),var(--cyan));animation:grow 6s ease-in-out infinite}
+  @keyframes grow{0%,20%{height:38px}55%,100%{height:150px}}
+  @keyframes shrink{0%,20%{height:150px}55%,100%{height:38px}}
+
+  /* clip 5 — save lives / E911 */
+  .e911{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+  .e911 .shield{font-size:54px;animation:beat 1.6s ease-in-out infinite}
+  @keyframes beat{0%,100%{transform:scale(1)}30%{transform:scale(1.14)}}
+  .e911 .tag{font-family:var(--g-sans);font-weight:700;color:var(--lime);letter-spacing:1px}
+  .e911 .sub{font-size:11px;color:var(--muted)}
+  .e911 .wave{position:absolute;width:70px;height:70px;border-radius:50%;border:2px solid var(--lime);opacity:0;animation:radiate 2.2s ease-out infinite}
+  @keyframes radiate{0%{transform:scale(.4);opacity:.8}100%{transform:scale(2.6);opacity:0}}
+
+  /* ---- steps macro→micro ---- */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow1)}
+  .step .n{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:var(--g-sans);font-weight:700;background:rgba(0,212,255,.14);color:var(--cyan);border:1px solid rgba(0,212,255,.4);margin-bottom:14px}
+  .step h4{font-size:17px;margin-bottom:6px}
+  .step p{font-size:14px;color:var(--muted)}
+
+  /* ---- stats ---- */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;text-align:center}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 16px}
+  .stat .big{font-family:var(--g-sans);font-weight:700;font-size:40px;font-variant-numeric:tabular-nums}
+  .stat.c .big{color:var(--cyan)}.stat.l .big{color:var(--lime)}.stat.v .big{color:var(--violet)}.stat.a .big{color:var(--amber)}
+  .stat .lbl{font-size:13px;color:var(--muted);margin-top:6px}
+
+  /* ---- funnel ---- */
+  .funnel{background:linear-gradient(180deg,#101a32,#0b1224);border:1px solid var(--line);border-radius:24px;
+    max-width:560px;margin:0 auto;box-shadow:var(--shadow3);overflow:hidden}
+  .funnel .fhd{padding:22px 26px;border-bottom:1px solid var(--line)}
+  .funnel .fhd .pbar{height:6px;border-radius:999px;background:var(--navy);overflow:hidden;margin-top:12px}
+  .funnel .fhd .pbar i{display:block;height:100%;width:20%;background:linear-gradient(90deg,var(--cyan),var(--lime));transition:width .4s}
+  .funnel .fhd .stepno{font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+  .funnel .fbody{padding:26px}
+  .funnel h3{font-size:21px;margin-bottom:6px}
+  .funnel .q{color:var(--muted);font-size:14px;margin-bottom:18px}
+  .pane{display:none;animation:fade .4s}.pane.on{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
+  .field input,.field select{width:100%;background:var(--navy);border:1px solid var(--line);color:var(--ink);
+    border-radius:10px;padding:13px;font-size:15px;font-family:var(--roboto)}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--cyan)}
+  .opts{display:grid;gap:10px}
+  .opt{display:flex;align-items:center;gap:12px;background:var(--navy);border:1px solid var(--line);border-radius:12px;
+    padding:14px;cursor:pointer;transition:border-color .15s,background .15s}
+  .opt:hover{border-color:var(--cyan)}
+  .opt.sel{border-color:var(--lime);background:rgba(0,255,136,.08)}
+  .opt .ic{font-size:24px}
+  .opt b{font-size:15px;font-family:var(--g-sans)}.opt small{display:block;color:var(--muted);font-size:12px}
+  .fnav{display:flex;justify-content:space-between;gap:12px;margin-top:22px}
+  .plan{display:flex;justify-content:space-between;align-items:baseline;background:var(--navy);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px}
+  .plan b{font-size:26px;font-family:var(--g-sans)}.plan small{color:var(--muted)}
+  .stepper{display:flex;align-items:center;gap:14px}
+  .stepper button{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:var(--navy);color:var(--ink);font-size:18px;font-weight:700;cursor:pointer}
+  .stepper b{min-width:22px;text-align:center;font-family:var(--g-sans)}
+  .console{background:#06101f;border:1px solid var(--line);border-radius:12px;padding:14px;
+    font-family:var(--roboto);font-size:12px;color:#bfe9ff;min-height:120px;max-height:240px;overflow:auto;white-space:pre-wrap;line-height:1.55}
+  .console .ok{color:var(--lime)}.console .cmd{color:var(--cyan)}.console .mut{color:var(--muted)}
+  .successcard{text-align:center;padding:8px 0}
+  .successcard .chk{font-size:50px;animation:beat 1.4s ease-in-out infinite}
+  .successcard .did{font-family:var(--g-sans);font-weight:700;font-size:30px;color:var(--lime);margin:8px 0}
+  .pill{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:5px 12px;margin:3px}
+  .pill.l{background:rgba(0,255,136,.12);color:var(--lime);border:1px solid rgba(0,255,136,.4)}
+  .pill.c{background:rgba(0,212,255,.12);color:var(--cyan);border:1px solid rgba(0,212,255,.4)}
+  .pill.v{background:rgba(123,97,255,.14);color:#b9a9ff;border:1px solid rgba(123,97,255,.4)}
+
+  /* ---- narrator FAB ---- */
+  .fab{position:fixed;right:20px;bottom:20px;z-index:50;display:flex;align-items:center;gap:10px;
+    background:linear-gradient(90deg,var(--violet),var(--cyan));color:#fff;border:none;border-radius:999px;
+    padding:14px 20px;font-family:var(--g-sans);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow3)}
+  .fab .eq{display:inline-flex;gap:2px;align-items:flex-end;height:14px}
+  .fab .eq i{width:3px;background:#fff;border-radius:2px;height:5px}
+  .fab.talking .eq i{animation:eq .8s ease-in-out infinite}
+  .fab.talking .eq i:nth-child(2){animation-delay:.15s}.fab.talking .eq i:nth-child(3){animation-delay:.3s}
+  @keyframes eq{0%,100%{height:4px}50%{height:14px}}
+
+  .disc{background:#0b1426;border-top:1px solid var(--line);padding:18px 0;font-size:12px;color:var(--muted)}
+  footer{padding:48px 0 70px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+  footer a{color:var(--cyan);text-decoration:none}
+</style>
+</head>
+<body>
+
+<!-- ===== app bar ===== -->
+<div class="bar">
+  <div class="logo"><b>TEL</b>VERGENCE</div>
+  <nav class="nav">
+    <a href="#how" class="hideSm">How it works</a>
+    <a href="#clips" class="hideSm">See it</a>
+    <a href="#why" class="hideSm">Why it matters</a>
+    <a href="telvergence-demo.html" class="hideSm">Live dashboard</a>
+    <a href="#start" class="btn cta" style="padding:9px 16px;font-size:13px">Activate now</a>
+  </nav>
+</div>
+
+<!-- ===== hero ===== -->
+<section class="hero" id="top">
+  <div class="pulse"></div>
+  <div class="wrap">
+    <div class="kicker reveal">Instant Smart DID · Activation in seconds</div>
+    <h1 class="reveal">A live phone number that <span class="grad">activates instantly</span> — and forwards to the cell you already carry</h1>
+    <p class="lead reveal">TELVERGENCE provisions a branded, E911-ready Smart DID in real time, rings your existing phone, and turns it into a private-label operation that runs itself. No new handset. No port. No SSN.</p>
+    <div class="reveal"><span class="save">❤️ Built for storm response & emergencies — instant activation that helps save lives</span></div>
+    <div class="acts reveal">
+      <a href="#start" class="btn btn-primary">⚡ Start intake & activate</a>
+      <a href="telvergence-demo.html" class="btn btn-ghost">▶ Watch the live dashboard</a>
+    </div>
+
+    <div class="phonewrap reveal">
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="row"><span class="dot"></span>Smart DID provisioned <span class="num" style="margin-left:auto">(954) 555-0142</span></div>
+        <div class="row">📞 Branded caller ID <b style="margin-left:auto;color:var(--cyan)">STORMCREW</b></div>
+        <div class="row">🛡️ E911 dispatchable location <b style="margin-left:auto;color:var(--lime)">registered</b></div>
+        <div class="row">📲 Forwarding to your cell <span class="ring">● ringing now</span></div>
+      </div>
+    </div>
+
+    <div class="trust reveal">
+      <div>⚡ <b>~30-second</b> activation</div>
+      <div>🛡️ <b>E911 / Kari's Law</b> aware</div>
+      <div>🔑 Smart DID = account key <b>· no SSN</b></div>
+      <div>💳 <b>$22.95/mo</b> per Smart DID</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== macro narrative ===== -->
+<section id="why" style="background:linear-gradient(180deg,#0c1426,var(--midnight))">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="kicker">The big picture</div>
+      <h2>When a storm hits, <span class="grad">minutes are lives</span></h2>
+      <p>Disaster response runs on phone calls. The crews that answer fastest win the work — and reach the people who need help first. Yet standing up a new, trusted, location-aware line traditionally takes days of carrier paperwork. TELVERGENCE collapses that to seconds.</p>
+    </div>
+    <div class="stats reveal">
+      <div class="stat c"><div class="big" data-count="30" data-suffix="s">0s</div><div class="lbl">From intake to a live, ringing number</div></div>
+      <div class="stat l"><div class="big" data-count="0" data-prefix="$" data-suffix="">$0</div><div class="lbl">New hardware — uses the cell you own</div></div>
+      <div class="stat v"><div class="big" data-count="80" data-suffix="%">0%</div><div class="lbl">Net margin once the model flips 20/80 → 80/20</div></div>
+      <div class="stat a"><div class="big" data-count="100" data-suffix="%">0%</div><div class="lbl">E911 location registered on every line</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== clips (animated video-style demos) ===== -->
+<section id="clips">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="kicker">See it in motion</div>
+      <h2>Five clips, the whole engine</h2>
+      <p>Auto-playing micro-demos — from the nationwide storm map all the way down to a single number ringing your pocket.</p>
+    </div>
+    <div class="clips">
+      <div class="clip reveal">
+        <div class="screen">
+          <span class="badge"><span class="rec"></span>Live</span>
+          <div class="map"></div>
+          <div class="storm s1"></div><div class="storm s2"></div><div class="storm s3"></div>
+          <div class="ping a"></div>
+        </div>
+        <div class="prog"><i></i></div>
+        <div class="cap"><h4>① Nationwide storm map</h4><p>Real NWS weather lights a fluxing grid; the system auto-dispatches crews toward the impact zones.</p></div>
+      </div>
+
+      <div class="clip reveal">
+        <div class="screen">
+          <span class="badge"><span class="rec"></span>Live</span>
+          <div class="term">
+            <div class="ln l1"><span>→ getlocaldid</span> npa=954</div>
+            <div class="ln l2"><span>→ lidb</span> name="STORMCREW" <em>✓</em></div>
+            <div class="ln l3"><span>→ e911send</span> <em>✓ location registered</em></div>
+            <div class="ln l4"><span>→ callfw</span> → your cell <em>✓ LIVE</em></div>
+            <div class="ln l5"><span>→ balance</span> prepaid <em>✓</em></div>
+          </div>
+          <div class="didnum">● (954) 555-0142 ACTIVE</div>
+        </div>
+        <div class="prog"><i></i></div>
+        <div class="cap"><h4>② Smart DID provisions itself</h4><p>An ad-hoc overlay streams real carrier commands — number, branded caller ID, E911, forwarding — in seconds.</p></div>
+      </div>
+
+      <div class="clip reveal">
+        <div class="screen">
+          <span class="badge"><span class="rec"></span>Live</span>
+          <div class="cf">
+            <div class="node"><span class="ic">📞</span>Caller</div>
+            <div class="arrow"></div>
+            <div class="node"><span class="ic">🛰️</span>Smart DID</div>
+            <div class="arrow"></div>
+            <div class="node"><span class="ic">📱</span>Your cell</div>
+          </div>
+        </div>
+        <div class="prog"><i></i></div>
+        <div class="cap"><h4>③ Rings the phone you already carry</h4><p>Remote call-forward routes every caller to your existing cell instantly — no port, no new device.</p></div>
+      </div>
+
+      <div class="clip reveal">
+        <div class="screen">
+          <span class="badge"><span class="rec"></span>Live</span>
+          <div class="flip">
+            <div class="col old"><div class="bar"></div>Old model<br><b style="color:var(--red)">20% net</b></div>
+            <div class="col new"><div class="bar"></div>TELVERGENCE<br><b style="color:var(--lime)">80% net</b></div>
+          </div>
+        </div>
+        <div class="prog"><i></i></div>
+        <div class="cap"><h4>④ The economics flip</h4><p>Automation removes manual work and fixed overhead — the 20/80 cost model flips to 80/20 profit.</p></div>
+      </div>
+
+      <div class="clip reveal">
+        <div class="screen">
+          <span class="badge"><span class="rec"></span>Live</span>
+          <div class="e911">
+            <div class="wave"></div><div class="wave" style="animation-delay:1.1s"></div>
+            <div class="shield">🛡️</div>
+            <div class="tag">E911 · DISPATCHABLE LOCATION</div>
+            <div class="sub">Kari's Law · RAY BAUM'S Act §506 aware</div>
+          </div>
+        </div>
+        <div class="prog"><i></i></div>
+        <div class="cap"><h4>⑤ Built to save lives</h4><p>Every line registers a dispatchable 911 location on activation — help reaches the right address, fast.</p></div>
+      </div>
+
+      <div class="clip reveal" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:34px 24px;background:linear-gradient(160deg,#16213d,#101a32)">
+        <div style="font-size:44px">🚀</div>
+        <h4 style="font-family:var(--g-sans);font-size:19px;margin:10px 0 6px">Want the full control room?</h4>
+        <p style="color:var(--muted);font-size:14px;margin-bottom:16px">The live dashboard shows all of this running together on real weather data.</p>
+        <a href="telvergence-demo.html" class="btn btn-ghost">▶ Open the live dashboard</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== how it works (micro) ===== -->
+<section id="how" style="background:linear-gradient(180deg,#0c1426,var(--midnight))">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="kicker">Macro to micro</div>
+      <h2>From sign-up to a ringing line — step by step</h2>
+      <p>Every activation follows the same fast, compliant path. Here's exactly what happens.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><h4>Tell us who you are</h4><p>Pick your tier — crew, brand, vendor, or white-label partner. That shapes your private-label setup.</p></div>
+      <div class="step reveal"><div class="n">2</div><h4>Pick your market & cell</h4><p>Choose an area code and the existing cell phone every call should ring. Nothing to install.</p></div>
+      <div class="step reveal"><div class="n">3</div><h4>Set your DOB PIN</h4><p>Your 8-digit date of birth (MMDDYYYY) secures the account. The Smart DID is your account number — <b>never an SSN</b>.</p></div>
+      <div class="step reveal"><div class="n">4</div><h4>Prepay with Stripe</h4><p>$22.95/mo per Smart DID, recurring and prepaid. Add as many lines as you need.</p></div>
+      <div class="step reveal"><div class="n">5</div><h4>Instant activation</h4><p>The number provisions, branded caller ID and E911 register, and call-forward goes live to your cell.</p></div>
+      <div class="step reveal"><div class="n">6</div><h4>It runs itself</h4><p>A private-label sub-site spins up and a "second-brain" AI agent operates it 24/7 — solo, infinitely scalable.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== the intake funnel ===== -->
+<section id="start">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="kicker">Talking intake funnel</div>
+      <h2>Activate your Smart DID now</h2>
+      <p>Walk the guided intake — tap the talking guide in the corner and it'll narrate each step. (Demo: simulated end-to-end, no real charge or number provisioned.)</p>
+    </div>
+
+    <div class="funnel reveal">
+      <div class="fhd">
+        <span class="stepno" id="stepno">Step 1 of 5</span>
+        <div class="pbar"><i id="pbar"></i></div>
+      </div>
+      <div class="fbody">
+
+        <!-- step 1 -->
+        <div class="pane on" data-step="1">
+          <h3>Who are we activating for?</h3>
+          <div class="q">This sets up your private-label tier.</div>
+          <div class="opts" id="tierOpts">
+            <div class="opt sel" data-v="STORMCREW"><span class="ic">⛑️</span><div><b>Restoration crew</b><small>Field team answering storm work</small></div></div>
+            <div class="opt" data-v="RESTORATION ROYALTY"><span class="ic">👑</span><div><b>Brand / company</b><small>Your own branded operation</small></div></div>
+            <div class="opt" data-v="CREWCOMMAND"><span class="ic">🚚</span><div><b>Vendor / contractor</b><small>Recruited into uncovered territory</small></div></div>
+            <div class="opt" data-v="WHITE-LABEL"><span class="ic">🏷️</span><div><b>White-label partner</b><small>Wholesale distributor / network partner</small></div></div>
+          </div>
+          <div class="fnav"><span></span><button class="btn btn-primary" data-next>Continue →</button></div>
+        </div>
+
+        <!-- step 2 -->
+        <div class="pane" data-step="2">
+          <h3>Your market & the cell to ring</h3>
+          <div class="q">Every caller will be forwarded to this phone instantly.</div>
+          <div class="field"><label>Market (area code)</label>
+            <select id="fNpa"><option>305</option><option>786</option><option selected>954</option><option>754</option><option>407</option><option>321</option><option>561</option></select></div>
+          <div class="field"><label>Your existing cell (forward to)</label><input id="fCell" value="(407) 555-0148"></div>
+          <div class="field"><label>Branded caller ID (CNAM)</label><input id="fCnam" readonly></div>
+          <div class="fnav"><button class="btn btn-ghost" data-prev>← Back</button><button class="btn btn-primary" data-next>Continue →</button></div>
+        </div>
+
+        <!-- step 3 -->
+        <div class="pane" data-step="3">
+          <h3>Secure it with your DOB PIN</h3>
+          <div class="q">8-digit date of birth (MMDDYYYY). The Smart DID is your account number — <b>no SSN, ever</b>.</div>
+          <div class="field"><label>Account PIN — date of birth (MMDDYYYY)</label>
+            <input id="fPin" maxlength="8" inputmode="numeric" placeholder="MMDDYYYY" value="07041988"></div>
+          <div class="muted" style="font-size:12px">🔐 Stored as a hashed credential in production — shown masked everywhere.</div>
+          <div class="fnav"><button class="btn btn-ghost" data-prev>← Back</button><button class="btn btn-primary" data-next>Continue →</button></div>
+        </div>
+
+        <!-- step 4 -->
+        <div class="pane" data-step="4">
+          <h3>Prepay with Stripe</h3>
+          <div class="q">$22.95 per Smart DID per month — recurring, prepaid.</div>
+          <div class="plan"><div><b>$22.95</b> <small>/ month</small></div><div class="muted" style="font-size:12px">per Smart DID · recurring</div></div>
+          <div class="field" style="display:flex;justify-content:space-between;align-items:center">
+            <label style="margin:0">How many Smart DIDs?</label>
+            <div class="stepper"><button id="qMinus" type="button">−</button><b id="qN">1</b><button id="qPlus" type="button">+</button></div>
+          </div>
+          <div class="plan"><div class="muted" style="font-size:13px">Due today</div><div><b id="qDue" style="color:var(--lime)">$22.95</b></div></div>
+          <div class="fnav"><button class="btn btn-ghost" data-prev>← Back</button><button class="btn btn-stripe" id="fPay">Prepay <span id="qPay">$22.95</span>/mo with Stripe →</button></div>
+        </div>
+
+        <!-- step 5 -->
+        <div class="pane" data-step="5">
+          <h3 id="actHd">⚡ Activating your Smart DID…</h3>
+          <div class="q" id="actSub">Provisioning in real time. (Simulated for demo.)</div>
+          <div class="console" id="fLog"><span class="mut">Ready to provision…</span></div>
+          <div id="fSuccess" style="display:none"></div>
+          <div class="fnav" id="actNav" style="justify-content:center"><button class="btn btn-ghost" data-restart style="display:none">↻ Run another activation</button></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== proof ===== -->
+<section id="proof" style="background:linear-gradient(180deg,#0c1426,var(--midnight))">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="kicker">Why trust it</div>
+      <h2>A decade-plus of building this</h2>
+      <p>TELVERGENCE didn't appear overnight — it's the latest form of telecom and CRM systems built and run since 2013.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">📡</div><h4>Carrier-grade roots</h4><p>LEC-billed telecom reseller campaigns, branded caller ID, and remote call-forward — operated since 2017.</p></div>
+      <div class="step reveal"><div class="n">🧩</div><h4>BOSS CRM + dialer</h4><p>Back Office Sales Support CRM integrated with the ViciDial engine — a proven sales-operations backbone.</p></div>
+      <div class="step reveal"><div class="n">📱</div><h4>Smart DID lineage</h4><p>The "Smart DID / vanity number" mobile concept traces back to the 2020 Reliant Cloud Mobile App.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== final CTA ===== -->
+<section class="center">
+  <div class="wrap reveal">
+    <h2 style="font-size:clamp(26px,4.4vw,40px)">Ready in <span class="grad">seconds</span>. Built to last.</h2>
+    <p class="muted" style="max-width:560px;margin:14px auto 26px;font-size:17px">Start your intake, activate a Smart DID, and watch it route a real call to the phone in your pocket.</p>
+    <div class="acts" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="#start" class="btn btn-primary">⚡ Start intake & activate</a>
+      <a href="telvergence-demo.html" class="btn btn-ghost">▶ Explore the live dashboard</a>
+    </div>
+  </div>
+</section>
+
+<!-- narrator FAB -->
+<button class="fab" id="fab"><span class="eq"><i></i><i></i><i></i></span> <span id="fabTxt">Talk me through it</span></button>
+
+<div class="disc">
+  <div class="wrap">
+    🎬 <b>Interactive demo.</b> Weather visuals reference the live U.S. National Weather Service feed on the dashboard; on this page the Smart DID activation and the Stripe payment are <b>simulated</b> — no real number is provisioned and no card is charged. All names, figures, and metrics are illustrative sample data, not actual performance, financials, or certifications. E911 / Kari's Law / RAY BAUM'S references describe design intent. The Smart DID is the account identifier — <b>no Social Security Numbers are used</b>.
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="logo g" style="font-size:18px;letter-spacing:1px"><b style="color:var(--cyan)">TEL</b>VERGENCE</div>
+    <p style="margin-top:8px">Integrated Communication Technologies · <a href="telvergence-demo.html">Live dashboard</a> · <a href="#top">Back to top</a></p>
+  </div>
+</footer>
+
+<script>
+  // ---- ripple ----
+  document.addEventListener('click',e=>{
+    const b=e.target.closest('.btn,.fab'); if(!b)return;
+    const r=document.createElement('span'); r.className='ripple';
+    const d=Math.max(b.clientWidth,b.clientHeight),rect=b.getBoundingClientRect();
+    r.style.width=r.style.height=d+'px';
+    r.style.left=(e.clientX-rect.left-d/2)+'px'; r.style.top=(e.clientY-rect.top-d/2)+'px';
+    b.appendChild(r); setTimeout(()=>r.remove(),600);
+  });
+
+  // ---- scroll reveal ----
+  const io=new IntersectionObserver((es)=>es.forEach(en=>{ if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);} }),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // ---- count-up stats ----
+  const cio=new IntersectionObserver((es)=>es.forEach(en=>{
+    if(!en.isIntersecting)return; const el=en.target; cio.unobserve(el);
+    const to=+el.dataset.count, pre=el.dataset.prefix||'', suf=el.dataset.suffix||''; let n=0;
+    const t=setInterval(()=>{ n+=Math.ceil(to/30); if(n>=to){n=to;clearInterval(t);} el.textContent=pre+n+suf; },28);
+  }),{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+  // ---- funnel ----
+  let step=1, qty=1, tier='STORMCREW';
+  const PRICE=22.95;
+  const panes=[...document.querySelectorAll('.pane')];
+  const pbar=document.getElementById('pbar'), stepno=document.getElementById('stepno');
+  function show(s){ step=s; panes.forEach(p=>p.classList.toggle('on',+p.dataset.step===s));
+    pbar.style.width=(s/5*100)+'%'; stepno.textContent='Step '+s+' of 5';
+    if(s===2) document.getElementById('fCnam').value=tier;
+    if(s===5) runActivation();
+    document.getElementById('start').scrollIntoView({behavior:'smooth',block:'start'});
+    narrateStep(s);
+  }
+  document.querySelectorAll('[data-next]').forEach(b=>b.onclick=()=>{ if(validate(step)) show(Math.min(5,step+1)); });
+  document.querySelectorAll('[data-prev]').forEach(b=>b.onclick=()=>show(Math.max(1,step-1)));
+  document.querySelectorAll('[data-restart]').forEach(b=>b.onclick=()=>{ document.getElementById('fSuccess').style.display='none'; document.querySelector('[data-restart]').style.display='none'; show(1); });
+
+  document.getElementById('tierOpts').onclick=e=>{ const o=e.target.closest('.opt'); if(!o)return;
+    document.querySelectorAll('#tierOpts .opt').forEach(x=>x.classList.remove('sel')); o.classList.add('sel'); tier=o.dataset.v; };
+
+  function setQty(){ const due=PRICE*qty; document.getElementById('qN').textContent=qty;
+    document.getElementById('qDue').textContent='$'+due.toFixed(2); document.getElementById('qPay').textContent='$'+due.toFixed(2); }
+  document.getElementById('qMinus').onclick=()=>{ qty=Math.max(1,qty-1); setQty(); };
+  document.getElementById('qPlus').onclick=()=>{ qty=Math.min(99,qty+1); setQty(); };
+
+  function validate(s){
+    if(s===3){ const pin=(document.getElementById('fPin').value||'').replace(/\D/g,'');
+      if(pin.length!==8){ const f=document.getElementById('fPin'); f.style.borderColor='var(--red)'; f.focus(); return false; } }
+    return true;
+  }
+  document.getElementById('fPay').onclick=()=>show(5);
+
+  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+  function logln(html){ const c=document.getElementById('fLog'); c.insertAdjacentHTML('beforeend','\n'+html); c.scrollTop=c.scrollHeight; }
+  let activating=false;
+  async function runActivation(){
+    if(activating)return; activating=true;
+    const c=document.getElementById('fLog'); c.innerHTML='<span class="mut">POST api.vitelity.net + api.stripe.com — simulated · via TELVERGENCE.com</span>';
+    document.getElementById('fSuccess').style.display='none';
+    const npa=document.getElementById('fNpa').value, cell=document.getElementById('fCell').value;
+    const pin=(document.getElementById('fPin').value||'').replace(/\D/g,'')||'07041988';
+    const mask='••••'+pin.slice(4);
+    const num=npa+(200+Math.floor(Math.random()*699))+String(1000+Math.floor(Math.random()*8999));
+    const did='('+npa+') '+num.slice(3,6)+'-'+num.slice(6);
+    const due=(PRICE*qty).toFixed(2);
+    const steps=[
+      ['stripe.subscriptions.create qty='+qty+' price=$22.95/mo','✓ recurring active — $'+due+'/mo prepaid'],
+      ['vitelity.getlocaldid npa='+npa,'✓ ordered '+did],
+      ['vitelity.lidb name="'+tier+'"','✓ branded caller ID set'],
+      ['vitelity.e911send','✓ dispatchable 911 location registered'],
+      ['vitelity.callfw fwd='+cell.replace(/\D/g,''),'✓ remote call-forward → your cell LIVE'],
+      ['account.create key='+num+' pin='+mask,'✓ Smart DID = account key · PIN = DOB · no SSN'],
+      ['subdomain.provision','✓ '+tier.toLowerCase().replace(/[^a-z0-9]+/g,'')+'.telvergence.com live'],
+      ['persona.clone founder','✓ "second-brain" AI agent deployed — runs 24/7'],
+    ];
+    for(const [cmd,res] of steps){
+      logln('<span class="cmd">→ '+cmd+'</span>'); await sleep(420);
+      logln('  <span class="ok">'+res+'</span>'); await sleep(230);
+    }
+    await sleep(400);
+    document.getElementById('actHd').textContent='✅ Your Smart DID is LIVE';
+    document.getElementById('actSub').textContent='Your existing cell is ringing now. (Simulated for demo.)';
+    const sub=tier.toLowerCase().replace(/[^a-z0-9]+/g,'')+'.telvergence.com';
+    const sc=document.getElementById('fSuccess'); sc.style.display='block';
+    sc.innerHTML='<div class="successcard"><div class="chk">✅</div>'+
+      '<div class="did">'+did+'</div>'+
+      '<div class="muted" style="font-size:13px;margin-bottom:10px">Branded <b style="color:var(--cyan)">'+tier+'</b> · forwarding to <b style="color:var(--ink)">'+cell+'</b></div>'+
+      '<span class="pill l">🛡️ E911 registered</span><span class="pill c">🔐 PIN '+mask+' · no SSN</span>'+
+      '<span class="pill l">💳 $'+due+'/mo</span><span class="pill v">🧠 AI agent live</span><span class="pill c">🌐 '+sub+'</span>'+
+      '<div style="margin-top:16px"><a href="telvergence-demo.html" class="btn btn-primary">▶ See it in the live dashboard</a></div></div>';
+    document.querySelector('[data-restart]').style.display='inline-flex';
+    activating=false;
+    narrate("Your Smart D I D is live. Your existing phone is ringing now — E 9 1 1 registered, secured by your date of birth PIN, no social security number used.");
+  }
+
+  // ---- talking narrator ----
+  const fab=document.getElementById('fab'), fabTxt=document.getElementById('fabTxt');
+  let voiceOn=false, synth=window.speechSynthesis;
+  function narrate(text){ if(!voiceOn||!synth)return; try{ synth.cancel();
+    const u=new SpeechSynthesisUtterance(text); u.rate=1.02; u.pitch=1;
+    u.onstart=()=>fab.classList.add('talking'); u.onend=()=>fab.classList.remove('talking');
+    synth.speak(u); }catch(e){} }
+  const stepLines={
+    1:"Welcome. First, tell us who we're activating for — a crew, a brand, a vendor, or a white-label partner.",
+    2:"Now pick your market area code and the cell phone every call should ring. No new device needed.",
+    3:"Secure your account with your 8-digit date of birth as the PIN. Your Smart D I D is the account number — never a social security number.",
+    4:"Prepay with Stripe — twenty-two ninety-five per Smart D I D, per month. Add as many lines as you need.",
+    5:"Activating now. Watch your number provision, register E 9 1 1, and forward to your cell in real time."
+  };
+  function narrateStep(s){ narrate(stepLines[s]||''); }
+  const intro="Welcome to Telvergence. I'll talk you through it. In seconds, we provision a branded, E 9 1 1 ready phone number and ring the cell you already carry — built to save lives when storms hit. Scroll down, or tap Activate now to begin.";
+  fab.onclick=()=>{ if(!synth){ fabTxt.textContent='Voice unavailable'; return; }
+    voiceOn=!voiceOn;
+    if(voiceOn){ fabTxt.textContent='Mute guide'; narrate(intro); }
+    else { fabTxt.textContent='Talk me through it'; synth.cancel(); fab.classList.remove('talking'); }
+  };
+  window.addEventListener('beforeunload',()=>{ try{synth&&synth.cancel();}catch(e){} });
+  setQty();
+</script>
+</body>
+</html>
