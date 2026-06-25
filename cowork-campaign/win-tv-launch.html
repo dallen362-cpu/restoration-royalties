@@ -112,10 +112,29 @@ TELVERGENCE  →  https://telvergence.com</div>
   <p class="sub" style="text-align:left;margin:0 0 8px">Each description ends with that episode's real-time activation deep-link, so the tracker shows which episode drove each activation.</p>
   <div class="card" id="epCards"></div>
 
-  <h2>⑥ Thumbnail recipe</h2>
-  <div class="card" style="font-size:14px">
-    Keep them consistent: dark navy background, the storm icon big on the left (🌀 🌪️ 🧊 🌊 🔥 🛠️), 3–4 huge words on the right in white + cyan
-    (e.g. "3 MINUTES", "THE BLACKOUT"), and the small <b>WIN TV ▶</b> mark bottom-right. 1280 × 720. Same font/colors as the banner = instantly recognizable row of thumbnails.
+  <h2>⑥ Thumbnails — ready to upload (1280 × 720)</h2>
+  <p class="sub" style="text-align:left;margin:0 0 8px">One per episode, brand-consistent. Download and set each as its video's thumbnail.</p>
+  <div class="card">
+    <div class="art" id="thumbs"></div>
+  </div>
+
+  <h2>⑦ Channel trailer is set — now the launch posts</h2>
+  <div class="card">
+    <div class="lbl">Channel "community" launch post (or first pinned comment)</div>
+    <div class="copy"><button onclick="cp(this)">Copy</button>🌀 Welcome to WIN TV — the Weather Intelligence Network.
+
+Real storms, told as short documentaries — and the AI that now sees them coming. Every episode shows how live weather data becomes life-saving action… and lets you activate that same protection for your own home in about 30 seconds.
+
+▶ New mini-documentary every two weeks.
+⚡ Activate WIN during any episode — link in the description.
+📍 On our site, the page even reads your live local conditions and matches an episode to the weather happening near you right now.
+
+Subscribe and turn on alerts. The next storm won't wait. ❤️</div>
+    <div class="lbl">Pinned comment (per episode — swap the link)</div>
+    <div class="copy"><button onclick="cp(this)">Copy</button>⚡ Want this for your own area? Activate WIN in ~30 seconds — a branded, E911-ready line that forwards to the phone you already carry. No new handset, no SSN. 👉 https://dallen362-cpu.github.io/restoration-royalties/cowork-campaign/win-tv.html?ep=1
+See your LIVE local storm conditions there too. Stay safe. 🌀</div>
+    <div class="lbl">Short (Shorts/TikTok/Reels) caption</div>
+    <div class="copy"><button onclick="cp(this)">Copy</button>The warning came too late — again. Here's the tech changing that. ⚡ Activate WIN for your area (link in bio). #weather #storm #hurricane #tornado #WIN #safety</div>
   </div>
 
   <div class="foot">When the channel exists, send me the URL + video IDs and I'll make the players + Subscribe button live on win-tv.html. · <a href="win-tv.html">WIN TV page</a> · <a href="start.html">Bookmark</a></div>
@@ -139,6 +158,11 @@ TELVERGENCE  →  https://telvergence.com</div>
       '<div class="copy"><button onclick="cp(this)">Copy</button>'+e.t.replace(/</g,'&lt;')+'</div>'+
       '<div class="lbl">Episode '+e.n+' — description</div>'+
       '<div class="copy"><button onclick="cp(this)">Copy</button>'+desc.replace(/</g,'&lt;')+'</div>';
+  }).join('');
+  document.getElementById('thumbs').innerHTML=EPS.map(function(e){
+    return '<div class="a"><div class="lbl">Episode '+e.n+'</div>'+
+      '<img src="win-tv-assets/win-tv-ep'+e.n+'.png" alt="Episode '+e.n+' thumbnail">'+
+      '<a class="dl" href="win-tv-assets/win-tv-ep'+e.n+'.png" download>⬇ Download thumbnail '+e.n+'</a></div>';
   }).join('');
   function cp(btn){ var t=btn.parentNode.innerText.replace(/^Copy\s?/,'');
     navigator.clipboard&&navigator.clipboard.writeText(t).then(function(){ var o=btn.textContent; btn.textContent='Copied ✓'; setTimeout(function(){btn.textContent=o;},1200); }); }
