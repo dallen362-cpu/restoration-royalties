@@ -804,6 +804,11 @@
           <select id="didCnam"><option>RESTORATION ROYALTY</option><option>STORMCREW</option><option>CREWCOMMAND</option><option>BEVERLY WICKS</option></select></div>
         <div class="field"><label>Plan</label><select id="didPlan"><option>Prepaid — pay-as-you-go</option></select></div>
       </div>
+      <div class="row2">
+        <div class="field"><label>Account PIN — date of birth (MMDDYYYY · 8 digits, no SSN)</label>
+          <input id="didPin" maxlength="8" inputmode="numeric" placeholder="MMDDYYYY" value="07041988"></div>
+        <div class="field"><label>&nbsp;</label><div style="font-size:11px;color:var(--muted);padding-top:10px">Secures the Smart&nbsp;DID account. The DID is the account number; this 8-digit DOB is the PIN. <b>SSN never used.</b></div></div>
+      </div>
       <div class="prepaid"><span>Prepaid balance</span><b id="didBal">$48.20</b></div>
       <button class="activate" id="didGo">⚡ Activate Smart DID &amp; Forward to Cell — Now</button>
       <div class="console" id="didLog"><span class="muted">Ready. Ad-hoc overlay on the Vitelity v1 API (illustrative / simulated).</span></div>
@@ -1288,7 +1293,8 @@
         didClose=document.getElementById('didClose'), didGo=document.getElementById('didGo'),
         didLog=document.getElementById('didLog'), didResult=document.getElementById('didResult'),
         didBal=document.getElementById('didBal'), didNpa=document.getElementById('didNpa'),
-        didCnam=document.getElementById('didCnam'), didCell=document.getElementById('didCell');
+        didCnam=document.getElementById('didCnam'), didCell=document.getElementById('didCell'),
+        didPin=document.getElementById('didPin');
   function openDid(){ didModal.classList.add('open'); }
   function closeDid(){ didModal.classList.remove('open'); }
   didBtn.onclick=openDid; didClose.onclick=closeDid;
@@ -1297,7 +1303,13 @@
   function logln(html){ didLog.insertAdjacentHTML('beforeend','\n'+html); didLog.scrollTop=didLog.scrollHeight; }
   let didBusy=false;
   async function activateDid(){
-    if(didBusy)return; didBusy=true; didGo.disabled=true; didResult.classList.remove('show');
+    if(didBusy)return;
+    const pin=(didPin.value||'').replace(/\D/g,'');
+    if(pin.length!==8){ didPin.focus(); didPin.style.borderColor='var(--red)';
+      logln('<span class="cmd">→ validate.pin</span>'); logln('  <span style="color:var(--red)">✕ PIN must be the 8-digit date of birth (MMDDYYYY) — no SSN used</span>'); return; }
+    didPin.style.borderColor='';
+    const pinMask='••••'+pin.slice(4);
+    didBusy=true; didGo.disabled=true; didResult.classList.remove('show');
     const npa=didNpa.value, cnam=didCnam.value, cell=didCell.value;
     const num=npa+(200+Math.floor(Math.random()*699))+String(1000+Math.floor(Math.random()*8999));
     const did='('+npa+') '+num.slice(3,6)+'-'+num.slice(6);
@@ -1328,7 +1340,7 @@
     const sub=slug+'.telvergence.com';
     logln('\n<span class="muted">── activation triggers automated onboarding ──</span>');
     const ob=[
-      ['account.create id='+num,'Smart DID set as the account key (identifier — no SSN used)'],
+      ['account.create id='+num+' pin='+pinMask,'Smart DID set as the account key (identifier) · PIN = 8-digit DOB (MMDDYYYY) — no SSN used'],
       ['subdomain.provision host='+sub,'private-label sub-site live: '+sub],
       ['apply.3ETC','Educate·Empower·Equip × Tools·Techniques·Technologies × Content·Collateral·Communication'],
       ['persona.clone founder','“second-brain” AI assistant agent deployed — runs it 24/7'],
@@ -1344,6 +1356,7 @@
       '<hr style="border:none;border-top:1px solid var(--line);margin:14px 0">'+
       '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--violet);font-weight:800">Automated onboarding complete</div>'+
       '<div class="fwd">🌐 Private-label site <b>'+sub+'</b> &nbsp;·&nbsp; 🔑 Account key <b>'+did+'</b></div>'+
+      '<div class="fwd">🔐 Secured by 8-digit DOB PIN <b>'+pinMask+'</b> (MMDDYYYY) &nbsp;·&nbsp; no SSN on file</div>'+
       '<div class="fwd">🧠 Founder “second-brain” persona agent <b>LIVE</b> &nbsp;·&nbsp; 🤖 solo-entrepreneur mode</div>'+
       '<div style="margin-top:12px;font-size:12px;color:var(--muted)">Economics flip — profit straight to the bottom line</div>'+
       '<div style="display:flex;gap:10px;margin-top:6px">'+
