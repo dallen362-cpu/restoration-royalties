@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>TELVERGENCE — Live Visit Watch</title>
+<style>
+  :root{--midnight:#0A0E1A;--navy:#10182e;--card:#16213d;--line:#26345a;
+    --cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--amber:#ffc24b;--red:#ff5d73;--ink:#eaf2ff;--muted:#8ea3c9;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);background:var(--midnight);padding:18px;min-height:100vh}
+  .bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+  .bar h1{font-size:20px}.bar h1 b{color:var(--cyan)}
+  .live{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--lime);border:1px solid rgba(0,255,136,.4);border-radius:999px;padding:5px 12px}
+  .live .d{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime);animation:bl 1.1s infinite}
+  @keyframes bl{0%,100%{opacity:.4}50%{opacity:1}}
+  .src{font-size:12px;color:var(--muted)}
+  .src b{color:var(--ink)}
+  .right{margin-left:auto;display:flex;gap:8px;align-items:center}
+  .btn{background:var(--navy);border:1px solid var(--line);color:var(--ink);border-radius:9px;padding:8px 13px;font-size:12px;font-weight:700;cursor:pointer}
+  .btn:hover{border-color:var(--cyan)}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:18px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:15px}
+  .kpi .v{font-size:26px;font-weight:800;font-variant-numeric:tabular-nums}.kpi .l{font-size:11px;color:var(--muted);margin-top:3px}
+  .kpi.c .v{color:var(--cyan)}.kpi.l2 .v{color:var(--lime)}.kpi.v2 .v{color:var(--violet)}.kpi.a .v{color:var(--amber)}.kpi.r .v{color:var(--red)}
+  .grid{display:grid;grid-template-columns:1.5fr 1fr;gap:16px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+  .card h3{font-size:14px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .card h3 .r{margin-left:auto;font-size:11px;color:var(--muted);font-weight:400}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th,td{text-align:left;padding:7px 6px;border-bottom:1px solid #16233f;vertical-align:top}
+  th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+  tr.new td{animation:hl 2s ease}
+  @keyframes hl{from{background:rgba(0,212,255,.18)}to{background:transparent}}
+  .tag{font-size:10px;font-weight:700;border-radius:999px;padding:2px 7px;white-space:nowrap}
+  .t-pageview{background:rgba(0,212,255,.16);color:var(--cyan)}
+  .t-identify{background:rgba(0,255,136,.16);color:var(--lime)}
+  .t-copy{background:rgba(255,93,115,.18);color:var(--red)}
+  .t-click{background:rgba(123,97,255,.16);color:#b9a9ff}
+  .t-focus,.t-scroll,.t-nav,.t-heartbeat,.t-blur,.t-refocus,.t-exit{background:rgba(142,163,201,.14);color:var(--muted)}
+  .who{font-weight:700}.who.anon{color:var(--muted);font-weight:400}
+  .fwd{background:rgba(255,194,75,.1);border:1px solid rgba(255,194,75,.35);border-radius:10px;padding:10px 12px;margin-bottom:8px;font-size:12.5px}
+  .fwd.likely{background:rgba(255,93,115,.1);border-color:rgba(255,93,115,.4)}
+  .fwd b{color:var(--ink)}
+  .pill{font-size:11px;color:var(--muted)}
+  .empty{color:var(--muted);font-size:13px}
+  .note{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.5}
+  .feedwrap{max-height:560px;overflow:auto}
+</style>
+</head>
+<body>
+  <div class="bar">
+    <h1><b>TEL</b>VERGENCE · Live Visit Watch</h1>
+    <span class="live"><span class="d"></span><span id="liveTxt">Live</span></span>
+    <span class="src">Source: <b id="srcTxt">local (this browser)</b> · updated <b id="upd">—</b></span>
+    <div class="right">
+      <button class="btn" id="pauseBtn">⏸ Pause</button>
+      <button class="btn" id="clearBtn">🗑 Clear local</button>
+    </div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi c"><div class="v" id="kViews">0</div><div class="l">Page views</div></div>
+    <div class="kpi"><div class="v" id="kVisitors">0</div><div class="l">Unique visitors</div></div>
+    <div class="kpi l2"><div class="v" id="kIds">0</div><div class="l">Identified (email)</div></div>
+    <div class="kpi a"><div class="v" id="kActive">0</div><div class="l">Active now (2 min)</div></div>
+    <div class="kpi r"><div class="v" id="kCopies">0</div><div class="l">Copy events</div></div>
+    <div class="kpi v2"><div class="v" id="kEvents">0</div><div class="l">Total events</div></div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <div class="card">
+        <h3>📡 Live activity feed <span class="r" id="feedCount">0</span></h3>
+        <div class="feedwrap"><table>
+          <thead><tr><th>Time</th><th>Who</th><th>Link</th><th>Page</th><th>Event</th><th>Detail</th></tr></thead>
+          <tbody id="feed"><tr><td colspan="6" class="empty">No visits yet. Open any page (e.g. funnel.html) in another tab — events appear here within seconds.</td></tr></tbody>
+        </table></div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <h3>📨 Forwarding watch <span class="r">per unique link</span></h3>
+        <div id="fwd"><div class="empty">Send links like <code>funnel.html?v=larry</code> to each person. If one link opens on multiple devices, it was likely forwarded.</div></div>
+        <div class="note">A link opened by more than one distinct device is flagged as <b>likely forwarded</b>. Identity shows only for visitors who entered an email at the gate.</div>
+      </div>
+      <div class="card">
+        <h3>👤 Visitors <span class="r" id="visCount">0</span></h3>
+        <div id="visitors"><div class="empty">—</div></div>
+      </div>
+      <div class="card">
+        <h3>📄 By page</h3>
+        <div id="byPage"><div class="empty">—</div></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  var ENDPOINT = "";   // <-- same Apps Script URL as telv-track.js (leave blank = read this browser's local log)
+  var paused = false, lastSig = "";
+
+  function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+  function ago(iso){ try{ var s=Math.round((Date.now()-new Date(iso).getTime())/1000);
+    if(s<60)return s+"s"; if(s<3600)return Math.floor(s/60)+"m"; return Math.floor(s/3600)+"h"; }catch(e){return "";} }
+  function hhmm(iso){ try{ var d=new Date(iso); return String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0")+":"+String(d.getSeconds()).padStart(2,"0"); }catch(e){return "";} }
+  function who(e){ return e.email ? '<span class="who">'+esc(e.email)+'</span>' : '<span class="who anon">'+esc((e.vid||"").slice(0,10))+'</span>'; }
+  function detail(e){
+    if(e.type==="copy") return '📋 copied '+(e.len||0)+' chars: "'+esc((e.snippet||"").slice(0,60))+'"';
+    if(e.type==="click") return '→ '+esc(e.href||"")+' ('+esc(e.text||"")+')';
+    if(e.type==="focus") return 'viewed: '+esc(e.section||"");
+    if(e.type==="nav") return 'opened: '+esc(e.to||"");
+    if(e.type==="scroll") return 'scrolled '+esc(e.depth)+'%';
+    if(e.type==="exit") return Math.round(e.secs||0)+'s on page · '+(e.maxScroll||0)+'% deep';
+    if(e.type==="heartbeat") return Math.round(e.secs||0)+'s active';
+    if(e.type==="identify") return 'entered email';
+    if(e.type==="blur") return 'left tab ('+(e.secs||0)+'s)';
+    if(e.type==="refocus") return 'returned to tab';
+    if(e.ref && e.type==="pageview") return 'from '+esc(e.ref);
+    return '';
+  }
+
+  function fetchData(cb){
+    if(ENDPOINT){
+      fetch(ENDPOINT+(ENDPOINT.indexOf("?")>-1?"&":"?")+"t="+Date.now()).then(function(r){return r.json();})
+        .then(function(rows){ document.getElementById("srcTxt").textContent="remote (Google Sheet)"; cb(rows||[]); })
+        .catch(function(){ document.getElementById("srcTxt").textContent="remote unreachable — showing local"; cb(local()); });
+    } else { document.getElementById("srcTxt").textContent="local (this browser)"; cb(local()); }
+  }
+  function local(){ try{ return JSON.parse(localStorage.getItem("telv_log")||"[]"); }catch(e){ return []; } }
+
+  function render(rows){
+    rows = rows.slice().sort(function(a,b){ return new Date(b.ts)-new Date(a.ts); });
+    var views=0, copies=0, vis={}, ids={}, active={}, now=Date.now();
+    rows.forEach(function(e){
+      if(e.type==="pageview")views++;
+      if(e.type==="copy")copies++;
+      if(e.vid)vis[e.vid]=1;
+      if(e.email)ids[e.email]=1;
+      if(now-new Date(e.ts).getTime()<120000 && e.vid)active[e.vid]=1;
+    });
+    document.getElementById("kViews").textContent=views;
+    document.getElementById("kVisitors").textContent=Object.keys(vis).length;
+    document.getElementById("kIds").textContent=Object.keys(ids).length;
+    document.getElementById("kActive").textContent=Object.keys(active).length;
+    document.getElementById("kCopies").textContent=copies;
+    document.getElementById("kEvents").textContent=rows.length;
+    document.getElementById("upd").textContent=hhmm(new Date().toISOString());
+
+    // feed
+    var sig=rows.length?rows[0].ts+rows[0].type+(rows[0].vid||""):"";
+    var fresh=sig!==lastSig; lastSig=sig;
+    document.getElementById("feedCount").textContent=rows.length;
+    var feed=document.getElementById("feed");
+    if(!rows.length){ feed.innerHTML='<tr><td colspan="6" class="empty">No visits yet. Open any page in another tab — events appear here within seconds.</td></tr>'; }
+    else feed.innerHTML=rows.slice(0,120).map(function(e,i){
+      return '<tr class="'+(i===0&&fresh?"new":"")+'"><td>'+hhmm(e.ts)+'<br><span class="pill">'+ago(e.ts)+' ago</span></td>'+
+        '<td>'+who(e)+'</td><td><span class="pill">'+esc(e.recipient||"(direct)")+'</span></td>'+
+        '<td>'+esc(e.page||"")+'</td><td><span class="tag t-'+esc(e.type)+'">'+esc(e.type)+'</span></td>'+
+        '<td>'+detail(e)+'</td></tr>';
+    }).join("");
+
+    // forwarding watch — group by recipient token, count distinct vids
+    var byR={};
+    rows.forEach(function(e){ var r=e.recipient||"(direct)"; (byR[r]=byR[r]||{devs:{},emails:{},views:0});
+      if(e.vid)byR[r].devs[e.vid]=1; if(e.email)byR[r].emails[e.email]=1; if(e.type==="pageview")byR[r].views++; });
+    var fwd=document.getElementById("fwd"), keys=Object.keys(byR).filter(function(k){return k!=="(direct)";});
+    if(!keys.length){ fwd.innerHTML='<div class="empty">Send links like <code>funnel.html?v=larry</code> to each person to track per-recipient.</div>'; }
+    else fwd.innerHTML=keys.map(function(k){ var o=byR[k], n=Object.keys(o.devs).length, em=Object.keys(o.emails);
+      return '<div class="fwd'+(n>1?' likely':'')+'"><b>'+esc(k)+'</b> — '+o.views+' views · <b>'+n+'</b> device'+(n>1?'s':'')+
+        (n>1?' · ⚠️ likely forwarded':'')+(em.length?'<br><span class="pill">seen: '+esc(em.join(", "))+'</span>':'')+'</div>';
+    }).join("");
+
+    // visitors
+    var byV={};
+    rows.forEach(function(e){ var k=e.vid||"?"; (byV[k]=byV[k]||{email:"",pages:{},secs:0,recipient:e.recipient});
+      if(e.email)byV[k].email=e.email; if(e.page)byV[k].pages[e.page]=1;
+      if(e.type==="exit"||e.type==="heartbeat")byV[k].secs=Math.max(byV[k].secs,e.secs||0); });
+    var vk=Object.keys(byV); document.getElementById("visCount").textContent=vk.length;
+    document.getElementById("visitors").innerHTML=vk.length?vk.slice(0,30).map(function(k){ var o=byV[k];
+      return '<div style="padding:7px 0;border-bottom:1px solid #16233f;font-size:12.5px">'+
+        (o.email?'<b>'+esc(o.email)+'</b>':'<span class="pill">'+esc(k.slice(0,10))+'</span>')+
+        ' · '+Object.keys(o.pages).length+' pages · '+Math.round(o.secs)+'s'+
+        '<br><span class="pill">link: '+esc(o.recipient||"(direct)")+' · pages: '+esc(Object.keys(o.pages).join(", "))+'</span></div>';
+    }).join(""):'<div class="empty">—</div>';
+
+    // by page
+    var byP={}; rows.forEach(function(e){ if(e.type==="pageview")byP[e.page]=(byP[e.page]||0)+1; });
+    var pk=Object.keys(byP).sort(function(a,b){return byP[b]-byP[a];});
+    document.getElementById("byPage").innerHTML=pk.length?pk.map(function(p){
+      return '<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #16233f;font-size:13px"><span>'+esc(p)+'</span><b>'+byP[p]+'</b></div>';
+    }).join(""):'<div class="empty">—</div>';
+  }
+
+  function tick(){ if(paused)return; fetchData(render); }
+  document.getElementById("pauseBtn").onclick=function(){ paused=!paused; this.textContent=paused?"▶ Resume":"⏸ Pause"; document.getElementById("liveTxt").textContent=paused?"Paused":"Live"; };
+  document.getElementById("clearBtn").onclick=function(){ if(confirm("Clear this browser's local log?")){ localStorage.removeItem("telv_log"); tick(); } };
+  tick(); setInterval(tick, 5000);
+</script>
+</body>
+</html>
