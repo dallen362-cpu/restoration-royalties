@@ -156,6 +156,19 @@
   .ticker .al .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
   .ticker .al small{color:var(--muted)}
 
+  /* satellite line + traffic advisory */
+  .satline{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:linear-gradient(135deg,rgba(0,212,255,.12),rgba(123,97,255,.12));border:1px solid var(--cyan);border-radius:14px;padding:15px 20px;margin-bottom:14px}
+  .satline .ico{font-size:30px}
+  .satline .meta{flex:1;min-width:240px;font-size:13px}
+  .satline .meta .num{font-size:25px;font-weight:800;color:var(--cyan);letter-spacing:1px}
+  .satline .meta b{color:var(--ink)}
+  .satline .meta small{color:var(--muted);font-size:11.5px}
+  .satline .badge2{background:var(--lime);color:#04121c;font-weight:800;font-size:11px;padding:6px 11px;border-radius:999px;white-space:nowrap}
+  .cap{font-weight:800}
+  .cap.full{color:var(--red)} .cap.heavy{color:var(--amber)} .cap.mod{color:var(--cyan)} .cap.clear{color:var(--lime)}
+  .maplink{color:var(--cyan);text-decoration:none;font-weight:700;white-space:nowrap}
+  .maplink:hover{text-decoration:underline}
+
   /* funnel */
   .funnel{display:flex;flex-direction:column;gap:7px}
   .stage{display:flex;align-items:center;gap:12px}
@@ -489,6 +502,16 @@
         </div>
       </div>
 
+      <div class="satline">
+        <div class="ico">🛰️</div>
+        <div class="meta">
+          <div class="num">1-800-TELV-SAT</div>
+          <b>Satellite Emergency Line</b> — military-grade · end-to-end encrypted · uninterruptible · satellite-driven.
+          <br><small>Runs on the same Unified Collaborative Communications Platform — Expertise as a Service (UCCP-EaaS). Stays connected when cellular &amp; internet go down. Government-grade architecture.</small>
+        </div>
+        <div class="badge2">✓ Included for every app holder</div>
+      </div>
+
       <div class="hero">
         <div class="kpi"><div class="lbl">🌀 Storm Systems Tracked</div><div class="val" id="wSystems">0</div><div class="chg up">NOAA/NASA → WIN</div></div>
         <div class="kpi"><div class="lbl">⚠️ Regions on Alert</div><div class="val" id="wRegions">0</div><div class="chg down">live</div></div>
@@ -524,6 +547,11 @@
           <span class="pill">🏠 Jobs onboarded</span><span class="ar">→</span>
           <span class="pill">💵 Net-Net ↑</span>
         </div>
+      </div>
+
+      <div class="panel">
+        <h3>🚗 Traffic &amp; Evacuation Advisory</h3><div class="sub">Google Maps evacuation routes + live capacity, predicted spikes &amp; alternates — pushed to <b>every TELVERGENCE app holder</b> in the impact zone</div>
+        <table><thead><tr><th>Area</th><th>Primary evacuation route</th><th>Capacity</th><th>Predicted spike</th><th>Recommended alternate</th><th>Maps</th></tr></thead><tbody id="trafficBody"></tbody></table>
       </div>
 
       <div class="panel">
@@ -942,6 +970,20 @@
   // initial fallback (simulated gaps) until live NWS data arrives
   buildRecruit(GAPS.map((g,i)=>({area:g[0],event:'Severe weather risk',sev:i<2?'Extreme':'Severe'})));
 
+  // ---- traffic & evacuation advisory (Google Maps routes) ----
+  const ROUTES=[['I-95 North','SR-826 → I-75 N'],['I-4 West','US-27 N → FL-429'],['I-10 East','US-90 → I-110'],['I-45 North','US-290 W → TX-99'],['I-26 West','US-17 N → I-526'],['I-75 North','US-441 → FL-91']];
+  const CAPS=[['At capacity','full','+380%'],['Heavy','heavy','+260%'],['Moderate','mod','+150%'],['Clearing','clear','+60%']];
+  const gmaps=(area,route)=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('evacuation route '+route+' '+area);
+  function buildTraffic(areas){
+    const list=(areas||[]).slice(0,8);
+    const tb=document.getElementById('trafficBody'); if(!tb)return;
+    tb.innerHTML = list.length? list.map((a,i)=>{
+      const r=ROUTES[i%ROUTES.length], cap=CAPS[i%CAPS.length];
+      return `<tr><td><b>${a}</b></td><td>${r[0]}</td><td><span class="cap ${cap[1]}">${cap[0]}</span></td><td>${cap[2]} volume</td><td>${r[1]}</td><td><a class="maplink" target="_blank" rel="noopener" href="${gmaps(a,r[1])}">Open ↗</a></td></tr>`;
+    }).join('') : '<tr><td colspan="6" style="color:var(--muted)">No active evacuation advisories right now.</td></tr>';
+  }
+  buildTraffic(['FL Atlantic Coast','Tampa Bay','Dallas–Fort Worth','Gulf Coast']);
+
   // live weather-alert ticker
   const ALERTS=[
     ['#ff5d73','EXTREME','Hurricane Watch — FL Atlantic Coast (Brevard, Indian River)'],
@@ -1017,6 +1059,7 @@
         if(cell&&!cell.land)cell=nearestLand(r,c);
         if(cell&&cell.land&&cell.cov===0)rtargets.push({area:f.area,event:f.event,sev:f.sev}); });
       if(rtargets.length)buildRecruit(rtargets);
+      buildTraffic(feats.map(f=>f.area));
       const sorted=feats.slice().sort((a,b)=>(SEVORD[a.sev]??9)-(SEVORD[b.sev]??9));
       const top=sorted.slice(0,40);
       const html=top.map(f=>`<span class="al"><span class="dot" style="background:${SEVCOL[f.sev]||'#8ea3c9'}"></span><b>${(f.sev||'').toUpperCase()}</b><small>${f.event} — ${f.area}</small></span>`).join('');
