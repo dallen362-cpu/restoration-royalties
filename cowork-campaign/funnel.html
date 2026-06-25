@@ -665,10 +665,12 @@
       '<div class="muted" style="font-size:13px;margin-bottom:10px">Branded <b style="color:var(--cyan)">'+tier+'</b> · forwarding to <b style="color:var(--ink)">'+cell+'</b></div>'+
       '<span class="pill l">🛡️ E911 registered</span><span class="pill c">🔐 PIN '+mask+' · no SSN</span>'+
       '<span class="pill l">💳 '+p.label+' $'+due+'/mo</span>'+(p.kind==='res'?'<span class="pill c">⏱️ '+p.min+' min + $'+p.over+'/min as-you-go</span>':'')+'<span class="pill v">🧠 AI agent live</span><span class="pill c">🌐 '+sub+'</span>'+
+      (p.kind==='res'?'<div style="margin-top:12px;font-size:13px;color:var(--lime);font-weight:700">💰 You’re now a WIN Agent Partner — earn 10% of the gross on storm jobs you connect to local providers.</div>':'')+
       '<div style="margin-top:14px;font-size:13px;color:var(--muted)">You’re onboarded — reach the founder directly, anytime:</div>'+
       '<div style="margin-top:10px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">'+
+        (p.kind==='res'?'<a href="partner.html" class="btn btn-primary">💰 Open my Agent Partner portal</a>':'')+
         '<a href="tel:+16892421041" class="btn btn-ghost" style="border-color:var(--lime);color:var(--lime)">📞 Founder 24/7 · (689) 242-1041</a>'+
-        '<a href="telvergence-demo.html" class="btn btn-primary">▶ See it in the live dashboard</a>'+
+        '<a href="telvergence-demo.html" class="btn btn-ghost">▶ Live dashboard</a>'+
       '</div></div>';
     document.querySelector('[data-restart]').style.display='inline-flex';
     activating=false;

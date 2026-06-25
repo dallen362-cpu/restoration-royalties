@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>WIN Agent Partner — Residential Earnings Portal</title>
+<style>
+  :root{--midnight:#0A0E1A;--navy:#10182e;--card:#16213d;--card2:#1b2748;--line:#26345a;
+    --cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--amber:#ffc24b;--red:#ff5d73;--ink:#eaf2ff;--muted:#8ea3c9;
+    --g:"Segoe UI",system-ui,Arial,sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--g);color:var(--ink);background:var(--midnight);line-height:1.55}
+  .grad{background:linear-gradient(90deg,var(--cyan),var(--lime),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 18px}
+  a{color:var(--cyan)}
+  .bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:11px 18px;background:rgba(10,14,26,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar .logo{font-weight:800;letter-spacing:1px}.bar .logo b{color:var(--cyan)}
+  .bar .pct{background:rgba(0,255,136,.14);color:var(--lime);border:1px solid rgba(0,255,136,.4);border-radius:999px;padding:3px 10px;font-size:12px;font-weight:800}
+  .bar .right{margin-left:auto;display:flex;gap:8px}
+  .btn{border:none;cursor:pointer;font-family:var(--g);font-weight:800;border-radius:10px;padding:11px 18px;font-size:13.5px;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+  .btn-primary{background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c}
+  .btn-ghost{background:rgba(255,255,255,.06);color:var(--ink);border:1px solid var(--line)}
+  .btn-sm{padding:8px 13px;font-size:12.5px}
+  .btn-win{background:var(--lime);color:#04121c}
+  .btn-conn{background:var(--cyan);color:#04121c}
+
+  .hero{padding:38px 0 14px;text-align:center;position:relative}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(800px 380px at 50% -10%,#1c2a52,var(--midnight) 60%)}
+  .kick{letter-spacing:3px;font-size:12px;text-transform:uppercase;color:var(--cyan);font-weight:700}
+  .hero h1{font-size:clamp(26px,5vw,44px);margin:10px auto 6px;max-width:18ch}
+  .hero p{color:#cdddf6;max-width:620px;margin:0 auto;font-size:16px}
+
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:13px;margin:22px 0}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+  .kpi .v{font-size:28px;font-weight:800;font-variant-numeric:tabular-nums}.kpi .l{font-size:12px;color:var(--muted);margin-top:3px}
+  .kpi.c .v{color:var(--cyan)}.kpi.l2 .v{color:var(--lime)}.kpi.v2 .v{color:var(--violet)}.kpi.a .v{color:var(--amber)}
+
+  .grid{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;align-items:start;padding-bottom:40px}
+  @media(max-width:860px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:16px}
+  .card h2{font-size:15px;margin-bottom:4px}.card .lead{font-size:13px;color:var(--muted);margin-bottom:14px}
+
+  .prov{display:flex;align-items:center;gap:12px;background:var(--navy);border:1px solid var(--line);border-radius:12px;padding:13px;margin-bottom:10px}
+  .prov .ic{font-size:26px;flex:none}
+  .prov .info{flex:1;min-width:0}
+  .prov .info b{font-size:14px}.prov .info small{display:block;color:var(--muted);font-size:12px}
+  .prov .mi{font-size:11px;color:var(--amber);font-weight:700}
+  .prov .act{flex:none;display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+  .prov .val{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .st{font-size:11px;font-weight:700;border-radius:999px;padding:2px 9px}
+  .st.avail{background:rgba(0,212,255,.14);color:var(--cyan)}
+  .st.conn{background:rgba(255,194,75,.16);color:var(--amber)}
+  .st.won{background:rgba(0,255,136,.16);color:var(--lime)}
+
+  .field{margin-bottom:10px}.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}
+  .field input,.field select{width:100%;background:var(--navy);border:1px solid var(--line);color:var(--ink);border-radius:9px;padding:11px;font-size:13.5px}
+  .field input:focus{outline:none;border-color:var(--cyan)}
+  .row2{display:flex;gap:10px}.row2>*{flex:1}
+  .payout{background:linear-gradient(160deg,#13203c,#0e1830);border:1px solid rgba(0,255,136,.3);border-radius:14px;padding:18px;text-align:center}
+  .payout .big{font-size:34px;font-weight:800;color:var(--lime);font-variant-numeric:tabular-nums}
+  .feed{max-height:240px;overflow:auto}.feed .ev{display:flex;gap:9px;padding:7px 0;border-bottom:1px solid #16233f;font-size:12.5px}
+  .feed .ev .t{color:var(--muted);font-size:11px;min-width:44px}
+  .how{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+  .how .s{background:var(--navy);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .how .s .n{width:30px;height:30px;border-radius:50%;background:rgba(0,212,255,.14);color:var(--cyan);border:1px solid rgba(0,212,255,.4);display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:9px}
+  .how .s b{font-size:13.5px}.how .s p{font-size:12px;color:var(--muted)}
+
+  .disc{background:#0b1426;border-top:1px solid var(--line);padding:16px 0;font-size:11.5px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="logo"><b>WIN</b> Agent Partner</div>
+  <span class="pct">You earn 10% of gross</span>
+  <div class="right"><a class="btn btn-ghost btn-sm" href="funnel.html">⚡ Activate</a><a class="btn btn-ghost btn-sm" href="win-tv.html">📺 WIN TV</a></div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kick">Residential earnings portal</div>
+    <h1>Turn your storm damage into <span class="grad">income</span></h1>
+    <p>As a WIN residential subscriber you're an agent-partner. Connect your storm-related damage to trusted local providers near you — and earn <b>10% of the gross</b> on every job you originate. Recruit new providers into the WIN network and keep earning.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="kpis">
+    <div class="kpi c"><div class="v" id="kConn">0</div><div class="l">Providers connected</div></div>
+    <div class="kpi l2"><div class="v" id="kWon">0</div><div class="l">Jobs won</div></div>
+    <div class="kpi a"><div class="v" id="kGross">$0</div><div class="l">Gross sales generated</div></div>
+    <div class="kpi v2"><div class="v" id="kEarn">$0</div><div class="l">Your 10% earnings</div></div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <div class="card">
+        <h2>📍 Essential providers near you</h2>
+        <div class="lead">Geographically proximate, storm-ready service providers in the WIN network. Connect one to your damage — when the job closes, you earn 10% of the gross.</div>
+        <div id="provList"></div>
+      </div>
+
+      <div class="card">
+        <h2>➕ Recruit a provider into WIN</h2>
+        <div class="lead">Know a great local contractor not yet in the network? Add them as an agent-reseller referral. You earn 10% on the jobs they win through WIN, too.</div>
+        <div class="row2">
+          <div class="field"><label>Provider / company</label><input id="rName" placeholder="e.g. Apex Roofing"></div>
+          <div class="field"><label>Category</label>
+            <select id="rCat"><option>Roofing</option><option>Water mitigation</option><option>Tree / debris</option><option>General contractor</option><option>Restoration</option><option>Solar / electrical</option></select></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label>Miles from you</label><input id="rMi" inputmode="decimal" placeholder="3.2"></div>
+          <div class="field"><label>Avg job ($)</label><input id="rVal" inputmode="numeric" placeholder="6500"></div>
+        </div>
+        <button class="btn btn-primary" id="addProv" style="width:100%;justify-content:center">Add to WIN network</button>
+      </div>
+    </div>
+
+    <div>
+      <div class="payout">
+        <div style="font-size:12px;color:var(--muted)">Your payout (10% of gross)</div>
+        <div class="big" id="payoutBig">$0.00</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px">Paid monthly via Stripe / ACH (simulated)</div>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <h2>🧭 How it works</h2>
+        <div class="how">
+          <div class="s"><div class="n">1</div><b>Connect</b><p>Tap "Connect" on a nearby provider about your storm damage.</p></div>
+          <div class="s"><div class="n">2</div><b>They win the job</b><p>WIN dispatches; the provider closes the work.</p></div>
+          <div class="s"><div class="n">3</div><b>You earn 10%</b><p>10% of the gross sale lands in your payout — automatically.</p></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>📡 Earnings activity <span style="float:right;font-size:11px;color:var(--muted)" id="evCount">0</span></h2>
+        <div class="feed" id="feed"><div class="lead" style="margin:0">Connect a provider to start earning.</div></div>
+      </div>
+
+      <div class="card">
+        <button class="btn btn-ghost btn-sm" id="resetBtn" style="color:var(--red);border-color:rgba(255,93,115,.5)">↻ Reset demo</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="disc">
+  <div class="wrap">
+    💡 <b>Illustrative agent-partner demo.</b> Providers, jobs, and figures are sample data; payouts are simulated (no real money moves). The <b>10% agent commission is a concept</b> — paying consumers referral/commission fees on property-restoration and insurance-claim work is regulated differently by state (anti-inducement, public-adjusting, and contractor-referral rules). <b>Verify licensing and legality per state before launch.</b> No SSN is used. · <a href="funnel.html">Activate</a> · <a href="win-tv.html">WIN TV</a>
+  </div>
+</div>
+
+<script>
+  var KEY='telv_partner_v1', RATE=0.10;
+  function seed(){ return {
+    providers:[
+      {id:1,name:'Summit Roofing Co',cat:'Roofing',mi:2.1,val:8200,status:'avail',ic:'🏠'},
+      {id:2,name:'DryFast Water Mitigation',cat:'Water mitigation',mi:3.4,val:4600,status:'avail',ic:'💧'},
+      {id:3,name:'Timberline Tree & Debris',cat:'Tree / debris',mi:1.8,val:2300,status:'avail',ic:'🌳'},
+      {id:4,name:'Coastal General Contractors',cat:'General contractor',mi:5.0,val:14500,status:'avail',ic:'🛠️'},
+      {id:5,name:'BrightSky Solar & Electric',cat:'Solar / electrical',mi:4.2,val:9800,status:'avail',ic:'⚡'}
+    ], events:[], nextId:6 }; }
+  var S=load();
+  function load(){ try{var r=localStorage.getItem(KEY); if(r)return JSON.parse(r);}catch(e){} return seed(); }
+  function save(){ try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){} }
+  var $=function(id){return document.getElementById(id);};
+  function now(){var d=new Date();return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');}
+  function ev(msg){ S.events.unshift({t:now(),msg:msg}); }
+
+  function render(){
+    var conn=S.providers.filter(function(p){return p.status!=='avail';}).length;
+    var won=S.providers.filter(function(p){return p.status==='won';});
+    var gross=won.reduce(function(a,p){return a+(+p.val||0);},0);
+    var earn=gross*RATE;
+    $('kConn').textContent=conn; $('kWon').textContent=won.length;
+    $('kGross').textContent='$'+gross.toLocaleString(); $('kEarn').textContent='$'+Math.round(earn).toLocaleString();
+    $('payoutBig').textContent='$'+earn.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
+    $('provList').innerHTML=S.providers.map(function(p){
+      var stTxt=p.status==='avail'?'Available':p.status==='conn'?'Connected':'Job won';
+      var stCls=p.status==='avail'?'avail':p.status==='conn'?'conn':'won';
+      var btn=p.status==='avail'
+        ? '<button class="btn btn-conn btn-sm" data-conn="'+p.id+'">Connect</button>'
+        : p.status==='conn'
+          ? '<button class="btn btn-win btn-sm" data-win="'+p.id+'">Mark job won</button>'
+          : '<span class="val">+ $'+Math.round(p.val*RATE).toLocaleString()+' to you</span>';
+      return '<div class="prov"><span class="ic">'+p.ic+'</span><div class="info"><b>'+p.name+'</b>'+
+        '<small>'+p.cat+' · <span class="mi">'+p.mi+' mi away</span> · avg job $'+(+p.val).toLocaleString()+'</small></div>'+
+        '<div class="act"><span class="st '+stCls+'">'+stTxt+'</span>'+btn+'</div></div>';
+    }).join('');
+    $('evCount').textContent=S.events.length;
+    $('feed').innerHTML=S.events.length?S.events.slice(0,40).map(function(e){return '<div class="ev"><span class="t">'+e.t+'</span><span>'+e.msg+'</span></div>';}).join(''):'<div class="lead" style="margin:0">Connect a provider to start earning.</div>';
+  }
+
+  document.body.addEventListener('click',function(e){
+    var c=e.target.closest('[data-conn]'), w=e.target.closest('[data-win]');
+    if(c){ var p=S.providers.find(function(x){return x.id===+c.dataset.conn;}); p.status='conn';
+      ev('🔗 Connected '+p.name+' about your storm damage'); save(); render(); }
+    if(w){ var q=S.providers.find(function(x){return x.id===+w.dataset.win;}); q.status='won';
+      ev('✅ '+q.name+' won a $'+(+q.val).toLocaleString()+' job — you earn $'+Math.round(q.val*RATE).toLocaleString()+' (10%)'); save(); render(); }
+  });
+
+  $('addProv').onclick=function(){
+    var name=($('rName').value||'').trim()||'New Provider';
+    var cat=$('rCat').value, mi=parseFloat($('rMi').value)||(Math.round(Math.random()*60)/10+1), val=parseInt($('rVal').value,10)||5000;
+    var ics={'Roofing':'🏠','Water mitigation':'💧','Tree / debris':'🌳','General contractor':'🛠️','Restoration':'🧰','Solar / electrical':'⚡'};
+    S.providers.unshift({id:S.nextId++,name:name,cat:cat,mi:mi,val:val,status:'avail',ic:ics[cat]||'🏢'});
+    ev('➕ Recruited '+name+' into the WIN network ('+cat+')');
+    $('rName').value=$('rMi').value=$('rVal').value='';
+    save(); render();
+  };
+  $('resetBtn').onclick=function(){ if(confirm('Reset the partner demo?')){ localStorage.removeItem(KEY); S=load(); render(); } };
+  render();
+</script>
+<script src="assets/telv-track.js"></script>
+</body>
+</html>
