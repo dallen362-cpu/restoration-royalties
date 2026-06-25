@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>WIN TV — Weather Intelligence Network</title>
+<style>
+  :root{--midnight:#0A0E1A;--navy:#10182e;--card:#16213d;--card2:#1b2748;--line:#26345a;
+    --cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--amber:#ffc24b;--red:#ff5d73;--yt:#ff0033;--ink:#eaf2ff;--muted:#8ea3c9;
+    --g:"Segoe UI",system-ui,Arial,sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--g);color:var(--ink);background:var(--midnight);line-height:1.6}
+  .grad{background:linear-gradient(90deg,var(--cyan),var(--lime),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  a{color:var(--cyan)}
+  .bar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;padding:12px 20px;background:rgba(10,14,26,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar .logo{font-weight:800;letter-spacing:1px}.bar .logo b{color:var(--cyan)}
+  .bar .tv{background:var(--yt);color:#fff;font-size:11px;font-weight:800;border-radius:6px;padding:2px 8px;letter-spacing:1px}
+  .bar .right{margin-left:auto;display:flex;gap:8px}
+  .btn{border:none;cursor:pointer;font-family:var(--g);font-weight:800;border-radius:11px;padding:13px 22px;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+  .btn-primary{background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c}
+  .btn-free{background:linear-gradient(90deg,var(--violet),var(--cyan));color:#fff}
+  .btn-ghost{background:rgba(255,255,255,.06);color:var(--ink);border:1px solid var(--line)}
+  .btn-yt{background:var(--yt);color:#fff}
+  .btn-sm{padding:9px 14px;font-size:12.5px}
+
+  .hero{text-align:center;padding:54px 0 30px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(900px 460px at 50% -10%,#1c2a52,var(--midnight) 62%)}
+  .kick{letter-spacing:3px;font-size:12px;text-transform:uppercase;color:var(--cyan);font-weight:700}
+  .hero h1{font-size:clamp(30px,6vw,56px);margin:12px auto 6px;max-width:16ch}
+  .hero p{color:#cdddf6;max-width:660px;margin:0 auto;font-size:18px}
+  .hero .sub{display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:var(--lime);font-weight:700;border:1px solid rgba(0,255,136,.4);border-radius:999px;padding:7px 16px;font-size:14px;background:rgba(0,255,136,.07)}
+  .hero .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+
+  .player{background:#000;border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:8px 0 8px;position:relative;aspect-ratio:16/9}
+  .player iframe{width:100%;height:100%;border:0;display:block}
+  .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    background:radial-gradient(700px 360px at 50% 30%,#16213d,#06101f);gap:10px;padding:20px}
+  .ph .film{font-size:46px}.ph h3{font-size:20px}.ph p{color:var(--muted);font-size:13px;max-width:440px}
+  .ph .live{color:var(--red);font-weight:800;letter-spacing:1px;font-size:12px;border:1px solid var(--red);border-radius:999px;padding:3px 10px}
+  .nowtitle{font-size:13px;color:var(--muted);margin-bottom:4px}
+  .nowtitle b{color:var(--ink);font-size:16px}
+
+  .layout{display:grid;grid-template-columns:1.6fr 1fr;gap:22px;align-items:start;padding:14px 0 40px}
+  @media(max-width:880px){.layout{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+  .panel h2{font-size:16px;margin-bottom:6px}
+  .panel.activate{border-color:rgba(0,255,136,.35);box-shadow:0 0 30px rgba(0,255,136,.1)}
+  .panel.free{border-color:rgba(123,97,255,.4)}
+  .panel .lead{color:var(--muted);font-size:13.5px;margin-bottom:14px}
+  .panel .btn{width:100%;justify-content:center;margin-bottom:8px}
+  .tagrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+  .tg{font-size:11px;border-radius:999px;padding:3px 9px;border:1px solid var(--line);color:var(--muted)}
+
+  h2.sec{font-size:13px;letter-spacing:1px;text-transform:uppercase;margin:8px 0 14px;display:flex;align-items:center;gap:10px;color:var(--cyan)}
+  h2.sec::after{content:"";flex:1;height:1px;background:var(--line)}
+  .eps{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+  .ep{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:transform .15s,border-color .15s}
+  .ep:hover{transform:translateY(-4px);border-color:var(--cyan)}
+  .ep.active{border-color:var(--lime)}
+  .ep .thumb{aspect-ratio:16/9;background:linear-gradient(160deg,#1a2547,#0b1326);display:flex;align-items:center;justify-content:center;font-size:38px;position:relative}
+  .ep .thumb .ix{position:absolute;top:8px;left:8px;font-size:11px;font-weight:800;background:rgba(0,0,0,.5);border-radius:6px;padding:2px 8px}
+  .ep .thumb .dur{position:absolute;bottom:8px;right:8px;font-size:11px;background:rgba(0,0,0,.6);border-radius:5px;padding:2px 7px}
+  .ep .meta{padding:13px 14px}.ep .meta h4{font-size:14.5px;margin-bottom:3px}.ep .meta p{font-size:12.5px;color:var(--muted)}
+  .ep .meta .evt{font-size:11px;color:var(--amber);font-weight:700;margin-top:6px}
+
+  /* modal */
+  .modal{position:fixed;inset:0;z-index:60;background:rgba(6,11,22,.86);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px}
+  .modal.open{display:flex}
+  .sheet{max-width:460px;width:100%;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 24px 60px rgba(0,0,0,.6)}
+  .sheet h3{font-size:20px;margin-bottom:6px}.sheet .lead{color:var(--muted);font-size:13.5px;margin-bottom:16px}
+  .field{margin-bottom:12px}.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}
+  .field input,.field select{width:100%;background:var(--navy);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:12px;font-size:14px}
+  .field input:focus{outline:none;border-color:var(--cyan)}
+  .x{float:right;background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer}
+  .ok{display:none;text-align:center}.ok.show{display:block}.ok .chk{font-size:46px}
+  .pending{font-size:11px;color:var(--amber);background:rgba(255,194,75,.08);border:1px solid rgba(255,194,75,.3);border-radius:9px;padding:9px 11px;margin-top:6px}
+
+  .disc{background:#0b1426;border-top:1px solid var(--line);padding:18px 0;font-size:12px;color:var(--muted)}
+  footer{padding:40px 0 70px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="logo"><b>WIN</b> TV <span class="tv">▶ WEATHER</span></div>
+  <div class="right">
+    <a class="btn btn-ghost btn-sm" href="funnel.html">⚡ Activate</a>
+    <a class="btn btn-yt btn-sm" id="subBtn" href="#">Subscribe</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kick">Weather Intelligence Network · mini-documentary series</div>
+    <h1>The storms that <span class="grad">changed everything</span> — and the AI that now sees them coming</h1>
+    <p>Real weather events, told as short documentaries. Each episode shows how the WIN system turns live data into life-saving action — and lets you activate it yourself, in real time.</p>
+    <div class="sub">❤️ Technology that saves lives — watch, then activate during the episode</div>
+    <div class="acts">
+      <a class="btn btn-primary" href="funnel.html">⚡ Activate WIN now</a>
+      <button class="btn btn-free" id="freeBtn">🆓 Apply for the free WIN Safety Line</button>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="layout">
+    <div>
+      <div class="nowtitle">Now playing · <b id="nowTitle">Episode 1 — Hurricane Landfall</b></div>
+      <div class="player" id="player"></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+        <a class="btn btn-primary btn-sm" href="funnel.html" id="actEp">⚡ Activate WIN for this storm</a>
+        <button class="btn btn-free btn-sm" id="freeBtn2">🆓 Free WIN Safety Line</button>
+        <a class="btn btn-ghost btn-sm" href="telvergence-demo.html">🛰️ Open the live dashboard</a>
+      </div>
+
+      <h2 class="sec">📺 Season 1 — episodes</h2>
+      <div class="eps" id="eps"></div>
+    </div>
+
+    <div>
+      <div class="panel activate">
+        <h2>⚡ Activate WIN in real time</h2>
+        <div class="lead">Saw it on the episode? Stand up your own branded, E911-ready Smart DID in seconds and route storm calls to the phone you already carry.</div>
+        <a class="btn btn-primary" href="funnel.html">Start instant activation →</a>
+        <div class="tagrow"><span class="tg">$22.95/mo</span><span class="tg">no SSN</span><span class="tg">E911 ready</span><span class="tg">~30s</span></div>
+      </div>
+
+      <div class="panel free" style="margin-top:16px">
+        <h2>🆓 The WIN Safety Line</h2>
+        <div class="lead">A free-to-activate weather-alert &amp; 911-ready safety number for at-risk and underserved households — our mission to make life-saving alerts reach everyone.</div>
+        <button class="btn btn-free" id="freeBtn3">Apply for early access →</button>
+        <div class="pending">⚠️ In development — early-access list only. <b>Not an FCC Lifeline product.</b> Free tier pending non-profit / sponsorship / grant funding (see plan).</div>
+      </div>
+
+      <div class="panel" style="margin-top:16px">
+        <h2>🎬 For prospects &amp; partners</h2>
+        <div class="lead">WIN is the case study: live NOAA/NWS data → storm dispatch → crews on site. See it running.</div>
+        <a class="btn btn-ghost" href="telvergence-demo.html">▶ Live storm dispatch dashboard</a>
+        <a class="btn btn-ghost" href="start.html" style="margin-top:8px">📌 Full platform bookmark</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- free safety line modal -->
+<div class="modal" id="freeModal">
+  <div class="sheet">
+    <button class="x" id="freeClose">✕</button>
+    <div id="freeForm">
+      <h3>🆓 WIN Safety Line — early access</h3>
+      <div class="lead">Join the early-access list for a free weather-alert &amp; 911-ready safety number. We'll notify you when funded coverage reaches your area.</div>
+      <div class="field"><label>Email</label><input id="fEmail" type="email" placeholder="you@email.com"></div>
+      <div class="field"><label>ZIP code (coverage priority)</label><input id="fZip" inputmode="numeric" maxlength="5" placeholder="33301"></div>
+      <div class="field"><label>Household type</label>
+        <select id="fType"><option>Senior / fixed income</option><option>Disability / medical need</option><option>Storm-prone area</option><option>Low-income / underserved</option><option>Other</option></select></div>
+      <button class="btn btn-free" id="freeSubmit" style="width:100%;justify-content:center">Join the early-access list</button>
+      <div class="pending">This is an application for a future subsidized program — <b>not</b> an active FCC Lifeline service, and not a guarantee of free service. No SSN is ever requested.</div>
+    </div>
+    <div class="ok" id="freeOk">
+      <div class="chk">✅</div>
+      <h3 style="margin:8px 0">You're on the early-access list</h3>
+      <p class="lead" id="freeOkMsg">We'll reach out as funded WIN Safety Line coverage reaches your ZIP.</p>
+      <a class="btn btn-primary" href="funnel.html" style="justify-content:center">Or activate full WIN now →</a>
+    </div>
+  </div>
+</div>
+
+<div class="disc">
+  <div class="wrap">
+    🎬 <b>WIN TV companion page.</b> Weather data on the dashboard is live (U.S. National Weather Service). Episode players show real YouTube videos once published; activation and the WIN Safety Line are <b>illustrative/early-access</b> in this demo — no real number is provisioned and no charge occurs. The <b>WIN Safety Line is not an FCC Lifeline product</b>; any free/subsidized tier is contingent on non-profit, sponsorship, or grant funding not yet secured. No Social Security Numbers are used — the Smart DID is the account key. · <a href="funnel.html">Activate</a> · <a href="telvergence-demo.html">Dashboard</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <b style="color:var(--cyan)">WIN</b> TV — Weather Intelligence Network · a TELVERGENCE channel
+    <p style="margin-top:6px">Watch · Activate · Stay safe</p>
+  </div>
+</footer>
+
+<script>
+  // ---- channel config — paste your real YouTube IDs into `yt` when episodes publish ----
+  var CHANNEL_URL = "";   // <-- paste your YouTube channel URL when created
+  var EPISODES = [
+    {n:1, title:"Hurricane Landfall", evt:"Category 4 · Gulf Coast", dur:"11:24", icon:"🌀", yt:"",
+      blurb:"Hours before impact, WIN's AI reroutes crews and warns households in the cone."},
+    {n:2, title:"Tornado Alley, 3 Minutes", evt:"EF-4 outbreak · Midwest", dur:"9:48", icon:"🌪️", yt:"",
+      blurb:"The three minutes that decide everything — and how live alerts buy them back."},
+    {n:3, title:"The Ice Storm Blackout", evt:"Ice storm · Northeast", dur:"12:06", icon:"🧊", yt:"",
+      blurb:"When the grid fails, a 911-ready line is the last thing still working."},
+    {n:4, title:"Flash Flood Canyon", evt:"Flash flood · Southwest", dur:"10:15", icon:"🌊", yt:"",
+      blurb:"Minutes of warning across miles of canyon — geofenced, automated, life-saving."},
+    {n:5, title:"Wildfire on the Wind", evt:"Wildfire · West", dur:"13:32", icon:"🔥", yt:"",
+      blurb:"Evacuation routing in real time as the fire line jumps the ridge."},
+    {n:6, title:"After the Storm", evt:"Restoration · nationwide", dur:"14:01", icon:"🛠️", yt:"",
+      blurb:"The recovery economy WIN powers — and how anyone can activate into it."}
+  ];
+
+  var player=document.getElementById('player'), nowTitle=document.getElementById('nowTitle'),
+      epsEl=document.getElementById('eps'), actEp=document.getElementById('actEp');
+  function loadEp(ep){
+    nowTitle.textContent="Episode "+ep.n+" — "+ep.title;
+    if(ep.yt){
+      player.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+ep.yt+'?rel=0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>';
+    } else {
+      player.innerHTML='<div class="ph"><span class="live">● COMING SOON</span><div class="film">🎬</div>'+
+        '<h3>Episode '+ep.n+' — '+ep.title+'</h3><p>'+ep.blurb+'</p>'+
+        '<p style="color:var(--muted)">'+ep.evt+' · '+ep.dur+'</p></div>';
+    }
+    actEp.href="funnel.html?v=wintv-ep"+ep.n;
+    [].forEach.call(epsEl.children,function(c){ c.classList.toggle('active', +c.dataset.n===ep.n); });
+    try{ history.replaceState(null,'','?ep='+ep.n); }catch(e){}
+  }
+  EPISODES.forEach(function(ep){
+    var d=document.createElement('div'); d.className='ep'; d.dataset.n=ep.n;
+    d.innerHTML='<div class="thumb"><span class="ix">EP '+ep.n+'</span>'+ep.icon+'<span class="dur">'+ep.dur+'</span></div>'+
+      '<div class="meta"><h4>'+ep.title+'</h4><p>'+ep.blurb+'</p><div class="evt">'+ep.evt+'</div></div>';
+    d.onclick=function(){ loadEp(ep); window.scrollTo({top:0,behavior:'smooth'}); };
+    epsEl.appendChild(d);
+  });
+  // deep-link ?ep=N
+  var qp=new URLSearchParams(location.search), startEp=+qp.get('ep')||1;
+  loadEp(EPISODES.find(function(e){return e.n===startEp;})||EPISODES[0]);
+
+  // subscribe
+  document.getElementById('subBtn').onclick=function(e){ if(CHANNEL_URL){location.href=CHANNEL_URL;} else {e.preventDefault(); alert('Channel launching soon — your YouTube channel URL drops in here.');} };
+
+  // free safety line modal
+  var fm=document.getElementById('freeModal');
+  function openFree(){ fm.classList.add('open'); document.getElementById('freeForm').style.display='block'; document.getElementById('freeOk').classList.remove('show'); }
+  function closeFree(){ fm.classList.remove('open'); }
+  ['freeBtn','freeBtn2','freeBtn3'].forEach(function(id){ var b=document.getElementById(id); if(b)b.onclick=openFree; });
+  document.getElementById('freeClose').onclick=closeFree;
+  fm.onclick=function(e){ if(e.target===fm)closeFree(); };
+  document.getElementById('freeSubmit').onclick=function(){
+    var em=(document.getElementById('fEmail').value||'').trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){ document.getElementById('fEmail').style.borderColor='var(--red)'; return; }
+    var zip=(document.getElementById('fZip').value||'').trim();
+    document.getElementById('freeForm').style.display='none';
+    document.getElementById('freeOkMsg').textContent='We’ll reach out as funded WIN Safety Line coverage reaches '+(zip?'ZIP '+zip:'your area')+'.';
+    document.getElementById('freeOk').classList.add('show');
+    // record via tracker if present
+    try{ if(window.navigator&&em){ var p={site:'telvergence',type:'safetyline_apply',email:em,zip:zip,page:'win-tv.html',ts:new Date().toISOString()};
+      var log=JSON.parse(localStorage.getItem('telv_log')||'[]'); log.unshift(p); localStorage.setItem('telv_log',JSON.stringify(log.slice(0,800))); } }catch(e){}
+  };
+</script>
+<script src="assets/telv-track.js"></script>
+</body>
+</html>
