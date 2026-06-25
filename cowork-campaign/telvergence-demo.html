@@ -230,9 +230,16 @@
   .ec{font-size:11px;background:rgba(123,97,255,.14);border:1px solid rgba(123,97,255,.4);color:#cbb8ff;border-radius:999px;padding:4px 10px}
 
   .tourbtn{background:linear-gradient(90deg,var(--cyan),var(--lime));color:#04121c;border:none;border-radius:999px;
-    font-weight:800;font-size:12.5px;padding:8px 14px;cursor:pointer;transition:transform .12s}
+    font-weight:800;font-size:12.5px;padding:8px 14px;cursor:pointer;transition:transform .12s;animation:btnpulse 2.4s ease-in-out infinite}
   .tourbtn:hover{transform:scale(1.05)}
-  .tourbtn.live{background:var(--red);color:#fff}
+  .tourbtn.live{background:var(--red);color:#fff;animation:none}
+  @keyframes btnpulse{0%,100%{box-shadow:0 0 0 0 rgba(0,255,136,.55)}50%{box-shadow:0 0 0 10px rgba(0,255,136,0)}}
+  .muteBtn{background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:999px;font-size:14px;padding:7px 11px;cursor:pointer}
+  .muteBtn:hover{border-color:var(--cyan)}
+  /* tour spotlight */
+  .tour-spot{position:relative;z-index:4;border-radius:14px;outline:3px solid var(--cyan);
+    box-shadow:0 0 0 6px rgba(0,212,255,.18),0 0 34px rgba(0,212,255,.55);animation:spotpulse 1.5s ease-in-out infinite}
+  @keyframes spotpulse{0%,100%{box-shadow:0 0 0 6px rgba(0,212,255,.14),0 0 26px rgba(0,212,255,.45)}50%{box-shadow:0 0 0 10px rgba(0,212,255,.05),0 0 44px rgba(0,212,255,.75)}}
 
   /* auto-tour bar */
   .tourbar{position:fixed;left:236px;right:0;bottom:0;z-index:8;background:linear-gradient(180deg,#0c1428,#0a1020);
@@ -264,7 +271,8 @@
     <div class="logo"><span class="dot"></span><span>TEL<b>VERGENCE</b></span></div>
     <span class="demo-badge">● LIVE DEMO</span>
     <div class="right">
-      <button class="tourbtn" id="tourBtn">▶ Auto-Tour</button>
+      <button class="tourbtn" id="tourBtn">▶ Play Narrated Demo</button>
+      <button class="muteBtn" id="muteBtn" title="Toggle narration voice">🔊</button>
       <div class="clock" id="clock"></div>
       <div class="live-tag"><span class="blip"></span> Streaming</div>
       <div class="avatar">RR</div>
@@ -1136,24 +1144,40 @@
 
   // ---- guided auto-tour ----
   const TOUR=[
-    {v:'stormmap',s:14,t:'Storm Dispatch Command Center',n:'We lead here: LIVE National Weather Service alerts flow into our Weather Intelligence Network, the nationwide grid lights up where real storms are hitting right now, and the Command Center auto-dispatches crews to StormCrew, Roofing Crew and Restoration Royalty — turning real weather into work and revenue.'},
-    {v:'recruit',s:13,t:'Partner Recruitment',n:'The growth engine: we cross that live weather against the areas we do NOT cover yet, surface the open territories, and produce a list of vendor businesses to recruit — each matched to a Starter, Growth, or Enterprise plan.'},
-    {v:'dash',s:13,t:'Command Center',n:'The real-time heartbeat — every interaction across every channel, streaming live. And the Profit Step-Down KOIs recalculate live: Revenue → Gross → Operating → Net → Net-Net, right as the money flows.'},
-    {v:'conduit',s:11,t:'Omnichannel Conduit',n:'One bi-directional pipe: inbound on the left, outbound on the right, across all 12 channels — SMS, voice, email, push, ringless VM, geofencing, 2FA and more.'},
-    {v:'lifecycle',s:10,t:'Customer Lifecycle',n:'We move people from Reach to Advocate — and see the volume and the speed at every stage of the journey.'},
-    {v:'ivr',s:10,t:'PBX / IVR Routing',n:'How an inbound contact flows: AI triage, emergency priority, opt-in capture — every branch written back to one unified timeline.'},
-    {v:'ai',s:11,t:'AI Assistant',n:'Live transcription, sentiment and intent routing. Here it turns a distressed emergency caller into a dispatched crew in seconds.'},
-    {v:'demo-graphics',s:9,t:'Demographics',n:'Who we reach, where they are, what device they prefer, and exactly when they respond.'},
-    {v:'econ',s:13,t:'Market Economics',n:'The model: create demand, control supply, set the price — grounded in standard supply-and-demand theory, and our 3 E’s, T’s and C’s credo.'},
-    {v:'brands',s:9,t:'Brands',n:'Every white-label brand running on the very same platform you’re looking at.'},
-    {v:'customers',s:9,t:'Customers',n:'Retention, low churn, and the accounts driving recurring revenue.'},
-    {v:'revenue',s:10,t:'Revenue',n:'Recurring revenue and revenue-per-interaction — the model, monetized.'},
+    {v:'stormmap',s:14,focus:'#usgrid',live:true,t:'Storm Dispatch Command Center',n:'We lead here: LIVE National Weather Service alerts flow into our Weather Intelligence Network, the nationwide grid lights up where real storms are hitting right now, and the Command Center auto-dispatches crews to StormCrew, Roofing Crew and Restoration Royalty — turning real weather into work and revenue.'},
+    {v:'recruit',s:13,focus:'table',t:'Partner Recruitment',n:'The growth engine: we cross that live weather against the areas we do NOT cover yet, surface the open territories, and produce a list of vendor businesses to recruit — each matched to a Starter, Growth, or Enterprise plan.'},
+    {v:'dash',s:13,focus:'.pnl',live:true,t:'Command Center',n:'The real-time heartbeat — every interaction across every channel, streaming live. And the Profit Step-Down KOIs recalculate live: Revenue, Gross, Operating, Net, then Net-Net, right as the money flows.'},
+    {v:'conduit',s:11,focus:'.hub-core',live:true,t:'Omnichannel Conduit',n:'One bi-directional pipe: inbound on the left, outbound on the right, across all 12 channels — SMS, voice, email, push, ringless voicemail, geofencing, two-factor and more.'},
+    {v:'lifecycle',s:10,focus:'#funnel',t:'Customer Lifecycle',n:'We move people from Reach to Advocate — and see the volume and the speed at every stage of the journey.'},
+    {v:'ivr',s:10,focus:'.tree',t:'PBX and I-V-R Routing',n:'How an inbound contact flows: A-I triage, emergency priority, opt-in capture — every branch written back to one unified timeline.'},
+    {v:'ai',s:11,focus:'.ai-msg.bot',t:'AI Assistant',n:'Live transcription, sentiment and intent routing. Here it turns a distressed emergency caller into a dispatched crew in seconds.'},
+    {v:'demo-graphics',s:9,focus:'#dayparts',t:'Demographics',n:'Who we reach, where they are, what device they prefer, and exactly when they respond.'},
+    {v:'econ',s:13,focus:'svg',t:'Market Economics',n:'The model: create demand, control supply, set the price — grounded in standard supply and demand theory, and our three E-s, T-s and C-s credo.'},
+    {v:'brands',s:9,focus:'.brandgrid',t:'Brands',n:'Every white-label brand running on the very same platform you are looking at.'},
+    {v:'customers',s:9,focus:'.hero',t:'Customers',n:'Retention, low churn, and the accounts driving recurring revenue.'},
+    {v:'revenue',s:10,focus:'.panel',live:true,t:'Revenue',n:'Recurring revenue and revenue per interaction — the model, monetized.'},
   ];
   const tourbar=document.getElementById('tourbar'), tourBtn=document.getElementById('tourBtn');
   const tStep=document.getElementById('tourStep'), tTitle=document.getElementById('tourTitle'),
         tNarr=document.getElementById('tourNarr'), tProg=document.getElementById('tourProg');
-  const tPause=document.getElementById('tourPause');
+  const tPause=document.getElementById('tourPause'), muteBtn=document.getElementById('muteBtn');
   let tIdx=0, tElapsed=0, tTimer=null, tPaused=false, tActive=false;
+
+  // ---- narration voice (browser text-to-speech) ----
+  let soundOn=true, voice=null;
+  function pickVoice(){ try{const vs=speechSynthesis.getVoices();
+    voice = vs.find(v=>/Google US English/i.test(v.name)) || vs.find(v=>/Samantha|Aria|Jenny|Zira/i.test(v.name))
+         || vs.find(v=>/^en[-_]US/i.test(v.lang)) || vs.find(v=>/^en/i.test(v.lang)) || vs[0] || null;}catch(e){} }
+  if('speechSynthesis' in window){ pickVoice(); speechSynthesis.onvoiceschanged=pickVoice; }
+  function speak(t){ if(!soundOn||!('speechSynthesis'in window))return;
+    try{ speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(t); if(voice)u.voice=voice;
+      u.rate=1.03; u.pitch=1; u.volume=1; speechSynthesis.speak(u); }catch(e){} }
+  function stopSpeak(){ try{ if('speechSynthesis'in window)speechSynthesis.cancel(); }catch(e){} }
+
+  // ---- spotlight ----
+  let spotEl=null;
+  function spotlight(el){ if(spotEl)spotEl.classList.remove('tour-spot'); spotEl=el||null;
+    if(spotEl){ spotEl.classList.add('tour-spot'); try{spotEl.scrollIntoView({block:'center',behavior:'smooth'});}catch(e){} } }
 
   function loadStep(i){
     tIdx=(i+TOUR.length)%TOUR.length; tElapsed=0;
@@ -1162,6 +1186,14 @@
     tStep.textContent=(tIdx+1)+' / '+TOUR.length;
     tTitle.textContent=step.t; tNarr.textContent=step.n;
     tProg.style.width='0%';
+    // spotlight the panel being described
+    const viewEl=document.getElementById(ids[step.v]); let target=null;
+    if(viewEl&&step.focus){ try{ target=viewEl.querySelector(step.focus); }catch(e){} }
+    spotlight(target);
+    // make it visibly LIVE: jolt the streaming numbers on money/flow screens
+    if(step.live && typeof liveTick==='function'){ for(let k=0;k<8;k++) setTimeout(liveTick, k*110); }
+    // narrate out loud
+    speak(step.t + '. ' + step.n);
   }
   function tourLoop(){
     if(tPaused||!tActive)return;
@@ -1174,18 +1206,21 @@
     tActive=true; tPaused=false;
     document.body.classList.add('tour-on');
     tourbar.classList.add('show');
-    tourBtn.classList.add('live'); tourBtn.textContent='■ Stop Tour';
+    tourBtn.classList.add('live'); tourBtn.textContent='■ Stop Demo';
     loadStep(0);
     clearInterval(tTimer); tTimer=setInterval(tourLoop,100);
   }
   function stopTour(){
-    tActive=false; clearInterval(tTimer);
+    tActive=false; clearInterval(tTimer); stopSpeak(); spotlight(null);
     document.body.classList.remove('tour-on');
     tourbar.classList.remove('show');
-    tourBtn.classList.remove('live'); tourBtn.textContent='▶ Auto-Tour';
+    tourBtn.classList.remove('live'); tourBtn.textContent='▶ Play Narrated Demo';
   }
   tourBtn.onclick=()=>{ tActive?stopTour():startTour(); };
-  tPause.onclick=()=>{ tPaused=!tPaused; tPause.textContent=tPaused?'▶ Resume':'⏸ Pause'; };
+  tPause.onclick=()=>{ tPaused=!tPaused; tPause.textContent=tPaused?'▶ Resume':'⏸ Pause';
+    if('speechSynthesis'in window){ try{ tPaused?speechSynthesis.pause():speechSynthesis.resume(); }catch(e){} } };
+  muteBtn.onclick=()=>{ soundOn=!soundOn; muteBtn.textContent=soundOn?'🔊':'🔇'; if(!soundOn)stopSpeak();
+    else if(tActive)speak(TOUR[tIdx].t+'. '+TOUR[tIdx].n); };
   document.getElementById('tourNext').onclick=()=>loadStep(tIdx+1);
   document.getElementById('tourExit').onclick=stopTour;
   document.addEventListener('keydown',e=>{
