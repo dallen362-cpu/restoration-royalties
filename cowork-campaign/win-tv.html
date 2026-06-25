@@ -77,6 +77,23 @@
   .ok{display:none;text-align:center}.ok.show{display:block}.ok .chk{font-size:46px}
   .pending{font-size:11px;color:var(--amber);background:rgba(255,194,75,.08);border:1px solid rgba(255,194,75,.3);border-radius:9px;padding:9px 11px;margin-top:6px}
 
+  /* local storm intelligence */
+  .local{background:linear-gradient(160deg,#13203c,#0c1424);border:1px solid var(--line);border-radius:16px;padding:18px;margin:8px 0 6px}
+  .local .lhead{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+  .lkick{letter-spacing:2px;font-size:11px;text-transform:uppercase;color:var(--cyan);font-weight:700}
+  .local h2{font-size:19px;margin-top:3px}
+  .lbody{font-size:14px}
+  .lalert{border-radius:12px;padding:14px;border:1px solid var(--line);background:var(--navy);margin-bottom:8px}
+  .lalert .levt{font-size:17px;font-weight:800}
+  .lalert .lhl{font-size:13px;color:#dbe7fb;margin-top:4px}
+  .lalert .lmeta{font-size:12px;color:var(--muted);margin-top:6px}
+  .lalert.sev-Extreme{border-color:var(--red);box-shadow:0 0 22px rgba(255,93,115,.18)}
+  .lalert.sev-Extreme .levt{color:var(--red)}
+  .lalert.sev-Severe{border-color:var(--amber)}.lalert.sev-Severe .levt{color:var(--amber)}
+  .lalert.sev-Moderate .levt{color:var(--cyan)}
+  .lmatch{font-size:13px;color:var(--lime);font-weight:700;margin:8px 0 4px}
+  .lcalm{border-radius:12px;padding:14px;border:1px solid rgba(0,255,136,.3);background:rgba(0,255,136,.06);margin-bottom:10px;font-weight:700;color:var(--lime)}
+  .lbody .btn{margin-top:4px}
   .disc{background:#0b1426;border-top:1px solid var(--line);padding:18px 0;font-size:12px;color:var(--muted)}
   footer{padding:40px 0 70px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
 </style>
@@ -103,6 +120,17 @@
     </div>
   </div>
 </section>
+
+<div class="wrap">
+  <div class="local" id="localBox">
+    <div class="lhead">
+      <div><span class="lkick">📍 Your Local Storm Intelligence — live</span>
+        <h2 id="locTitle">Locating your area…</h2></div>
+      <button class="btn btn-ghost btn-sm" id="preciseBtn">📍 Use precise location</button>
+    </div>
+    <div class="lbody" id="locBody"><span style="color:var(--muted)">Reading live conditions from the U.S. National Weather Service…</span></div>
+  </div>
+</div>
 
 <div class="wrap">
   <div class="layout">
@@ -169,7 +197,7 @@
 
 <div class="disc">
   <div class="wrap">
-    🎬 <b>WIN TV companion page.</b> Weather data on the dashboard is live (U.S. National Weather Service). Episode players show real YouTube videos once published; activation and the WIN Safety Line are <b>illustrative/early-access</b> in this demo — no real number is provisioned and no charge occurs. The <b>WIN Safety Line is not an FCC Lifeline product</b>; any free/subsidized tier is contingent on non-profit, sponsorship, or grant funding not yet secured. No Social Security Numbers are used — the Smart DID is the account key. · <a href="funnel.html">Activate</a> · <a href="telvergence-demo.html">Dashboard</a>
+    🎬 <b>WIN TV companion page.</b> Your Local Storm Intelligence uses your approximate (IP) or precise (with permission) location to pull <b>live, real U.S. National Weather Service alerts</b> for your area and match an episode to current conditions. Episode players show real YouTube videos once published; activation and the WIN Safety Line are <b>illustrative/early-access</b> in this demo — no real number is provisioned and no charge occurs. The <b>WIN Safety Line is not an FCC Lifeline product</b>; any free/subsidized tier is contingent on non-profit, sponsorship, or grant funding not yet secured. No Social Security Numbers are used — the Smart DID is the account key. · <a href="funnel.html">Activate</a> · <a href="telvergence-demo.html">Dashboard</a>
   </div>
 </div>
 
@@ -245,6 +273,78 @@
     try{ if(window.navigator&&em){ var p={site:'telvergence',type:'safetyline_apply',email:em,zip:zip,page:'win-tv.html',ts:new Date().toISOString()};
       var log=JSON.parse(localStorage.getItem('telv_log')||'[]'); log.unshift(p); localStorage.setItem('telv_log',JSON.stringify(log.slice(0,800))); } }catch(e){}
   };
+</script>
+<script>
+  // ---- Local Storm Intelligence: viewer's real-time NWS conditions -> matched episode ----
+  (function(){
+    var locTitle=document.getElementById('locTitle'), locBody=document.getElementById('locBody');
+    var EP_MATCH=[
+      {re:/hurricane|tropical|storm surge/i,ep:1},
+      {re:/tornado/i,ep:2},
+      {re:/ice|winter|freeze|snow|blizzard|wind chill/i,ep:3},
+      {re:/flood/i,ep:4},
+      {re:/fire|red flag/i,ep:5}
+    ];
+    function matchEp(t){ for(var i=0;i<EP_MATCH.length;i++){ if(EP_MATCH[i].re.test(t)) return EP_MATCH[i].ep; } return null; }
+    function sev(s){ return {Extreme:4,Severe:3,Moderate:2,Minor:1,Unknown:0}[s]||0; }
+    function esc(s){ return String(s==null?'':s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+
+    function go(lat,lon,place){
+      locTitle.textContent = place || ('Your area · '+lat.toFixed(2)+', '+lon.toFixed(2));
+      fetch('https://api.weather.gov/alerts/active?point='+lat+','+lon,{headers:{'Accept':'application/geo+json'}})
+        .then(function(r){return r.json();})
+        .then(function(d){ renderAlerts((d&&d.features)||[], place||'your area'); })
+        .catch(function(){ locBody.innerHTML='<span style="color:var(--muted)">Live NWS feed unavailable this moment — WIN still watches your area 24/7.</span>'+actBtn('local-area','your area'); });
+    }
+    function actBtn(tok,label){ return '<a class="btn btn-primary" href="funnel.html?v='+encodeURIComponent(tok)+'">⚡ Activate WIN for '+esc(label)+'</a>'; }
+
+    function renderAlerts(features, place){
+      if(!features.length){
+        locBody.innerHTML='<div class="lcalm">✅ No active weather alerts near you right now.</div>'+
+          '<div style="font-size:13px;color:var(--muted);margin-bottom:8px">WIN monitors your area continuously — activate and it watches for you, automatically, and rings your phone the moment something develops.</div>'+
+          actBtn('local-clear', place);
+        return;
+      }
+      features.sort(function(a,b){ return sev(b.properties.severity)-sev(a.properties.severity); });
+      var t=features[0].properties, ep=matchEp((t.event||'')+' '+(t.headline||''));
+      var html='<div class="lalert sev-'+(t.severity||'Unknown')+'">'+
+        '<div class="levt">⚠️ '+esc(t.event)+'</div>'+
+        '<div class="lhl">'+esc(t.headline||'')+'</div>'+
+        '<div class="lmeta">'+esc(t.severity||'')+(t.areaDesc?' · '+esc(t.areaDesc.split(';')[0]):'')+'</div></div>';
+      if(features.length>1) html+='<div style="font-size:12px;color:var(--muted);margin:2px 0 6px">+ '+(features.length-1)+' more active alert(s) near you.</div>';
+      if(ep) html+='<div class="lmatch">🎬 Matched to your live conditions → Episode '+ep+' is now playing above.</div>';
+      html+=actBtn('local-'+((t.event||'storm').toLowerCase().replace(/[^a-z]+/g,'-')), 'this '+(t.event||'storm'));
+      locBody.innerHTML=html;
+      if(ep && typeof loadEp==='function'){ var e=(typeof EPISODES!=='undefined')&&EPISODES.find(function(x){return x.n===ep;}); if(e){ loadEp(e); } }
+    }
+
+    document.getElementById('preciseBtn').onclick=function(){
+      if(!navigator.geolocation){ return; }
+      locTitle.textContent='Locating you precisely…';
+      navigator.geolocation.getCurrentPosition(
+        function(p){ go(p.coords.latitude,p.coords.longitude,null); },
+        function(){ locBody.innerHTML='<span style="color:var(--muted)">Location permission denied — tap again to allow, or we\'ll use your approximate area.</span>'; });
+    };
+
+    // default: approximate IP geolocation (no permission prompt) — resilient fallback chain
+    var SRC=[
+      {u:'https://ipapi.co/json/',  lat:function(j){return j.latitude;},  lon:function(j){return j.longitude;},  city:function(j){return j.city;}, reg:function(j){return j.region_code||j.region;}},
+      {u:'https://ipwho.is/',       lat:function(j){return j.success&&j.latitude;}, lon:function(j){return j.longitude;}, city:function(j){return j.city;}, reg:function(j){return j.region_code||j.region;}},
+      {u:'https://get.geojs.io/v1/ip/geo.json', lat:function(j){return parseFloat(j.latitude);}, lon:function(j){return parseFloat(j.longitude);}, city:function(j){return j.city;}, reg:function(j){return j.region;}}
+    ];
+    (function tryIp(i){
+      if(i>=SRC.length){
+        locTitle.textContent='See your real-time local storm intelligence';
+        locBody.innerHTML='<span style="color:var(--muted)">Tap “Use precise location” to pull your live local NWS conditions and match an episode to what’s happening near you.</span>';
+        return;
+      }
+      var s=SRC[i];
+      fetch(s.u).then(function(r){return r.json();}).then(function(j){
+        var la=s.lat(j), lo=s.lon(j);
+        if(la&&lo){ var c=s.city(j); go(la,lo,(c?c+', ':'')+(s.reg(j)||'')); } else throw 0;
+      }).catch(function(){ tryIp(i+1); });
+    })(0);
+  })();
 </script>
 <script src="assets/telv-track.js"></script>
 </body>
