@@ -260,6 +260,21 @@
   .prepaid b{font-size:20px;color:var(--lime);font-variant-numeric:tabular-nums}
   .activate{width:100%;background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c;border:none;border-radius:10px;padding:13px;font-weight:800;font-size:15px;cursor:pointer}
   .activate:disabled{opacity:.55;cursor:default}
+  .stripe{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:4px 0 10px}
+  .stripe .top{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);margin-bottom:9px}
+  .stripe .brand{font-weight:800;color:#635bff;letter-spacing:.3px}
+  .stripe .plan{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+  .stripe .plan b{font-size:24px;color:#fff;font-variant-numeric:tabular-nums}
+  .stripe .plan span{font-size:13px;color:var(--muted)}
+  .stripe .plan .per{font-size:12px;color:var(--muted)}
+  .stripe .qtyrow{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);margin-bottom:10px}
+  .stripe .stepper{display:flex;align-items:center;gap:10px}
+  .stripe .stepper button{width:26px;height:26px;border-radius:7px;border:1px solid var(--line);background:var(--navy);color:var(--ink);font-size:16px;font-weight:800;cursor:pointer;line-height:1}
+  .stripe .stepper b{min-width:18px;text-align:center;color:#fff;font-size:14px}
+  .stripe .due b{color:var(--lime);font-variant-numeric:tabular-nums}
+  .stripe .pay{width:100%;background:#635bff;color:#fff;border:none;border-radius:9px;padding:11px;font-weight:800;font-size:14px;cursor:pointer}
+  .stripe .pay:disabled{opacity:.55;cursor:default}
+  .stripe .lock{font-size:11px;color:var(--muted);text-align:center;margin-top:7px}
   .console{margin-top:14px;background:#06101f;border:1px solid var(--line);border-radius:10px;padding:12px;
     font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:#bfe9ff;min-height:64px;max-height:230px;overflow:auto;white-space:pre-wrap;line-height:1.5}
   .console .ok{color:var(--lime)} .console .cmd{color:var(--cyan)} .console .muted{color:var(--muted)}
@@ -809,6 +824,15 @@
           <input id="didPin" maxlength="8" inputmode="numeric" placeholder="MMDDYYYY" value="07041988"></div>
         <div class="field"><label>&nbsp;</label><div style="font-size:11px;color:var(--muted);padding-top:10px">Secures the Smart&nbsp;DID account. The DID is the account number; this 8-digit DOB is the PIN. <b>SSN never used.</b></div></div>
       </div>
+      <div class="stripe">
+        <div class="top"><span>Prepay to activate</span><span>Powered by <span class="brand">stripe</span></span></div>
+        <div class="plan"><div><b>$22.95</b> <span>/ month</span></div><div class="per">per Smart DID · recurring prepaid</div></div>
+        <div class="qtyrow"><span>Smart DIDs</span>
+          <div class="stepper"><button id="didQtyMinus" type="button">−</button><b id="didQty">1</b><button id="didQtyPlus" type="button">+</button></div>
+          <span class="due">due today <b id="didDue">$22.95</b></span></div>
+        <button class="pay" id="didPay">Start subscription · prepay <span id="didPayAmt">$22.95</span>/mo with Stripe →</button>
+        <div class="lock">🔒 Recurring $22.95/mo per Smart DID · charged to TELVERGENCE Stripe account (simulated in demo)</div>
+      </div>
       <div class="prepaid"><span>Prepaid balance</span><b id="didBal">$48.20</b></div>
       <button class="activate" id="didGo">⚡ Activate Smart DID &amp; Forward to Cell — Now</button>
       <div class="console" id="didLog"><span class="muted">Ready. Ad-hoc overlay on the Vitelity v1 API (illustrative / simulated).</span></div>
@@ -818,7 +842,7 @@
 </div>
 
 <div class="demo-bar">
-  <span>🎬 <b>Interactive demo</b> — weather alerts are <b>live from the U.S. National Weather Service</b> (api.weather.gov); the Smart DID activation simulates the Vitelity API (no real numbers are provisioned); all other metrics, names, and figures are illustrative sample data, not actual performance, financials, or certifications. Economics content is educational framing from standard introductory textbooks.</span>
+  <span>🎬 <b>Interactive demo</b> — weather alerts are <b>live from the U.S. National Weather Service</b> (api.weather.gov); the Smart DID activation simulates the Vitelity API (no real numbers are provisioned) and the Stripe prepayment is simulated (no real card is charged); all other metrics, names, and figures are illustrative sample data, not actual performance, financials, or certifications. Economics content is educational framing from standard introductory textbooks.</span>
 </div>
 
 <script>
@@ -1294,7 +1318,41 @@
         didLog=document.getElementById('didLog'), didResult=document.getElementById('didResult'),
         didBal=document.getElementById('didBal'), didNpa=document.getElementById('didNpa'),
         didCnam=document.getElementById('didCnam'), didCell=document.getElementById('didCell'),
-        didPin=document.getElementById('didPin');
+        didPin=document.getElementById('didPin'), didPay=document.getElementById('didPay'),
+        didPayAmt=document.getElementById('didPayAmt'),
+        didQty=document.getElementById('didQty'), didDue=document.getElementById('didDue'),
+        didQtyMinus=document.getElementById('didQtyMinus'), didQtyPlus=document.getElementById('didQtyPlus');
+  const DID_PRICE=22.95;           // $/month per Smart DID — recurring prepaid
+  let didBalance=48.20, didQtyN=1;
+  function setBal(){ didBal.textContent='$'+didBalance.toFixed(2); }
+  function setQty(){ const due=DID_PRICE*didQtyN;
+    didQty.textContent=didQtyN; didDue.textContent='$'+due.toFixed(2); didPayAmt.textContent='$'+due.toFixed(2); }
+  didQtyMinus.onclick=()=>{ didQtyN=Math.max(1,didQtyN-1); setQty(); };
+  didQtyPlus.onclick=()=>{ didQtyN=Math.min(99,didQtyN+1); setQty(); };
+  let payBusy=false;
+  async function prepayStripe(){
+    if(payBusy||didBusy)return; payBusy=true; didPay.disabled=true;
+    const amt=DID_PRICE*didQtyN;
+    logln('\n<span class="muted">── Stripe recurring prepayment (simulated) ──</span>');
+    const cus='cus_'+Math.random().toString(36).slice(2,10);
+    const sub='sub_'+Math.random().toString(36).slice(2,12);
+    const ssteps=[
+      ['stripe.customers.create','customer '+cus+' (key = Smart DID)'],
+      ['stripe.prices.create unit_amount=2295 currency=usd recurring[interval]=month','price $22.95/mo per Smart DID'],
+      ['stripe.subscriptions.create customer='+cus+' qty='+didQtyN,'subscription '+sub+' active — $'+amt.toFixed(2)+'/mo'],
+      ['stripe.invoices.pay first_period','charge succeeded — $'+amt.toFixed(2)+' captured'],
+      ['ledger.credit acct=prepaid amount='+amt.toFixed(2),'prepaid balance funded · renews monthly'],
+    ];
+    for(const [cmd,res] of ssteps){
+      logln('<span class="cmd">→ '+cmd+'</span>'); await sleep(360);
+      logln('  <span class="ok">✓ 200 OK</span> <span class="muted">'+res+'</span>'); await sleep(200);
+    }
+    didBalance+=amt; setBal();
+    didBal.animate?didBal.animate([{color:'#fff'},{color:'var(--lime)'}],{duration:600}):0;
+    logln('  <span class="ok">● $22.95/mo recurring active · balance now $'+didBalance.toFixed(2)+' — cleared to activate</span>');
+    didPay.disabled=false; payBusy=false;
+  }
+  didPay.onclick=prepayStripe; setQty();
   function openDid(){ didModal.classList.add('open'); }
   function closeDid(){ didModal.classList.remove('open'); }
   didBtn.onclick=openDid; didClose.onclick=closeDid;
@@ -1309,11 +1367,15 @@
       logln('<span class="cmd">→ validate.pin</span>'); logln('  <span style="color:var(--red)">✕ PIN must be the 8-digit date of birth (MMDDYYYY) — no SSN used</span>'); return; }
     didPin.style.borderColor='';
     const pinMask='••••'+pin.slice(4);
+    const fee=0.69;
+    if(didBalance<fee){ logln('<span class="cmd">→ balance.check</span>');
+      logln('  <span style="color:var(--red)">✕ insufficient prepaid balance — prepay with Stripe above to activate</span>');
+      didPay.focus(); return; }
     didBusy=true; didGo.disabled=true; didResult.classList.remove('show');
     const npa=didNpa.value, cnam=didCnam.value, cell=didCell.value;
     const num=npa+(200+Math.floor(Math.random()*699))+String(1000+Math.floor(Math.random()*8999));
     const did='('+npa+') '+num.slice(3,6)+'-'+num.slice(6);
-    const bal=48.20, fee=0.69;
+    const bal=didBalance;
     didLog.innerHTML='<span class="muted">POST https://api.vitelity.net/api.php  (v1, xml=yes) — illustrative · via TELVERGENCE.com</span>';
     const steps=[
       ['cmd=balance','prepaid $'+bal.toFixed(2)+' — cleared to provision'],
@@ -1328,10 +1390,11 @@
       logln('<span class="cmd">→ '+cmd+'</span>'); await sleep(430);
       logln('  <span class="ok">✓ 200 OK</span> <span class="muted">'+res+'</span>'); await sleep(250);
     }
-    didBal.textContent='$'+(bal-fee).toFixed(2);
+    didBalance=bal-fee; setBal();
     didResult.innerHTML='<span class="tag-ok">● ACTIVE</span>'+
       '<div class="big" style="margin-top:8px">'+did+'</div>'+
       '<div class="fwd">Branded <b>'+cnam+'</b> · E911 registered · forwarding to <b>'+cell+'</b></div>'+
+      '<div class="fwd">💳 Billing <b>$22.95/mo</b> recurring per Smart DID · auto-renews via Stripe (prepaid)</div>'+
       '<div class="fwd" style="color:var(--muted)">Provisioned in real time on Vitelity prepaid — the subscriber’s existing phone rings instantly. No new handset, no port. (Illustrative)</div>';
     didResult.classList.add('show');
     // ---- Phase 2: activation kicks off automated onboarding + scale (vision/illustrative) ----
