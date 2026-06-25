@@ -1321,7 +1321,37 @@
       '<div class="big" style="margin-top:8px">'+did+'</div>'+
       '<div class="fwd">Branded <b>'+cnam+'</b> · E911 registered · forwarding to <b>'+cell+'</b></div>'+
       '<div class="fwd" style="color:var(--muted)">Provisioned in real time on Vitelity prepaid — the subscriber’s existing phone rings instantly. No new handset, no port. (Illustrative)</div>';
-    didResult.classList.add('show'); didGo.disabled=false; didBusy=false;
+    didResult.classList.add('show');
+    // ---- Phase 2: activation kicks off automated onboarding + scale (vision/illustrative) ----
+    await sleep(650);
+    const slug=cnam.toLowerCase().replace(/[^a-z0-9]+/g,'');
+    const sub=slug+'.telvergence.com';
+    logln('\n<span class="muted">── activation triggers automated onboarding ──</span>');
+    const ob=[
+      ['account.create id='+num,'Smart DID set as the account key (identifier — no SSN used)'],
+      ['subdomain.provision host='+sub,'private-label sub-site live: '+sub],
+      ['apply.3ETC','Educate·Empower·Equip × Tools·Techniques·Technologies × Content·Collateral·Communication'],
+      ['persona.clone founder','“second-brain” AI assistant agent deployed — runs it 24/7'],
+      ['automation.enable','manual work + brick-and-mortar fixed costs removed'],
+      ['margin.flip','net profit model 20/80 → 80/20 (fixed cost falls to bottom line)'],
+      ['scale.mode=solo','one console · infinitely scalable at one touch'],
+    ];
+    for(const [cmd,res] of ob){
+      logln('<span class="cmd">→ '+cmd+'</span>'); await sleep(380);
+      logln('  <span class="ok">✓ done</span> <span class="muted">'+res+'</span>'); await sleep(210);
+    }
+    didResult.insertAdjacentHTML('beforeend',
+      '<hr style="border:none;border-top:1px solid var(--line);margin:14px 0">'+
+      '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--violet);font-weight:800">Automated onboarding complete</div>'+
+      '<div class="fwd">🌐 Private-label site <b>'+sub+'</b> &nbsp;·&nbsp; 🔑 Account key <b>'+did+'</b></div>'+
+      '<div class="fwd">🧠 Founder “second-brain” persona agent <b>LIVE</b> &nbsp;·&nbsp; 🤖 solo-entrepreneur mode</div>'+
+      '<div style="margin-top:12px;font-size:12px;color:var(--muted)">Economics flip — profit straight to the bottom line</div>'+
+      '<div style="display:flex;gap:10px;margin-top:6px">'+
+        '<div style="flex:1"><div style="font-size:11px;color:var(--muted)">Old model</div><div style="height:12px;border-radius:999px;background:var(--navy);border:1px solid var(--line);overflow:hidden"><i style="display:block;height:100%;width:20%;background:var(--red)"></i></div><div style="font-size:11px;margin-top:3px">20% net · 80% fixed cost</div></div>'+
+        '<div style="flex:1"><div style="font-size:11px;color:var(--muted)">TELVERGENCE</div><div style="height:12px;border-radius:999px;background:var(--navy);border:1px solid var(--line);overflow:hidden"><i style="display:block;height:100%;width:80%;background:linear-gradient(90deg,var(--lime),var(--cyan))"></i></div><div style="font-size:11px;margin-top:3px;color:var(--lime)">80% net · costs eliminated</div></div>'+
+      '</div>'+
+      '<div style="text-align:center;margin-top:14px"><span class="tag-ok" style="background:linear-gradient(90deg,var(--cyan),var(--lime))">∞ SOLO ENTREPRENEUR · INFINITELY SCALABLE</span></div>');
+    didGo.disabled=false; didBusy=false;
   }
   didGo.onclick=activateDid;
   document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&didModal.classList.contains('open'))closeDid(); });
