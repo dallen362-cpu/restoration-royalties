@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>TELVERGENCE Back Office — BOSS CRM · LMS · ViciDial</title>
+<style>
+  :root{
+    --midnight:#0A0E1A;--navy:#10182e;--card:#16213d;--card2:#1b2748;--line:#26345a;
+    --cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--amber:#ffc24b;--red:#ff5d73;--stripe:#635bff;
+    --ink:#eaf2ff;--muted:#8ea3c9;
+    --g:"Segoe UI",system-ui,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--g);color:var(--ink);background:var(--midnight);height:100vh;overflow:hidden;display:flex;flex-direction:column}
+  .grad{background:linear-gradient(90deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .mut{color:var(--muted)} button{font-family:var(--g)}
+
+  /* top bar */
+  .top{display:flex;align-items:center;gap:16px;padding:10px 18px;background:#0c1426;border-bottom:1px solid var(--line);flex:none}
+  .top .logo{font-weight:800;letter-spacing:1px;font-size:15px}.top .logo b{color:var(--cyan)}
+  .top .tag{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+  .top .right{margin-left:auto;display:flex;align-items:center;gap:14px;font-size:12px}
+  .top .right .did{color:var(--cyan);font-weight:700;font-variant-numeric:tabular-nums}
+  .agentpill{display:flex;align-items:center;gap:7px;background:var(--navy);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .agentpill .st{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime)}
+  .agentpill.oncall .st{background:var(--amber);box-shadow:0 0 8px var(--amber)}
+  .agentpill.wrap .st{background:var(--violet);box-shadow:0 0 8px var(--violet)}
+
+  /* layout */
+  .shell{display:flex;flex:1;min-height:0}
+  .nav{width:212px;flex:none;background:#0b1322;border-right:1px solid var(--line);padding:14px 10px;display:flex;flex-direction:column;gap:4px;overflow:auto}
+  .nav a{display:flex;align-items:center;gap:11px;color:var(--muted);text-decoration:none;font-size:14px;padding:11px 12px;border-radius:10px;cursor:pointer}
+  .nav a .ic{font-size:18px;width:22px;text-align:center}
+  .nav a:hover{background:rgba(255,255,255,.04);color:var(--ink)}
+  .nav a.on{background:rgba(0,212,255,.12);color:var(--ink);border:1px solid rgba(0,212,255,.35)}
+  .nav .sep{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#5e7099;padding:14px 12px 6px}
+  .nav .badge{margin-left:auto;background:var(--lime);color:#04121c;font-size:11px;font-weight:800;border-radius:999px;padding:1px 8px}
+  .main{flex:1;min-width:0;overflow:auto;padding:22px 26px}
+  @media(max-width:760px){.nav{width:62px}.nav a span.lbl,.nav .sep,.nav .badge{display:none}.nav a{justify-content:center}}
+
+  .view{display:none;animation:fade .3s}.view.on{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+  h1.vh{font-size:24px;margin-bottom:4px}.vsub{color:var(--muted);font-size:14px;margin-bottom:20px}
+
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:22px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .kpi .v{font-size:30px;font-weight:800;font-variant-numeric:tabular-nums}
+  .kpi .l{font-size:12px;color:var(--muted);margin-top:4px}
+  .kpi.c .v{color:var(--cyan)}.kpi.l2 .v{color:var(--lime)}.kpi.v2 .v{color:var(--violet)}.kpi.a .v{color:var(--amber)}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:18px}
+  .card h3{font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .card h3 .r{margin-left:auto;font-size:12px;color:var(--muted);font-weight:400}
+
+  /* dialer */
+  .dialgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}
+  @media(max-width:880px){.dialgrid{grid-template-columns:1fr}}
+  .softphone{background:linear-gradient(180deg,#101a32,#0b1326);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .callstate{text-align:center;padding:10px 0 6px}
+  .callstate .who{font-size:22px;font-weight:800}
+  .callstate .ph{font-size:16px;color:var(--cyan);font-variant-numeric:tabular-nums;margin-top:2px}
+  .callstate .meta{color:var(--muted);font-size:13px;margin-top:6px}
+  .timer{font-size:34px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--lime);text-align:center;margin:12px 0}
+  .screenpop{background:var(--navy);border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0;font-size:13px}
+  .screenpop .rowx{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #16233f}
+  .screenpop .rowx:last-child{border:none}.screenpop .rowx b{color:var(--ink)}
+  .dispo{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}
+  .dispo button{border:1px solid var(--line);background:var(--navy);color:var(--ink);border-radius:10px;padding:12px;font-size:13px;font-weight:700;cursor:pointer}
+  .dispo button:hover{border-color:var(--cyan)}
+  .dispo button.sale{border-color:rgba(0,255,136,.5);color:var(--lime)}
+  .dispo button.dnc{border-color:rgba(255,93,115,.5);color:var(--red)}
+  .bigbtn{width:100%;border:none;border-radius:12px;padding:15px;font-size:15px;font-weight:800;cursor:pointer;
+    background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c}
+  .bigbtn:disabled{opacity:.5;cursor:default}
+  .hopper{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:12px}
+  .feed{max-height:340px;overflow:auto}
+  .feed .ev{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #16233f;font-size:13px}
+  .feed .ev .t{color:var(--muted);font-size:11px;min-width:54px}
+  .feed .ev .ic{width:20px}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:10px 8px;border-bottom:1px solid #16233f}
+  th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+  tr:hover td{background:rgba(255,255,255,.02)}
+  .bdg{font-size:11px;font-weight:700;border-radius:999px;padding:3px 9px;white-space:nowrap}
+  .b-new{background:rgba(0,212,255,.14);color:var(--cyan)}
+  .b-sale{background:rgba(0,255,136,.14);color:var(--lime)}
+  .b-cb{background:rgba(255,194,75,.16);color:var(--amber)}
+  .b-na{background:rgba(142,163,201,.16);color:var(--muted)}
+  .b-dnc{background:rgba(255,93,115,.16);color:var(--red)}
+  .b-ni{background:rgba(123,97,255,.16);color:#b9a9ff}
+  .mini{border:1px solid var(--line);background:var(--navy);color:var(--cyan);border-radius:8px;padding:6px 11px;font-size:12px;font-weight:700;cursor:pointer}
+  .mini:hover{border-color:var(--cyan)}
+  .formrow{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+  .formrow input,.formrow select{flex:1;min-width:120px;background:var(--navy);border:1px solid var(--line);color:var(--ink);border-radius:9px;padding:10px;font-size:13px}
+  .formrow input:focus{outline:none;border-color:var(--cyan)}
+
+  /* LMS */
+  .mod{display:flex;align-items:center;gap:14px;background:var(--navy);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:10px;cursor:pointer}
+  .mod:hover{border-color:var(--cyan)}
+  .mod.done{border-color:rgba(0,255,136,.4);background:rgba(0,255,136,.06)}
+  .mod .chk{width:26px;height:26px;border-radius:50%;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none;font-size:14px}
+  .mod.done .chk{background:var(--lime);border-color:var(--lime);color:#04121c}
+  .mod .mt{font-weight:700;font-size:14px}.mod .md{font-size:12px;color:var(--muted)}
+  .mod .dur{margin-left:auto;font-size:11px;color:var(--muted)}
+  .pbar{height:12px;border-radius:999px;background:var(--navy);border:1px solid var(--line);overflow:hidden;margin:6px 0 4px}
+  .pbar i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--lime));transition:width .5s}
+  .cert{text-align:center;border:1px dashed var(--lime);border-radius:14px;padding:20px;margin-top:8px;display:none}
+  .cert.show{display:block}
+
+  .flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted);background:var(--navy);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:18px}
+  .flow b{color:var(--ink)} .flow .ar{color:var(--cyan)}
+
+  .disc{font-size:11px;color:var(--muted);padding:14px 26px;border-top:1px solid var(--line);background:#0b1426;flex:none}
+  .lnk{color:var(--cyan);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="logo"><b>TEL</b>VERGENCE · Back Office</div>
+  <span class="tag">BOSS CRM + LMS + ViciDial — integrated</span>
+  <div class="right">
+    <span class="mut">DID</span><span class="did">(954) 555-0142</span>
+    <span class="mut">CNAM</span><b style="color:var(--lime)">STORMCREW</b>
+    <div class="agentpill" id="agentPill"><span class="st"></span><span id="agentStatus">Ready</span></div>
+  </div>
+</div>
+
+<div class="shell">
+  <nav class="nav" id="nav">
+    <a data-v="dash" class="on"><span class="ic">📊</span><span class="lbl">Dashboard</span></a>
+    <div class="sep">Front end</div>
+    <a data-v="dialer"><span class="ic">☎️</span><span class="lbl">ViciDial Agent</span><span class="badge" id="hopBadge">0</span></a>
+    <div class="sep">Back end</div>
+    <a data-v="crm"><span class="ic">🗂️</span><span class="lbl">BOSS CRM</span></a>
+    <a data-v="lms"><span class="ic">🎓</span><span class="lbl">LMS Training</span></a>
+    <div class="sep">System</div>
+    <a data-v="settings"><span class="ic">⚙️</span><span class="lbl">Settings</span></a>
+  </nav>
+
+  <div class="main">
+    <div class="flow">
+      <b>🗂️ BOSS CRM</b> <span class="ar">→</span> feeds the <b>☎️ ViciDial</b> hopper <span class="ar">→</span> dispositions write back to <b>CRM</b> &amp; <b>📊 KPIs</b> <span class="ar">→</span> <b>🎓 LMS</b> certifies the agent. One integrated loop.
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="view on" data-view="dash">
+      <h1 class="vh">📊 Operations Dashboard</h1>
+      <div class="vsub">Live KPIs — every disposition you take in the dialer updates these in real time.</div>
+      <div class="kpis">
+        <div class="kpi c"><div class="v" id="kCalls">0</div><div class="l">Calls placed</div></div>
+        <div class="kpi"><div class="v" id="kContacts">0</div><div class="l">Live contacts</div></div>
+        <div class="kpi l2"><div class="v" id="kSales">0</div><div class="l">Sales</div></div>
+        <div class="kpi v2"><div class="v" id="kConv">0%</div><div class="l">Contact→Sale</div></div>
+        <div class="kpi a"><div class="v" id="kRev">$0</div><div class="l">Gross revenue</div></div>
+      </div>
+      <div class="card">
+        <h3>📡 Recent activity <span class="r" id="evCount">0 events</span></h3>
+        <div class="feed" id="feed"><div class="mut" style="font-size:13px">No activity yet — go to the ViciDial Agent and dial your first lead.</div></div>
+      </div>
+    </div>
+
+    <!-- DIALER -->
+    <div class="view" data-view="dialer">
+      <h1 class="vh">☎️ ViciDial Agent — Front End</h1>
+      <div class="vsub">Predictive-style agent panel. Pull a lead, work the call, disposition it — the CRM and KPIs update automatically.</div>
+      <div class="hopper">
+        <span>Campaign: <b style="color:var(--ink)">Storm Restoration — Outbound</b></span>
+        <span>Hopper (NEW leads): <b style="color:var(--lime)" id="hopCount">0</b></span>
+      </div>
+      <div class="dialgrid">
+        <div class="softphone">
+          <div class="callstate">
+            <div class="who" id="cWho">— Ready —</div>
+            <div class="ph" id="cPh">Dial the next lead to begin</div>
+            <div class="meta" id="cMeta">Caller ID: STORMCREW · (954) 555-0142 · E911 registered</div>
+          </div>
+          <div class="timer" id="cTimer">00:00</div>
+          <div class="screenpop" id="pop" style="display:none">
+            <div class="rowx"><span class="mut">City / market</span><b id="pCity">—</b></div>
+            <div class="rowx"><span class="mut">Source</span><b id="pSrc">—</b></div>
+            <div class="rowx"><span class="mut">Status</span><b id="pStat">—</b></div>
+            <div class="rowx"><span class="mut">Last touch</span><b id="pLast">—</b></div>
+          </div>
+          <button class="bigbtn" id="dialBtn">⚡ Dial next lead</button>
+          <div class="dispo" id="dispo" style="display:none">
+            <button class="sale" data-d="Sale">✅ Sale</button>
+            <button data-d="Callback">📅 Callback</button>
+            <button data-d="No Answer">☎️ No Answer</button>
+            <button data-d="Not Interested">👋 Not Interested</button>
+            <button class="dnc" data-d="DNC" style="grid-column:1/-1">🚫 Do Not Call</button>
+          </div>
+        </div>
+        <div class="card" style="margin:0">
+          <h3>📞 Live call log <span class="r" id="callCount">0 calls</span></h3>
+          <div class="feed" id="callfeed"><div class="mut" style="font-size:13px">Calls will appear here.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CRM -->
+    <div class="view" data-view="crm">
+      <h1 class="vh">🗂️ BOSS CRM — Back End</h1>
+      <div class="vsub">Back Office Sales Support. Add leads, see pipeline status, and push any lead straight into the dialer.</div>
+      <div class="card">
+        <h3>➕ Add a lead</h3>
+        <div class="formrow">
+          <input id="nName" placeholder="Name / company">
+          <input id="nPhone" placeholder="Phone">
+          <input id="nCity" placeholder="City / market">
+          <select id="nSrc"><option>Storm map</option><option>Referral</option><option>Web form</option><option>Door knock</option><option>SMS opt-in</option></select>
+          <button class="bigbtn" style="flex:none;width:auto;padding:10px 18px" id="addLead">Add to hopper</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>📋 Leads <span class="r" id="leadCount">0</span></h3>
+        <div style="overflow:auto">
+          <table><thead><tr><th>Name</th><th>Phone</th><th>City</th><th>Source</th><th>Status</th><th></th></tr></thead>
+          <tbody id="leadRows"></tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <!-- LMS -->
+    <div class="view" data-view="lms">
+      <h1 class="vh">🎓 LMS — Agent Training & Certification</h1>
+      <div class="vsub">Learning Management System. Complete the onboarding path to certify the agent (and the second-brain persona).</div>
+      <div class="card">
+        <h3>Certification progress <span class="r" id="lmsPct">0%</span></h3>
+        <div class="pbar"><i id="lmsBar" style="width:0%"></i></div>
+        <div class="mut" style="font-size:12px" id="lmsCount">0 of 0 modules complete</div>
+      </div>
+      <div class="card">
+        <h3>📚 Modules <span class="r">tap to toggle complete</span></h3>
+        <div id="modList"></div>
+        <div class="cert" id="cert">
+          <div style="font-size:40px">🏅</div>
+          <div style="font-weight:800;font-size:18px;margin:6px 0">Certified TELVERGENCE Operator</div>
+          <div class="mut" style="font-size:13px">All modules complete — agent + second-brain persona cleared for live campaigns.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="view" data-view="settings">
+      <h1 class="vh">⚙️ Settings</h1>
+      <div class="vsub">Account & integration overview for this back office.</div>
+      <div class="card">
+        <h3>🔑 Account</h3>
+        <table>
+          <tr><td class="mut">Account key (Smart DID)</td><td><b>(954) 555-0142</b></td></tr>
+          <tr><td class="mut">PIN</td><td><b>•••• (8-digit DOB) — no SSN</b></td></tr>
+          <tr><td class="mut">Billing</td><td><b>$22.95 / mo per Smart DID — Stripe recurring prepaid</b></td></tr>
+          <tr><td class="mut">Private-label site</td><td><b>stormcrew.telvergence.com</b></td></tr>
+          <tr><td class="mut">Founder direct line (24/7)</td><td><a class="lnk" href="tel:+16892421041">(689) 242-1041</a></td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>🔌 Integrations</h3>
+        <table>
+          <tr><td class="mut">Carrier / DIDs</td><td>Vitelity v1 API <span class="bdg b-cb">keys pending (your step)</span></td></tr>
+          <tr><td class="mut">Payments</td><td>Stripe subscriptions <span class="bdg b-cb">keys pending (your step)</span></td></tr>
+          <tr><td class="mut">Dialer</td><td>ViciDial <span class="bdg b-sale">front end live (demo data)</span></td></tr>
+          <tr><td class="mut">CRM / LMS</td><td>BOSS + MyFi Pro <span class="bdg b-sale">functional (this app)</span></td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>🧪 Demo data</h3>
+        <div class="mut" style="font-size:13px;margin-bottom:12px">Your work persists in this browser. Reset to reseed sample leads and clear progress.</div>
+        <button class="mini" id="resetBtn" style="color:var(--red);border-color:rgba(255,93,115,.5)">↻ Reset demo data</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="disc">
+  🧩 <b>Integrated back-office demo.</b> The BOSS CRM, LMS, and ViciDial agent front end are fully functional in your browser (data persists locally). Carrier (Vitelity) and payments (Stripe) are <b>simulated</b> pending your live API keys; no real calls, numbers, or charges occur. All leads, names, and figures are illustrative. Smart DID is the account key — <b>no SSN</b>. · <a class="lnk" href="funnel.html">Intake funnel</a> · <a class="lnk" href="telvergence-demo.html">Live dashboard</a>
+</div>
+
+<script>
+const KEY='telv_backoffice_v1';
+const AVG_SALE=1850;            // illustrative avg gross per onboarded job
+const seedLeads=()=>[
+  {id:1,name:'Beverly Wicks',phone:'(954) 555-0181',city:'Fort Lauderdale, FL',src:'Storm map',status:'New',last:'—'},
+  {id:2,name:'Harbor Point HOA',phone:'(786) 555-0112',city:'Miami, FL',src:'Referral',status:'New',last:'—'},
+  {id:3,name:'R. Delgado Roofing',phone:'(407) 555-0193',city:'Orlando, FL',src:'Web form',status:'New',last:'—'},
+  {id:4,name:'Coastal Restoration Co',phone:'(561) 555-0144',city:'West Palm Beach, FL',src:'SMS opt-in',status:'New',last:'—'},
+  {id:5,name:'M. Okafor',phone:'(321) 555-0177',city:'Melbourne, FL',src:'Door knock',status:'New',last:'—'},
+];
+const seedMods=()=>[
+  {id:1,t:'Welcome & the TELVERGENCE mission',d:'Why instant activation saves lives',dur:'6 min',done:false},
+  {id:2,t:'The Smart DID & no-SSN account model',d:'DID as account key, DOB PIN',dur:'8 min',done:false},
+  {id:3,t:'ViciDial agent basics',d:'Hopper, screen-pop, dispositions',dur:'12 min',done:false},
+  {id:4,t:'BOSS CRM pipeline hygiene',d:'Statuses, callbacks, DNC compliance',dur:'10 min',done:false},
+  {id:5,t:'E911, Kari’s Law & RAY BAUM’S',d:'Dispatchable location compliance',dur:'9 min',done:false},
+  {id:6,t:'The 80/20 economics & second-brain persona',d:'Scaling solo',dur:'7 min',done:false},
+];
+let S=load();
+function load(){ try{const r=localStorage.getItem(KEY);if(r)return JSON.parse(r);}catch(e){}
+  return {leads:seedLeads(),mods:seedMods(),calls:0,contacts:0,sales:0,events:[],calllog:[],nextId:6}; }
+function save(){ try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){} }
+
+// ---- nav ----
+const nav=document.getElementById('nav');
+nav.addEventListener('click',e=>{const a=e.target.closest('a[data-v]');if(!a)return;
+  [...nav.querySelectorAll('a')].forEach(x=>x.classList.toggle('on',x===a));
+  const v=a.dataset.v;
+  document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.dataset.view===v));
+});
+
+// ---- render helpers ----
+const $=id=>document.getElementById(id);
+const badgeClass={New:'b-new',Sale:'b-sale',Callback:'b-cb','No Answer':'b-na',DNC:'b-dnc','Not Interested':'b-ni'};
+function renderKPIs(){
+  $('kCalls').textContent=S.calls;
+  $('kContacts').textContent=S.contacts;
+  $('kSales').textContent=S.sales;
+  $('kConv').textContent=(S.contacts?Math.round(S.sales/S.contacts*100):0)+'%';
+  $('kRev').textContent='$'+(S.sales*AVG_SALE).toLocaleString();
+  const hop=S.leads.filter(l=>l.status==='New').length;
+  $('hopCount').textContent=hop; $('hopBadge').textContent=hop;
+}
+function renderFeed(){
+  const f=$('feed'); $('evCount').textContent=S.events.length+' events';
+  if(!S.events.length){f.innerHTML='<div class="mut" style="font-size:13px">No activity yet — go to the ViciDial Agent and dial your first lead.</div>';return;}
+  f.innerHTML=S.events.slice(0,40).map(e=>`<div class="ev"><span class="t">${e.t}</span><span class="ic">${e.ic}</span><span>${e.msg}</span></div>`).join('');
+}
+function renderCallLog(){
+  const f=$('callfeed'); $('callCount').textContent=S.calls+' calls';
+  if(!S.calllog.length){f.innerHTML='<div class="mut" style="font-size:13px">Calls will appear here.</div>';return;}
+  f.innerHTML=S.calllog.slice(0,40).map(e=>`<div class="ev"><span class="t">${e.t}</span><span class="ic">${e.ic}</span><span>${e.msg}</span></div>`).join('');
+}
+function renderLeads(){
+  $('leadCount').textContent=S.leads.length;
+  $('leadRows').innerHTML=S.leads.map(l=>`<tr>
+    <td><b>${l.name}</b></td><td style="font-variant-numeric:tabular-nums">${l.phone}</td><td>${l.city}</td><td>${l.src}</td>
+    <td><span class="bdg ${badgeClass[l.status]||'b-new'}">${l.status}</span></td>
+    <td>${l.status==='DNC'?'':`<button class="mini" data-dial="${l.id}">→ Dial</button>`}</td></tr>`).join('');
+}
+function renderLMS(){
+  const done=S.mods.filter(m=>m.done).length, pct=Math.round(done/S.mods.length*100);
+  $('lmsPct').textContent=pct+'%'; $('lmsBar').style.width=pct+'%';
+  $('lmsCount').textContent=done+' of '+S.mods.length+' modules complete';
+  $('cert').classList.toggle('show',done===S.mods.length);
+  $('modList').innerHTML=S.mods.map(m=>`<div class="mod ${m.done?'done':''}" data-mod="${m.id}">
+    <div class="chk">${m.done?'✓':''}</div><div><div class="mt">${m.t}</div><div class="md">${m.d}</div></div>
+    <div class="dur">${m.dur}</div></div>`).join('');
+}
+function now(){ const d=new Date(); return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'); }
+function logEvent(ic,msg){ S.events.unshift({t:now(),ic,msg}); }
+function logCall(ic,msg){ S.calllog.unshift({t:now(),ic,msg}); }
+function renderAll(){ renderKPIs();renderFeed();renderCallLog();renderLeads();renderLMS(); }
+
+// ---- dialer ----
+let current=null, tInt=null, secs=0;
+const pill=$('agentPill'), statusTxt=$('agentStatus');
+function setStatus(s){ statusTxt.textContent=s; pill.className='agentpill'+(s==='On call'?' oncall':s==='Wrap-up'?' wrap':''); }
+function fmt(s){ return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
+$('dialBtn').onclick=()=>{
+  if(current)return;
+  const lead=S.leads.find(l=>l.status==='New');
+  if(!lead){ $('cWho').textContent='— Hopper empty —'; $('cPh').textContent='Add leads in BOSS CRM'; return; }
+  current=lead; setStatus('On call'); S.calls++;
+  $('cWho').textContent=lead.name; $('cPh').textContent=lead.phone;
+  $('pop').style.display='block'; $('pCity').textContent=lead.city; $('pSrc').textContent=lead.src;
+  $('pStat').textContent=lead.status; $('pLast').textContent=lead.last;
+  $('dialBtn').style.display='none'; $('dispo').style.display='grid';
+  secs=0; $('cTimer').textContent='00:00'; tInt=setInterval(()=>{secs++;$('cTimer').textContent=fmt(secs);},1000);
+  logCall('☎️','Dialing '+lead.name+' · '+lead.phone);
+  logEvent('☎️','Call placed to '+lead.name);
+  renderKPIs();renderFeed();renderCallLog();save();
+};
+$('dispo').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-d]'); if(!b||!current)return;
+  const d=b.dataset.d, lead=current;
+  clearInterval(tInt);
+  lead.status=d; lead.last=now();
+  const contacted=(d==='Sale'||d==='Callback'||d==='Not Interested'||d==='DNC');
+  if(contacted)S.contacts++;
+  if(d==='Sale')S.sales++;
+  const ic={Sale:'✅',Callback:'📅','No Answer':'☎️','Not Interested':'👋',DNC:'🚫'}[d];
+  logCall(ic,lead.name+' → '+d+' ('+fmt(secs)+')');
+  logEvent(ic,lead.name+' dispositioned: '+d+(d==='Sale'?' · +$'+AVG_SALE.toLocaleString():''));
+  // reset panel
+  current=null; setStatus('Ready');
+  $('cWho').textContent='— Ready —'; $('cPh').textContent='Dial the next lead to begin';
+  $('cTimer').textContent='00:00'; $('pop').style.display='none';
+  $('dialBtn').style.display='block'; $('dispo').style.display='none';
+  renderAll(); save();
+});
+
+// dial-from-CRM
+document.body.addEventListener('click',e=>{
+  const b=e.target.closest('[data-dial]'); if(!b)return;
+  const id=+b.dataset.dial, lead=S.leads.find(l=>l.id===id); if(!lead)return;
+  lead.status='New'; save();
+  // switch to dialer view
+  [...nav.querySelectorAll('a')].forEach(x=>x.classList.toggle('on',x.dataset.v==='dialer'));
+  document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.dataset.view==='dialer'));
+  renderAll();
+  setTimeout(()=>$('dialBtn').click(),120);
+});
+
+// ---- CRM add ----
+$('addLead').onclick=()=>{
+  const name=$('nName').value.trim()||'New Lead', phone=$('nPhone').value.trim()||'(000) 000-0000';
+  const city=$('nCity').value.trim()||'—', src=$('nSrc').value;
+  S.leads.unshift({id:S.nextId++,name,phone,city,src,status:'New',last:'—'});
+  $('nName').value=$('nPhone').value=$('nCity').value='';
+  logEvent('➕','Lead added to hopper: '+name+' ('+src+')');
+  renderAll(); save();
+};
+
+// ---- LMS toggle ----
+$('modList').addEventListener('click',e=>{
+  const m=e.target.closest('[data-mod]'); if(!m)return;
+  const mod=S.mods.find(x=>x.id===+m.dataset.mod); mod.done=!mod.done;
+  if(mod.done)logEvent('🎓','Module complete: '+mod.t);
+  renderLMS(); renderFeed(); save();
+  if(S.mods.every(x=>x.done))logEvent('🏅','Agent CERTIFIED — all modules complete');
+});
+
+// ---- reset ----
+$('resetBtn').onclick=()=>{ if(confirm('Reset demo data? This reseeds leads and clears progress.')){ localStorage.removeItem(KEY); S=load(); renderAll(); save(); } };
+
+renderAll();
+</script>
+</body>
+</html>
