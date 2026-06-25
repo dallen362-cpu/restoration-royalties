@@ -260,16 +260,16 @@
 
   <nav class="side">
     <div class="nav" id="nav">
+      <div class="nav-label">Storm Command</div>
+      <a data-view="stormmap" class="on"><span class="i">🌪️</span> Storm Dispatch Map</a>
+      <a data-view="recruit"><span class="i">🧲</span> Partner Recruitment</a>
       <div class="nav-label">Command</div>
-      <a data-view="dash" class="on"><span class="i">🛰️</span> Command Center</a>
+      <a data-view="dash"><span class="i">🛰️</span> Command Center</a>
       <div class="nav-label">Engage</div>
       <a data-view="conduit"><span class="i">🔀</span> Omnichannel Conduit</a>
       <a data-view="lifecycle"><span class="i">♻️</span> Customer Lifecycle</a>
       <a data-view="ivr"><span class="i">🌳</span> PBX / IVR Routing</a>
       <a data-view="ai"><span class="i">🤖</span> AI Assistant</a>
-      <div class="nav-label">Weather Ops</div>
-      <a data-view="stormmap"><span class="i">🌪️</span> Storm Dispatch Map</a>
-      <a data-view="recruit"><span class="i">🧲</span> Partner Recruitment</a>
       <div class="nav-label">Intelligence</div>
       <a data-view="demo-graphics"><span class="i">📊</span> Demographics</a>
       <a data-view="econ"><span class="i">📈</span> Market Economics</a>
@@ -283,7 +283,7 @@
   <main class="main">
 
     <!-- COMMAND CENTER -->
-    <section class="view on" id="v-dash">
+    <section class="view" id="v-dash">
       <div class="page-head">
         <div><h1>🛰️ Command Center</h1><p>Real-time bi-directional flow across every channel and brand · streaming</p></div>
         <div class="seg"><button class="on">Live</button><button>Today</button><button>7 days</button></div>
@@ -463,7 +463,7 @@
     </section>
 
     <!-- STORM DISPATCH MAP -->
-    <section class="view" id="v-stormmap">
+    <section class="view on" id="v-stormmap">
       <div class="page-head">
         <div><h1>🌪️ Storm Dispatch Command Center</h1><p>NOAA + NASA feeds → Weather Intelligence Network (WIN) → dispatch → brands · nationwide · illustrative</p></div>
         <div class="seg" id="layerSeg"><button data-layer="weather" class="on">🌩️ Weather</button><button data-layer="assets">🚚 Assets</button><button data-layer="coverage">🛡️ Coverage</button></div>
@@ -1093,13 +1093,13 @@
 
   // ---- guided auto-tour ----
   const TOUR=[
+    {v:'stormmap',s:14,t:'Storm Dispatch Command Center',n:'We lead here: LIVE National Weather Service alerts flow into our Weather Intelligence Network, the nationwide grid lights up where real storms are hitting right now, and the Command Center auto-dispatches crews to StormCrew, Roofing Crew and Restoration Royalty — turning real weather into work and revenue.'},
+    {v:'recruit',s:13,t:'Partner Recruitment',n:'The growth engine: we cross that live weather against the areas we do NOT cover yet, surface the open territories, and produce a list of vendor businesses to recruit — each matched to a Starter, Growth, or Enterprise plan.'},
     {v:'dash',s:13,t:'Command Center',n:'The real-time heartbeat — every interaction across every channel, streaming live. And the Profit Step-Down KOIs recalculate live: Revenue → Gross → Operating → Net → Net-Net, right as the money flows.'},
     {v:'conduit',s:11,t:'Omnichannel Conduit',n:'One bi-directional pipe: inbound on the left, outbound on the right, across all 12 channels — SMS, voice, email, push, ringless VM, geofencing, 2FA and more.'},
     {v:'lifecycle',s:10,t:'Customer Lifecycle',n:'We move people from Reach to Advocate — and see the volume and the speed at every stage of the journey.'},
     {v:'ivr',s:10,t:'PBX / IVR Routing',n:'How an inbound contact flows: AI triage, emergency priority, opt-in capture — every branch written back to one unified timeline.'},
     {v:'ai',s:11,t:'AI Assistant',n:'Live transcription, sentiment and intent routing. Here it turns a distressed emergency caller into a dispatched crew in seconds.'},
-    {v:'stormmap',s:13,t:'Storm Dispatch Command Center',n:'This is the magic: NOAA and NASA feeds flow into our Weather Intelligence Network, the nationwide grid lights up where storms hit, and the Storm Dispatch Command Center auto-routes crews to StormCrew, Roofing Crew and Restoration Royalty — turning weather into work and revenue.'},
-    {v:'recruit',s:13,t:'Partner Recruitment',n:'And here is the growth engine: we cross live weather against the areas we do NOT cover yet, surface the open territories, and produce a list of vendor businesses to recruit — each matched to a Starter, Growth, or Enterprise plan. Weather creates demand; this turns that demand into new partners on TELVERGENCE.'},
     {v:'demo-graphics',s:9,t:'Demographics',n:'Who we reach, where they are, what device they prefer, and exactly when they respond.'},
     {v:'econ',s:13,t:'Market Economics',n:'The model: create demand, control supply, set the price — grounded in standard supply-and-demand theory, and our 3 E’s, T’s and C’s credo.'},
     {v:'brands',s:9,t:'Brands',n:'Every white-label brand running on the very same platform you’re looking at.'},
