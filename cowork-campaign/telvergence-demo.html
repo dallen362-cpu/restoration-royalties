@@ -240,6 +240,34 @@
   .tour-spot{position:relative;z-index:4;border-radius:14px;outline:3px solid var(--cyan);
     box-shadow:0 0 0 6px rgba(0,212,255,.18),0 0 34px rgba(0,212,255,.55);animation:spotpulse 1.5s ease-in-out infinite}
   @keyframes spotpulse{0%,100%{box-shadow:0 0 0 6px rgba(0,212,255,.14),0 0 26px rgba(0,212,255,.45)}50%{box-shadow:0 0 0 10px rgba(0,212,255,.05),0 0 44px rgba(0,212,255,.75)}}
+  /* Instant Smart DID button + modal */
+  .didbtn{background:linear-gradient(90deg,var(--violet),var(--cyan));color:#04121c;border:none;border-radius:999px;
+    font-weight:800;font-size:12.5px;padding:8px 14px;cursor:pointer;transition:transform .12s;animation:btnpulse 2.4s ease-in-out infinite}
+  .didbtn:hover{transform:scale(1.05)}
+  .modal{position:fixed;inset:0;background:rgba(4,8,16,.8);display:none;align-items:center;justify-content:center;z-index:30;padding:18px}
+  .modal.open{display:flex}
+  .sheet{background:var(--navy);border:1px solid var(--cyan);border-radius:16px;max-width:680px;width:100%;max-height:92vh;overflow:auto;box-shadow:0 0 60px rgba(0,212,255,.3)}
+  .sheet .hd{padding:15px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .sheet .hd h3{font-size:15px}
+  .sheet .hd .x{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1}
+  .sheet .bd{padding:18px 20px}
+  .field{margin-bottom:12px}
+  .field label{display:block;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+  .field input,.field select{width:100%;background:var(--card);border:1px solid var(--line);border-radius:8px;color:var(--ink);padding:10px;font-size:14px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){.row2{grid-template-columns:1fr}}
+  .prepaid{display:flex;justify-content:space-between;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:4px 0 14px;font-size:13px}
+  .prepaid b{font-size:20px;color:var(--lime);font-variant-numeric:tabular-nums}
+  .activate{width:100%;background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c;border:none;border-radius:10px;padding:13px;font-weight:800;font-size:15px;cursor:pointer}
+  .activate:disabled{opacity:.55;cursor:default}
+  .console{margin-top:14px;background:#06101f;border:1px solid var(--line);border-radius:10px;padding:12px;
+    font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:#bfe9ff;min-height:64px;max-height:230px;overflow:auto;white-space:pre-wrap;line-height:1.5}
+  .console .ok{color:var(--lime)} .console .cmd{color:var(--cyan)} .console .muted{color:var(--muted)}
+  .resultcard{margin-top:14px;border:1px solid var(--lime);border-radius:12px;padding:16px;background:linear-gradient(180deg,rgba(0,255,136,.08),transparent);display:none}
+  .resultcard.show{display:block;animation:fade .4s ease}
+  .resultcard .big{font-size:24px;font-weight:800;color:var(--lime);font-variant-numeric:tabular-nums}
+  .resultcard .fwd{font-size:13.5px;margin-top:6px} .resultcard .fwd b{color:var(--cyan)}
+  .tag-ok{display:inline-block;font-size:11px;font-weight:800;color:#04121c;background:var(--lime);border-radius:999px;padding:3px 10px}
 
   /* auto-tour bar */
   .tourbar{position:fixed;left:236px;right:0;bottom:0;z-index:8;background:linear-gradient(180deg,#0c1428,#0a1020);
@@ -271,6 +299,7 @@
     <div class="logo"><span class="dot"></span><span>TEL<b>VERGENCE</b></span></div>
     <span class="demo-badge">● LIVE DEMO</span>
     <div class="right">
+      <button class="didbtn" id="didBtn">⚡ Instant Smart DID</button>
       <button class="tourbtn" id="tourBtn">▶ Play Narrated Demo</button>
       <button class="muteBtn" id="muteBtn" title="Toggle narration voice">🔊</button>
       <div class="clock" id="clock"></div>
@@ -760,8 +789,31 @@
   </div>
 </div>
 
+<!-- INSTANT SMART DID ACTIVATION MODAL -->
+<div class="modal" id="didModal">
+  <div class="sheet">
+    <div class="hd"><h3>⚡ Instant Smart DID Activation — Remote Call Forward · Prepaid · via TELVERGENCE.com</h3><button class="x" id="didClose">✕</button></div>
+    <div class="bd">
+      <div class="row2">
+        <div class="field"><label>Subscriber's existing cell (forward to)</label><input id="didCell" value="(407) 555-0148"></div>
+        <div class="field"><label>Market (area code)</label>
+          <select id="didNpa"><option>305</option><option>786</option><option selected>954</option><option>754</option><option>407</option><option>321</option><option>561</option></select></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Branded Caller ID (CNAM)</label>
+          <select id="didCnam"><option>RESTORATION ROYALTY</option><option>STORMCREW</option><option>CREWCOMMAND</option><option>BEVERLY WICKS</option></select></div>
+        <div class="field"><label>Plan</label><select id="didPlan"><option>Prepaid — pay-as-you-go</option></select></div>
+      </div>
+      <div class="prepaid"><span>Prepaid balance</span><b id="didBal">$48.20</b></div>
+      <button class="activate" id="didGo">⚡ Activate Smart DID &amp; Forward to Cell — Now</button>
+      <div class="console" id="didLog"><span class="muted">Ready. Ad-hoc overlay on the Vitelity v1 API (illustrative / simulated).</span></div>
+      <div class="resultcard" id="didResult"></div>
+    </div>
+  </div>
+</div>
+
 <div class="demo-bar">
-  <span>🎬 <b>Interactive demo</b> — weather alerts are <b>live from the U.S. National Weather Service</b> (api.weather.gov); all other metrics, names, and figures are illustrative sample data, not actual performance, financials, or certifications. Economics content is educational framing from standard introductory textbooks.</span>
+  <span>🎬 <b>Interactive demo</b> — weather alerts are <b>live from the U.S. National Weather Service</b> (api.weather.gov); the Smart DID activation simulates the Vitelity API (no real numbers are provisioned); all other metrics, names, and figures are illustrative sample data, not actual performance, financials, or certifications. Economics content is educational framing from standard introductory textbooks.</span>
 </div>
 
 <script>
@@ -1230,6 +1282,49 @@
     else if(e.key==='ArrowRight')loadStep(tIdx+1);
     else if(e.key==='ArrowLeft')loadStep(tIdx-1);
   });
+
+  // ---- Instant Smart DID Activation (ad-hoc overlay on the Vitelity v1 API) ----
+  const didBtn=document.getElementById('didBtn'), didModal=document.getElementById('didModal'),
+        didClose=document.getElementById('didClose'), didGo=document.getElementById('didGo'),
+        didLog=document.getElementById('didLog'), didResult=document.getElementById('didResult'),
+        didBal=document.getElementById('didBal'), didNpa=document.getElementById('didNpa'),
+        didCnam=document.getElementById('didCnam'), didCell=document.getElementById('didCell');
+  function openDid(){ didModal.classList.add('open'); }
+  function closeDid(){ didModal.classList.remove('open'); }
+  didBtn.onclick=openDid; didClose.onclick=closeDid;
+  didModal.onclick=e=>{ if(e.target===didModal)closeDid(); };
+  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+  function logln(html){ didLog.insertAdjacentHTML('beforeend','\n'+html); didLog.scrollTop=didLog.scrollHeight; }
+  let didBusy=false;
+  async function activateDid(){
+    if(didBusy)return; didBusy=true; didGo.disabled=true; didResult.classList.remove('show');
+    const npa=didNpa.value, cnam=didCnam.value, cell=didCell.value;
+    const num=npa+(200+Math.floor(Math.random()*699))+String(1000+Math.floor(Math.random()*8999));
+    const did='('+npa+') '+num.slice(3,6)+'-'+num.slice(6);
+    const bal=48.20, fee=0.69;
+    didLog.innerHTML='<span class="muted">POST https://api.vitelity.net/api.php  (v1, xml=yes) — illustrative · via TELVERGENCE.com</span>';
+    const steps=[
+      ['cmd=balance','prepaid $'+bal.toFixed(2)+' — cleared to provision'],
+      ['cmd=listnpa npa='+npa,'12 local DIDs available in '+npa],
+      ['cmd=getlocaldid did='+num,'ordered '+did+'  (setup $'+fee.toFixed(2)+')'],
+      ['cmd=lidb did='+num+' name="'+cnam+'"','branded caller ID (CNAM) set'],
+      ['cmd=e911send did='+num,'E911 dispatchable location registered'],
+      ['cmd=callfw did='+num+' fwd='+cell.replace(/\D/g,''),'remote call-forward → subscriber cell LIVE'],
+      ['cmd=balance','debited $'+fee.toFixed(2)+' · new balance $'+(bal-fee).toFixed(2)],
+    ];
+    for(const [cmd,res] of steps){
+      logln('<span class="cmd">→ '+cmd+'</span>'); await sleep(430);
+      logln('  <span class="ok">✓ 200 OK</span> <span class="muted">'+res+'</span>'); await sleep(250);
+    }
+    didBal.textContent='$'+(bal-fee).toFixed(2);
+    didResult.innerHTML='<span class="tag-ok">● ACTIVE</span>'+
+      '<div class="big" style="margin-top:8px">'+did+'</div>'+
+      '<div class="fwd">Branded <b>'+cnam+'</b> · E911 registered · forwarding to <b>'+cell+'</b></div>'+
+      '<div class="fwd" style="color:var(--muted)">Provisioned in real time on Vitelity prepaid — the subscriber’s existing phone rings instantly. No new handset, no port. (Illustrative)</div>';
+    didResult.classList.add('show'); didGo.disabled=false; didBusy=false;
+  }
+  didGo.onclick=activateDid;
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&didModal.classList.contains('open'))closeDid(); });
 </script>
 </body>
 </html>
