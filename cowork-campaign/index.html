@@ -4,109 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<title>TELVERGENCE Kingdom — Presentation Kit</title>
+<title>TELVERGENCE — Access Controlled</title>
 <style>
-  :root{
-    --midnight:#0A0E1A; --cyan:#00D4FF; --lime:#00FF88; --violet:#7B61FF;
-    --ink:#eaf2ff; --muted:#9fb3d6; --line:#2a3a5e; --card:#141d33;
-  }
+  :root{--midnight:#0A0E1A;--navy:#10182e;--card:#16213d;--line:#26345a;--cyan:#00D4FF;--lime:#00FF88;--ink:#eaf2ff;--muted:#8ea3c9;}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);min-height:100vh;
-    background:radial-gradient(1100px 640px at 50% -10%,#1a2547,var(--midnight) 60%);
-    padding:46px 20px 70px;display:flex;flex-direction:column;align-items:center}
-  .kicker{letter-spacing:4px;font-size:13px;text-transform:uppercase;color:var(--cyan);text-align:center}
-  .big{font-size:78px;text-align:center;margin:8px 0}
-  h1{font-size:clamp(30px,6vw,52px);text-align:center;line-height:1.05;
-    background:linear-gradient(90deg,var(--cyan),var(--lime),var(--violet));
-    -webkit-background-clip:text;background-clip:text;color:transparent}
-  .sub{color:var(--muted);text-align:center;max-width:620px;margin:14px auto 36px;font-size:18px}
-
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;
-    max-width:920px;width:100%}
-  a.card{display:block;text-decoration:none;color:inherit;background:var(--card);
-    border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .15s,border-color .15s,box-shadow .15s}
-  a.card:hover{transform:translateY(-5px);border-color:var(--cyan);box-shadow:0 14px 40px rgba(0,212,255,.16)}
-  a.card .ico{font-size:46px}
-  a.card h2{font-size:22px;margin:12px 0 6px}
-  a.card p{color:var(--muted);font-size:14px;line-height:1.5}
-  a.card .go{margin-top:14px;display:inline-block;font-weight:800;color:var(--cyan)}
-  .c1:hover{border-color:var(--cyan)} .c2:hover{border-color:var(--lime)} .c3:hover{border-color:var(--violet)}
-
-  .strip{max-width:920px;width:100%;margin-top:34px;background:rgba(255,255,255,.03);
-    border:1px solid var(--line);border-radius:16px;padding:22px 26px}
-  .strip h3{font-size:15px;letter-spacing:1px;text-transform:uppercase;color:var(--lime);margin-bottom:10px}
-  .strip .links{display:flex;flex-wrap:wrap;gap:10px}
-  .strip a{font-size:13px;color:var(--cyan);text-decoration:none;border:1px solid var(--line);
-    border-radius:999px;padding:7px 14px}
-  .strip a:hover{border-color:var(--cyan)}
-  .foot{color:var(--muted);font-size:13px;margin-top:34px;text-align:center;max-width:680px}
-  .stamp{display:inline-block;margin-top:14px;padding:9px 18px;border:1px dashed var(--lime);
-    border-radius:999px;color:var(--lime);font-weight:800;font-size:13px}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(1000px 560px at 50% -10%,#1a2547,var(--midnight) 60%);padding:24px}
+  .box{max-width:520px;width:100%;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:38px 30px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+  .lock{font-size:54px}
+  h1{font-size:26px;margin:10px 0 6px;background:linear-gradient(90deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+  p{color:var(--muted);font-size:15px;margin:0 auto 8px;max-width:420px}
+  .badge{display:inline-block;margin:14px 0 4px;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+    color:var(--lime);border:1px solid rgba(0,255,136,.4);border-radius:999px;padding:6px 14px;background:rgba(0,255,136,.07)}
+  .cta{display:inline-block;margin-top:18px;background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c;font-weight:800;
+    text-decoration:none;border-radius:12px;padding:14px 26px;font-size:15px}
+  .small{font-size:12px;color:var(--muted);margin-top:18px}
+  .foot{margin-top:22px;font-size:11px;color:#5e7099}
 </style>
 </head>
 <body>
-
-  <div class="kicker">Integrated Communication Technologies</div>
-  <div class="big">👑🏰👑</div>
-  <h1>TELVERGENCE — Platform Overview</h1>
-  <p class="sub">See the platform in motion — a real-time omnichannel Command Center — then explore the overview.</p>
-
-  <div class="cards">
-    <a class="card c2" href="funnel.html" style="grid-column:1/-1;border-color:var(--lime);box-shadow:0 0 34px rgba(0,255,136,.2)">
-      <div class="ico">⚡</div>
-      <h2>▶ Instant Smart DID — Intake & Activation</h2>
-      <p>The <b>talking intake funnel landing page</b> — full narrative, auto-playing micro-demo clips, and a guided step-by-step funnel that activates a branded, E911-ready Smart DID and forwards it to your existing cell. $22.95/mo, DOB PIN, no SSN. A narrated guide talks you through every step.</p>
-      <span class="go">Open the activation funnel →</span>
-    </a>
-
-    <a class="card c2" href="telvergence-demo.html" style="grid-column:1/-1;border-color:var(--cyan);box-shadow:0 0 34px rgba(0,212,255,.18)">
-      <div class="ico">🛰️</div>
-      <h2>▶ Live Storm Dispatch Command Center</h2>
-      <p>Opens on the <b>live national storm map</b> — real U.S. National Weather Service alerts lighting up a fluxing nationwide grid, auto-dispatching crews to the brands, surfacing vendor-recruitment territories, then flowing into the omnichannel conduit, live profit step-down, and market-economics model. Click through every screen.</p>
-      <span class="go">Launch the live demo →</span>
-    </a>
-
-    <a class="card c3" href="backoffice.html">
-      <div class="ico">🧩</div>
-      <h2>Integrated Back Office</h2>
-      <p>BOSS CRM + LMS + ViciDial agent front end — tied together and <b>actually functional</b>. Add a lead, dial it, disposition it, watch KPIs and training certify in real time.</p>
-      <span class="go">Open the back office →</span>
-    </a>
-
-    <a class="card c1" href="win-tv.html">
-      <div class="ico">📺</div>
-      <h2>WIN TV — Weather Channel</h2>
-      <p>The <b>Weather Intelligence Network</b> mini-documentary series — real storm stories that showcase WIN as the life-saving case study, with instant real-time activation during every episode.</p>
-      <span class="go">Open WIN TV →</span>
-    </a>
-
-    <a class="card c2" href="partner.html">
-      <div class="ico">💰</div>
-      <h2>WIN Agent Partner Portal</h2>
-      <p>Residential subscribers earn <b>10% of the gross</b> by connecting their storm damage to local providers — and recruiting new providers into the WIN dispatch network. Functional earnings demo.</p>
-      <span class="go">Open the partner portal →</span>
-    </a>
-
-    <a class="card c1" href="grid.html">
-      <div class="ico">🗺️</div>
-      <h2>WIN National Grid Saturation</h2>
-      <p>One <b>Authorized Dedicated Provider</b> per territory, earned by performance. Claim grids, qualify, hold your wholesale regional position — and watch national saturation climb. Two-way dialer marketplace.</p>
-      <span class="go">Open the grid map →</span>
-    </a>
-
-    <a class="card c1" href="kingdom-map.html">
-      <div class="ico">🗺️</div>
-      <h2>Platform Overview</h2>
-      <p>One page showing TELVERGENCE and the brands it powers, the built-in protection, and what's on the roadmap.</p>
-      <span class="go">View the overview →</span>
-    </a>
+  <div class="box">
+    <div class="lock">🔒</div>
+    <div class="badge">Proprietary · Access Controlled</div>
+    <h1>This material has moved</h1>
+    <p>The TELVERGENCE platform demonstration is now private and available by invitation only. Previously shared links are no longer active.</p>
+    <p>If you were invited, please use the secure access link provided to you directly. Otherwise, request access from the founder.</p>
+    <a class="cta" href="tel:+16892421041">📞 Request access — (689) 242-1041</a>
+    <div class="small">Authorized parties only. All source code, designs, and system blueprints are the confidential and proprietary property of TELVERGENCE.</div>
+    <div class="foot">© TELVERGENCE — Integrated Communication Technologies. All rights reserved.</div>
   </div>
-
-  <div class="foot">
-    A guided look at the TELVERGENCE platform and the brands it powers.
-    <br><span class="stamp">TELVERGENCE — Integrated Communication Technologies</span>
-  </div>
-
-<script src="assets/telv-track.js"></script>
 </body>
 </html>
