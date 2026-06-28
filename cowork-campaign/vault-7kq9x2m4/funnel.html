@@ -275,7 +275,7 @@
       <div>⚡ <b>~30-second</b> activation</div>
       <div>🛡️ <b>E911 / Kari's Law</b> aware</div>
       <div>🔑 Smart DID = account key <b>· no SSN</b></div>
-      <div>💳 <b>from $4.95/mo</b> residential</div>
+      <div>💳 <b>$22.95/mo</b> per line</div>
     </div>
   </div>
 </section>
@@ -396,7 +396,7 @@
       <div class="step reveal"><div class="n">1</div><h4>Tell us who you are</h4><p>Pick your tier — crew, brand, vendor, or white-label partner. That shapes your private-label setup.</p></div>
       <div class="step reveal"><div class="n">2</div><h4>Pick your market & cell</h4><p>Choose an area code and the existing cell phone every call should ring. Nothing to install.</p></div>
       <div class="step reveal"><div class="n">3</div><h4>Set your DOB PIN</h4><p>Your 8-digit date of birth (MMDDYYYY) secures the account. The Smart DID is your account number — <b>never an SSN</b>.</p></div>
-      <div class="step reveal"><div class="n">4</div><h4>Pick your plan</h4><p>Residential from $4.95/mo (minutes pre-paid at cost, real-time top-up for overage) or Business $22.95/mo per DID. Prepaid via Stripe.</p></div>
+      <div class="step reveal"><div class="n">4</div><h4>Pick your plan</h4><p>One simple plan — $22.95/mo per line, up to 10 lines per account. Recurring via Stripe. Cancel anytime.</p></div>
       <div class="step reveal"><div class="n">5</div><h4>Instant activation</h4><p>The number provisions, branded caller ID and E911 register, and call-forward goes live to your cell.</p></div>
       <div class="step reveal"><div class="n">6</div><h4>It runs itself</h4><p>A private-label sub-site spins up and a "second-brain" AI agent operates it 24/7 — solo, infinitely scalable.</p></div>
     </div>
@@ -455,26 +455,17 @@
 
         <!-- step 4 -->
         <div class="pane" data-step="4">
-          <h3>Choose your plan</h3>
-          <div class="q">Residential starts at <b>$4.95/mo</b> — your monthly fee pre-pays minutes at our cost. Go over? Add minutes in real time as you go. Business is a flat per-DID rate.</div>
-          <div class="opts" id="planOpts">
-            <div class="opt sel" data-plan="res495"><span class="ic">🏠</span><div><b>Residential — $4.95/mo</b><small>~500 talk-minutes included at cost · overage $0.03/min, top up as you go</small></div></div>
-            <div class="opt" data-plan="res795"><span class="ic">🏡</span><div><b>Residential+ — $7.95/mo</b><small>~800 talk-minutes included at cost · overage $0.025/min, top up as you go</small></div></div>
-            <div class="opt" data-plan="biz2295"><span class="ic">🏢</span><div><b>Business — $22.95/mo per DID</b><small>Branded operation · flat rate · add multiple lines</small></div></div>
+          <h3>Your plan</h3>
+          <div class="q">One simple plan — <b>$22.95/mo per line</b>. Add up to <b>10 lines</b> per account. Cancel anytime.</div>
+          <div class="opts">
+            <div class="opt sel"><span class="ic">📞</span><div><b>TELVERGENCE Smart DID — $22.95/mo per line</b><small>Branded caller ID · E911 · forwards to your existing cell · earn 10% as a WIN Agent Partner</small></div></div>
           </div>
-          <div class="field" id="qtyRow" style="display:none;justify-content:space-between;align-items:center">
-            <label style="margin:0">How many Smart DIDs?</label>
+          <div class="field" id="qtyRow" style="display:flex;justify-content:space-between;align-items:center">
+            <label style="margin:0">Lines <span class="muted" style="font-size:12px">(max 10 per account)</span></label>
             <div class="stepper"><button id="qMinus" type="button">−</button><b id="qN">1</b><button id="qPlus" type="button">+</button></div>
           </div>
-          <div class="plan" id="meterBox" style="display:block">
-            <div style="width:100%">
-              <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px"><span id="meterLbl">~500 min included at cost</span><span id="meterOver">then $0.03/min as you go</span></div>
-              <div style="height:10px;border-radius:999px;background:var(--navy);border:1px solid var(--line);overflow:hidden"><i style="display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--lime),var(--cyan))"></i></div>
-              <div style="font-size:11px;color:var(--muted);margin-top:6px">⏱️ Real-time usage meter — you only ever pay a modest margin on minutes beyond your included bucket.</div>
-            </div>
-          </div>
-          <div class="plan"><div class="muted" style="font-size:13px">Due today</div><div><b id="qDue" style="color:var(--lime)">$4.95</b></div></div>
-          <div class="fnav"><button class="btn btn-ghost" data-prev>← Back</button><button class="btn btn-stripe" id="fPay">Prepay <span id="qPay">$4.95</span>/mo with Stripe →</button></div>
+          <div class="plan"><div class="muted" style="font-size:13px">Due today</div><div><b id="qDue" style="color:var(--lime)">$22.95</b></div></div>
+          <div class="fnav"><button class="btn btn-ghost" data-prev>← Back</button><button class="btn btn-stripe" id="fPay">Subscribe <span id="qPay">$22.95</span>/mo with Stripe →</button></div>
         </div>
 
         <!-- step 5 -->
@@ -575,11 +566,9 @@
   // ---- funnel ----
   let step=1, qty=1, tier='STORMCREW';
   const PLANS={
-    res495:{price:4.95, min:500, over:0.03,  kind:'res', label:'Residential'},
-    res795:{price:7.95, min:800, over:0.025, kind:'res', label:'Residential+'},
-    biz2295:{price:22.95, min:0, over:0,     kind:'biz', label:'Business'}
+    line2295:{price:22.95, min:0, over:0, kind:'line', label:'Per line'}
   };
-  let planKey='res495';
+  let planKey='line2295';
   function plan(){ return PLANS[planKey]; }
   const panes=[...document.querySelectorAll('.pane')];
   const pbar=document.getElementById('pbar'), stepno=document.getElementById('stepno');
@@ -597,23 +586,13 @@
   document.getElementById('tierOpts').onclick=e=>{ const o=e.target.closest('.opt'); if(!o)return;
     document.querySelectorAll('#tierOpts .opt').forEach(x=>x.classList.remove('sel')); o.classList.add('sel'); tier=o.dataset.v; };
 
-  function setQty(){ const p=plan(); const q=(p.kind==='biz')?qty:1;
-    const due=p.price*q;
+  function setQty(){ const p=plan(); const due=p.price*qty;
     document.getElementById('qN').textContent=qty;
     document.getElementById('qDue').textContent='$'+due.toFixed(2);
     document.getElementById('qPay').textContent='$'+due.toFixed(2);
-    document.getElementById('qtyRow').style.display=(p.kind==='biz')?'flex':'none';
-    const mb=document.getElementById('meterBox');
-    if(p.kind==='biz'){ mb.style.display='none'; }
-    else { mb.style.display='block';
-      document.getElementById('meterLbl').textContent='~'+p.min+' min included at cost';
-      document.getElementById('meterOver').textContent='then $'+p.over.toFixed(3).replace(/0$/,'')+'/min as you go'; }
   }
-  document.getElementById('planOpts').onclick=e=>{ const o=e.target.closest('.opt'); if(!o)return;
-    document.querySelectorAll('#planOpts .opt').forEach(x=>x.classList.remove('sel')); o.classList.add('sel');
-    planKey=o.dataset.plan; if(plan().kind!=='biz') qty=1; setQty(); };
   document.getElementById('qMinus').onclick=()=>{ qty=Math.max(1,qty-1); setQty(); };
-  document.getElementById('qPlus').onclick=()=>{ qty=Math.min(99,qty+1); setQty(); };
+  document.getElementById('qPlus').onclick=()=>{ qty=Math.min(10,qty+1); setQty(); };
 
   function validate(s){
     if(s===3){ const pin=(document.getElementById('fPin').value||'').replace(/\D/g,'');
@@ -634,14 +613,10 @@
     const mask='••••'+pin.slice(4);
     const num=npa+(200+Math.floor(Math.random()*699))+String(1000+Math.floor(Math.random()*8999));
     const did='('+npa+') '+num.slice(3,6)+'-'+num.slice(6);
-    const p=plan(), q=(p.kind==='biz')?qty:1, due=(p.price*q).toFixed(2);
+    const p=plan(), q=qty, due=(p.price*q).toFixed(2);
     const steps=[
-      ['stripe.subscriptions.create plan='+p.label+' price=$'+p.price.toFixed(2)+'/mo qty='+q,'✓ recurring active — $'+due+'/mo prepaid'],
+      ['stripe.subscriptions.create price=$22.95/mo lines='+q,'✓ recurring active — $'+due+'/mo ('+q+' line'+(q>1?'s':'')+')'],
     ];
-    if(p.kind==='res') steps.push(
-      ['usage.bucket fund='+p.min+'min at_cost','✓ '+p.min+' talk-min funded at cost · overage $'+p.over+'/min'],
-      ['usage.meter mode=realtime','✓ live meter on — add minutes as you go past the bucket']
-    );
     steps.push(
       ['vitelity.getlocaldid npa='+npa,'✓ ordered '+did],
       ['vitelity.lidb name="'+tier+'"','✓ branded caller ID set'],
@@ -664,11 +639,11 @@
       '<div class="did">'+did+'</div>'+
       '<div class="muted" style="font-size:13px;margin-bottom:10px">Branded <b style="color:var(--cyan)">'+tier+'</b> · forwarding to <b style="color:var(--ink)">'+cell+'</b></div>'+
       '<span class="pill l">🛡️ E911 registered</span><span class="pill c">🔐 PIN '+mask+' · no SSN</span>'+
-      '<span class="pill l">💳 '+p.label+' $'+due+'/mo</span>'+(p.kind==='res'?'<span class="pill c">⏱️ '+p.min+' min + $'+p.over+'/min as-you-go</span>':'')+'<span class="pill v">🧠 AI agent live</span><span class="pill c">🌐 '+sub+'</span>'+
-      (p.kind==='res'?'<div style="margin-top:12px;font-size:13px;color:var(--lime);font-weight:700">💰 You’re now a WIN Agent Partner — earn 10% of the gross on storm jobs you connect to local providers.</div>':'')+
+      '<span class="pill l">💳 $'+due+'/mo · '+q+' line'+(q>1?'s':'')+'</span><span class="pill v">🧠 AI agent live</span><span class="pill c">🌐 '+sub+'</span>'+
+      '<div style="margin-top:12px;font-size:13px;color:var(--lime);font-weight:700">💰 You’re now a WIN Agent Partner — earn 10% of the gross on storm jobs you connect to local providers.</div>'+
       '<div style="margin-top:14px;font-size:13px;color:var(--muted)">You’re onboarded — reach the founder directly, anytime:</div>'+
       '<div style="margin-top:10px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">'+
-        (p.kind==='res'?'<a href="partner.html" class="btn btn-primary">💰 Open my Agent Partner portal</a>':'')+
+        '<a href="partner.html" class="btn btn-primary">💰 Open my Agent Partner portal</a>'+
         '<a href="tel:+16892421041" class="btn btn-ghost" style="border-color:var(--lime);color:var(--lime)">📞 Founder 24/7 · (689) 242-1041</a>'+
         '<a href="telvergence-demo.html" class="btn btn-ghost">▶ Live dashboard</a>'+
       '</div></div>';
@@ -688,7 +663,7 @@
     1:"Welcome. First, tell us who we're activating for — a crew, a brand, a vendor, or a white-label partner.",
     2:"Now pick your market area code and the cell phone every call should ring. No new device needed.",
     3:"Secure your account with your 8-digit date of birth as the PIN. Your Smart D I D is the account number — never a social security number.",
-    4:"Choose your plan. Residential starts at just four ninety-five a month — it pre-pays your minutes at cost, and you only add more, in real time, if you go over. Business is a flat rate per number.",
+    4:"Your plan is simple — twenty-two ninety-five a month per line, up to ten lines. Recurring, and you can cancel anytime.",
     5:"Activating now. Watch your number provision, register E 9 1 1, and forward to your cell in real time."
   };
   function narrateStep(s){ narrate(stepLines[s]||''); }
