@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>TELVERGENCE — Get Instant Access</title>
+<style>
+  :root{--midnight:#0A0E1A;--navy:#10182e;--card:#16213d;--line:#26345a;--cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--stripe:#635bff;--ink:#eaf2ff;--muted:#8ea3c9;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);background:radial-gradient(1100px 600px at 50% -10%,#1a2547,var(--midnight) 60%);min-height:100vh;padding:34px 18px 70px}
+  .wrap{max-width:1000px;margin:0 auto}
+  .kick{letter-spacing:3px;font-size:12px;text-transform:uppercase;color:var(--cyan);text-align:center;font-weight:700}
+  h1{text-align:center;font-size:clamp(28px,5vw,44px);margin:8px 0 6px;background:linear-gradient(90deg,var(--cyan),var(--lime),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 8px;font-size:17px}
+  .trust{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:18px 0 30px;color:var(--muted);font-size:13px}
+  .trust b{color:var(--ink)}
+  .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
+  .plan{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column}
+  .plan.feat{border-color:var(--lime);box-shadow:0 0 34px rgba(0,255,136,.16)}
+  .plan .tag{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--cyan)}
+  .plan.feat .tag{color:var(--lime)}
+  .plan h2{font-size:21px;margin:8px 0 2px}
+  .plan .price{font-size:40px;font-weight:800;margin:6px 0}
+  .plan .price small{font-size:15px;color:var(--muted);font-weight:400}
+  .plan ul{list-style:none;margin:14px 0 18px;font-size:13.5px;color:#d2dcf2}
+  .plan li{padding:5px 0 5px 22px;position:relative}.plan li::before{content:"✓";position:absolute;left:0;color:var(--lime);font-weight:800}
+  .plan .buy{margin-top:auto;display:block;text-align:center;text-decoration:none;background:var(--stripe);color:#fff;font-weight:800;border-radius:11px;padding:14px;font-size:15px;cursor:pointer;border:none}
+  .plan.feat .buy{background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c}
+  .plan .meter{font-size:11.5px;color:var(--muted);margin-top:8px;text-align:center}
+  .secure{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:26px;color:var(--muted);font-size:13px}
+  .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:24px}
+  .foot a{color:var(--cyan)}
+  .note{background:rgba(99,91,255,.08);border:1px solid rgba(99,91,255,.3);border-radius:12px;padding:12px 16px;font-size:12.5px;color:#c9c3ff;margin:24px auto 0;max-width:760px;text-align:center}
+</style>
+</head>
+<body><div class="wrap">
+  <div class="kick">Instant activation · in seconds</div>
+  <h1>Get instant access to TELVERGENCE</h1>
+  <p class="sub">A branded, E911-ready Smart DID that forwards to the phone you already carry — plus the full WIN platform. Subscribe and you're provisioned immediately.</p>
+  <div class="trust"><div>⚡ <b>~30s</b> activation</div><div>🛡️ <b>E911</b> ready</div><div>🔑 <b>No SSN</b></div><div>🔁 Cancel anytime</div></div>
+
+  <div class="plans">
+    <div class="plan">
+      <div class="tag">Residential</div><h2>Smart DID</h2>
+      <div class="price">$4.95<small>/mo</small></div>
+      <ul><li>~500 talk-minutes at our cost</li><li>Overage $0.03/min, add as you go</li><li>Branded caller ID + E911</li><li>Forwards to your existing cell</li><li>WIN Agent Partner — earn 10%</li></ul>
+      <button class="buy" data-plan="res495">Subscribe — $4.95/mo →</button>
+      <div class="meter">Metered overage billed in real time</div>
+    </div>
+    <div class="plan feat">
+      <div class="tag">Residential+ · Popular</div><h2>Smart DID Plus</h2>
+      <div class="price">$7.95<small>/mo</small></div>
+      <ul><li>~800 talk-minutes at our cost</li><li>Overage $0.025/min, add as you go</li><li>Everything in Residential</li><li>Priority storm-dispatch routing</li><li>WIN Agent Partner — earn 10%</li></ul>
+      <button class="buy" data-plan="res795">Subscribe — $7.95/mo →</button>
+      <div class="meter">Best value for active households</div>
+    </div>
+    <div class="plan">
+      <div class="tag">Business</div><h2>Branded Operation</h2>
+      <div class="price">$22.95<small>/mo per DID</small></div>
+      <ul><li>Flat rate — high call volume</li><li>Multiple branded lines</li><li>BOSS CRM + LMS + ViciDial</li><li>Claim a WIN grid territory</li><li>Private-label sub-site</li></ul>
+      <button class="buy" data-plan="biz2295">Subscribe — $22.95/mo →</button>
+      <div class="meter">Add lines anytime</div>
+    </div>
+  </div>
+
+  <div class="secure">🔒 Secure checkout powered by <b style="color:#a9a2ff">Stripe</b> · your card is never stored by us</div>
+
+  <div class="note" id="cfgNote" style="display:none">⚙️ Checkout is being finalized. Tap a plan to preview the access flow, or call the founder at (689)&nbsp;242-1041 to subscribe now.</div>
+
+  <div class="foot">
+    Questions? 📞 <a href="tel:+16892421041">(689) 242-1041</a> · By subscribing you agree to the terms. Smart DID is your account key — no SSN is ever used.
+  </div>
+</div>
+<script>
+  // ===== Paste your Stripe Payment Link URLs here (Stripe Dashboard -> Payment Links) =====
+  // Set each link's "after payment" redirect to:  .../cowork-campaign/welcome.html
+  var STRIPE_LINKS = {
+    res495:  "",   // e.g. https://buy.stripe.com/xxxxxxxxxxxx
+    res795:  "",
+    biz2295: ""
+  };
+  var anyConfigured = Object.keys(STRIPE_LINKS).some(function(k){ return STRIPE_LINKS[k]; });
+  if(!anyConfigured) document.getElementById('cfgNote').style.display='block';
+  document.querySelectorAll('.buy').forEach(function(b){
+    b.onclick=function(){
+      var url=STRIPE_LINKS[b.dataset.plan];
+      if(url){ location.href=url; }
+      else { location.href="welcome.html?plan="+b.dataset.plan+"&demo=1"; } // preview the access flow until links are pasted
+    };
+  });
+</script>
+</body>
+</html>
