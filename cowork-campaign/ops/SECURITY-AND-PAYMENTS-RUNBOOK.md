@@ -54,15 +54,17 @@ This is the real lock. The in-page email gate becomes a friendly backstop.
 
 ## PART 3 — Take payments (Stripe Payment Links — no server needed)
 
-1. Stripe Dashboard → **Payment Links → Create**, one per plan:
-   - Residential — **$4.95/mo** recurring
-   - Residential+ — **$7.95/mo** recurring
-   - Business — **$22.95/mo** recurring (per DID; allow quantity)
-2. For each link: **After payment → Redirect** to
+1. Stripe Dashboard → create the **recurring price**: **$22.95 / month**, then
+   **Payment Links → Create** on that price with:
+   - **Free trial: 30 days** (Stripe collects the card but charges $0 today; auto-bills
+     after 30 days — this is exactly the "no money down, card on file" offer).
+   - **Let customers adjust quantity**, max **10** (= up to $229.50/mo).
+   - **Subscription** (recurring monthly, prepaid at each period start).
+2. On the link: **After payment → Redirect** to
    `https://telvergence.com/cowork-campaign/welcome.html`
-   and enable **collect customer email** (on by default).
-3. Paste the three link URLs into `cowork-campaign/join.html` → `STRIPE_LINKS{}`.
-   *(Send me the 3 URLs and I'll commit them.)*
+   (email collection is on by default).
+3. Paste the **one** link URL into `cowork-campaign/join.html` → `STRIPE_LINK`.
+   *(Send me the URL and I'll commit it.)* The page already passes `?quantity=N` (1–10).
 4. Done — `join.html` now sends customers to real Stripe checkout; `welcome.html` hands
    them their secure portal link.
 
@@ -91,13 +93,13 @@ their welcome link — no manual step.
 
 ## What I (Claude) have already staged for you
 - `cowork-campaign/index.html` — locked "Access Controlled" front door (old links dead) with **Subscribe** + Request-access CTAs.
-- `cowork-campaign/join.html` — public 3-plan checkout, ready for your Stripe Payment Link URLs.
-- `cowork-campaign/welcome.html` — post-payment "access granted" page that hands over the secure portal link.
+- `cowork-campaign/join.html` — public checkout: **30-day free trial, $0 today**, up to 10 lines, unlimited calls/connects, then auto-bills $22.95/line/mo. Ready for your Stripe Payment Link URL.
+- `cowork-campaign/welcome.html` — post-activation page: trial active, card on file, billing starts in 30 days; hands over the secure portal link.
 - `cowork-campaign/vault-7kq9x2m4/` — the entire platform behind one secret master path (email-gated, noindex).
 - `_headers`, `_redirects` (at repo root) — security headers + old-path redirects, ready for the Cloudflare build.
 - `ops/stripe-provision-worker.js` — auto-provision worker template.
 
 ## Hand me any of these and I commit them instantly
-- Your 3 **Stripe Payment Link** URLs → live checkout.
+- Your **Stripe Payment Link** URL (30-day trial, $22.95/mo, qty≤10) → live checkout.
 - Your **Cloudflare Pages** URL / confirmation → I move `_headers`/`_redirects` to root.
 - Say "move configs to root" and I'll stage them for the Cloudflare build.
