@@ -275,7 +275,7 @@
       <div>⚡ <b>~30-second</b> activation</div>
       <div>🛡️ <b>E911 / Kari's Law</b> aware</div>
       <div>🔑 Smart DID = account key <b>· no SSN</b></div>
-      <div>💳 <b>$22.95/mo</b> per line</div>
+      <div>🎁 <b>30 days free</b> · then $22.95/line</div>
     </div>
   </div>
 </section>
@@ -396,7 +396,7 @@
       <div class="step reveal"><div class="n">1</div><h4>Tell us who you are</h4><p>Pick your tier — crew, brand, vendor, or white-label partner. That shapes your private-label setup.</p></div>
       <div class="step reveal"><div class="n">2</div><h4>Pick your market & cell</h4><p>Choose an area code and the existing cell phone every call should ring. Nothing to install.</p></div>
       <div class="step reveal"><div class="n">3</div><h4>Set your DOB PIN</h4><p>Your 8-digit date of birth (MMDDYYYY) secures the account. The Smart DID is your account number — <b>never an SSN</b>.</p></div>
-      <div class="step reveal"><div class="n">4</div><h4>Pick your plan</h4><p>One simple plan — $22.95/mo per line, up to 10 lines per account. Recurring via Stripe. Cancel anytime.</p></div>
+      <div class="step reveal"><div class="n">4</div><h4>Activate free</h4><p>$0 today — 30-day free trial, unlimited calls &amp; connects. After 30 days your card on file auto-bills $22.95/mo per line, up to 10 lines. Cancel anytime.</p></div>
       <div class="step reveal"><div class="n">5</div><h4>Instant activation</h4><p>The number provisions, branded caller ID and E911 register, and call-forward goes live to your cell.</p></div>
       <div class="step reveal"><div class="n">6</div><h4>It runs itself</h4><p>A private-label sub-site spins up and a "second-brain" AI agent operates it 24/7 — solo, infinitely scalable.</p></div>
     </div>
@@ -455,17 +455,18 @@
 
         <!-- step 4 -->
         <div class="pane" data-step="4">
-          <h3>Your plan</h3>
-          <div class="q">One simple plan — <b>$22.95/mo per line</b>. Add up to <b>10 lines</b> per account. Cancel anytime.</div>
+          <h3>Activate free — $0 today</h3>
+          <div class="q"><b>30-day free trial</b>, no payment to activate. <b>Unlimited calls &amp; connects.</b> After 30 days your card on file auto-bills monthly (prepaid) at $22.95 per line. Up to 10 lines.</div>
           <div class="opts">
-            <div class="opt sel"><span class="ic">📞</span><div><b>TELVERGENCE Smart DID — $22.95/mo per line</b><small>Branded caller ID · E911 · forwards to your existing cell · earn 10% as a WIN Agent Partner</small></div></div>
+            <div class="opt sel"><span class="ic">🎁</span><div><b>30 days free · $0 out of pocket today</b><small>Then $22.95/mo per line · unlimited calls &amp; connects · cancel anytime · earn 10% as a WIN Agent Partner</small></div></div>
           </div>
           <div class="field" id="qtyRow" style="display:flex;justify-content:space-between;align-items:center">
             <label style="margin:0">Lines <span class="muted" style="font-size:12px">(max 10 per account)</span></label>
-            <div class="stepper"><button id="qMinus" type="button">−</button><b id="qN">1</b><button id="qPlus" type="button">+</button></div>
+            <div class="stepper"><button id="qMinus" type="button">−</button><b id="qN">10</b><button id="qPlus" type="button">+</button></div>
           </div>
-          <div class="plan"><div class="muted" style="font-size:13px">Due today</div><div><b id="qDue" style="color:var(--lime)">$22.95</b></div></div>
-          <div class="fnav"><button class="btn btn-ghost" data-prev>← Back</button><button class="btn btn-stripe" id="fPay">Subscribe <span id="qPay">$22.95</span>/mo with Stripe →</button></div>
+          <div class="plan"><div class="muted" style="font-size:13px">Due today</div><div><b id="qDue" style="color:var(--lime)">$0.00</b></div></div>
+          <div class="plan"><div class="muted" style="font-size:13px">Then, after 30 days</div><div><b id="qThen" style="color:var(--ink)">$229.50</b><span class="muted" style="font-size:12px">/mo</span></div></div>
+          <div class="fnav"><button class="btn btn-ghost" data-prev>← Back</button><button class="btn btn-stripe" id="fPay">⚡ Activate free — $0 today →<span id="qPay" style="display:none"></span></button></div>
         </div>
 
         <!-- step 5 -->
@@ -564,7 +565,7 @@
   document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 
   // ---- funnel ----
-  let step=1, qty=1, tier='STORMCREW';
+  let step=1, qty=10, tier='STORMCREW';
   const PLANS={
     line2295:{price:22.95, min:0, over:0, kind:'line', label:'Per line'}
   };
@@ -586,10 +587,10 @@
   document.getElementById('tierOpts').onclick=e=>{ const o=e.target.closest('.opt'); if(!o)return;
     document.querySelectorAll('#tierOpts .opt').forEach(x=>x.classList.remove('sel')); o.classList.add('sel'); tier=o.dataset.v; };
 
-  function setQty(){ const p=plan(); const due=p.price*qty;
+  function setQty(){ const p=plan(); const then=p.price*qty;
     document.getElementById('qN').textContent=qty;
-    document.getElementById('qDue').textContent='$'+due.toFixed(2);
-    document.getElementById('qPay').textContent='$'+due.toFixed(2);
+    document.getElementById('qDue').textContent='$0.00';
+    document.getElementById('qThen').textContent='$'+then.toFixed(2);
   }
   document.getElementById('qMinus').onclick=()=>{ qty=Math.max(1,qty-1); setQty(); };
   document.getElementById('qPlus').onclick=()=>{ qty=Math.min(10,qty+1); setQty(); };
@@ -615,7 +616,8 @@
     const did='('+npa+') '+num.slice(3,6)+'-'+num.slice(6);
     const p=plan(), q=qty, due=(p.price*q).toFixed(2);
     const steps=[
-      ['stripe.subscriptions.create price=$22.95/mo lines='+q,'✓ recurring active — $'+due+'/mo ('+q+' line'+(q>1?'s':'')+')'],
+      ['stripe.subscriptions.create trial_period_days=30 price=$22.95/mo lines='+q,'✓ $0 today — 30-day free trial active'],
+      ['stripe.paymentMethod.attach (card on file)','✓ card stored · auto-bills $'+due+'/mo after 30 days (prepaid)'],
     ];
     steps.push(
       ['vitelity.getlocaldid npa='+npa,'✓ ordered '+did],
@@ -639,7 +641,7 @@
       '<div class="did">'+did+'</div>'+
       '<div class="muted" style="font-size:13px;margin-bottom:10px">Branded <b style="color:var(--cyan)">'+tier+'</b> · forwarding to <b style="color:var(--ink)">'+cell+'</b></div>'+
       '<span class="pill l">🛡️ E911 registered</span><span class="pill c">🔐 PIN '+mask+' · no SSN</span>'+
-      '<span class="pill l">💳 $'+due+'/mo · '+q+' line'+(q>1?'s':'')+'</span><span class="pill v">🧠 AI agent live</span><span class="pill c">🌐 '+sub+'</span>'+
+      '<span class="pill l">🎁 30 days free · $0 today</span><span class="pill c">💳 then $'+due+'/mo · '+q+' line'+(q>1?'s':'')+'</span><span class="pill l">♾️ unlimited</span><span class="pill v">🧠 AI agent live</span>'+
       '<div style="margin-top:12px;font-size:13px;color:var(--lime);font-weight:700">💰 You’re now a WIN Agent Partner — earn 10% of the gross on storm jobs you connect to local providers.</div>'+
       '<div style="margin-top:14px;font-size:13px;color:var(--muted)">You’re onboarded — reach the founder directly, anytime:</div>'+
       '<div style="margin-top:10px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">'+
@@ -663,7 +665,7 @@
     1:"Welcome. First, tell us who we're activating for — a crew, a brand, a vendor, or a white-label partner.",
     2:"Now pick your market area code and the cell phone every call should ring. No new device needed.",
     3:"Secure your account with your 8-digit date of birth as the PIN. Your Smart D I D is the account number — never a social security number.",
-    4:"Your plan is simple — twenty-two ninety-five a month per line, up to ten lines. Recurring, and you can cancel anytime.",
+    4:"Activate free — nothing out of pocket today. You get a 30-day free trial with unlimited calls and connects. After 30 days, your card on file auto-bills monthly at twenty-two ninety-five per line, up to ten lines. Cancel anytime.",
     5:"Activating now. Watch your number provision, register E 9 1 1, and forward to your cell in real time."
   };
   function narrateStep(s){ narrate(stepLines[s]||''); }
