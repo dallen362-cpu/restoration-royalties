@@ -22,9 +22,9 @@ GitHub repo **private** without the public site going offline.
 3. Deploy. You'll get a `*.pages.dev` URL — confirm it serves.
 4. **Custom domains** (Pages project → Custom domains): add `telvergence.com` and
    `www`, and for brand sub-sites add `restorationroyalty.telvergence.com`, etc.
-5. Copy `ops/cloudflare/_headers` and `ops/cloudflare/_redirects` to the **repo root**
-   (Cloudflare Pages reads them from the output dir). They add security headers and keep
-   old paths dead. *(Tell me and I'll move them to root in a commit.)*
+5. ✅ **Already staged for you:** `_headers` and `_redirects` are committed at the **repo
+   root**, so Cloudflare Pages applies them automatically (security headers + old paths kept
+   dead). Nothing to do here — they ship with the build output (root).
 6. **Now flip the GitHub repo to Private:** GitHub → repo → Settings → General → Danger
    Zone → Change visibility → Private. Cloudflare keeps serving; GitHub Pages stops, which
    is fine — Cloudflare is now the front.
@@ -94,7 +94,7 @@ their welcome link — no manual step.
 - `cowork-campaign/join.html` — public 3-plan checkout, ready for your Stripe Payment Link URLs.
 - `cowork-campaign/welcome.html` — post-payment "access granted" page that hands over the secure portal link.
 - `cowork-campaign/vault-7kq9x2m4/` — the entire platform behind one secret master path (email-gated, noindex).
-- `ops/cloudflare/_headers`, `ops/cloudflare/_redirects` — security headers + old-path redirects.
+- `_headers`, `_redirects` (at repo root) — security headers + old-path redirects, ready for the Cloudflare build.
 - `ops/stripe-provision-worker.js` — auto-provision worker template.
 
 ## Hand me any of these and I commit them instantly
