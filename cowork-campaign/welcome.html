@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>TELVERGENCE — Access Granted</title>
+<style>
+  :root{--midnight:#0A0E1A;--card:#16213d;--line:#26345a;--cyan:#00D4FF;--lime:#00FF88;--ink:#eaf2ff;--muted:#8ea3c9;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(1000px 560px at 50% -10%,#1a2547,var(--midnight) 60%);padding:24px}
+  .box{max-width:560px;width:100%;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:38px 30px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+  .chk{font-size:58px}
+  h1{font-size:28px;margin:8px 0 6px;background:linear-gradient(90deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+  p{color:var(--muted);font-size:15px;margin:0 auto 10px;max-width:440px}
+  .demo{display:none;font-size:12px;color:#ffd27a;background:rgba(255,194,75,.1);border:1px solid rgba(255,194,75,.35);border-radius:10px;padding:8px 12px;margin:10px auto;max-width:420px}
+  ol{text-align:left;max-width:430px;margin:16px auto;color:#d2dcf2;font-size:14px;padding-left:20px}
+  ol li{padding:5px 0}
+  .cta{display:inline-block;margin-top:16px;background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c;font-weight:800;text-decoration:none;border-radius:12px;padding:15px 28px;font-size:16px}
+  .small{font-size:12px;color:var(--muted);margin-top:18px}
+  .foot{margin-top:18px;font-size:11px;color:#5e7099}
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="chk">✅</div>
+    <h1>You're in — access granted</h1>
+    <div class="demo" id="demo">Preview mode — this is the access flow your paying customers will see once Stripe Payment Links are connected.</div>
+    <p>Thank you for subscribing. Your access is provisioned to the email you paid with.</p>
+    <ol>
+      <li>Open your secure portal below.</li>
+      <li>Sign in with the <b>same email</b> you used at checkout.</li>
+      <li>Activate your Smart DID — it forwards to your existing cell in seconds.</li>
+    </ol>
+    <a class="cta" href="vault-7kq9x2m4/">🔑 Open my secure portal →</a>
+    <div class="small">Access is verified by your subscription email. Need help? 📞 (689) 242-1041</div>
+    <div class="foot">© TELVERGENCE — confidential &amp; proprietary. Do not share your access link.</div>
+  </div>
+<script>
+  if(new URLSearchParams(location.search).get('demo')) document.getElementById('demo').style.display='block';
+</script>
+</body>
+</html>

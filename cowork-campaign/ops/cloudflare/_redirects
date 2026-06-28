@@ -1,0 +1,12 @@
+# Cloudflare Pages redirects — copy to the repo/build ROOT.
+# Keep previously-shared links dead by routing them to the locked front door.
+/cowork-campaign/start.html            /cowork-campaign/   302
+/cowork-campaign/funnel.html           /cowork-campaign/   302
+/cowork-campaign/telvergence-demo.html /cowork-campaign/   302
+/cowork-campaign/backoffice.html       /cowork-campaign/   302
+/cowork-campaign/partner.html          /cowork-campaign/   302
+/cowork-campaign/grid.html             /cowork-campaign/   302
+/cowork-campaign/win-tv.html           /cowork-campaign/   302
+/cowork-campaign/win-tv-launch.html    /cowork-campaign/   302
+/cowork-campaign/watch.html            /cowork-campaign/   302
+/cowork-campaign/kingdom-map.html      /cowork-campaign/   302
