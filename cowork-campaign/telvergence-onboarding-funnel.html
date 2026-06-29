@@ -200,8 +200,9 @@
       <div class="row"><span>Due today</span><b style="color:var(--lime)">$0.00</b></div>
       <div class="row"><span>First charge (day 31)</span><b>$229.50/mo</b></div>
     </div>
+    <div class="field" style="max-width:560px;margin:0 auto 10px"><label>✍️ Type your full legal name to sign (electronic signature)</label><input id="esign" autocomplete="name" placeholder="Full legal name"></div>
     <label class="consent"><input type="checkbox" id="consent">
-      <span>I agree to the <a href="terms.html" target="_blank">Terms, billing &amp; 911 notice</a>: a 30-day free trial, then $229.50/mo (10 × $22.95) month-to-month, prepaid each cycle, with the cancellation policy shown. I authorize Telvergence to keep my card on file and bill it after the trial unless I cancel.</span></label>
+      <span>By signing above &amp; checking this box I electronically sign and agree to the <a href="agreement.html" target="_blank"><b>TELVERGENCE Letter of Authorization &amp; VoIP Service Agreement</b></a>. I authorize TELVERGENCE to (a) provision/port my numbers, register E911, and set my caller ID as my agent, and (b) <b>securely keep my card on file with Stripe and charge $229.50/mo (10 × $22.95) starting after my 30-day free trial</b>, recurring monthly until I cancel. <b>I am not charged today</b> — this is a card-on-file authorization, not an instant debit.</span></label>
     <div class="err" id="err5"></div>
     <button class="btn btn-primary" id="activateBtn" style="width:100%;max-width:560px;margin:8px auto 0;display:flex">⚡ Activate — $0 today →</button>
     <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;max-width:560px;margin:12px auto 0">
@@ -289,9 +290,12 @@
     document.getElementById('sumEmail').textContent = state.email || '—';
   }
 
-  // activate
+  // activate — require e-signature + authorization
   document.getElementById('activateBtn').onclick=function(){
-    if(!document.getElementById('consent').checked){ document.getElementById('err5').textContent='Please check the box to agree and activate.'; return; }
+    var nm=(document.getElementById('esign').value||'').trim();
+    if(nm.length<3){ document.getElementById('err5').textContent='Type your full legal name to sign.'; document.getElementById('esign').focus(); return; }
+    if(!document.getElementById('consent').checked){ document.getElementById('err5').textContent='Check the box to authorize and activate.'; return; }
+    state.esign=nm; state.signedAt=new Date().toISOString();
     document.getElementById('err5').textContent=''; show(6);
   };
 
@@ -302,6 +306,7 @@
     if(activating) return; activating=true;
     var c=document.getElementById('flog'); c.textContent='';
     var lines=[
+      'Digital authorization captured · signed by '+(state.esign||'subscriber')+' · card-on-file, no charge today…',
       'Reserving your 10 Smart DID lines'+(state.mode==='new'?(' · area code '+state.npa):' · port')+'…',
       'Enabling Remote Call Forwarding → '+(state.forward||'your phone')+'…',
       'Registering E911 dispatchable location…',
