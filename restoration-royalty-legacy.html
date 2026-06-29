@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoration Royalty - Emergency Mold Removal & Black Mold Remediation Specialists</title>
+    <meta name="description" content="Emergency mold removal and black mold remediation specialists. Certified mold inspectors available 24/7. Call 1-833-840-MOLD for immediate response.">
+    <meta name="keywords" content="emergency mold removal, black mold remediation, certified mold inspectors, mold removal service, water damage restoration">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        
+        .logo-sub {
+            font-size: 0.8rem;
+            color: #fff;
+            opacity: 0.9;
+            display: block;
+        }
+        
+        .emergency-number {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ff6b35;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 107, 53, 0.3);
+        }
+        
+        .emergency-number:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+            border-color: #ff6b35;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.95), rgba(45, 90, 135, 0.9)), 
+                        radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1), transparent 50%),
+                        #1a365d;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+            padding-bottom: 2rem;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+        
+        .hero-highlight {
+            color: #ffd700;
+        }
+        
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        
+        .cta-btn {
+            background: #ff6b35;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-btn:hover {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+        
+        .cta-btn.secondary {
+            background: transparent;
+            border: 2px solid #ffd700;
+            color: #ffd700;
+            box-shadow: none;
+        }
+        
+        .cta-btn.secondary:hover {
+            background: #ffd700;
+            color: #1a365d;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            opacity: 0.9;
+        }
+        
+        .badge {
+            text-align: center;
+        }
+        
+        .badge-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .voice-agent-setup {
+            background: #f8f9fa;
+            padding: 5rem 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 1rem;
+            color: #1a365d;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .voice-setup-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .setup-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #ff6b35, #e55a2b);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .step h3 {
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .step p {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        .demo-form {
+            background: linear-gradient(135deg, #1a365d, #2d5a87);
+            padding: 2.5rem;
+            border-radius: 15px;
+            color: white;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .submit-btn {
+            background: #ffd700;
+            color: #1a365d;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: #ffed4e;
+            transform: scale(1.02);
+        }
+        
+        .weather-intelligence {
+            background: #f8f9fa;
+            padding: 5rem 2rem;
+        }
+        
+        .did-selection-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 5rem 2rem;
+        }
+        
+        .did-selection-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .activation-promise {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #fff5f5, #ffe5e5);
+            border-radius: 15px;
+            border: 2px solid #ff6b35;
+        }
+        
+        .promise-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35, #e55a2b);
+            color: white;
+            padding: 0.7rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .did-search-section {
+            margin-bottom: 3rem;
+        }
+        
+        .search-options {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .search-tab {
+            padding: 1rem 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            border: 2px solid transparent;
+        }
+        
+        .search-tab:hover {
+            background: #e9ecef;
+        }
+        
+        .search-tab.active {
+            background: linear-gradient(135deg, #1a365d, #2d5a87);
+            color: white;
+            border-color: #1a365d;
+        }
+        
+        .search-panel {
+            display: none;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .search-panel.active {
+            display: block;
+        }
+        
+        .search-input-group {
+            display: flex;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .search-input-group input {
+            flex: 1;
+            min-width: 250px;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .search-btn {
+            background: linear-gradient(135deg, #ff6b35, #e55a2b);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .toll-free-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+        
+        .toll-free-btn {
+            background: white;
+            border: 2px solid #1a365d;
+            color: #1a365d;
+            padding: 1.2rem;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .toll-free-btn:hover {
+            background: #1a365d;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .number-results {
+            margin-top: 3rem;
+        }
+        
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .number-card {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid #dee2e6;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .number-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff6b35;
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.2);
+        }
+        
+        .number-display {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+        
+        .number-type {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .select-number-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .select-number-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .selected-number-section {
+            margin-top: 3rem;
+        }
+        
+        .selected-number-card {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            border: 3px solid #28a745;
+        }
+        
+        .selected-number-display {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1a365d;
+            padding: 2rem;
+            background: #fff5f5;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+        
+        .activation-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-included {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .feature-item {
+            color: #28a745;
+            font-weight: 600;
+        }
+        
+        .pricing-display {
+            background: linear-gradient(135deg, #fff5f5, #ffe5e5);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .price-breakdown {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .price-row.total {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #1a365d;
+            border-top: 2px solid #1a365d;
+            border-bottom: none;
+            margin-top: 0.5rem;
+        }
+        
+        .price {
+            color: #ff6b35;
+            font-weight: bold;
+        }
+        
+        .activation-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(40, 167, 69, 0.3);
+        }
+        
+        .activation-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(40, 167, 69, 0.4);
+        }
+        
+        .activation-success {
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        
+        .success-animation {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0 auto 2rem;
+            animation: successPulse 1s ease-in-out;
+        }
+        
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .countdown-timer {
+            background: linear-gradient(135deg, #1a365d, #2d5a87);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem auto;
+            max-width: 400px;
+        }
+        
+        .timer-display {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #ffd700;
+            margin: 1rem 0;
+        }
+        
+        .next-steps {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        
+        .next-steps ol {
+            line-height: 2;
+        }
+        
+        .weather-intelligence {
+            background: #f8f9fa;
+            padding: 5rem 2rem;
+        }
+        
+        .weather-dashboard {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .zip-input-section {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .zip-input-section input {
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            width: 250px;
+            text-align: center;
+        }
+        
+        .weather-results {
+            margin-top: 2rem;
+        }
+        
+        .weather-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .weather-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #dee2e6;
+        }
+        
+        .weather-card h3 {
+            color: #1a365d;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .radar-section {
+            margin: 3rem 0;
+        }
+        
+        .radar-map {
+            width: 100%;
+            height: 600px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            background: #e9ecef;
+        }
+        
+        .forecast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        
+        .forecast-day {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #dee2e6;
+        }
+        
+        .restoration-risk {
+            margin-top: 3rem;
+            background: linear-gradient(135deg, #fff5f5, #ffe5e5);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #ffc9c9;
+        }
+        
+        .alert-banner {
+            background: linear-gradient(135deg, #ff6b35, #e55a2b);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .risk-meter {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .risk-bar {
+            flex: 1;
+            height: 30px;
+            background: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .risk-fill {
+            height: 100%;
+            transition: width 1s ease;
+        }
+        
+        .services {
+            padding: 5rem 2rem;
+            background: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            text-align: center;
+            padding: 2.5rem;
+            border-radius: 15px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #ff6b35;
+        }
+        
+        .service-card h3 {
+            color: #1a365d;
+            margin: 1rem 0;
+            font-size: 1.4rem;
+        }
+        
+        .service-card p {
+            color: #666;
+        }
+        
+        .competitive-advantage {
+            background: linear-gradient(135deg, #1a365d, #2d5a87);
+            color: white;
+            padding: 5rem 2rem;
+        }
+        
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .advantage-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .advantage-card h3 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .footer {
+            background: #1a365d;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .resource-btn {
+            background: #1a365d;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-btn:hover {
+            background: #2d5a87;
+            transform: translateY(-2px);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 1000px;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #000;
+        }
+        
+        #modalBody {
+            padding: 2rem 3rem;
+            line-height: 1.8;
+        }
+        
+        #modalBody h1 {
+            color: #1a365d;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        #modalBody h2 {
+            color: #2d5a87;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        #modalBody h3 {
+            color: #1a365d;
+            margin-top: 1.5rem;
+            margin-bottom: 0.7rem;
+            font-size: 1.2rem;
+        }
+        
+        #modalBody p {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        #modalBody ul, #modalBody ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        #modalBody li {
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .setup-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <div>RESTORATION ROYALTY</div>
+                <span class="logo-sub">Mold Mitigation Specialists</span>
+            </div>
+            <a href="tel:1-833-840-6653" class="emergency-number">📞 1-833-840-MOLD</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The Unlimited Subscription Model: <span class="hero-highlight">Predictive Weather Intelligence</span> at Infinite Scale</h1>
+            <p>Restoration Royalty has engineered a proprietary collaborative application platform featuring intelligent Enhanced Capability telephone numbers - Post COVID Required by Law that communicate through artificial intelligence integration across all communication frequencies and channels simultaneously. Our patented system incorporates sophisticated electronic integrations with global satellite communications systems to monitor and predict weather events worldwide. This enables our platform to broadcast critical pre-event life-saving messages and post-event emergency response communications in real-time, matching prospects with optimal solution providers achieving one hundred percent accuracy through seamless, touchless fluidity at any velocity, instantaneously scaling without requiring proportional infrastructure expansion.</p>
+            <div class="cta-buttons">
+                <a href="https://buy.stripe.com/your-payment-link" class="cta-btn">Join The Unlimited Subscription Network</a>
+                <a href="#did-selection" class="cta-btn secondary">Experience Enhanced Capability Numbers</a>
+            </div>
+            <div class="trust-badges">
+                <div class="badge">
+                    <div class="badge-text">✓ Global Satellite Integration</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-text">✓ Predictive Weather Intelligence</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-text">✓ Life-Saving Communications</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-text">✓ Real-Time Crisis Response</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="setup" class="voice-agent-setup">
+        <div class="container">
+            <h2 class="section-title">The Over-Subscription Model™</h2>
+            <p class="section-subtitle">Our revolutionary collaborative application infrastructure deploys smart Direct Inward Dial numbers equipped with artificial intelligence that operates across voice, SMS, email, web chat, and social messaging simultaneously. The system analyzes prospect requirements in real-time and routes them to the optimal solution provider from our partner network with absolute precision, achieving perfect matching efficiency without requiring linear infrastructure scaling as call volumes increase exponentially.</p>
+            
+            <div class="voice-setup-card">
+                <h3 style="text-align: center; color: #1a365d; margin-bottom: 2rem; font-size: 1.8rem;">Intelligent Multi-Channel Communication Platform</h3>
+                
+                <div class="setup-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Smart DID Integration</h3>
+                        <p>Direct Inward Dial numbers equipped with AI communicate across voice calls, text messages, email, web forms, and social channels simultaneously in real-time</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Real-Time Analysis</h3>
+                        <p>Artificial intelligence evaluates prospect needs across all communication frequencies instantaneously, understanding urgency, scope, location, and specific restoration requirements</p>
+                    </div>
+                    <div class="step">
+                        <div3>
+                        <div class="step-number">3</div>
+                        <h3>Optimal Provider Matching</h3>
+                        <p>System achieves one hundred percent accuracy matching prospects with the best-qualified solution provider from our network based on specialty, availability, proximity, and capability</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Seamless Touchless Routing</h3>
+                        <p>Connection occurs with complete fluidity at any velocity without manual intervention, scaling instantaneously without proportional infrastructure increases</p>
+                    </div>
+                </div>
+
+                <div class="demo-form">
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Join The Over-Subscription Network</h3>
+                    <p style="margin-bottom: 1.5rem; opacity: 0.95;">Become a certified solution provider in our intelligent routing network. Our collaborative app platform connects you with qualified prospects automatically.</p>
+                    <form id="voiceAgentForm">
+                        <div class="form-group">
+                            <label for="businessName">Solution Provider Name</label>
+                            <input type="text" id="businessName" placeholder="Your Restoration Company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Website URL</label>
+                            <input type="url" id="website" placeholder="https://yourwebsite.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Primary Contact Number</label>
+                            <input type="tel" id="phone" placeholder="(555) 123-4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceArea">Service Area / Territory</label>
+                            <input type="text" id="serviceArea" placeholder="City, State or Zip Codes" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vanityNumber">Preferred Enhanced Capability Number Assignment</label>
+                            <select id="vanityNumber">
+                                <option value="1-833-840-MOLD">1-833-840-MOLD (1-833-840-6653)</option>
+                                <option value="1-800-MOLD-GONE">1-800-MOLD-GONE (1-800-665-3466)</option>
+                                <option value="1-800-RESTORE">1-800-RESTORE (1-800-737-8673)</option>
+                                <option value="custom">Request Custom Enhanced Capability Number</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn">Activate Network Integration</button>
+                        <div id="successMsg" class="success-message">
+                            ✓ Success! Your solution provider profile is being configured in our Over-Subscription Network. Smart DID integration begins within 120 seconds.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="did-selection" class="did-selection-section">
+        <div class="container">
+            <h2 class="section-title">Select Your Enhanced Capability Number</h2>
+            <p class="section-subtitle">Choose your intelligent Direct Inward Dial number with instant 120-second activation. All numbers include AI-powered multi-channel communication across voice, SMS, email, and web chat.</p>
+            
+            <div class="did-selection-card">
+                <div class="activation-promise">
+                    <div class="promise-badge">⚡ 120-SECOND ACTIVATION</div>
+                    <p>Your Enhanced Capability Number activates in under 2 minutes with full AI integration</p>
+                </div>
+                
+                <div class="did-search-section">
+                    <h3 style="color: #1a365d; margin-bottom: 1.5rem; text-align: center;">Find Your Perfect Number</h3>
+                    
+                    <div class="search-options">
+                        <div class="search-tab active" onclick="switchSearchTab('area')">
+                            Search by Area Code
+                        </div>
+                        <div class="search-tab" onclick="switchSearchTab('vanity')">
+                            Search Vanity Numbers
+                        </div>
+                        <div class="search-tab" onclick="switchSearchTab('toll-free')">
+                            Toll-Free Numbers
+                        </div>
+                    </div>
+                    
+                    <div id="areaCodeSearch" class="search-panel active">
+                        <div class="search-input-group">
+                            <input type="text" id="areaCode" placeholder="Enter Area Code (e.g., 407, 833)" maxlength="3" pattern="[0-9]{3}">
+                            <button onclick="searchByAreaCode()" class="search-btn">Search Available Numbers</button>
+                        </div>
+                        <p style="text-align: center; color: #666; margin-top: 1rem;">
+                            Enter your desired area code to see all available Enhanced Capability Numbers in that region
+                        </p>
+                    </div>
+                    
+                    <div id="vanitySearch" class="search-panel">
+                        <div class="search-input-group">
+                            <input type="text" id="vanityKeyword" placeholder="Enter keyword (e.g., MOLD, RESTORE, WATER)" maxlength="10">
+                            <button onclick="searchVanityNumbers()" class="search-btn">Find Vanity Numbers</button>
+                        </div>
+                        <p style="text-align: center; color: #666; margin-top: 1rem;">
+                            Search for memorable vanity numbers that spell out your service keywords
+                        </p>
+                    </div>
+                    
+                    <div id="tollFreeSearch" class="search-panel">
+                        <div class="toll-free-options">
+                            <button onclick="searchTollFree('800')" class="toll-free-btn">1-800-XXX-XXXX</button>
+                            <button onclick="searchTollFree('833')" class="toll-free-btn">1-833-XXX-XXXX</button>
+                            <button onclick="searchTollFree('844')" class="toll-free-btn">1-844-XXX-XXXX</button>
+                            <button onclick="searchTollFree('855')" class="toll-free-btn">1-855-XXX-XXXX</button>
+                            <button onclick="searchTollFree('866')" class="toll-free-btn">1-866-XXX-XXXX</button>
+                            <button onclick="searchTollFree('877')" class="toll-free-btn">1-877-XXX-XXXX</button>
+                            <button onclick="searchTollFree('888')" class="toll-free-btn">1-888-XXX-XXXX</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="numberResults" class="number-results" style="display: none;">
+                    <h3 style="color: #1a365d; margin-bottom: 1.5rem; text-align: center;">Available Enhanced Capability Numbers</h3>
+                    <div id="numbersList" class="numbers-grid"></div>
+                </div>
+                
+                <div id="selectedNumber" class="selected-number-section" style="display: none;">
+                    <div class="selected-number-card">
+                        <h3 style="color: #1a365d; margin-bottom: 1rem;">Your Selected Number</h3>
+                        <div class="selected-number-display" id="selectedNumberDisplay"></div>
+                        
+                        <div class="activation-form">
+                            <h4 style="color: #2d5a87; margin: 2rem 0 1rem;">Activation Information</h4>
+                            <div class="form-group">
+                                <label>Business Name *</label>
+                                <input type="text" id="activationBusinessName" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Contact Email *</label>
+                                <input type="email" id="activationEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Contact Phone *</label>
+                                <input type="tel" id="activationPhone" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Service Area / Territory *</label>
+                                <input type="text" id="activationServiceArea" placeholder="City, State or ZIP codes" required>
+                            </div>
+                            
+                            <div class="features-included">
+                                <h4 style="color: #2d5a87; margin: 1.5rem 0 1rem;">Included Features</h4>
+                                <div class="feature-list">
+                                    <div class="feature-item">✓ AI-Powered Voice Response</div>
+                                    <div class="feature-item">✓ SMS & MMS Messaging</div>
+                                    <div class="feature-item">✓ Email Integration</div>
+                                    <div class="feature-item">✓ Web Chat Widget</div>
+                                    <div class="feature-item">✓ Social Media Integration</div>
+                                    <div class="feature-item">✓ Real-Time Analytics Dashboard</div>
+                                    <div class="feature-item">✓ Multi-Channel Call Routing</div>
+                                    <div class="feature-item">✓ 24/7 AI Availability</div>
+                                </div>
+                            </div>
+                            
+                            <div class="pricing-display">
+                                <div class="price-breakdown">
+                                    <div class="price-row">
+                                        <span>Monthly Subscription</span>
+                                        <span class="price">$497/mo</span>
+                                    </div>
+                                    <div class="price-row">
+                                        <span>Setup & Activation</span>
+                                        <span class="price">$297 (one-time)</span>
+                                    </div>
+                                    <div class="price-row total">
+                                        <span>First Month Total</span>
+                                        <span class="price">$794</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button onclick="activateNumber()" class="activation-btn">
+                                🚀 Activate Number Now - 120 Second Setup
+                            </button>
+                            
+                            <p style="text-align: center; color: #666; margin-top: 1rem; font-size: 0.9rem;">
+                                Your Enhanced Capability Number will be active and receiving calls within 120 seconds
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="activationSuccess" class="activation-success" style="display: none;">
+                    <div class="success-animation">✓</div>
+                    <h2 style="color: #28a745; margin: 1rem 0;">Number Activated Successfully!</h2>
+                    <div id="activatedNumberInfo"></div>
+                    <div class="countdown-timer">
+                        <p>Your AI systems are initializing...</p>
+                        <div class="timer-display" id="countdownTimer">120</div>
+                        <p>seconds until fully operational</p>
+                    </div>
+                    <div class="next-steps">
+                        <h3 style="color: #1a365d; margin: 2rem 0 1rem;">Next Steps</h3>
+                        <ol style="text-align: left; max-width: 600px; margin: 0 auto;">
+                            <li>Check your email for dashboard access credentials</li>
+                            <li>Configure your AI voice agent personality and responses</li>
+                            <li>Set up call routing rules and business hours</li>
+                            <li>Integrate with your CRM and calendar systems</li>
+                            <li>Test your number across all communication channels</li>
+                        </ol>
+                    </div>
+                    <button onclick="location.reload()" class="cta-btn" style="margin-top: 2rem;">
+                        Select Another Number
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="weather-intelligence">
+        <div class="container">
+            <h2 class="section-title">Live Weather Intelligence Dashboard</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #666; font-size: 1.1rem;">Enter your ZIP code to access real-time weather data, live Doppler radar visualization, satellite imagery, and predictive storm tracking powered by our global weather intelligence network.</p>
+            
+            <div class="weather-dashboard">
+                <div class="zip-input-section">
+                    <input type="text" id="zipCode" placeholder="Enter ZIP Code" maxlength="5" pattern="[0-9]{5}">
+                    <button onclick="loadWeatherData()" class="cta-btn">View Live Weather Intelligence</button>
+                </div>
+                
+                <div id="weatherResults" class="weather-results" style="display: none;">
+                    <div class="weather-grid">
+                        <div class="weather-card">
+                            <h3>📍 Location Information</h3>
+                            <div id="locationInfo"></div>
+                        </div>
+                        <div class="weather-card">
+                            <h3>🌡️ Current Conditions</h3>
+                            <div id="currentWeather"></div>
+                        </div>
+                        <div class="weather-card">
+                            <h3>⚠️ Active Alerts</h3>
+                            <div id="weatherAlerts"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="radar-section">
+                        <h3 style="text-align: center; color: #1a365d; margin: 2rem 0 1rem;">Live Doppler Radar Visualization</h3>
+                        <div id="radarMap" class="radar-map"></div>
+                    </div>
+                    
+                    <div class="forecast-section">
+                        <h3 style="text-align: center; color: #1a365d; margin: 2rem 0 1rem;">7-Day Forecast & Risk Assessment</h3>
+                        <div id="forecastData" class="forecast-grid"></div>
+                    </div>
+                    
+                    <div class="restoration-risk">
+                        <h3 style="text-align: center; color: #1a365d; margin: 2rem 0 1rem;">Restoration Risk Analysis</h3>
+                        <div id="riskAnalysis"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Comprehensive Weather Intelligence Resources</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666; font-size: 1.1rem;">Access our complete library of technical documentation, marketing materials, and real-world case studies demonstrating the transformative impact of predictive weather intelligence on restoration business performance and community safety.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>📡 Satellite Integration Protocol</h3>
+                    <p>Comprehensive technical documentation detailing our sophisticated electronic integration with global satellite communications systems, data acquisition infrastructure, and real-time processing capabilities</p>
+                    <button onclick="showDocument('technical')" class="resource-btn">View Technical Docs</button>
+                </div>
+                <div class="service-card">
+                    <h3>📊 Marketing Collateral</h3>
+                    <p>Complete marketing materials explaining the weather intelligence competitive advantage, financial performance metrics, and strategic positioning benefits for solution provider partners</p>
+                    <button onclick="showDocument('marketing')" class="resource-btn">View Marketing Materials</button>
+                </div>
+                <div class="service-card">
+                    <h3>📖 Case Studies Library</h3>
+                    <p>Five detailed real-world case studies documenting life-saving communications, market capture results, and financial performance across diverse weather events and geographic markets</p>
+                    <button onclick="showDocument('cases')" class="resource-btn">View Case Studies</button>
+                </div>
+                <div class="service-card">
+                    <h3>🔍 Emergency Mold Inspection</h3>
+                    <p>Certified inspectors respond within hours to assess mold contamination leveraging predictive weather intelligence to identify properties at elevated risk</p>
+                    <button onclick="scrollToSetup()" class="resource-btn">Learn More</button>
+                </div>
+                <div class="service-card">
+                    <h3>⚠️ Black Mold Remediation</h3>
+                    <p>Safe removal of toxic black mold using industry-leading protocols enhanced by post-event satellite damage assessment for rapid response deployment</p>
+                    <button onclick="scrollToSetup()" class="resource-btn">Learn More</button>
+                </div>
+                <div class="service-card">
+                    <h3>💧 Water Damage Restoration</h3>
+                    <p>Complete water extraction, drying, and restoration with pre-event warnings about flooding risks and post-event emergency response coordination</p>
+                    <button onclick="scrollToSetup()" class="resource-btn">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="documentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <section class="competitive-advantage">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">The Predictive Weather Intelligence Architecture</h2>
+            <p style="text-align: center; color: white; margin-bottom: 2rem; font-size: 1.1rem; max-width: 950px; margin-left: auto; margin-right: auto;">Restoration Royalty has engineered a revolutionary unlimited subscription model incorporating sophisticated electronic integrations with global satellite communications systems. Our proprietary collaborative application monitors weather patterns worldwide, determining which geographic areas will experience specific weather events. The platform broadcasts critical life-saving messages to affected regions both before weather conditions occur and after events conclude. This futuristic communication experience as a service operates across unlimited channels simultaneously, achieving perfect prospect-to-provider matching with seamless touchless fluidity at any velocity, scaling instantaneously without requiring proportional expansion of underlying infrastructure systems even during catastrophic weather emergencies affecting millions of properties.</p>
+            <div class="advantage-grid">
+                <div class="advantage-card">
+                    <h3>Global Satellite Weather Integration</h3>
+                    <p>Sophisticated electronic systems interface directly with worldwide satellite communications networks, monitoring atmospheric conditions, storm systems, flooding predictions, and environmental events that create urgent restoration needs across every geographic region</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Pre-Event Life-Saving Broadcasts</h3>
+                    <p>Platform delivers critical warnings to property owners before weather events occur, providing time-sensitive information about protection measures, evacuation procedures, and preventative actions that minimize damage and save lives during emergencies</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Post-Event Emergency Communications</h3>
+                    <p>System broadcasts life-saving post-event messages addressing immediate health hazards including mold exposure risks, water contamination dangers, structural safety concerns, and urgent remediation requirements specific to the weather event type experienced</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Real-Time Geographic Targeting</h3>
+                    <p>Artificial intelligence determines precise geographic areas affected by weather conditions and automatically broadcasts relevant messages through optimal communication channels based on regional infrastructure availability and population density patterns</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Multi-Channel AI Integration</h3>
+                    <p>Enhanced Capability telephone numbers - Post COVID Required by Law communicate through voice, SMS, email, web chat, social messaging, emergency alert systems, and emerging channels in real-time, creating unified prospect intelligence across all communication frequencies during normal and crisis conditions</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Infinite Crisis Scalability</h3>
+                    <p>Unlimited subscription architecture handles exponential surge volumes during major weather events affecting thousands of properties simultaneously, maintaining instantaneous response times and perfect routing accuracy without infrastructure degradation or capacity limitations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 style="color: #ffd700; margin-bottom: 1rem;">RESTORATION ROYALTY</h3>
+            <p>Proprietary AI Technology Platform for Restoration Industry</p>
+            <p style="margin-top: 1rem;">Wholesale Provider of Patented Voice Agent Systems</p>
+            <p style="margin-top: 1rem; font-size: 1.3rem; font-weight: bold; color: #ff6b35;">📞 1-833-840-MOLD (1-833-840-6653)</p>
+            <p style="margin-top: 2rem; opacity: 0.8;">&copy; 2025 Restoration Royalty. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.7; font-size: 0.9rem;">Protected by U.S. and international patents. Proprietary source code and web-based software platform.</p>
+        </div>
+    </footer>
+
+    <script>
+        // DID Selection and Dialzara Integration
+        let selectedNumberData = null;
+        
+        function switchSearchTab(tabName) {
+            // Hide all panels
+            document.querySelectorAll('.search-panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            
+            // Hide all tabs
+            document.querySelectorAll('.search-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected panel and tab
+            if (tabName === 'area') {
+                document.getElementById('areaCodeSearch').classList.add('active');
+                document.querySelectorAll('.search-tab')[0].classList.add('active');
+            } else if (tabName === 'vanity') {
+                document.getElementById('vanitySearch').classList.add('active');
+                document.querySelectorAll('.search-tab')[1].classList.add('active');
+            } else if (tabName === 'toll-free') {
+                document.getElementById('tollFreeSearch').classList.add('active');
+                document.querySelectorAll('.search-tab')[2].classList.add('active');
+            }
+        }
+        
+        async function searchByAreaCode() {
+            const areaCode = document.getElementById('areaCode').value;
+            
+            if (!/^\d{3}$/.test(areaCode)) {
+                alert('Please enter a valid 3-digit area code');
+                return;
+            }
+            
+            try {
+                // In production, this would call Dialzara API
+                // const response = await fetch('https://api.dialzara.com/v1/numbers/search', {
+                //     method: 'POST',
+                //     headers: {
+                //         'Authorization': 'Bearer YOUR_DIALZARA_API_KEY',
+                //         'Content-Type': 'application/json'
+                //     },
+                //     body: JSON.stringify({
+                //         area_code: areaCode,
+                //         type: 'local',
+                //         limit: 20
+                //     })
+                // });
+                // const numbers = await response.json();
+                
+                // Demo data - replace with actual API call
+                const numbers = generateDemoNumbers(areaCode, 'local');
+                displayNumberResults(numbers);
+                
+            } catch (error) {
+                console.error('Error searching numbers:', error);
+                alert('Error searching for numbers. Please try again.');
+            }
+        }
+        
+        async function searchVanityNumbers() {
+            const keyword = document.getElementById('vanityKeyword').value.toUpperCase();
+            
+            if (keyword.length < 3) {
+                alert('Please enter at least 3 characters');
+                return;
+            }
+            
+            try {
+                // In production, call Dialzara vanity search API
+                const numbers = generateVanityNumbers(keyword);
+                displayNumberResults(numbers);
+                
+            } catch (error) {
+                console.error('Error searching vanity numbers:', error);
+                alert('Error searching for vanity numbers. Please try again.');
+            }
+        }
+        
+        async function searchTollFree(prefix) {
+            try {
+                // In production, call Dialzara toll-free search API
+                const numbers = generateDemoNumbers(prefix, 'toll-free');
+                displayNumberResults(numbers);
+                
+            } catch (error) {
+                console.error('Error searching toll-free numbers:', error);
+                alert('Error searching for toll-free numbers. Please try again.');
+            }
+        }
+        
+        function generateDemoNumbers(prefix, type) {
+            // Demo number generator - replace with actual Dialzara API response
+            const numbers = [];
+            for (let i = 0; i < 12; i++) {
+                const suffix = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+                const middle = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+                numbers.push({
+                    number: `1-${prefix}-${middle}-${suffix}`,
+                    formatted: `1-${prefix}-${middle}-${suffix}`,
+                    type: type,
+                    monthly_cost: type === 'toll-free' ? 2.00 : 1.00,
+                    setup_fee: 0
+                });
+            }
+            return numbers;
+        }
+        
+        function generateVanityNumbers(keyword) {
+            // Convert letters to numbers for vanity
+            const letterMap = {
+                'A': '2', 'B': '2', 'C': '2',
+                'D': '3', 'E': '3', 'F': '3',
+                'G': '4', 'H': '4', 'I': '4',
+                'J': '5', 'K': '5', 'L': '5',
+                'M': '6', 'N': '6', 'O': '6',
+                'P': '7', 'Q': '7', 'R': '7', 'S': '7',
+                'T': '8', 'U': '8', 'V': '8',
+                'W': '9', 'X': '9', 'Y': '9', 'Z': '9'
+            };
+            
+            let numericPart = '';
+            for (let char of keyword) {
+                numericPart += letterMap[char] || char;
+            }
+            
+            const numbers = [];
+            const prefixes = ['800', '833', '844', '855', '866', '877', '888'];
+            
+            prefixes.forEach(prefix => {
+                numbers.push({
+                    number: `1-${prefix}-${numericPart}`,
+                    formatted: `1-${prefix}-${keyword}`,
+                    vanity: keyword,
+                    type: 'toll-free-vanity',
+                    monthly_cost: 5.00,
+                    setup_fee: 25.00
+                });
+            });
+            
+            return numbers;
+        }
+        
+        function displayNumberResults(numbers) {
+            const resultsDiv = document.getElementById('numberResults');
+            const numbersListDiv = document.getElementById('numbersList');
+            
+            resultsDiv.style.display = 'block';
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+            
+            numbersListDiv.innerHTML = numbers.map(number => `
+                <div class="number-card" onclick='selectNumber(${JSON.stringify(number)})'>
+                    <div class="number-display">${number.formatted}</div>
+                    <div class="number-type">${number.type.replace('-', ' ').toUpperCase()}</div>
+                    ${number.vanity ? `<div style="color: #28a745; font-weight: bold; margin-bottom: 0.5rem;">Spells: ${number.vanity}</div>` : ''}
+                    <button class="select-number-btn">Select This Number</button>
+                </div>
+            `).join('');
+        }
+        
+        function selectNumber(numberData) {
+            selectedNumberData = numberData;
+            
+            document.getElementById('selectedNumber').style.display = 'block';
+            document.getElementById('selectedNumberDisplay').innerHTML = numberData.formatted;
+            document.getElementById('selectedNumber').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        async function activateNumber() {
+            const businessName = document.getElementById('activationBusinessName').value;
+            const email = document.getElementById('activationEmail').value;
+            const phone = document.getElementById('activationPhone').value;
+            const serviceArea = document.getElementById('activationServiceArea').value;
+            
+            if (!businessName || !email || !phone || !serviceArea) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            try {
+                // In production, call Dialzara API to provision number
+                // const response = await fetch('https://api.dialzara.com/v1/numbers/provision', {
+                //     method: 'POST',
+                //     headers: {
+                //         'Authorization': 'Bearer YOUR_DIALZARA_API_KEY',
+                //         'Content-Type': 'application/json'
+                //     },
+                //     body: JSON.stringify({
+                //         number: selectedNumberData.number,
+                //         customer: {
+                //             business_name: businessName,
+                //             email: email,
+                //             phone: phone,
+                //             service_area: serviceArea
+                //         },
+                //         features: {
+                //             voice_ai: true,
+                //             sms: true,
+                //             email_integration: true,
+                //             web_chat: true,
+                //             analytics: true
+                //         }
+                //     })
+                // });
+                // const result = await response.json();
+                
+                // Show success screen
+                document.getElementById('selectedNumber').style.display = 'none';
+                document.getElementById('activationSuccess').style.display = 'block';
+                document.getElementById('activationSuccess').scrollIntoView({ behavior: 'smooth' });
+                
+                document.getElementById('activatedNumberInfo').innerHTML = `
+                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px; margin: 2rem auto; max-width: 500px;">
+                        <h3 style="color: #1a365d; margin-bottom: 1rem;">Activation Details</h3>
+                        <p><strong>Number:</strong> ${selectedNumberData.formatted}</p>
+                        <p><strong>Business:</strong> ${businessName}</p>
+                        <p><strong>Email:</strong> ${email}</p>
+                        <p><strong>Service Area:</strong> ${serviceArea}</p>
+                        <p style="color: #28a745; font-weight: bold; margin-top: 1rem;">
+                            Status: ACTIVATING
+                        </p>
+                    </div>
+                `;
+                
+                // Start countdown timer
+                startActivationCountdown();
+                
+            } catch (error) {
+                console.error('Error activating number:', error);
+                alert('Error activating number. Please try again or contact support.');
+            }
+        }
+        
+        function startActivationCountdown() {
+            let seconds = 120;
+            const timerDisplay = document.getElementById('countdownTimer');
+            
+            const countdown = setInterval(() => {
+                seconds--;
+                timerDisplay.textContent = seconds;
+                
+                if (seconds <= 0) {
+                    clearInterval(countdown);
+                    timerDisplay.textContent = 'COMPLETE!';
+                    timerDisplay.style.color = '#28a745';
+                    
+                    // Update status
+                    const statusEl = document.querySelector('#activatedNumberInfo p:last-child');
+                    if (statusEl) {
+                        statusEl.innerHTML = '<span style="color: #28a745; font-weight: bold;">Status: FULLY OPERATIONAL ✓</span>';
+                    }
+                }
+            }, 1000);
+        }
+        
+        // Weather Intelligence System
+        async function loadWeatherData() {
+            const zipCode = document.getElementById('zipCode').value;
+            
+            if (!/^\d{5}$/.test(zipCode)) {
+                alert('Please enter a valid 5-digit ZIP code');
+                return;
+            }
+            
+            document.getElementById('weatherResults').style.display = 'block';
+            document.getElementById('weatherResults').scrollIntoView({ behavior: 'smooth' });
+            
+            try {
+                // Get coordinates from ZIP code
+                const geoResponse = await fetch(`https://api.openweathermap.org/geo/1.0/zip?zip=${zipCode},US&appid=YOUR_API_KEY`);
+                const geoData = await geoResponse.json();
+                const { lat, lon, name } = geoData;
+                
+                // Load location info
+                document.getElementById('locationInfo').innerHTML = `
+                    <p><strong>Location:</strong> ${name}</p>
+                    <p><strong>ZIP Code:</strong> ${zipCode}</p>
+                    <p><strong>Coordinates:</strong> ${lat.toFixed(4)}°N, ${lon.toFixed(4)}°W</p>
+                    <p><strong>Last Updated:</strong> ${new Date().toLocaleString()}</p>
+                `;
+                
+                // Get current weather
+                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=YOUR_API_KEY`);
+                const weatherData = await weatherResponse.json();
+                
+                document.getElementById('currentWeather').innerHTML = `
+                    <p style="font-size: 2rem; font-weight: bold;">${Math.round(weatherData.main.temp)}°F</p>
+                    <p><strong>Conditions:</strong> ${weatherData.weather[0].description}</p>
+                    <p><strong>Humidity:</strong> ${weatherData.main.humidity}%</p>
+                    <p><strong>Wind:</strong> ${weatherData.wind.speed} mph</p>
+                    <p><strong>Pressure:</strong> ${weatherData.main.pressure} mb</p>
+                `;
+                
+                // Get weather alerts
+                const alertsResponse = await fetch(`https://api.weather.gov/alerts/active?point=${lat},${lon}`);
+                const alertsData = await alertsResponse.json();
+                
+                if (alertsData.features && alertsData.features.length > 0) {
+                    const alertsHTML = alertsData.features.map(alert => `
+                        <div class="alert-banner">
+                            ⚠️ ${alert.properties.event}
+                            <br><small>${alert.properties.headline}</small>
+                        </div>
+                    `).join('');
+                    document.getElementById('weatherAlerts').innerHTML = alertsHTML;
+                } else {
+                    document.getElementById('weatherAlerts').innerHTML = '<p style="color: green;">✓ No active weather alerts</p>';
+                }
+                
+                // Load live Doppler radar using RainViewer API
+                initializeRadarMap(lat, lon);
+                
+                // Get 7-day forecast
+                const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=YOUR_API_KEY`);
+                const forecastData = await forecastResponse.json();
+                
+                const dailyForecasts = {};
+                forecastData.list.forEach(item => {
+                    const date = new Date(item.dt * 1000).toLocaleDateString();
+                    if (!dailyForecasts[date]) {
+                        dailyForecasts[date] = item;
+                    }
+                });
+                
+                const forecastHTML = Object.values(dailyForecasts).slice(0, 7).map(day => `
+                    <div class="forecast-day">
+                        <strong>${new Date(day.dt * 1000).toLocaleDateString('en-US', { weekday: 'short' })}</strong>
+                        <p style="font-size: 1.5rem; margin: 0.5rem 0;">${Math.round(day.main.temp)}°F</p>
+                        <p>${day.weather[0].description}</p>
+                        <p>💧 ${day.pop * 100}%</p>
+                    </div>
+                `).join('');
+                
+                document.getElementById('forecastData').innerHTML = forecastHTML;
+                
+                // Calculate restoration risk
+                calculateRestorationRisk(weatherData, alertsData, forecastData);
+                
+            } catch (error) {
+                console.error('Weather data error:', error);
+                document.getElementById('weatherResults').innerHTML = `
+                    <div class="alert-banner">
+                        Unable to load weather data. Please try again or contact support.
+                    </div>
+                `;
+            }
+        }
+        
+        function initializeRadarMap(lat, lon) {
+            // Initialize Leaflet map
+            const mapDiv = document.getElementById('radarMap');
+            mapDiv.innerHTML = '<div id="map" style="width: 100%; height: 100%;"></div>';
+            
+            // Create map centered on location
+            const map = L.map('map').setView([lat, lon], 8);
+            
+            // Add base map layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+            
+            // Add location marker
+            L.marker([lat, lon]).addTo(map)
+                .bindPopup('Your Location')
+                .openPopup();
+            
+            // Add RainViewer radar overlay (live Doppler-style radar)
+            fetch('https://api.rainviewer.com/public/weather-maps.json')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.radar && data.radar.past && data.radar.past.length > 0) {
+                        const latestRadar = data.radar.past[data.radar.past.length - 1];
+                        const radarUrl = `https://tilecache.rainviewer.com${latestRadar.path}/256/{z}/{x}/{y}/2/1_1.png`;
+                        
+                        L.tileLayer(radarUrl, {
+                            tileSize: 256,
+                            opacity: 0.6,
+                            zIndex: 10
+                        }).addTo(map);
+                    }
+                });
+            
+            // Add NOAA weather radar overlay
+            const radarLayer = L.tileLayer.wms('https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi', {
+                layers: 'nexrad-n0r-900913',
+                format: 'image/png',
+                transparent: true,
+                opacity: 0.5,
+                attribution: 'NOAA/NWS'
+            }).addTo(map);
+        }
+        
+        function calculateRestorationRisk(current, alerts, forecast) {
+            let riskScore = 0;
+            let riskFactors = [];
+            
+            // High humidity = mold risk
+            if (current.main.humidity > 70) {
+                riskScore += 30;
+                riskFactors.push(`High humidity (${current.main.humidity}%) creates elevated mold growth conditions`);
+            }
+            
+            // Active alerts
+            if (alerts.features && alerts.features.length > 0) {
+                riskScore += 40;
+                riskFactors.push(`Active weather alerts indicate immediate restoration risk`);
+            }
+            
+            // Precipitation forecast
+            const precipDays = forecast.list.filter(item => item.pop > 0.5).length;
+            if (precipDays > 5) {
+                riskScore += 30;
+                riskFactors.push(`Extended precipitation forecast increases water damage probability`);
+            }
+            
+            riskScore = Math.min(riskScore, 100);
+            
+            const riskLevel = riskScore > 70 ? 'HIGH' : riskScore > 40 ? 'MODERATE' : 'LOW';
+            const riskColor = riskScore > 70 ? '#ff6b35' : riskScore > 40 ? '#ffa500' : '#28a745';
+            
+            document.getElementById('riskAnalysis').innerHTML = `
+                <div style="text-align: center;">
+                    <h4 style="font-size: 1.8rem; color: ${riskColor}; margin-bottom: 1rem;">
+                        ${riskLevel} RESTORATION RISK
+                    </h4>
+                    <div class="risk-meter">
+                        <div class="risk-bar">
+                            <div class="risk-fill" style="width: ${riskScore}%; background: ${riskColor};"></div>
+                        </div>
+                        <strong>${riskScore}%</strong>
+                    </div>
+                    <div style="text-align: left; margin-top: 2rem;">
+                        <h5 style="color: #1a365d; margin-bottom: 1rem;">Risk Factors Identified:</h5>
+                        ${riskFactors.map(factor => `<p>• ${factor}</p>`).join('')}
+                        ${riskScore > 40 ? `
+                            <div style="background: #fff5f5; padding: 1.5rem; border-radius: 10px; margin-top: 1rem; border-left: 4px solid #ff6b35;">
+                                <strong>Recommended Action:</strong> Contact certified restoration specialists immediately for preventative assessment. Early intervention prevents extensive damage and reduces remediation costs by up to 70%.
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        document.getElementById('voiceAgentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const businessName = document.getElementById('businessName').value;
+            const website = document.getElementById('website').value;
+            const phone = document.getElementById('phone').value;
+            const vanityNumber = document.getElementById('vanityNumber').value;
+            
+            // Simulate API call to Dialzara or voice agent setup
+            setTimeout(() => {
+                document.getElementById('successMsg').style.display = 'block';
+                
+                // In production, this would integrate with Dialzara API
+                console.log('Voice Agent Setup:', {
+                    businessName,
+                    website,
+                    phone,
+                    vanityNumber,
+                    timestamp: new Date().toISOString()
+                });
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
