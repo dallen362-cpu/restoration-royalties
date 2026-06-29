@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Instant Activate Your Local DID Service — TELVERGENCE</title>
+<style>
+  :root{--midnight:#0A0E1A;--card:#141d33;--line:#26345a;--cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--amber:#ff8a3d;--ink:#eaf2ff;--muted:#9fb3d6;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);min-height:100vh;
+    background:radial-gradient(1000px 560px at 50% -10%,#1a2547,var(--midnight) 60%)}
+  .wrap{max-width:780px;margin:0 auto;padding:0 20px}
+  .grad{background:linear-gradient(90deg,var(--lime),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .bar{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line)}
+  .logo{font-weight:900;letter-spacing:1px}.logo b{color:var(--cyan)}
+  .bar a{margin-left:auto;color:var(--cyan);text-decoration:none;font-size:13px;font-weight:800}
+
+  .hero{text-align:center;padding:50px 0 8px}
+  .kick{letter-spacing:4px;text-transform:uppercase;font-size:13px;font-weight:800;color:var(--lime)}
+  h1{font-size:clamp(30px,6.4vw,56px);line-height:1.04;margin:12px auto 8px}
+  .sub{color:var(--muted);font-size:clamp(16px,2.6vw,21px);max-width:600px;margin:10px auto 0}
+  .marq{margin:22px auto 0;max-width:640px;overflow:hidden;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03)}
+  .marq div{display:flex;gap:26px;white-space:nowrap;animation:scroll 16s linear infinite;padding:10px 0;font-size:13px;color:var(--muted);font-weight:700}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0 0}
+  @media(max-width:640px){.steps{grid-template-columns:1fr}}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}
+  .step .n{width:40px;height:40px;border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;
+    font-weight:900;background:linear-gradient(135deg,var(--lime),var(--cyan));color:#04121c}
+  .step h3{font-size:16px;margin-bottom:4px}.step p{color:var(--muted);font-size:13px;line-height:1.5}
+
+  .offer{margin:30px 0 0;background:linear-gradient(180deg,rgba(0,255,136,.07),transparent);border:1px solid rgba(0,255,136,.3);border-radius:20px;padding:28px;text-align:center}
+  .price{font-size:50px;font-weight:900}.price small{font-size:17px;color:var(--muted);font-weight:700}
+  .total{color:var(--muted);font-size:14px;margin-top:4px}
+  .pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:16px 0}
+  .pills span{border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:12.5px;color:var(--muted)}
+  .cta{display:block;max-width:520px;margin:8px auto 0;text-decoration:none;text-align:center;
+    background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c;font-weight:900;font-size:20px;
+    border-radius:16px;padding:20px;box-shadow:0 12px 40px rgba(0,229,255,.35)}
+  .cta small{display:block;font-size:13px;font-weight:700;opacity:.85;margin-top:4px}
+  .callbig{display:flex;flex-direction:column;align-items:center;text-decoration:none;color:#062012;max-width:520px;margin:14px auto 0;
+    background:linear-gradient(180deg,#2bff9e,#00c46a);border-radius:18px;padding:18px;border:2px solid rgba(255,255,255,.4);
+    box-shadow:0 14px 44px rgba(0,255,136,.42);animation:pulse 1.9s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 14px 44px rgba(0,255,136,.4)}50%{box-shadow:0 14px 58px rgba(0,255,136,.78)}}
+  .callbig .n{font-size:28px;font-weight:900;letter-spacing:1px}.callbig .f{font-size:12px;font-weight:700;opacity:.85;margin-top:4px;text-align:center;max-width:420px}
+
+  .backend{margin:34px auto 0;background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.3);border-radius:16px;padding:20px;text-align:center}
+  .backend h3{font-size:17px;margin-bottom:6px}.backend p{color:var(--muted);font-size:14px;line-height:1.55}
+  .backend a{color:var(--cyan);text-decoration:none;font-weight:800}
+  .foot{border-top:1px solid var(--line);margin-top:34px;padding:22px 0 60px;text-align:center;color:var(--muted);font-size:13px}
+  .foot a{color:var(--cyan);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="logo"><b>TEL</b>VERGENCE</div>
+  <a href="present.html">Full platform →</a>
+</div>
+
+<header class="hero wrap">
+  <div class="kick">Your pre-loaded campaign · live at activation</div>
+  <h1>⚡ <span class="grad">Pitch &amp; Catch</span><br>in one simple system</h1>
+  <p class="sub">Activate your free 10-pack <b>immediately</b>, keep <b style="color:var(--lime)">100% of your sales</b>, and pay us our measly $22.95/line <b>later</b>. Free factoring, funding &amp; financing for your business break-out.</p>
+  <div class="marq"><div>
+    <span>⚡ ~30s activation</span><span>📞 10 local lines</span><span>🔀 rings your cell</span><span>♾️ unlimited calls</span><span>🔑 no SSN</span><span>🔁 cancel anytime</span>
+    <span>⚡ ~30s activation</span><span>📞 10 local lines</span><span>🔀 rings your cell</span><span>♾️ unlimited calls</span><span>🔑 no SSN</span><span>🔁 cancel anytime</span>
+  </div></div>
+</header>
+
+<div class="wrap">
+
+  <!-- PITCH & CATCH -->
+  <div class="steps" style="grid-template-columns:1fr 1fr">
+    <div class="step" style="text-align:left;border-color:rgba(0,255,136,.4)">
+      <div class="n" style="margin:0 0 10px">🎯</div>
+      <h3>The Pitch — Front End</h3>
+      <p>Your <b>10 local Smart DIDs</b> make the phone ring off the hook. Branded local numbers, your marketing on every line, ringing the cell you already carry.</p>
+    </div>
+    <div class="step" style="text-align:left;border-color:rgba(0,212,255,.4)">
+      <div class="n" style="margin:0 0 10px;background:linear-gradient(135deg,var(--cyan),var(--violet))">🧤</div>
+      <h3>The Catch — Back End</h3>
+      <p>Your <b>AI Second Brain — cloned from your website</b> — answers, qualifies and books every call 24/7. Pre-loaded, so it knows your business from minute one.</p>
+    </div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><h3>Pick your area code</h3><p>Local-presence numbers that match your market, so people actually answer.</p></div>
+    <div class="step"><div class="n">2</div><h3>Verify with your DOB PIN</h3><p>8-digit date-of-birth PIN secures your account. No SSN, ever.</p></div>
+    <div class="step"><div class="n">3</div><h3>You're live</h3><p>All 10 lines forward to the phone you already carry. Change any line, anytime.</p></div>
+  </div>
+
+  <div class="offer">
+    <div class="kick" style="color:var(--lime)">Free factoring · funding · financing for your break-out</div>
+    <div class="price grad">FREE<span style="font-size:18px;color:var(--muted);font-weight:700"> to start</span></div>
+    <div class="total">Activate all <b style="color:var(--ink)">10 local lines free</b> right now. Keep <b style="color:var(--lime)">100% of your sales — unlimited income</b>. Pay us our measly <b style="color:var(--ink)">$22.95/line</b> later, once the money's coming in.</div>
+    <div class="pills">
+      <span>🆓 activate free now</span><span>💸 pay later · $22.95/line</span><span>📈 keep all your revenue</span><span>🔀 rings your cell</span><span>🔁 cancel anytime</span>
+    </div>
+    <a class="cta" href="telvergence-onboarding-funnel.html">⚡ ACTIVATE FREE NOW — PAY LATER<small>30 seconds · no card today · keep every dollar you earn</small></a>
+    <a class="callbig" href="tel:+16892421041">📞 OR CALL — WE ACTIVATE YOU LIVE
+      <span class="n">(689) 242-1041</span>
+      <span class="f">10 free lines on the call with a simple verbal OK · no out of pocket · no commitment · no obligation</span>
+    </a>
+  </div>
+
+  <div class="backend">
+    <h3>💰 Then catch &amp; monetize every call</h3>
+    <p>Free lines get the phone ringing — that's the easy yes. The money is in the <b>back-end call handling</b>: an <b>AI Second Brain cloned from your website</b> that answers, qualifies, books and monetizes every call 24/7, with BOSS CRM/LMS and the ViciDial dialer. That's the upsell. <a href="platform.html">See the back-end platform →</a></p>
+  </div>
+</div>
+
+<div class="foot wrap">
+  <p>TELVERGENCE — Instant Local DID Activation · 📞 <a href="tel:+16892421041">(689) 242-1041</a> · 💬 <a href="sms:+16892421041">Text us</a></p>
+  <p style="margin-top:8px">Front end: instant DID service. Back end: the TELVERGENCE platform. © TELVERGENCE.</p>
+</div>
+</body>
+</html>
