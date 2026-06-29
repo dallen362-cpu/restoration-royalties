@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#05070f">
+<title>TELVERGENCE — Activate the Network</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#05070f; --bg2:#0a0f1e; --ink:#eaf2ff; --muted:#93a6cc;
+    --cyan:#00e5ff; --lime:#3dff9e; --violet:#8a7bff; --pink:#ff5d8f; --amber:#ffd24b;
+    --glass:rgba(255,255,255,.05); --line:rgba(255,255,255,.1);
+    --sora:"Sora",system-ui,Arial,sans-serif; --inter:"Inter",system-ui,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--inter);color:var(--ink);background:var(--bg);overflow-x:hidden;line-height:1.6}
+  canvas#bg{position:fixed;inset:0;z-index:0;display:block}
+  .veil{position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(1200px 800px at 50% 0%,transparent,rgba(5,7,15,.55) 70%,var(--bg) 100%)}
+  .glowcursor{position:fixed;width:380px;height:380px;border-radius:50%;z-index:2;pointer-events:none;transform:translate(-50%,-50%);
+    background:radial-gradient(circle,rgba(0,229,255,.10),transparent 60%);mix-blend-mode:screen;transition:opacity .3s;opacity:0}
+  main{position:relative;z-index:3}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+  .grad{background:linear-gradient(100deg,var(--cyan),var(--lime) 45%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* top bar */
+  .bar{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;gap:14px;padding:16px 24px;
+    backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(5,7,15,.6),transparent)}
+  .bar .logo{font-family:var(--sora);font-weight:800;letter-spacing:2px;font-size:15px}
+  .bar .logo b{color:var(--cyan)}
+  .bar .sp{flex:1}
+  .bar a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500}
+  .pill{border:1px solid var(--line);border-radius:999px;padding:9px 16px;background:var(--glass)}
+  .pill.cta{background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c !important;font-weight:700;border:none}
+  @media(max-width:680px){.bar a.hide{display:none}}
+
+  /* hero */
+  .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 0 60px}
+  .kick{font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--cyan);font-weight:600;
+    opacity:0;transform:translateY(20px);animation:rise .9s .1s forwards}
+  .hero h1{font-family:var(--sora);font-weight:800;font-size:clamp(40px,8vw,92px);line-height:1.02;margin:18px 0 0;letter-spacing:-1px;
+    opacity:0;transform:translateY(28px);animation:rise 1s .25s forwards}
+  .hero h1 .l2{display:block}
+  .hero p{max-width:620px;font-size:clamp(16px,2.2vw,20px);color:#cdd9f2;margin:24px auto 0;
+    opacity:0;transform:translateY(24px);animation:rise 1s .45s forwards}
+  .acts{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:34px;
+    opacity:0;transform:translateY(24px);animation:rise 1s .65s forwards}
+  .btn{font-family:var(--sora);font-weight:700;border:none;cursor:pointer;border-radius:14px;padding:17px 30px;font-size:16px;
+    text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:transform .15s,box-shadow .25s}
+  .btn-primary{background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c;box-shadow:0 10px 40px rgba(0,229,255,.35)}
+  .btn-primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 18px 60px rgba(61,255,158,.5)}
+  .btn-ghost{background:var(--glass);color:var(--ink);border:1px solid var(--line);backdrop-filter:blur(6px)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--cyan)}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  /* talking voiceprint */
+  .talk{display:inline-flex;align-items:center;gap:12px;margin-top:30px;cursor:pointer;border:1px solid var(--line);
+    background:var(--glass);backdrop-filter:blur(6px);border-radius:999px;padding:11px 20px;color:var(--ink);font-weight:600;font-size:14px;
+    opacity:0;animation:rise 1s .85s forwards}
+  .talk:hover{border-color:var(--violet)}
+  .eq{display:inline-flex;gap:3px;align-items:flex-end;height:18px}
+  .eq i{width:3px;height:5px;background:linear-gradient(var(--cyan),var(--violet));border-radius:2px}
+  .talk.on .eq i{animation:eq .7s ease-in-out infinite}
+  .talk.on .eq i:nth-child(2){animation-delay:.1s}.talk.on .eq i:nth-child(3){animation-delay:.2s}.talk.on .eq i:nth-child(4){animation-delay:.3s}.talk.on .eq i:nth-child(5){animation-delay:.15s}
+  @keyframes eq{0%,100%{height:4px}50%{height:18px}}
+  .scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:12px;letter-spacing:2px;animation:bob 2s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+  /* sections */
+  section.band{padding:110px 0;position:relative}
+  .shead{text-align:center;max-width:720px;margin:0 auto 60px}
+  .shead .k{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--cyan);font-weight:600}
+  .shead h2{font-family:var(--sora);font-weight:800;font-size:clamp(28px,5vw,46px);margin:12px 0;letter-spacing:-.5px}
+  .shead p{color:var(--muted);font-size:17px}
+
+  /* floating 3D glass cards */
+  .deck{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;perspective:1200px}
+  .card3d{background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid var(--line);
+    border-radius:22px;padding:30px;backdrop-filter:blur(10px);transform-style:preserve-3d;transition:transform .2s ease,box-shadow .3s;
+    box-shadow:0 30px 60px rgba(0,0,0,.4);will-change:transform;animation:levitate 7s ease-in-out infinite}
+  .card3d:nth-child(2){animation-delay:1.2s}.card3d:nth-child(3){animation-delay:2.4s}.card3d:nth-child(4){animation-delay:.6s}
+  @keyframes levitate{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  .card3d .ic{font-size:40px;display:block;filter:drop-shadow(0 6px 16px rgba(0,229,255,.4));transform:translateZ(40px)}
+  .card3d h3{font-family:var(--sora);font-size:20px;margin:16px 0 8px;transform:translateZ(28px)}
+  .card3d p{color:var(--muted);font-size:14.5px;transform:translateZ(18px)}
+  .card3d .sheen{position:absolute;inset:0;border-radius:22px;pointer-events:none;opacity:0;transition:opacity .3s;
+    background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%),rgba(0,229,255,.18),transparent 40%)}
+  .card3d:hover .sheen{opacity:1}
+
+  /* offer band */
+  .offer{max-width:720px;margin:0 auto;background:linear-gradient(160deg,rgba(61,255,158,.08),rgba(0,229,255,.04));
+    border:1px solid rgba(61,255,158,.3);border-radius:28px;padding:46px 36px;text-align:center;box-shadow:0 40px 90px rgba(0,0,0,.5)}
+  .offer .big{font-family:var(--sora);font-weight:800;font-size:clamp(46px,9vw,84px);line-height:1;color:var(--lime)}
+  .offer .big small{font-size:20px;color:var(--muted);font-weight:400}
+  .offer .then{color:#cdd9f2;font-size:18px;margin-top:10px}
+  .offer .then b{color:var(--ink)}
+  .badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:24px 0 6px}
+  .badges span{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:var(--glass)}
+
+  .reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px;max-width:900px;margin:0 auto}
+  .stat{text-align:center;background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:26px 14px;backdrop-filter:blur(6px)}
+  .stat .v{font-family:var(--sora);font-weight:800;font-size:40px}
+  .stat .v.c{color:var(--cyan)}.stat .v.l{color:var(--lime)}.stat .v.v{color:var(--violet)}.stat .v.a{color:var(--amber)}
+  .stat .lab{font-size:13px;color:var(--muted);margin-top:6px}
+
+  footer{padding:70px 0 90px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line);position:relative;z-index:3}
+  footer a{color:var(--cyan);text-decoration:none}
+  .finalcta{text-align:center;padding:40px 0 10px}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div class="veil"></div>
+<div class="glowcursor" id="glow"></div>
+
+<div class="bar">
+  <div class="logo"><b>TEL</b>VERGENCE</div>
+  <div class="sp"></div>
+  <a class="hide" href="telvergence-demo.html">Live app</a>
+  <a class="hide" href="tel:+16892421041">📞 (689) 242-1041</a>
+  <a class="pill cta" href="telvergence-onboarding-funnel.html">Activate</a>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="kick">Weather Intelligence Network · Live</div>
+    <h1>Activate the network.<span class="l2 grad">Own your territory.</span></h1>
+    <p>Ten branded, E911-ready phone lines that ring the phone you already carry — provisioned in seconds, forwarded anywhere, powered by a live national storm-intelligence grid.</p>
+    <div class="acts">
+      <a class="btn btn-primary" href="telvergence-onboarding-funnel.html">⚡ Activate free — $0 today</a>
+      <a class="btn btn-ghost" href="telvergence-demo.html">▶ Enter the live app</a>
+    </div>
+    <div class="talk" id="talk"><span class="eq"><i></i><i></i><i></i><i></i><i></i></span> <span id="talkTxt">Hear it speak</span></div>
+    <div class="scrollcue">SCROLL</div>
+  </section>
+
+  <!-- FLOATING CARDS -->
+  <section class="band wrap">
+    <div class="shead reveal">
+      <div class="k">The engine</div>
+      <h2>Built like nothing else in telecom</h2>
+      <p>Four systems, one weightless platform — hovering above the old way of doing business.</p>
+    </div>
+    <div class="deck" id="deck">
+      <div class="card3d"><span class="ic">🔀</span><h3>Remote Call Forwarding</h3><p>Any line rings any phone, changeable the instant you need it. Your office lives in the cloud, not on a desk.</p><div class="sheen"></div></div>
+      <div class="card3d"><span class="ic">🛰️</span><h3>Live Storm Grid</h3><p>Real NWS weather drives a fluxing national grid that dispatches work to the right territory in real time.</p><div class="sheen"></div></div>
+      <div class="card3d"><span class="ic">🛡️</span><h3>E911 + No SSN</h3><p>Dispatchable-location ready on every line. Your Smart DID is your account key — a Social Security number is never used.</p><div class="sheen"></div></div>
+      <div class="card3d"><span class="ic">∞</span><h3>Infinitely Scalable</h3><p>One console. Add lines, claim grid territories, earn 10% as a partner — scale solo, without the overhead.</p><div class="sheen"></div></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="band wrap">
+    <div class="stat-row reveal">
+      <div class="stat"><div class="v c" data-count="30" data-suf="s">0</div><div class="lab">Activation time</div></div>
+      <div class="stat"><div class="v l" data-pre="$" data-count="0">$0</div><div class="lab">Out of pocket today</div></div>
+      <div class="stat"><div class="v v" data-count="10">0</div><div class="lab">Lines per pack</div></div>
+      <div class="stat"><div class="v a" data-count="100" data-suf="%">0</div><div class="lab">Satisfaction guarantee</div></div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section class="band wrap">
+    <div class="shead reveal"><div class="k">The offer</div><h2>Start free. Stay because it works.</h2></div>
+    <div class="offer reveal">
+      <div class="big">$0<small> today</small></div>
+      <div class="then">30 days free · then <b>$22.95/line</b> — the 10-line pack is <b>$229.50/mo</b>. Cancel anytime.</div>
+      <div class="badges"><span>🔒 Stripe-secured</span><span>🛡️ E911-ready</span><span>🔑 No SSN</span><span>🔁 Cancel anytime</span><span>💯 100% guarantee</span></div>
+      <div class="finalcta"><a class="btn btn-primary" href="telvergence-onboarding-funnel.html">⚡ Activate the network — $0 today</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="logo" style="font-family:var(--sora);font-weight:800;letter-spacing:2px;color:var(--ink)"><b style="color:var(--cyan)">TEL</b>VERGENCE</div>
+  <p style="margin-top:8px">Integrated Communication Technologies · 📞 <a href="tel:+16892421041">(689) 242-1041</a> · 💬 <a href="sms:+16892421041">Text us</a> · <a href="telvergence-demo.html">Live app</a></p>
+</footer>
+
+<script>
+  /* ---------- 3D particle sphere (dependency-free canvas) ---------- */
+  (function(){
+    var c=document.getElementById('bg'), x=c.getContext('2d'), W,H,DPR,cx,cy;
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var MOBILE = innerWidth<700;
+    var N = reduce?500:(MOBILE?900:2000);
+    var pts=[], R;
+    function resize(){ DPR=Math.min(devicePixelRatio||1,2); W=c.width=innerWidth*DPR; H=c.height=innerHeight*DPR;
+      c.style.width=innerWidth+'px'; c.style.height=innerHeight+'px'; cx=W/2; cy=H*0.42; R=Math.min(W,H)*(MOBILE?0.30:0.32); }
+    resize(); addEventListener('resize',resize);
+    // fibonacci sphere
+    for(var i=0;i<N;i++){ var phi=Math.acos(1-2*(i+.5)/N), th=Math.PI*(1+Math.sqrt(5))*i;
+      pts.push({x:Math.cos(th)*Math.sin(phi), y:Math.sin(th)*Math.sin(phi), z:Math.cos(phi)}); }
+    var ry=0, rx=0, tmx=0,tmy=0, mx=0,my=0;
+    addEventListener('mousemove',function(e){ tmx=(e.clientX/innerWidth-.5); tmy=(e.clientY/innerHeight-.5); });
+    var scrollY=0; addEventListener('scroll',function(){ scrollY=scrollObj(); });
+    function scrollObj(){ return (window.pageYOffset||0); }
+    function col(t){ // cyan->lime->violet gradient by depth
+      if(t<.5){ var u=t/.5; return [Math.round(0+0*u),Math.round(229+(255-229)*u),Math.round(255+(158-255)*u)]; }
+      var u=(t-.5)/.5; return [Math.round(0+138*u),Math.round(255-(255-123)*u),Math.round(158+(255-158)*u)];
+    }
+    function frame(){
+      x.clearRect(0,0,W,H);
+      mx+=(tmx-mx)*.05; my+=(tmy-my)*.05;
+      ry+=0.0024; rx = my*0.5;
+      var yaw=ry+mx*0.8, pitch=rx;
+      var cyaw=Math.cos(yaw),syaw=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+      var depthShift = Math.min(scrollY/800,1);
+      for(var i=0;i<pts.length;i++){
+        var p=pts[i], X=p.x,Y=p.y,Z=p.z;
+        var x1=X*cyaw - Z*syaw, z1=X*syaw + Z*cyaw;
+        var y1=Y*cp - z1*sp, z2=Y*sp + z1*cp;
+        var persp=1/(1.8 - z2*0.9);
+        var sx=cx + x1*R*persp;
+        var sy=cy + y1*R*persp - depthShift*120*DPR;
+        var depth=(z2+1)/2;
+        var rgb=col((y1+1)/2);
+        var a=0.15+depth*0.85;
+        var s=(depth*2.0+0.3)*DPR*(MOBILE?0.9:1);
+        x.beginPath(); x.fillStyle='rgba('+rgb[0]+','+rgb[1]+','+rgb[2]+','+a.toFixed(3)+')';
+        x.arc(sx,sy,s,0,6.283); x.fill();
+      }
+      requestAnimationFrame(frame);
+    }
+    frame();
+  })();
+
+  /* ---------- cursor glow ---------- */
+  (function(){ var g=document.getElementById('glow');
+    addEventListener('mousemove',function(e){ g.style.opacity=1; g.style.left=e.clientX+'px'; g.style.top=e.clientY+'px'; });
+  })();
+
+  /* ---------- card 3D tilt + sheen ---------- */
+  document.querySelectorAll('.card3d').forEach(function(card){
+    card.addEventListener('mousemove',function(e){
+      var r=card.getBoundingClientRect(), px=(e.clientX-r.left)/r.width, py=(e.clientY-r.top)/r.height;
+      card.style.transform='rotateY('+((px-.5)*16)+'deg) rotateX('+((.5-py)*16)+'deg) translateY(-6px)';
+      card.style.setProperty('--mx',(px*100)+'%'); card.style.setProperty('--my',(py*100)+'%');
+    });
+    card.addEventListener('mouseleave',function(){ card.style.transform=''; });
+  });
+
+  /* ---------- scroll reveal + count-up ---------- */
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){ if(en.isIntersecting){en.target.classList.add('in'); io.unobserve(en.target);} })},{threshold:.18});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  var cio=new IntersectionObserver(function(es){es.forEach(function(en){ if(!en.isIntersecting)return; var el=en.target; cio.unobserve(el);
+    var to=+el.dataset.count, pre=el.dataset.pre||'', suf=el.dataset.suf||'', n=0, t=setInterval(function(){ n+=Math.ceil(to/28)||1; if(n>=to){n=to;clearInterval(t);} el.textContent=pre+n+suf; },30);
+  })},{threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);});
+
+  /* ---------- talking narrator ---------- */
+  (function(){
+    var t=document.getElementById('talk'), tx=document.getElementById('talkTxt'), synth=window.speechSynthesis, on=false;
+    var script="Welcome to Telvergence. In about thirty seconds, we activate ten branded, E 9 1 1 ready phone lines that ring the phone you already carry — forwarded anywhere, anytime. A live national storm grid sends work to your territory in real time. Start free for thirty days, no money down. Activate the network, and own your territory.";
+    t.onclick=function(){ if(!synth){ tx.textContent='Voice unavailable'; return; }
+      if(on){ synth.cancel(); on=false; t.classList.remove('on'); tx.textContent='Hear it speak'; return; }
+      try{ synth.cancel(); var u=new SpeechSynthesisUtterance(script); u.rate=1.02;
+        u.onstart=function(){ on=true; t.classList.add('on'); tx.textContent='Speaking… (tap to stop)'; };
+        u.onend=function(){ on=false; t.classList.remove('on'); tx.textContent='Hear it again'; };
+        synth.speak(u);
+      }catch(e){ tx.textContent='Voice unavailable'; }
+    };
+    addEventListener('beforeunload',function(){ try{synth&&synth.cancel();}catch(e){} });
+  })();
+</script>
+</body>
+</html>
