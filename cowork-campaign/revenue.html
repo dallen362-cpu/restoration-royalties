@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Revenue by DID — TELVERGENCE</title>
+<style>
+  :root{--midnight:#0A0E1A;--card:#141d33;--line:#26345a;--cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--amber:#ff8a3d;--red:#ff5d73;--ink:#eaf2ff;--muted:#9fb3d6;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);min-height:100vh;background:radial-gradient(1100px 640px at 50% -8%,#1a2547,var(--midnight) 60%)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+  .grad{background:linear-gradient(90deg,var(--lime),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 18px;background:rgba(10,14,26,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .logo{font-weight:900;letter-spacing:1px}.logo b{color:var(--cyan)}
+  .live{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:800;color:var(--lime)}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:bl 1.4s infinite}
+  @keyframes bl{50%{opacity:.3}}
+  .bar a{color:var(--cyan);text-decoration:none;font-size:13px;font-weight:800}
+
+  header{text-align:center;padding:34px 0 6px}
+  header h1{font-size:clamp(24px,4.6vw,38px)}
+  header p{color:var(--muted);max-width:640px;margin:8px auto 0}
+
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+  @media(max-width:760px){.kpis{grid-template-columns:1fr 1fr}}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+  .kpi .v{font-size:26px;font-weight:900}.kpi .k{color:var(--muted);font-size:12px;margin-top:3px}
+
+  h2.sec{font-size:18px;margin:30px 0 12px;letter-spacing:.3px}
+  .chan{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  @media(max-width:760px){.chan{grid-template-columns:1fr 1fr}}
+  .cc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;position:relative;overflow:hidden}
+  .cc .nm{font-weight:800;font-size:14px}
+  .cc .rev{font-size:24px;font-weight:900;margin:6px 0 2px}
+  .cc .sub{color:var(--muted);font-size:12px}
+  .cc .roi{margin-top:8px;font-size:12px;font-weight:800}
+  .cc .tag{position:absolute;top:10px;right:10px;font-size:10px;font-weight:800;padding:3px 8px;border-radius:999px}
+  .win{border-color:rgba(0,255,136,.5);box-shadow:0 0 0 1px rgba(0,255,136,.25)}
+  .win .tag{background:var(--lime);color:#04121c}
+  .pause{border-color:rgba(255,93,115,.5)}.pause .tag{background:var(--red);color:#2a0008}
+  .bar2{height:6px;border-radius:4px;background:#0c1730;margin-top:10px;overflow:hidden}.bar2 i{display:block;height:100%}
+
+  table{width:100%;border-collapse:collapse;margin-top:6px;font-size:13px}
+  th,td{text-align:right;padding:10px 8px;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child,th:nth-child(2),td:nth-child(2),th:nth-child(3),td:nth-child(3){text-align:left}
+  th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.5px;cursor:pointer}
+  td .pill{font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px;background:#0c1730;border:1px solid var(--line)}
+  tr.win td{background:rgba(0,255,136,.05)}tr.pause td{background:rgba(255,93,115,.05)}
+  .st{font-weight:800;font-size:11px;padding:2px 8px;border-radius:999px}
+  .st.s-scale{background:rgba(0,255,136,.15);color:var(--lime)}.st.s-keep{background:rgba(0,212,255,.13);color:var(--cyan)}.st.s-cut{background:rgba(255,93,115,.15);color:var(--red)}
+
+  .rec{margin-top:22px;background:rgba(0,255,136,.06);border:1px solid rgba(0,255,136,.3);border-radius:16px;padding:18px}
+  .rec h3{font-size:15px;margin-bottom:8px}.rec li{color:var(--muted);font-size:13.5px;margin:5px 0 5px 18px}
+  .foot{border-top:1px solid var(--line);margin-top:30px;padding:22px 0 60px;text-align:center;color:var(--muted);font-size:12.5px}
+  .foot a{color:var(--cyan);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="logo"><b>TEL</b>VERGENCE · Revenue by DID</div>
+  <span class="live"><span class="dot"></span>LIVE · <span id="ago">just now</span></span>
+  <a href="platform.html" style="margin-left:14px">← Platform</a>
+</div>
+
+<header class="wrap">
+  <h1>Which line, which channel, <span class="grad">which dollars.</span></h1>
+  <p>Every DID is assigned a channel — voice, text, voicemail drop, or ringless voicemail — and we attribute the revenue each one converts. Hone the winners, cut the rest, in real time.</p>
+  <div class="kpis">
+    <div class="kpi"><div class="v grad" id="kRev">$0</div><div class="k">Revenue (30d)</div></div>
+    <div class="kpi"><div class="v" id="kSpend" style="color:var(--amber)">$0</div><div class="k">Channel spend</div></div>
+    <div class="kpi"><div class="v" id="kRoi" style="color:var(--lime)">0×</div><div class="k">Blended ROI</div></div>
+    <div class="kpi"><div class="v" id="kBest" style="color:var(--cyan);font-size:18px">—</div><div class="k">Top channel</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <h2 class="sec">📊 Revenue by channel — <span style="color:var(--muted);font-weight:600;font-size:13px">where the money is coming from</span></h2>
+  <div class="chan" id="chan"></div>
+
+  <h2 class="sec">📞 Revenue by DID — <span style="color:var(--muted);font-weight:600;font-size:13px">tap a header to sort</span></h2>
+  <table id="tbl">
+    <thead><tr>
+      <th data-k="line">#</th><th data-k="did">DID</th><th data-k="channel">Channel</th>
+      <th data-k="touches">Touches</th><th data-k="conv">Conv.</th><th data-k="rev">Revenue</th>
+      <th data-k="cost">Cost</th><th data-k="roi">ROI</th><th data-k="status">Action</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <div class="rec">
+    <h3>⚡ Real-time optimizer says:</h3>
+    <ul id="recs"></ul>
+    <div style="color:#7d90b5;font-size:11.5px;margin-top:8px">Data chain: Vitelity API (calls, texts, voicemails by DID) → ViciDial overlay (answered/booked) → this dashboard. Sample figures shown for demonstration.</div>
+  </div>
+</div>
+
+<div class="foot wrap">
+  <p>TELVERGENCE — Revenue attribution by DID &amp; channel · <a href="platform.html">Back-end platform</a> · <a href="activate.html">Free activation</a></p>
+</div>
+
+<script>
+  var CH={voice:"Voice",text:"Text / SMS",drop:"Voicemail Drop",ringless:"Ringless VM"};
+  // sample 30-day data per DID
+  var data=[
+    {line:1,did:"(954) 212-3001",channel:"voice",touches:142,conv:11,rev:82500,cost:340},
+    {line:2,did:"(954) 212-3017",channel:"voice",touches:128,conv:9,rev:67500,cost:310},
+    {line:3,did:"(754) 488-2210",channel:"voice",touches:96,conv:7,rev:52500,cost:260},
+    {line:4,did:"(954) 760-4402",channel:"text",touches:1840,conv:14,rev:38000,cost:520},
+    {line:5,did:"(754) 488-2231",channel:"text",touches:1610,conv:11,rev:29500,cost:470},
+    {line:6,did:"(954) 760-4419",channel:"ringless",touches:2200,conv:8,rev:21000,cost:430},
+    {line:7,did:"(305) 663-7780",channel:"ringless",touches:1950,conv:6,rev:15500,cost:410},
+    {line:8,did:"(305) 663-7795",channel:"drop",touches:1700,conv:3,rev:7500,cost:520},
+    {line:9,did:"(786) 901-2244",channel:"drop",touches:1520,conv:2,rev:4500,cost:480},
+    {line:10,did:"(786) 901-2260",channel:"text",touches:1240,conv:9,rev:24000,cost:360}
+  ];
+  data.forEach(function(d){d.roi=d.cost? d.rev/d.cost : 0;});
+
+  function money(n){return "$"+Math.round(n).toLocaleString();}
+  function statusOf(roi){return roi>=80?{c:"s-scale",t:"SCALE ↑"}:roi>=25?{c:"s-keep",t:"KEEP"}:{c:"s-cut",t:"CUT ↓"};}
+
+  // channel aggregates
+  var agg={};Object.keys(CH).forEach(function(k){agg[k]={rev:0,cost:0,conv:0,touches:0};});
+  data.forEach(function(d){var a=agg[d.channel];a.rev+=d.rev;a.cost+=d.cost;a.conv+=d.conv;a.touches+=d.touches;});
+  var totRev=0,totCost=0;data.forEach(function(d){totRev+=d.rev;totCost+=d.cost;});
+  var chanArr=Object.keys(CH).map(function(k){var a=agg[k];return{k:k,nm:CH[k],rev:a.rev,cost:a.cost,conv:a.conv,roi:a.cost?a.rev/a.cost:0};}).sort(function(x,y){return y.rev-x.rev;});
+  var best=chanArr[0],worst=chanArr[chanArr.length-1];
+
+  document.getElementById('kRev').textContent=money(totRev);
+  document.getElementById('kSpend').textContent=money(totCost);
+  document.getElementById('kRoi').textContent=(totRev/totCost).toFixed(0)+"×";
+  document.getElementById('kBest').textContent=best.nm;
+
+  var maxRev=chanArr[0].rev;
+  document.getElementById('chan').innerHTML=chanArr.map(function(c){
+    var cls=c.k===best.k?"win":(c.k===worst.k?"pause":"");
+    var tag=c.k===best.k?'<span class="tag">WINNING</span>':(c.k===worst.k?'<span class="tag">PAUSE</span>':'');
+    var col=c.k===best.k?"var(--lime)":(c.k===worst.k?"var(--red)":"var(--cyan)");
+    return '<div class="cc '+cls+'">'+tag+'<div class="nm">'+c.nm+'</div>'+
+      '<div class="rev" style="color:'+col+'">'+money(c.rev)+'</div>'+
+      '<div class="sub">'+c.conv+' conversions · '+money(c.cost)+' spend</div>'+
+      '<div class="roi" style="color:'+col+'">'+c.roi.toFixed(0)+'× ROI</div>'+
+      '<div class="bar2"><i style="width:'+Math.round(c.rev/maxRev*100)+'%;background:'+col+'"></i></div></div>';
+  }).join('');
+
+  var sortK="rev",sortDir=-1;
+  function renderRows(){
+    var rows=data.slice().sort(function(a,b){var x=a[sortK],y=b[sortK];if(typeof x==="string")return (x<y?-1:1)*sortDir;return (x-y)*sortDir;});
+    document.getElementById('rows').innerHTML=rows.map(function(d){
+      var s=statusOf(d.roi);var cls=d.channel===best.k?"win":(d.channel===worst.k?"pause":"");
+      return '<tr class="'+cls+'"><td>'+d.line+'</td><td>'+d.did+'</td><td><span class="pill">'+CH[d.channel]+'</span></td>'+
+        '<td>'+d.touches.toLocaleString()+'</td><td>'+d.conv+'</td><td><b>'+money(d.rev)+'</b></td>'+
+        '<td>'+money(d.cost)+'</td><td>'+d.roi.toFixed(0)+'×</td><td><span class="st '+s.c+'">'+s.t+'</span></td></tr>';
+    }).join('');
+  }
+  renderRows();
+  document.querySelectorAll('#tbl th').forEach(function(th){th.onclick=function(){var k=this.dataset.k;if(k===sortK)sortDir*=-1;else{sortK=k;sortDir=-1;}renderRows();};});
+
+  document.getElementById('recs').innerHTML=
+    '<li><b style="color:var(--lime)">Scale '+best.nm+'</b> — top revenue at '+best.roi.toFixed(0)+'× ROI ('+money(best.rev)+'). Shift budget here.</li>'+
+    '<li><b style="color:var(--red)">Cut '+worst.nm+'</b> — lowest return at '+worst.roi.toFixed(0)+'× ('+money(worst.rev)+' on '+money(worst.cost)+'). Stop spending until reworked.</li>'+
+    '<li>Reassign the freed DIDs to the winning channel and re-measure — every dollar follows the conversions, in real time.</li>';
+
+  // live tick
+  var secs=0;setInterval(function(){secs+=3;document.getElementById('ago').textContent=secs<60?secs+"s ago":Math.floor(secs/60)+"m ago";},3000);
+</script>
+</body>
+</html>
