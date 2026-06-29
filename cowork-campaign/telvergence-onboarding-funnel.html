@@ -210,25 +210,35 @@
     <div class="kick">Confirm &amp; activate</div>
     <h2>Review your activation</h2>
     <div class="summary">
-      <div class="row"><span>10-Line Smart DID Pack</span><b>$229.50/mo</b></div>
+      <div class="row"><span>10-Line Smart DID Pack</span><b>10 lines</b></div>
       <div class="row"><span>Numbers</span><b id="sumMode">10 new · 954</b></div>
       <div class="row"><span>Lines ring</span><b id="sumFwd">—</b></div>
       <div class="row"><span>Account email</span><b id="sumEmail">—</b></div>
-      <div class="row"><span>Due today</span><b style="color:var(--lime)">$0.00</b></div>
-      <div class="row"><span>First charge (day 31)</span><b>$229.50/mo</b></div>
     </div>
+
+    <!-- PATH A — call/tap the founder = $0 out of pocket, NO card -->
+    <div class="card" style="border-color:rgba(0,255,136,.5);background:rgba(0,255,136,.06);max-width:560px">
+      <b style="color:var(--lime);font-size:16px">🎉 Activate with $0 out of pocket — no card</b>
+      <p style="color:var(--muted);font-size:13px;margin:6px 0 10px">This no-card offer is unlocked when you <b>call or tap to text the founder right now</b> and give a simple verbal OK. Your $22.95/line is then billed later by <b>electronic invoice (net 30–60 days)</b>. Cancel anytime.</p>
+      <a class="cta-call" href="tel:+16892421041">📞 CALL TO ACTIVATE FREE NOW<span class="num">(689) 242-1041</span><small>no card · no payment · activated live on the call</small></a>
+      <div style="text-align:center;margin-top:8px"><a class="ibtn text" href="sms:+16892421041">💬 Or text to activate free</a></div>
+    </div>
+
+    <div class="ordiv">OR activate online now</div>
+
+    <!-- PATH B — self-serve online = card on file via Stripe -->
     <div class="field" style="max-width:560px;margin:0 auto 10px"><label>✍️ Type your full legal name to sign (electronic signature)</label><input id="esign" autocomplete="name" placeholder="Full legal name"></div>
     <label class="consent"><input type="checkbox" id="consent">
-      <span>By signing above &amp; checking this box I electronically sign and agree to the <a href="agreement.html" target="_blank"><b>TELVERGENCE Letter of Authorization &amp; VoIP Service Agreement</b></a>. I authorize TELVERGENCE to (a) provision/port my numbers, register E911, and set my caller ID as my agent, and (b) <b>securely keep my card on file with Stripe and charge $229.50/mo (10 × $22.95) starting after my 30-day free trial</b>, recurring monthly until I cancel. <b>I am not charged today</b> — this is a card-on-file authorization, not an instant debit.</span></label>
+      <span>By signing above &amp; checking this box I electronically sign and agree to the <a href="agreement.html" target="_blank"><b>TELVERGENCE Letter of Authorization &amp; VoIP Service Agreement</b></a>. I authorize TELVERGENCE to (a) provision/port my numbers, register E911, and set my caller ID as my agent, and (b) for <b>online activation</b>, securely keep my card on file with Stripe and charge $229.50/mo (10 × $22.95) starting after my 30-day free trial, recurring until I cancel. <b>I am not charged today.</b> <i>(The $0 / no-card option is available by calling the founder line above.)</i></span></label>
     <div class="err" id="err5"></div>
-    <button class="btn btn-primary" id="activateBtn" style="width:100%;max-width:560px;margin:8px auto 0;display:flex">⚡ Activate — $0 today →</button>
+    <button class="btn btn-primary" id="activateBtn" style="width:100%;max-width:560px;margin:8px auto 0;display:flex">⚡ Activate online — $0 today →</button>
     <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;max-width:560px;margin:12px auto 0">
       <span style="font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 10px">🔒 Stripe-secured</span>
       <span style="font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 10px">🛡️ E911-ready</span>
       <span style="font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 10px">🔑 No SSN</span>
       <span style="font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 10px">🔁 Cancel anytime</span>
     </div>
-    <p class="sub" style="font-size:12px;margin-top:10px">🔒 Secure checkout by Stripe · card not charged for 30 days · cancel anytime</p>
+    <p class="sub" style="font-size:12px;margin-top:10px">🔒 Online activation uses secure card-on-file by Stripe · not charged for 30 days · cancel anytime. Prefer $0 with no card? Call (689) 242-1041 above.</p>
     <div class="fnav"><button class="btn btn-ghost" data-prev>← Back</button><span></span></div>
   </section>
 
@@ -323,7 +333,7 @@
     if(activating) return; activating=true;
     var c=document.getElementById('flog'); c.textContent='';
     var lines=[
-      'Digital authorization captured · signed by '+(state.esign||'subscriber')+' · card-on-file, no charge today…',
+      'Digital authorization captured · signed by '+(state.esign||'subscriber')+'…',
       'Reserving your 10 Smart DID lines'+(state.mode==='new'?(' · area code '+state.npa):' · port')+'…',
       'Enabling Remote Call Forwarding → '+(state.forward||'your phone')+'…',
       'Registering E911 dispatchable location…',
@@ -340,8 +350,8 @@
       + (STRIPE_LINK.indexOf('?')>-1?'&':'?') + 'prefilled_email=' + encodeURIComponent(state.email)
       + '&client_reference_id=' + encodeURIComponent(ref)
       + '&quantity=' + LINES;
-    // reliable fallback if the auto-redirect is blocked (popup/redirect blockers)
     var ck=document.getElementById('ckLink'); if(ck){ ck.href=url; ck.style.display='inline-flex'; }
+    log('<span style="color:var(--muted)">Prefer $0 with no card? Call (689) 242-1041 to activate live instead.</span>');
     await sleep(800);
     location.href = url;
   }
