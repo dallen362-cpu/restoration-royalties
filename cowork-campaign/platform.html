@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>TELVERGENCE Platform — Call Handling Back End</title>
+<style>
+  :root{--midnight:#0A0E1A;--card:#141d33;--line:#26345a;--cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--amber:#ff8a3d;--ink:#eaf2ff;--muted:#9fb3d6;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);background:radial-gradient(1100px 640px at 50% -8%,#1a2547,var(--midnight) 60%)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  .grad{background:linear-gradient(90deg,var(--cyan),var(--lime),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 18px;background:rgba(10,14,26,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .logo{font-weight:900;letter-spacing:1px}.logo b{color:var(--cyan)}
+  .bar a{color:var(--cyan);text-decoration:none;font-size:13px;font-weight:800}.bar .sp{margin-left:auto}
+  header.hero{text-align:center;padding:46px 0 8px}
+  .eyebrow{letter-spacing:5px;text-transform:uppercase;font-size:13px;font-weight:800;color:var(--cyan)}
+  h1{font-size:clamp(28px,5.4vw,50px);line-height:1.05;margin:12px auto 8px;max-width:18ch}
+  .lede{color:var(--muted);font-size:clamp(16px,2.4vw,20px);max-width:700px;margin:12px auto 0}
+  section{padding:42px 0}
+  .sec-h{font-size:clamp(23px,4vw,36px);text-align:center;margin-bottom:6px}
+  .sec-sub{color:var(--muted);text-align:center;max-width:680px;margin:0 auto 26px;font-size:16px}
+  .badge{display:inline-block;margin-bottom:10px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--lime);border:1px solid rgba(0,255,136,.4);border-radius:999px;padding:5px 12px}
+
+  /* macro→micro stack */
+  .stack{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){.stack{grid-template-columns:1fr}}
+  .tier{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+  .tier .lvl{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+  .tier h3{font-size:22px;margin:6px 0}
+  .tier .px{font-size:30px;font-weight:900}
+  .tier ul{list-style:none;margin:14px 0 0;padding:0}
+  .tier li{color:var(--muted);font-size:14px;padding:5px 0 5px 24px;position:relative}
+  .tier li:before{content:"✓";position:absolute;left:0;color:var(--lime);font-weight:900}
+  .micro{border-color:rgba(0,255,136,.4)}.macro{border-color:rgba(0,212,255,.4)}
+  .arrowmid{text-align:center;color:var(--cyan);font-weight:900;font-size:22px;margin:6px 0}
+
+  .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+  .card .ic{font-size:26px}.card h4{font-size:15px;margin:8px 0 4px}.card p{color:var(--muted);font-size:13px;line-height:1.5}
+
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:760px){.plans{grid-template-columns:1fr}}
+  .plan{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center;position:relative}
+  .plan.pop{border-color:var(--lime);box-shadow:0 0 0 1px rgba(0,255,136,.3),0 16px 40px rgba(0,255,136,.14)}
+  .plan .pop-tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c;font-size:11px;font-weight:800;padding:4px 12px;border-radius:999px}
+  .plan .nm{font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+  .plan .pr{font-size:38px;font-weight:900;margin:6px 0}.plan .pr small{font-size:15px;color:var(--muted)}
+  .plan .who{color:var(--muted);font-size:13px}
+  .setup{text-align:center;margin-top:16px;color:var(--muted);font-size:14px}
+  .setup b{color:var(--ink)}
+
+  .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+  .btn{font-weight:800;border:none;cursor:pointer;border-radius:14px;padding:15px 26px;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:transform .15s}
+  .btn-p{background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c}.btn-p:hover{transform:translateY(-3px)}
+  .btn-g{background:rgba(255,255,255,.05);color:var(--ink);border:1px solid var(--line)}
+  .preserve{max-width:760px;margin:30px auto 0;background:rgba(123,97,255,.08);border:1px solid #4a3f8a;border-radius:14px;padding:16px;color:#cdbfff;font-size:13.5px;text-align:center}
+  .foot{border-top:1px solid var(--line);padding:24px 0 60px;text-align:center;color:var(--muted);font-size:13px}
+  .foot a{color:var(--cyan);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="logo"><b>TEL</b>VERGENCE · Platform</div>
+  <span class="sp"></span>
+  <a href="present.html">← Deck</a>
+  <a href="studio.html" style="margin-left:14px">🏭 Studio</a>
+  <a href="tel:+18558358741" style="margin-left:14px">📞 (855) TELVRG-1</a>
+</div>
+
+<header class="hero wrap">
+  <div class="eyebrow">Front End + Back End · the full Telvergence stack</div>
+  <h1>The lines get you ringing. <span class="grad">The Second Brain answers every call.</span></h1>
+  <p class="lede">The 10 Smart DIDs are the <b>front-end marketing module</b> — instant, branded, $0 to start. The TELVERGENCE platform is the <b>back end</b> — advanced-intelligence call handling that answers, qualifies, and books every call, billed separately and scaled to your size.</p>
+</header>
+
+<!-- MACRO → MICRO STACK -->
+<section class="wrap">
+  <div class="stack">
+    <div class="tier micro">
+      <div class="lvl">▼ Front End · Marketing Module</div>
+      <h3>10-Line Smart DID Pack</h3>
+      <div class="px grad">$22.95<small style="font-size:15px;color:var(--muted)"> / line / mo</small></div>
+      <ul>
+        <li>10 branded, E911-ready local numbers</li>
+        <li>Rings the cell you already carry — remote call forwarding</li>
+        <li>~30-second activation · $0 today · cancel anytime</li>
+        <li>DOB PIN · no SSN · 100% satisfaction</li>
+        <li>White-label studio: your site → branded site with all 10 DIDs</li>
+      </ul>
+    </div>
+    <div class="tier macro">
+      <div class="lvl">▲ Back End · Advanced-Intelligence Call Handling</div>
+      <h3>TELVERGENCE Platform + BOSS + ViciDial</h3>
+      <div class="px" style="color:var(--cyan)">$499–$2,499<small style="font-size:15px;color:var(--muted)"> / mo + setup</small></div>
+      <ul>
+        <li><b>AI Second Brain</b> — cloned from your site, answers &amp; routes every call</li>
+        <li><b>BOSS CRM/LMS</b> — leads, profiles, invoicing, follow-up, certification</li>
+        <li><b>ViciDial agent dialer</b> — inbound/outbound, dispositions, live KPIs</li>
+        <li>AI transcription &amp; sentiment · branded STIR/SHAKEN caller-ID</li>
+        <li>Call recording · multi-location · white-label (Enterprise)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="arrowmid">▲ your lines plug straight into the platform ▲</div>
+  <p class="sec-sub">One identity, two products: the <b>micro</b> lines make you reachable in seconds; the <b>macro</b> platform handles, routes, transcribes, and converts every one of those calls. Buy the lines alone, or run the full stack.</p>
+</section>
+
+<!-- AI SECOND BRAIN -->
+<section class="wrap">
+  <div style="text-align:center"><span class="badge" style="color:var(--amber);border-color:rgba(255,138,61,.5)">⚡ Instant-on the moment you activate</span></div>
+  <h2 class="sec-h">Phones ringing off the hook — <span class="grad">and an AI Second Brain answers every one.</span></h2>
+  <p class="sec-sub">The second your 10-pack goes live, your numbers light up — and a 24/7 automated <b>Second Brain</b>, <b>cloned from your own website</b> and supercharged with TELVERGENCE, answers, qualifies, books, and routes every call. No missed calls. No "Spam Likely." No job lost to whoever picked up first.</p>
+  <div class="feat" style="grid-template-columns:repeat(3,1fr)">
+    <div class="card"><div class="ic">🧠</div><h4>1 · Cloned from your URL</h4><p>We ingest your existing website as the knowledge base — your services, your pricing, your voice, your FAQs — so the brain already knows your business cold.</p></div>
+    <div class="card"><div class="ic">⚙️</div><h4>2 · Mashed with TELVERGENCE</h4><p>That knowledge is fused with our enhanced capabilities: smart routing, sentiment, CRM, branded caller-ID, follow-up — the second brain on top of your first.</p></div>
+    <div class="card"><div class="ic">📞</div><h4>3 · Live at activation</h4><p>From minute one your lines ring and the brain handles them around the clock — every caller greeted, qualified, and booked while you're on the roof or on a job.</p></div>
+  </div>
+  <p class="sec-sub" style="margin-top:20px"><b style="color:var(--ink)">Every ring is a ~$7,500 job.</b> The Second Brain catches them all from the very first minute — so the urgency isn't "someday," it's <b style="color:var(--amber)">the moment you flip it on</b>.</p>
+</section>
+
+<!-- PLATFORM FEATURES -->
+<section class="wrap">
+  <h2 class="sec-h">One platform for <span class="grad">every call, message &amp; customer interaction</span></h2>
+  <p class="sec-sub">Replaces your phone system, messaging, CRM, call tracking, and AI assistant — one secure, automated platform. 30%+ average savings.</p>
+  <div class="feat">
+    <div class="card"><div class="ic">🤖</div><h4>AI call handling</h4><p>An AI assistant answers, qualifies, and routes — transcribing every call with sentiment analysis.</p></div>
+    <div class="card"><div class="ic">🔀</div><h4>Smart routing &amp; auto-attendant</h4><p>Every call to the right place, every time — across lines, locations, and after hours.</p></div>
+    <div class="card"><div class="ic">📊</div><h4>Real-time dashboard</h4><p>Live call activity, campaign attribution, and outcomes — see what drives every call.</p></div>
+    <div class="card"><div class="ic">🛡️</div><h4>Caller-ID reputation</h4><p>STIR/SHAKEN branded verification so you never show up as "Spam Likely."</p></div>
+    <div class="card"><div class="ic">🧩</div><h4>CRM integration</h4><p>Salesforce, HubSpot &amp; more, with automated follow-up sequences.</p></div>
+    <div class="card"><div class="ic">🎙️</div><h4>Recording &amp; compliance</h4><p>Call recording, E911, end-to-end encryption, multi-location management.</p></div>
+    <div class="card"><div class="ic">🧩</div><h4>BOSS CRM / LMS</h4><p>Back Office Sales Support: lead capture, profiles, invoicing &amp; collections, fulfillment, and agent training/certification.</p></div>
+    <div class="card"><div class="ic">☎️</div><h4>ViciDial agent dialer</h4><p>Inbound &amp; outbound dialing, dispositions, call routing, and live KPI dashboards — your agents on the phones, organized.</p></div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="wrap">
+  <div style="text-align:center"><span class="badge">Platform plans · billed separately from your lines</span></div>
+  <h2 class="sec-h">Scale the back end to your size</h2>
+  <div class="plans">
+    <div class="plan">
+      <div class="nm">Starter</div>
+      <div class="pr">$499<small>/mo</small></div>
+      <div class="who">1–25 employees</div>
+    </div>
+    <div class="plan pop">
+      <div class="pop-tag">Most popular</div>
+      <div class="nm">Growth</div>
+      <div class="pr">$999<small>/mo</small></div>
+      <div class="who">25–100 employees</div>
+    </div>
+    <div class="plan">
+      <div class="nm">Enterprise</div>
+      <div class="pr">$2,499<small>/mo</small></div>
+      <div class="who">100+ employees or franchises · white-label</div>
+    </div>
+  </div>
+  <div class="setup">One-time setup <b>$1,499</b> — migration, number porting, AI configuration, CRM integration &amp; training.</div>
+  <div class="acts">
+    <a class="btn btn-p" href="telvergence-onboarding-funnel.html">⚡ Start with the 10-pack — $0 today</a>
+    <a class="btn btn-g" href="tel:+18558358741">📞 Talk platform — (855) TELVRG-1</a>
+  </div>
+  <div class="preserve">🔒 <b>Your existing telvergence.com is preserved and untouched.</b> This is the macro→micro mashup living in our presentation build — the live site stays exactly as it is, ready to activate or point a domain at anytime.</div>
+</section>
+
+<div class="foot wrap">
+  <p>TELVERGENCE — One platform for every call, message &amp; customer interaction · 📞 <a href="tel:+18558358741">(855) TELVRG-1</a> · <a href="mailto:contact@telvergence.com">contact@telvergence.com</a></p>
+  <p style="margin-top:8px">Confidential &amp; proprietary — shared by invitation only. © TELVERGENCE.</p>
+</div>
+</body>
+</html>
