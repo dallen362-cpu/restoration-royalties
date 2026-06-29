@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0A0E1A">
 <title>TELVERGENCE — Free Instant Activation · 10-Line Smart DID Pack</title>
 <style>
   :root{--midnight:#0A0E1A;--navy:#10182e;--card:#16213d;--card2:#1b2748;--line:#26345a;
@@ -111,6 +112,7 @@
   </div>
 </div>
 <div class="prog"><i class="on" data-p="1"></i><i data-p="2"></i><i data-p="3"></i><i data-p="4"></i><i data-p="5"></i><i data-p="6"></i></div>
+<div id="proglabel" style="max-width:760px;margin:6px auto 0;padding:0 18px;font-size:12px;color:#8ea3c9;letter-spacing:.5px">Step 1 of 6 · Start</div>
 
 <div class="wrap">
 
@@ -137,6 +139,11 @@
       <div class="pricelines">10 lines × $22.95 = <b style="color:var(--ink)">$229.50 / month</b></div>
       <div class="today">$0.00</div>
       <div class="todaylbl">due today — first 30 days free · first charge on day 31</div>
+      <div style="display:flex;align-items:center;gap:8px;justify-content:center;margin:12px auto 2px;max-width:420px;font-size:12.5px">
+        <div style="flex:1;text-align:center;background:rgba(0,255,136,.08);border:1px solid rgba(0,255,136,.35);border-radius:10px;padding:8px"><b style="color:var(--lime)">Today</b><br><span style="color:var(--muted)">$0.00 · activate</span></div>
+        <div style="color:var(--muted)">→</div>
+        <div style="flex:1;text-align:center;background:var(--navy);border:1px solid var(--line);border-radius:10px;padding:8px"><b>Day 31</b><br><span style="color:var(--muted)">$229.50/mo begins</span></div>
+      </div>
       <ul class="feats">
         <li><b>Remote Call Forwarding</b> — any line rings any phone, change it anytime</li>
         <li>Unlimited calls &amp; connects · branded caller ID</li>
@@ -166,7 +173,7 @@
     <div class="opt" id="optPort" data-mode="port"><span class="ic">🔁</span><div><b>Port / bring numbers</b><small>Transfer existing numbers (we guide you)</small></div></div>
     <div class="field" id="npaField"><label>Market (area code) for new numbers</label>
       <select id="fNpa"><option>305</option><option>786</option><option selected>954</option><option>754</option><option>407</option><option>321</option><option>561</option><option>813</option><option>904</option></select></div>
-    <div class="field"><label>Default "forward-to" phone — where your lines ring</label><input id="fForward" inputmode="tel" placeholder="(689) 242-1041"></div>
+    <div class="field"><label>Default "forward-to" phone — where your lines ring <span class="muted" style="font-size:11px">(change any line anytime)</span></label><input id="fForward" inputmode="tel" autocomplete="tel" placeholder="(689) 242-1041"></div>
     <div class="err" id="err3"></div>
     <div class="fnav"><button class="btn btn-ghost" data-prev>← Back</button><button class="btn btn-primary" data-next>Continue →</button></div>
   </section>
@@ -176,7 +183,7 @@
     <div class="kick">Your account</div>
     <h2>No password — just your email</h2>
     <p class="sub">We'll email you a secure one-tap sign-in link. Your Smart DID is your account key — <b>no SSN, ever</b>.</p>
-    <div class="field"><label>Email for your secure sign-in link</label><input id="fEmail" type="email" placeholder="you@email.com"></div>
+    <div class="field"><label>Email for your secure sign-in link</label><input id="fEmail" type="email" autocomplete="email" inputmode="email" placeholder="you@email.com"></div>
     <div class="err" id="err4"></div>
     <div class="fnav"><button class="btn btn-ghost" data-prev>← Back</button><button class="btn btn-primary" data-next>Continue →</button></div>
   </section>
@@ -197,6 +204,12 @@
       <span>I agree to the <a href="terms.html" target="_blank">Terms, billing &amp; 911 notice</a>: a 30-day free trial, then $229.50/mo (10 × $22.95) month-to-month, prepaid each cycle, with the cancellation policy shown. I authorize Telvergence to keep my card on file and bill it after the trial unless I cancel.</span></label>
     <div class="err" id="err5"></div>
     <button class="btn btn-primary" id="activateBtn" style="width:100%;max-width:560px;margin:8px auto 0;display:flex">⚡ Activate — $0 today →</button>
+    <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;max-width:560px;margin:12px auto 0">
+      <span style="font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 10px">🔒 Stripe-secured</span>
+      <span style="font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 10px">🛡️ E911-ready</span>
+      <span style="font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 10px">🔑 No SSN</span>
+      <span style="font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 10px">🔁 Cancel anytime</span>
+    </div>
     <p class="sub" style="font-size:12px;margin-top:10px">🔒 Secure checkout by Stripe · card not charged for 30 days · cancel anytime</p>
     <div class="fnav"><button class="btn btn-ghost" data-prev>← Back</button><span></span></div>
   </section>
@@ -208,6 +221,7 @@
     <div class="fly">
       <div class="ring"></div>
       <div class="flog" id="flog"></div>
+      <a id="ckLink" href="#" style="display:none;margin-top:16px" class="btn btn-primary">Continue to secure checkout →</a>
     </div>
   </section>
 
@@ -228,14 +242,25 @@
 
   var state = { mode:'new', npa:'954', forward:'', email:'' };
   var step = 1, panes = [].slice.call(document.querySelectorAll('.step'));
+  var STEP_LABELS = {1:'Start',2:'Your offer',3:'Your numbers',4:'Your account',5:'Confirm & activate',6:'Activating'};
   function show(n){
     step = n;
     panes.forEach(function(p){ p.classList.toggle('on', +p.dataset.step===n); });
     document.querySelectorAll('.prog i').forEach(function(i){ i.classList.toggle('on', +i.dataset.p<=n); });
+    var pl=document.getElementById('proglabel'); if(pl) pl.textContent='Step '+n+' of 6 · '+(STEP_LABELS[n]||'');
     window.scrollTo({top:0,behavior:'smooth'});
     if(n===5) fillSummary();
     if(n===6) runActivation();
+    // focus the first input on the active step (accessibility + speed)
+    setTimeout(function(){ var a=document.querySelector('.step.on input, .step.on select'); if(a&&n>1&&n<5){ try{a.focus();}catch(e){} } }, 360);
   }
+  // live phone formatting for the forward-to field
+  (function(){ var f=document.getElementById('fForward'); if(!f)return;
+    f.addEventListener('input', function(){ var d=f.value.replace(/\D/g,'').slice(0,10);
+      f.value = d.length>6 ? '('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6)
+              : d.length>3 ? '('+d.slice(0,3)+') '+d.slice(3)
+              : d.length>0 ? '('+d : ''; });
+  })();
   document.querySelectorAll('[data-next]').forEach(function(b){ b.onclick=function(){ if(validate(step)) show(Math.min(6,step+1)); }; });
   document.querySelectorAll('[data-prev]').forEach(function(b){ b.onclick=function(){ show(Math.max(1,step-1)); }; });
 
@@ -293,6 +318,8 @@
       + (STRIPE_LINK.indexOf('?')>-1?'&':'?') + 'prefilled_email=' + encodeURIComponent(state.email)
       + '&client_reference_id=' + encodeURIComponent(ref)
       + '&quantity=' + LINES;
+    // reliable fallback if the auto-redirect is blocked (popup/redirect blockers)
+    var ck=document.getElementById('ckLink'); if(ck){ ck.href=url; ck.style.display='inline-flex'; }
     await sleep(800);
     location.href = url;
   }
