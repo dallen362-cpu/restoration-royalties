@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Restoration Royalty — Make Your Phone Ring</title>
+<style>
+  :root{
+    --navy:#0b1b33;--navy2:#12294b;--card:#13243f;--line:#2a3f63;
+    --gold:#ffd700;--orange:#ff6b35;--green:#28c76f;
+    --ink:#eef4ff;--muted:#a7bbd8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);
+    background:radial-gradient(1100px 640px at 50% -8%,#1a3257,var(--navy) 60%);overflow-x:hidden}
+  .grad{background:linear-gradient(90deg,var(--gold),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  .bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+    padding:12px 18px;background:rgba(11,27,51,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .logo{font-weight:900;letter-spacing:.5px;font-size:17px;line-height:1.05}
+  .logo b{color:var(--gold)}.logo small{display:block;font-size:10px;color:var(--muted);letter-spacing:2px;font-weight:700}
+  .toggle{display:flex;background:#0a1830;border:1px solid var(--line);border-radius:999px;padding:4px;margin-left:auto}
+  .toggle button{border:none;background:transparent;color:var(--muted);font-weight:800;font-size:13px;
+    padding:8px 16px;border-radius:999px;cursor:pointer;transition:.2s;white-space:nowrap}
+  .toggle button.on{color:#2a1500;background:linear-gradient(90deg,var(--gold),var(--orange))}
+  .callmini{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#2a1500;font-weight:900;font-size:13px;
+    background:linear-gradient(180deg,#ffd84d,var(--orange));border-radius:999px;padding:8px 15px;border:1px solid rgba(255,255,255,.35)}
+
+  .hero{padding:54px 0 26px;text-align:center}
+  .eyebrow{letter-spacing:5px;text-transform:uppercase;font-size:13px;font-weight:800;color:var(--gold)}
+  h1{font-size:clamp(32px,6.4vw,62px);line-height:1.04;margin:14px auto 8px;max-width:16ch}
+  .lede{color:var(--muted);font-size:clamp(16px,2.4vw,20px);max-width:680px;margin:14px auto 0}
+  .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+  .btn{font-weight:800;border:none;cursor:pointer;border-radius:14px;padding:16px 26px;font-size:15px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:9px;transition:transform .15s,box-shadow .25s}
+  .btn-p{background:linear-gradient(90deg,var(--gold),var(--orange));color:#2a1500;box-shadow:0 10px 36px rgba(255,107,53,.32)}
+  .btn-p:hover{transform:translateY(-3px)}
+  .btn-g{background:rgba(255,255,255,.05);color:var(--ink);border:1px solid var(--line)}
+  .btn-g:hover{border-color:var(--gold)}
+
+  .film{max-width:960px;margin:30px auto 0;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 22px 60px rgba(0,0,0,.55);background:#05070f}
+  .film video{display:block;width:100%;height:auto;background:#05070f}
+  .filmcap{text-align:center;color:var(--muted);font-size:13px;margin-top:10px}
+  .filmcap b{color:var(--gold)}
+
+  section{padding:46px 0}
+  .sec-h{font-size:clamp(24px,4vw,38px);text-align:center;margin-bottom:6px}
+  .sec-sub{color:var(--muted);text-align:center;max-width:660px;margin:0 auto 30px;font-size:16px}
+
+  .fly{position:relative;width:min(560px,92vw);aspect-ratio:1;margin:0 auto}
+  .ring{position:absolute;inset:0;border-radius:50%;
+    background:conic-gradient(from 0deg,var(--gold),var(--orange),#ff3b6b,var(--gold));
+    -webkit-mask:radial-gradient(circle,transparent 38%,#000 39%);mask:radial-gradient(circle,transparent 38%,#000 39%);
+    opacity:.34;animation:spin 26s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hubcore{position:absolute;inset:30%;border-radius:50%;background:radial-gradient(circle,#16294a,#0a1428);
+    border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px}
+  .hubcore .h{font-weight:900;font-size:clamp(15px,3vw,20px)}.hubcore .s{color:var(--muted);font-size:11px;margin-top:3px}
+  .node{position:absolute;width:150px;margin-left:-75px;text-align:center}
+  .node .ic{width:54px;height:54px;margin:0 auto;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    font-size:26px;background:#13243f;border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.4)}
+  .node .t{font-weight:800;font-size:13px;margin-top:8px}.node .d{color:var(--muted);font-size:11px;line-height:1.4;margin-top:2px}
+  .n1{top:-2%;left:50%}.n2{top:22%;left:96%}.n3{top:72%;left:92%}
+  .n4{top:99%;left:50%}.n5{top:72%;left:8%}.n6{top:22%;left:4%}
+  @media(max-width:640px){.fly{display:none}.flylist{display:block!important}}
+  .flylist{display:none;max-width:540px;margin:0 auto}
+  .flylist .row{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+  .flylist .e{font-size:22px}.flylist .t{font-weight:800}.flylist .d{color:var(--muted);font-size:13px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .card .ic{font-size:30px}.card h3{font-size:18px;margin:10px 0 6px}.card p{color:var(--muted);font-size:14px;line-height:1.55}
+  .stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:8px}
+  .stat .s{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+  .stat .v{font-size:30px;font-weight:900}.stat .v.c{color:var(--gold)}.stat .v.l{color:var(--green)}.stat .v.vi{color:var(--orange)}
+  .stat .k{color:var(--muted);font-size:12px;margin-top:4px}
+
+  .proof{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;align-items:center}
+  @media(max-width:760px){.proof{grid-template-columns:1fr}}
+  .proof img{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
+
+  .offer{background:linear-gradient(180deg,rgba(255,215,0,.08),transparent);border:1px solid rgba(255,215,0,.34);border-radius:20px;padding:30px;text-align:center}
+  .price{font-size:54px;font-weight:900}.price small{font-size:18px;color:var(--muted);font-weight:700}
+  .pillrow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:16px 0}
+  .pillrow span{border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:12.5px;color:var(--muted)}
+  .callbig{display:inline-flex;flex-direction:column;align-items:center;text-decoration:none;color:#2a1500;margin-top:10px;
+    background:linear-gradient(180deg,#ffd84d,var(--orange));border-radius:18px;padding:18px 28px;border:2px solid rgba(255,255,255,.4);
+    box-shadow:0 14px 44px rgba(255,107,53,.42);animation:pulse 1.9s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 14px 44px rgba(255,107,53,.4)}50%{box-shadow:0 14px 58px rgba(255,107,53,.78)}}
+  .callbig .n{font-size:30px;font-weight:900;letter-spacing:1px}.callbig .f{font-size:12px;font-weight:700;opacity:.85;margin-top:5px;max-width:430px;text-align:center}
+
+  .only-investor{display:none}
+  body.mode-investor .only-investor{display:revert}
+  body.mode-investor .only-prospect{display:none}
+
+  .foot{border-top:1px solid var(--line);padding:26px 0 60px;text-align:center;color:var(--muted);font-size:13px}
+  .foot a{color:var(--gold);text-decoration:none}
+  .powered{display:inline-block;margin-top:8px;font-size:11px;color:#7d93b8;letter-spacing:1px}
+  .badge{display:inline-block;margin-bottom:10px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+    color:var(--gold);border:1px solid rgba(255,215,0,.4);border-radius:999px;padding:5px 12px}
+</style>
+</head>
+<body class="mode-prospect">
+
+<div class="bar">
+  <div class="logo"><b>RESTORATION ROYALTY</b><small>IICRC-CERTIFIED · LICENSED &amp; INSURED · 24/7</small></div>
+  <div class="toggle" role="tablist">
+    <button id="tProspect" class="on" onclick="setMode('prospect')">🏢 For Businesses</button>
+    <button id="tInvestor" onclick="setMode('investor')">🤝 For Partners</button>
+  </div>
+  <a class="callmini" href="tel:+18338406653">📞 1-833-840-MOLD</a>
+</div>
+
+<!-- HERO -->
+<header class="hero wrap">
+  <div class="eyebrow" id="eyebrow">Restoration Royalty · Weather Intelligence</div>
+  <h1 id="headline"></h1>
+  <p class="lede" id="lede"></p>
+  <div class="acts">
+    <a class="btn btn-p only-prospect" href="../telvergence-onboarding-funnel.html">⚡ Activate free — $0 today</a>
+    <a class="btn btn-p only-investor" href="#flywheel">🤝 See the partner flywheel</a>
+    <a class="btn btn-g" href="../vault-7kq9x2m4/restoration-royalty-smoke.html">👑🔥 Live smoke campaign</a>
+    <a class="btn btn-g" href="../vault-7kq9x2m4/telvergence-demo.html">🛰️ Live storm dispatch</a>
+  </div>
+
+  <div class="film">
+    <video controls playsinline preload="metadata" poster="../vault-7kq9x2m4/win-tv-assets/win-tv-poster.jpg">
+      <source src="../vault-7kq9x2m4/win-tv-assets/win-tv-intro.webm" type="video/webm">
+      <a href="../vault-7kq9x2m4/win-tv-assets/win-tv-intro.webm" style="color:var(--gold)">Play the intro</a>
+    </video>
+  </div>
+  <div class="filmcap">▶ <b>Restoration Royalty × Weather Intelligence</b> · real June 2026 wildfire footage · we see the storm first and reach you first</div>
+</header>
+
+<!-- THE FLYWHEEL -->
+<section id="flywheel" class="wrap">
+  <div class="badge">The Royalty advantage</div>
+  <h2 class="sec-h">The self-distributing <span class="grad">partner flywheel</span></h2>
+  <p class="sec-sub" id="flySub"></p>
+
+  <div class="fly">
+    <div class="ring"></div>
+    <div class="hubcore"><div class="h">Every<br>member</div><div class="s">is also a distributor</div></div>
+    <div class="node n1"><div class="ic">⚡</div><div class="t">1 · Activate</div><div class="d">10 branded local lines in ~30s, $0 today</div></div>
+    <div class="node n2"><div class="ic">📞</div><div class="t">2 · Get the calls</div><div class="d">Unlimited calls; the weather grid routes work to you</div></div>
+    <div class="node n3"><div class="ic">💰</div><div class="t">3 · Earn 10%</div><div class="d">Refer local providers → 10% of the gross they bill</div></div>
+    <div class="node n4"><div class="ic">🤝</div><div class="t">4 · Recruit pros</div><div class="d">Add trades into the Restoration Royalty network</div></div>
+    <div class="node n5"><div class="ic">🏷️</div><div class="t">5 · Wholesale / white-label</div><div class="d">Resell branded lines under your own shingle</div></div>
+    <div class="node n6"><div class="ic">🗺️</div><div class="t">6 · Own the territory</div><div class="d">Authorized Dedicated Provider for your market</div></div>
+  </div>
+
+  <div class="flylist">
+    <div class="row"><span class="e">⚡</span><div><div class="t">1 · Activate</div><div class="d">10 branded local lines in ~30s, $0 today.</div></div></div>
+    <div class="row"><span class="e">📞</span><div><div class="t">2 · Get the calls</div><div class="d">Unlimited calls; the weather grid routes work to you.</div></div></div>
+    <div class="row"><span class="e">💰</span><div><div class="t">3 · Earn 10%</div><div class="d">Refer local providers and earn 10% of the gross they bill.</div></div></div>
+    <div class="row"><span class="e">🤝</span><div><div class="t">4 · Recruit pros</div><div class="d">Add trades into the Restoration Royalty network.</div></div></div>
+    <div class="row"><span class="e">🏷️</span><div><div class="t">5 · Wholesale / white-label</div><div class="d">Resell branded lines under your own shingle.</div></div></div>
+    <div class="row"><span class="e">🗺️</span><div><div class="t">6 · Own the territory</div><div class="d">Become the Authorized Dedicated Provider for your market.</div></div></div>
+  </div>
+  <p class="sec-sub" style="margin-top:26px" id="flyClose"></p>
+</section>
+
+<!-- ENGINE + PROOF CASE -->
+<section class="wrap">
+  <h2 class="sec-h">One network. <span class="grad">Two ways to win.</span></h2>
+  <p class="sec-sub">Restoration Royalty is IICRC-certified, licensed &amp; insured, and on call 24/7 — running on a private weather-intelligence dialing network that puts branded local numbers on the phone the moment a storm hits.</p>
+  <div class="grid">
+    <div class="card"><div class="ic">🏢</div><h3>Commercial remediation</h3><p>Fire/smoke + soot + water + HVAC + odor jobs from property managers, condo/HOA and multifamily. <b>One condo tower = many units, common areas &amp; HVAC</b> — a single contract worth many single-family jobs.</p></div>
+    <div class="card"><div class="ic">🔗</div><h3>Partner network</h3><p>Referral swaps and overflow subcontracting with other restoration &amp; roofing shops — demand you can't service still converts to revenue.</p></div>
+    <div class="card"><div class="ic">📡</div><h3>Calls that connect</h3><p>Local-presence numbers that match each area, branded caller-ID so you're never flagged "Spam Likely," and AI-assisted intake routing every call to a closer.</p></div>
+  </div>
+</section>
+
+<!-- PARTNER / INVESTOR: economics -->
+<section class="wrap only-investor">
+  <div class="badge">Why it compounds</div>
+  <h2 class="sec-h">The partner economics</h2>
+  <p class="sec-sub">A recurring network whose growth engine is its own membership — riding real, time-boxed weather demand.</p>
+  <div class="stat">
+    <div class="s"><div class="v c">$229.50</div><div class="k">per 10-line account ($22.95 × 10)</div></div>
+    <div class="s"><div class="v l">Recurring</div><div class="k">Prepaid monthly · cancel anytime</div></div>
+    <div class="s"><div class="v vi">Self-distributing</div><div class="k">Every member is a retail/wholesale/white-label channel</div></div>
+    <div class="s"><div class="v c">10%</div><div class="k">of gross on every provider a member refers</div></div>
+  </div>
+  <div class="grid" style="margin-top:16px">
+    <div class="card"><div class="ic">🛡️</div><h3>Branded &amp; protected</h3><p>Local numbers, branded caller-ID, and a proprietary intake platform — the assets that turn weather events into dispatched, billable jobs.</p></div>
+    <div class="card"><div class="ic">🌪️</div><h3>Demand trigger</h3><p>Real, time-boxed weather events create urgent, high-value remediation demand. Live weather intelligence reaches the exposure zones first.</p></div>
+    <div class="card"><div class="ic">🏷️</div><h3>White-label ready</h3><p>The same network powers branded fronts across restoration, roofing, and storm response — a new market is a setup, not a rebuild.</p></div>
+  </div>
+</section>
+
+<!-- URGENCY MICRO CASE STUDY -->
+<section class="wrap">
+  <div class="badge" style="color:var(--orange);border-color:rgba(255,107,53,.5);background:rgba(255,107,53,.08)">⏳ Live case study · the window is open NOW</div>
+  <h2 class="sec-h">Southwest &amp; South Florida fires — <span class="grad">a time-boxed opportunity.</span></h2>
+  <p class="sec-sub">This isn't a someday market. It's happening right now, and the window closes in <b style="color:var(--orange)">days, not months</b>.</p>
+  <div class="proof">
+    <img src="../vault-7kq9x2m4/win-tv-assets/fire-everglades.jpeg" alt="Wildfire reaching the highway, Southwest/South Florida, June 2026">
+    <div>
+      <div class="stat" style="grid-template-columns:1fr 1fr;margin-top:0">
+        <div class="s"><div class="v" style="color:var(--orange)">20,000+</div><div class="k">acres burned this month</div></div>
+        <div class="s"><div class="v c">Days→weeks</div><div class="k">how long remediation demand spikes after a plume</div></div>
+        <div class="s"><div class="v l">First call</div><div class="k">wins the contract — speed beats size of plan</div></div>
+        <div class="s"><div class="v vi">1 tower</div><div class="k">= many units + HVAC = many single-family jobs</div></div>
+      </div>
+      <p style="color:var(--muted);font-size:14px;line-height:1.6;margin-top:14px"><b style="color:var(--orange)">June 2026.</b> Fires pushed smoke &amp; soot across Southwest and South Florida — ash on cars, air-quality alerts. Demand for smoke remediation <b>surges for days-to-weeks, then fades</b>. Restoration Royalty's weather network puts branded local lines on the phone <b>while the window is open</b> — so you reach the exposure zones first. <b style="color:var(--ink)">This is a sprint, not a season.</b></p>
+      <div class="acts" style="justify-content:flex-start;margin-top:14px">
+        <a class="btn btn-p" href="../vault-7kq9x2m4/restoration-royalty-smoke.html">👑🔥 Open the live campaign</a>
+        <a class="btn btn-g" href="tel:+18338406653">📞 Move now — 1-833-840-MOLD</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI -->
+<section class="wrap">
+  <div class="badge" style="color:var(--green);border-color:rgba(40,199,111,.45)">The benchmark guarantee</div>
+  <h2 class="sec-h">One saved call <span class="grad">pays for everything.</span></h2>
+  <p class="sec-sub">Every missed call is a job that went to whoever picked up. For most restoration businesses the average job ticket is <b style="color:var(--green)">$7,500</b>. So do the math:</p>
+  <div class="proof" style="grid-template-columns:1fr 1fr;align-items:stretch">
+    <div class="card" style="text-align:center;display:flex;flex-direction:column;justify-content:center">
+      <div class="k" style="color:var(--muted);font-size:13px">10 lines, all in</div>
+      <div style="font-size:46px;font-weight:900;color:var(--gold)">$229.50<span style="font-size:18px;color:var(--muted)">/mo</span></div>
+      <div class="k" style="color:var(--muted);font-size:12px">$22.95 × 10 · $0 today · cancel anytime</div>
+    </div>
+    <div class="card" style="text-align:center;display:flex;flex-direction:column;justify-content:center;border-color:rgba(40,199,111,.4)">
+      <div class="k" style="color:var(--muted);font-size:13px">Just ONE saved call →</div>
+      <div style="font-size:46px;font-weight:900;color:var(--green)">$7,500</div>
+      <div class="k" style="color:var(--muted);font-size:12px">average job ticket · one sale you'd have missed</div>
+    </div>
+  </div>
+  <p class="sec-sub" style="margin-top:18px">A single saved call covers the entire 10-line pack <b style="color:var(--green)">32 times over</b> — that's the benchmark. After that, it compounds: every job you'd otherwise have missed is pure upside. <b style="color:var(--ink)">$0 to find out. Cancel anytime if it doesn't.</b></p>
+  <div class="acts">
+    <a class="btn btn-p" href="../telvergence-onboarding-funnel.html">⚡ Start ringing — $0 today</a>
+    <a class="btn btn-g" href="tel:+18338406653">📞 Activate live — 1-833-840-MOLD</a>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="wrap">
+  <div class="offer">
+    <div class="badge" id="offerBadge">The offer</div>
+    <div class="price">$22.95<small> / line / month</small></div>
+    <p class="sec-sub" style="margin:8px auto 0" id="offerSub"></p>
+    <div class="pillrow">
+      <span>⚡ ~30s activation</span><span>💳 $0 today · 30 days free</span><span>🔑 DOB PIN · no SSN</span>
+      <span>🔀 Rings your cell</span><span>🔁 Cancel anytime</span><span>💯 100% satisfaction</span>
+    </div>
+    <div class="acts" style="margin-top:8px">
+      <a class="btn btn-p" href="../telvergence-onboarding-funnel.html">⚡ Activate my 10 lines — $0 today</a>
+    </div>
+    <a class="callbig" href="tel:+18338406653">📞 CALL US — WE ACTIVATE YOU LIVE
+      <span class="n">1-833-840-MOLD</span>
+      <span class="f">10 lines activated on the call with a simple verbal OK · $0 out of pocket · no card · no commitment · no obligation · 💯 100% satisfaction guarantee</span>
+    </a>
+  </div>
+</section>
+
+<div class="foot wrap">
+  <p>RESTORATION ROYALTY — IICRC-Certified Restoration · 📞 <a href="tel:+18338406653">1-833-840-MOLD (1-833-840-6653)</a></p>
+  <p style="margin-top:8px">© Restoration Royalty. All rights reserved.</p>
+  <span class="powered">Powered by the TELVERGENCE weather-intelligence platform</span>
+</div>
+
+<script>
+  var COPY = {
+    prospect:{
+      eyebrow:"Restoration Royalty · For Service Businesses",
+      headline:'Make your phone <span class="grad">ring off the hook.</span>',
+      lede:"Ten branded, local lines that ring the cell phone you already carry — activated in ~30 seconds, $0 out of pocket. Cancel anytime: no contract, no commitment, no obligation.",
+      flySub:"You don't just buy phone lines. The moment you activate, you're plugged into a network that sends you storm work — and pays you to grow it.",
+      flyClose:"Every member is naturally endowed with the inherent ability to be a retailer, a wholesaler, and a white-label provider — all at once.",
+      offerBadge:"Your offer",
+      offerSub:"10 lines × $22.95 = $229.50/mo after your free 30 days — less than the profit on a single job. $0 today, cancel anytime."
+    },
+    investor:{
+      eyebrow:"Restoration Royalty · Partner Program",
+      headline:'Become the <span class="grad">Authorized Provider</span> for your market.',
+      lede:"A recurring weather-intelligence network whose growth channel is its own membership — every member retails, wholesales, and white-labels branded lines in their territory.",
+      flySub:"The customer and the distributor are the same person. Each member retails, wholesales, and white-labels — compounding the network without proportional ad spend.",
+      flyClose:"Because every member is inherently a retail/wholesale/white-label channel, the network compounds with the membership instead of scaling linearly with marketing.",
+      offerBadge:"Partner unit",
+      offerSub:"Each 10-line account is a $229.50/mo recurring unit that can originate new accounts and earn 10% of referred provider revenue."
+    }
+  };
+  function apply(m){
+    var c=COPY[m];
+    document.getElementById('eyebrow').textContent=c.eyebrow;
+    document.getElementById('headline').innerHTML=c.headline;
+    document.getElementById('lede').textContent=c.lede;
+    document.getElementById('flySub').textContent=c.flySub;
+    document.getElementById('flyClose').textContent=c.flyClose;
+    document.getElementById('offerBadge').textContent=c.offerBadge;
+    document.getElementById('offerSub').textContent=c.offerSub;
+    document.body.className='mode-'+m;
+    document.getElementById('tProspect').classList.toggle('on',m==='prospect');
+    document.getElementById('tInvestor').classList.toggle('on',m==='investor');
+  }
+  function setMode(m){ apply(m); if(history.replaceState) history.replaceState(null,'','#'+m); }
+  var start=(location.hash||'').replace('#','');
+  apply(start==='investor'?'investor':'prospect');
+</script>
+</body>
+</html>
