@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>TELVERGENCE — The Flywheel (Presentation)</title>
+<style>
+  :root{
+    --midnight:#0A0E1A;--navy:#101a30;--card:#141d33;--line:#26345a;
+    --cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--amber:#ff8a3d;
+    --ink:#eaf2ff;--muted:#9fb3d6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);
+    background:radial-gradient(1100px 640px at 50% -8%,#1a2547,var(--midnight) 60%);overflow-x:hidden}
+  .grad{background:linear-gradient(90deg,var(--cyan),var(--lime),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  /* top bar + audience toggle */
+  .bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+    padding:12px 18px;background:rgba(10,14,26,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .logo{font-weight:900;letter-spacing:1px;font-size:18px}.logo b{color:var(--cyan)}
+  .toggle{display:flex;background:#0c1730;border:1px solid var(--line);border-radius:999px;padding:4px;margin-left:auto}
+  .toggle button{border:none;background:transparent;color:var(--muted);font-weight:800;font-size:13px;
+    padding:8px 16px;border-radius:999px;cursor:pointer;transition:.2s;white-space:nowrap}
+  .toggle button.on{color:#04121c;background:linear-gradient(90deg,var(--lime),var(--cyan))}
+  .callmini{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#062012;font-weight:900;font-size:13px;
+    background:linear-gradient(180deg,#2bff9e,#00c46a);border-radius:999px;padding:8px 15px;border:1px solid rgba(255,255,255,.35)}
+
+  /* hero */
+  .hero{padding:54px 0 26px;text-align:center}
+  .eyebrow{letter-spacing:5px;text-transform:uppercase;font-size:13px;font-weight:800;color:var(--cyan)}
+  h1{font-size:clamp(32px,6.4vw,62px);line-height:1.04;margin:14px auto 8px;max-width:16ch}
+  .lede{color:var(--muted);font-size:clamp(16px,2.4vw,20px);max-width:680px;margin:14px auto 0}
+  .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+  .btn{font-weight:800;border:none;cursor:pointer;border-radius:14px;padding:16px 26px;font-size:15px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:9px;transition:transform .15s,box-shadow .25s}
+  .btn-p{background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c;box-shadow:0 10px 36px rgba(0,229,255,.32)}
+  .btn-p:hover{transform:translateY(-3px)}
+  .btn-g{background:rgba(255,255,255,.05);color:var(--ink);border:1px solid var(--line)}
+  .btn-g:hover{border-color:var(--cyan)}
+
+  /* movie */
+  .film{max-width:960px;margin:30px auto 0;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 22px 60px rgba(0,0,0,.55);background:#05070f}
+  .film video{display:block;width:100%;height:auto;background:#05070f}
+  .filmcap{text-align:center;color:var(--muted);font-size:13px;margin-top:10px}
+  .filmcap b{color:var(--lime)}
+
+  section{padding:46px 0}
+  .sec-h{font-size:clamp(24px,4vw,38px);text-align:center;margin-bottom:6px}
+  .sec-sub{color:var(--muted);text-align:center;max-width:640px;margin:0 auto 30px;font-size:16px}
+
+  /* flywheel */
+  .fly{position:relative;width:min(560px,92vw);aspect-ratio:1;margin:0 auto}
+  .ring{position:absolute;inset:0;border-radius:50%;
+    background:conic-gradient(from 0deg,var(--cyan),var(--lime),var(--violet),var(--amber),var(--cyan));
+    -webkit-mask:radial-gradient(circle,transparent 38%,#000 39%);mask:radial-gradient(circle,transparent 38%,#000 39%);
+    opacity:.32;animation:spin 26s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hubcore{position:absolute;inset:30%;border-radius:50%;background:radial-gradient(circle,#15224a,#0a1226);
+    border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px}
+  .hubcore .h{font-weight:900;font-size:clamp(15px,3vw,20px)}.hubcore .s{color:var(--muted);font-size:11px;margin-top:3px}
+  .node{position:absolute;width:148px;margin-left:-74px;text-align:center}
+  .node .ic{width:54px;height:54px;margin:0 auto;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    font-size:26px;background:#101d3b;border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.4)}
+  .node .t{font-weight:800;font-size:13px;margin-top:8px}.node .d{color:var(--muted);font-size:11px;line-height:1.4;margin-top:2px}
+  .n1{top:-2%;left:50%}.n2{top:22%;left:96%}.n3{top:72%;left:92%}
+  .n4{top:99%;left:50%}.n5{top:72%;left:8%}.n6{top:22%;left:4%}
+  @media(max-width:640px){.fly{display:none}.flylist{display:block!important}}
+  .flylist{display:none;max-width:540px;margin:0 auto}
+  .flylist .row{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+  .flylist .e{font-size:22px}.flylist .t{font-weight:800}.flylist .d{color:var(--muted);font-size:13px}
+
+  /* cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .card .ic{font-size:30px}.card h3{font-size:18px;margin:10px 0 6px}.card p{color:var(--muted);font-size:14px;line-height:1.55}
+  .stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:8px}
+  .stat .s{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+  .stat .v{font-size:30px;font-weight:900}.stat .v.c{color:var(--cyan)}.stat .v.l{color:var(--lime)}.stat .v.vi{color:var(--violet)}
+  .stat .k{color:var(--muted);font-size:12px;margin-top:4px}
+
+  .proof{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;align-items:center}
+  @media(max-width:760px){.proof{grid-template-columns:1fr}}
+  .proof img{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
+
+  /* offer band */
+  .offer{background:linear-gradient(180deg,rgba(0,255,136,.07),transparent);border:1px solid rgba(0,255,136,.3);border-radius:20px;padding:30px;text-align:center}
+  .price{font-size:54px;font-weight:900}.price small{font-size:18px;color:var(--muted);font-weight:700}
+  .pillrow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:16px 0}
+  .pillrow span{border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:12.5px;color:var(--muted)}
+  .callbig{display:inline-flex;flex-direction:column;align-items:center;text-decoration:none;color:#062012;margin-top:10px;
+    background:linear-gradient(180deg,#2bff9e,#00c46a);border-radius:18px;padding:18px 28px;border:2px solid rgba(255,255,255,.4);
+    box-shadow:0 14px 44px rgba(0,255,136,.42);animation:pulse 1.9s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 14px 44px rgba(0,255,136,.4)}50%{box-shadow:0 14px 58px rgba(0,255,136,.78)}}
+  .callbig .n{font-size:30px;font-weight:900;letter-spacing:1px}.callbig .f{font-size:12px;font-weight:700;opacity:.85;margin-top:5px;max-width:420px;text-align:center}
+
+  .only-investor{display:none}
+  body.mode-investor .only-investor{display:revert}
+  body.mode-investor .only-prospect{display:none}
+
+  .foot{border-top:1px solid var(--line);padding:26px 0 60px;text-align:center;color:var(--muted);font-size:13px}
+  .foot a{color:var(--cyan);text-decoration:none}
+  .badge{display:inline-block;margin-bottom:10px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+    color:var(--lime);border:1px solid rgba(0,255,136,.4);border-radius:999px;padding:5px 12px}
+</style>
+</head>
+<body class="mode-prospect">
+
+<div class="bar">
+  <div class="logo"><b>TEL</b>VERGENCE</div>
+  <div class="toggle" role="tablist">
+    <button id="tProspect" class="on" onclick="setMode('prospect')">👤 For Subscribers</button>
+    <button id="tInvestor" onclick="setMode('investor')">📈 For Investors</button>
+  </div>
+  <a class="callmini" href="tel:+16892421041">📞 (689) 242-1041</a>
+</div>
+
+<!-- HERO -->
+<header class="hero wrap">
+  <div class="eyebrow" id="eyebrow">Weather Intelligence Network · Live</div>
+  <h1 id="headline"></h1>
+  <p class="lede" id="lede"></p>
+  <div class="acts">
+    <a class="btn btn-p only-prospect" href="telvergence-onboarding-funnel.html">⚡ Activate free — $0 today</a>
+    <a class="btn btn-p only-investor" href="#flywheel">📈 See the flywheel economics</a>
+    <a class="btn btn-g" href="vault-7kq9x2m4/telvergence-demo.html">🛰️ Open the live app</a>
+    <a class="btn btn-g" href="telvergence-3d.html">🎬 3D walkthrough</a>
+  </div>
+
+  <div class="film">
+    <video controls playsinline preload="metadata" poster="vault-7kq9x2m4/win-tv-assets/win-tv-poster.jpg">
+      <source src="vault-7kq9x2m4/win-tv-assets/win-tv-intro.webm" type="video/webm">
+      <a href="vault-7kq9x2m4/win-tv-assets/win-tv-intro.webm" style="color:var(--cyan)">Play the WIN TV intro</a>
+    </video>
+  </div>
+  <div class="filmcap">▶ <b>WIN TV — Series Intro</b> · opens on real June 2026 Everglades fire footage · the network that sees the storm first</div>
+</header>
+
+<!-- THE FLYWHEEL (the unique perspective) -->
+<section id="flywheel" class="wrap">
+  <div class="badge">The unique perspective</div>
+  <h2 class="sec-h">The self-distributing <span class="grad">flywheel</span></h2>
+  <p class="sec-sub" id="flySub"></p>
+
+  <div class="fly">
+    <div class="ring"></div>
+    <div class="hubcore"><div class="h">Every<br>subscriber</div><div class="s">is also a distributor</div></div>
+    <div class="node n1"><div class="ic">⚡</div><div class="t">1 · Activate</div><div class="d">10 branded E911 lines in ~30s, $0 today</div></div>
+    <div class="node n2"><div class="ic">📞</div><div class="t">2 · Use & connect</div><div class="d">Unlimited calls; storm grid routes work to them</div></div>
+    <div class="node n3"><div class="ic">💰</div><div class="t">3 · Earn 10%</div><div class="d">Refer local providers → 10% of the gross they bill</div></div>
+    <div class="node n4"><div class="ic">🤝</div><div class="t">4 · Recruit providers</div><div class="d">Add essential services into the WIN network</div></div>
+    <div class="node n5"><div class="ic">🏷️</div><div class="t">5 · Wholesale / white-label</div><div class="d">Resell lines under their own brand</div></div>
+    <div class="node n6"><div class="ic">🗺️</div><div class="t">6 · Own the territory</div><div class="d">Authorized Dedicated Provider → grid saturation</div></div>
+  </div>
+
+  <div class="flylist">
+    <div class="row"><span class="e">⚡</span><div><div class="t">1 · Activate</div><div class="d">10 branded E911 lines in ~30s, $0 today.</div></div></div>
+    <div class="row"><span class="e">📞</span><div><div class="t">2 · Use & connect</div><div class="d">Unlimited calls; the storm grid routes work to them.</div></div></div>
+    <div class="row"><span class="e">💰</span><div><div class="t">3 · Earn 10%</div><div class="d">Refer local providers and earn 10% of the gross they bill.</div></div></div>
+    <div class="row"><span class="e">🤝</span><div><div class="t">4 · Recruit providers</div><div class="d">Add essential services into the WIN dispatch network.</div></div></div>
+    <div class="row"><span class="e">🏷️</span><div><div class="t">5 · Wholesale / white-label</div><div class="d">Resell lines under their own brand at a margin.</div></div></div>
+    <div class="row"><span class="e">🗺️</span><div><div class="t">6 · Own the territory</div><div class="d">Become the Authorized Dedicated Provider — national grid saturation.</div></div></div>
+  </div>
+  <p class="sec-sub" style="margin-top:26px" id="flyClose"></p>
+</section>
+
+<!-- ENGINE + PROOF CASE -->
+<section class="wrap">
+  <h2 class="sec-h">One engine. <span class="grad">Two revenue lines.</span></h2>
+  <p class="sec-sub">TELVERGENCE is the engine — branded local numbers, AI-assisted intake, call tracking, white-label. Restoration Royalty is the live proof case — IICRC-certified, licensed &amp; insured, 24/7.</p>
+  <div class="grid">
+    <div class="card"><div class="ic">🏢</div><h3>Direct commercial remediation</h3><p>Fire/smoke + soot + HVAC + odor jobs from property managers, condo/HOA and multifamily. <b>One condo tower = many units, common areas &amp; HVAC</b> — a single contract worth many single-family jobs.</p></div>
+    <div class="card"><div class="ic">🔗</div><h3>Restoration-partner network</h3><p>Referral swaps + overflow subcontracting with other restoration/roofing shops — demand we can't service still converts, and feeds the white-label side.</p></div>
+    <div class="card"><div class="ic">📡</div><h3>How the calls connect</h3><p>Local-presence dialing (954/754 · 305/786), branded STIR/SHAKEN CNAM so we're never "Spam Likely," rotating DID pools, one AI intake queue. Built commercial-first to stay clean under Florida's calling rules.</p></div>
+  </div>
+</section>
+
+<!-- INVESTOR: economics & moat -->
+<section class="wrap only-investor">
+  <div class="badge">Why it compounds</div>
+  <h2 class="sec-h">The economics &amp; the moat</h2>
+  <p class="sec-sub">A recurring-revenue telecom whose growth engine is its own customer base — and whose hardest-to-copy assets it owns outright.</p>
+  <div class="stat">
+    <div class="s"><div class="v c">$229.50</div><div class="k">MRC per 10-line account ($22.95 × 10)</div></div>
+    <div class="s"><div class="v l">Recurring</div><div class="k">Prepaid monthly, card-on-file, cancel anytime</div></div>
+    <div class="s"><div class="v vi">Self-distributing</div><div class="k">Every subscriber is a retail/wholesale/white-label channel</div></div>
+    <div class="s"><div class="v c">Owned</div><div class="k">DIDs at the carrier level + proprietary API/source code</div></div>
+  </div>
+  <div class="grid" style="margin-top:16px">
+    <div class="card"><div class="ic">🛡️</div><h3>The moat</h3><p>TELVERGENCE owns its phone numbers at the carrier level and maintains sole possession of its API source code — the two factors that drive enterprise value in a wholesale VoIP / UCaaS business.</p></div>
+    <div class="card"><div class="ic">🌪️</div><h3>Demand trigger</h3><p>Real, time-boxed weather events create urgent, high-value remediation demand. Live NWS intelligence lets the network reach exposure zones first — turning data into dispatched revenue.</p></div>
+    <div class="card"><div class="ic">🏷️</div><h3>White-label, already proven</h3><p>The same engine already powers multiple branded fronts (storm/roofing, restoration, weather intelligence). New verticals are a configuration, not a rebuild.</p></div>
+  </div>
+</section>
+
+<!-- PROOF: real fire + live weather -->
+<section class="wrap">
+  <h2 class="sec-h">Real storms. <span class="grad">Real footage.</span> Real dispatch.</h2>
+  <div class="proof">
+    <img src="vault-7kq9x2m4/win-tv-assets/fire-everglades.jpeg" alt="Everglades wildfire reaching the highway, west Miami-Dade, June 2026">
+    <div>
+      <p style="color:var(--muted);font-size:15px;line-height:1.6"><b style="color:var(--amber)">June 2026 — west Miami-Dade.</b> 20,000+ acres burned; smoke &amp; soot pushed across Broward and Miami-Dade. The Weather Intelligence Network read the plume in real time and aimed the campaign at the exposure zones while the window was open.</p>
+      <div class="acts" style="justify-content:flex-start;margin-top:18px">
+        <a class="btn btn-p" href="vault-7kq9x2m4/restoration-royalty-smoke.html">👑🔥 Open the live smoke campaign</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="wrap">
+  <div class="offer">
+    <div class="badge" id="offerBadge">The offer</div>
+    <div class="price">$22.95<small> / line / month</small></div>
+    <p class="sec-sub" style="margin:8px auto 0" id="offerSub"></p>
+    <div class="pillrow">
+      <span>⚡ ~30s activation</span><span>💳 $0 today · 30 days free</span><span>🔑 DOB PIN · no SSN</span>
+      <span>🔀 Remote call forwarding</span><span>🔁 Cancel anytime</span><span>💯 100% satisfaction</span>
+    </div>
+    <div class="acts" style="margin-top:8px">
+      <a class="btn btn-p only-prospect" href="telvergence-onboarding-funnel.html">⚡ Activate my 10 lines — $0 today</a>
+      <a class="btn btn-p only-investor" href="telvergence-onboarding-funnel.html">▶ Walk the live activation funnel</a>
+    </div>
+    <a class="callbig" href="tel:+16892421041">📞 CALL THE FOUNDER — WE ACTIVATE YOU LIVE
+      <span class="n">(689) 242-1041</span>
+      <span class="f">10 lines activated on the call with a simple verbal OK · $0 out of pocket · no card · no commitment · no obligation · 💯 100% satisfaction guarantee</span>
+    </a>
+  </div>
+</section>
+
+<div class="foot wrap">
+  <p>TELVERGENCE — Integrated Communication Technologies · 📞 <a href="tel:+16892421041">(689) 242-1041</a> · 💬 <a href="sms:+16892421041">Text us</a></p>
+  <p style="margin-top:8px">Confidential &amp; proprietary — shared by invitation only. © TELVERGENCE.</p>
+</div>
+
+<script>
+  var COPY = {
+    prospect:{
+      eyebrow:"Weather Intelligence Network · Live",
+      headline:'Activate 10 branded lines in 30 seconds — <span class="grad">and get paid to grow the network.</span>',
+      lede:"Ten branded, E911-ready phone numbers that ring the phone you already carry — $0 today, 30 days free. Every line you run also makes you a distributor.",
+      flySub:"You don't just buy a service. The moment you activate, you're plugged into a flywheel that pays you to grow it.",
+      flyClose:"That's the difference: every subscriber is naturally endowed with the inherent ability to be a retailer, a wholesaler, and a white-label provider — all at once.",
+      offerBadge:"Your offer",
+      offerSub:"10 lines × $22.95 = $229.50/mo after your free 30 days. Plus 10% of the gross from every provider you refer."
+    },
+    investor:{
+      eyebrow:"Investor Briefing · Confidential",
+      headline:'A self-distributing telecom flywheel: <span class="grad">every subscriber is a distributor.</span>',
+      lede:"Recurring-revenue VoIP whose growth channel is its own customer base — riding real, time-boxed weather demand, on assets the company owns outright.",
+      flySub:"The customer acquisition channel and the customer are the same person. Each subscriber retails, wholesales, and white-labels — compounding distribution without proportional CAC.",
+      flyClose:"Because every subscriber is inherently a retail/wholesale/white-label channel, distribution compounds with the subscriber base instead of scaling linearly with marketing spend.",
+      offerBadge:"Unit of value",
+      offerSub:"Each account is a $229.50/mo recurring unit that can itself originate new accounts and new provider revenue — the flywheel's atomic unit."
+    }
+  };
+  function apply(m){
+    var c=COPY[m];
+    document.getElementById('eyebrow').textContent=c.eyebrow;
+    document.getElementById('headline').innerHTML=c.headline;
+    document.getElementById('lede').textContent=c.lede;
+    document.getElementById('flySub').textContent=c.flySub;
+    document.getElementById('flyClose').textContent=c.flyClose;
+    document.getElementById('offerBadge').textContent=c.offerBadge;
+    document.getElementById('offerSub').textContent=c.offerSub;
+    document.body.className='mode-'+m;
+    document.getElementById('tProspect').classList.toggle('on',m==='prospect');
+    document.getElementById('tInvestor').classList.toggle('on',m==='investor');
+  }
+  function setMode(m){ apply(m); if(history.replaceState) history.replaceState(null,'','#'+m); }
+  var start=(location.hash||'').replace('#','');
+  apply(start==='investor'?'investor':'prospect');
+</script>
+</body>
+</html>
