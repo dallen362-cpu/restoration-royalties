@@ -46,6 +46,18 @@
     box-shadow:0 12px 40px rgba(255,59,92,.4);letter-spacing:.3px;line-height:1.2}
   .cta-red:active{transform:translateY(1px)}
   .cta-red small{display:block;font-size:13px;font-weight:600;opacity:.92;margin-top:6px;letter-spacing:0}
+  .cta-call{display:block;width:100%;max-width:540px;margin:16px auto;text-decoration:none;
+    background:linear-gradient(180deg,#2bff9e,#00c46a);color:#062012;border-radius:18px;padding:24px 18px;
+    font-size:clamp(20px,4.2vw,28px);font-weight:900;text-align:center;letter-spacing:.3px;line-height:1.15;
+    box-shadow:0 14px 46px rgba(0,255,136,.45);border:2px solid rgba(255,255,255,.35);
+    animation:callpulse 1.8s ease-in-out infinite}
+  .cta-call .num{display:block;font-size:clamp(26px,6vw,40px);font-weight:900;letter-spacing:1px;margin-top:4px}
+  .cta-call small{display:block;font-size:13.5px;font-weight:700;opacity:.85;margin-top:8px;letter-spacing:0}
+  .cta-call:active{transform:translateY(1px)}
+  @keyframes callpulse{0%,100%{box-shadow:0 14px 46px rgba(0,255,136,.40)}50%{box-shadow:0 14px 60px rgba(0,255,136,.75)}}
+  .ordiv{max-width:540px;margin:18px auto 4px;text-align:center;color:#8ea3c9;font-size:12px;letter-spacing:2px;font-weight:700;position:relative}
+  .ordiv:before,.ordiv:after{content:"";position:absolute;top:50%;width:38%;height:1px;background:var(--line)}
+  .ordiv:before{left:0}.ordiv:after{right:0}
   .btn{border:none;cursor:pointer;font-family:var(--g);font-weight:800;border-radius:12px;padding:15px 24px;font-size:16px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
   .btn-primary{background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c}
   .btn-ghost{background:rgba(255,255,255,.06);color:var(--ink);border:1px solid var(--line)}
@@ -125,6 +137,8 @@
       <span>🔀 REMOTE CALL FORWARDING</span><span>📞 ANY LINE → ANY PHONE</span><span>♾️ UNLIMITED CALLS &amp; CONNECTS</span><span>🛡️ E911 READY</span><span>🔀 REMOTE CALL FORWARDING</span><span>📞 ANY LINE → ANY PHONE</span><span>♾️ UNLIMITED CALLS &amp; CONNECTS</span><span>🛡️ E911 READY</span>
     </div></div>
     <button class="cta-red" data-next>⚡ FREE INSTANT ACTIVATION OF 10-LINE SMART DID PACK<small>$0 today · first 30 days free · then $229.50/mo · cancel anytime</small></button>
+    <div class="ordiv">OR JUST CALL THE FOUNDER — WE ACTIVATE YOU LIVE</div>
+    <a class="cta-call" href="tel:+16892421041">📞 CALL TO ACTIVATE NOW<span class="num">(689) 242-1041</span><small>Reach the founder direct · we assign &amp; activate your 10 lines on the call with a simple verbal OK · $0 out of pocket · no card · no commitment · no obligation · 💯 100% satisfaction guarantee</small></a>
     <div class="trust"><div>⚡ <b>~30s</b> activation</div><div>🔀 <b>Remote</b> call forwarding</div><div>🔑 <b>No SSN</b></div><div>🔁 Cancel anytime</div></div>
     <div class="guarbig">💯 100% Satisfaction Guarantee, always — backed by network quality &amp; advanced features.</div>
     <div style="text-align:center;margin-top:6px"><a class="ibtn call" href="tel:+16892421041">📞 (689) 242-1041</a> <a class="ibtn text" href="sms:+16892421041">💬 Text us</a></div>
