@@ -139,7 +139,7 @@
       <a class="btn btn-primary" href="telvergence-onboarding-funnel.html">⚡ Activate free — $0 today</a>
       <a class="btn btn-ghost" href="telvergence-demo.html">▶ Enter the live app</a>
     </div>
-    <div class="talk" id="talk"><span class="eq"><i></i><i></i><i></i><i></i><i></i></span> <span id="talkTxt">Hear it speak</span></div>
+    <div class="talk" id="talk"><span class="eq"><i></i><i></i><i></i><i></i><i></i></span> <span id="talkTxt">🇬🇧 Hear her speak</span></div>
     <div class="scrollcue">SCROLL</div>
   </section>
 
@@ -256,15 +256,32 @@
   })},{threshold:.6});
   document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);});
 
-  /* ---------- talking narrator ---------- */
+  /* ---------- talking narrator — female British voice ---------- */
   (function(){
-    var t=document.getElementById('talk'), tx=document.getElementById('talkTxt'), synth=window.speechSynthesis, on=false;
-    var script="Welcome to Telvergence. In about thirty seconds, we activate ten branded, E 9 1 1 ready phone lines that ring the phone you already carry — forwarded anywhere, anytime. A live national storm grid sends work to your territory in real time. Start free for thirty days, no money down. Activate the network, and own your territory.";
+    var t=document.getElementById('talk'), tx=document.getElementById('talkTxt'), synth=window.speechSynthesis, on=false, voice=null;
+    // Preference order: premium female UK voices across Chrome / Edge / iOS / Android
+    var FEMALE_UK=[/Sonia/i,/Libby/i,/Hazel/i,/Serena/i,/Stephanie/i,/Kate/i,/Martha/i,/Google UK English Female/i,/British.*female/i];
+    var FEMALE_ANY=[/female/i,/Samantha/i,/Victoria/i,/Karen/i,/Moira/i,/Tessa/i,/Fiona/i,/Zira/i,/Aria/i,/Jenny/i];
+    function isUK(v){ return /en[-_]?GB/i.test(v.lang)||/british|United Kingdom|\bUK\b/i.test(v.name); }
+    function pick(){
+      var vs = synth ? synth.getVoices() : []; if(!vs.length) return;
+      var uk = vs.filter(isUK);
+      for(var i=0;i<FEMALE_UK.length;i++){ var m=(uk.concat(vs)).find(function(v){return FEMALE_UK[i].test(v.name);}); if(m){voice=m;return;} }
+      // any UK voice flagged female, else any UK voice, else any female English, else first English
+      voice = uk.find(function(v){return /female/i.test(v.name);}) || uk[0]
+           || vs.find(function(v){ if(!/^en/i.test(v.lang))return false; return FEMALE_ANY.some(function(r){return r.test(v.name);}); })
+           || vs.find(function(v){return /^en/i.test(v.lang);}) || vs[0];
+    }
+    if(synth){ pick(); synth.onvoiceschanged=pick; }
+    var script="Hello… and welcome to Telvergence. In just thirty seconds, we bring ten branded, E 9 1 1 ready lines to life — each one ringing the phone already in your pocket, forwarded anywhere, the very moment you wish. A living, national storm grid sends the work straight to your territory, in real time. Begin free for thirty days, with nothing down. Activate the network… and own your territory.";
     t.onclick=function(){ if(!synth){ tx.textContent='Voice unavailable'; return; }
-      if(on){ synth.cancel(); on=false; t.classList.remove('on'); tx.textContent='Hear it speak'; return; }
-      try{ synth.cancel(); var u=new SpeechSynthesisUtterance(script); u.rate=1.02;
+      if(on){ synth.cancel(); on=false; t.classList.remove('on'); tx.textContent='🇬🇧 Hear her again'; return; }
+      try{ synth.cancel(); if(!voice) pick();
+        var u=new SpeechSynthesisUtterance(script);
+        if(voice) u.voice=voice;
+        u.lang='en-GB'; u.rate=0.88; u.pitch=1.06;   // slower + warm = sultry British delivery
         u.onstart=function(){ on=true; t.classList.add('on'); tx.textContent='Speaking… (tap to stop)'; };
-        u.onend=function(){ on=false; t.classList.remove('on'); tx.textContent='Hear it again'; };
+        u.onend=function(){ on=false; t.classList.remove('on'); tx.textContent='🇬🇧 Hear her again'; };
         synth.speak(u);
       }catch(e){ tx.textContent='Voice unavailable'; }
     };
