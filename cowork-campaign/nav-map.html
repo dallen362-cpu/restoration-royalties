@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>TELVERGENCE — Talking Site Navigation Map</title>
+<style>
+  :root{
+    --midnight:#0A0E1A;--card:#141d33;--line:#26345a;
+    --cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--amber:#ff8a3d;
+    --ink:#eaf2ff;--muted:#9fb3d6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);min-height:100vh;
+    background:radial-gradient(1100px 640px at 50% -8%,#1a2547,var(--midnight) 60%);padding-bottom:60px}
+  .grad{background:linear-gradient(90deg,var(--cyan),var(--lime),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+
+  .bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    padding:12px 18px;background:rgba(10,14,26,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .logo{font-weight:900;letter-spacing:1px}.logo b{color:var(--cyan)}
+  .controls{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+  .ctl{border:1px solid var(--line);background:#0c1730;color:var(--ink);font-weight:800;font-size:13px;
+    border-radius:999px;padding:9px 16px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+  .ctl.play{background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c;border:none}
+  .ctl:hover{border-color:var(--cyan)}
+
+  header{text-align:center;padding:36px 0 6px}
+  header h1{font-size:clamp(26px,5vw,44px)}
+  header p{color:var(--muted);max-width:620px;margin:10px auto 0}
+  .narr{max-width:760px;margin:18px auto 0;min-height:58px;background:rgba(255,255,255,.04);border:1px solid var(--line);
+    border-radius:14px;padding:14px 18px;display:flex;align-items:center;justify-content:center;gap:12px;text-align:center;font-size:15px;color:#dce8fb}
+  .eq{display:inline-flex;gap:3px;align-items:flex-end;height:18px}
+  .eq i{width:3px;height:6px;background:var(--lime);border-radius:2px;animation:eq 1s infinite}
+  .eq i:nth-child(2){animation-delay:.15s}.eq i:nth-child(3){animation-delay:.3s}.eq i:nth-child(4){animation-delay:.45s}
+  .speaking .eq i{height:16px}
+  @keyframes eq{0%,100%{height:5px}50%{height:16px}}
+
+  .tier{margin:30px 0 0}
+  .tlabel{display:flex;align-items:center;gap:10px;justify-content:center;color:var(--muted);font-size:12px;
+    letter-spacing:3px;text-transform:uppercase;font-weight:800;margin-bottom:14px}
+  .tlabel .ln{height:1px;width:60px;background:var(--line)}
+  .row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  .arrow{text-align:center;color:#3b4c74;font-size:24px;margin:8px 0 0}
+
+  a.node{position:relative;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:18px;width:240px;transition:transform .18s,border-color .18s,box-shadow .25s}
+  a.node:hover{transform:translateY(-4px);border-color:var(--cyan)}
+  a.node .ic{font-size:30px}
+  a.node h3{font-size:16px;margin:8px 0 4px}
+  a.node p{color:var(--muted);font-size:12.5px;line-height:1.45}
+  a.node .go{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;color:var(--cyan)}
+  a.node.active{border-color:var(--lime);box-shadow:0 0 0 2px rgba(0,255,136,.4),0 16px 44px rgba(0,255,136,.28);transform:translateY(-4px)}
+  a.node .tag{position:absolute;top:10px;right:12px;font-size:10px;font-weight:800;color:var(--muted)}
+  .c-cyan{} .c-lime h3{color:var(--lime)} .c-violet h3{color:var(--violet)} .c-amber h3{color:var(--amber)}
+
+  .hint{text-align:center;color:#6f82a8;font-size:12px;margin-top:30px}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="logo"><b>TEL</b>VERGENCE · Site Map</div>
+  <div class="controls">
+    <button class="ctl play" id="play">▶ Play guided tour</button>
+    <button class="ctl" id="stop">⏹ Stop</button>
+    <a class="ctl" href="present.html">← Back to deck</a>
+  </div>
+</div>
+
+<header class="wrap">
+  <h1>The whole platform, <span class="grad">one guided map</span></h1>
+  <p>Press play and a guide will walk you through every part of TELVERGENCE — what it is and where each link takes you. Click any tile to jump straight in.</p>
+  <div class="narr" id="narr"><span class="eq" id="eq"><i></i><i></i><i></i><i></i></span><span id="narrTxt">🇬🇧 Press “Play guided tour” to begin — or click any tile to explore.</span></div>
+</header>
+
+<div class="wrap">
+
+  <div class="tier">
+    <div class="tlabel"><span class="ln"></span>Start here<span class="ln"></span></div>
+    <div class="row">
+      <a class="node c-cyan" id="n-door" href="index.html"><span class="tag">entry</span><div class="ic">🔒</div><h3>Access Front Door</h3><p>The private gate. Confirms it's invitation-only and routes invited guests inward.</p><span class="go">Open →</span></a>
+      <a class="node c-lime" id="n-deck" href="present.html"><span class="tag">share this</span><div class="ic">🌀</div><h3>Dual Deck — Prospect &amp; Investor</h3><p>One link, two views via a toggle. The flywheel story, the movie, the offer.</p><span class="go">Open →</span></a>
+      <a class="node c-violet" id="n-3d" href="telvergence-3d.html"><div class="ic">🎬</div><h3>3D Talking Flagship</h3><p>The narrated, animated walkthrough of the whole vision.</p><span class="go">Open →</span></a>
+    </div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <div class="tier">
+    <div class="tlabel"><span class="ln"></span>Activate</div>
+    <div class="row">
+      <a class="node c-lime" id="n-funnel" href="telvergence-onboarding-funnel.html"><div class="ic">⚡</div><h3>Activation Funnel</h3><p>6 guided steps: pick lines, set the forward-to phone, DOB PIN — no SSN. $0 today.</p><span class="go">Open →</span></a>
+      <a class="node c-cyan" id="n-loa" href="agreement.html"><div class="ic">✍️</div><h3>Letter of Authorization</h3><p>The e-signed VoIP service agreement &amp; card-on-file authorization — first charge on day 31.</p><span class="go">Open →</span></a>
+    </div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <div class="tier">
+    <div class="tlabel"><span class="ln"></span>Experience</div>
+    <div class="row">
+      <a class="node c-cyan" id="n-app" href="vault-7kq9x2m4/telvergence-demo.html"><div class="ic">🛰️</div><h3>Live Storm Dispatch App</h3><p>The national storm map — live NWS alerts auto-dispatching crews to territories.</p><span class="go">Open →</span></a>
+      <a class="node c-violet" id="n-wintv" href="vault-7kq9x2m4/win-tv.html"><div class="ic">📺</div><h3>WIN TV</h3><p>The Weather Intelligence Network channel — opens on the real fire intro film.</p><span class="go">Open →</span></a>
+      <a class="node c-amber" id="n-smoke" href="vault-7kq9x2m4/restoration-royalty-smoke.html"><div class="ic">👑🔥</div><h3>Smoke Response Campaign</h3><p>Live South Florida fire campaign with real footage + lead/response tracking.</p><span class="go">Open →</span></a>
+    </div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <div class="tier">
+    <div class="tlabel"><span class="ln"></span>Grow — the flywheel</div>
+    <div class="row">
+      <a class="node c-lime" id="n-partner" href="vault-7kq9x2m4/partner.html"><div class="ic">💰</div><h3>Agent Partner Portal</h3><p>Every subscriber earns 10% of the gross by connecting work to local providers.</p><span class="go">Open →</span></a>
+      <a class="node c-cyan" id="n-grid" href="vault-7kq9x2m4/grid.html"><div class="ic">🗺️</div><h3>National Grid Saturation</h3><p>Claim a territory as the Authorized Dedicated Provider — wholesale &amp; white-label.</p><span class="go">Open →</span></a>
+    </div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <div class="tier">
+    <div class="tlabel"><span class="ln"></span>Operate — back office</div>
+    <div class="row">
+      <a class="node c-violet" id="n-back" href="vault-7kq9x2m4/backoffice.html"><div class="ic">🧩</div><h3>Integrated Back Office</h3><p>BOSS CRM + LMS + ViciDial — add a lead, dial it, disposition it, watch KPIs.</p><span class="go">Open →</span></a>
+      <a class="node c-cyan" id="n-watch" href="vault-7kq9x2m4/watch.html"><div class="ic">📊</div><h3>Live Visit Dashboard</h3><p>See who views the links, when, and what they focus on — in real time.</p><span class="go">Open →</span></a>
+      <a class="node c-lime" id="n-hub" href="vault-7kq9x2m4/index.html"><div class="ic">👑</div><h3>Master Hub</h3><p>The internal index that ties every secured module together.</p><span class="go">Open →</span></a>
+    </div>
+  </div>
+
+  <p class="hint">Tip: this guide uses your device's voice. If you hear nothing, tap “Play guided tour” once more — some browsers need a tap before audio.</p>
+</div>
+
+<script>
+  // ---- narration script: [nodeId, spoken text] ----
+  var TOUR = [
+    [null, "Welcome to Telvergence. Let me walk you through the entire platform, from the very first door to the back office that runs it all."],
+    ["n-door", "Everything begins at the Access Front Door. It's private and invitation-only — it confirms our blueprints are protected, then welcomes invited guests inward."],
+    ["n-deck", "From there, most people land on the Dual Deck. One link serves two audiences — subscribers and investors — with a simple toggle. It tells the flywheel story, plays the film, and presents the offer."],
+    ["n-3d", "If you'd like the cinematic version, the 3D Talking Flagship is a narrated, animated walkthrough of the whole vision."],
+    ["n-funnel", "When you're ready to act, the Activation Funnel takes over. Six guided steps: choose your lines, set the phone they ring, and a date-of-birth PIN — never a social security number. Zero dollars today."],
+    ["n-loa", "Before any card is charged, you e-sign the Letter of Authorization — our standard VoIP service agreement. The card is simply kept on file; the first charge isn't until day thirty-one."],
+    ["n-app", "Now the experience. The Live Storm Dispatch App is the heart of it — a national map lighting up with real weather-service alerts, automatically dispatching crews to the right territory."],
+    ["n-wintv", "WIN TV is our channel — the Weather Intelligence Network — and it opens on real wildfire footage from the field."],
+    ["n-smoke", "The Smoke Response Campaign shows it all working live in South Florida: real fire footage, exposure zones, and lead and response tracking as it happens."],
+    ["n-partner", "Here's what makes us different. In the Agent Partner Portal, every subscriber earns ten percent of the gross by connecting storm work to local providers."],
+    ["n-grid", "And in National Grid Saturation, a subscriber can claim a territory as its Authorized Dedicated Provider — reselling wholesale and white-label. Every subscriber is, by nature, a distributor."],
+    ["n-back", "Behind the scenes, the Integrated Back Office ties it together — our BOSS CRM and learning system with the ViciDial front end. Add a lead, dial it, disposition it, and watch the numbers move."],
+    ["n-watch", "The Live Visit Dashboard shows who views these links, when, and what they focus on — in real time."],
+    ["n-hub", "And the Master Hub is the single index that connects every secured module. That's the whole platform — press play any time to hear it again. Welcome to Telvergence."]
+  ];
+
+  var narrTxt=document.getElementById('narrTxt'), narr=document.getElementById('narr');
+  var idx=0, playing=false, voice=null;
+
+  function pickVoice(){
+    var vs=speechSynthesis.getVoices()||[];
+    var pref=["Google UK English Female","Microsoft Sonia","Microsoft Libby","Microsoft Hazel","Serena","Kate","Stephanie"];
+    for(var i=0;i<pref.length;i++){var m=vs.find(function(v){return v.name.indexOf(pref[i])>-1});if(m)return m;}
+    var enGB=vs.filter(function(v){return /en-GB/i.test(v.lang)});
+    var fem=enGB.find(function(v){return /female|sonia|libby|hazel|serena|kate/i.test(v.name)});
+    return fem||enGB[0]||vs.find(function(v){return /^en/i.test(v.lang)})||vs[0]||null;
+  }
+  if('speechSynthesis' in window){ speechSynthesis.onvoiceschanged=function(){voice=pickVoice();}; voice=pickVoice(); }
+
+  function clearActive(){document.querySelectorAll('a.node.active').forEach(function(n){n.classList.remove('active')});}
+  function highlight(id){
+    clearActive();
+    if(!id)return;
+    var el=document.getElementById(id);
+    if(el){el.classList.add('active'); el.scrollIntoView({behavior:'smooth',block:'center'});}
+  }
+  function speakStep(){
+    if(!playing||idx>=TOUR.length){stopTour();return;}
+    var step=TOUR[idx], id=step[0], text=step[1];
+    highlight(id); narrTxt.textContent=text; narr.classList.add('speaking');
+    if(!('speechSynthesis' in window)){ setTimeout(function(){idx++;speakStep();},2600); return; }
+    var u=new SpeechSynthesisUtterance(text);
+    if(voice)u.voice=voice; u.lang='en-GB'; u.rate=.9; u.pitch=1.05;
+    u.onend=function(){ idx++; if(playing) setTimeout(speakStep,350); };
+    u.onerror=function(){ idx++; if(playing) setTimeout(speakStep,350); };
+    speechSynthesis.speak(u);
+  }
+  function startTour(){
+    if('speechSynthesis' in window) speechSynthesis.cancel();
+    playing=true; idx=0; document.getElementById('play').textContent='▶ Playing…'; speakStep();
+  }
+  function stopTour(){
+    playing=false; if('speechSynthesis' in window) speechSynthesis.cancel();
+    narr.classList.remove('speaking'); clearActive();
+    document.getElementById('play').textContent='▶ Play guided tour';
+    narrTxt.textContent='🇬🇧 Tour stopped. Press play to start again — or click any tile to explore.';
+  }
+  document.getElementById('play').onclick=startTour;
+  document.getElementById('stop').onclick=stopTour;
+  // hover-to-hear-label: speak the node title softly on click-intent is handled by navigation; keep map clickable.
+  window.addEventListener('beforeunload',function(){if('speechSynthesis' in window)speechSynthesis.cancel();});
+</script>
+</body>
+</html>
