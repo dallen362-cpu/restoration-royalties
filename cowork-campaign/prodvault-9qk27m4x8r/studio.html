@@ -71,6 +71,18 @@
   <p style="max-width:680px;margin:14px auto 0;font-size:14px;background:rgba(123,97,255,.1);border:1px solid #4a3f8a;border-radius:12px;padding:12px 16px;color:#d9ccff">🧬 Think of it like genetics: <b style="color:#cdbfff">your website</b> is one parent, <b style="color:var(--cyan)">TELVERGENCE</b> is the other — the studio breeds them into a production-ready <b style="color:var(--lime)">offspring</b> that carries the best of both: your brand, our firepower.</p>
 </header>
 
+<div class="wrap">
+  <div style="background:linear-gradient(180deg,rgba(0,212,255,.08),rgba(123,97,255,.06));border:1px solid var(--line);border-radius:18px;padding:20px;margin-top:10px">
+    <label for="siteHero" style="display:block;font-weight:800;font-size:15px;margin-bottom:8px">🧬 Enter your current website address to begin the mashup</label>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <input id="siteHero" placeholder="yourcompany.com" autocomplete="url" inputmode="url"
+        style="flex:1;min-width:240px;padding:16px;font-size:18px;border-radius:12px;border:1px solid var(--cyan);background:#0c1730;color:var(--ink)">
+      <button class="btn btn-p" id="genHero" style="font-size:16px;padding:16px 26px">🧬 Mash it up →</button>
+    </div>
+    <div style="color:var(--muted);font-size:12.5px;margin-top:8px">We breed your site with TELVERGENCE — pulling your logo, name &amp; brand — into a production-ready white-label site with all 10 DIDs.</div>
+  </div>
+</div>
+
 <div class="wrap layout">
 
   <!-- CONTROL PANEL -->
@@ -239,6 +251,17 @@
   });
   document.getElementById('gen').onclick=function(){buildRack();render();window.scrollTo({top:document.querySelector('.preview-head').offsetTop-70,behavior:'smooth'});};
   ['bname','accent','tag'].forEach(function(id){document.getElementById(id).addEventListener('change',function(){if(document.getElementById('pv'))render();});});
+
+  // ===== prominent hero URL field drives the mashup =====
+  (function(){
+    var sh=document.getElementById('siteHero'), s=document.getElementById('site'), b=document.getElementById('bname');
+    if(!sh) return;
+    sh.addEventListener('input', function(){ s.value=sh.value; });
+    s.addEventListener('input', function(){ if(document.activeElement!==sh) sh.value=s.value; });
+    function go(){ s.value=sh.value; if(b && !b.value){ b.value=nameFromHost(host(sh.value)); } document.getElementById('gen').click(); }
+    document.getElementById('genHero').onclick=go;
+    sh.addEventListener('keydown', function(e){ if(e.key==='Enter'){ e.preventDefault(); go(); } });
+  })();
 </script>
 </body>
 </html>
