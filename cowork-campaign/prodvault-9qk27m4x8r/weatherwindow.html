@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>TELVERGENCE — Live Weather Satellite Window</title>
+<style>
+  :root{--midnight:#0A0E1A;--panel:#0e1526;--card:#141d33;--line:#26345a;--cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--amber:#ff8a3d;--ink:#eaf2ff;--muted:#9fb3d6;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);background:radial-gradient(1100px 640px at 50% -8%,#1a2547,var(--midnight) 60%);min-height:100vh}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+  .grad{background:linear-gradient(90deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:11px 16px;background:rgba(10,14,26,.9);border-bottom:1px solid var(--line)}
+  .logo{font-weight:900;letter-spacing:.5px}.logo b{color:var(--cyan)}
+  .bar a{color:var(--cyan);text-decoration:none;font-size:13px;font-weight:800}.bar .sp{margin-left:auto}
+  header{text-align:center;padding:30px 0 6px}
+  header h1{font-size:clamp(24px,4.6vw,38px)}header p{color:var(--muted);max-width:660px;margin:8px auto 0;font-size:15px}
+
+  .locate{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+  .fld{flex:1;min-width:150px}.fld label{display:block;font-size:11px;color:var(--muted);font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+  .fld input{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:#0c1730;color:var(--ink);font-size:16px}
+  .go{background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c;font-weight:900;border:none;border-radius:10px;padding:13px 22px;font-size:15px;cursor:pointer}
+  .loc{margin-top:8px;color:var(--muted);font-size:13px}.loc b{color:var(--lime)}
+
+  .layers{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 8px}
+  .layer{border:1px solid var(--line);background:#0c1730;color:var(--muted);border-radius:999px;padding:8px 15px;font-size:13px;font-weight:800;cursor:pointer}
+  .layer.on{color:#04121c;background:linear-gradient(90deg,var(--cyan),var(--lime))}
+
+  .satbox{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#05070f;box-shadow:0 18px 50px rgba(0,0,0,.5)}
+  .satbox iframe{width:100%;height:min(62vh,560px);border:0;display:block}
+
+  .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:16px}
+  .lk{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;color:var(--ink)}
+  .lk:hover{border-color:var(--cyan);transform:translateY(-2px)}.lk{transition:.15s}
+  .lk b{font-size:14px}.lk small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+  .lk .go2{color:var(--cyan);font-weight:800;font-size:12px;margin-top:6px;display:inline-block}
+
+  .note{color:var(--muted);font-size:12.5px;margin-top:16px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.25);border-radius:12px;padding:12px}
+  .note code{color:var(--amber)}
+  .foot{border-top:1px solid var(--line);margin-top:26px;padding:20px 0 50px;text-align:center;color:var(--muted);font-size:12.5px}
+  .foot a{color:var(--cyan);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="logo"><b>TEL</b>VERGENCE · Weather Satellite Window</div>
+  <span class="sp"></span>
+  <a href="present.html">← Deck</a>
+  <a href="fleet.html" style="margin-left:14px">📡 Fleet Grid</a>
+  <a href="vault-7kq9x2m4/restoration-royalty-smoke.html" style="margin-left:14px">👑🔥 Smoke</a>
+</div>
+
+<header class="wrap">
+  <h1>Any lead, <span class="grad">any sky — instantly.</span></h1>
+  <p>Enter a ZIP, area code, or phone number and the live weather satellite &amp; radar jumps straight to that prospect's geography. Drop it into any page, prefilled with the lead's location.</p>
+</header>
+
+<div class="wrap">
+  <div class="locate">
+    <div class="fld"><label>ZIP code</label><input id="zip" inputmode="numeric" maxlength="5" placeholder="33027"></div>
+    <div class="fld"><label>Area code</label><input id="ac" inputmode="numeric" maxlength="3" placeholder="954"></div>
+    <div class="fld"><label>or Phone number</label><input id="phone" inputmode="tel" placeholder="(954) 555-0142"></div>
+    <button class="go" id="goBtn">🛰️ Show the sky</button>
+  </div>
+  <div class="loc" id="locTxt">Showing: <b>South Florida</b> (default) · enter a lead's location above.</div>
+
+  <div class="layers" id="layers">
+    <div class="layer on" data-ov="satellite">🛰️ Satellite</div>
+    <div class="layer" data-ov="radar">🌧️ Radar</div>
+    <div class="layer" data-ov="clouds">☁️ Clouds</div>
+    <div class="layer" data-ov="wind">💨 Wind</div>
+    <div class="layer" data-ov="temp">🌡️ Temp</div>
+    <div class="layer" data-ov="rainAccu">🌊 Rain accum.</div>
+  </div>
+
+  <div class="satbox"><iframe id="sat" title="Live weather satellite" loading="lazy"></iframe></div>
+
+  <h3 style="margin:20px 0 8px;font-size:15px;letter-spacing:.5px;color:var(--muted)">🛰️ PROMINENT PUBLIC WEATHER SATELLITES (open live, location-aware)</h3>
+  <div class="links" id="pubLinks"></div>
+
+  <div class="note">🔗 <b>Embeddable &amp; auto-populating.</b> Link with the lead's location and the window opens right on their area:
+    <code>weatherwindow.html?zip=33027</code> · <code>?ac=954</code> · <code>?lat=26.0&amp;lon=-80.2</code>. Wire it to any intake form so the moment a ZIP or phone is captured, the prospect's sky is on screen.</div>
+</div>
+
+<div class="foot wrap">
+  <p>TELVERGENCE — live weather intelligence keyed to every lead · sources: Windy, NOAA GOES, NWS, Zoom Earth · <a href="present.html">back to deck</a></p>
+</div>
+
+<script>
+  // ---- area-code → approx [lat,lon] (FL-dense + majors; fallback US center) ----
+  var AC={ "305":[25.77,-80.19],"786":[25.77,-80.19],"954":[26.12,-80.25],"754":[26.12,-80.25],
+    "561":[26.71,-80.06],"239":[26.64,-81.87],"813":[27.95,-82.46],"727":[27.77,-82.64],
+    "941":[27.34,-82.53],"904":[30.33,-81.66],"850":[30.44,-84.28],"352":[29.65,-82.32],
+    "386":[29.21,-81.02],"407":[28.54,-81.38],"321":[28.30,-80.74],"689":[28.54,-81.38],
+    "212":[40.71,-74.01],"718":[40.68,-73.94],"213":[34.05,-118.24],"310":[34.02,-118.49],
+    "312":[41.88,-87.63],"404":[33.75,-84.39],"214":[32.78,-96.80],"713":[29.76,-95.37],
+    "602":[33.45,-112.07],"415":[37.77,-122.42],"206":[47.61,-122.33],"617":[42.36,-71.06],
+    "303":[39.74,-104.99],"702":[36.17,-115.14],"615":[36.16,-86.78],"704":[35.23,-80.84],
+    "202":[38.90,-77.04],"305":[25.77,-80.19] };
+  var DEF=[26.0,-80.2], cur=DEF, curName="South Florida";
+
+  function windySrc(lat,lon,ov){
+    return "https://embed.windy.com/embed2.html?lat="+lat+"&lon="+lon+"&detailLat="+lat+"&detailLon="+lon+
+      "&zoom=8&level=surface&overlay="+ov+"&product=ecmwf&menu=&message=true&marker=true&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1";
+  }
+  var overlay="satellite";
+  function setSat(){ document.getElementById('sat').src=windySrc(cur[0],cur[1],overlay); renderLinks(); }
+  function setLoc(lat,lon,name){ cur=[lat,lon]; curName=name||(lat.toFixed(2)+", "+lon.toFixed(2));
+    document.getElementById('locTxt').innerHTML='Showing: <b>'+curName+'</b> · '+lat.toFixed(3)+', '+lon.toFixed(3); setSat(); }
+
+  function renderLinks(){
+    var la=cur[0], lo=cur[1];
+    var L=[
+      {b:"Windy — full map",s:"Interactive satellite/radar/wind",u:"https://www.windy.com/"+la+"/"+lo+"?"+overlay+","+la+","+lo+",8"},
+      {b:"Zoom Earth",s:"Live GOES satellite + storms",u:"https://zoom.earth/#view="+la+","+lo+",8z"},
+      {b:"NOAA GOES-East",s:"Geostationary satellite imagery",u:"https://www.star.nesdis.noaa.gov/GOES/index.php"},
+      {b:"NWS Forecast",s:"Official point forecast",u:"https://forecast.weather.gov/MapClick.php?lat="+la+"&lon="+lo},
+      {b:"NWS Radar",s:"Live national/local radar",u:"https://radar.weather.gov/?settings=v1_"+encodeURIComponent('{"agenda":{"id":"weather"},"map":{"center":['+la+','+lo+'],"zoom":8}}')},
+      {b:"RainViewer",s:"Global radar + satellite loop",u:"https://www.rainviewer.com/map.html?loc="+la+","+lo+",8"}
+    ];
+    document.getElementById('pubLinks').innerHTML=L.map(function(x){
+      return '<a class="lk" href="'+x.u+'" target="_blank" rel="noopener"><b>'+x.b+'</b><small>'+x.s+'</small><span class="go2">Open live →</span></a>';
+    }).join('');
+  }
+
+  // resolvers
+  function fromAC(ac){ if(AC[ac]){ setLoc(AC[ac][0],AC[ac][1],"Area code "+ac); return true; } return false; }
+  function fromPhone(p){ var d=(p||'').replace(/\D/g,''); if(d.length>=10){ var ac=d.length===11?d.slice(1,4):d.slice(0,3); document.getElementById('ac').value=ac; return fromAC(ac); } return false; }
+  function fromZip(zip){
+    document.getElementById('locTxt').textContent='Locating ZIP '+zip+'…';
+    fetch('https://api.zippopotam.us/us/'+zip).then(function(r){return r.ok?r.json():Promise.reject();})
+      .then(function(j){ var p=j.places[0]; setLoc(parseFloat(p.latitude),parseFloat(p.longitude), p['place name']+', '+p['state abbreviation']+' '+zip); })
+      .catch(function(){ document.getElementById('locTxt').innerHTML='Couldn\'t find that ZIP — try an area code. Showing <b>'+curName+'</b>.'; });
+  }
+  function locate(){
+    var zip=document.getElementById('zip').value.trim();
+    var ac=document.getElementById('ac').value.trim();
+    var ph=document.getElementById('phone').value.trim();
+    if(/^\d{5}$/.test(zip)) return fromZip(zip);
+    if(/^\d{3}$/.test(ac)) return fromAC(ac)||miss();
+    if(ph) return fromPhone(ph)||miss();
+    miss();
+  }
+  function miss(){ document.getElementById('locTxt').innerHTML='Enter a valid ZIP, area code, or phone. Showing <b>'+curName+'</b>.'; }
+
+  document.getElementById('goBtn').onclick=locate;
+  ['zip','ac','phone'].forEach(function(id){ document.getElementById(id).addEventListener('keydown',function(e){ if(e.key==='Enter') locate(); }); });
+  document.querySelectorAll('.layer').forEach(function(el){ el.onclick=function(){
+    document.querySelectorAll('.layer').forEach(function(x){x.classList.remove('on');}); el.classList.add('on');
+    overlay=el.dataset.ov; setSat();
+  };});
+
+  // ---- auto-populate from URL (?zip= / ?ac= / ?phone= / ?lat=&lon=) ----
+  (function(){
+    var q=new URLSearchParams(location.search);
+    if(q.get('lat')&&q.get('lon')){ setLoc(parseFloat(q.get('lat')),parseFloat(q.get('lon')),q.get('name')||null); return; }
+    if(q.get('zip')){ document.getElementById('zip').value=q.get('zip'); fromZip(q.get('zip')); return; }
+    if(q.get('ac')){ document.getElementById('ac').value=q.get('ac'); if(fromAC(q.get('ac')))return; }
+    if(q.get('phone')){ document.getElementById('phone').value=q.get('phone'); if(fromPhone(q.get('phone')))return; }
+    setSat(); // default
+  })();
+</script>
+</body>
+</html>
