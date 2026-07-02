@@ -29,7 +29,7 @@
 
 ### Modules built and live (secondary entry points)
 - **White-Label Studio** — URL → `<company>.telvergence.com` branded site + 10 DIDs + cloned Second Brain (`studio.html`).
-- **Restoration Royalty white-label deck** (`restorationroyalty/`).
+- **Restoration Royalties white-label deck** (`restorationroyalty/`).
 - **WIN TV movie** + channel (real fire footage) (`vault-7kq9x2m4/win-tv.html`).
 - **Talking navigation map** (`nav-map.html`).
 - **Agent Partner Portal (10% of gross)** + **National Grid Saturation / Authorized Dedicated Provider** (`vault-7kq9x2m4/partner.html`, `grid.html`).

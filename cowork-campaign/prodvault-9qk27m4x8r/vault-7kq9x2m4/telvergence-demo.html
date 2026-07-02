@@ -550,7 +550,7 @@
           <div class="ar">→</div>
           <div class="wn cmd"><b>🚨 Storm Dispatch</b><small>Command Center</small></div>
           <div class="ar">→</div>
-          <div class="wn bz"><b>🏠 Brands</b><small>StormCrew · Roofing Crew · Restoration Royalty</small></div>
+          <div class="wn bz"><b>🏠 Brands</b><small>StormCrew · Roofing Crew · Restoration Royalties</small></div>
         </div>
       </div>
 
@@ -738,7 +738,7 @@
       <div class="brandgrid">
         <div class="brand"><div class="em">🌪️</div><h4>StormCrew</h4><p>Storm response roofing</p><div class="row"><span>Channels live</span><b>12/12</b></div></div>
         <div class="brand"><div class="em">🚁</div><h4>CrewCommand</h4><p>AI roofing operations</p><div class="row"><span>Channels live</span><b>12/12</b></div></div>
-        <div class="brand"><div class="em">🏠</div><h4>Restoration Royalty</h4><p>Mold &amp; water mitigation</p><div class="row"><span>Channels live</span><b>11/12</b></div></div>
+        <div class="brand"><div class="em">🏠</div><h4>Restoration Royalties</h4><p>Mold &amp; water mitigation</p><div class="row"><span>Channels live</span><b>11/12</b></div></div>
         <div class="brand"><div class="em">💚</div><h4>Beverly Wicks</h4><p>Telemedicine wellness</p><div class="row"><span>Channels live</span><b>10/12</b></div></div>
         <div class="brand"><div class="em">🌦️</div><h4>Predictive Weather</h4><p>Weather intelligence</p><div class="row"><span>Channels live</span><b>12/12</b></div></div>
       </div>
@@ -759,7 +759,7 @@
           <thead><tr><th>Account</th><th>Plan</th><th>Channels</th><th>MRR</th><th>Health</th></tr></thead>
           <tbody>
             <tr><td>StormCrew HQ</td><td>Enterprise</td><td>12</td><td>$2,499</td><td><span class="tag t-live">Excellent</span></td></tr>
-            <tr><td>Restoration Royalty</td><td>Growth</td><td>11</td><td>$999</td><td><span class="tag t-live">Excellent</span></td></tr>
+            <tr><td>Restoration Royalties</td><td>Growth</td><td>11</td><td>$999</td><td><span class="tag t-live">Excellent</span></td></tr>
             <tr><td>CrewCommand</td><td>Growth</td><td>12</td><td>$999</td><td><span class="tag t-warn">Watch</span></td></tr>
             <tr><td>Beverly Wicks Wellness</td><td>Starter</td><td>10</td><td>$499</td><td><span class="tag t-live">Good</span></td></tr>
           </tbody>
@@ -782,7 +782,7 @@
           <tr><td>StormCrew</td><td><div class="bar-mini"><i style="width:88%"></i></div></td><td><b>$148,200</b></td></tr>
           <tr><td>Predictive Weather</td><td><div class="bar-mini"><i style="width:72%"></i></div></td><td><b>$121,400</b></td></tr>
           <tr><td>CrewCommand</td><td><div class="bar-mini"><i style="width:60%"></i></div></td><td><b>$96,800</b></td></tr>
-          <tr><td>Restoration Royalty</td><td><div class="bar-mini"><i style="width:48%"></i></div></td><td><b>$74,300</b></td></tr>
+          <tr><td>Restoration Royalties</td><td><div class="bar-mini"><i style="width:48%"></i></div></td><td><b>$74,300</b></td></tr>
           <tr><td>Beverly Wicks</td><td><div class="bar-mini"><i style="width:28%"></i></div></td><td><b>$46,650</b></td></tr>
         </table>
       </div>
@@ -816,7 +816,7 @@
       </div>
       <div class="row2">
         <div class="field"><label>Branded Caller ID (CNAM)</label>
-          <select id="didCnam"><option>RESTORATION ROYALTY</option><option>STORMCREW</option><option>CREWCOMMAND</option><option>BEVERLY WICKS</option></select></div>
+          <select id="didCnam"><option>RESTORATION ROYALTIES</option><option>STORMCREW</option><option>CREWCOMMAND</option><option>BEVERLY WICKS</option></select></div>
         <div class="field"><label>Plan</label><select id="didPlan"><option>Prepaid — pay-as-you-go</option></select></div>
       </div>
       <div class="row2">
@@ -1087,10 +1087,10 @@
     `<span class="al"><span class="dot" style="background:${a[0]}"></span><b>${a[1]}</b><small>${a[2]}</small></span>`).join('');}
   document.getElementById('tickerMove').innerHTML=alertHtml()+alertHtml();
   const STORMS=[
-    ['🌀 Hurricane Watch — FL Atlantic','High','t-warn','×3.4',28,486000,'StormCrew · Restoration Royalty'],
+    ['🌀 Hurricane Watch — FL Atlantic','High','t-warn','×3.4',28,486000,'StormCrew · Restoration Royalties'],
     ['⛈️ Severe T-Storm — Tampa Bay','Med','t-verify','×2.1',16,214000,'Roofing Crew'],
     ['🧊 Hail — Dallas–Ft Worth','Med','t-verify','×1.8',11,168000,'CrewCommand'],
-    ['🌊 Flood Watch — Gulf Coast','Low','t-live','×1.3',6,61000,'Restoration Royalty'],
+    ['🌊 Flood Watch — Gulf Coast','Low','t-live','×1.3',6,61000,'Restoration Royalties'],
   ];
   document.getElementById('stormBody').innerHTML=STORMS.map(s=>
     `<tr><td>${s[0]}<br><small style="color:var(--muted)">${s[6]}</small></td>`+
@@ -1188,7 +1188,7 @@
     {c:'g',e:'📞',t:'Emergency call routed → dispatch · <b>14 min ETA</b>'},
     {c:'v',e:'🔔',t:'Push delivered — storm prep · <b>4,210 devices</b>'},
     {c:'a',e:'📍',t:'Geofence entry → proximity offer fired'},
-    {c:'g',e:'📧',t:'Email sequence advanced — <b>Restoration Royalty</b>'},
+    {c:'g',e:'📧',t:'Email sequence advanced — <b>Restoration Royalties</b>'},
     {c:'p',e:'📝',t:'Survey completed · NPS <b>+72</b>'},
     {c:'c',e:'🔐',t:'2FA verified — secure portal login'},
     {c:'v',e:'📭',t:'Ringless VM drop — <b>1,180</b> after-hours leads'},
@@ -1225,7 +1225,7 @@
 
   // ---- guided auto-tour ----
   const TOUR=[
-    {v:'stormmap',s:14,focus:'#usgrid',live:true,t:'Storm Dispatch Command Center',n:'We lead here: LIVE National Weather Service alerts flow into our Weather Intelligence Network, the nationwide grid lights up where real storms are hitting right now, and the Command Center auto-dispatches crews to StormCrew, Roofing Crew and Restoration Royalty — turning real weather into work and revenue.'},
+    {v:'stormmap',s:14,focus:'#usgrid',live:true,t:'Storm Dispatch Command Center',n:'We lead here: LIVE National Weather Service alerts flow into our Weather Intelligence Network, the nationwide grid lights up where real storms are hitting right now, and the Command Center auto-dispatches crews to StormCrew, Roofing Crew and Restoration Royalties — turning real weather into work and revenue.'},
     {v:'recruit',s:13,focus:'table',t:'Partner Recruitment',n:'The growth engine: we cross that live weather against the areas we do NOT cover yet, surface the open territories, and produce a list of vendor businesses to recruit — each matched to a Starter, Growth, or Enterprise plan.'},
     {v:'dash',s:13,focus:'.pnl',live:true,t:'Command Center',n:'The real-time heartbeat — every interaction across every channel, streaming live. And the Profit Step-Down KOIs recalculate live: Revenue, Gross, Operating, Net, then Net-Net, right as the money flows.'},
     {v:'conduit',s:11,focus:'.hub-core',live:true,t:'Omnichannel Conduit',n:'One bi-directional pipe: inbound on the left, outbound on the right, across all 12 channels — SMS, voice, email, push, ringless voicemail, geofencing, two-factor and more.'},

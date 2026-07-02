@@ -19,9 +19,9 @@ Do **not** inject the items below into it without an explicit decision; they are
   provisioning worker + the WIN National Grid saturation model.
 
 ## Parked go-to-market / brand tracks
-- **Brand architecture under "Office off the Roof":** Storm Dispatch Network · Restoration Royalty ·
+- **Brand architecture under "Office off the Roof":** Storm Dispatch Network · Restoration Royalties ·
   The Roofing Crew · Weather Intelligence Network — each a layer on the TELVERGENCE engine.
-- **South Florida smoke-exposure campaign (Restoration Royalty):** exposure-zone ad groups
+- **South Florida smoke-exposure campaign (Restoration Royalties):** exposure-zone ad groups
   (Miramar/Pembroke Pines/Weston/Doral/Hialeah → moderate → fringe) + emergency landing page.
 - **"Office off the Roof" owner-recruitment play:** book 5 roofing owners for in-home estimates → pitch
   white-label cloud system. Script captured in exports.

@@ -24,11 +24,11 @@ When winds strengthen or shift northeast:
 
 USING TELVERGENCE.com create a campaign for restoration royalty using the provided details
 
-Here’s a ready-to-use campaign concept for **Restoration Royalty** built around the smoke-exposure zones you provided and the South Florida wildfire-smoke context showing the heaviest impact in Miramar, Pembroke Pines, Weston, Doral, and Hialeah, with broader drift into Miami Lakes, Miami Gardens, North Miami/North Miami Beach, Sunrise/Plantation, and farther-west Broward/Palm Beach fringe areas.[^1_3][^1_6][^1_9]
+Here’s a ready-to-use campaign concept for **Restoration Royalties** built around the smoke-exposure zones you provided and the South Florida wildfire-smoke context showing the heaviest impact in Miramar, Pembroke Pines, Weston, Doral, and Hialeah, with broader drift into Miami Lakes, Miami Gardens, North Miami/North Miami Beach, Sunrise/Plantation, and farther-west Broward/Palm Beach fringe areas.[^1_3][^1_6][^1_9]
 
 ## Campaign angle
 
-Position Restoration Royalty as the fast-response **smoke cleanup and indoor air recovery** expert for South Florida homes and businesses. The message should focus on three promises: rapid assessment, soot/smoke remediation, and safer indoor air after plume events.[^1_2][^1_8]
+Position Restoration Royalties as the fast-response **smoke cleanup and indoor air recovery** expert for South Florida homes and businesses. The message should focus on three promises: rapid assessment, soot/smoke remediation, and safer indoor air after plume events.[^1_2][^1_8]
 
 ## Targeting structure
 
@@ -52,7 +52,7 @@ Use the exposure zones as separate ad groups so the message matches local risk l
 
 ### Primary text
 
-- Wildfire smoke drifting into your area? Restoration Royalty helps remove soot, odors, and residue before damage spreads.
+- Wildfire smoke drifting into your area? Restoration Royalties helps remove soot, odors, and residue before damage spreads.
 - If your home or business is in the smoke path, act quickly to protect HVAC systems, surfaces, and indoor air quality.
 - Serving Miami-Dade and Broward neighborhoods affected by smoke exposure events.
 
@@ -100,7 +100,7 @@ Use a simple lead magnet:
 
 **Ad 1: High-exposure neighborhoods**
 Headline: Smoke Cleanup in Miramar and Pembroke Pines
-Text: Thick smoke can leave soot and odor behind. Restoration Royalty provides fast smoke damage cleanup and indoor air restoration.
+Text: Thick smoke can leave soot and odor behind. Restoration Royalties provides fast smoke damage cleanup and indoor air restoration.
 
 **Ad 2: Moderate-exposure neighborhoods**
 Headline: Smoke Drifted Into Your Area?
@@ -108,7 +108,7 @@ Text: Even intermittent smoke can affect filters, vents, and surfaces. Get a pro
 
 **Ad 3: Lower-exposure suburbs**
 Headline: Haze and Ash Protection for Broward Homes
-Text: If smoke drift reached your neighborhood, restore clean air and remove residue quickly with Restoration Royalty.
+Text: If smoke drift reached your neighborhood, restore clean air and remove residue quickly with Restoration Royalties.
 
 ## Recommended next step
 
@@ -148,7 +148,7 @@ I can also turn this into a **full Google Ads package** with headlines, descript
 
 # turn this into a full Google Ads package with headlines, descriptions, keywords, negatives, and landing-page sections using the vanity DId’s and as much integration with our storm dispatch , weather intelligence entirely snd the roofing crew bundle with the white label TELVERGENCE.com underlying UCCPXaaS sales scripting frontier closer vici boss like intake and contacting talk and sms
 
-Below is a full Google Ads package for **Restoration Royalty**, structured around smoke exposure, storm dispatch, weather intelligence, roofing bundle upsells, and a white-label Telvergence/VICIdial-style intake workflow with DID routing, scripting, and SMS follow-up capabilities.[^2_1][^2_2][^2_3][^2_4]
+Below is a full Google Ads package for **Restoration Royalties**, structured around smoke exposure, storm dispatch, weather intelligence, roofing bundle upsells, and a white-label Telvergence/VICIdial-style intake workflow with DID routing, scripting, and SMS follow-up capabilities.[^2_1][^2_2][^2_3][^2_4]
 
 ## Campaign structure
 
@@ -176,7 +176,7 @@ Use these as RSA headline assets, mixing service, urgency, and geo intent.
 - Remove Smoke Odor Fast.
 - Storm Smoke Inspection Today.
 - Indoor Air Recovery After Smoke.
-- Restoration Royalty Dispatch Ready.
+- Restoration Royalties Dispatch Ready.
 - West Miami-Dade Smoke Help.
 - Broward Smoke Cleanup Team.
 - Same-Day Smoke Assessment.
@@ -191,7 +191,7 @@ Use these as RSA headline assets, mixing service, urgency, and geo intent.
 
 Use up to 4 descriptions per ad group.
 
-- Smoke drift can leave soot, odor, and residue behind. Restoration Royalty provides fast inspection, cleanup, and recovery.
+- Smoke drift can leave soot, odor, and residue behind. Restoration Royalties provides fast inspection, cleanup, and recovery.
 - If your neighborhood is in the plume path, book a same-day assessment and protect indoor air, surfaces, and HVAC systems.
 - Our weather-intelligence-driven dispatch helps route crews where smoke and storm impact are worst.
 - Bundle roofing and restoration response for faster service, cleaner handoff, and better customer follow-up.
@@ -277,7 +277,7 @@ Use negatives to cut low-intent and irrelevant traffic.
 ### Hero
 
 Headline: Smoke Damage Response for South Florida’s Exposure Zones.
-Subhead: Restoration Royalty routes calls, texts, and crews based on storm and smoke intelligence so you get help fast.
+Subhead: Restoration Royalties routes calls, texts, and crews based on storm and smoke intelligence so you get help fast.
 
 ### Why act now
 
@@ -320,7 +320,7 @@ Use a two-stage contact model: front-end qualification, then closer handoff. VIC
 ## Ad copy example
 
 **Headline:** Smoke Damage Cleanup Near Miramar
-**Description:** Smoke in your area can leave soot and odor fast. Restoration Royalty provides same-day intake, weather-aware dispatch, and cleanup for homes and businesses.
+**Description:** Smoke in your area can leave soot and odor fast. Restoration Royalties provides same-day intake, weather-aware dispatch, and cleanup for homes and businesses.
 
 **Headline:** Roofing + Restoration Dispatch
 **Description:** One team for roof inspection, storm recovery, and smoke cleanup. Call or text now for fast routing and local service.
@@ -370,7 +370,7 @@ Absolutely — here’s a clean **call-script framework** your team can use for 
 ## Inbound call script
 
 **Greeting**
-“Thank you for calling Restoration Royalty. This is [Name]. Are you calling about smoke damage, storm damage, or roofing help today?”
+“Thank you for calling Restoration Royalties. This is [Name]. Are you calling about smoke damage, storm damage, or roofing help today?”
 
 **Confirm location**
 “Can I get the property address or neighborhood so I can check your area and dispatch coverage?”
@@ -403,7 +403,7 @@ Absolutely — here’s a clean **call-script framework** your team can use for 
 ## Text intake script
 
 **First reply**
-“Thanks for contacting Restoration Royalty. Please send your name, address, and the main issue: smoke odor, soot, haze, roof damage, or all of the above.”
+“Thanks for contacting Restoration Royalties. Please send your name, address, and the main issue: smoke odor, soot, haze, roof damage, or all of the above.”
 
 **Follow-up**
 “We’ll review your location and dispatch priority, then reply with the next step and timing.”
@@ -427,7 +427,7 @@ Absolutely — here’s a clean **call-script framework** your team can use for 
 
 ## Voicemail script
 
-“Hi, this is [Name] with Restoration Royalty. We received your request about smoke or storm damage. Please call us back at [number] and include your address so we can review dispatch priority.”
+“Hi, this is [Name] with Restoration Royalties. We received your request about smoke or storm damage. Please call us back at [number] and include your address so we can review dispatch priority.”
 
 Would you like this rewritten into a **more aggressive sales script** or a **more calm insurance-style script**?
 
@@ -646,7 +646,7 @@ async def transcription_webhook(request: Request, background_tasks: BackgroundTa
 
 ## Example call flow script
 
-- “Thanks for calling Restoration Royalty. I’ll capture a few details and get this routed.”
+- “Thanks for calling Restoration Royalties. I’ll capture a few details and get this routed.”
 - “What’s the property address?”
 - “Is this smoke damage, storm damage, or roofing?”
 - “When did the issue start?”
@@ -928,7 +928,7 @@ Example intent response:
 ```json
 {
   "action": "answer",
-  "say": "Thank you for calling Restoration Royalty. Please hold while we connect you.",
+  "say": "Thank you for calling Restoration Royalties. Please hold while we connect you.",
   "record": true,
   "next": {
     "type": "transfer",
@@ -1616,7 +1616,7 @@ NotebookLM can ingest Drive files, URLs, and other source documents, which makes
 Copy and paste this into Gemini or NotebookLM:
 
 ```text
-You are helping me build a Google-first operating system for a South Florida smoke-damage, storm-dispatch, and roofing-response campaign for Restoration Royalty.
+You are helping me build a Google-first operating system for a South Florida smoke-damage, storm-dispatch, and roofing-response campaign for Restoration Royalties.
 
 Use ONLY the source materials I provide in Google Drive, plus any files or notes I paste into this project. Do not rely on outside knowledge unless I explicitly ask for it. If something is missing, say what is missing and ask for that exact file or field.
 
@@ -1745,7 +1745,7 @@ Only use the provided sources. Do not add outside assumptions.
 A clean folder layout for Google Drive:
 
 ```text
-Restoration Royalty - Google First Campaign/
+Restoration Royalties - Google First Campaign/
   01_Strategy/
   02_Campaign_Assets/
   03_Call_Scripts/
@@ -1808,7 +1808,7 @@ Yes — here’s a **Claude co-work prompt** plus a practical way to run Claude,
 Paste this into Claude:
 
 ```text
-You are working as the implementation and synthesis partner for a Google-first, multi-model campaign operations project for Restoration Royalty.
+You are working as the implementation and synthesis partner for a Google-first, multi-model campaign operations project for Restoration Royalties.
 
 Your job is to help me convert the current Telvergence-based call, SMS, transcription, CRM, LMS, appointment, weather intelligence, and roofing bundle workflow into clean, well-structured project documentation, code-ready plans, and operational workflows.
 
@@ -1935,7 +1935,7 @@ Absolutely — below is a **single master orchestration prompt** you can paste i
 
 ```text
 MASTER ORCHESTRATION PROMPT
-Project: Restoration Royalty / Telvergence / Google-first campaign operating system
+Project: Restoration Royalties / Telvergence / Google-first campaign operating system
 Date: 2026-06-19
 
 You are part of a four-model workflow with these roles:
@@ -1950,7 +1950,7 @@ Operating rules:
 3) If something is missing, list it as missing.
 4) Keep outputs copy/paste friendly and ready for Google Docs, Sheets, NotebookLM, or AI Studio.
 5) Preserve the current project terminology:
-   - Restoration Royalty
+   - Restoration Royalties
    - Telvergence
    - storm dispatch
    - weather intelligence
@@ -2182,14 +2182,14 @@ I can also turn this into:
 
 # Mix with total macro and re synthesize to the micro execution plan now with a handoff to Claude prompt where we currently have our \$200 per month Claude max subscription still in good standing for a total complete turn key solution can be done for us via your now requested prompt for us to then take all perplexity TELVERGENCE and TELVERGENCE.com related Brands such as storm dispatch weather intelligence network , the roofing crew , restoration royalty etc.
 
-Absolutely — here is the **macro-to-micro execution plan** plus a **Claude handoff prompt** that consolidates Perplexity, Telvergence, Telvergence.com, storm dispatch, weather intelligence network, roofing crew, and Restoration Royalty into one turnkey operating system.
+Absolutely — here is the **macro-to-micro execution plan** plus a **Claude handoff prompt** that consolidates Perplexity, Telvergence, Telvergence.com, storm dispatch, weather intelligence network, roofing crew, and Restoration Royalties into one turnkey operating system.
 
 ## Total macro plan
 
 The goal is to build one unified brand-and-ops stack with four layers:
 
 1. **Brand layer**
-Restoration Royalty becomes the customer-facing restoration brand, with storm dispatch, weather intelligence, and roofing crew positioned as specialized service arms.
+Restoration Royalties becomes the customer-facing restoration brand, with storm dispatch, weather intelligence, and roofing crew positioned as specialized service arms.
 2. **Traffic layer**
 Google Ads, landing pages, call scripts, SMS intake, and local geo targeting drive inbound leads from the smoke and storm zones.
 3. **Ops layer**
@@ -2258,7 +2258,7 @@ Use this hierarchy:
 - **Telvergence** = communications and workflow layer.
 - **Storm Dispatch Weather Intelligence Network** = prioritization and routing layer.
 - **Roofing Crew** = service fulfillment layer.
-- **Restoration Royalty** = primary customer-facing brand.
+- **Restoration Royalties** = primary customer-facing brand.
 
 
 ## Claude handoff prompt
@@ -2273,7 +2273,7 @@ Current brand and platform stack:
 - Telvergence / Telvergence.com = communications, call intake, SMS, and routing layer.
 - Storm Dispatch Weather Intelligence Network = weather-aware prioritization and dispatch intelligence.
 - Roofing Crew = roofing fulfillment and bundle service layer.
-- Restoration Royalty = primary customer-facing restoration brand.
+- Restoration Royalties = primary customer-facing restoration brand.
 
 Your mission:
 Take all existing project notes, campaign ideas, call scripts, webhook logic, CRM mappings, appointment logic, dispatch logic, weather intelligence, and brand positioning and synthesize them into one complete turnkey operating system.
@@ -2353,7 +2353,7 @@ This turns the project into one reusable machine:
 
 ## Best next move
 
-Claude should be used to generate the **master operating document** first, then you can split that into the smaller execution files. That will keep the stack clean and prevent fragmentation across Perplexity, Telvergence, Restoration Royalty, and the storm/roofing sub-brands.
+Claude should be used to generate the **master operating document** first, then you can split that into the smaller execution files. That will keep the stack clean and prevent fragmentation across Perplexity, Telvergence, Restoration Royalties, and the storm/roofing sub-brands.
 
 Would you like me to create the **final master operating document outline** next, section by section, so Claude can fill it in cleanly?
 
@@ -2614,7 +2614,7 @@ You can paste this into each new project folder as the master instruction.
 
 ```text
 MASTER ORCHESTRATION PROMPT
-Project: Restoration Royalty / Telvergence / Google-first multi-model operating system
+Project: Restoration Royalties / Telvergence / Google-first multi-model operating system
 Date: 2026-06-19
 
 You are part of a four-model workflow with these roles:
@@ -2629,7 +2629,7 @@ Operating principles:
 3) If something is missing, list it clearly as missing.
 4) Keep outputs copy/paste friendly and ready for Google Docs, Sheets, NotebookLM, AI Studio, or implementation docs.
 5) Preserve the current project terminology:
-   - Restoration Royalty
+   - Restoration Royalties
    - Telvergence
    - Telvergence.com
    - storm dispatch
@@ -2670,7 +2670,7 @@ Brand and platform stack:
 - Telvergence / Telvergence.com = communications, call intake, SMS, routing, billing, and workflow infrastructure.
 - Storm Dispatch Weather Intelligence Network = weather-aware prioritization and crew routing layer.
 - Roofing Crew = roofing fulfillment and bundle service layer.
-- Restoration Royalty = primary customer-facing restoration brand.
+- Restoration Royalties = primary customer-facing restoration brand.
 
 Core product requirements:
 A) Communications and intake
@@ -2764,7 +2764,7 @@ Specific instruction for this session:
 3) Include the real-time collaboration layer and photo-to-estimate layer as first-class product capabilities.
 4) Define what belongs in each new project folder.
 5) Produce the prompt pack, schemas, and workflow artifacts needed to continue building.
-6) Convert the result into a clean structure that can be used across Perplexity, Telvergence, Restoration Royalty, and the other sub-brands.
+6) Convert the result into a clean structure that can be used across Perplexity, Telvergence, Restoration Royalties, and the other sub-brands.
 7) Return the final output as an organized master project brief with the deliverables listed above in order.
 
 If you need to choose between detail and clarity, choose clarity.
@@ -2844,7 +2844,7 @@ Revise **Telvergence.com** to reflect:
 - call/SMS/transcription/CRM integration,
 - weather-aware dispatch,
 - roofing bundle,
-- and Restoration Royalty integration.
+- and Restoration Royalties integration.
 
 
 ### 1. Brand positioning
@@ -2906,9 +2906,9 @@ Supporting line:
 - Auto-assign crews based on storm impact.
 - Support roofing and restoration bundles.
 
-**Restoration Royalty Brand Integration**
+**Restoration Royalties Brand Integration**
 
-- Restoration Royalty as the customer-facing brand.
+- Restoration Royalties as the customer-facing brand.
 - Telvergence as the underlying communications and dispatch engine.
 - Storm dispatch and weather intelligence as specialized service arms.
 
@@ -2947,7 +2947,7 @@ Update the page map to:
 - “Try Zero-Touch Provisioning”
 - “Start a Free Workspace”
 - “Upload Photos and Get an Estimate”
-- “Book a Demo for Restoration Royalty”
+- “Book a Demo for Restoration Royalties”
 
 
 ### 5. Update hero section
@@ -2990,7 +2990,7 @@ Requirements:
   - call/SMS/transcription/CRM integration,
   - weather-aware dispatch,
   - roofing bundle,
-  - and Restoration Royalty integration.
+  - and Restoration Royalties integration.
 ```
 
 
@@ -3242,7 +3242,7 @@ Would you like me to generate the **full Google Drive file list** with **sample 
 
 # And any and all possible fits regarding Vitelity, SINCH, ACROBITS as underlying operating infrastructure guidelines and chosen underlying network service providers and partners
 
-Below is a **complete, turnkey infrastructure integration model** that incorporates **Vitelity**, **Sinch**, and **Acrobits** as underlying operating infrastructure guidelines and chosen network service providers/partners, fully aligned with your existing Telvenge, Reliant eZ VoIP, Remote Call Forward, Restoration Royalty, and multi-brand system, and mapped into your **Google Drive + Master Operating Prompt** structure for instant deployment.
+Below is a **complete, turnkey infrastructure integration model** that incorporates **Vitelity**, **Sinch**, and **Acrobits** as underlying operating infrastructure guidelines and chosen network service providers/partners, fully aligned with your existing Telvenge, Reliant eZ VoIP, Remote Call Forward, Restoration Royalties, and multi-brand system, and mapped into your **Google Drive + Master Operating Prompt** structure for instant deployment.
 
 ***
 
@@ -3344,7 +3344,7 @@ Below is a **complete, turnkey infrastructure integration model** that incorpora
 │                   Telvenge Platform                        │
 │  (Smart DID, Zero-Touch Provisioning, Auto Activation,     │
 │   Real-Time Collaboration, Photo-to-Estimate, Weather      │
-│   Dispatch, Roofing Bundle, Restoration Royalty, etc.)     │
+│   Dispatch, Roofing Bundle, Restoration Royalties, etc.)     │
 └───────────────┬────────────────────────────────────────────┘
                 │
                 ├─── Utelity (Voice, UCaaS, SIP Trunking)
@@ -3422,7 +3422,7 @@ Requirements:
 - Vitelity serves as the core private-label UCaaS and voice backbone.
 - Sinch serves as the global SMS/MMS, voice API, and WhatsApp delivery layer.
 - Acrobits serves as the end-user softphone and mobile VoIP application layer.
-- All three providers are integrated into the Telvenge platform's Smart DID, Zero-Touch Provisioning, Auto Activation, Real-Time Collaboration, Photo-to-Estimate, Weather Dispatch, Roofing Bundle, and Restoration Royalty workflows.
+- All three providers are integrated into the Telvenge platform's Smart DID, Zero-Touch Provisioning, Auto Activation, Real-Time Collaboration, Photo-to-Estimate, Weather Dispatch, Roofing Bundle, and Restoration Royalties workflows.
 - All contracts, product details, integration guides, and collateral for Vitelity, Sinch, and Acrobits are stored in Google Drive under the Unified Operations folder structure.
 - Network service providers and partners are documented with SLAs, agreements, and technical specifications.
 ```
@@ -3458,7 +3458,7 @@ Store all partner contacts under **Team Contacts** in G-Drive.
     - **Sinch-powered global messaging**
     - **Acrobits-powered softphone/mobile VoIP**
     - **Smart DID, Zero-Touch Provisioning, Auto Activation**
-    - **Real-Time Collaboration, Photo-to-Estimate, Weather Dispatch, Roofing Bundle, Restoration Royalty**
+    - **Real-Time Collaboration, Photo-to-Estimate, Weather Dispatch, Roofing Bundle, Restoration Royalties**
 
 ***
 
@@ -3472,7 +3472,7 @@ Begin offering and collecting money for end users to onboard and activate now
 
 Below is a **complete, refined, go-to-market-ready Telvergence identity and product offering** that **does not replace or disturb the existing Telvergence.com site or current product suite**. Instead, it introduces a **new, parallel product line** that can be **launched immediately**, with **onboarding, activation, and payment collection ready for end users today**.
 
-This new offering is built on the **existing Telvergence infrastructure**, enhanced with **Vitelity, Sinch, Acrobits, Smart DID, Zero-Touch Provisioning, Auto Activation, Real-Time Collaboration, Photo-to-Estimate, Weather Dispatch, Roofing Bundle, and Restoration Royalty** capabilities — all **ready to monetize now**.
+This new offering is built on the **existing Telvergence infrastructure**, enhanced with **Vitelity, Sinch, Acrobits, Smart DID, Zero-Touch Provisioning, Auto Activation, Real-Time Collaboration, Photo-to-Estimate, Weather Dispatch, Roofing Bundle, and Restoration Royalties** capabilities — all **ready to monetize now**.
 
 ***
 
@@ -3553,9 +3553,9 @@ A **new, parallel product line** that gives every user their own **Smart DID pho
 - Integrated with weather dispatch and photo-to-estimate.
 
 
-### 8. **Restoration Royalty Integration**
+### 8. **Restoration Royalties Integration**
 
-- Restoration Royalty as the customer-facing brand.
+- Restoration Royalties as the customer-facing brand.
 - Telvenge as the underlying communications and dispatch engine.
 - Storm dispatch and weather intelligence as specialized service arms.
 
@@ -3674,7 +3674,7 @@ Launch a new, parallel product line called "Telvenge Smart DID + Workspace" that
 
 Requirements:
 - New product leverages existing Telvenge infrastructure.
-- Enhanced with Vitelity, Sinch, Acrobits, Smart DID, Zero-Touch Provisioning, Auto Activation, Real-Time Collaboration, Photo-to-Estimate, Weather Dispatch, Roofing Bundle, and Restoration Royalty.
+- Enhanced with Vitelity, Sinch, Acrobits, Smart DID, Zero-Touch Provisioning, Auto Activation, Real-Time Collaboration, Photo-to-Estimate, Weather Dispatch, Roofing Bundle, and Restoration Royalties.
 - Onboarding, activation, and payment collection are ready for end users today.
 - No changes to existing site or product suite.
 - New revenue stream can be launched immediately.
@@ -3796,7 +3796,7 @@ Create a **new page** (not replacing anything) at the URL:
 - ✅ **Photo-to-Estimate** — Upload photos, get AI-generated estimates
 - ✅ **Weather-Aware Dispatch** — Prioritize leads by storm impact
 - ✅ **Roofing Bundle Ready** — Integrated roofing fulfillment layer
-- ✅ **Restoration Royalty Integration** — Customer-facing brand support
+- ✅ **Restoration Royalties Integration** — Customer-facing brand support
 
 
 ### Pricing Table (Optional):
@@ -4215,7 +4215,7 @@ Let me create a **complete, working HTML demonstration** of the Telvergence Smar
                     <p>Integrated roofing fulfillment with weather-aware dispatch.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Restoration Royalty</h3>
+                    <h3>Restoration Royalties</h3>
                     <p>Customer-facing brand integration for restoration services.</p>
                 </div>
             </div>
@@ -6835,7 +6835,7 @@ TELVERGENCE SMART DID + WORKSPACE
 ├── Photo-to-Estimate (AI)
 ├── Weather Dispatch (Sinch)
 ├── Roofing Bundle (Integration)
-├── Restoration Royalty (Brand)
+├── Restoration Royalties (Brand)
 └── Truth Machine (AI Orchestration)
 ```
 
@@ -7749,7 +7749,7 @@ Below is the **complete preservation package** of everything built up to this po
 - Photo-to-estimate (AI image analysis)
 - Weather-aware dispatch (Sinch API)
 - Roofing bundle (Integration)
-- Restoration Royalty (Brand integration)
+- Restoration Royalties (Brand integration)
 
 
 ### **2. Complete Technology Stack:**
@@ -9261,7 +9261,7 @@ module.exports = router;
 - ✅ Photo-to-Estimate (AI Image Analysis)
 - ✅ Weather-Aware Dispatch (Sinch API)
 - ✅ Roofing Bundle (Integration)
-- ✅ Restoration Royalty (Brand Integration)
+- ✅ Restoration Royalties (Brand Integration)
 - ✅ **Drone Footage Upload** (NEW)
 - ✅ **AI Video Analysis** (NEW)
 - ✅ **Instant Auto-Quote** (NEW)
@@ -10368,7 +10368,7 @@ You now have the **complete, production-ready, FAA-compliant masterpiece** that 
 - ✅ Photo-to-Estimate (AI)
 - ✅ Weather Dispatch (Sinch)
 - ✅ Roofing Bundle
-- ✅ Restoration Royalty
+- ✅ Restoration Royalties
 
 ### **🚀 DRONE ENHANCEMENT (NEW):**
 - ✅ Drone Footage Upload (MP4/MOV/AVI, 2GB)
