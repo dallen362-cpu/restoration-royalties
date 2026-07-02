@@ -65,6 +65,14 @@
   .calnote{color:var(--muted);font-size:12px;margin-top:8px}
   .calnote code{color:var(--gold)}
 
+  .dashwrap{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin-top:20px}
+  .dashwrap .dh{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:10px;min-height:64px}
+  .tile{background:#0c1730;border:1px solid var(--line);border-radius:12px;padding:12px}
+  .tile .v{font-size:23px;font-weight:900}.tile .l{font-size:11.5px;font-weight:700;margin-top:2px}.tile .u{font-size:10px;color:var(--muted)}
+  .badge.kpi{color:var(--amber);border-color:rgba(255,138,61,.5)}
+  .badge.mod{color:var(--gold);border-color:rgba(255,215,0,.5)}
+
   .foot{border-top:1px solid var(--line);margin-top:34px;padding:22px 0 60px;text-align:center;color:var(--muted);font-size:12.5px}
   .foot a{color:var(--cyan);text-decoration:none}
 </style>
@@ -72,7 +80,7 @@
 <body>
 
 <div class="bar">
-  <div class="logo"><b>TEL</b>VERGENCE · À La Carte Menu</div>
+  <div class="logo"><b>TEL</b>VERGENCE · Dashboard Builder</div>
   <span class="sp"></span>
   <a href="present.html">← Deck</a>
   <a href="platform.html" style="margin-left:14px">🧠 Platform</a>
@@ -80,9 +88,18 @@
 </div>
 
 <header class="wrap">
-  <h1>Build your platform, <span class="grad">à la carte.</span></h1>
-  <p>Pick the advanced features and custom integrations you want — your selections <b>self-provision on activation</b>, no tickets, no waiting. Everything below is plug-and-play.</p>
+  <h1>Build your <span class="grad">app dashboard.</span></h1>
+  <p>This is <b>your interface</b>. Pick your <b>Key Operating Indicators</b> and the <b>modules</b> you want — pull from our proven boneyard of builds — and the <b>Mashup Studio</b> fuses them into your custom dashboard UI. It assembles live below.</p>
 </header>
+
+<div class="wrap">
+  <div class="dashwrap">
+    <div class="dh"><b style="font-size:16px">📊 Your live dashboard</b>
+      <span style="font-size:11px;color:var(--lime);border:1px solid rgba(0,255,136,.4);border-radius:999px;padding:3px 9px">assembling in real time</span>
+      <a href="studio.html" style="margin-left:auto;color:#cdbfff;text-decoration:none;font-weight:800;font-size:12px">🧬 fuse in Mashup Studio →</a></div>
+    <div class="tiles" id="tiles"><div style="color:var(--muted);font-size:13px;padding:14px">Select your Key Operating Indicators below and your dashboard assembles here…</div></div>
+  </div>
+</div>
 
 <div class="wrap layout">
   <div id="menu"></div>
@@ -90,11 +107,11 @@
   <!-- LIVE SUMMARY -->
   <div>
     <div class="sum">
-      <h3>Your build</h3>
+      <h3>Your dashboard</h3>
       <div class="cnt" id="cnt">0</div>
-      <div class="cntl">features &amp; integrations selected</div>
+      <div class="cntl">KPIs, modules &amp; features selected</div>
       <ul id="sumlist"><li style="color:var(--muted);border:0">Tap items to add them…</li></ul>
-      <a class="actv" href="telvergence-onboarding-funnel.html">⚡ Activate this build — automatically</a>
+      <a class="actv" href="telvergence-onboarding-funnel.html">⚡ Build my app &amp; activate</a>
       <a class="callm" href="tel:+16892421041">📞 Or activate live: (689) 242-1041</a>
       <div class="auto">🤖 On activation, every selection self-provisions and appears on your dashboard.</div>
     </div>
@@ -163,6 +180,30 @@
       {n:"Real-Time Dashboard", d:"Live call activity & KPIs."},
       {n:"Revenue-by-DID Attribution", d:"See which line & channel prints money."}
     ]},
+    {cat:"📊 Key Operating Indicators · your dashboard tiles", items:[
+      {n:"Calls Answered", d:"Live answered-call count.", kpi:{v:"128",u:"today",c:"cyan"}},
+      {n:"Missed → Booked", d:"Rush calls captured & booked.", kpi:{v:"39",u:"recovered",c:"lime"}},
+      {n:"Top Revenue DID", d:"Highest-earning line.", kpi:{v:"$82.5k",u:"line #1",c:"lime"}},
+      {n:"Best Channel", d:"Highest-converting channel.", kpi:{v:"Voice",u:"winner",c:"cyan"}},
+      {n:"Conversion Rate", d:"Call → booked job.", kpi:{v:"31%",u:"call→job",c:"violet"}},
+      {n:"Avg Job Ticket", d:"Average sale value.", kpi:{v:"$7,500",u:"avg",c:"lime"}},
+      {n:"Appointments", d:"Demos & jobs booked (Calendar).", kpi:{v:"12",u:"this week",c:"amber"}},
+      {n:"A/R Outstanding", d:"Open invoices (QuickBooks).", kpi:{v:"$18.2k",u:"to collect",c:"amber"}},
+      {n:"Live Agents", d:"Agents on the phones (ViciDial).", kpi:{v:"6",u:"active",c:"cyan"}},
+      {n:"Avg Answer Time", d:"Speed to answer.", kpi:{v:"18s",u:"avg",c:"cyan"}},
+      {n:"Lead Volume", d:"New leads in.", kpi:{v:"214",u:"30 days",c:"violet"}},
+      {n:"Cost / Acquisition", d:"Blended CPA.", kpi:{v:"$63",u:"blended",c:"amber"}}
+    ]},
+    {cat:"🗄️ Modules · pull from the boneyard, fuse in the Mashup Studio", items:[
+      {n:"Storm Dispatch Map", d:"Live national NWS storm-dispatch map.", module:true},
+      {n:"Agent Partner Portal", d:"10%-of-gross reseller portal.", module:true},
+      {n:"Grid Saturation", d:"Authorized Dedicated Provider map.", module:true},
+      {n:"WIN TV Channel", d:"Weather Intelligence content channel.", module:true},
+      {n:"Smoke Campaign", d:"Live wildfire lead-capture campaign.", module:true},
+      {n:"Back Office (BOSS + ViciDial)", d:"CRM/LMS + agent dialer.", module:true},
+      {n:"3D Talking Flagship", d:"Narrated animated hero.", module:true},
+      {n:"Talking Nav Map", d:"Narrated site map.", module:true}
+    ]},
     {cat:"🔗 Integrations · fusion (included with the $499 back-end platform)", items:[
       {n:"Google Calendar", d:"Appointments & demos in real time.", fusion:true},
       {n:"QuickBooks A/R", d:"Auto-invoicing & collections.", fusion:true},
@@ -191,7 +232,11 @@
     group.items.forEach(function(it){
       var d = document.createElement('div');
       d.className = 'item' + (it.inc?' inc on':'');
-      var badge = it.inc ? '<span class="badge">INCLUDED</span>' : (it.fusion?'<span class="badge fusion">FUSION</span>':'<span class="badge">ADD</span>');
+      var badge = it.inc ? '<span class="badge">INCLUDED</span>'
+        : it.fusion ? '<span class="badge fusion">FUSION</span>'
+        : it.kpi ? '<span class="badge kpi">KPI</span>'
+        : it.module ? '<span class="badge mod">MODULE</span>'
+        : '<span class="badge">ADD</span>';
       d.innerHTML = '<div class="tk">'+((it.inc)?'✓':'')+'</div><div class="nm">'+it.n+'</div><div class="ds">'+it.d+'</div>'+badge;
       if(it.inc){ selected.add(it.n); }
       else d.onclick = function(){
@@ -211,6 +256,16 @@
     var ul = document.getElementById('sumlist');
     ul.innerHTML = Array.from(selected).map(function(s){return '<li><span class="x">✓</span>'+s+'</li>';}).join('') ||
       '<li style="color:var(--muted);border:0">Tap items to add them…</li>';
+    // live dashboard tiles from selected KPIs
+    var COL={cyan:'#00D4FF',lime:'#00FF88',violet:'#7B61FF',amber:'#ff8a3d'};
+    var tiles=[];
+    MENU.forEach(function(g){ g.items.forEach(function(it){ if(it.kpi && selected.has(it.n)) tiles.push(it); }); });
+    var t=document.getElementById('tiles');
+    if(t){
+      t.innerHTML = tiles.length ? tiles.map(function(it){ var c=COL[it.kpi.c]||'#00D4FF';
+        return '<div class="tile"><div class="v" style="color:'+c+'">'+it.kpi.v+'</div><div class="l">'+it.n+'</div><div class="u">'+it.kpi.u+'</div></div>';
+      }).join('') : '<div style="color:var(--muted);font-size:13px;padding:14px">Select your Key Operating Indicators below and your dashboard assembles here…</div>';
+    }
   }
   refresh();
 
