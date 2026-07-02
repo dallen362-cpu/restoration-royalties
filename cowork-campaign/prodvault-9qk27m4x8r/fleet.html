@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>TELVERGENCE — Live Fleet Grid · UCCPXaaS Command Center</title>
+<style>
+  :root{--midnight:#05070f;--panel:#0e1526;--card:#141d33;--line:#26345a;--cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--amber:#ff8a3d;--red:#ff3b5c;--ink:#eaf2ff;--muted:#9fb3d6;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);background:var(--midnight);overflow:hidden}
+  .bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:rgba(10,14,26,.9);border-bottom:1px solid var(--line);position:relative;z-index:20}
+  .logo{font-weight:900;letter-spacing:.5px}.logo b{color:var(--cyan)}
+  .logo small{display:block;font-size:9.5px;letter-spacing:2px;color:var(--muted);font-weight:700}
+  .live{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:800;color:var(--lime)}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:bl 1.3s infinite}
+  @keyframes bl{50%{opacity:.3}}
+  .bar a{color:var(--cyan);text-decoration:none;font-size:13px;font-weight:800}.bar .sp{margin-left:auto}
+
+  .kpis{display:flex;gap:10px;flex-wrap:wrap;padding:10px 16px;background:var(--panel);border-bottom:1px solid var(--line);position:relative;z-index:20}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 14px;min-width:96px}
+  .kpi .v{font-size:20px;font-weight:900}.kpi .l{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .kpi.talk .v{color:var(--lime)}.kpi.text .v{color:var(--cyan)}.kpi.disp .v{color:var(--amber)}.kpi.units .v{color:var(--ink)}
+
+  .chips{display:flex;gap:8px;flex-wrap:wrap;padding:10px 16px;position:absolute;top:104px;left:0;z-index:15}
+  .chip{border:1px solid var(--line);background:rgba(10,14,26,.75);backdrop-filter:blur(6px);border-radius:999px;padding:7px 13px;font-size:12.5px;font-weight:800;cursor:pointer;color:var(--muted);display:flex;align-items:center;gap:7px}
+  .chip .sw{width:10px;height:10px;border-radius:50%}
+  .chip.on{color:var(--ink);border-color:var(--cyan)}
+  .crumb{position:absolute;top:150px;left:18px;z-index:15;font-size:12px;color:var(--muted)}
+  .crumb b{color:var(--cyan)}
+
+  .stage{position:relative}
+  #map{display:block;width:100vw;height:calc(100vh - 106px);background:radial-gradient(1200px 700px at 60% 40%,#0a1430,#05070f 75%)}
+
+  .side{position:absolute;top:150px;right:14px;width:300px;max-height:calc(100vh - 172px);overflow:auto;z-index:15;
+    background:rgba(10,14,26,.82);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:12px}
+  @media(max-width:720px){.side{display:none}}
+  .side h3{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .unit{display:flex;align-items:center;gap:9px;padding:8px;border-radius:10px;border:1px solid var(--line);margin-bottom:7px;background:var(--card)}
+  .unit .b{width:9px;height:9px;border-radius:50%;flex:none}
+  .unit .nm{font-size:12.5px;font-weight:700;flex:1;min-width:0}
+  .unit .nm small{display:block;color:var(--muted);font-weight:500;font-size:10.5px}
+  .unit .st{font-size:9px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px}
+  .st.talk{background:rgba(0,255,136,.15);color:var(--lime)}.st.text{background:rgba(0,212,255,.15);color:var(--cyan)}
+  .st.disp{background:rgba(255,138,61,.15);color:var(--amber)}.st.idle{background:rgba(159,179,214,.12);color:var(--muted)}
+  .unit .act{display:flex;gap:4px}
+  .unit .act a{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:13px;border:1px solid var(--line)}
+  .unit .act a.t{background:rgba(0,255,136,.12)}.unit .act a.x{background:rgba(0,212,255,.12)}
+
+  .tip{position:absolute;z-index:30;pointer-events:none;background:rgba(5,7,15,.95);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:12px;display:none;white-space:nowrap}
+  .foot{position:absolute;bottom:10px;left:16px;z-index:15;font-size:11px;color:#6f82a8;max-width:60vw}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="logo"><b>TEL</b>VERGENCE · Fleet Grid<small>UCCPXaaS — UNIFIED COLLABORATIVE COMMUNICATIONS PLATFORM EXPERIENCE AS A SERVICE</small></div>
+  <span class="live"><span class="dot"></span>LIVE · <span id="clock">—</span></span>
+  <span class="sp"></span>
+  <a href="present.html">← Deck</a>
+  <a href="vault-7kq9x2m4/telvergence-demo.html" style="margin-left:14px">🛰️ Storm Dispatch</a>
+</div>
+
+<div class="kpis">
+  <div class="kpi units"><div class="v" id="kUnits">0</div><div class="l">Units live</div></div>
+  <div class="kpi talk"><div class="v" id="kTalk">0</div><div class="l">On a call</div></div>
+  <div class="kpi text"><div class="v" id="kText">0</div><div class="l">Texting</div></div>
+  <div class="kpi disp"><div class="v" id="kDisp">0</div><div class="l">Dispatched</div></div>
+  <div class="kpi"><div class="v" id="kBrands" style="color:var(--violet)">0</div><div class="l">Brands on grid</div></div>
+</div>
+
+<div class="stage">
+  <div class="chips" id="chips"></div>
+  <div class="crumb" id="crumb">Macro view · <b>All brands</b> · national grid</div>
+  <canvas id="map"></canvas>
+  <div class="side"><h3 id="sideTitle">Live units</h3><div id="units"></div></div>
+  <div class="tip" id="tip"></div>
+  <div class="foot">📡 Every app holder emanates a consented location beacon to the Storm Dispatch command center. All partners on the private-labeled network see their own units; TELVERGENCE sees the macro grid across every brand. Talk &amp; text any unit — omnichannel, real-time.</div>
+</div>
+
+<script>
+  var BRANDS = [
+    {id:"rr",  name:"Restoration Royalties", color:"#ffd700", phone:"+18338406653"},
+    {id:"storm",name:"Storm Crew",           color:"#00D4FF", phone:"+16892421041"},
+    {id:"roof", name:"The Roofing Crew",      color:"#00FF88", phone:"+16892421041"},
+    {id:"pwi",  name:"Predictive Weather",    color:"#7B61FF", phone:"+16892421041"}
+  ];
+  var STATUSES = ["talk","text","disp","idle"];
+  // continental US bounds
+  var LON0=-125, LON1=-66, LAT0=24, LAT1=49.5;
+  var CITIES=[ // seed clusters (lon,lat)
+    [-80.2,26.0],[-81.4,28.5],[-84.4,33.7],[-95.4,29.8],[-96.8,32.8],
+    [-118.2,34.0],[-122.3,37.8],[-87.6,41.9],[-74.0,40.7],[-77.0,38.9],
+    [-104.9,39.7],[-112.1,33.4],[-90.1,29.9],[-71.1,42.4],[-83.0,39.9]
+  ];
+  var units=[], filter="all", hoverU=null;
+  (function seed(){
+    var n=0;
+    for(var i=0;i<28;i++){
+      var b=BRANDS[i%BRANDS.length];
+      var c=CITIES[(i*3)%CITIES.length];
+      // Restoration Royalties concentrated in FL (storm zone)
+      var lon,lat;
+      if(b.id==="rr"||Math.random()<0.32){ lon=-82.5+ (Math.random()*6-3); lat=27.5+(Math.random()*3-1.5); }
+      else { lon=c[0]+(Math.random()*3-1.5); lat=c[1]+(Math.random()*2-1); }
+      units.push({ id:"U"+(1000+i), brand:b, lon:lon, lat:lat,
+        vx:(Math.random()-0.5)*0.02, vy:(Math.random()-0.5)*0.014,
+        status:STATUSES[Math.floor(Math.random()*STATUSES.length)], t:Math.random()*6.28 });
+      n++;
+    }
+  })();
+
+  var cv=document.getElementById('map'), cx=cv.getContext('2d'), W,H;
+  function resize(){ W=cv.width=cv.clientWidth*devicePixelRatio; H=cv.height=cv.clientHeight*devicePixelRatio; cx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0); }
+  window.addEventListener('resize',resize); resize();
+  function w(){return cv.clientWidth;} function h(){return cv.clientHeight;}
+  function px(lon){ return (lon-LON0)/(LON1-LON0)*w(); }
+  function py(lat){ return (1-(lat-LAT0)/(LAT1-LAT0))*h(); }
+
+  var mx=-1,my=-1;
+  cv.addEventListener('mousemove',function(e){ var r=cv.getBoundingClientRect(); mx=e.clientX-r.left; my=e.clientY-r.top; });
+  cv.addEventListener('mouseleave',function(){ mx=-1;my=-1; });
+
+  function visible(u){ return filter==="all"||u.brand.id===filter; }
+
+  function draw(){
+    cx.clearRect(0,0,w(),h());
+    // graticule
+    cx.strokeStyle="rgba(0,212,255,.08)"; cx.lineWidth=1;
+    for(var gx=Math.ceil(LON0/10)*10; gx<LON1; gx+=10){ cx.beginPath();cx.moveTo(px(gx),0);cx.lineTo(px(gx),h());cx.stroke(); }
+    for(var gy=Math.ceil(LAT0/5)*5; gy<LAT1; gy+=5){ cx.beginPath();cx.moveTo(0,py(gy));cx.lineTo(w(),py(gy));cx.stroke(); }
+    // storm system over Florida (active event)
+    var sxx=px(-81.5), syy=py(27.8);
+    var g=cx.createRadialGradient(sxx,syy,10,sxx,syy,140);
+    g.addColorStop(0,"rgba(255,59,92,.30)"); g.addColorStop(1,"rgba(255,59,92,0)");
+    cx.fillStyle=g; cx.beginPath(); cx.arc(sxx,syy,140,0,6.283); cx.fill();
+    cx.fillStyle="rgba(255,120,140,.7)"; cx.font="700 11px Segoe UI"; cx.fillText("⚠ ACTIVE — S. Florida", sxx-40, syy-90);
+
+    // beacons
+    hoverU=null;
+    units.forEach(function(u){
+      if(!visible(u)) return;
+      var x=px(u.lon), y=py(u.lat);
+      u.t+=0.05; var pulse=(Math.sin(u.t)+1)/2;
+      var col=u.brand.color;
+      // pulse ring
+      cx.strokeStyle=col; cx.globalAlpha=0.25*(1-pulse); cx.lineWidth=2;
+      cx.beginPath(); cx.arc(x,y,7+pulse*12,0,6.283); cx.stroke(); cx.globalAlpha=1;
+      // truck dot
+      cx.fillStyle=col; cx.beginPath(); cx.arc(x,y,5,0,6.283); cx.fill();
+      cx.strokeStyle="#05070f"; cx.lineWidth=1.5; cx.stroke();
+      // status inner
+      var sc = u.status==="talk"?"#00FF88":u.status==="text"?"#00D4FF":u.status==="disp"?"#ff8a3d":"#9fb3d6";
+      cx.fillStyle=sc; cx.beginPath(); cx.arc(x,y,2,0,6.283); cx.fill();
+      // hover test
+      if(mx>=0 && Math.hypot(mx-x,my-y)<10){ hoverU={u:u,x:x,y:y}; }
+    });
+
+    // tooltip
+    var tip=document.getElementById('tip');
+    if(hoverU){ tip.style.display="block"; tip.style.left=(hoverU.x+14)+"px"; tip.style.top=(hoverU.y+90)+"px";
+      tip.innerHTML='<b style="color:'+hoverU.u.brand.color+'">'+hoverU.u.brand.name+'</b> · '+hoverU.u.id+' · '+label(hoverU.u.status); }
+    else tip.style.display="none";
+  }
+  function label(s){return s==="talk"?"on a call":s==="text"?"texting":s==="disp"?"dispatched":"idle";}
+
+  function step(){
+    units.forEach(function(u){
+      u.lon+=u.vx; u.lat+=u.vy;
+      if(u.lon<LON0+1||u.lon>LON1-1) u.vx*=-1;
+      if(u.lat<LAT0+1||u.lat>LAT1-1) u.vy*=-1;
+      if(Math.random()<0.004) u.status=STATUSES[Math.floor(Math.random()*STATUSES.length)];
+    });
+    draw(); requestAnimationFrame(step);
+  }
+
+  function refreshUI(){
+    var vis=units.filter(visible);
+    document.getElementById('kUnits').textContent=vis.length;
+    document.getElementById('kTalk').textContent=vis.filter(function(u){return u.status==="talk";}).length;
+    document.getElementById('kText').textContent=vis.filter(function(u){return u.status==="text";}).length;
+    document.getElementById('kDisp').textContent=vis.filter(function(u){return u.status==="disp";}).length;
+    document.getElementById('kBrands').textContent=(filter==="all")?BRANDS.length:1;
+    // side list
+    var el=document.getElementById('units');
+    el.innerHTML=vis.slice(0,40).map(function(u){
+      return '<div class="unit"><span class="b" style="background:'+u.brand.color+'"></span>'+
+        '<div class="nm">'+u.id+'<small>'+u.brand.name+'</small></div>'+
+        '<span class="st '+u.status+'">'+label(u.status).toUpperCase()+'</span>'+
+        '<span class="act"><a class="t" title="Call" href="tel:'+u.brand.phone+'">📞</a>'+
+        '<a class="x" title="Text" href="sms:'+u.brand.phone+'">💬</a></span></div>';
+    }).join('');
+    document.getElementById('sideTitle').textContent = (filter==="all"?"Live units · all brands":"Live units · "+BRANDS.filter(function(b){return b.id===filter;})[0].name);
+    document.getElementById('crumb').innerHTML = (filter==="all")
+      ? 'Macro view · <b>All brands</b> · national grid'
+      : 'Macro › <b>'+BRANDS.filter(function(b){return b.id===filter;})[0].name+'</b> · micro view';
+  }
+
+  // chips
+  var chipWrap=document.getElementById('chips');
+  function chip(id,name,color){ var c=document.createElement('div'); c.className='chip'+(filter===id?' on':'');
+    c.innerHTML=(color?'<span class="sw" style="background:'+color+'"></span>':'🌐 ')+name;
+    c.onclick=function(){ filter=id; document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on');}); c.classList.add('on'); refreshUI(); };
+    chipWrap.appendChild(c); }
+  chip("all","All brands (macro)","");
+  BRANDS.forEach(function(b){ chip(b.id,b.name,b.color); });
+
+  // clock
+  function tick(){ var d=new Date(); document.getElementById('clock').textContent=d.toLocaleTimeString(); }
+  setInterval(function(){ tick(); refreshUI(); }, 1500);
+  tick(); refreshUI(); step();
+</script>
+</body>
+</html>
