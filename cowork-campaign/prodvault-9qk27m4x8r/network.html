@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>TELVERGENCE — Programmable Telecom · The Over-Subscription Network</title>
+<style>
+  :root{--midnight:#05070f;--card:#141d33;--line:#26345a;--cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--amber:#ff8a3d;--ink:#eaf2ff;--muted:#9fb3d6;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);background:radial-gradient(1200px 700px at 50% -6%,#101f47,var(--midnight) 62%);overflow-x:hidden}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+  .grad{background:linear-gradient(90deg,var(--cyan),var(--lime),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:11px 16px;background:rgba(10,14,26,.9);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  .logo{font-weight:900;letter-spacing:.5px}.logo b{color:var(--cyan)}
+  .bar a{color:var(--cyan);text-decoration:none;font-size:13px;font-weight:800}.bar .sp{margin-left:auto}
+  header{text-align:center;padding:40px 0 8px}
+  .kick{letter-spacing:5px;text-transform:uppercase;font-size:13px;font-weight:800;color:var(--cyan)}
+  h1{font-size:clamp(30px,6vw,58px);line-height:1.03;margin:12px auto 8px;max-width:15ch}
+  .lede{color:var(--muted);font-size:clamp(16px,2.4vw,20px);max-width:720px;margin:12px auto 0}
+
+  .meshwrap{position:relative;margin:26px auto 0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#05070f;box-shadow:0 22px 60px rgba(0,0,0,.55)}
+  #mesh{display:block;width:100%;height:min(52vh,460px)}
+  .meshui{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(transparent,rgba(5,7,15,.92));display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .meshui .add{background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c;font-weight:900;border:none;border-radius:10px;padding:11px 18px;font-size:14px;cursor:pointer}
+  .stat{min-width:120px}.stat .v{font-size:22px;font-weight:900}.stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .stat .v.c{color:var(--cyan)}.stat .v.l2{color:var(--lime)}.stat .v.a{color:var(--amber)}
+  .strengthbar{flex:1;min-width:160px}.strengthbar .track{height:10px;border-radius:6px;background:#0c1730;overflow:hidden;margin-top:6px}
+  .strengthbar .fill{height:100%;width:20%;background:linear-gradient(90deg,var(--cyan),var(--lime));transition:width .5s}
+
+  section{padding:44px 0}
+  .sec-h{font-size:clamp(23px,4vw,36px);text-align:center;margin-bottom:6px}
+  .sec-sub{color:var(--muted);text-align:center;max-width:700px;margin:0 auto 26px;font-size:16px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .card .ic{font-size:30px}.card h3{font-size:17px;margin:10px 0 6px}.card p{color:var(--muted);font-size:14px;line-height:1.55}
+  .law{background:linear-gradient(180deg,rgba(123,97,255,.1),transparent);border:1px solid rgba(123,97,255,.35);border-radius:20px;padding:30px;text-align:center;margin-top:10px}
+  .law h2{font-size:clamp(22px,4vw,34px)}.law p{color:var(--muted);max-width:720px;margin:12px auto 0;font-size:15.5px}
+  .badge{display:inline-block;margin-bottom:10px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--violet);border:1px solid rgba(123,97,255,.5);border-radius:999px;padding:5px 12px}
+  .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+  .btn{font-weight:800;border:none;cursor:pointer;border-radius:14px;padding:15px 26px;font-size:15px;text-decoration:none;color:#04121c;background:linear-gradient(90deg,var(--lime),var(--cyan))}
+  .btn.g{background:rgba(255,255,255,.05);color:var(--ink);border:1px solid var(--line)}
+  .foot{border-top:1px solid var(--line);padding:22px 0 60px;text-align:center;color:var(--muted);font-size:12.5px}
+  .foot a{color:var(--cyan);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="logo"><b>TEL</b>VERGENCE · Programmable Telecom</div>
+  <span class="sp"></span>
+  <a href="present.html">← Deck</a>
+  <a href="fleet.html" style="margin-left:14px">📡 Fleet Grid</a>
+</div>
+
+<header class="wrap">
+  <div class="kick">The Over-Subscription Network</div>
+  <h1>The more of us, <span class="grad">the stronger we all get.</span></h1>
+  <p class="lede">Like Helium for essential communications: every subscriber is a node. The denser the network in your area, the stronger the signal, the coverage, and the collaboration — <b>self-propagating</b>, and it costs us almost nothing to add the next one.</p>
+</header>
+
+<div class="wrap">
+  <div class="meshwrap">
+    <canvas id="mesh"></canvas>
+    <div class="meshui">
+      <button class="add" id="addBtn">＋ Add 25 subscribers</button>
+      <div class="stat"><div class="v c" id="nNodes">40</div><div class="l">Nodes on grid</div></div>
+      <div class="stat"><div class="v l2" id="nLinks">0</div><div class="l">Live links</div></div>
+      <div class="stat"><div class="v a" id="nCost">$0.00</div><div class="l">Marginal cost / node</div></div>
+      <div class="strengthbar"><div class="l" style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px">Network strength · <b id="nStr" style="color:var(--lime)">20%</b></div><div class="track"><div class="fill" id="strFill"></div></div></div>
+    </div>
+  </div>
+  <p class="sec-sub" style="margin-top:12px">Watch it: add subscribers and the mesh thickens — strength climbs, coverage compounds, marginal cost stays ~$0. Capacity scales <b>horizontally and vertically, on demand, frictionless</b>.</p>
+</div>
+
+<section class="wrap">
+  <h2 class="sec-h">A <span class="grad">military-grade</span> network of the future</h2>
+  <p class="sec-sub">Not a phone plan — a self-propagating communications fabric.</p>
+  <div class="grid">
+    <div class="card"><div class="ic">🕸️</div><h3>Self-propagating density</h3><p>Every new subscriber strengthens the network for everyone nearby — signal, coverage, and collaboration compound with adoption (the Helium effect for essential comms).</p></div>
+    <div class="card"><div class="ic">🛡️</div><h3>Military-grade &amp; uninterruptible</h3><p>End-to-end fully encrypted, redundant, and resilient — built to stay up when everything else goes down, including during the storm.</p></div>
+    <div class="card"><div class="ic">♾️</div><h3>Infinite on-demand capacity</h3><p>Scales horizontally and vertically, instantly and frictionless — with little to no increase in the underlying cost to do so.</p></div>
+    <div class="card"><div class="ic">🧩</div><h3>Programmable telecom</h3><p>Numbers, routing, AI, channels, and integrations are software you compose — provision, re-route, and re-brand on demand.</p></div>
+    <div class="card"><div class="ic">🤖</div><h3>AI-empowered</h3><p>An AI Second Brain on every line and a live intelligence grid over the whole network — the network thinks, routes, and responds.</p></div>
+    <div class="card"><div class="ic">🌐</div><h3>Global &amp; collaborative</h3><p>A private-labeled, collaborative fabric that spans brands and territories — one grid, many owners, shared strength.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="law">
+    <div class="badge">The next chapter</div>
+    <h2>Beyond Moore's Law. Beyond Metcalfe's Law.</h2>
+    <p>Transistors stopped doubling and raw connection-counting hit its ceiling. The next leap isn't more hardware or more nodes — it's an <b>AI-empowered, programmable, over-subscription network</b> where value compounds with intelligence and collaboration, not silicon. This is the next-generation communications network of the future — and it's the model TELVERGENCE runs on.</p>
+    <div class="acts">
+      <a class="btn" href="activate.html">⚡ Join the network — free to activate</a>
+      <a class="btn g" href="present.html">See the whole platform →</a>
+    </div>
+  </div>
+</section>
+
+<div class="foot wrap">
+  <p>TELVERGENCE — Programmable Telecom · the Over-Subscription Network · <a href="present.html">back to deck</a></p>
+</div>
+
+<script>
+  var cv=document.getElementById('mesh'), cx=cv.getContext('2d'), W,H;
+  function resize(){ W=cv.width=cv.clientWidth*devicePixelRatio; H=cv.height=cv.clientHeight*devicePixelRatio; cx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0); }
+  window.addEventListener('resize',resize); resize();
+  function w(){return cv.clientWidth;} function h(){return cv.clientHeight;}
+  var nodes=[];
+  function addNodes(k){ for(var i=0;i<k;i++){ nodes.push({x:Math.random()*w(),y:Math.random()*h(),vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}); } if(nodes.length>420) nodes=nodes.slice(nodes.length-420); }
+  addNodes(40);
+  var R=90, links=0;
+  function frame(){
+    cx.clearRect(0,0,w(),h());
+    // links
+    links=0;
+    for(var i=0;i<nodes.length;i++){ var a=nodes[i]; a.x+=a.vx; a.y+=a.vy;
+      if(a.x<0||a.x>w())a.vx*=-1; if(a.y<0||a.y>h())a.vy*=-1;
+      for(var j=i+1;j<nodes.length;j++){ var b=nodes[j]; var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<R){ links++; var al=(1-d/R)*0.5; cx.strokeStyle='rgba(0,212,255,'+al+')'; cx.lineWidth=1; cx.beginPath(); cx.moveTo(a.x,a.y); cx.lineTo(b.x,b.y); cx.stroke(); } }
+    }
+    // nodes
+    for(var k=0;k<nodes.length;k++){ var n=nodes[k]; cx.fillStyle='#00FF88'; cx.beginPath(); cx.arc(n.x,n.y,2.4,0,6.283); cx.fill();
+      cx.strokeStyle='rgba(0,255,136,.25)'; cx.beginPath(); cx.arc(n.x,n.y,6,0,6.283); cx.stroke(); }
+    // stats
+    document.getElementById('nNodes').textContent=nodes.length;
+    document.getElementById('nLinks').textContent=links;
+    var maxLinks=nodes.length*3.2; var str=Math.max(8,Math.min(100,Math.round(links/maxLinks*100)));
+    document.getElementById('nStr').textContent=str+'%';
+    document.getElementById('strFill').style.width=str+'%';
+    requestAnimationFrame(frame);
+  }
+  document.getElementById('addBtn').onclick=function(){ addNodes(25); };
+  frame();
+</script>
+</body>
+</html>
