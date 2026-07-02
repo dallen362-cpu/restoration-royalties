@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>TELVERGENCE — À La Carte Feature &amp; Integration Menu</title>
+<style>
+  :root{--midnight:#0A0E1A;--card:#141d33;--line:#26345a;--cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--amber:#ff8a3d;--gold:#ffd700;--ink:#eaf2ff;--muted:#9fb3d6;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);background:radial-gradient(1100px 640px at 50% -8%,#1a2547,var(--midnight) 60%);padding-bottom:120px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+  .grad{background:linear-gradient(90deg,var(--cyan),var(--lime),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .bar{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 18px;background:rgba(10,14,26,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .logo{font-weight:900;letter-spacing:1px}.logo b{color:var(--cyan)}
+  .bar a{color:var(--cyan);text-decoration:none;font-size:13px;font-weight:800}.bar .sp{margin-left:auto}
+
+  header{text-align:center;padding:38px 0 6px}
+  header h1{font-size:clamp(26px,5vw,44px)}
+  header p{color:var(--muted);max-width:720px;margin:10px auto 0}
+
+  .layout{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-top:24px;align-items:start}
+  @media(max-width:920px){.layout{grid-template-columns:1fr}}
+
+  .cat{margin-bottom:22px}
+  .cat h2{font-size:15px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .items{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+  .item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;cursor:pointer;transition:.15s;position:relative;user-select:none}
+  .item:hover{border-color:var(--cyan);transform:translateY(-2px)}
+  .item.on{border-color:var(--lime);box-shadow:0 0 0 1px rgba(0,255,136,.35),0 10px 26px rgba(0,255,136,.16)}
+  .item.inc{border-color:rgba(0,212,255,.4);opacity:.95;cursor:default}
+  .item .tk{position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:6px;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12px;color:#04121c}
+  .item.on .tk{background:linear-gradient(135deg,var(--lime),var(--cyan));border-color:transparent}
+  .item.inc .tk{background:var(--cyan);border-color:transparent;color:#04121c}
+  .item .nm{font-weight:800;font-size:14px;padding-right:26px}
+  .item .ds{color:var(--muted);font-size:12px;line-height:1.45;margin-top:4px}
+  .item .badge{display:inline-block;margin-top:8px;font-size:10px;font-weight:800;letter-spacing:.5px;padding:2px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+  .item.inc .badge{color:var(--cyan);border-color:rgba(0,212,255,.4)}
+  .item .badge.fusion{color:var(--violet);border-color:rgba(123,97,255,.5)}
+
+  /* summary */
+  .sum{position:sticky;top:78px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+  @media(max-width:920px){.sum{position:static}}
+  .sum h3{font-size:16px;margin-bottom:4px}
+  .sum .cnt{font-size:34px;font-weight:900;color:var(--lime)}
+  .sum .cntl{color:var(--muted);font-size:12px;margin-bottom:10px}
+  .sum ul{list-style:none;margin:8px 0;padding:0;max-height:230px;overflow:auto}
+  .sum li{font-size:12.5px;color:#cfe0f7;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;gap:6px}
+  .sum li .x{color:var(--lime)}
+  .actv{display:block;text-align:center;text-decoration:none;margin-top:14px;background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c;font-weight:900;border-radius:12px;padding:14px;font-size:15px}
+  .callm{display:block;text-align:center;text-decoration:none;margin-top:8px;background:rgba(255,255,255,.05);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:11px;font-size:13px;font-weight:800}
+  .auto{margin-top:10px;font-size:11px;color:var(--muted);text-align:center}
+
+  /* calendar / demo */
+  .cal{margin-top:34px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .cal h2{font-size:20px;margin-bottom:4px}.cal p{color:var(--muted);font-size:14px}
+  .calgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:16px}
+  @media(max-width:760px){.calgrid{grid-template-columns:1fr}}
+  .field{margin-bottom:10px}.field label{display:block;font-size:12px;color:var(--muted);font-weight:700;margin-bottom:4px}
+  .field input,.field select{width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0c1730;color:var(--ink);font-size:14px}
+  .book{display:block;text-align:center;text-decoration:none;margin-top:8px;background:linear-gradient(90deg,var(--gold),var(--amber));color:#2a1500;font-weight:900;border-radius:12px;padding:13px;font-size:14px}
+  .calbox{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;min-height:320px}
+  .calbox iframe{width:100%;height:340px;border:0;display:block}
+  .calnote{color:var(--muted);font-size:12px;margin-top:8px}
+  .calnote code{color:var(--gold)}
+
+  .foot{border-top:1px solid var(--line);margin-top:34px;padding:22px 0 60px;text-align:center;color:var(--muted);font-size:12.5px}
+  .foot a{color:var(--cyan);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="logo"><b>TEL</b>VERGENCE · À La Carte Menu</div>
+  <span class="sp"></span>
+  <a href="present.html">← Deck</a>
+  <a href="platform.html" style="margin-left:14px">🧠 Platform</a>
+  <a href="#book" style="margin-left:14px">📅 Book a demo</a>
+</div>
+
+<header class="wrap">
+  <h1>Build your platform, <span class="grad">à la carte.</span></h1>
+  <p>Pick the advanced features and custom integrations you want — your selections <b>auto-provision on activation</b>, no tickets, no waiting. Everything below is plug-and-play.</p>
+</header>
+
+<div class="wrap layout">
+  <div id="menu"></div>
+
+  <!-- LIVE SUMMARY -->
+  <div>
+    <div class="sum">
+      <h3>Your build</h3>
+      <div class="cnt" id="cnt">0</div>
+      <div class="cntl">features &amp; integrations selected</div>
+      <ul id="sumlist"><li style="color:var(--muted);border:0">Tap items to add them…</li></ul>
+      <a class="actv" href="telvergence-onboarding-funnel.html">⚡ Activate this build — automatically</a>
+      <a class="callm" href="tel:+16892421041">📞 Or activate live: (689) 242-1041</a>
+      <div class="auto">🤖 On activation, every selection self-provisions and appears on your dashboard.</div>
+    </div>
+  </div>
+</div>
+
+<!-- GOOGLE CALENDAR / DEMO BOOKING -->
+<div class="wrap">
+  <div class="cal" id="book">
+    <h2>📅 Book a demo or onboarding — <span class="grad">straight into our Google Calendar</span></h2>
+    <p>Every appointment and demo you book lands in the company Google Calendar in real time and shows on the live dashboard for the whole team.</p>
+    <div class="calgrid">
+      <div>
+        <div class="field"><label>Your name</label><input id="bName" placeholder="Your name"></div>
+        <div class="field"><label>Company</label><input id="bCo" placeholder="Your company"></div>
+        <div class="field"><label>Date &amp; time</label><input id="bWhen" type="datetime-local"></div>
+        <div class="field"><label>What do you want to see?</label><select id="bTopic">
+          <option>Full platform demo</option><option>10-line activation walkthrough</option>
+          <option>AI Second Brain (cloned from my site)</option><option>Revenue-by-DID dashboard</option>
+          <option>White-label Mashup Studio</option><option>Integrations &amp; QuickBooks A/R</option>
+        </select></div>
+        <a class="book" id="bookBtn" href="#" target="_blank" rel="noopener">📅 Add to Google Calendar →</a>
+        <div class="calnote">Books an event on <code id="calWho">the company calendar</code> and invites you. Real-time — it appears on the dashboard instantly.</div>
+      </div>
+      <div>
+        <div class="calbox"><iframe id="calEmbed" title="Company Google Calendar" loading="lazy"></iframe></div>
+        <div class="calnote">Live company calendar (agenda view). <a href="vault-7kq9x2m4/watch.html" style="color:var(--cyan)">See it on the dashboard →</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="foot wrap">
+  <p>TELVERGENCE — self-serve onboarding · every selection auto-provisions · demos live in Google Calendar · <a href="present.html">back to deck</a></p>
+</div>
+
+<script>
+  // ===== CONFIG: point these at the company Google Calendar =====
+  var COMPANY_CAL = "telvergence@gmail.com";  // company calendar all demos/appointments reside in
+  document.getElementById('calWho').textContent = COMPANY_CAL;
+  document.getElementById('calEmbed').src =
+    "https://calendar.google.com/calendar/embed?mode=AGENDA&showTitle=0&showPrint=0&showCalendars=0&bgcolor=%230A0E1A&src=" + encodeURIComponent(COMPANY_CAL);
+
+  // ===== À LA CARTE MENU =====
+  var MENU = [
+    {cat:"📣 Front-End · Marketing Module", items:[
+      {n:"10 Branded Smart DIDs", d:"Local, E911-ready numbers that ring your cell.", inc:true},
+      {n:"Local-Presence by Market", d:"Numbers matched to each area code you call.", inc:true},
+      {n:"Branded Caller-ID (CNAM)", d:"STIR/SHAKEN verified — never 'Spam Likely'."},
+      {n:"White-Label Mashup Studio", d:"Your URL → branded site with all 10 DIDs."},
+      {n:"Vanity / Toll-Free Numbers", d:"Memorable 1-800 / keyword numbers."},
+      {n:"Extra Line Packs", d:"Scale beyond 10 lines as you grow."}
+    ]},
+    {cat:"📡 Channels · pay for what converts", items:[
+      {n:"Voice", d:"Inbound & outbound calling.", inc:true},
+      {n:"SMS / Text", d:"Two-way texting on every line."},
+      {n:"Voicemail Drops", d:"Pre-recorded VM straight to inbox."},
+      {n:"Ringless Voicemails", d:"Deliver VM without ringing."},
+      {n:"MMS / Picture", d:"Send images & docs."}
+    ]},
+    {cat:"🧠 Back-End · Advanced Intelligence", items:[
+      {n:"AI Second Brain", d:"Cloned from your site — answers every call 24/7."},
+      {n:"Smart Routing & Auto-Attendant", d:"Every call to the right place."},
+      {n:"AI Transcription & Sentiment", d:"Every call transcribed & scored."},
+      {n:"Call Recording", d:"Recorded & searchable."},
+      {n:"Real-Time Dashboard", d:"Live call activity & KPIs."},
+      {n:"Revenue-by-DID Attribution", d:"See which line & channel prints money."}
+    ]},
+    {cat:"🔗 Integrations · fusion & customized", items:[
+      {n:"Google Calendar", d:"Appointments & demos in real time.", fusion:true},
+      {n:"QuickBooks A/R", d:"Auto-invoicing & collections.", fusion:true},
+      {n:"Claude CRM", d:"Claude for Business back office.", fusion:true},
+      {n:"Salesforce / HubSpot", d:"Sync leads & contacts.", fusion:true},
+      {n:"ViciDial Dialer", d:"Agent dialing & dispositions.", fusion:true},
+      {n:"Stripe Payments", d:"Take card & recurring billing.", fusion:true},
+      {n:"Zapier / Webhooks", d:"Connect 6,000+ apps.", fusion:true},
+      {n:"Slack / Teams Alerts", d:"Real-time call & lead pings.", fusion:true},
+      {n:"Gmail / Outlook", d:"Email intake & follow-up.", fusion:true}
+    ]},
+    {cat:"➕ Add-Ons & Growth", items:[
+      {n:"E911 Dispatchable Location", d:"Life-safety compliant.", inc:true},
+      {n:"Multi-Location Management", d:"Many offices, one system."},
+      {n:"Partner / Reseller (10% flywheel)", d:"Earn 10% of gross you refer."},
+      {n:"Territory · Authorized Dedicated Provider", d:"Own your market."}
+    ]}
+  ];
+
+  var selected = new Set();
+  var menuEl = document.getElementById('menu');
+  MENU.forEach(function(group){
+    var sec = document.createElement('div'); sec.className='cat';
+    sec.innerHTML = '<h2>'+group.cat+'</h2>';
+    var grid = document.createElement('div'); grid.className='items';
+    group.items.forEach(function(it){
+      var d = document.createElement('div');
+      d.className = 'item' + (it.inc?' inc on':'');
+      var badge = it.inc ? '<span class="badge">INCLUDED</span>' : (it.fusion?'<span class="badge fusion">FUSION</span>':'<span class="badge">ADD</span>');
+      d.innerHTML = '<div class="tk">'+((it.inc)?'✓':'')+'</div><div class="nm">'+it.n+'</div><div class="ds">'+it.d+'</div>'+badge;
+      if(it.inc){ selected.add(it.n); }
+      else d.onclick = function(){
+        d.classList.toggle('on');
+        var tk = d.querySelector('.tk');
+        if(d.classList.contains('on')){ selected.add(it.n); tk.textContent='✓'; }
+        else { selected.delete(it.n); tk.textContent=''; }
+        refresh();
+      };
+      grid.appendChild(d);
+    });
+    sec.appendChild(grid); menuEl.appendChild(sec);
+  });
+
+  function refresh(){
+    document.getElementById('cnt').textContent = selected.size;
+    var ul = document.getElementById('sumlist');
+    ul.innerHTML = Array.from(selected).map(function(s){return '<li><span class="x">✓</span>'+s+'</li>';}).join('') ||
+      '<li style="color:var(--muted);border:0">Tap items to add them…</li>';
+  }
+  refresh();
+
+  // ===== Google Calendar booking link =====
+  function pad(n){return String(n).padStart(2,'0');}
+  function gcalStamp(dt){ // -> YYYYMMDDTHHMMSS (local, floating)
+    return dt.getFullYear()+pad(dt.getMonth()+1)+pad(dt.getDate())+'T'+pad(dt.getHours())+pad(dt.getMinutes())+'00';
+  }
+  function buildBookingLink(){
+    var whenV = document.getElementById('bWhen').value;
+    var name = document.getElementById('bName').value || 'Prospect';
+    var co = document.getElementById('bCo').value || '';
+    var topic = document.getElementById('bTopic').value;
+    var start = whenV ? new Date(whenV) : new Date();
+    var end = new Date(start.getTime() + 30*60000);
+    var title = encodeURIComponent('TELVERGENCE Demo — '+name+(co?(' ('+co+')'):''));
+    var det = encodeURIComponent('Topic: '+topic+'\nBooked via the à la carte menu. Founder line: (689) 242-1041.');
+    var dates = gcalStamp(start)+'/'+gcalStamp(end);
+    return 'https://calendar.google.com/calendar/render?action=TEMPLATE'+
+      '&text='+title+'&dates='+dates+'&details='+det+
+      '&add='+encodeURIComponent(COMPANY_CAL);
+  }
+  var bookBtn = document.getElementById('bookBtn');
+  function updateLink(){ bookBtn.href = buildBookingLink(); }
+  ['bWhen','bName','bCo','bTopic'].forEach(function(id){ document.getElementById(id).addEventListener('input', updateLink); });
+  updateLink();
+</script>
+</body>
+</html>
