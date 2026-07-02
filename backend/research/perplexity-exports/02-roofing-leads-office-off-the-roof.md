@@ -800,7 +800,7 @@ To move this forward, can you paste one Gemini piece next—ideally your favorit
 
 # Also include all information done for the following brands and themes we pre established as final in the GitHub account such as “Storm Dispatch Network” , restoration Royalty , the roofing crew , weather intelligence network
 
-Those brand and theme names are valuable, but I cannot see anything stored in your GitHub account, Claude, or Gemini unless you paste or upload it here. None of that “master” creative is visible to me directly, so I can’t automatically import prior work for Storm Dispatch Network, Restoration Royalty, The Roofing Crew, or Weather Intelligence Network.[^11_1][^11_2][^11_3][^11_4]
+Those brand and theme names are valuable, but I cannot see anything stored in your GitHub account, Claude, or Gemini unless you paste or upload it here. None of that “master” creative is visible to me directly, so I can’t automatically import prior work for Storm Dispatch Network, Restoration Royalties, The Roofing Crew, or Weather Intelligence Network.[^11_1][^11_2][^11_3][^11_4]
 
 What I *can* do is help you rebuild and unify those brands around the Telvergence/“Office off the Roof” vision once you share the key pieces from your side.
 
@@ -822,7 +822,7 @@ Based on their names and how the wider roofing/restoration market talks, here is
     - A dispatch and routing layer for storm events.
     - Think: “When hail hits, we light up the phones and route live calls and leads to the right roofing/restoration crews in real time.”
     - Tied to: geotargeted calling, lead distribution, and instant routing when weather events happen.
-- **Restoration Royalty**
+- **Restoration Royalties**
     - A brand/theme for high‑end restoration outcomes and homeowner experience.[^11_3][^11_1]
     - Think: “White‑glove storm and water restoration, with communications and updates powered by the Telvergence cloud.”
     - Could be your case‑study brand for property restoration verticals beyond roofing.
@@ -861,7 +861,7 @@ Here’s a practical way to consolidate everything you did in GitHub / Claude / 
 To really honor and reuse the work you already did, I need to see at least *one* of those “final” writeups. The most leveraged starting point would be either:
 
 - Storm Dispatch Network (since it ties to storm leads and dispatch), or
-- Restoration Royalty (since it speaks to restoration and your royalty/authority theme).
+- Restoration Royalties (since it speaks to restoration and your royalty/authority theme).
 
 Can you paste the “final” text you have for *one* of those brands (from GitHub, Claude, or Gemini), and I’ll show you exactly how I’ll integrate it into your Telvergence / Office off the Roof framework?
 <span style="display:none">[^11_16][^11_17][^11_18][^11_19][^11_20][^11_21][^11_22]</span>
@@ -929,7 +929,7 @@ A clean structure is:
 
 - TELVERGENCE = cloud communications engine for the business.[^12_2][^12_1]
 - Office off the Roof = flagship promise for roofing companies, centered on remote operations and scalable lead handling.[^12_3][^12_1]
-- Storm Dispatch Network, Restoration Royalty, The Roofing Crew, and Weather Intelligence Network = supporting brands/themes that each express a different layer of that same ecosystem.[^12_6][^12_7][^12_8]
+- Storm Dispatch Network, Restoration Royalties, The Roofing Crew, and Weather Intelligence Network = supporting brands/themes that each express a different layer of that same ecosystem.[^12_6][^12_7][^12_8]
 
 
 ## What to publish first
@@ -1018,7 +1018,7 @@ This should be the intelligence and signal layer, using weather awareness and ma
 
 This is the contractor-facing execution brand. It should speak in practical language about helping small and midsize roofing businesses run like larger, more organized operators.[^13_18][^13_19]
 
-### Restoration Royalty
+### Restoration Royalties
 
 This should represent the premium restoration and homeowner-experience layer, especially for storm and damage-response categories where trust, responsiveness, and presentation matter.[^13_20][^13_21][^13_22]
 
@@ -1178,7 +1178,7 @@ The intelligence and signal layer. This brand should represent weather-linked aw
 
 The contractor-facing execution layer. This brand should speak simply and credibly to roofers, especially owner-operators and small to midsize firms that want to perform like more advanced companies without bloated overhead.[^14_12][^14_22]
 
-### Restoration Royalty
+### Restoration Royalties
 
 The premium restoration and homeowner-experience layer. This brand should signal elevated presentation, trust, responsiveness, and white-glove restoration positioning.[^14_11][^14_13][^14_23]
 

@@ -28,7 +28,7 @@ TELVERGENCE + Bright Sound = one telecom-and-marketing engine where a business's
 ## C. Brand architecture (export 02)
 All plug into TELVERGENCE (cloud comms engine) under the flagship promise **"Office off the Roof."**
 - **Storm Dispatch Network** — storm-event dispatch/routing layer (geo-targeted calling, live lead routing when weather hits). *(Dashboard built.)*
-- **Restoration Royalty** — premium homeowner restoration brand / case-study vertical.
+- **Restoration Royalties** — premium homeowner restoration brand / case-study vertical.
 - **The Roofing Crew** — contractor-facing brand (act like a full back office with two trucks + a ladder).
 - **Weather Intelligence Network (WIN)** — the data/insight layer that tells Storm Dispatch where to focus. *(WIN TV + live NWS built.)*
 - **"Office off the Roof"** — the pitch to roofers: run phones + leads from the cloud, white-label TELVERGENCE to their industry, scale beyond physical labor.
@@ -37,7 +37,7 @@ All plug into TELVERGENCE (cloud comms engine) under the flagship promise **"Off
 "Project Phoenix / Street Savings" flagship: **3,500 leads → 34 press-1 (~0.97%) → 1 fully automated TPV enrollment** end-to-end with no live agent. Frame as "automation works in the wild" proof. **TODO: one-page case study `case-studies/press1-tpv-3500.md`.**
 
 ## E. Campaigns & leads (exports 02 + 04)
-- **South Florida smoke-exposure campaign (Restoration Royalty):**
+- **South Florida smoke-exposure campaign (Restoration Royalties):**
   - 🔴 High (downwind plume): Miramar, Pembroke Pines, Weston, Doral, Hialeah
   - 🟠 Moderate: Miami Lakes, Miami Gardens, N. Miami/N. Miami Beach, Sunrise, Plantation
   - 🟡 Lower: W. Fort Lauderdale suburbs, Coral Springs, SW Palm Beach fringe
@@ -51,7 +51,7 @@ All plug into TELVERGENCE (cloud comms engine) under the flagship promise **"Off
 - [ ] **Drone Video-to-Quote** landing page + package + suggested pricing (above) on TELVERGENCE.
 - [ ] **Smart Talk Website / AI agent** tier ($199 / $99-per-DID) as a product.
 - [ ] **Press-1/TPV case study** one-pager.
-- [ ] **Storm/smoke geo campaign** page for Restoration Royalty (exposure-zone ad groups).
+- [ ] **Storm/smoke geo campaign** page for Restoration Royalties (exposure-zone ad groups).
 - [ ] Seed **roofing leads** into BOSS/ViciDial (await the backup CSV for the full set).
 - [ ] NPA/NXX **DID-matching + proximity** logic → fold into the Vitelity provisioning worker + grid model.
 
