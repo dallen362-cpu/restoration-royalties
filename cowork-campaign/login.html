@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>TELVERGENCE — Members Login</title>
+<style>
+  :root{--midnight:#0A0E1A;--card:#141d33;--line:#26345a;--cyan:#00D4FF;--lime:#00FF88;--violet:#7B61FF;--ink:#eaf2ff;--muted:#9fb3d6;--red:#ff5d73;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(1000px 560px at 50% -10%,#1a2547,var(--midnight) 60%);padding:24px}
+  .box{max-width:420px;width:100%;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:34px 28px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+  .brand{text-align:center;font-weight:900;letter-spacing:1px;font-size:20px}.brand b{color:var(--cyan)}
+  .realm{text-align:center;color:var(--muted);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+  .lock{text-align:center;font-size:40px;margin:14px 0 6px}
+  h1{text-align:center;font-size:20px;margin-bottom:4px}
+  .sub{text-align:center;color:var(--muted);font-size:13px;margin-bottom:18px}
+  label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin:12px 0 5px}
+  input{width:100%;padding:13px;border-radius:10px;border:1px solid var(--line);background:#0c1730;color:var(--ink);font-size:15px}
+  input:focus{outline:none;border-color:var(--cyan)}
+  .signin{width:100%;margin-top:18px;background:linear-gradient(90deg,var(--lime),var(--cyan));color:#04121c;font-weight:900;border:none;border-radius:12px;padding:14px;font-size:15px;cursor:pointer}
+  .signin:active{transform:translateY(1px)}
+  .err{color:var(--red);font-size:13px;text-align:center;margin-top:12px;display:none}
+  .shake{animation:sh .4s}@keyframes sh{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+  .rule{border:0;border-top:1px solid var(--line);margin:20px 0 14px}
+  .caps{font-size:12px;color:var(--muted);text-align:center;line-height:1.7}
+  .caps b{color:var(--ink)}
+  .caps .soon{display:inline-block;font-size:10px;font-weight:800;color:var(--violet);border:1px solid rgba(123,97,255,.5);border-radius:999px;padding:2px 8px;margin-left:4px}
+  .req{display:block;text-align:center;margin-top:16px;color:var(--cyan);text-decoration:none;font-size:13px;font-weight:800}
+  .foot{text-align:center;color:#5e7099;font-size:11px;margin-top:16px}
+</style>
+</head>
+<body>
+  <div class="box" id="box">
+    <div class="brand"><b>TEL</b>VERGENCE</div>
+    <div class="realm">Members Realm · Private</div>
+    <div class="lock">🔐</div>
+    <h1>Members Login</h1>
+    <div class="sub">Authorized partners &amp; subscribers only.</div>
+
+    <form id="f" autocomplete="on">
+      <label for="email">Email</label>
+      <input id="email" type="email" inputmode="email" autocomplete="username" placeholder="you@company.com">
+      <label for="pass">Access code</label>
+      <input id="pass" type="password" autocomplete="current-password" placeholder="Enter your members access code">
+      <button class="signin" type="submit">🔓 Sign in</button>
+      <div class="err" id="err">Incorrect access code. Try again or request access below.</div>
+    </form>
+
+    <hr class="rule">
+    <div class="caps">
+      <b>Inside the members area:</b><br>
+      🧩 Back Office — BOSS CRM/LMS <span class="soon">soon</span><br>
+      ☎️ Dialer — ViciDial agent front end <span class="soon">soon</span><br>
+      📊 Your live dashboard · 📡 fleet grid · 🛰️ weather · 💳 billing
+    </div>
+    <a class="req" href="tel:+16892421041">📞 Request access — (689) 242-1041</a>
+    <div class="foot">© TELVERGENCE — Integrated Communication Technologies. Private members portal.</div>
+  </div>
+
+<script>
+  // ===== Members access (client-side gate). Change CODES here.
+  // NOTE: true per-user auth arrives when this ties into BOSS/ViciDial (SSO). =====
+  var CODES = ["TELV-WIN-2026","MEMBER-2026"];         // accepted access codes
+  var DEST  = "prodvault-9qk27m4x8r/present.html";      // secured destination
+
+  // already signed in this browser? go straight in.
+  try{ if(localStorage.getItem('telv_member')==='1'){ /* stay on page but allow quick continue */ } }catch(e){}
+
+  document.getElementById('f').addEventListener('submit', function(e){
+    e.preventDefault();
+    var code=(document.getElementById('pass').value||'').trim().toUpperCase();
+    var ok=CODES.some(function(c){return c.toUpperCase()===code;});
+    if(ok){
+      try{ localStorage.setItem('telv_member','1'); localStorage.setItem('telv_member_email',(document.getElementById('email').value||'').trim()); }catch(e){}
+      location.replace(DEST);
+    } else {
+      var box=document.getElementById('box'); box.classList.remove('shake'); void box.offsetWidth; box.classList.add('shake');
+      document.getElementById('err').style.display='block';
+    }
+  });
+</script>
+</body>
+</html>
