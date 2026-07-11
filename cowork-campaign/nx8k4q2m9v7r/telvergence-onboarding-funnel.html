@@ -263,9 +263,10 @@
   📞 <a href="tel:+16892421041">(689) 242-1041</a> · 💬 <a href="sms:+16892421041">Text (689) 242-1041</a> · <a href="terms.html">Terms</a>
 </div>
 
+<script src="stripe.js"></script>
 <script>
-  // ===== LIVE Payment Link goes here (Stripe Dashboard, LIVE mode). Currently TEST link for staging. =====
-  var STRIPE_LINK = "https://buy.stripe.com/test_3cI28seiR5J3egrbdCco000";
+  // ===== Payment Link. LIVE link is set once in stripe.js (FRONTEND_LINK); this TEST link is the staging fallback. =====
+  var STRIPE_LINK = (window.TELV_STRIPE && window.TELV_STRIPE.FRONTEND_LINK) || "https://buy.stripe.com/test_3cI28seiR5J3egrbdCco000";
   var LINES = 10, PRICE = 22.95;
 
   var state = { mode:'new', npa:'954', forward:'', email:'' };
