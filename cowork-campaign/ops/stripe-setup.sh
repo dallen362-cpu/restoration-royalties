@@ -55,9 +55,9 @@ FRONTEND_LINK=$(s "$API/payment_links" \
 echo "   URL: $FRONTEND_LINK"
 
 echo
-echo "==================== DONE — wire these in ===================="
-echo "FRONT-END (funnel online/card path) STRIPE_LINK = $FRONTEND_LINK"
-echo "   → cowork-campaign/telvergence-onboarding-funnel.html  (var STRIPE_LINK)"
-echo "BACK-END (platform \$499 + \$1,499)  PLATFORM_LINK  = $BACKEND_LINK"
-echo "   → cowork-campaign/platform.html  (Get the platform CTA)"
-echo "============================================================="
+echo "==================== DONE — one file to wire ===================="
+echo "Paste BOTH URLs into  cowork-campaign/nx8k4q2m9v7r/stripe.js :"
+echo "   FRONTEND_LINK = $FRONTEND_LINK   (\$22.95 × up to 10 lines)"
+echo "   BACKEND_LINK  = $BACKEND_LINK    (\$499/mo + \$1,499 setup)"
+echo "That single edit flips every Pay button on every page to LIVE."
+echo "================================================================"

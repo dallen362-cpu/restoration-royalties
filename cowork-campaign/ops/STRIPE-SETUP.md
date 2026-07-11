@@ -21,9 +21,16 @@ Use a LIVE secret key, or a **restricted key** (`rk_live_…`) with **write** on
 
 > Prefer not to paste a key here? Send me a restricted `rk_live_` key (Products/Prices/Payment Links: write) and I'll run it and wire the links. Or run it yourself and paste the two URLs back.
 
-## Wire the URLs in (I do this once you have them)
-1. **FRONT-END** URL → `telvergence-onboarding-funnel.html`, the `STRIPE_LINK` variable.
-2. **BACK-END** URL → `platform.html`, the `#platformCheckout` button `href` (marked with a comment).
+## Wire the URLs in — ONE file, one paste
+Both links live in **`cowork-campaign/nx8k4q2m9v7r/stripe.js`**:
+```js
+window.TELV_STRIPE = {
+  BACKEND_LINK:  "",   // ← paste $499/mo + $1,499 setup link
+  FRONTEND_LINK: "",   // ← paste $22.95 × 1–10 lines link
+  CALL: "tel:+16892421041"
+};
+```
+Paste the two URLs, save, done. Every "Pay" button on every page (platform `$499` button + the onboarding funnel) reads from here. **Until a link is set, buttons route to the founder line — never a dead button.**
 
 ## Manual (Stripe Dashboard) alternative
 Products → **+ Add product** for each of the three above (set the recurring/one-time and amount). Then **Payment links → + New**:

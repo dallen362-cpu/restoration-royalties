@@ -168,12 +168,14 @@
 
   <div class="acts">
     <a class="btn btn-p" href="telvergence-onboarding-funnel.html">⚡ Start with the 10-pack — $0 today</a>
-    <!-- After running ops/stripe-setup.sh, replace this href with the BACK-END payment link ($499/mo + $1,499 setup) -->
-    <a class="btn btn-p" id="platformCheckout" href="tel:+18558358741" style="background:linear-gradient(90deg,var(--cyan),var(--violet))">💳 Get the platform — $499/mo + $1,499 setup</a>
+    <!-- Live link is set once in stripe.js (BACKEND_LINK). Until then this routes to the founder line. -->
+    <a class="btn btn-p" id="platformCheckout" data-stripe="backend" href="tel:+16892421041" style="background:linear-gradient(90deg,var(--cyan),var(--violet))">💳 Get the platform — $499/mo + $1,499 setup</a>
     <a class="btn btn-g" href="tel:+18558358741">📞 Talk platform — (855) TELVRG-1</a>
   </div>
   <div class="preserve">🔒 <b>Your existing telvergence.com is preserved and untouched.</b> This is the macro→micro mashup living in our presentation build — the live site stays exactly as it is, ready to activate or point a domain at anytime.</div>
 </section>
+
+<script src="stripe.js"></script>
 
 <div class="foot wrap">
   <p>TELVERGENCE — One platform for every call, message &amp; customer interaction · 📞 <a href="tel:+18558358741">(855) TELVRG-1</a> · <a href="mailto:contact@telvergence.com">contact@telvergence.com</a></p>
