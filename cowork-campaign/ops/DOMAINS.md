@@ -1,5 +1,7 @@
 # TELVERGENCE — Domains
 
+> 📌 **Standing rule:** every project must have its own **unique, secured, anonymous, protected** URL under `name.telvergence.com` (no personal/GitHub-handle links). See **[PROJECT-URL-POLICY.md](./PROJECT-URL-POLICY.md)**.
+
 ## Brand domains to secure (GoDaddy)
 | Domain | Purpose | Status |
 |--------|---------|--------|
@@ -23,5 +25,6 @@ For a **root** brand domain (e.g. restorationroyalties.com) pointing at the site
 
 ## Production security (in progress)
 1. ✅ Links rotated behind one secret master path; public front = locked gate.
-2. ⬜ Make the GitHub repo **private** (hides source).
+2. ⬜ Make the GitHub repo **private** (hides source) — **required** by PROJECT-URL-POLICY (a public repo lets anyone download the source for free; a secret path does not stop that).
 3. ⬜ **Cloudflare Access** (email login gate) on the production domain — true sole-control.
+4. ⬜ Retire all `dallen362-cpu.github.io/...` links once projects are migrated to `name.telvergence.com` on the private-repo → Cloudflare stack.
