@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telvergence — Showroom & Sales Catalog</title>
+<style>
+  /* Committed single visual world: a telecom "signal at night" dispatch console. Intentionally dark. */
+  :root{
+    --ink:#070b16; --ink2:#0b1222; --panel:#111a2e; --panel2:#0d1526; --line:#213050;
+    --cyan:#2dd4ea; --cyan-dim:#1a90a3; --gold:#f0b64a; --lime:#3ef0a0; --violet:#8f7dff;
+    --text:#eaf1ff; --muted:#9fb0cc; --faint:#61789e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:
+      radial-gradient(1100px 620px at 80% -8%, rgba(45,212,234,.10), transparent 60%),
+      radial-gradient(900px 520px at 0% 4%, rgba(143,125,255,.08), transparent 55%),
+      var(--ink);
+    color:var(--text); font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif; line-height:1.55;
+    -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  a{color:var(--cyan);text-decoration:none}
+  ::selection{background:rgba(45,212,234,.3)}
+
+  /* top bar */
+  .bar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:14px;
+    padding:12px 20px;background:rgba(7,11,22,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.6px;font-size:17px}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 0 rgba(45,212,234,.6);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(45,212,234,.55)}70%{box-shadow:0 0 0 9px rgba(45,212,234,0)}100%{box-shadow:0 0 0 0 rgba(45,212,234,0)}}
+  @media(prefers-reduced-motion:reduce){.dot{animation:none}}
+  .logo b{color:var(--cyan)}
+  .bar .sp{margin-left:auto}
+  .callbtn{background:linear-gradient(180deg,var(--cyan),var(--cyan-dim));color:#03151a;font-weight:800;
+    padding:9px 16px;border-radius:10px;font-size:13.5px;white-space:nowrap;border:1px solid rgba(255,255,255,.18)}
+
+  /* hero */
+  .hero{padding:64px 0 40px;text-align:left}
+  .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:2.6px;text-transform:uppercase;color:var(--cyan)}
+  .hero h1{font-size:clamp(32px,6.4vw,58px);line-height:1.03;letter-spacing:-.02em;font-weight:800;
+    margin:14px 0 12px;text-wrap:balance;max-width:16ch}
+  .hero h1 .g{background:linear-gradient(92deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{font-size:clamp(16px,2.2vw,20px);color:#d5e2fb;max-width:56ch}
+  .herocta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .btn{padding:13px 22px;border-radius:12px;font-weight:800;font-size:15px;border:1px solid var(--line)}
+  .btn.pri{background:linear-gradient(180deg,var(--cyan),var(--cyan-dim));color:#03151a;border-color:rgba(255,255,255,.2)}
+  .btn.gh{background:transparent;color:var(--text)}
+  .stats{display:flex;flex-wrap:wrap;gap:26px;margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+  .stat .n{font-size:26px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
+  .stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  .head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+  .head h2{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-.01em}
+  .head p{color:var(--muted);font-size:14px;max-width:42ch}
+
+  .grid{display:grid;gap:14px}
+  .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+    border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px;transition:border-color .15s,transform .15s}
+  a.card:hover{border-color:var(--cyan);transform:translateY(-2px)}
+  .card .ic{font-size:22px}
+  .card h3{font-size:17px;font-weight:800;letter-spacing:-.01em}
+  .card p{color:var(--muted);font-size:13.6px;flex:1}
+  .chip{align-self:flex-start;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;
+    background:rgba(240,182,74,.14);color:var(--gold);border:1px solid rgba(240,182,74,.3);font-variant-numeric:tabular-nums}
+  .chip.cy{background:rgba(45,212,234,.13);color:var(--cyan);border-color:rgba(45,212,234,.3)}
+
+  /* brand rows */
+  .brand{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);
+    border-radius:14px;padding:14px 16px;transition:border-color .15s}
+  a.brand:hover{border-color:var(--cyan)}
+  .brand .em{font-size:24px;flex:none}
+  .brand .bd{flex:1;min-width:0}
+  .brand .bd h3{font-size:15.5px;font-weight:800}
+  .brand .bd p{font-size:12.8px;color:var(--muted)}
+  .brand .tel{font-size:12.5px;font-weight:800;color:var(--gold);white-space:nowrap}
+  .arrow{color:var(--cyan);font-weight:800}
+
+  .demolist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .demo{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);font-weight:700;font-size:14px}
+  a.demo:hover{border-color:var(--cyan)}
+  .demo .d{width:7px;height:7px;border-radius:50%;background:var(--lime);flex:none}
+
+  .price{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .pcard{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}
+  .pcard .amt{font-size:24px;font-weight:800;color:var(--cyan);font-variant-numeric:tabular-nums}
+  .pcard .u{font-size:12px;color:var(--muted)}
+  .pcard .w{font-size:13px;color:var(--text);margin-top:6px;font-weight:700}
+
+  .final{background:
+      radial-gradient(600px 260px at 50% 0%, rgba(45,212,234,.16), transparent 60%), var(--panel2);
+    border:1px solid var(--line);border-radius:20px;padding:40px 22px;text-align:center;margin-top:8px}
+  .final h2{font-size:clamp(22px,4vw,32px);font-weight:800;text-wrap:balance}
+  .final p{color:var(--muted);margin:8px auto 0;max-width:48ch}
+  .foot{padding:26px 0 60px;color:var(--faint);font-size:12.5px;text-align:center;border-top:1px solid var(--line)}
+
+  @media(max-width:860px){.g3{grid-template-columns:repeat(2,1fr)} .price{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.g2,.g3,.demolist,.price{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <span class="logo"><span class="dot"></span><b>TEL</b>VERGENCE</span>
+  <span class="sp"></span>
+  <a class="callbtn" href="tel:+16892421041">&#9742; Call the founder &middot; 689-242-1041</a>
+</div>
+
+<header class="hero wrap">
+  <div class="eyebrow">The Showroom &middot; Ready-to-Sell Systems &amp; Campaigns</div>
+  <h1>Every call, message &amp; customer &mdash; <span class="g">captured, branded, and sold.</span></h1>
+  <p>One catalog of fully-built telecom, AI-voice, dialer, lead-gen and website systems &mdash; each ready to advertise and activate for a client today. Tap any tile to open the live demo.</p>
+  <div class="herocta">
+    <a class="btn pri" href="#systems">Explore the systems</a>
+    <a class="btn gh" href="#brands">See the campaigns</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="n">10+</div><div class="l">Live demo sites</div></div>
+    <div class="stat"><div class="n">775</div><div class="l">Leads ready to dial</div></div>
+    <div class="stat"><div class="n">$22.95</div><div class="l">per Smart DID line</div></div>
+    <div class="stat"><div class="n">24/7</div><div class="l">AI voice coverage</div></div>
+  </div>
+</header>
+
+<section id="systems" class="wrap">
+  <div class="head">
+    <h2>Systems we sell</h2>
+    <p>Each is already built &mdash; we deploy it under the client's brand and start it earning.</p>
+  </div>
+  <div class="grid g3">
+    <div class="card"><div class="ic">&#129302;</div><h3>AI Voice Agents</h3><p>Custom voice agents answer, qualify and book every call 24/7 on branded vanity Smart DID lines &mdash; no receptionist, no missed jobs.</p><span class="chip cy">Custom build</span></div>
+    <div class="card"><div class="ic">&#9742;&#65039;</div><h3>Vanity Smart DID Lines</h3><p>Memorable local &amp; toll-free numbers with CNAM branding, STIR/SHAKEN, E911, missed-call text-back and full call accounting.</p><span class="chip">$22.95 / line / mo</span></div>
+    <div class="card"><div class="ic">&#128225;</div><h3>Live Voice Agent Team Campaign</h3><p>Turnkey outbound live-agent &amp; AI voice team campaigns, customized: local-presence NPA/NXX DID grid, fronter/closer/QC teams, agent + 3-way TPV scripts, carrier wired.</p><span class="chip cy">Turnkey setup</span></div>
+    <div class="card"><div class="ic">&#128222;</div><h3>Telemarketing-as-a-Service</h3><p>Done-for-you B2B campaigns: compliant scripts, verification, and segmented lead lists &mdash; we make the phone ring, you keep the jobs.</p><span class="chip cy">Managed</span></div>
+    <div class="card"><div class="ic">&#127760;</div><h3>Website Development &amp; Sales</h3><p>Turnkey branded marketing sites, live on their own domain with HTTPS in days &mdash; the way fastadjustingservice.com &amp; restorationroyalties.com launched.</p><span class="chip cy">Built &amp; hosted</span></div>
+    <div class="card"><div class="ic">&#128202;</div><h3>Lead Generation</h3><p>Segmented, local-presence lead lists by trade &amp; metro &mdash; 337 FL roofing + 438 plumber/electrician/HVAC ready to load now.</p><span class="chip">775 leads ready</span></div>
+    <div class="card"><div class="ic">&#128737;&#65039;</div><h3>Compliance-First Outreach</h3><p>DNC-scrubbed, consent-tracked, fully recorded &mdash; built to the DMA Code of Ethics, TCPA &amp; FTSA. Safe &middot; Consistent &middot; Connected.</p><span class="chip cy">Built-in</span></div>
+    <div class="card"><div class="ic">&#127786;&#65039;</div><h3>Weather Intelligence Network</h3><p>Storm &amp; smoke-plume monitoring that dispatches the right crew first &mdash; the edge for roofing, restoration &amp; storm response.</p><span class="chip cy">Platform</span></div>
+    <div class="card"><div class="ic">&#128179;</div><h3>Referral &ldquo;Digital Business Card&rdquo;</h3><p>Gift partners a Smart DID referral line &mdash; private calls, app-tracked royalties, paid per line. Turns every contact into a salesperson.</p><span class="chip">$100 / line</span></div>
+  </div>
+</section>
+
+<section id="brands" class="wrap">
+  <div class="head">
+    <h2>Campaigns &amp; brands ready to deploy</h2>
+    <p>Complete verticals &mdash; site, lines, scripts and demo already built. Tap to open.</p>
+  </div>
+  <div class="grid g2">
+    <a class="brand" href="https://fastadjustingservice.com" target="_blank" rel="noopener"><span class="em">&#127958;&#65039;</span><div class="bd"><h3>Fast Adjusting Service</h3><p>Public-adjuster storm-capture engine &middot; live site</p></div><span class="tel">855-2-ADJUST</span><span class="arrow">&rarr;</span></a>
+    <a class="brand" href="https://dallen362-cpu.github.io/restoration-royalties/cowork-campaign/nx8k4q2m9v7r/vault-7kq9x2m4/restoration-royalty-smoke.html" target="_blank" rel="noopener"><span class="em">&#128293;</span><div class="bd"><h3>Restoration Royalty</h3><p>South Florida fire &amp; smoke campaign</p></div><span class="tel">833-840-MOLD</span><span class="arrow">&rarr;</span></a>
+    <a class="brand" href="https://dallen362-cpu.github.io/stormcrew/" target="_blank" rel="noopener"><span class="em">&#127794;</span><div class="bd"><h3>The Roofing Crew &middot; StormCrew</h3><p>&ldquo;The crew you call before the storm hits&rdquo;</p></div><span class="tel">1-800-THE-CREW</span><span class="arrow">&rarr;</span></a>
+    <a class="brand" href="https://dallen362-cpu.github.io/restoration-royalties/cowork-campaign/nx8k4q2m9v7r/vault-7kq9x2m4/serotonin-centers.html" target="_blank" rel="noopener"><span class="em">&#128138;</span><div class="bd"><h3>Serotonin Centers</h3><p>Medical / franchise cloud-telecom pitch</p></div><span class="tel">1-844-454-LEAN</span><span class="arrow">&rarr;</span></a>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="head">
+    <h2>See it live</h2>
+    <p>The demos to open and pitch from at the table.</p>
+  </div>
+  <div class="demolist">
+    <a class="demo" href="https://dallen362-cpu.github.io/restoration-royalties/cowork-campaign/nx8k4q2m9v7r/showroom.html" target="_blank" rel="noopener"><span class="d"></span>The Showroom (all renditions)</a>
+    <a class="demo" href="https://dallen362-cpu.github.io/restoration-royalties/cowork-campaign/nx8k4q2m9v7r/present.html" target="_blank" rel="noopener"><span class="d"></span>Master Deck</a>
+    <a class="demo" href="https://dallen362-cpu.github.io/restoration-royalties/cowork-campaign/nx8k4q2m9v7r/why-telvergence.html" target="_blank" rel="noopener"><span class="d"></span>Safe &middot; Consistent &middot; Connected</a>
+    <a class="demo" href="https://dallen362-cpu.github.io/restoration-royalties/cowork-campaign/nx8k4q2m9v7r/platform.html" target="_blank" rel="noopener"><span class="d"></span>The Platform (back end)</a>
+    <a class="demo" href="https://dallen362-cpu.github.io/restoration-royalties/cowork-campaign/nx8k4q2m9v7r/activate.html" target="_blank" rel="noopener"><span class="d"></span>Pitch &amp; Catch activation</a>
+    <a class="demo" href="https://dallen362-cpu.github.io/restoration-royalties/cowork-campaign/nx8k4q2m9v7r/weatherwindow.html" target="_blank" rel="noopener"><span class="d"></span>Weather Window</a>
+    <a class="demo" href="https://dallen362-cpu.github.io/restoration-royalties/cowork-campaign/nx8k4q2m9v7r/fleet.html" target="_blank" rel="noopener"><span class="d"></span>Storm Dispatch / Fleet Grid</a>
+    <a class="demo" href="https://dallen362-cpu.github.io/restoration-royalties/cowork-campaign/nx8k4q2m9v7r/vault-7kq9x2m4/win-tv.html" target="_blank" rel="noopener"><span class="d"></span>WIN TV</a>
+  </div>
+  <p style="color:var(--faint);font-size:12px;margin-top:14px">Gated demos use the members door: <b style="color:var(--muted)">login.html</b> &middot; code <b style="color:var(--muted)">TELV-WIN-2026</b></p>
+</section>
+
+<section class="wrap">
+  <div class="head"><h2>How it's priced</h2><p>Simple, sellable numbers.</p></div>
+  <div class="price">
+    <div class="pcard"><div class="amt">$22.95</div><div class="u">per line / month</div><div class="w">Smart DID lines</div></div>
+    <div class="pcard"><div class="amt">$499+</div><div class="u">per month + $1,499 setup</div><div class="w">Platform tiers ($499/$999/$2,499)</div></div>
+    <div class="pcard"><div class="amt">$100</div><div class="u">per referred line</div><div class="w">Referral royalties</div></div>
+    <div class="pcard"><div class="amt">$25K</div><div class="u">territory license</div><div class="w">Franchise / white-label</div></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="final">
+    <div class="eyebrow" style="color:var(--cyan)">Ready to advertise &amp; activate today</div>
+    <h2>Pick a system, brand it, turn it on.</h2>
+    <p>Every asset here is built and demonstrable right now. Call to spin one up for a client.</p>
+    <div class="herocta" style="justify-content:center;margin-top:22px">
+      <a class="btn pri" href="tel:+16892421041">&#9742; 689-242-1041</a>
+      <a class="btn gh" href="mailto:contact@telvergence.com">contact@telvergence.com</a>
+    </div>
+  </div>
+</section>
+
+<div class="foot wrap">
+  TELVERGENCE, Inc. &middot; One platform for every call, message &amp; customer interaction &middot; (855) TELVRG-1 &middot; telvergence.com
+</div>
+</body>
+</html>
