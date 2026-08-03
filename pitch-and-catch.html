@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telvergence — Pitch &amp; Catch · Mashup Studio · UCaaS + CPaaS</title>
+<style>
+  :root{
+    --ink:#070b16;--ink2:#0b1222;--panel:#111a2e;--panel2:#0d1526;--line:#213050;
+    --cyan:#2dd4ea;--cyan-dim:#1a90a3;--gold:#f0b64a;--lime:#3ef0a0;--violet:#8f7dff;
+    --text:#eaf1ff;--muted:#9fb0cc;--faint:#61789e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:
+      radial-gradient(1100px 620px at 80% -8%, rgba(45,212,234,.10), transparent 60%),
+      radial-gradient(900px 520px at 0% 4%, rgba(143,125,255,.08), transparent 55%),var(--ink);
+    color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  a{color:var(--cyan);text-decoration:none}
+  .bar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:12px;padding:12px 20px;background:rgba(7,11,22,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.6px;font-size:17px}
+  .logo b{color:var(--cyan)}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime)}
+  .bar .sp{margin-left:auto}
+  .callbtn{background:linear-gradient(180deg,var(--cyan),var(--cyan-dim));color:#03151a;font-weight:800;padding:9px 15px;border-radius:10px;font-size:13.5px;white-space:nowrap}
+  .hero{padding:56px 0 30px}
+  .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:2.6px;text-transform:uppercase;color:var(--cyan)}
+  h1{font-size:clamp(30px,6vw,54px);line-height:1.04;letter-spacing:-.02em;font-weight:800;margin:14px 0 12px;max-width:18ch}
+  h1 .g{background:linear-gradient(92deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{font-size:clamp(16px,2.2vw,20px);color:#d5e2fb;max-width:64ch}
+  section{padding:40px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+  .lead{color:var(--muted);max-width:60ch;margin-bottom:18px}
+  .studio{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:20px;padding:22px}
+  .row{display:grid;gap:14px}
+  @media(min-width:760px){.row{grid-template-columns:1fr 1fr}}
+  .field{margin:12px 0}
+  .field label{display:block;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+  select,input{width:100%;background:#0c1626;border:1px solid var(--line);border-radius:12px;color:var(--text);padding:13px 14px;font-size:16px;font-family:inherit}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .chip{background:#0c1626;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-weight:800;font-variant-numeric:tabular-nums;cursor:pointer;font-size:15px}
+  .chip.sel{border-color:var(--cyan);background:rgba(45,212,234,.12);color:var(--cyan)}
+  .go{width:100%;margin-top:8px;background:linear-gradient(180deg,var(--lime),#25b083);color:#04231a;font-weight:800;border:none;padding:15px;border-radius:14px;font-size:17px;cursor:pointer}
+  .out{margin-top:14px;background:rgba(62,240,160,.08);border:1px solid rgba(62,240,160,.4);border-radius:14px;padding:16px;display:none}
+  .out.show{display:block}
+  .out .big{font-size:22px;font-weight:800;color:var(--lime);font-variant-numeric:tabular-nums}
+  .cards{display:grid;gap:14px}
+  @media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:18px}
+  .card .ic{font-size:22px}
+  .card h3{font-size:16px;font-weight:800;margin:6px 0 4px}
+  .card p{color:var(--muted);font-size:14px}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}
+  th,td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--faint);font-size:11px;text-transform:uppercase;letter-spacing:1px}
+  td.telv{color:var(--lime);font-weight:700}
+  .tick{color:var(--lime);font-weight:800}.no{color:#ff7a6b;font-weight:800}
+  .infra{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px}
+  .infra .b{background:#0c1626;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-weight:700;font-size:13.5px;color:#cfe0fb}
+  .arrow{color:var(--gold);font-weight:800}
+  .final{background:radial-gradient(600px 260px at 50% 0%, rgba(45,212,234,.16), transparent 60%),var(--panel2);border:1px solid var(--line);border-radius:20px;padding:36px 22px;text-align:center;margin:20px 0}
+  .btn{display:inline-block;padding:13px 22px;border-radius:12px;font-weight:800;font-size:15px;border:1px solid var(--line)}
+  .btn.pri{background:linear-gradient(180deg,var(--cyan),var(--cyan-dim));color:#03151a}
+  .note{font-size:12.5px;color:var(--faint);margin-top:10px}
+  .foot{padding:26px 0 60px;color:var(--faint);font-size:12.5px;text-align:center;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="bar">
+  <span class="logo"><span class="dot"></span><b>TEL</b>VERGENCE</span>
+  <span class="sp"></span>
+  <a class="callbtn" href="tel:+16892421041">&#9742; 689-242-1041</a>
+</div>
+
+<header class="hero wrap">
+  <div class="eyebrow">Pitch &amp; Catch &middot; Mashup Studio &middot; UCaaS + CPaaS</div>
+  <h1>Activate a real phone number in <span class="g">60 seconds — $0 out of pocket.</span></h1>
+  <p class="sub">Telvergence is telecom-native. Vapi, ElevenLabs and GoHighLevel bolt AI onto phone calls &mdash; we <b>own the telecom ecosystem underneath</b>: real carrier DIDs, CNAM, E911, STIR/SHAKEN, routing and billing, wholesale through Vitelity, Sinch, Acrobits &amp; Inteliquent. Pick a number, point it anywhere, and catch every call.</p>
+</header>
+
+<div class="wrap">
+
+<!-- PITCH & CATCH STUDIO -->
+<section>
+  <h2>Pitch &amp; Catch — live activation</h2>
+  <p class="lead">Choose a branded Smart DID, point it at any phone you already have, and turn it on. No hardware, no contract, no card today.</p>
+  <div class="studio">
+    <div class="row">
+      <div>
+        <div class="field">
+          <label>1 &middot; Pick your market (area code)</label>
+          <select id="npa">
+            <option value="407">407 &middot; Orlando</option>
+            <option value="321">321 &middot; Orlando / Space Coast</option>
+            <option value="689">689 &middot; Orlando (overlay)</option>
+            <option value="305">305 &middot; Miami</option>
+            <option value="786">786 &middot; Miami (overlay)</option>
+            <option value="954">954 &middot; Fort Lauderdale</option>
+            <option value="813">813 &middot; Tampa</option>
+            <option value="800">800 &middot; Toll-free</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>2 &middot; Choose an available number</label>
+          <div class="chips" id="chips"></div>
+        </div>
+      </div>
+      <div>
+        <div class="field">
+          <label>3 &middot; Point it at your phone</label>
+          <input id="dest" inputmode="tel" placeholder="(689) 242-1041">
+        </div>
+        <div class="field">
+          <label>4 &middot; Your email (so we can activate it)</label>
+          <input id="email" inputmode="email" placeholder="you@business.com">
+        </div>
+        <button class="go" onclick="activate()">&#9889; Activate my number — $0 today</button>
+        <div class="out" id="out"></div>
+      </div>
+    </div>
+  </div>
+  <p class="note">This starts your activation request and reserves the number. Live provisioning is completed on Telvergence's carrier network (Vitelity/Inteliquent) &mdash; you'll get a confirmation, and billing only begins after your numbers are working.</p>
+</section>
+
+<!-- MASHUP STUDIO -->
+<section>
+  <h2>Mashup Studio</h2>
+  <p class="lead">Snap building blocks together into one live system &mdash; a number, an AI voice agent, routing, a site, and tracking. Mix, point, and go live.</p>
+  <div class="cards">
+    <div class="card"><div class="ic">&#9742;&#65039;</div><h3>Smart DID</h3><p>Vanity local or toll-free number with CNAM, E911, STIR/SHAKEN.</p></div>
+    <div class="card"><div class="ic">&#129302;</div><h3>AI Voice Agent</h3><p>Answers, qualifies, books 24/7 &mdash; on your real number, not a web widget.</p></div>
+    <div class="card"><div class="ic">&#128260;</div><h3>Routing &amp; Catch</h3><p>Ring your cell, a team, or a live-agent campaign; missed-call text-back.</p></div>
+    <div class="card"><div class="ic">&#127760;</div><h3>Instant Site</h3><p>Branded page with the number embedded &mdash; live on its own domain in days.</p></div>
+    <div class="card"><div class="ic">&#128202;</div><h3>Call Tracking</h3><p>Recordings, CDRs, revenue-by-DID &mdash; full call accounting.</p></div>
+    <div class="card"><div class="ic">&#128179;</div><h3>Referral Cards</h3><p>Give partners a tracked DID; pay per line. Every contact becomes a seller.</p></div>
+  </div>
+</section>
+
+<!-- WHY WE WIN -->
+<section>
+  <h2>Why Telvergence beats AI-only platforms</h2>
+  <p class="lead">Vapi.ai, ElevenLabs and GoHighLevel are great at their layer &mdash; but none of them adopted the telecom ecosystem. We did.</p>
+  <div style="overflow-x:auto">
+  <table>
+    <tr><th>Capability</th><th class="telv">Telvergence</th><th>Vapi.ai</th><th>ElevenLabs</th><th>GoHighLevel</th></tr>
+    <tr><td>Owns real carrier DIDs (buy/port/activate)</td><td class="telv">Yes &mdash; wholesale</td><td class="no">No (resold)</td><td class="no">No</td><td class="no">No (resold)</td></tr>
+    <tr><td>CNAM, E911, STIR/SHAKEN native</td><td class="tick">Yes</td><td class="no">Limited</td><td class="no">No</td><td class="no">Limited</td></tr>
+    <tr><td>Live-agent + AI hybrid campaigns</td><td class="tick">Yes</td><td class="no">AI only</td><td class="no">Voice only</td><td class="no">Partial</td></tr>
+    <tr><td>$0-out-of-pocket activation</td><td class="tick">Yes</td><td class="no">No</td><td class="no">No</td><td class="no">No</td></tr>
+    <tr><td>Compliance-first (TCPA/FTSA/DNC/DMA)</td><td class="tick">Built-in</td><td class="no">DIY</td><td class="no">DIY</td><td class="no">DIY</td></tr>
+    <tr><td>Wholesale telecom margin to you</td><td class="telv">Yes</td><td class="no">No</td><td class="no">No</td><td class="no">No</td></tr>
+  </table>
+  </div>
+</section>
+
+<!-- INFRASTRUCTURE -->
+<section>
+  <h2>The infrastructure underneath (UCCPXaaS)</h2>
+  <p class="lead">Unified Communications + Communications-Platform, delivered as a service &mdash; built on tier-1 wholesale and independent tooling.</p>
+  <div class="infra">
+    <span class="b">Vitelity</span><span class="b">Sinch</span><span class="b">Acrobits</span><span class="b">Inteliquent</span>
+    <span class="arrow">&rarr;</span>
+    <span class="b" style="border-color:var(--cyan);color:var(--cyan)">Telvergence</span>
+    <span class="b">Contact America</span>
+    <span class="arrow">&rarr;</span>
+    <span class="b" style="border-color:var(--lime);color:var(--lime)">Your branded number, agent &amp; site</span>
+  </div>
+  <p class="note" style="margin-top:14px">Independent stack: DID provisioning &amp; SIP via the Vitelity portal &amp; API; softphone/app via Acrobits; capacity via Sinch &amp; Inteliquent; delivery, sites, forms, mail &amp; storage across Google. One ecosystem, owned end-to-end.</p>
+</section>
+
+<!-- VISION -->
+<section>
+  <h2>Built for the fourth industrial revolution</h2>
+  <p class="lead">The world's processing model was disrupted by COVID-19; Moore's and Metcalfe's laws are hitting their limits; and value is shifting from raw compute to connected, autonomous systems. Telvergence is designed for what comes next.</p>
+  <div class="cards">
+    <div class="card"><div class="ic">&#128272;</div><h3>Private &amp; secure by design</h3><p>A private communications network engineered for end-to-end encryption and high-availability, redundant routing &mdash; your calls and data, protected.</p></div>
+    <div class="card"><div class="ic">&#128225;</div><h3>M2M &amp; AI ready</h3><p>The 3rd revolution was machine-to-machine; the 4th is AI as one machine. Telvergence carries both &mdash; human, agent, and device on one number fabric.</p></div>
+    <div class="card"><div class="ic">&#9881;&#65039;</div><h3>Automate the overhead away</h3><p>AI agents handle intake, qualifying and booking around the clock &mdash; cutting fixed labor cost so revenue isn't gated by headcount.</p></div>
+    <div class="card"><div class="ic">&#128200;</div><h3>Real-time sales stats</h3><p>Live dashboards: calls, conversions and revenue-by-DID as they happen &mdash; decisions on data, not guesswork.</p></div>
+    <div class="card"><div class="ic">&#127760;</div><h3>Always-on delivery</h3><p>Redundant carrier paths and cloud hosting for resilient, uninterrupted service across markets.</p></div>
+    <div class="card"><div class="ic">&#129309;</div><h3>Income for the whole network</h3><p>Wholesale margin, referral royalties and campaign revenue shared across partners &mdash; growth that lifts everyone.</p></div>
+  </div>
+  <p class="note">Security and availability statements describe Telvergence's architecture and design goals; specific certifications and SLAs are provided per deployment.</p>
+</section>
+
+<div class="final">
+  <div class="eyebrow" style="color:var(--cyan)">Ready to advertise &amp; activate today</div>
+  <h2 style="margin-top:6px">Pick a number. Point it. Catch every call.</h2>
+  <p class="lead" style="margin:8px auto 18px">No card today &middot; 30-day satisfaction guarantee &middot; $22.95 per line.</p>
+  <a class="btn pri" href="tel:+16892421041">&#9742; 689-242-1041</a>
+  <a class="btn" href="https://dallen362-cpu.github.io/restoration-royalties/showroom.html">Open the Showroom</a>
+</div>
+
+</div>
+
+<div class="foot">TELVERGENCE, Inc. &middot; UCaaS + CPaaS &middot; One platform for every call, message &amp; customer interaction &middot; telvergence.com</div>
+
+<script>
+  var npa=document.getElementById('npa'), chips=document.getElementById('chips'), sel=null;
+  function pad(n){return ('000'+n).slice(-4);}
+  function seedFor(code){
+    var base=parseInt(code,10)*7%9000+1000, out=[];
+    for(var i=0;i<4;i++){ var line=(base+i*1373)%9000+1000; var pre=(base+i*31)%800+200; out.push(code+'-'+pre+'-'+pad(line)); }
+    return out;
+  }
+  function render(){
+    chips.innerHTML=''; sel=null;
+    seedFor(npa.value).forEach(function(num){
+      var d=document.createElement('div'); d.className='chip'; d.textContent=num;
+      d.onclick=function(){ document.querySelectorAll('.chip').forEach(function(c){c.classList.remove('sel');}); d.classList.add('sel'); sel=num; };
+      chips.appendChild(d);
+    });
+  }
+  npa.onchange=render; render();
+  function activate(){
+    var out=document.getElementById('out');
+    var dest=document.getElementById('dest').value.trim();
+    var email=document.getElementById('email').value.trim();
+    if(!sel){ out.className='out show'; out.innerHTML='Pick an available number above first.'; return; }
+    if(!dest||!email){ out.className='out show'; out.innerHTML='Add where to point it and your email so we can activate it.'; return; }
+    out.className='out show';
+    out.innerHTML='<div class="big">'+sel+'</div>Reserved and pointed to <b>'+dest+'</b>.<br>Activation request started for <b>'+email+'</b> &mdash; $0 today. We’ll confirm when it’s live on the network.<br><br><a class="callbtn" style="display:inline-block" href="mailto:contact@telvergence.com?subject=Activate%20'+encodeURIComponent(sel)+'&body=Point%20'+encodeURIComponent(sel)+'%20to%20'+encodeURIComponent(dest)+'%20for%20'+encodeURIComponent(email)+'">Email this activation to Telvergence</a>';
+  }
+</script>
+</body>
+</html>
