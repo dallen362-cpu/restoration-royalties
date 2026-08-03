@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Telvergence — Game Plan · Monday Aug 4</title>
+<style>
+  :root{--bg:#070b16;--panel:#111a2e;--panel2:#0d1526;--line:#213050;--text:#eaf1ff;--muted:#9fb0cc;--cyan:#2dd4ea;--gold:#f0b64a;--lime:#3ef0a0;--red:#ff7a6b}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:radial-gradient(1100px 620px at 82% -8%,rgba(45,212,234,.10),transparent 60%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Arial,sans-serif;line-height:1.6;font-size:16px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+  a{color:var(--cyan)}
+  .top{background:linear-gradient(180deg,#0d1730,#070b16);border-bottom:1px solid var(--line);padding:26px 0;text-align:center}
+  .badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--cyan);border:1px solid rgba(45,212,234,.4);border-radius:999px;padding:5px 12px}
+  h1{font-size:clamp(24px,5vw,34px);font-weight:800;margin:12px 0 4px}
+  .top p{color:var(--muted);font-size:14px}
+  .cp{background:rgba(62,240,160,.08);border:1px solid rgba(62,240,160,.4);border-radius:14px;padding:16px;margin:18px 0}
+  .cp h2{font-size:15px;color:var(--lime);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+  .cp p{color:#d6e2fb;font-size:14.5px}
+  .item{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0;position:relative;padding-left:56px}
+  .item .n{position:absolute;left:14px;top:16px;width:30px;height:30px;border-radius:9px;background:var(--cyan);color:#03151a;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .item.hot .n{background:var(--red);color:#2a0703}
+  .item.warm .n{background:var(--gold);color:#251a00}
+  .item h3{font-size:16px;font-weight:800;margin-bottom:4px}
+  .item .who{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--gold);margin-bottom:6px}
+  .item p,.item li{color:#d6e2fb;font-size:14.5px}.item ul{margin:6px 0 0 18px}.item li{margin:3px 0}
+  .item .give{margin-top:8px;font-size:13.5px;color:var(--lime)}
+  .foot{padding:22px 0 60px;color:var(--muted);font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <span class="badge">Telvergence · Game Plan · Private</span>
+  <h1>Monday, August 4 — the plan</h1>
+  <p>Business day: carriers &amp; support are open. One critical path, in order.</p>
+</div></div>
+
+<div class="wrap">
+
+<div class="cp">
+  <h2>★ The critical path (do these in order — each unlocks the next)</h2>
+  <p><b>New VPS → its static IP → whitelist + 321 caller-ID → I build the configs → bidirectional test call.</b> That test call is the finish line for Priority #1. Everything else is parallel.</p>
+</div>
+
+<div class="item hot">
+  <span class="n">1</span>
+  <div class="who">You (Cowork co-pilot) · MORNING</div>
+  <h3>Stand up a fresh dialer VPS — your Vultr, your control</h3>
+  <p>Use the VPS-provisioning Cowork prompt. Vultr High-Freq Atlanta, 4–8 vCPU / 8–16 GB, <b>reserved static IPv4</b>, ViciBox 12.0.2. <b>Not</b> Derek/ServerStadium (exclusion lock).</p>
+  <div class="give">→ Bring me back: <b>DIALER_VPS_STATIC_IPV4</b></div>
+</div>
+
+<div class="item hot">
+  <span class="n">2</span>
+  <div class="who">You (in Vitelity portal) · after #1</div>
+  <h3>Rotate → whitelist → pick the 321 caller-ID</h3>
+  <ul>
+    <li>Rotate <b>card_phoenix01</b> password first (it was exposed) — new value to your vault only.</li>
+    <li>Whitelist the new VPS static IP (Sub Accounts → edit IP) — stops the 403 SIP error.</li>
+    <li>Pick one <b>Orlando 321</b> DID for outbound caller ID (replace the Kansas number).</li>
+    <li>Export the DID CSV (settles 74 vs 86).</li>
+  </ul>
+  <div class="give">→ Bring me back: the <b>Orlando-321 caller-ID number</b> (+ CSV if you have it)</div>
+</div>
+
+<div class="item hot">
+  <span class="n">3</span>
+  <div class="who">Me (Claude) · minutes after #2</div>
+  <h3>Generate the configs → you run the test call</h3>
+  <p>I build <b>pjsip.conf + extensions.conf</b> wired to inbound24.vitelity.net with the 321 as caller ID, plus the pre-flight checklist. You deploy and we go for the <b>inbound + outbound test call.</b> ✅ Priority #1 done.</p>
+</div>
+
+<div class="item warm">
+  <span class="n">4</span>
+  <div class="who">You · quick</div>
+  <h3>Flip recurring revenue on</h3>
+  <p>Send me your <b>Telvergence Business PayPal email</b> → I wire the monthly subscriptions live in the checkout in 60 seconds. (One-time payments already work to your personal account.)</p>
+</div>
+
+<div class="item warm">
+  <span class="n">5</span>
+  <div class="who">You · 15 min</div>
+  <h3>Security hygiene</h3>
+  <p>Rotate the <b>3 exposed Microsoft passwords</b> + <b>card_phoenix01</b> to new values — password manager / local vault only, never in chat. Then finish the dave@contactam.com lockdown (MFA cleanup, forwarding off).</p>
+</div>
+
+<div class="item warm">
+  <span class="n">6</span>
+  <div class="who">Josh · time-critical</div>
+  <h3>Josh's motion — the Aug 13 clock is running</h3>
+  <p>Josh reads the app, <b>signs &amp; dates his Verified Motion himself</b>, gathers Exhibits A–D, and sends the retention email to Ron Legendre. Backup: file pro se at myflcourtaccess.com. <b>Before Aug 13.</b></p>
+</div>
+
+<div class="item">
+  <span class="n">7</span>
+  <div class="who">You + Me · when ready</div>
+  <h3>Larry</h3>
+  <p>Give me your <b>real raise numbers</b> + confirmed <b>recovery specifics</b> → I finalize the packet → you text him <b>larry.html</b> and set the call.</p>
+</div>
+
+<div class="item">
+  <span class="n">8</span>
+  <div class="who">You · optional / parallel</div>
+  <h3>Bright Sound &amp; STIR/SHAKEN</h3>
+  <ul>
+    <li>If sending the Vitelity records-alignment ticket, use the <b>safe version</b> (verify CNAM/E911/411 + validate the 645 block) — <b>keep port protection ON</b>, do NOT signal port-out readiness until Bright Sound's agreement is counter-signed.</li>
+    <li>Start the <b>STIR/SHAKEN A-attestation</b> request through Vitelity/Sinch (5–10 business days — begin early).</li>
+  </ul>
+</div>
+
+<div class="foot">Private game plan · not indexed · Telvergence, Inc. · The whole day hinges on step 1 → the VPS IP. Get that and the rest falls in line.</div>
+</div>
+</body>
+</html>
