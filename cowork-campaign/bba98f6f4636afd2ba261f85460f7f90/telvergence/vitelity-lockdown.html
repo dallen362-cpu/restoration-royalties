@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Vitelity / Sinch Lockdown — Live Checklist</title>
+<style>
+  :root{--bg:#070b16;--panel:#111a2e;--panel2:#0d1526;--line:#213050;--text:#eaf1ff;--muted:#9fb0cc;--cyan:#2dd4ea;--gold:#f0b64a;--lime:#3ef0a0;--red:#ff7a6b}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Arial,sans-serif;line-height:1.5;font-size:16px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px}
+  a{color:var(--cyan)}
+  .top{background:linear-gradient(180deg,#0d1730,#070b16);border-bottom:1px solid var(--line);padding:20px 0;text-align:center}
+  .badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--red);border:1px solid rgba(255,122,107,.45);border-radius:999px;padding:5px 12px}
+  h1{font-size:23px;font-weight:800;margin:10px 0 2px}
+  .top p{color:var(--muted);font-size:13.5px}
+  .warn{background:rgba(255,122,107,.12);border:1px solid rgba(255,122,107,.45);border-radius:12px;padding:14px;margin:16px 0;font-size:13.5px;color:#ffd2ca}
+  .warn b{color:#fff}
+  .prog{height:10px;background:#0c1626;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:14px 0 4px}
+  .prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--lime));transition:width .3s}
+  .pct{font-size:12px;color:var(--muted);text-align:right;margin-bottom:10px}
+  section{padding:20px 0;border-top:1px solid var(--line)}
+  h2{font-size:17px;font-weight:800;margin-bottom:8px}
+  .step{display:flex;gap:11px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 13px;margin:7px 0;cursor:pointer;user-select:none}
+  .step .box{width:24px;height:24px;border-radius:7px;border:2px solid var(--muted);flex:none;display:flex;align-items:center;justify-content:center;font-weight:800;color:#04231a;font-size:15px}
+  .step.done .box{background:var(--lime);border-color:var(--lime)}
+  .step.done .box::after{content:"\2713"}
+  .step.done .t{text-decoration:line-through;color:var(--muted)}
+  .step .t{font-size:14.5px}.step .t b{color:#fff}
+  .step .where{font-size:11px;color:var(--faint,#61789e);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+  .seq{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:13.5px;color:#d6e2fb}
+  .seq b{color:var(--gold)}
+  textarea{width:100%;background:#0c1626;border:1px solid var(--line);border-radius:10px;color:var(--text);padding:11px;font-size:14px;font-family:inherit;min-height:70px;resize:vertical;margin-top:6px}
+  label.wl{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--cyan)}
+  .grid{display:grid;gap:12px}
+  .tk{display:grid;grid-template-columns:1fr;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px;margin:7px 0}
+  .tk .h{font-weight:800;font-size:13.5px}
+  .tk input{background:#0c1626;border:1px solid var(--line);border-radius:8px;color:var(--text);padding:8px;font-size:13px;font-family:inherit}
+  .foot{padding:20px 0 60px;color:var(--muted);font-size:12px;text-align:center}
+  .btnrow{display:flex;gap:10px;margin-top:8px}
+  .btn{flex:1;background:#1a2740;border:1px solid var(--line);color:var(--cyan);font-weight:800;padding:11px;border-radius:10px;font-size:13.5px;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <span class="badge">Priority #1 · Vitelity/Sinch Lockdown · Private</span>
+  <h1>Live Lockdown Checklist</h1>
+  <p>Tap to check off. Saves on THIS device only. <a href="https://docs.google.com/document/d/1zffz8xGO_-hUtOpsx0h4gacuff0UFGOTEv1poYB2kWg/edit">Full playbook &rarr;</a></p>
+</div></div>
+
+<div class="wrap">
+  <div class="warn"><b>🛑 NO SECRETS HERE.</b> Never type a password, API password, port-out PIN, 2FA code, or API key into this page. Those go ONLY in your password manager / local vault. This page is for check-offs and non-secret notes.</div>
+
+  <div class="prog"><i id="bar"></i></div>
+  <div class="pct" id="pct">0 of 17 done</div>
+
+  <div class="seq"><b>Order matters:</b> Recon (silent) → rotate password → 2FA → remove former user → reissue API → lock porting → verify. Don't change anything until the inventory is captured. Confirm which portal controls the account first: <b>sinch.com/portals</b> or <b>portal.vitelity.net</b>.</div>
+
+  <section>
+    <h2>Completion checklist</h2>
+    <div id="steps"></div>
+  </section>
+
+  <section>
+    <h2>Inventory notes (non-secret only)</h2>
+    <label class="wl">Users / admins (email · role · 2FA · recognized? · action)</label>
+    <textarea data-note="users" placeholder="e.g. dallen362@gmail.com · admin · 2FA off · me · enable 2FA"></textarea>
+    <label class="wl">API users (username · last used · IP-restricted? · recognized? · action)</label>
+    <textarea data-note="api" placeholder="e.g. card_phoenix01 · ? · no · me · reissue + IP-lock"></textarea>
+    <label class="wl">DIDs (number · route/trunk · CNAM · ported? · looks right?)</label>
+    <textarea data-note="dids" placeholder="paste the DID CSV summary / flags here"></textarea>
+    <label class="wl">Trunks / sub-accounts / routes (trunk · reg IP · outbound route · failover · recognized?)</label>
+    <textarea data-note="trunks" placeholder="e.g. VTL1IN · inbound24.vitelity.net · ... · me"></textarea>
+    <div class="btnrow"><button class="btn" onclick="copyNotes()">Copy my notes</button><button class="btn" onclick="clearAll()" style="color:var(--red)">Reset page</button></div>
+  </section>
+
+  <section>
+    <h2>Support-ticket log (only if self-service blocked)</h2>
+    <div id="tickets"></div>
+  </section>
+
+  <section>
+    <h2>What only the carrier can do</h2>
+    <div class="seq">Confirm there are no back-end logins outside the portal UI · a hard port-freeze beyond a self-service PIN · reclaiming a misassigned ported number. For these, use the Section 6 routine-wording tickets.</div>
+  </section>
+
+  <div class="foot">Private · not indexed · secrets stay in your local vault. Priority #1 for Telvergence.</div>
+</div>
+
+<script>
+  var STEPS=[
+    ["Silent inventory: users, API, DIDs, routes (+ screenshots)","Portal"],
+    ["Rotate portal password (20+ char, unique)","Portal"],
+    ["Log out all sessions","Portal"],
+    ["Enable 2FA + save backup codes (to local vault)","Portal"],
+    ["Confirm your user shows 2FA: Enabled","Portal"],
+    ["Remove / deactivate former sub-user","Portal"],
+    ["Remove former user from notification / porting contacts","Portal"],
+    ["Revoke unknown API users","Portal"],
+    ["Reissue API password(s) for legit users","Portal"],
+    ["IP-allow-list API access to Telvergence IPs (if supported)","Portal"],
+    ["Update new API creds in Telvergence config + smoke test","Your app"],
+    ["Set port-out PIN / freeze","Portal"],
+    ["Set porting notification contact to you only","Portal"],
+    ["Confirm ported number present + correctly routed","Portal"],
+    ["File any optional ticket (Section 6) — record #","Support"],
+    ["Store all secrets in local vault (Section 7)","Local"],
+    ["Re-screenshot final state (“after” snapshot)","Portal"]
+  ];
+  var stepsEl=document.getElementById('steps');
+  STEPS.forEach(function(s,i){
+    var k='vlock_s'+i;
+    var d=document.createElement('div');d.className='step';d.setAttribute('data-k',k);
+    d.innerHTML='<div class="box"></div><div><div class="t"><b>'+(i+1)+'.</b> '+s[0]+'</div><div class="where">'+s[1]+'</div></div>';
+    try{if(localStorage.getItem(k)==='1')d.classList.add('done');}catch(e){}
+    d.addEventListener('click',function(){d.classList.toggle('done');try{localStorage.setItem(k,d.classList.contains('done')?'1':'0');}catch(e){}paint();});
+    stepsEl.appendChild(d);
+  });
+  function paint(){
+    var done=document.querySelectorAll('.step.done').length,tot=STEPS.length;
+    document.getElementById('bar').style.width=(done/tot*100)+'%';
+    document.getElementById('pct').textContent=done+' of '+tot+' done';
+  }
+  document.querySelectorAll('textarea[data-note]').forEach(function(t){
+    var k='vlock_n_'+t.getAttribute('data-note');
+    try{t.value=localStorage.getItem(k)||'';}catch(e){}
+    t.addEventListener('input',function(){try{localStorage.setItem(k,t.value);}catch(e){}});
+  });
+  var TK=[["6-A","Confirm admin / close stale access"],["6-B","Set port-out PIN + notification contact"],["6-C","Confirm ported number + routing"],["6-D","Reissue API password"]];
+  var tkEl=document.getElementById('tickets');
+  TK.forEach(function(t){
+    var base='vlock_tk_'+t[0];
+    var d=document.createElement('div');d.className='tk';
+    d.innerHTML='<div class="h">'+t[0]+' — '+t[1]+'</div>'+
+      '<input placeholder="Sent? (y/n)" data-tk="'+base+'_sent">'+
+      '<input placeholder="Ticket #" data-tk="'+base+'_num">'+
+      '<input placeholder="Status / response" data-tk="'+base+'_st">';
+    tkEl.appendChild(d);
+  });
+  document.querySelectorAll('input[data-tk]').forEach(function(i){
+    var k=i.getAttribute('data-tk');
+    try{i.value=localStorage.getItem(k)||'';}catch(e){}
+    i.addEventListener('input',function(){try{localStorage.setItem(k,i.value);}catch(e){}});
+  });
+  function copyNotes(){
+    var out='VITELITY LOCKDOWN — NOTES (non-secret)\n';
+    document.querySelectorAll('textarea[data-note]').forEach(function(t){out+='\n['+t.getAttribute('data-note')+']\n'+t.value+'\n';});
+    if(navigator.clipboard){navigator.clipboard.writeText(out);}
+    alert('Notes copied (secrets not included). Paste into your own record.');
+  }
+  function clearAll(){ if(confirm('Reset all check-offs and notes on this device?')){ try{Object.keys(localStorage).forEach(function(k){if(k.indexOf('vlock_')===0)localStorage.removeItem(k);});}catch(e){} location.reload(); } }
+  paint();
+</script>
+</body>
+</html>
