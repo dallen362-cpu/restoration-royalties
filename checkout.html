@@ -12,7 +12,7 @@
   a{color:var(--cyan);text-decoration:none}
   .bar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:12px;padding:12px 18px;background:rgba(7,11,22,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .logo{font-weight:800;letter-spacing:.5px;font-size:16px}.logo b{color:var(--cyan)}
-  .callbtn{margin-left:auto;background:linear-gradient(180deg,var(--cyan),var(--cyan-dim));color:#03151a;font-weight:800;padding:9px 14px;border-radius:10px;font-size:13px}
+  .callbtn{margin-left:auto;background:linear-gradient(180deg,var(--lime),#25b083);color:#04231a;font-weight:800;padding:9px 14px;border-radius:10px;font-size:13px}
   .hero{padding:40px 0 8px;text-align:center}
   .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;color:var(--cyan)}
   h1{font-size:clamp(26px,5vw,40px);font-weight:800;letter-spacing:-.02em;margin:12px auto 8px;max-width:18ch}
@@ -28,82 +28,79 @@
   .price{font-size:30px;font-weight:800;color:var(--lime);font-variant-numeric:tabular-nums;margin:8px 0 2px}
   .price small{font-size:13px;color:var(--muted);font-weight:600}
   .card p{color:var(--muted);font-size:14px;margin:6px 0 14px;flex:1}
-  .buy{display:block;text-align:center;background:linear-gradient(180deg,var(--cyan),var(--cyan-dim));color:#03151a;font-weight:800;padding:13px;border-radius:12px;font-size:15px;border:none;cursor:pointer;width:100%}
-  .buy.gold{background:linear-gradient(180deg,var(--gold),#c98f27);color:#251a00}
-  .buy.off{background:#1a2740;color:var(--muted);cursor:pointer}
+  .pays{display:flex;flex-direction:column;gap:8px}
+  .pay{display:block;text-align:center;font-weight:800;padding:12px;border-radius:11px;font-size:14.5px;border:none;cursor:pointer;width:100%}
+  .pay.pp{background:#ffc439;color:#0b1a3a}
+  .pay.sq{background:#eafff6;color:#04231a}
+  .pay.email{background:#1a2740;color:var(--cyan);border:1px solid var(--line)}
   .note{font-size:12.5px;color:var(--faint);text-align:center;margin:22px auto;max-width:60ch}
   .foot{padding:22px 0 60px;color:var(--faint);font-size:12px;text-align:center;border-top:1px solid var(--line);margin-top:24px}
 </style>
 </head>
 <body>
-<div class="bar"><span class="logo"><b>TEL</b>VERGENCE</span><a class="callbtn" href="tel:+16892421041">&#9742; 689-242-1041</a></div>
+<div class="bar"><span class="logo"><b>TEL</b>VERGENCE</span><a class="callbtn" href="tel:+16892421041">&#128222; Activate · 689-242-1041</a></div>
 
 <header class="hero wrap">
   <div class="eyebrow">Plans &amp; Secure Checkout</div>
   <h1>Turn it on. Pay only when you're winning.</h1>
-  <p>Pick a plan and check out securely. Powered by Stripe &mdash; cards, Apple Pay &amp; Google Pay. 30-day satisfaction guarantee.</p>
-  <div class="secure"><span class="s-pill">🔒 Stripe secure checkout</span><span class="s-pill">No card until you're happy</span><span class="s-pill">Cancel anytime</span></div>
+  <p>Pay securely with <b>PayPal</b> or <b>Square</b>. 30-day satisfaction guarantee &mdash; no card until you're happy.</p>
+  <div class="secure"><span class="s-pill">🅿️ PayPal</span><span class="s-pill">⬛ Square</span><span class="s-pill">30-day guarantee</span></div>
 </header>
 
 <div class="wrap">
   <div class="grp">Smart DID lines</div>
   <div class="cards">
-    <div class="card feat"><h3>Smart DID line</h3><div class="price">$22.95<small>/line / mo</small></div><p>Vanity number, CNAM, E911, STIR/SHAKEN, missed-call text-back, call accounting.</p><button class="buy" data-plan="did">Subscribe</button></div>
-    <div class="card"><h3>Referral line</h3><div class="price">$100<small> one-time</small></div><p>Tracked referral DID for a partner &mdash; every contact becomes a seller.</p><button class="buy" data-plan="referral">Buy a referral line</button></div>
-    <div class="card"><h3>Activation setup</h3><div class="price">$1,499<small> one-time</small></div><p>Full build: number, AI agent, routing, site &amp; tracking wired and live.</p><button class="buy" data-plan="setup">Pay setup</button></div>
+    <div class="card feat"><h3>Smart DID line</h3><div class="price">$22.95<small>/line / mo</small></div><p>Vanity number, CNAM, E911, STIR/SHAKEN, missed-call text-back, call accounting.</p><div class="pays" data-plan="did"></div></div>
+    <div class="card"><h3>Referral line</h3><div class="price">$100<small> one-time</small></div><p>Tracked referral DID for a partner &mdash; every contact becomes a seller.</p><div class="pays" data-plan="referral"></div></div>
+    <div class="card"><h3>Activation setup</h3><div class="price">$1,499<small> one-time</small></div><p>Full build: number, AI agent, routing, site &amp; tracking wired and live.</p><div class="pays" data-plan="setup"></div></div>
   </div>
 
   <div class="grp">Platform (UCaaS + CPaaS)</div>
   <div class="cards">
-    <div class="card"><h3>Starter</h3><div class="price">$499<small>/mo</small></div><p>Core platform, 1 campaign, AI voice agent, dashboard.</p><button class="buy" data-plan="starter">Subscribe</button></div>
-    <div class="card feat"><h3>Pro</h3><div class="price">$999<small>/mo</small></div><p>Multi-campaign, live-agent + AI hybrid, QuickBooks A/R module.</p><button class="buy" data-plan="pro">Subscribe</button></div>
-    <div class="card"><h3>Enterprise</h3><div class="price">$2,499<small>/mo</small></div><p>Full ecosystem, Weather Intelligence Net, priority support.</p><button class="buy" data-plan="enterprise">Subscribe</button></div>
+    <div class="card"><h3>Starter</h3><div class="price">$499<small>/mo</small></div><p>Core platform, 1 campaign, AI voice agent, dashboard.</p><div class="pays" data-plan="starter"></div></div>
+    <div class="card feat"><h3>Pro</h3><div class="price">$999<small>/mo</small></div><p>Multi-campaign, live-agent + AI hybrid, QuickBooks A/R module.</p><div class="pays" data-plan="pro"></div></div>
+    <div class="card"><h3>Enterprise</h3><div class="price">$2,499<small>/mo</small></div><p>Full ecosystem, Weather Intelligence Net, priority support.</p><div class="pays" data-plan="enterprise"></div></div>
   </div>
 
   <div class="grp">Own a territory</div>
   <div class="cards">
-    <div class="card"><h3>Franchise / white-label</h3><div class="price">$25,000<small> territory license</small></div><p>Run Telvergence under your own brand as a wholesale provider in your market.</p><button class="buy gold" data-plan="franchise">Start franchise</button></div>
+    <div class="card"><h3>Franchise / white-label</h3><div class="price">$25,000<small> territory license</small></div><p>Run Telvergence under your own brand as a wholesale provider in your market.</p><div class="pays" data-plan="franchise"></div></div>
   </div>
 
   <div class="note" id="ownerNote"></div>
-  <div class="foot">TELVERGENCE, Inc. &middot; Secure payments by Stripe &middot; 30-day satisfaction guarantee &middot; telvergence.com</div>
+  <div class="foot">TELVERGENCE, Inc. &middot; Secure payments by PayPal &amp; Square &middot; 30-day satisfaction guarantee &middot; telvergence.com</div>
 </div>
 
 <script>
   /* ============================================================
-     OWNER SETUP — paste your Stripe Payment Link URLs here.
-     Create them free at dashboard.stripe.com -> Payment Links
-     (one per plan). Then paste each URL below and re-save. Done.
-     Leave "" and the button emails a request instead.
+     OWNER SETUP — paste your PayPal.Me / PayPal payment-link and
+     Square checkout-link URLs per plan. Leave "" to hide that button.
+       PayPal:  paypal.com -> Pay & Get Paid -> Payment Links, OR paypal.me/YourName/22.95
+       Square:  squareup.com -> Online -> Checkout Links (one per plan)
      ============================================================ */
-  var STRIPE_LINKS = {
-    did:        "",
-    referral:   "",
-    setup:      "",
-    starter:    "",
-    pro:        "",
-    enterprise: "",
-    franchise:  ""
+  var PAY = {
+    did:        {paypal:"", square:""},
+    referral:   {paypal:"", square:""},
+    setup:      {paypal:"", square:""},
+    starter:    {paypal:"", square:""},
+    pro:        {paypal:"", square:""},
+    enterprise: {paypal:"", square:""},
+    franchise:  {paypal:"", square:""}
   };
-
   var anyLive=false;
-  document.querySelectorAll('.buy').forEach(function(btn){
-    var plan=btn.getAttribute('data-plan'), url=STRIPE_LINKS[plan];
-    if(url){
-      anyLive=true;
-      btn.onclick=function(){ window.location.href=url; };
-    } else {
-      btn.classList.add('off');
-      btn.textContent='Get my secure link';
-      btn.onclick=function(){
-        window.location.href='mailto:contact@telvergence.com?subject='+encodeURIComponent('I want to buy: '+plan)+'&body='+encodeURIComponent('Please send me the secure checkout link for the '+plan+' plan.');
-      };
-      btn.title='Tap to request your secure Stripe checkout link.';
+  document.querySelectorAll('.pays').forEach(function(box){
+    var plan=box.getAttribute('data-plan'), p=PAY[plan]||{};
+    if(p.paypal){anyLive=true;var a=document.createElement('a');a.className='pay pp';a.href=p.paypal;a.textContent='Pay with PayPal';box.appendChild(a);}
+    if(p.square){anyLive=true;var b=document.createElement('a');b.className='pay sq';b.href=p.square;b.textContent='Pay with Square';box.appendChild(b);}
+    if(!p.paypal && !p.square){
+      var e=document.createElement('a');e.className='pay email';
+      e.href='mailto:contact@telvergence.com?subject='+encodeURIComponent('I want to buy: '+plan)+'&body='+encodeURIComponent('Please send me the PayPal/Square checkout link for the '+plan+' plan.');
+      e.textContent='Get my secure link';box.appendChild(e);
     }
   });
   document.getElementById('ownerNote').textContent = anyLive
-    ? 'Secure checkout by Stripe. You will receive a receipt by email.'
-    : 'Secure checkout is being finalized. Tap any plan to request your secure payment link and we will send it right over.';
+    ? 'Secure checkout by PayPal & Square. You will receive a receipt by email.'
+    : 'Secure checkout is being finalized. Tap any plan to request your PayPal/Square payment link and we will send it right over.';
 </script>
 </body>
 </html>
