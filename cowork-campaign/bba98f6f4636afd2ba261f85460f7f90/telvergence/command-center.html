@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Telvergence — Command Center</title>
 <style>
-  :root{--bg:#070b16;--panel:#111a2e;--panel2:#0d1526;--line:#213050;--text:#eaf1ff;--muted:#9fb0cc;--cyan:#2dd4ea;--gold:#f0b64a;--lime:#3ef0a0}
+  :root{--bg:#070b16;--panel:#111a2e;--panel2:#0d1526;--line:#213050;--text:#eaf1ff;--muted:#9fb0cc;--cyan:#2dd4ea;--gold:#f0b64a;--lime:#3ef0a0;--red:#ff7a6b}
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Arial,sans-serif;line-height:1.6;font-size:16px}
   .wrap{max-width:720px;margin:0 auto;padding:0 18px}
@@ -26,16 +26,19 @@
   .card p,.card li{color:#d6e2fb;font-size:14.5px}
   .card ul{margin:6px 0 0 20px}
   .card li{margin:4px 0}
+  .moat{border-color:var(--red);box-shadow:0 0 0 1px rgba(255,122,107,.3)}
+  .moat h3{color:var(--red)}
   .pill{display:inline-block;font-size:11px;font-weight:800;border-radius:999px;padding:3px 9px;margin-left:6px}
   .live{background:rgba(62,240,160,.14);color:var(--lime);border:1px solid rgba(62,240,160,.4)}
   .prog{background:rgba(240,182,74,.14);color:var(--gold);border:1px solid rgba(240,182,74,.4)}
+  .hot{background:rgba(255,122,107,.14);color:var(--red);border:1px solid rgba(255,122,107,.4)}
   .btn{display:block;text-align:center;background:linear-gradient(180deg,var(--cyan),#1a90a3);color:#03151a;font-weight:800;text-decoration:none;padding:14px;border-radius:12px;margin:8px 0;font-size:16px}
   .foot{padding:22px 0 60px;color:var(--muted);font-size:12.5px;text-align:center}
 </style>
 </head>
 <body>
 <div class="top"><div class="wrap">
-  <span class="badge">Telvergence &middot; Command Center &middot; Private</span>
+  <span class="badge">Telvergence · Command Center · Private</span>
   <h1>Everything we've built &amp; where it stands</h1>
   <p>Your big-picture review page. Opens on any phone, no login.</p>
   <div class="stats">
@@ -49,51 +52,60 @@
 <div class="wrap">
 
 <section>
+  <h2>🔒 Priority #1 — the moat</h2>
+  <div class="card moat"><h3>Secure the Vitelity account <span class="pill hot">DO FIRST</span></h3>
+    <p>Purge the former user, recover the ported number, set a port-freeze. The Vitelity API (real-time, on-the-fly DID assignment) is the entire differentiator — <b>everything else is built on top of it.</b> Protect it before scaling. Ref: <a href="https://docs.google.com/document/d/1CCtm30U7nXwBDe6XVnkr6dCctrV5WrZcvVquFxnss5k/edit">Voice-Agent Revenue Thesis</a> + _ACCOUNT-SECURITY-LOCKDOWN.</p></div>
+  <div class="card"><h3>Strategy: Voice-Agent Revenue Engine</h3>
+    <p>Proven call-center infrastructure + AI voice agents (Google/Python, low-cost inference) + Vitelity real-time DIDs + Vici (CRM/LMS/campaigns), bridged by API — a near-passive, instantly deployable engine offered to every business in the ecosystem. Full thesis: <a href="https://docs.google.com/document/d/1CCtm30U7nXwBDe6XVnkr6dCctrV5WrZcvVquFxnss5k/edit">open the Google Doc</a>. <span style="color:var(--muted)">(Verify per-minute inference &amp; DID costs before quoting clients.)</span></p></div>
+  <a class="btn" href="priorities.html">&#9989; Open the full Priority Action List &rarr;</a>
+</section>
+
+<section>
   <h2>Sell-from &amp; presentation</h2>
-  <a class="btn" href="https://dallen362-cpu.github.io/restoration-royalties/showroom.html">&#128225; Open the Showroom &amp; Sales Catalog &rarr;</a>
-  <a class="btn" href="https://dallen362-cpu.github.io/restoration-royalties/cowork-campaign/nx8k4q2m9v7r/present.html" style="background:linear-gradient(180deg,#f0b64a,#c98f27)">&#127916; Open the Master Deck (presentation) &rarr;</a>
+  <a class="btn" href="https://dallen362-cpu.github.io/restoration-royalties/telvergence.html">&#127760; Open the Telvergence home (call to activate) &rarr;</a>
+  <a class="btn" href="https://dallen362-cpu.github.io/restoration-royalties/showroom.html" style="background:linear-gradient(180deg,#f0b64a,#c98f27)">&#128225; Open the Showroom &amp; Sales Catalog &rarr;</a>
+  <a class="btn" href="https://dallen362-cpu.github.io/restoration-royalties/checkout.html" style="background:linear-gradient(180deg,#3ef0a0,#25b083)">&#128179; Plans &amp; Checkout (live PayPal) &rarr;</a>
 </section>
 
 <section>
   <h2>What's built</h2>
 
-  <div class="card"><h3>1. Showroom / Sales Catalog <span class="pill live">LIVE</span></h3>
-    <p>One public, mobile-first catalog of every system, campaign, live demo and price you can sell today. Includes the <b>Live Voice Agent Team Campaign</b> (formerly the dialer).</p></div>
+  <div class="card"><h3>1. Turnkey site (public) <span class="pill live">LIVE</span></h3>
+    <p>Home, onboarding wizard, Pitch &amp; Catch, live dashboard, checkout, showroom — plus both campaign catch pages (South Florida Fire, Orlando Roofing). One consistent brand; see the Universal Hub.</p></div>
 
   <div class="card"><h3>2. Bright Sound onboarding — the Friday $2,000 path <span class="pill prog">IN PROGRESS</span></h3>
     <ul>
       <li>Two final LOAs: <b>Restoration Royalty LLC</b> (786-400-1145&rarr;1154) + <b>FAST Adjusting Service Team Corp</b> (645-231-1770&rarr;1779, BTN 1771).</li>
       <li>Vitelity support-ticket order (both accounts) so billing/records match the LOAs before port-out.</li>
-      <li>Email drafts to Jimmy (fire-&amp;-smoke + combined); forward-to-Rob draft; Jimmy&rarr;Rob grievance letter draft.</li>
+      <li>Email drafts to Jimmy; forward-to-Rob; Jimmy&rarr;Rob grievance letter.</li>
     </ul></div>
 
-  <div class="card"><h3>3. Live Voice Agent Team Campaigns <span class="pill prog">READY TO LOAD</span></h3>
+  <div class="card"><h3>3. Live Voice Agent Team Campaigns <span class="pill prog">DIALING / READY</span></h3>
     <ul>
-      <li><b>Orlando Roofing</b>: 337 segmented FL leads + agent/verification scripts.</li>
-      <li><b>Restoration Royalty S. Florida Smoke &amp; Fire</b>: smoke/fire script + the 786 catch lines.</li>
-      <li>Two-campaign go-live runbook (ServerStadium / dial.contactam.com — runs on ViciDial software).</li>
-      <li>Cross-trade leads: 438 plumber/electrician/HVAC parked for later.</li>
+      <li><b>Orlando Roofing</b>: 337 segmented FL leads + scripts + catch page.</li>
+      <li><b>Restoration Royalty S. Florida Smoke &amp; Fire</b>: smoke/fire script + 786 catch lines + catch page.</li>
+      <li>Runbook for the ServerStadium / dial.contactam.com box (runs on ViciDial software).</li>
     </ul></div>
 
-  <div class="card"><h3>4. restorationroyalties.com site <span class="pill prog">READY TO DEPLOY</span></h3>
-    <p>Independent fire-&amp;-smoke marketing site with the referral "Digital Business Card" plan; embedded in the deploy kickoff so a fresh session just deploys it.</p></div>
+  <div class="card"><h3>4. Payments <span class="pill live">TAKING $</span></h3>
+    <p>Checkout live via PayPal (buyer-initiated, real-time). One-time works now on the personal account; recurring subscriptions wire to the Telvergence Business PayPal once the account email is provided.</p></div>
 
   <div class="card"><h3>5. Enrollment &amp; Guarantee policy <span class="pill live">DRAFTED</span></h3>
-    <p>2&ndash;5 lines = TPV only (no card/signature); 6+ = LOA + card; Friday $22.95/line advance; Telvergence covers the fee if a line doesn't profit; 10% commission on upside. (Counsel review flagged for regulated verticals.)</p></div>
+    <p>2&ndash;5 lines = TPV only; 6+ = LOA + card; Friday $22.95/line advance; Telvergence covers the fee if a line doesn't profit; 10% commission on upside. (Counsel review flagged.)</p></div>
 </section>
 
 <section>
   <h2>Two revenue tracks (keep separate)</h2>
-  <div class="card"><p><b>A. Near-term:</b> 20 lines across Jimmy's two companies clearing Bright Sound TPV/LOA = the $2,000 from Rob (paid Friday).</p>
-  <p style="margin-top:8px"><b>B. Scaled engine:</b> the 775-lead outbound program (roofing + cross-trade) via the Live Voice Agent Team Campaign.</p></div>
+  <div class="card"><p><b>A. Near-term:</b> 20 lines across Jimmy's two companies clearing Bright Sound TPV/LOA = the $2,000 from Rob (Friday).</p>
+  <p style="margin-top:8px"><b>B. Scaled engine:</b> the 775-lead outbound program + the AI voice-agent offer (once Vitelity is secured) via the Live Voice Agent Team Campaign.</p></div>
 </section>
 
 <section>
   <h2>What to do next</h2>
-  <a class="btn" href="priorities.html">&#9989; Open the Priority Action List 1&ndash;20 &rarr;</a>
+  <a class="btn" href="priorities.html">&#9989; Open the Priority Action List 1&ndash;21 &rarr;</a>
 </section>
 
-<div class="foot">Private review page &middot; not indexed &middot; do not post publicly.</div>
+<div class="foot">Private review page &middot; not indexed &middot; do not post publicly. &middot; Strategy: <a href="https://docs.google.com/document/d/1CCtm30U7nXwBDe6XVnkr6dCctrV5WrZcvVquFxnss5k/edit">Voice-Agent Revenue Thesis</a></div>
 </div>
 </body>
 </html>
