@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telvergence — Live Operations Dashboard</title>
+<style>
+  :root{--ink:#070b16;--panel:#111a2e;--panel2:#0d1526;--line:#213050;--cyan:#2dd4ea;--gold:#f0b64a;--lime:#3ef0a0;--red:#ff7a6b;--violet:#8f7dff;--text:#eaf1ff;--muted:#9fb0cc;--faint:#61789e}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ink);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Arial,sans-serif;line-height:1.5;font-size:15px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+  a{color:var(--cyan);text-decoration:none}
+  .bar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:12px;padding:11px 16px;background:rgba(7,11,22,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.5px;font-size:16px}
+  .logo b{color:var(--cyan)}
+  .liveflag{display:flex;align-items:center;gap:7px;margin-left:auto;font-weight:800;font-size:12px;color:var(--lime);letter-spacing:1px}
+  .pulse{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(62,240,160,.6);animation:pl 1.4s infinite}
+  @keyframes pl{0%{box-shadow:0 0 0 0 rgba(62,240,160,.6)}70%{box-shadow:0 0 0 8px rgba(62,240,160,0)}100%{box-shadow:0 0 0 0 rgba(62,240,160,0)}}
+  .clock{font-variant-numeric:tabular-nums;color:var(--muted);font-size:12px;font-weight:700}
+  h1{font-size:20px;font-weight:800;margin:18px 0 2px}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:14px}
+  .demo{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(240,182,74,.4);border-radius:999px;padding:3px 9px;margin-left:6px}
+  .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}
+  @media(min-width:720px){.kpis{grid-template-columns:repeat(4,1fr)}}
+  .kpi{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:14px}
+  .kpi .l{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--faint);font-weight:800}
+  .kpi .v{font-size:23px;font-weight:800;font-variant-numeric:tabular-nums;margin-top:4px}
+  .kpi .v.rev{color:var(--lime)} .kpi .v.cost{color:var(--gold)} .kpi .v.net{color:var(--cyan)} .kpi .v.roi{color:var(--violet)}
+  .kpi .d{font-size:11px;color:var(--muted);margin-top:2px}
+  .query{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+  .query .q{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--cyan)}
+  select{background:#0c1626;border:1px solid var(--line);border-radius:10px;color:var(--text);padding:9px 11px;font-size:14px;font-family:inherit}
+  .grid2{display:grid;gap:14px}
+  @media(min-width:820px){.grid2{grid-template-columns:1fr 1fr}}
+  .panel{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px}
+  .panel h2{font-size:15px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:right;padding:9px 8px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  th{color:var(--faint);font-size:10.5px;text-transform:uppercase;letter-spacing:.5px}
+  .pos{color:var(--lime);font-weight:700} .neg{color:var(--red);font-weight:700}
+  .tagw{color:var(--lime);font-weight:800} .tagl{color:var(--red);font-weight:800}
+  .bars{display:flex;align-items:flex-end;gap:3px;height:90px;margin-top:6px}
+  .bars .b{flex:1;background:linear-gradient(180deg,var(--cyan),#1a90a3);border-radius:3px 3px 0 0;min-height:2px;transition:height .5s}
+  .feed{max-height:280px;overflow:auto}
+  .ev{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;animation:fade .5s}
+  @keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1}}
+  .ev .t{color:var(--faint);font-size:11px;font-variant-numeric:tabular-nums;flex:none;width:58px}
+  .ev .amt{margin-left:auto;font-weight:800;font-variant-numeric:tabular-nums}
+  .ev .amt.pos{color:var(--lime)} .ev .amt.cost{color:var(--gold)}
+  .foot{padding:18px 0 60px;color:var(--faint);font-size:11.5px;text-align:center}
+</style>
+</head>
+<body>
+<div class="bar">
+  <span class="logo"><b>TEL</b>VERGENCE</span>
+  <span class="liveflag"><span class="pulse"></span>LIVE</span>
+  <span class="clock" id="clock">--:--:--</span>
+</div>
+
+<div class="wrap">
+  <h1>Live Operations Dashboard <span class="demo">Live demo · representative data</span></h1>
+  <div class="sub">Every call, conversion and dollar &mdash; correlated to spend, to the penny, by the second. No guessing what's working.</div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="l">Revenue (today)</div><div class="v rev" id="k_rev">$0.00</div><div class="d" id="k_revd">&nbsp;</div></div>
+    <div class="kpi"><div class="l">Ad + telecom spend</div><div class="v cost" id="k_cost">$0.00</div><div class="d" id="k_costd">&nbsp;</div></div>
+    <div class="kpi"><div class="l">Net profit</div><div class="v net" id="k_net">$0.00</div><div class="d" id="k_netd">to the bottom line</div></div>
+    <div class="kpi"><div class="l">ROI</div><div class="v roi" id="k_roi">0%</div><div class="d">return on spend</div></div>
+    <div class="kpi"><div class="l">Calls today</div><div class="v" id="k_calls">0</div><div class="d" id="k_live">0 live now</div></div>
+    <div class="kpi"><div class="l">Conversions</div><div class="v" id="k_conv">0</div><div class="d" id="k_cr">0% conv. rate</div></div>
+    <div class="kpi"><div class="l">Cost / booked job</div><div class="v" id="k_cpa">$0.00</div><div class="d">acquisition cost</div></div>
+    <div class="kpi"><div class="l">Avg job value</div><div class="v" id="k_aov">$0.00</div><div class="d">per conversion</div></div>
+  </div>
+
+  <div class="query">
+    <span class="q">Ad-hoc query &middot; on the fly:</span>
+    <select id="qChannel"><option value="">All channels</option></select>
+    <select id="qProduct"><option value="">All products/services</option></select>
+    <select id="qTime"><option value="1">Today</option><option value="0.14">Last hour</option><option value="7">This week</option><option value="30">This month</option></select>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h2>&#128225; Revenue by advertising channel</h2>
+      <div style="overflow-x:auto"><table id="chanTable">
+        <thead><tr><th>Channel</th><th>Calls</th><th>Conv</th><th>Revenue</th><th>Cost</th><th>Net</th><th>ROI</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+    </div>
+    <div class="panel">
+      <h2>&#128230; Product / service success</h2>
+      <div style="overflow-x:auto"><table id="prodTable">
+        <thead><tr><th>Product / service</th><th>Sold</th><th>Revenue</th><th>Net</th><th>Signal</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h2>&#128200; Net profit — last 30 minutes</h2>
+      <div class="bars" id="bars"></div>
+    </div>
+    <div class="panel">
+      <h2>&#9889; Live interaction feed</h2>
+      <div class="feed" id="feed"></div>
+    </div>
+  </div>
+
+  <div class="foot">Telvergence Smart-DID telecom-centric ecosystem &middot; live demo with representative data &mdash; in production this streams from your real CDRs, BOSS CRM &amp; ad spend. &middot; <a href="https://dallen362-cpu.github.io/restoration-royalties/pitch-and-catch.html">Back to Telvergence</a></div>
+</div>
+
+<script>
+(function(){
+  var CHAN=[
+    {name:'Google Ads', cpc:6.2, base:0.9},
+    {name:'Yelp', cpc:4.1, base:0.7},
+    {name:'Weather Intelligence Net', cpc:1.4, base:1.3},
+    {name:'Referral Cards', cpc:0.6, base:1.1},
+    {name:'Outbound (Live Agent)', cpc:2.2, base:1.0}
+  ];
+  var PROD=[
+    {name:'Roof replacement', val:9500},
+    {name:'Storm tarp / emergency', val:1800},
+    {name:'Smoke & fire restoration', val:7500},
+    {name:'HVAC install', val:6200},
+    {name:'Free inspection (lead)', val:0}
+  ];
+  CHAN.forEach(function(c){c.calls=Math.floor(20+Math.random()*40);c.conv=Math.floor(c.calls*(0.12+Math.random()*0.12));c.rev=0;c.cost=c.calls*c.cpc*(1+Math.random());});
+  PROD.forEach(function(p){p.sold=Math.floor(2+Math.random()*8);p.rev=p.sold*p.val*(0.9+Math.random()*0.2);p.cost=p.rev*(0.12+Math.random()*0.1);});
+  function recalcChanRev(){ CHAN.forEach(function(c){ c.rev=c.conv*(4200+Math.random()*1200)*c.base; }); }
+  recalcChanRev();
+
+  var qC=document.getElementById('qChannel'), qP=document.getElementById('qProduct');
+  CHAN.forEach(function(c,i){var o=document.createElement('option');o.value=i;o.textContent=c.name;qC.appendChild(o);});
+  PROD.forEach(function(p,i){var o=document.createElement('option');o.value=i;o.textContent=p.name;qP.appendChild(o);});
+
+  var liveNow=Math.floor(2+Math.random()*6);
+  function money(n){return '$'+n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function whole(n){return Math.round(n).toLocaleString();}
+  var hist=[]; for(var i=0;i<30;i++)hist.push(0);
+
+  function filtered(){
+    var tm=parseFloat(document.getElementById('qTime').value)||1;
+    var ci=document.getElementById('qChannel').value, pi=document.getElementById('qProduct').value;
+    var chans = ci===''? CHAN : [CHAN[+ci]];
+    var calls=0,conv=0,rev=0,cost=0;
+    chans.forEach(function(c){calls+=c.calls;conv+=c.conv;rev+=c.rev;cost+=c.cost;});
+    if(pi!==''){ var p=PROD[+pi]; rev=p.rev*(ci===''?1:0.4); cost=rev*0.16; conv=p.sold; calls=Math.round(p.sold/0.2); }
+    return {calls:calls*tm, conv:conv*tm, rev:rev*tm, cost:cost*tm};
+  }
+
+  var revTick=0,costTick=0;
+  function paint(){
+    var f=filtered();
+    var net=f.rev-f.cost, roi=f.cost>0?(net/f.cost*100):0;
+    document.getElementById('k_rev').textContent=money(f.rev);
+    document.getElementById('k_cost').textContent=money(f.cost);
+    document.getElementById('k_net').textContent=money(net);
+    document.getElementById('k_roi').textContent=Math.round(roi)+'%';
+    document.getElementById('k_calls').textContent=whole(f.calls);
+    document.getElementById('k_conv').textContent=whole(f.conv);
+    document.getElementById('k_cr').textContent=(f.calls>0?Math.round(f.conv/f.calls*100):0)+'% conv. rate';
+    document.getElementById('k_cpa').textContent=money(f.conv>0?f.cost/f.conv:0);
+    document.getElementById('k_aov').textContent=money(f.conv>0?f.rev/f.conv:0);
+    document.getElementById('k_live').textContent=liveNow+' live now';
+    document.getElementById('k_revd').textContent='+ '+money(revTick)+' /sec';
+    document.getElementById('k_costd').textContent='+ '+money(costTick)+' /sec';
+
+    var best=-1e9,worst=1e9,bi=0,wi=0;
+    CHAN.forEach(function(c,i){var n=c.rev-c.cost;if(n>best){best=n;bi=i;}if(n<worst){worst=n;wi=i;}});
+    var tb=document.querySelector('#chanTable tbody');tb.innerHTML='';
+    CHAN.forEach(function(c,i){
+      var n=c.rev-c.cost, roi=c.cost>0?n/c.cost*100:0;
+      var tr=document.createElement('tr');
+      tr.innerHTML='<td>'+c.name+(i===bi?' <span class="tagw">▲</span>':(i===wi?' <span class="tagl">▼</span>':''))+'</td><td>'+whole(c.calls)+'</td><td>'+whole(c.conv)+'</td><td>'+money(c.rev)+'</td><td>'+money(c.cost)+'</td><td class="'+(n>=0?'pos':'neg')+'">'+money(n)+'</td><td class="'+(roi>=0?'pos':'neg')+'">'+Math.round(roi)+'%</td>';
+      tb.appendChild(tr);
+    });
+    var pb=document.querySelector('#prodTable tbody');pb.innerHTML='';
+    PROD.forEach(function(p){
+      var n=p.rev-p.cost; var margin=p.rev>0?n/p.rev:0;
+      var sig = p.val===0 ? '<span class="tagw">LEAD ENGINE</span>' : (margin>0.6?'<span class="tagw">WINNING</span>':(margin>0.4?'ok':'<span class="tagl">REVIEW</span>'));
+      var tr=document.createElement('tr');
+      tr.innerHTML='<td>'+p.name+'</td><td>'+whole(p.sold)+'</td><td>'+money(p.rev)+'</td><td class="'+(n>=0?'pos':'neg')+'">'+money(n)+'</td><td>'+sig+'</td>';
+      pb.appendChild(tr);
+    });
+    var mx=Math.max.apply(null,hist.concat([1]));
+    var bars=document.getElementById('bars');bars.innerHTML='';
+    hist.forEach(function(v){var d=document.createElement('div');d.className='b';d.style.height=Math.max(2,v/mx*90)+'px';bars.appendChild(d);});
+  }
+
+  function tick(){
+    revTick=0;costTick=0;
+    CHAN.forEach(function(c){
+      var dr=Math.random()*90*c.base; var dc=Math.random()*c.cpc*2;
+      c.rev+=dr; c.cost+=dc; revTick+=dr; costTick+=dc;
+      if(Math.random()<0.10){c.calls++; if(Math.random()<0.22){c.conv++;}}
+    });
+    liveNow=Math.max(1,liveNow+(Math.random()<0.5?-1:1)); if(liveNow>12)liveNow=12;
+    hist.push(revTick-costTick); if(hist.length>30)hist.shift();
+    if(Math.random()<0.75) pushEvent();
+    paint();
+  }
+
+  var FEEDS=[
+    function(){var c=CHAN[Math.floor(Math.random()*CHAN.length)];return {txt:'Inbound · '+c.name+' · qualified', amt:0, cls:''};},
+    function(){var p=PROD[Math.floor(Math.random()*4)];return {txt:'BOOKED · '+p.name, amt:p.val*(0.9+Math.random()*0.2), cls:'pos'};},
+    function(){return {txt:'Outbound · Live Agent · TPV verified', amt:22.95, cls:'pos'};},
+    function(){var c=CHAN[Math.floor(Math.random()*CHAN.length)];return {txt:'Ad spend · '+c.name, amt:-(c.cpc*(1+Math.random()*2)), cls:'cost'};},
+    function(){return {txt:'Missed-call text-back · re-engaged', amt:0, cls:''};},
+    function(){return {txt:'Weather alert · storm cell · demand spike', amt:0, cls:''};}
+  ];
+  function two(n){return ('0'+n).slice(-2);}
+  function pushEvent(){
+    var e=FEEDS[Math.floor(Math.random()*FEEDS.length)]();
+    var d=new Date();
+    var row=document.createElement('div');row.className='ev';
+    var amt = e.amt===0?'':'<span class="amt '+e.cls+'">'+(e.amt<0?'-$'+Math.abs(e.amt).toFixed(2):'+$'+e.amt.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}))+'</span>';
+    row.innerHTML='<span class="t">'+two(d.getHours())+':'+two(d.getMinutes())+':'+two(d.getSeconds())+'</span><span>'+e.txt+'</span>'+amt;
+    var feed=document.getElementById('feed');feed.insertBefore(row,feed.firstChild);
+    while(feed.children.length>40)feed.removeChild(feed.lastChild);
+  }
+  function clock(){var d=new Date();document.getElementById('clock').textContent=two(d.getHours())+':'+two(d.getMinutes())+':'+two(d.getSeconds());}
+
+  document.getElementById('qChannel').onchange=paint;
+  document.getElementById('qProduct').onchange=paint;
+  document.getElementById('qTime').onchange=paint;
+
+  for(var k=0;k<12;k++)pushEvent();
+  paint(); tick();
+  setInterval(tick,1000);
+  setInterval(clock,1000); clock();
+})();
+</script>
+</body>
+</html>
