@@ -22,6 +22,7 @@
   .cards{display:grid;gap:14px}@media(min-width:720px){.cards{grid-template-columns:repeat(2,1fr)}}
   .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:18px}
   .card h3{font-size:16px;font-weight:800;margin-bottom:4px}.card p{color:var(--muted);font-size:14.5px}
+  .card .k{color:var(--lime);font-weight:800}
   .live a{display:block;background:linear-gradient(180deg,var(--cyan),#1a90a3);color:#03151a;font-weight:800;text-align:center;padding:12px;border-radius:11px;text-decoration:none;margin:8px 0;font-size:15px}
   .watch{display:block;background:linear-gradient(180deg,var(--lime),#25b083);color:#04231a;font-weight:800;text-align:center;padding:18px;border-radius:14px;text-decoration:none;font-size:19px;box-shadow:0 8px 26px rgba(62,240,160,.28)}
   .steps{display:grid;gap:10px;margin-top:14px}
@@ -47,7 +48,7 @@
   <span class="badge">Confidential · Investor Briefing</span>
   <h1>Telvergence</h1>
   <div class="for">Prepared for Larry Boyce</div>
-  <p>Programmable telecom + AI voice agents, delivered as a turnkey, guaranteed-results service to service businesses. Everything below is live and verifiable — open any link on your phone.</p>
+  <p>We own the telecom layer other "AI" companies only rent — and wrap it in automation that turns any local business into a self-running sales engine. Everything below is live and verifiable — open any link on your phone.</p>
 </div></div>
 
 <div class="wrap">
@@ -57,15 +58,29 @@
   <p class="lead">Start here. This is a working product, not a concept deck.</p>
   <a class="watch" href="https://dallen362-cpu.github.io/restoration-royalties/dashboard.html">&#9654;&nbsp; Watch the dialer live — profit to the penny</a>
   <div class="steps">
-    <div class="stepr"><span class="n">1</span><span><b>Watch the dialer live</b><span>Tap the green button above — real campaign KPIs, live interactions, revenue vs. spend.</span></span></div>
-    <div class="stepr"><span class="n">2</span><span><b>Tap any "live" link below</b><span>The home page, checkout, onboarding and campaigns are all deployed and working.</span></span></div>
+    <div class="stepr"><span class="n">1</span><span><b>Watch the dialer live</b><span>Tap the green button — real campaign KPIs, live interactions, revenue vs. spend.</span></span></div>
+    <div class="stepr"><span class="n">2</span><span><b>Tap any "live" link below</b><span>Home, checkout, onboarding and campaigns are all deployed and working.</span></span></div>
     <div class="stepr"><span class="n">3</span><span><b>Call David</b><span>689-242-1041 — 15 minutes to walk the numbers and structure the raise.</span></span></div>
   </div>
 </section>
 
 <section>
-  <h2>The thesis in one line</h2>
-  <p class="lead">Own the telecom layer (real carrier numbers + API), add AI voice agents and live-agent campaigns on top, and offer any local business a done-for-you sales engine at near-zero marginal cost — recurring revenue, with a zero-out-of-pocket guarantee that removes the client's risk.</p>
+  <h2>The one-line thesis</h2>
+  <p class="lead">Own the telecom layer (real carrier numbers + a real-time provisioning API), add AI voice agents and live-agent campaigns on top, and offer any local business a done-for-you sales engine at near-zero marginal cost — recurring revenue, with a zero-out-of-pocket guarantee that removes the client's risk.</p>
+</section>
+
+<section>
+  <h2>The moat — six things we control that competitors can't</h2>
+  <p class="lead">Vapi, ElevenLabs and GoHighLevel bolt AI onto calls but <b>rent</b> the phone layer. Telvergence <b>owns</b> it. That ownership is the margin and the defensibility.</p>
+  <div class="cards">
+    <div class="card"><h3><span class="k">1.</span> Owned carrier numbers (DIDs)</h3><p>Real local, toll-free &amp; vanity numbers on our account — assigned, routed, and kept by us. Not resold.</p></div>
+    <div class="card"><h3><span class="k">2.</span> Real-time DID provisioning API</h3><p>Spin up a branded local number in minutes via the Vitelity API. The AI-only players simply can't do this.</p></div>
+    <div class="card"><h3><span class="k">3.</span> The trunk &amp; routing</h3><p>We own the call path, caller-ID, CNAM, and failover — we decide where every call goes.</p></div>
+    <div class="card"><h3><span class="k">4.</span> Port control (the deepest moat)</h3><p>A port-out PIN/freeze means no one can move our numbers. Numbers are the asset; locking porting makes them permanently ours.</p></div>
+    <div class="card"><h3><span class="k">5.</span> Wholesale margin</h3><p>Buying at carrier wholesale means every resold line carries margin only we have access to.</p></div>
+    <div class="card"><h3><span class="k">6.</span> The engine + the data</h3><p>The dialer, the campaigns, the leads, the recordings and CDRs — all on infrastructure we own.</p></div>
+  </div>
+  <div class="flag"><b>First use of new capital (Priority #1):</b> fully secure the carrier account — sole control, ported-number recovery, port-freeze. It is the asset everything else is built on.</div>
 </section>
 
 <section>
@@ -92,12 +107,6 @@
 </section>
 
 <section>
-  <h2>The moat</h2>
-  <p class="lead">Telecom-native. AI-only tools (Vapi, ElevenLabs, GoHighLevel) resell numbers and bolt AI onto calls. Telvergence controls the layer underneath — real carrier DIDs and an API to assign local/vanity numbers in real time — through wholesale partners (Vitelity / Sinch / Inteliquent) and a private-label softphone (Acrobits). That control is the margin and the defensibility.</p>
-  <div class="flag"><b>Straight talk (priority #1):</b> the Vitelity carrier account must be fully secured (sole control, ported-number recovery, port-freeze) before scaling — it is the asset everything is built on. This is the first use of new capital.</div>
-</section>
-
-<section>
   <h2>Proof of capability — prior builds</h2>
   <p class="lead">The same platform, delivered before across verticals — evidence the team can execute.</p>
   <ul>
@@ -114,7 +123,7 @@
     <div class="row"><span class="s done">LIVE</span><span>Full turnkey site, live dashboard, and PayPal checkout — deployed and working.</span></div>
     <div class="row"><span class="s done">LIVE</span><span>Two dial campaigns configured (South Florida Fire, Orlando Roofing) with 775 segmented leads and scripts.</span></div>
     <div class="row"><span class="s prog">PIPELINE</span><span>Near-term client lines (reseller deals) in onboarding — provisioning/verification not yet completed.</span></div>
-    <div class="row"><span class="s todo">NEXT</span><span>Secure the Vitelity account; stand up the AI voice-agent prototype; wire recurring billing.</span></div>
+    <div class="row"><span class="s todo">NEXT</span><span>Secure the carrier account; stand up the AI voice-agent prototype; wire recurring billing.</span></div>
   </div>
 </section>
 
@@ -123,13 +132,13 @@
   <p class="lead">A bridge to lock the moat and convert the built platform into recurring revenue. Amounts illustrative — David to finalize with Larry.</p>
   <table class="use">
     <tr><th>Use</th><th>Purpose</th><th>Illustrative</th></tr>
-    <tr><td>Secure Vitelity + carrier costs</td><td>Account lockdown, DIDs, trunking</td><td>[ $ ]</td></tr>
+    <tr><td>Secure carrier + costs</td><td>Account lockdown, DIDs, trunking</td><td>[ $ ]</td></tr>
     <tr><td>Voice-agent build</td><td>Prototype → production (Google/Python + inference)</td><td>[ $ ]</td></tr>
     <tr><td>Campaign fuel</td><td>Leads, dialer seats, live-agent hours</td><td>[ $ ]</td></tr>
     <tr><td>Operating runway</td><td>Near-term bills while revenue ramps</td><td>[ $ ]</td></tr>
     <tr><td><b>Total ask</b></td><td>&nbsp;</td><td><b>[ $ ]</b></td></tr>
   </table>
-  <div class="flag">Structure to be agreed with Larry and reviewed by counsel (equity, note, or revenue share). Any figures presented as historical or projected should be substantiated in writing before close.</div>
+  <div class="flag">Structure to be agreed with Larry and reviewed by counsel (equity, note, or revenue share). Any figures presented as historical or projected are to be substantiated in writing before close.</div>
 </section>
 
 <div class="cta">
