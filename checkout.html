@@ -43,8 +43,8 @@
 <header class="hero wrap">
   <div class="eyebrow">Plans &amp; Secure Checkout</div>
   <h1>Turn it on. Pay only when you're winning.</h1>
-  <p>Pay securely with <b>PayPal</b> or <b>Square</b>. 30-day satisfaction guarantee &mdash; no card until you're happy.</p>
-  <div class="secure"><span class="s-pill">🅿️ PayPal</span><span class="s-pill">⬛ Square</span><span class="s-pill">30-day guarantee</span></div>
+  <p>Pay securely with <b>PayPal</b> (cards accepted through PayPal too). 30-day satisfaction guarantee.</p>
+  <div class="secure"><span class="s-pill">🅿️ PayPal secure checkout</span><span class="s-pill">Cards via PayPal</span><span class="s-pill">30-day guarantee</span></div>
 </header>
 
 <div class="wrap">
@@ -68,39 +68,55 @@
   </div>
 
   <div class="note" id="ownerNote"></div>
-  <div class="foot">TELVERGENCE, Inc. &middot; Secure payments by PayPal &amp; Square &middot; 30-day satisfaction guarantee &middot; telvergence.com</div>
+  <div class="foot">TELVERGENCE, Inc. &middot; Secure payments by PayPal &middot; 30-day satisfaction guarantee &middot; telvergence.com</div>
 </div>
 
 <script>
   /* ============================================================
-     OWNER SETUP — paste your PayPal.Me / PayPal payment-link and
-     Square checkout-link URLs per plan. Leave "" to hide that button.
-       PayPal:  paypal.com -> Pay & Get Paid -> Payment Links, OR paypal.me/YourName/22.95
-       Square:  squareup.com -> Online -> Checkout Links (one per plan)
+     LIVE PAYMENTS
+     PAYPAL_EMAIL = the PayPal account that RECEIVES the money.
+       Currently: David Allen personal PayPal.
+       To switch to the Telvergence business PayPal, change this to
+       that account's email and re-save.
+     SQUARE links are optional; paste a Square Checkout Link per plan
+     to also show a "Pay with Square" button (leave "" to hide).
      ============================================================ */
-  var PAY = {
-    did:        {paypal:"", square:""},
-    referral:   {paypal:"", square:""},
-    setup:      {paypal:"", square:""},
-    starter:    {paypal:"", square:""},
-    pro:        {paypal:"", square:""},
-    enterprise: {paypal:"", square:""},
-    franchise:  {paypal:"", square:""}
+  var PAYPAL_EMAIL = "daviddrew362@gmail.com";
+
+  var PLANS = {
+    did:        {name:"Telvergence Smart DID line", amount:"22.95", recurring:true},
+    referral:   {name:"Telvergence Referral line",  amount:"100.00", recurring:false},
+    setup:      {name:"Telvergence Activation setup",amount:"1499.00",recurring:false},
+    starter:    {name:"Telvergence Starter plan",    amount:"499.00", recurring:true},
+    pro:        {name:"Telvergence Pro plan",        amount:"999.00", recurring:true},
+    enterprise: {name:"Telvergence Enterprise plan", amount:"2499.00",recurring:true},
+    franchise:  {name:"Telvergence Franchise license",amount:"25000.00",recurring:false}
   };
-  var anyLive=false;
+  var SQUARE = { did:"", referral:"", setup:"", starter:"", pro:"", enterprise:"", franchise:"" };
+
+  function paypalUrl(p){
+    var b='https://www.paypal.com/cgi-bin/webscr?business='+encodeURIComponent(PAYPAL_EMAIL)+'&currency_code=USD&item_name='+encodeURIComponent(p.name);
+    if(p.recurring){ return b+'&cmd=_xclick-subscriptions&a3='+p.amount+'&p3=1&t3=M&src=1'; }
+    return b+'&cmd=_xclick&amount='+p.amount;
+  }
+
   document.querySelectorAll('.pays').forEach(function(box){
-    var plan=box.getAttribute('data-plan'), p=PAY[plan]||{};
-    if(p.paypal){anyLive=true;var a=document.createElement('a');a.className='pay pp';a.href=p.paypal;a.textContent='Pay with PayPal';box.appendChild(a);}
-    if(p.square){anyLive=true;var b=document.createElement('a');b.className='pay sq';b.href=p.square;b.textContent='Pay with Square';box.appendChild(b);}
-    if(!p.paypal && !p.square){
+    var key=box.getAttribute('data-plan'), p=PLANS[key];
+    if(PAYPAL_EMAIL && p){
+      var a=document.createElement('a');a.className='pay pp';a.href=paypalUrl(p);a.target='_blank';a.rel='noopener';
+      a.textContent = p.recurring ? 'Subscribe with PayPal' : 'Pay with PayPal';
+      box.appendChild(a);
+    }
+    if(SQUARE[key]){ var s=document.createElement('a');s.className='pay sq';s.href=SQUARE[key];s.target='_blank';s.rel='noopener';s.textContent='Pay with Square';box.appendChild(s); }
+    if((!PAYPAL_EMAIL) && !SQUARE[key]){
       var e=document.createElement('a');e.className='pay email';
-      e.href='mailto:contact@telvergence.com?subject='+encodeURIComponent('I want to buy: '+plan)+'&body='+encodeURIComponent('Please send me the PayPal/Square checkout link for the '+plan+' plan.');
+      e.href='mailto:contact@telvergence.com?subject='+encodeURIComponent('I want to buy: '+key)+'&body='+encodeURIComponent('Please send me the checkout link for the '+key+' plan.');
       e.textContent='Get my secure link';box.appendChild(e);
     }
   });
-  document.getElementById('ownerNote').textContent = anyLive
-    ? 'Secure checkout by PayPal & Square. You will receive a receipt by email.'
-    : 'Secure checkout is being finalized. Tap any plan to request your PayPal/Square payment link and we will send it right over.';
+  document.getElementById('ownerNote').textContent = PAYPAL_EMAIL
+    ? 'Secure checkout by PayPal — cards accepted through PayPal. You will receive a receipt by email.'
+    : 'Secure checkout is being finalized. Tap any plan to request your payment link.';
 </script>
 </body>
 </html>
