@@ -73,15 +73,20 @@
 
 <script>
   /* ============================================================
-     LIVE PAYMENTS
-     PAYPAL_EMAIL = the PayPal account that RECEIVES the money.
-       Currently: David Allen personal PayPal.
-       To switch to the Telvergence business PayPal, change this to
-       that account's email and re-save.
-     SQUARE links are optional; paste a Square Checkout Link per plan
-     to also show a "Pay with Square" button (leave "" to hide).
+     LIVE PAYMENTS — SPLIT ROUTING
+     One-time payments  -> PERSONAL PayPal (fast access).
+     Monthly recurring  -> BUSINESS  PayPal (required for subscriptions).
+
+     STEP 1: put your confirmed Telvergence BUSINESS PayPal email in
+             PAYPAL_EMAIL_RECURRING below (replace REPLACE_WITH_BUSINESS_EMAIL).
+     STEP 2 (optional, more durable): after you create hosted Subscription
+             buttons in the Business dashboard, paste each button's
+             hosted_button_id into PP_SUB_BUTTON. Leaving them "" uses the
+             dynamic subscription link, which already carries the plan
+             price/period and works today.
      ============================================================ */
-  var PAYPAL_EMAIL = "daviddrew362@gmail.com";
+  var PAYPAL_EMAIL_ONETIME   = "daviddrew362@gmail.com";          // PERSONAL — one-time
+  var PAYPAL_EMAIL_RECURRING = "REPLACE_WITH_BUSINESS_EMAIL";      // BUSINESS — monthly subscriptions
 
   var PLANS = {
     did:        {name:"Telvergence Smart DID line", amount:"22.95", recurring:true},
@@ -92,31 +97,50 @@
     enterprise: {name:"Telvergence Enterprise plan", amount:"2499.00",recurring:true},
     franchise:  {name:"Telvergence Franchise license",amount:"25000.00",recurring:false}
   };
+
+  /* Optional durable path: hosted Subscription button IDs from the Business dashboard.
+     e.g. did:"ABC123XYZ". Leave "" to use the dynamic subscription link. */
+  var PP_SUB_BUTTON = { did:"", starter:"", pro:"", enterprise:"" };
+
   var SQUARE = { did:"", referral:"", setup:"", starter:"", pro:"", enterprise:"", franchise:"" };
 
-  function paypalUrl(p){
-    var b='https://www.paypal.com/cgi-bin/webscr?business='+encodeURIComponent(PAYPAL_EMAIL)+'&currency_code=USD&item_name='+encodeURIComponent(p.name);
-    if(p.recurring){ return b+'&cmd=_xclick-subscriptions&a3='+p.amount+'&p3=1&t3=M&src=1'; }
-    return b+'&cmd=_xclick&amount='+p.amount;
+  function paypalUrl(p, key){
+    var base='https://www.paypal.com/cgi-bin/webscr?';
+    if(p.recurring){
+      if(PP_SUB_BUTTON[key]){
+        return base+'cmd=_s-xclick&hosted_button_id='+encodeURIComponent(PP_SUB_BUTTON[key]);
+      }
+      return base+'cmd=_xclick-subscriptions'
+        +'&business='+encodeURIComponent(PAYPAL_EMAIL_RECURRING)
+        +'&currency_code=USD'
+        +'&item_name='+encodeURIComponent(p.name)
+        +'&a3='+p.amount+'&p3=1&t3=M&src=1';
+    }
+    return base+'cmd=_xclick'
+      +'&business='+encodeURIComponent(PAYPAL_EMAIL_ONETIME)
+      +'&currency_code=USD'
+      +'&item_name='+encodeURIComponent(p.name)
+      +'&amount='+p.amount;
   }
 
   document.querySelectorAll('.pays').forEach(function(box){
     var key=box.getAttribute('data-plan'), p=PLANS[key];
-    if(PAYPAL_EMAIL && p){
-      var a=document.createElement('a');a.className='pay pp';a.href=paypalUrl(p);a.target='_blank';a.rel='noopener';
+    var payTo = p ? (p.recurring ? PAYPAL_EMAIL_RECURRING : PAYPAL_EMAIL_ONETIME) : "";
+    var ready = payTo && payTo.indexOf("REPLACE_WITH_") !== 0;
+    if(ready){
+      var a=document.createElement('a');a.className='pay pp';a.href=paypalUrl(p,key);a.target='_blank';a.rel='noopener';
       a.textContent = p.recurring ? 'Subscribe with PayPal' : 'Pay with PayPal';
       box.appendChild(a);
     }
     if(SQUARE[key]){ var s=document.createElement('a');s.className='pay sq';s.href=SQUARE[key];s.target='_blank';s.rel='noopener';s.textContent='Pay with Square';box.appendChild(s); }
-    if((!PAYPAL_EMAIL) && !SQUARE[key]){
+    if(!ready && !SQUARE[key]){
       var e=document.createElement('a');e.className='pay email';
       e.href='mailto:contact@telvergence.com?subject='+encodeURIComponent('I want to buy: '+key)+'&body='+encodeURIComponent('Please send me the checkout link for the '+key+' plan.');
       e.textContent='Get my secure link';box.appendChild(e);
     }
   });
-  document.getElementById('ownerNote').textContent = PAYPAL_EMAIL
-    ? 'Secure checkout by PayPal — cards accepted through PayPal. You will receive a receipt by email.'
-    : 'Secure checkout is being finalized. Tap any plan to request your payment link.';
+  document.getElementById('ownerNote').textContent =
+    'Secure checkout by PayPal — cards accepted through PayPal. You will receive a receipt by email.';
 </script>
 </body>
 </html>
