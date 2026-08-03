@@ -26,12 +26,16 @@
   .card p,.card li{color:#d6e2fb;font-size:14.5px}
   .card ul{margin:6px 0 0 20px}
   .card li{margin:4px 0}
+  .card ul.check{list-style:none;margin-left:0}
+  .card ul.check li{padding-left:24px;position:relative}
+  .card ul.check li::before{content:"\2610";position:absolute;left:0;color:var(--cyan);font-weight:800}
   .moat{border-color:var(--red);box-shadow:0 0 0 1px rgba(255,122,107,.3)}
   .moat h3{color:var(--red)}
   .pill{display:inline-block;font-size:11px;font-weight:800;border-radius:999px;padding:3px 9px;margin-left:6px}
   .live{background:rgba(62,240,160,.14);color:var(--lime);border:1px solid rgba(62,240,160,.4)}
   .prog{background:rgba(240,182,74,.14);color:var(--gold);border:1px solid rgba(240,182,74,.4)}
   .hot{background:rgba(255,122,107,.14);color:var(--red);border:1px solid rgba(255,122,107,.4)}
+  .disp{background:rgba(45,212,234,.14);color:var(--cyan);border:1px solid rgba(45,212,234,.4)}
   .btn{display:block;text-align:center;background:linear-gradient(180deg,var(--cyan),#1a90a3);color:#03151a;font-weight:800;text-decoration:none;padding:14px;border-radius:12px;margin:8px 0;font-size:16px}
   .foot{padding:22px 0 60px;color:var(--muted);font-size:12.5px;text-align:center}
 </style>
@@ -58,6 +62,32 @@
   <div class="card"><h3>Strategy: Voice-Agent Revenue Engine</h3>
     <p>Proven call-center infrastructure + AI voice agents (Google/Python, low-cost inference) + Vitelity real-time DIDs + Vici (CRM/LMS/campaigns), bridged by API — a near-passive, instantly deployable engine offered to every business in the ecosystem. Full thesis: <a href="https://docs.google.com/document/d/1CCtm30U7nXwBDe6XVnkr6dCctrV5WrZcvVquFxnss5k/edit">open the Google Doc</a>. <span style="color:var(--muted)">(Verify per-minute inference &amp; DID costs before quoting clients.)</span></p></div>
   <a class="btn" href="priorities.html">&#9989; Open the full Priority Action List &rarr;</a>
+</section>
+
+<section>
+  <h2>📋 Cowork tasks dispatched — bring back</h2>
+  <p style="color:var(--muted);font-size:14px;margin-bottom:6px">Two tasks running as separate Claude Cowork sessions. Check off as results come back; hand the results to the Telvergence build session to wire them in.</p>
+
+  <div class="card moat"><h3>① Secure the Vitelity account <span class="pill disp">DISPATCHED</span></h3>
+    <ul class="check">
+      <li>Sole ownership / admin control confirmed</li>
+      <li>Former user access purged (users + stale API keys)</li>
+      <li>Ported number recovered into the account</li>
+      <li>Port-freeze / port-out PIN turned ON</li>
+      <li>2FA ON · password rotated · API keys reissued (held privately)</li>
+      <li>Full DID + sub-account inventory captured</li>
+      <li>Vitelity support ticket #s recorded</li>
+    </ul></div>
+
+  <div class="card"><h3>② Wire Telvergence Business PayPal (recurring) <span class="pill disp">DISPATCHED</span></h3>
+    <ul class="check">
+      <li>Business PayPal email confirmed (recurring-enabled)</li>
+      <li>4 monthly subscription plans created ($22.95 / $499 / $999 / $2,499)</li>
+      <li>Subscription button IDs / recurring links obtained</li>
+      <li>Exact checkout.html config snippet to paste received</li>
+      <li>Test: one recurring + one one-time completed to correct accounts</li>
+    </ul>
+    <p style="color:var(--muted);font-size:13px;margin-top:8px">Hand the Business PayPal email back to the build session → recurring wired into checkout.html in ~60 seconds.</p></div>
 </section>
 
 <section>
@@ -88,7 +118,7 @@
     </ul></div>
 
   <div class="card"><h3>4. Payments <span class="pill live">TAKING $</span></h3>
-    <p>Checkout live via PayPal (buyer-initiated, real-time). One-time works now on the personal account; recurring subscriptions wire to the Telvergence Business PayPal once the account email is provided.</p></div>
+    <p>Checkout live via PayPal (buyer-initiated, real-time). One-time works now on the personal account; recurring subscriptions wire to the Telvergence Business PayPal once the account email is provided (see task ②).</p></div>
 
   <div class="card"><h3>5. Enrollment &amp; Guarantee policy <span class="pill live">DRAFTED</span></h3>
     <p>2&ndash;5 lines = TPV only; 6+ = LOA + card; Friday $22.95/line advance; Telvergence covers the fee if a line doesn't profit; 10% commission on upside. (Counsel review flagged.)</p></div>
