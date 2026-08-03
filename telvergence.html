@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telvergence — Activate Your Automated Business. One Call.</title>
+<meta name="description" content="Telvergence turns on your automated call-center, AI voice agent, branded numbers and live dashboard — $0 out of pocket. Call to activate.">
+<style>
+  :root{--ink:#070b16;--ink2:#0b1222;--panel:#111a2e;--panel2:#0d1526;--line:#213050;--cyan:#2dd4ea;--cyan-dim:#1a90a3;--gold:#f0b64a;--lime:#3ef0a0;--red:#ff7a6b;--violet:#8f7dff;--text:#eaf1ff;--muted:#9fb0cc;--faint:#61789e}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:radial-gradient(1200px 700px at 82% -10%,rgba(45,212,234,.12),transparent 60%),radial-gradient(900px 520px at 0% 6%,rgba(143,125,255,.10),transparent 55%),var(--ink);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:78px}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  a{color:var(--cyan);text-decoration:none}
+  .banner{background:linear-gradient(90deg,#f0b64a,#ff7a6b);color:#1a0d00;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;text-align:center;font-size:12px;padding:8px 12px}
+  .bar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:12px;padding:11px 20px;background:rgba(7,11,22,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.6px;font-size:17px}.logo b{color:var(--cyan)}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime)}
+  .barcall{margin-left:auto;background:linear-gradient(180deg,var(--lime),#25b083);color:#04231a;font-weight:800;padding:9px 15px;border-radius:10px;font-size:13.5px;white-space:nowrap}
+  .float{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(7,11,22,.94);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px 14px;display:flex;gap:10px;align-items:center;justify-content:center}
+  .float a{flex:1;max-width:520px;background:linear-gradient(180deg,var(--lime),#25b083);color:#04231a;font-weight:800;text-align:center;padding:14px;border-radius:14px;font-size:16.5px;box-shadow:0 6px 24px rgba(62,240,160,.25)}
+  .hero{padding:52px 0 26px;text-align:center}
+  .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:2.6px;text-transform:uppercase;color:var(--cyan)}
+  h1{font-size:clamp(30px,6.6vw,58px);line-height:1.02;letter-spacing:-.02em;font-weight:800;margin:14px auto 12px;max-width:16ch}
+  h1 .g{background:linear-gradient(92deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{font-size:clamp(16px,2.3vw,21px);color:#d5e2fb;max-width:56ch;margin:0 auto}
+  .cta{display:inline-flex;flex-direction:column;align-items:center;gap:4px;margin:24px auto 8px;background:linear-gradient(180deg,var(--lime),#25b083);color:#04231a;font-weight:800;padding:16px 30px;border-radius:16px;box-shadow:0 8px 30px rgba(62,240,160,.3)}
+  .cta .big{font-size:26px;font-variant-numeric:tabular-nums;letter-spacing:.5px}
+  .cta .sm{font-size:12.5px;font-weight:700;opacity:.85;text-transform:uppercase;letter-spacing:1px}
+  .trust{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+  .t-pill{font-size:12.5px;font-weight:800;color:var(--lime);border:1px solid rgba(62,240,160,.4);background:rgba(62,240,160,.08);border-radius:999px;padding:6px 12px}
+  section{padding:38px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(22px,3.6vw,32px);font-weight:800;letter-spacing:-.01em;text-align:center;margin-bottom:6px}
+  .lead{color:var(--muted);text-align:center;max-width:56ch;margin:0 auto 20px}
+  .cards{display:grid;gap:14px}
+  @media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:20px}
+  .card .ic{font-size:24px}.card h3{font-size:16px;font-weight:800;margin:6px 0 4px}.card p{color:var(--muted);font-size:14px}
+  .steps{display:grid;gap:12px;max-width:560px;margin:0 auto}
+  .stepr{display:flex;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .stepr .n{width:34px;height:34px;border-radius:10px;background:var(--cyan);color:#03151a;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;font-size:16px}
+  .stepr b{font-size:16px}.stepr span{display:block;color:var(--muted);font-size:13.5px}
+  .midcta{text-align:center;margin:26px 0 2px}
+  .midcta a{display:inline-block;background:linear-gradient(180deg,var(--cyan),var(--cyan-dim));color:#03151a;font-weight:800;padding:15px 26px;border-radius:14px;font-size:17px}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  th,td{text-align:center;padding:11px 8px;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  th{color:var(--faint);font-size:11px;text-transform:uppercase;letter-spacing:.6px}
+  td.telv{color:var(--lime);font-weight:800}.no{color:var(--red);font-weight:800}
+  .final{background:radial-gradient(600px 280px at 50% 0%,rgba(62,240,160,.18),transparent 60%),var(--panel2);border:1px solid var(--line);border-radius:22px;padding:40px 22px;text-align:center;margin:22px 0}
+  .final h2{font-size:clamp(24px,4.4vw,38px)}
+  .foot{padding:22px 0 40px;color:var(--faint);font-size:12.5px;text-align:center}
+  .links{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="banner">⚡ Adopt full-blown automation — or die &nbsp;·&nbsp; DOMINATE FROM THE CLOUD ⚡</div>
+<div class="bar">
+  <span class="logo"><span class="dot"></span><b>TEL</b>VERGENCE</span>
+  <a class="barcall" href="tel:+16892421041">&#128222; Activate · 689-242-1041</a>
+</div>
+
+<header class="hero wrap">
+  <div class="eyebrow">Programmable Telecom · UCaaS + CPaaS · $0 Out of Pocket</div>
+  <h1>Your business, <span class="g">automated and dominating</span> — in one call.</h1>
+  <p class="sub">Branded numbers, an AI voice agent that answers 24/7, a live-agent campaign, a site, and a real-time profit dashboard. We build it, load your data, and turn it on. You just answer the calls.</p>
+  <a class="cta" href="tel:+16892421041"><span class="sm">Call to activate — free</span><span class="big">📞 689-242-1041</span></a>
+  <div class="trust">
+    <span class="t-pill">$0 out of pocket</span>
+    <span class="t-pill">30-day guarantee</span>
+    <span class="t-pill">Live in days</span>
+    <span class="t-pill">You keep the jobs</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <h2>Why owners call us</h2>
+  <p class="lead">Get off the roof. Run it from your phone at the beach. Net 80%, spend 20% — every dollar not spent falls straight to your bottom line.</p>
+  <div class="cards">
+    <div class="card"><div class="ic">&#9889;</div><h3>Activate in one call</h3><p>Pick your number, we point it and build the campaign. No hardware, no contract, no card today.</p></div>
+    <div class="card"><div class="ic">&#129302;</div><h3>Automation does the work</h3><p>AI + live agents answer, qualify and book around the clock — cutting the labor and overhead that gate your growth.</p></div>
+    <div class="card"><div class="ic">&#128200;</div><h3>See profit to the penny</h3><p>A live dashboard ties every call and conversion to every dollar of spend — no guessing what's working.</p></div>
+    <div class="card"><div class="ic">&#127919;</div><h3>Corner your market</h3><p>Own the leads. Can't fulfill them all? Sell the overflow back to your competition.</p></div>
+    <div class="card"><div class="ic">&#128257;</div><h3>Runs parallel to your legacy</h3><p>Side-by-side with your current systems — no rip-and-replace, no downtime, no risk.</p></div>
+    <div class="card"><div class="ic">&#127758;</div><h3>Become the wholesaler</h3><p>First adopters become the wholesale providers everyone else resells from. Move first.</p></div>
+  </div>
+  <div class="midcta"><a href="tel:+16892421041">&#128222; Call to activate — 689-242-1041</a></div>
+</section>
+
+<section>
+  <h2>Turn it on in 3 steps</h2>
+  <div class="steps">
+    <div class="stepr"><span class="n">1</span><span><b>Call the founder.</b><span>689-242-1041 — tell us your business and market. 3 minutes.</span></span></div>
+    <div class="stepr"><span class="n">2</span><span><b>We build &amp; load it.</b><span>Your number, AI agent, campaign, site and dashboard — with your data.</span></span></div>
+    <div class="stepr"><span class="n">3</span><span><b>The jobs come in.</b><span>Watch it live. Pay only when you're winning — $22.95/line, guaranteed.</span></span></div>
+  </div>
+  <div class="midcta"><a href="tel:+16892421041">&#128222; Start now — 689-242-1041</a></div>
+</section>
+
+<section>
+  <h2>Telecom-native. That's the edge.</h2>
+  <p class="lead">Vapi, ElevenLabs and GoHighLevel bolt AI onto phone calls. Telvergence owns the telecom ecosystem underneath.</p>
+  <div style="overflow-x:auto"><table>
+    <tr><th>&nbsp;</th><th class="telv">Telvergence</th><th>AI-only tools</th></tr>
+    <tr><td>Owns real carrier DIDs (wholesale)</td><td class="telv">Yes</td><td class="no">No</td></tr>
+    <tr><td>CNAM · E911 · STIR/SHAKEN native</td><td class="telv">Yes</td><td class="no">Limited</td></tr>
+    <tr><td>Live-agent + AI hybrid campaigns</td><td class="telv">Yes</td><td class="no">No</td></tr>
+    <tr><td>$0-out-of-pocket activation</td><td class="telv">Yes</td><td class="no">No</td></tr>
+    <tr><td>Wholesale margin to you</td><td class="telv">Yes</td><td class="no">No</td></tr>
+  </table></div>
+  <div class="midcta"><a href="tel:+16892421041">&#128222; Get the edge — 689-242-1041</a></div>
+</section>
+
+<section>
+  <h2>Proven builds</h2>
+  <p class="lead">The same platform, re-skinned per vertical.</p>
+  <div class="cards">
+    <div class="card"><div class="ic">&#127981;</div><h3>Florida Pro Services</h3><p>HVAC lead-gen app + live answering on a private-label build.</p></div>
+    <div class="card"><div class="ic">&#9878;&#65039;</div><h3>Dream Team Law</h3><p>Multi-office PBX/IVR with intelligent overflow routing + DID block.</p></div>
+    <div class="card"><div class="ic">&#128293;</div><h3>Restoration Royalty</h3><p>AI voice agent that answers &amp; books — stood up in minutes.</p></div>
+  </div>
+</section>
+
+<div class="final">
+  <div class="eyebrow" style="color:var(--lime)">One call turns it all on</div>
+  <h2>Adopt from Telvergence. Call to activate.</h2>
+  <p class="lead" style="margin:10px auto 20px">No card today · 30-day satisfaction guarantee · you keep the jobs.</p>
+  <a class="cta" href="tel:+16892421041" style="margin:0 auto"><span class="sm">Tap to call now</span><span class="big">📞 689-242-1041</span></a>
+</div>
+
+<div class="foot">
+  <div class="links">
+    <a href="https://dallen362-cpu.github.io/restoration-royalties/start.html">Free activation</a>
+    <a href="https://dallen362-cpu.github.io/restoration-royalties/pitch-and-catch.html">Pitch &amp; Catch</a>
+    <a href="https://dallen362-cpu.github.io/restoration-royalties/dashboard.html">Live dashboard</a>
+    <a href="https://dallen362-cpu.github.io/restoration-royalties/checkout.html">Plans</a>
+    <a href="https://dallen362-cpu.github.io/restoration-royalties/showroom.html">Showroom</a>
+  </div>
+  <p style="margin-top:14px">TELVERGENCE, Inc. · Programmable telecom · UCaaS + CPaaS · telvergence.com</p>
+</div>
+</div>
+
+<div class="float"><a href="tel:+16892421041">&#128222; Call now to activate — 689-242-1041</a></div>
+</body>
+</html>
