@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Telvergence — Directory &amp; Google Business Profile Kit</title>
+<style>
+  :root{--ink:#070b16;--panel:#111a2e;--panel2:#0d1526;--line:#213050;--cyan:#2dd4ea;--gold:#f0b64a;--lime:#3ef0a0;--ember:#ff7a3c;--text:#eaf1ff;--muted:#9fb0cc;--faint:#61789e}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:radial-gradient(1100px 620px at 82% -8%,rgba(45,212,234,.12),transparent 60%),var(--ink);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Arial,sans-serif;line-height:1.55;font-size:16px;padding-bottom:60px}
+  .wrap{max-width:940px;margin:0 auto;padding:0 20px}
+  a{color:var(--cyan);text-decoration:none}
+  .top{background:linear-gradient(180deg,#0d1730,#070b16);border-bottom:1px solid var(--line);padding:28px 0 24px;text-align:center}
+  .badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--cyan);border:1px solid rgba(45,212,234,.4);border-radius:999px;padding:5px 12px}
+  h1{font-size:clamp(23px,4.6vw,34px);font-weight:800;margin:12px 0 6px}
+  .top p{color:var(--muted);max-width:60ch;margin:0 auto}
+  .prog{margin:14px auto 0;max-width:420px}
+  .prog .bar{height:10px;background:var(--panel);border:1px solid var(--line);border-radius:999px;overflow:hidden}
+  .prog .fill{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--lime));transition:width .3s}
+  .prog .lab{font-size:12px;color:var(--muted);margin-top:6px}
+  section{padding:24px 0;border-top:1px solid var(--line)}
+  h2{font-size:19px;font-weight:800;margin-bottom:4px}
+  h2 .ic{color:var(--gold)}
+  .lead{color:var(--muted);margin-bottom:14px;max-width:70ch;font-size:14px}
+  .nap{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--cyan);border-radius:14px;padding:16px}
+  .nap table{width:100%;border-collapse:collapse;font-size:14px}
+  .nap td{padding:7px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+  .nap td:first-child{color:var(--faint);width:150px;font-size:12.5px;text-transform:uppercase;letter-spacing:.5px}
+  .nap b{color:#fff}
+  .fill{color:var(--gold)}
+  .copy{background:#0b1426;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:13.5px;color:#eaf1ff;position:relative;margin-top:8px}
+  .copy .btn{position:absolute;top:8px;right:8px;font-size:11px;font-weight:700;background:var(--panel);border:1px solid var(--line);color:var(--cyan);border-radius:8px;padding:4px 9px;cursor:pointer}
+  .copy h5{font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px}
+  .tierlab{font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--lime);margin:16px 0 6px}
+  .dir{display:flex;align-items:center;gap:11px;padding:10px 12px;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:11px;margin-bottom:8px}
+  .dir input{width:20px;height:20px;accent-color:var(--lime);flex:none;cursor:pointer}
+  .dir .nm{font-weight:700;font-size:14px}
+  .dir .ds{font-size:12px;color:var(--muted)}
+  .dir .go{margin-left:auto;font-size:12px;font-weight:700;color:var(--cyan);border:1px solid var(--line);border-radius:8px;padding:6px 11px;white-space:nowrap}
+  .dir.done{opacity:.55}.dir.done .nm{text-decoration:line-through}
+  .steps{counter-reset:s}
+  .step{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+  .step .n{counter-increment:s;flex:none;width:26px;height:26px;border-radius:50%;background:var(--panel);border:1px solid var(--cyan);color:var(--cyan);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .step .n::before{content:counter(s)}
+  .step p{font-size:14px;color:#d6e2fb}
+  .step b{color:#fff}
+  .brandrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .brandrow span{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:#d6e2fb;background:var(--panel)}
+  .note{background:linear-gradient(180deg,rgba(240,182,74,.10),rgba(240,182,74,.02));border:1px solid rgba(240,182,74,.4);border-radius:12px;padding:14px 16px;font-size:13.5px;color:#e7dcc4;margin-top:14px}
+  .note b{color:#fff}
+  .foot{padding:22px 0 0;color:var(--faint);font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <span class="badge">Telvergence · Directory &amp; GBP Kit · Private</span>
+  <h1>Get listed everywhere. Consistently. For free.</h1>
+  <p>One canonical business record, ready-to-paste copy, and every free directory with a direct submit link. Tap each as you finish — your progress saves on this device.</p>
+  <div class="prog"><div class="bar"><div class="fill" id="fill"></div></div><div class="lab" id="lab">0 of 0 done</div></div>
+</div></div>
+
+<div class="wrap">
+
+<section>
+  <h2><span class="ic">&#9670;</span> 1. Canonical business record (NAP) — never vary this</h2>
+  <p class="lead">Search engines reward <b>identical</b> Name / Address / Phone across every listing. Copy this exact block into every directory. Fill the two gold fields once and keep them the same forever.</p>
+  <div class="nap"><table>
+    <tr><td>Business name</td><td><b>Telvergence</b> (sub-brands listed separately below)</td></tr>
+    <tr><td>Phone</td><td><b>689-242-1041</b></td></tr>
+    <tr><td>Email</td><td><b>contact@telvergence.com</b></td></tr>
+    <tr><td>Website</td><td><b>telvergence.com</b></td></tr>
+    <tr><td>Owner / contact</td><td><b>David Allen</b></td></tr>
+    <tr><td>Business type</td><td><b>Service-area business</b> (no storefront needed — hide address, set service areas)</td></tr>
+    <tr><td>Service areas</td><td><b>Orlando metro · Central Florida · Miami-Dade · Broward · Palm Beach</b></td></tr>
+    <tr><td>Primary category</td><td><b>Telecommunications service provider</b> (alt: Marketing agency / VoIP provider)</td></tr>
+    <tr><td>Hours</td><td><b>Mon&ndash;Sun 8:00 AM &ndash; 8:00 PM</b> (or 24/7 if you prefer)</td></tr>
+    <tr><td class="fill">Mailing address*</td><td class="fill">__________________________ (needed only for postcard verification; kept private)</td></tr>
+    <tr><td class="fill">EIN / legal name*</td><td class="fill">__________________________ (for BBB / some verifications)</td></tr>
+  </table></div>
+  <div class="note"><b>Why service-area, not storefront:</b> as a telecom/marketing service you don't need a public address — list as a Service-Area Business so you rank in every market you serve without exposing a home address. You still enter a real address privately for Google's postcard verification; it stays hidden on the public listing.</div>
+</section>
+
+<section>
+  <h2><span class="ic">&#9670;</span> 2. Ready-to-paste descriptions</h2>
+  <p class="lead">Tap "copy," paste into the listing's description field. Short version for tight fields, long for Google.</p>
+  <div class="copy"><button class="btn" onclick="cp(this)">copy</button><h5>Short (&approx;140 char)</h5>Telvergence — programmable telecom &amp; AI-powered lead capture. Branded local numbers, 24/7 AI intake, live dashboards. Call 689-242-1041.</div>
+  <div class="copy"><button class="btn" onclick="cp(this)">copy</button><h5>Long (&approx;700 char — Google Business)</h5>Telvergence turns any business into an always-on, automated revenue machine. We provision branded local phone numbers, a 24/7 AI receptionist that answers every call and text and books the appointment, and a live dashboard that tracks every call, lead and dollar in real time. Because we own the underlying telecom layer — carrier trunks, local-presence DIDs, STIR/SHAKEN branded caller-ID — your calls actually get answered instead of flagged as spam. Restoration, roofing, wellness, medical, adjusting and more. 30-day pilot, cancel anytime, you own your numbers. Programmable telecom = Telvergence. Call 689-242-1041 to activate.</div>
+  <div class="copy"><button class="btn" onclick="cp(this)">copy</button><h5>Services list (paste into "services")</h5>Branded local phone numbers · Vanity number search · 24/7 AI receptionist &amp; intake · Missed-call text-back · Outbound calling campaigns · Database reactivation (SMS + voice) · Call tracking &amp; recording · Live KPI dashboard · Google Business Profile setup · White-label / reseller programs</div>
+</section>
+
+<section>
+  <h2><span class="ic">&#9670;</span> 3. Your brands — each gets its own listing</h2>
+  <p class="lead">These are separate businesses, so each earns its own Google Business Profile + directory listings (same NAP method, its own name, category &amp; number).</p>
+  <div class="brandrow">
+    <span>&#128293; Restoration Royalty — Fire/Water/Mold Restoration</span>
+    <span>&#129692; The Roofing Crew — Roofing Contractor</span>
+    <span>&#129504; Serotonin Centers — Weight Loss Service</span>
+    <span>&#128203; FAST Adjusting — Public Adjuster</span>
+    <span>&#129466; DRX9000 / Davidson — Chiropractor / Pain Clinic</span>
+    <span>&#128134; Body Wellness Connection — Massage / Wellness</span>
+    <span>&#9889; Telvergence — Telecom / Marketing</span>
+  </div>
+  <div class="note">Tip: stand up <b>Telvergence first</b> (your umbrella), then one brand at a time. Each brand's listing points to its own catch page and its own branded number once the lines are live.</div>
+</section>
+
+<section>
+  <h2><span class="ic">&#10003;</span> 4. Free directory checklist — tap each when submitted</h2>
+  <p class="lead">Direct submit links. Start with Tier 1 (the ones that actually move rankings), then work down. Progress saves on this device.</p>
+
+  <div class="tierlab">Tier 1 — the big movers (do these first)</div>
+  <div id="t1"></div>
+  <div class="tierlab">Tier 2 — high-value aggregators</div>
+  <div id="t2"></div>
+  <div class="tierlab">Tier 3 — volume citations</div>
+  <div id="t3"></div>
+  <div class="tierlab">Niche — match to the brand</div>
+  <div id="t4"></div>
+</section>
+
+<section>
+  <h2><span class="ic">&#9670;</span> 5. Google Business Profile — exact setup steps</h2>
+  <div class="steps">
+    <div class="step"><div class="n"></div><p>Go to <b>business.google.com</b> &rarr; "Manage now." Sign in with the Google account you want to own the listing.</p></div>
+    <div class="step"><div class="n"></div><p>Enter the <b>brand name</b> (e.g. "Restoration Royalty"). Pick the <b>category</b> from section 3.</p></div>
+    <div class="step"><div class="n"></div><p>Choose <b>"I deliver goods and services to my customers"</b> &rarr; set service areas (from the NAP block). Enter your address privately when asked, then hide it.</p></div>
+    <div class="step"><div class="n"></div><p>Add the <b>branded phone number</b> + <b>website</b> (the catch-page link). Paste the long description + services.</p></div>
+    <div class="step"><div class="n"></div><p><b>Verify</b> — Google mails a postcard (or offers phone/video). Enter the code when it arrives to go live.</p></div>
+    <div class="step"><div class="n"></div><p>Post weekly <b>Google Posts</b> (offers/updates) and set up a <b>review link</b> — send it to every happy customer. Reviews = free ranking fuel.</p></div>
+  </div>
+  <div class="note"><b>Honest note on automation:</b> these listings can't be auto-created by a bot — each verifies your identity (postcard, phone, or email) to stop spam. The good news: this kit makes each one a 3-minute paste. Knock out Tier 1 for Telvergence + your top brand today; hand the rest to a VA with this same page.</div>
+</section>
+
+<div class="foot">Telvergence · Directory &amp; GBP Kit · keep NAP identical everywhere · Tier 1 first · review links on every profile.</div>
+</div>
+
+<script>
+  var DIRS={
+   t1:[
+    ["Google Business Profile","Maps + Search — the #1 driver","https://business.google.com/"],
+    ["Bing Places","Powers Bing + can import from Google","https://www.bingplaces.com/"],
+    ["Apple Business Connect","Apple Maps + Siri","https://businessconnect.apple.com/"],
+    ["Yelp for Business","Huge trust + review signal","https://biz.yelp.com/"],
+    ["Facebook Business Page","Social + Meta local","https://www.facebook.com/pages/create"],
+    ["Nextdoor Business","Hyper-local neighborhood reach","https://business.nextdoor.com/"]
+   ],
+   t2:[
+    ["Yellow Pages (YP.com)","Legacy authority citation","https://accounts.yp.com/register"],
+    ["Better Business Bureau","Free basic listing + trust","https://www.bbb.org/get-a-quote"],
+    ["Foursquare / Places","Feeds many apps &amp; maps","https://location.foursquare.com/products/places/"],
+    ["Manta","Small-business directory","https://www.manta.com/"],
+    ["Hotfrog","Global business dir","https://www.hotfrog.com/add-your-business"],
+    ["MerchantCircle","Local network","https://www.merchantcircle.com/signup"],
+    ["Superpages","High-traffic citation","https://www.superpages.com/"]
+   ],
+   t3:[
+    ["Cylex","Volume citation","https://www.cylex.us.com/"],
+    ["Brownbook","Open business dir","https://www.brownbook.net/"],
+    ["EZlocal","Local citation","https://ezlocal.com/"],
+    ["ChamberofCommerce.com","Business directory","https://www.chamberofcommerce.com/"],
+    ["Local.com","Local search","https://www.local.com/"],
+    ["Citysearch","City directory","https://www.citysearch.com/"],
+    ["eLocal","Service leads dir","https://www.elocal.com/"],
+    ["2FindLocal","Free citation","https://www.2findlocal.com/"],
+    ["ShowMeLocal","Free listing","https://www.showmelocal.com/"],
+    ["Tupalo","Local reviews","https://www.tupalo.co/"]
+   ],
+   t4:[
+    ["Angi (Restoration/Roofing)","Home-service leads","https://www.angi.com/companylist/"],
+    ["Thumbtack (Services)","Pro leads marketplace","https://www.thumbtack.com/pro/"],
+    ["Bark (Services)","Lead marketplace","https://www.bark.com/en/us/sell-on-bark/"],
+    ["Healthgrades (DRX/medical)","Doctor/clinic dir","https://update.healthgrades.com/"],
+    ["Vitals (medical)","Provider listing","https://www.vitals.com/"],
+    ["Wellness.com (wellness/medical)","Wellness dir","https://www.wellness.com/business"],
+    ["MassageBook (Body Wellness)","Massage booking dir","https://www.massagebook.com/"],
+    ["Alignable (B2B networking)","Small-biz referrals","https://www.alignable.com/"]
+   ]
+  };
+  var KEY="tvg_dir_kit_v1";
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){return{}}}
+  function save(s){localStorage.setItem(KEY,JSON.stringify(s))}
+  var state=load(), total=0;
+  function row(id,i,d){
+    var key=id+"_"+i, done=!!state[key];
+    var el=document.createElement("div");
+    el.className="dir"+(done?" done":"");
+    el.innerHTML='<input type="checkbox" '+(done?"checked":"")+'><div><div class="nm">'+d[0]+'</div><div class="ds">'+d[1]+'</div></div><a class="go" href="'+d[2]+'" target="_blank" rel="noopener">Submit &#8599;</a>';
+    var cb=el.querySelector("input");
+    cb.onchange=function(){ state[key]=cb.checked; save(state); el.classList.toggle("done",cb.checked); tally(); };
+    document.getElementById(id).appendChild(el);
+    total++;
+  }
+  Object.keys(DIRS).forEach(function(id){ DIRS[id].forEach(function(d,i){ row(id,i,d); }); });
+  function tally(){
+    var done=0; Object.keys(state).forEach(function(k){ if(state[k]) done++; });
+    var pct=total?Math.round(done/total*100):0;
+    document.getElementById("fill").style.width=pct+"%";
+    document.getElementById("lab").textContent=done+" of "+total+" done · "+pct+"%";
+  }
+  tally();
+  function cp(btn){
+    var t=btn.parentNode.cloneNode(true);
+    t.querySelector(".btn").remove(); var h=t.querySelector("h5"); if(h)h.remove();
+    navigator.clipboard.writeText(t.textContent.trim()).then(function(){ btn.textContent="copied ✓"; setTimeout(function(){btn.textContent="copy";},1400); });
+  }
+</script>
+</body>
+</html>
