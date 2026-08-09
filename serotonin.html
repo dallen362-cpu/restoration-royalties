@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<!-- Deploy target: https://serotonin.telvergence.com ; CNAME to telvergence.com -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>Serotonin Centers &times; Telvergence — Growth Infrastructure Partner</title>
+<meta name="description" content="Telvergence branded-local-line patient-acquisition engine for Serotonin Centers: Smart-DID telecom, AI Pitch & Catch intake, and reactivation-first CRM — cloned to every franchise location.">
+<link rel="canonical" href="https://serotonin.telvergence.com">
+<style>
+  :root{
+    --ink:#0b0e14; --ink2:#0f1420; --panel:#161c2b; --line:#26304a;
+    --gold:#e7b64b; --gold2:#f6d27a; --ember:#ff6a3d; --smoke:#8a94a8;
+    --text:#eef1f7; --muted:#aeb6c6; --ok:#37d39b;
+    --serotonin:#37d3b0;               /* calm wellness accent — used sparingly; gold stays the through-line */
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:82px}
+  body{
+    background:var(--ink); color:var(--text);
+    font:16px/1.6 "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body.locked{overflow:hidden;height:100vh}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .num,.stat b,.tier .price,.vn .no,.callnow{font-variant-numeric:tabular-nums}
+
+  .btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:700;letter-spacing:.2px;cursor:pointer;border:1px solid transparent;font-size:15px}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#211a05}
+  .btn-ghost{border-color:var(--line);color:var(--text)}
+  .btn-teal{border:1px solid var(--serotonin);color:var(--serotonin)}
+  .btn-gold:hover{filter:brightness(1.06)}
+  .btn-ghost:hover{border-color:var(--gold)}
+  .btn-teal:hover{background:rgba(55,211,176,.10)}
+  .btn-sm{padding:10px 16px;font-size:13.5px;border-radius:9px}
+  .eyebrow{color:var(--gold);font-weight:700;letter-spacing:2.4px;text-transform:uppercase;font-size:12px}
+  .eyebrow.teal{color:var(--serotonin)}
+  .crown{font-size:1.15em}
+
+  /* header */
+  header{position:sticky;top:0;z-index:40;background:rgba(11,14,20,.82);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.4px;white-space:nowrap}
+  .brand .mark{color:var(--gold)}
+  .brand .sep{color:var(--serotonin);font-weight:700;opacity:.9}
+  .nav .links{display:flex;gap:20px;font-size:13.5px;color:var(--muted);flex-wrap:wrap;justify-content:center}
+  .nav .links a:hover{color:var(--text)}
+  @media(max-width:900px){.nav .links{display:none}}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero::before{content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(900px 420px at 82% -10%,rgba(55,211,176,.20),transparent 60%),
+      radial-gradient(760px 520px at 6% 12%,rgba(231,182,75,.16),transparent 55%),
+      linear-gradient(180deg,#0b0e14,#0d1119 70%);}
+  .hero .wrap{position:relative;padding:72px 22px 60px}
+  .hero h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin:14px 0 12px;font-weight:800}
+  .hero h1 span{background:linear-gradient(135deg,var(--gold2),var(--serotonin));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:640px;margin:0 0 26px}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .badge{font-size:12.5px;color:var(--muted);border:1px solid var(--line);background:var(--panel);padding:7px 12px;border-radius:999px}
+  .badge b{color:var(--gold)}
+  .badge .g{color:var(--serotonin)}
+
+  /* sections */
+  section{padding:60px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(24px,3.2vw,36px);margin:8px 0 8px;font-weight:800}
+  h2 span{background:linear-gradient(135deg,var(--gold2),var(--serotonin));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--muted);max-width:700px;margin:0 0 30px}
+
+  /* stat row */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:8px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 18px}
+  .stat b{display:block;font-size:26px;font-weight:800;color:var(--gold2);letter-spacing:.3px}
+  .stat small{color:var(--muted);font-size:13px;display:block;margin-top:4px}
+
+  /* card grids */
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;transition:transform .15s ease,border-color .15s ease}
+  .card.lift:hover{transform:translateY(-2px);border-color:var(--gold)}
+  .card h3{margin:2px 0 8px;font-size:18px}
+  .card p{color:var(--muted);font-size:14.5px;margin:0}
+  .ic{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:19px;background:linear-gradient(135deg,rgba(231,182,75,.18),rgba(55,211,176,.14));border:1px solid var(--line);margin-bottom:10px}
+
+  /* engine flow */
+  .flow{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;margin-top:6px}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;min-width:150px;flex:1 1 150px}
+  .step .k{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--serotonin);font-weight:800}
+  .step b{display:block;margin-top:4px;font-size:15px}
+  .step small{color:var(--muted);font-size:12.5px}
+  .arw{display:flex;align-items:center;color:var(--smoke);font-size:20px;font-weight:800}
+  @media(max-width:720px){.arw{display:none}}
+
+  /* segments (tabbed) */
+  .seg-nav{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 22px}
+  .seg-btn{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:10px 16px;border-radius:999px;font-weight:700;font-size:13.5px;cursor:pointer;letter-spacing:.3px}
+  .seg-btn:hover{color:var(--text);border-color:var(--gold)}
+  .seg-btn.is-active{color:#08120f;background:linear-gradient(135deg,var(--serotonin),#5fe0c4);border-color:transparent}
+  .seg-panel{display:none}
+  .seg-panel.is-active{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  .seg-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;margin-bottom:6px}
+  .seg-head h3{font-size:clamp(20px,2.6vw,26px);margin:0;font-weight:800}
+  .seg-head .who{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--serotonin);font-weight:800}
+  .seg-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;align-items:start;margin-top:14px}
+  @media(max-width:760px){.seg-grid{grid-template-columns:1fr}}
+  .seg-props{list-style:none;margin:0;padding:0}
+  .seg-props li{position:relative;padding:9px 0 9px 26px;border-bottom:1px solid var(--line);color:var(--muted);font-size:14.5px}
+  .seg-props li:last-child{border-bottom:0}
+  .seg-props li::before{content:"\2713";position:absolute;left:0;top:9px;color:var(--serotonin);font-weight:800}
+  .seg-props li b{color:var(--text)}
+  .seg-cta{background:var(--ink2);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .seg-cta .lab{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);font-weight:800}
+  .seg-cta p{color:var(--muted);font-size:13.5px;margin:8px 0 16px}
+  .seg-cta .btn{width:100%;text-align:center}
+
+  /* smart-DID guarantee callout */
+  .guarantee{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;background:linear-gradient(135deg,rgba(231,182,75,.12),rgba(55,211,176,.10));border:1px solid var(--line);border-radius:16px;padding:22px;margin-top:16px}
+  .guarantee .seal{width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:30px;background:var(--ink2);border:1px solid var(--gold)}
+  .guarantee h3{margin:0 0 4px;font-size:19px}
+  .guarantee p{margin:0;color:var(--muted);font-size:14px}
+  @media(max-width:520px){.guarantee{grid-template-columns:1fr;text-align:center}.guarantee .seal{margin:0 auto}}
+
+  /* vanity number menu */
+  .vlines{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+  .vn{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px 16px;transition:transform .15s ease,border-color .15s ease}
+  .vn:hover{transform:translateY(-2px);border-color:var(--gold)}
+  .vn .svc{font-size:12px;color:var(--smoke);text-transform:uppercase;letter-spacing:1.2px}
+  .vn .word{font-size:19px;font-weight:800;color:var(--gold2);letter-spacing:.6px;margin-top:3px}
+  .vn .no{font-size:13.5px;color:var(--muted);margin-top:2px}
+  .vn .tagp{display:inline-block;margin-top:8px;font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;font-weight:800;border-radius:999px;padding:3px 9px}
+  .vn .tagp.sec{color:#08120f;background:var(--serotonin)}
+  .vn .tagp.res{color:var(--muted);border:1px solid var(--line)}
+  .lines-note{margin-top:16px;font-size:13px;color:var(--muted)}
+  .pill{display:inline-block;font-size:11.5px;color:#08120f;background:var(--serotonin);border-radius:999px;padding:3px 9px;font-weight:700}
+
+  /* pitch & catch */
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.pc{grid-template-columns:1fr}}
+  .pc .card ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
+  .pc .card li{margin:5px 0}
+  .tag{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;font-weight:800}
+  .tag.pitch{color:var(--ember)} .tag.catch{color:var(--serotonin)}
+
+  /* pricing tiers */
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .tier{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px 22px;display:flex;flex-direction:column}
+  .tier.rec{border-color:var(--gold);box-shadow:0 0 0 1px rgba(231,182,75,.35)}
+  .tier .ribbon{position:absolute;top:-11px;right:18px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#211a05;font-size:11px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+  .tier .tname{font-size:13px;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);font-weight:800}
+  .tier .price{font-size:34px;font-weight:800;margin:8px 0 2px}
+  .tier .price small{font-size:14px;color:var(--muted);font-weight:600}
+  .tier .setup{color:var(--smoke);font-size:13px;margin-bottom:14px}
+  .tier ul{list-style:none;margin:0 0 18px;padding:0;flex:1}
+  .tier li{position:relative;padding:7px 0 7px 24px;color:var(--muted);font-size:13.8px;border-top:1px solid var(--line)}
+  .tier li:first-child{border-top:0}
+  .tier li::before{content:"\2713";position:absolute;left:0;top:7px;color:var(--serotonin);font-weight:800}
+  .addon{margin-top:16px;background:var(--ink2);border:1px dashed var(--line);border-radius:14px;padding:18px 20px;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between}
+  .addon b{color:var(--gold2)}
+  .addon span{color:var(--muted);font-size:14px}
+
+  /* timeline */
+  .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .phase{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;border-top:3px solid var(--serotonin)}
+  .phase .wk{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--serotonin);font-weight:800}
+  .phase h3{margin:6px 0 6px;font-size:18px}
+  .phase p{color:var(--muted);font-size:14px;margin:0}
+
+  /* split manage/approve */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:640px){.split{grid-template-columns:1fr}}
+  .split .card ul{list-style:none;margin:12px 0 0;padding:0}
+  .split .card li{position:relative;padding:8px 0 8px 26px;border-bottom:1px solid var(--line);color:var(--muted);font-size:14px}
+  .split .card li:last-child{border-bottom:0}
+  .split .card.own li::before{content:"\26A1";position:absolute;left:0;top:8px}
+  .split .card.appr li::before{content:"\2713";position:absolute;left:0;top:8px;color:var(--serotonin);font-weight:800}
+  .compliance{margin-top:16px;background:var(--ink2);border:1px solid var(--line);border-radius:14px;padding:18px 20px;color:var(--muted);font-size:13.5px}
+  .compliance b{color:var(--text)}
+
+  /* amazon add-on */
+  .addlabel{display:inline-block;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:800;color:#08120f;background:linear-gradient(135deg,var(--serotonin),#5fe0c4);border-radius:999px;padding:4px 12px;margin-bottom:12px}
+  .amz-note{margin-top:14px;font-size:12.5px;color:var(--smoke)}
+
+  /* cta band */
+  .band{background:linear-gradient(135deg,rgba(231,182,75,.12),rgba(55,211,176,.10));text-align:center}
+  .band h2{margin-bottom:6px}
+  .callnow{font-size:clamp(24px,4vw,38px);font-weight:800;color:var(--gold2);letter-spacing:.5px;margin:12px 0}
+  .band .cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+
+  footer{padding:40px 0 60px;color:var(--muted);font-size:13px}
+  footer .fine{margin-top:14px;font-size:12px;color:var(--smoke);line-height:1.7}
+  .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:24px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+  footer a.link:hover{color:var(--gold2);text-decoration:underline}
+
+  /* passcode gate */
+  .gate{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:22px;
+    background:
+      radial-gradient(700px 420px at 80% 0%,rgba(55,211,176,.16),transparent 60%),
+      radial-gradient(700px 420px at 10% 100%,rgba(231,182,75,.14),transparent 60%),
+      rgba(8,10,16,.96);
+    backdrop-filter:blur(6px)}
+  .gate[hidden]{display:none}
+  .gate-card{width:100%;max-width:420px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:30px 28px;text-align:center}
+  .gate-crown{font-size:34px;color:var(--gold);line-height:1}
+  .gate-card h2{margin:10px 0 6px;font-size:22px}
+  .gate-card h2 span{background:linear-gradient(135deg,var(--gold2),var(--serotonin));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .gate-sub{color:var(--muted);font-size:14px;margin:0 0 18px}
+  #gate-form{display:flex;gap:10px;flex-direction:column}
+  #gate-input{width:100%;padding:13px 15px;border-radius:10px;border:1px solid var(--line);background:var(--ink2);color:var(--text);font-size:15px}
+  #gate-input::placeholder{color:var(--smoke)}
+  .gate-err{color:var(--ember);font-size:13.5px;margin-top:12px;font-weight:600}
+  .gate-note{color:var(--smoke);font-size:12px;margin:16px 0 0}
+
+  /* a11y */
+  a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--gold2);outline-offset:2px;border-radius:8px}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *{animation:none !important;transition:none !important}
+    .card.lift:hover,.vn:hover{transform:none}
+  }
+</style>
+</head>
+<body class="locked">
+
+<!-- ============ PASSCODE GATE ============ -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+  <div class="gate-card">
+    <div class="gate-crown crown">&#9819;</div>
+    <div class="eyebrow teal">Secure Preview</div>
+    <h2 id="gate-title">Telvergence <span>&times; Serotonin Centers</span></h2>
+    <p class="gate-sub">Enter the preview passcode to view this confidential campaign demo.</p>
+    <form id="gate-form" autocomplete="off" novalidate>
+      <input id="gate-input" type="password" name="passcode" placeholder="Passcode" aria-label="Preview passcode" autocomplete="off" spellcheck="false">
+      <button type="submit" class="btn btn-gold">Unlock Preview</button>
+    </form>
+    <div class="gate-err" id="gate-err" role="alert" hidden>Incorrect passcode &mdash; please try again.</div>
+    <p class="gate-note">Secure preview &mdash; light client-side gate.</p>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="mark crown">&#9819;</span> TELVERGENCE <span class="sep">&middot;</span> SEROTONIN</div>
+    <nav class="links">
+      <a href="#engine">Engine</a>
+      <a href="#segments">Audiences</a>
+      <a href="#smartdid">Smart-DID</a>
+      <a href="#lines">Vanity Lines</a>
+      <a href="#pitchcatch">Pitch &amp; Catch</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#amazon">Amazon</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-gold btn-sm">Book the Flagship</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Franchise-Wide Patient-Acquisition Engine</div>
+    <h1>Fill every chair from day one &mdash;<br><span>then clone it to every location.</span></h1>
+    <p class="lead">Telvergence is Serotonin Centers' growth-infrastructure partner: one fused engine &mdash; branded Smart-DID telecom, AI &ldquo;Pitch &amp; Catch&rdquo; intake, funnels, and CRM &mdash; that starts by monetizing the leads you already have, before a dollar of new ad spend.</p>
+    <div class="cta">
+      <a href="#pricing" class="btn btn-gold">See the Three Tiers</a>
+      <a href="#segments" class="btn btn-ghost">Choose Your Path &rarr;</a>
+    </div>
+    <div class="badges">
+      <span class="badge"><b>~100</b> units in pipeline</span>
+      <span class="badge">Reactivate-<span class="g">first</span></span>
+      <span class="badge"><span class="g">HIPAA</span>-aligned</span>
+      <span class="badge"><span class="g">TCPA</span> opt-in-only</span>
+      <span class="badge">Powered by <b>Telvergence Smart-DID</b></span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ EXEC SUMMARY / WHY ============ -->
+<section id="why">
+  <div class="wrap">
+    <div class="eyebrow">Executive Summary</div>
+    <h2>Growth at scale turns marketing into an <span>operations problem</span></h2>
+    <p class="sub">Roughly 100 franchise units open and in development, a new Lake Nona longevity flagship, and an 18-unit Southeast Florida build. Every new location is a new lead-generation build &mdash; unless one connected engine clones cleanly to each. It's the same hybrid lead-to-revenue system behind the Restoration Royalty campaign, rebuilt in a medical-grade, compliance-ready form for longevity care.</p>
+    <div class="stats">
+      <div class="stat"><b>20&ndash;27%</b><small>Revenue lift from dormant-patient reactivation <em>(industry benchmark)</em></small></div>
+      <div class="stat"><b>~$285</b><small>Cost to acquire a new patient &mdash; reactivation costs a fraction</small></div>
+      <div class="stat"><b>$3k&ndash;$15k</b><small>Lifetime value of an HRT / GLP-1 / peptide patient</small></div>
+      <div class="stat"><b>1</b><small>Source of truth &mdash; a corporate Command-Center dashboard</small></div>
+    </div>
+    <div class="cols" style="margin-top:16px">
+      <div class="card lift"><div class="ic">&#128184;</div><h3>Monetize existing leads first</h3><p>Before new ad spend, AI agents reactivate your current lead/patient database by SMS and voice &mdash; the fastest, lowest-risk revenue in the build.</p></div>
+      <div class="card lift"><div class="ic">&#128142;</div><h3>Capture the high-LTV patient</h3><p>HRT, GLP-1 weight-loss and peptide patients are high lifetime-value. A missed call or slow follow-up is a $3k&ndash;$15k patient lost to a competitor.</p></div>
+      <div class="card lift"><div class="ic">&#127919;</div><h3>Make paid spend convert</h3><p>Funnels, instant follow-up, and 24/7 booking turn ad clicks into booked consults &mdash; not wasted impressions.</p></div>
+      <div class="card lift"><div class="ic">&#127963;&#65039;</div><h3>Standardize across locations</h3><p>One brand-consistent engine clones to each new center &mdash; no per-store reinvention, no vendor sprawl.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE ENGINE ============ -->
+<section id="engine">
+  <div class="wrap">
+    <div class="eyebrow teal">One Engine, End to End</div>
+    <h2>Not five disconnected vendors &mdash; <span>one connected system</span></h2>
+    <p class="sub">Every stage reports to a single dashboard, so corporate always sees which locations convert, what each lead costs, and where the pipeline stalls.</p>
+    <div class="flow">
+      <div class="step"><span class="k">01</span><b>Get found</b><small>SEO &middot; local &middot; paid</small></div>
+      <div class="arw">&rarr;</div>
+      <div class="step"><span class="k">02</span><b>Capture</b><small>conversion funnels</small></div>
+      <div class="arw">&rarr;</div>
+      <div class="step"><span class="k">03</span><b>Engage 24/7</b><small>AI receptionist + chat</small></div>
+      <div class="arw">&rarr;</div>
+      <div class="step"><span class="k">04</span><b>Route &amp; track</b><small>Smart DIDs</small></div>
+      <div class="arw">&rarr;</div>
+      <div class="step"><span class="k">05</span><b>Nurture</b><small>SMS / email</small></div>
+      <div class="arw">&rarr;</div>
+      <div class="step"><span class="k">06</span><b>Convert</b><small>booked consult in CRM</small></div>
+      <div class="arw">&rarr;</div>
+      <div class="step"><span class="k">07</span><b>Grow</b><small>reviews + referrals</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AUDIENCE SEGMENTATION ============ -->
+<section id="segments">
+  <div class="wrap">
+    <div class="eyebrow">Built for Every Stakeholder</div>
+    <h2>One engine, <span>six audiences</span></h2>
+    <p class="sub">The same infrastructure carries a different promise to each party at the table. Pick your path.</p>
+
+    <div class="seg-nav" role="tablist" aria-label="Audience segments">
+      <button class="seg-btn is-active" role="tab" aria-selected="true" aria-controls="seg-investors" id="tab-investors" data-seg="investors">Investors</button>
+      <button class="seg-btn" role="tab" aria-selected="false" aria-controls="seg-patients" id="tab-patients" data-seg="patients">Patients &amp; Members</button>
+      <button class="seg-btn" role="tab" aria-selected="false" aria-controls="seg-providers" id="tab-providers" data-seg="providers">Partner-Providers</button>
+      <button class="seg-btn" role="tab" aria-selected="false" aria-controls="seg-distributors" id="tab-distributors" data-seg="distributors">Distributors</button>
+      <button class="seg-btn" role="tab" aria-selected="false" aria-controls="seg-wholesalers" id="tab-wholesalers" data-seg="wholesalers">Wholesalers</button>
+      <button class="seg-btn" role="tab" aria-selected="false" aria-controls="seg-agents" id="tab-agents" data-seg="agents">Agents</button>
+    </div>
+
+    <div class="seg-panels">
+      <!-- Investors -->
+      <div class="seg-panel is-active" role="tabpanel" id="seg-investors" aria-labelledby="tab-investors" tabindex="0">
+        <div class="seg-head"><span class="who">Investors</span><h3>Recurring-revenue infrastructure that clones with the franchise</h3></div>
+        <div class="seg-grid">
+          <ul class="seg-props">
+            <li><b>Predictable MRR:</b> $2,500&ndash;$10,000/mo per flagship plus <b>~$1,500/location/mo</b> as the engine clones across ~100 units.</li>
+            <li><b>Capital-efficient by design:</b> reactivation-first monetizes the existing database before ad dollars are spent.</li>
+            <li><b>Defensible unit economics:</b> Command-Center attribution ties every dollar to a location, line, and cost-per-lead.</li>
+            <li><b>Proven pattern:</b> the Restoration Royalty lead-to-revenue system, rebuilt medical-grade for longevity care.</li>
+          </ul>
+          <div class="seg-cta">
+            <div class="lab">For Investors</div>
+            <p>Request the unit-economics brief and the flagship-to-clone rollout model.</p>
+            <a href="mailto:dallen362@gmail.com?subject=Serotonin%20%C3%97%20Telvergence%20%E2%80%94%20Investor%20Brief" class="btn btn-gold">Request the Investor Brief</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Patients & Members -->
+      <div class="seg-panel" role="tabpanel" id="seg-patients" aria-labelledby="tab-patients" tabindex="0" hidden>
+        <div class="seg-head"><span class="who">Patients &amp; Members</span><h3>Care that answers &mdash; day or night, from a number you recognize</h3></div>
+        <div class="seg-grid">
+          <ul class="seg-props">
+            <li><b>A real local number,</b> not &ldquo;Spam Likely&rdquo; &mdash; branded caller-ID you'll actually pick up.</li>
+            <li><b>24/7 booking:</b> the AI receptionist answers, qualifies, and schedules your consult any hour.</li>
+            <li><b>Text a human channel:</b> two-way SMS reminders so your HRT, GLP-1, or peptide plan never slips.</li>
+            <li><b>No dropped follow-ups:</b> missed-call text-back means you're never left waiting on hold.</li>
+          </ul>
+          <div class="seg-cta">
+            <div class="lab">For Patients &amp; Members</div>
+            <p>Reach a branded local Serotonin line and book a consult.</p>
+            <a href="tel:+18444545326" class="btn btn-teal">Call 1-844-454-LEAN</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partner-providers -->
+      <div class="seg-panel" role="tabpanel" id="seg-providers" aria-labelledby="tab-providers" tabindex="0" hidden>
+        <div class="seg-head"><span class="who">Partner-Providers &middot; Clinics</span><h3>A patient-acquisition engine that fills chairs from day one</h3></div>
+        <div class="seg-grid">
+          <ul class="seg-props">
+            <li><b>Plug-and-play clone:</b> the full engine deploys to your location without a per-store rebuild.</li>
+            <li><b>You practice, we run the tech:</b> telecom, dialer, AI, and CRM operated end-to-end by Telvergence.</li>
+            <li><b>Compliance-ready:</b> HIPAA-aligned PHI handling with BAAs where required; marketing CRM kept separate from clinical PHI.</li>
+            <li><b>You keep control:</b> you approve every claim, offer, and opt-in policy before launch.</li>
+          </ul>
+          <div class="seg-cta">
+            <div class="lab">For Partner-Providers</div>
+            <p>Scope a clone of the engine to your clinic in 90 days.</p>
+            <a href="#pricing" class="btn btn-gold">Clone the Engine</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Distributors -->
+      <div class="seg-panel" role="tabpanel" id="seg-distributors" aria-labelledby="tab-distributors" tabindex="0" hidden>
+        <div class="seg-head"><span class="who">Distributors</span><h3>Deploy the engine across a territory &mdash; white-label ready</h3></div>
+        <div class="seg-grid">
+          <ul class="seg-props">
+            <li><b>Territory rights:</b> bring the Serotonin &times; Telvergence engine to wellness clinics across your region.</li>
+            <li><b>Per-location economics:</b> recurring share on every cloned center under the national MSA.</li>
+            <li><b>Month-to-month telecom:</b> no long carrier contracts to resell around.</li>
+            <li><b>Turnkey delivery:</b> build, hosting, campaign management, and reporting handled centrally.</li>
+          </ul>
+          <div class="seg-cta">
+            <div class="lab">For Distributors</div>
+            <p>Explore open territories and the distributor rev-share model.</p>
+            <a href="mailto:dallen362@gmail.com?subject=Serotonin%20%C3%97%20Telvergence%20%E2%80%94%20Distributor%20Territories" class="btn btn-gold">Explore Territories</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wholesalers -->
+      <div class="seg-panel" role="tabpanel" id="seg-wholesalers" aria-labelledby="tab-wholesalers" tabindex="0" hidden>
+        <div class="seg-head"><span class="who">Wholesalers</span><h3>Smart-DID and vanity lines &mdash; provisioned at volume</h3></div>
+        <div class="seg-grid">
+          <ul class="seg-props">
+            <li><b>Bulk provisioning:</b> branded local + vanity DIDs across markets, ordered and routed on demand.</li>
+            <li><b>Anti-spam at scale:</b> CNAM + STIR/SHAKEN attestation applied across the whole block.</li>
+            <li><b>Wholesale voice &amp; SMS</b> with per-line, per-agent CDR reporting for clean attribution.</li>
+            <li><b>Resell to your book:</b> hand clinics numbers that ring, brand, and track from day one.</li>
+          </ul>
+          <div class="seg-cta">
+            <div class="lab">For Wholesalers</div>
+            <p>Get wholesale line + minutes pricing for your clinic book.</p>
+            <a href="mailto:dallen362@gmail.com?subject=Serotonin%20%C3%97%20Telvergence%20%E2%80%94%20Wholesale%20Line%20Pricing" class="btn btn-gold">Get Wholesale Pricing</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agents -->
+      <div class="seg-panel" role="tabpanel" id="seg-agents" aria-labelledby="tab-agents" tabindex="0" hidden>
+        <div class="seg-head"><span class="who">Agents</span><h3>Sell the campaign &mdash; the AI does the heavy lifting</h3></div>
+        <div class="seg-grid">
+          <ul class="seg-props">
+            <li><b>Recurring commission</b> on every location that runs on the engine.</li>
+            <li><b>Your own tracked DID:</b> a branded number per agent so CDR attribution proves the deals you sourced.</li>
+            <li><b>Pitch &amp; Catch does the work:</b> scripts, outbound reactivation, and AI intake carry the conversation.</li>
+            <li><b>Sell a proven system,</b> not a promise &mdash; anchored on a live flagship in 90 days.</li>
+          </ul>
+          <div class="seg-cta">
+            <div class="lab">For Agents</div>
+            <p>Become a campaign agent and get your tracked line.</p>
+            <a href="mailto:dallen362@gmail.com?subject=Serotonin%20%C3%97%20Telvergence%20%E2%80%94%20Become%20an%20Agent" class="btn btn-gold">Become an Agent</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SMART-DID ============ -->
+<section id="smartdid">
+  <div class="wrap">
+    <div class="eyebrow teal">The Telvergence Smart-DID Model</div>
+    <h2>Branded local numbers that <span>ring, brand, and track</span></h2>
+    <p class="sub">The telecom layer under the whole engine: real local-presence numbers, anti-spam attestation, two-way SMS, and per-line attribution &mdash; on a month-to-month carrier with no long contracts.</p>
+    <div class="cols">
+      <div class="card lift"><div class="ic">&#128205;</div><h3>Branded Local Numbers</h3><p>Local-presence DIDs by market &mdash; 407-LEAN, 305-SLIM, 817-LEAN &mdash; so the call looks like a neighbor, not a call center.</p></div>
+      <div class="card lift"><div class="ic">&#128737;&#65039;</div><h3>CNAM + STIR/SHAKEN</h3><p>Caller-ID branded to the service line plus signed attestation &mdash; the fix for &ldquo;Spam Likely&rdquo; and blocked outreach.</p></div>
+      <div class="card lift"><div class="ic">&#128241;</div><h3>Two-Way SMS</h3><p>Opt-in-only text for reminders, reactivation, and confirmations &mdash; TCPA-compliant, reply STOP honored.</p></div>
+      <div class="card lift"><div class="ic">&#128260;</div><h3>Remote Call Forward</h3><p>Route any line to a clinic front desk, closer, or cell in seconds &mdash; move a number without moving hardware.</p></div>
+      <div class="card lift"><div class="ic">&#128197;</div><h3>Month-to-Month Carrier</h3><p>No multi-year telecom lock-in. Scale lines up per location, or rotate a flagged number instantly.</p></div>
+      <div class="card lift"><div class="ic">&#128202;</div><h3>CDR Tracking &amp; Attribution</h3><p>Per-DID, per-agent, per-location call-detail records feed the Command-Center dashboard &mdash; every booking tied to its source.</p></div>
+      <div class="card lift"><div class="ic">&#129302;</div><h3>AI &ldquo;Pitch &amp; Catch&rdquo; Intake</h3><p>Outbound AI reactivates dormant patients; inbound AI answers, qualifies, and books &mdash; 24/7, in one flow.</p></div>
+      <div class="card lift"><div class="ic">&#127760;</div><h3>Vanity Line Menu</h3><p>Memorable brand-and-service numbers (LEAN, HORMONE, PEPTIDE&hellip;) mapped to each vertical &mdash; see the menu below.</p></div>
+    </div>
+
+    <div class="guarantee">
+      <div class="seal">&#9819;</div>
+      <div>
+        <h3>Written satisfaction guarantee &amp; extreme QA</h3>
+        <p>Every campaign ships under a written satisfaction guarantee, backed by call-recording review, scorecard QA on intake, and continuous script tuning &mdash; so quality is contractual, not aspirational.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VANITY MENU ============ -->
+<section id="lines">
+  <div class="wrap">
+    <div class="eyebrow">Vanity Number Menu</div>
+    <h2>Pick your favorites &mdash; <span>one memorable line per service</span></h2>
+    <p class="sub">A branded vanity number for every Serotonin vertical, each routed into the Pitch &amp; Catch flow with CNAM + STIR/SHAKEN and CDR tracking. Local-native versions available in every market.</p>
+    <div class="vlines">
+      <div class="vn"><div class="svc">Weight Loss</div><div class="word">LEAN</div><div class="no"><a href="tel:+18444545326">1-844-454-5326</a></div><span class="tagp sec">Secured</span></div>
+      <div class="vn"><div class="svc">Master Brand</div><div class="word">SEROTON</div><div class="no">1-8XX-737-6866</div><span class="tagp res">Reserved</span></div>
+      <div class="vn"><div class="svc">HRT</div><div class="word">HORMONE</div><div class="no">1-8XX-467-6663</div><span class="tagp res">Reserved</span></div>
+      <div class="vn"><div class="svc">Men's TRT</div><div class="word">LOW-T-DOC</div><div class="no">1-8XX-569-8362</div><span class="tagp res">Reserved</span></div>
+      <div class="vn"><div class="svc">Peptides</div><div class="word">PEPTIDE</div><div class="no">1-8XX-737-8433</div><span class="tagp res">Reserved</span></div>
+      <div class="vn"><div class="svc">IV / NAD+</div><div class="word">NAD-NOW</div><div class="no">1-8XX-623-6669</div><span class="tagp res">Reserved</span></div>
+      <div class="vn"><div class="svc">Aesthetics</div><div class="word">MY-BOTOX</div><div class="no">1-8XX-692-6869</div><span class="tagp res">Reserved</span></div>
+      <div class="vn"><div class="svc">Skin / HydraFacial</div><div class="word">GLOW-NOW</div><div class="no">1-8XX-456-9669</div><span class="tagp res">Reserved</span></div>
+      <div class="vn"><div class="svc">Body Sculpting</div><div class="word">SLIM-NOW</div><div class="no">1-8XX-754-6669</div><span class="tagp res">Reserved</span></div>
+      <div class="vn"><div class="svc">Hair Restoration</div><div class="word">NEW-HAIR</div><div class="no">1-8XX-639-4247</div><span class="tagp res">Reserved</span></div>
+      <div class="vn"><div class="svc">Longevity</div><div class="word">AGELESS</div><div class="no">1-8XX-243-5377</div><span class="tagp res">Reserved</span></div>
+      <div class="vn"><div class="svc">Hyperbaric / Red-Light</div><div class="word">RECOVER</div><div class="no">1-8XX-732-6837</div><span class="tagp res">Reserved</span></div>
+    </div>
+    <p class="lines-note"><span class="pill">LEAN Secured</span> &nbsp;&ldquo;8XX&rdquo; = toll-free prefix reserved at provisioning. Local-native versions available in every market (407-LEAN, 305-SLIM, 817-LEAN&hellip;). Tell us your picks and we secure them right after the meeting.</p>
+  </div>
+</section>
+
+<!-- ============ PITCH & CATCH ============ -->
+<section id="pitchcatch">
+  <div class="wrap">
+    <div class="eyebrow">The Reactivation Engine</div>
+    <h2>AI &ldquo;Pitch &amp; Catch&rdquo; &mdash; <span>revenue before ad spend</span></h2>
+    <p class="sub">The <b>pitch</b> reactivates the leads you already own; the <b>catch</b> makes sure not one inbound is missed. Together they turn your existing database into booked consults &mdash; the fastest, lowest-risk revenue in the build.</p>
+    <div class="pc">
+      <div class="card">
+        <div class="tag pitch">&#9654; The Pitch &mdash; Outbound</div>
+        <h3>Reactivate the database you already have</h3>
+        <ul>
+          <li>AI agents re-engage dormant leads &amp; patients by SMS and voice</li>
+          <li>Branded local caller-ID &mdash; recognized, not screened out</li>
+          <li>Targeted to HRT, GLP-1, peptide, aesthetics &amp; longevity lists</li>
+          <li>Benchmark: dormant-patient reactivation drives a 20&ndash;27% revenue lift</li>
+          <li>Opt-in-only, reply STOP honored &mdash; TCPA-compliant throughout</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tag catch">&#9679; The Catch &mdash; Inbound</div>
+        <h3>Book every consult, miss no one</h3>
+        <ul>
+          <li>24/7 AI receptionist answers, qualifies, and books into CRM</li>
+          <li>Missed-call text-back recovers the call you'd have lost</li>
+          <li>High-LTV cases ($3k&ndash;$15k) routed straight to a closer</li>
+          <li>Structured capture: name &rarr; goal &rarr; service line &rarr; urgency</li>
+          <li>CDR ties each booking to the line and location that drove it</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="eyebrow">Investment &mdash; Three Tiers</div>
+    <h2>Anchor the flagship, then <span>replicate everywhere</span></h2>
+    <p class="sub">Figures are proposed and adjustable. Recommended: <b>Full Transformation</b> &mdash; anchor the brand on the complete engine, prove it at the flagship in 90 days, then clone to every location.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tname">Foundation</div>
+        <div class="price">$2,500<small>/mo</small></div>
+        <div class="setup">+ $2,500 setup</div>
+        <ul>
+          <li>Website + local SEO</li>
+          <li>Google Business profile</li>
+          <li>Call tracking</li>
+          <li>CRM stand-up</li>
+          <li>1 conversion funnel</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-sm">Start with Foundation</a>
+      </div>
+      <div class="tier">
+        <div class="tname">Growth</div>
+        <div class="price">$5,000<small>/mo</small></div>
+        <div class="setup">+ $4,000 setup</div>
+        <ul>
+          <li>Everything in Foundation</li>
+          <li>Paid search</li>
+          <li>Multi-funnel</li>
+          <li>SMS / email nurture</li>
+          <li>AI chat</li>
+          <li>Review engine</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-sm">Choose Growth</a>
+      </div>
+      <div class="tier rec">
+        <div class="ribbon">Recommended</div>
+        <div class="tname">Full Transformation</div>
+        <div class="price">$10,000<small>/mo</small></div>
+        <div class="setup">+ $7,500 setup</div>
+        <ul>
+          <li>Everything in Growth</li>
+          <li>AI receptionist</li>
+          <li>Vici dialer</li>
+          <li>Full CRM</li>
+          <li>Referral tracking</li>
+          <li>Command-Center dashboard &amp; attribution</li>
+        </ul>
+        <a href="#contact" class="btn btn-gold btn-sm">Anchor the Flagship</a>
+      </div>
+    </div>
+    <div class="addon">
+      <span><b>Franchise add-on &mdash; ~$1,500/location/mo.</b> Clone the engine to each new location plus a corporate Command Center, under a national MSA.</span>
+      <a href="#contact" class="btn btn-teal btn-sm">Plan the Rollout</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 90 DAYS ============ -->
+<section id="ninety">
+  <div class="wrap">
+    <div class="eyebrow teal">Your First 90 Days</div>
+    <h2>Flagship live and <span>ready to clone</span> in one quarter</h2>
+    <p class="sub">Reporting cadence: weekly during ramp, then a monthly executive ROI review.</p>
+    <div class="timeline">
+      <div class="phase"><div class="wk">Weeks 1&ndash;2 &middot; Foundation</div><h3>Stand it up</h3><p>Audit, brand-consistent site &amp; funnels, tracked numbers, CRM stand-up, and Google Business live.</p></div>
+      <div class="phase"><div class="wk">Weeks 3&ndash;6 &middot; Growth</div><h3>Turn on demand</h3><p>SEO + paid live, AI chat and nurture sequences running, review engine switched on.</p></div>
+      <div class="phase"><div class="wk">Weeks 7&ndash;12 &middot; Full Stack</div><h3>Prove &amp; clone</h3><p>AI receptionist, Vici dialer, dashboard &amp; attribution &mdash; flagship fully operational and ready to replicate.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MANAGE / APPROVE ============ -->
+<section id="responsibility">
+  <div class="wrap">
+    <div class="eyebrow">Clear Lanes</div>
+    <h2>What we manage &mdash; <span>what you approve</span></h2>
+    <p class="sub">Telvergence owns the build and the operations; your team keeps sign-off on brand, budget, and every clinical claim.</p>
+    <div class="split">
+      <div class="card own">
+        <h3>Telvergence owns &amp; runs</h3>
+        <ul>
+          <li>Build, hosting &amp; technical delivery</li>
+          <li>Campaign management &amp; optimization</li>
+          <li>Telecom, dialer, AI &amp; CRM operations</li>
+          <li>Reporting, attribution &amp; dashboards</li>
+        </ul>
+      </div>
+      <div class="card appr">
+        <h3>You approve &amp; provide</h3>
+        <ul>
+          <li>Brand assets &amp; messaging sign-off</li>
+          <li>Ad budget &amp; offer approval</li>
+          <li>Clinical / compliance review of claims</li>
+          <li>Consent &amp; opt-in policy sign-off</li>
+        </ul>
+      </div>
+    </div>
+    <div class="compliance">
+      <b>Compliance:</b> HIPAA-aligned PHI handling (BAAs where required), PCI DSS payment security, and TCPA-compliant opt-in-only dialing/SMS. Marketing CRM is kept separate from clinical PHI.
+    </div>
+  </div>
+</section>
+
+<!-- ============ AMAZON GROWTH ADD-ON ============ -->
+<section id="amazon">
+  <div class="wrap">
+    <span class="addlabel">Growth Add-On &middot; Concept</span>
+    <div class="eyebrow teal">Marketplace Acquisition Channel</div>
+    <h2>The Amazon channel &mdash; <span>shoppers become patients</span></h2>
+    <p class="sub">An optional top-of-funnel bolt-on to the core engine: list Serotonin's retail wellness SKUs on Amazon and other marketplaces, then convert one-time shoppers into high-LTV clinic members. Scoped separately from the three-tier engine.</p>
+    <div class="cols">
+      <div class="card lift"><div class="ic">&#128722;</div><h3>Marketplace Storefront</h3><p>Physician-informed wellness SKUs &mdash; supplements, NAD+ &amp; recovery support, GLP-1 companion nutrition, red-light devices &mdash; on Amazon &amp; marketplaces for reach the clinic can't buy directly.</p></div>
+      <div class="card lift"><div class="ic">&#128273;</div><h3>Insert-to-Clinic Conversion</h3><p>Every unit ships with a branded insert + QR to the local Smart-DID line &mdash; turning an anonymous shopper into a tracked, bookable lead in the CRM.</p></div>
+      <div class="card lift"><div class="ic">&#128260;</div><h3>Subscribe &amp; Save &rarr; Membership</h3><p>Marketplace subscriptions mirror membership LTV; reviews feed social proof back into SEO and paid &mdash; a self-reinforcing acquisition loop.</p></div>
+    </div>
+    <p class="amz-note">Add-on note: this marketplace channel is an optional growth concept, not part of the core three-tier engine. Product listings and any health claims undergo the same clinical / compliance review before launch; scope and pricing are quoted separately.</p>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section id="contact" class="band">
+  <div class="wrap">
+    <div class="eyebrow">Prove It at the Flagship in 90 Days</div>
+    <h2>One engine. Every chair. Every location.</h2>
+    <div class="callnow"><a href="tel:+16892421041">689-242-1041</a></div>
+    <p class="sub" style="margin:0 auto 18px">David Drew Allen, President &middot; Telvergence, Inc. &mdash; let's anchor the complete engine at the flagship, then clone it across the franchise.</p>
+    <div class="cta">
+      <a href="tel:+16892421041" class="btn btn-gold">Call the Campaign Desk</a>
+      <a href="mailto:dallen362@gmail.com?subject=Serotonin%20%C3%97%20Telvergence%20%E2%80%94%20Full%20Transformation" class="btn btn-ghost">Email the Proposal Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap grid2">
+    <div>
+      <div class="brand" style="font-size:18px"><span class="mark crown">&#9819;</span> TELVERGENCE <span class="sep">&middot;</span> SEROTONIN</div>
+      <p style="color:var(--muted);margin:10px 0 0">Growth-infrastructure partner for Serotonin Centers &mdash; website &amp; funnels, SEO + paid, AI receptionist, Smart-DID telecom, and CRM. One engine, cloned to every location.</p>
+    </div>
+    <div>
+      <div class="eyebrow">Campaign Desk</div>
+      <p style="margin:8px 0 0"><a class="link" href="tel:+16892421041">689-242-1041</a> &middot; <a class="link" href="mailto:dallen362@gmail.com">dallen362@gmail.com</a></p>
+      <p style="margin:4px 0 0"><a class="link" href="https://serotonin.telvergence.com">serotonin.telvergence.com</a></p>
+      <p style="margin:4px 0 0;color:var(--smoke)">David Drew Allen, President &middot; Telvergence, Inc.</p>
+    </div>
+  </div>
+  <div class="wrap fine">
+    &copy; 2026 Telvergence, Inc. Confidential proposal for Serotonin Centers &mdash; pricing proposed &amp; adjustable. Reactivation and revenue figures are industry benchmarks, not guarantees. HIPAA-aligned PHI handling (BAAs where required), PCI DSS payment security, and TCPA-compliant opt-in-only dialing/SMS; marketing CRM kept separate from clinical PHI. Not medical or legal advice; all public-facing health claims undergo compliance review before launch. &ldquo;LEAN&rdquo; (1-844-454-5326) secured; other &ldquo;8XX&rdquo; vanity numbers are reserved placeholders pending provisioning.
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---- passcode gate ---- */
+  const PASSCODE = "Telvergence-8832"; // light client-side preview gate — not real security
+  const KEY = 'serotonin_preview_unlocked';
+  const gate  = document.getElementById('gate');
+  const form  = document.getElementById('gate-form');
+  const input = document.getElementById('gate-input');
+  const err   = document.getElementById('gate-err');
+
+  function unlock(){
+    gate.setAttribute('hidden','');
+    document.body.classList.remove('locked');
+  }
+  try{
+    if(sessionStorage.getItem(KEY) === 'yes'){ unlock(); }
+    else { setTimeout(function(){ if(input) input.focus(); }, 60); }
+  }catch(e){ setTimeout(function(){ if(input) input.focus(); }, 60); }
+
+  if(form){
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      if(input.value.trim() === PASSCODE){
+        try{ sessionStorage.setItem(KEY,'yes'); }catch(e){}
+        err.hidden = true;
+        unlock();
+      } else {
+        err.hidden = false;
+        input.focus();
+        input.select();
+      }
+    });
+  }
+
+  /* ---- audience segment tabs ---- */
+  const tabs = Array.prototype.slice.call(document.querySelectorAll('.seg-btn'));
+  const panels = Array.prototype.slice.call(document.querySelectorAll('.seg-panel'));
+  function activate(idx){
+    tabs.forEach(function(t,i){
+      const on = (i === idx);
+      t.classList.toggle('is-active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    panels.forEach(function(p,i){
+      const on = (i === idx);
+      p.classList.toggle('is-active', on);
+      if(on){ p.removeAttribute('hidden'); } else { p.setAttribute('hidden',''); }
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click', function(){ activate(i); });
+    t.addEventListener('keydown', function(ev){
+      if(ev.key === 'ArrowRight' || ev.key === 'ArrowDown'){
+        ev.preventDefault(); const n=(i+1)%tabs.length; tabs[n].focus(); activate(n);
+      } else if(ev.key === 'ArrowLeft' || ev.key === 'ArrowUp'){
+        ev.preventDefault(); const n=(i-1+tabs.length)%tabs.length; tabs[n].focus(); activate(n);
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

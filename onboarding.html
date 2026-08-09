@@ -1,0 +1,166 @@
+<!-- Deploy target (GitHub Pages + Cloudflare): https://onboarding.telvergence.com ; CNAME to telvergence.com -->
+<link rel="canonical" href="https://onboarding.telvergence.com">
+<title>Telvergence — Onboarding Protocol & Guarantee</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root{
+    --ink:#0b0e14; --ink2:#0f1420; --panel:#161c2b; --panel2:#1a2233; --line:#26304a; --line2:#354162;
+    --gold:#e7b64b; --gold2:#f6d27a; --ember:#ff6a3d; --smoke:#8a94a8;
+    --text:#eef1f7; --muted:#aeb6c6; --ok:#37d39b; --maxw:1060px;
+  }
+  *{box-sizing:border-box} html,body{margin:0;padding:0}
+  body{background:radial-gradient(900px 460px at 82% -10%,rgba(255,106,61,.16),transparent 60%),radial-gradient(700px 480px at 3% 10%,rgba(231,182,75,.10),transparent 55%),var(--ink);
+    color:var(--text);font:16px/1.62 "Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit} .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .tnum{font-variant-numeric:tabular-nums}
+  .eyebrow{font-weight:800;letter-spacing:2.6px;text-transform:uppercase;font-size:11.5px;color:var(--gold)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:700;border:1px solid var(--line2);cursor:pointer;font-size:14px}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#241b05;border-color:transparent}
+  .crown{color:var(--gold)}
+
+  /* gate */
+  .gate{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:radial-gradient(700px 400px at 50% 30%,rgba(231,182,75,.10),transparent 60%),var(--ink);padding:24px}
+  .gate.hide{display:none}
+  .vault{width:100%;max-width:420px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line2);border-radius:18px;padding:34px 28px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .vault .seal{font-size:40px;color:var(--gold2)} .vault h1{font-size:19px;margin:14px 0 4px} .vault p{color:var(--muted);font-size:13.5px;margin:0 0 18px}
+  .vault input{width:100%;padding:13px 14px;border-radius:10px;border:1px solid var(--line2);background:#0c111b;color:var(--text);font-size:15px;letter-spacing:1px;text-align:center}
+  .vault input:focus{outline:2px solid var(--gold);outline-offset:1px}
+  .vault .go{margin-top:12px;width:100%;justify-content:center} .vault .err{color:#ff5d5d;font-size:12.5px;min-height:16px;margin-top:10px}
+  .vault .fine{color:var(--smoke);font-size:11px;margin-top:14px;line-height:1.6}
+  .shake{animation:shake .35s} @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+
+  header{position:sticky;top:0;z-index:20;background:rgba(11,14,20,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px;font-size:15px}
+  .links{display:flex;gap:20px;font-size:13.5px;color:var(--muted)} .links a:hover{color:var(--text)}
+  @media(max-width:760px){.links{display:none}}
+
+  .hero{border-bottom:1px solid var(--line)} .hero .wrap{padding:56px 22px 40px}
+  .hero h1{font-size:clamp(30px,4.6vw,50px);line-height:1.06;margin:12px 0 12px;font-weight:800;text-wrap:balance;max-width:18ch}
+  .hero h1 span{background:linear-gradient(135deg,var(--gold2),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:clamp(15px,2vw,18px);color:var(--muted);max-width:620px;margin:0 0 24px}
+  .chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}
+  .chip{font-size:12.5px;color:var(--muted);border:1px solid var(--line);background:var(--panel);padding:7px 12px;border-radius:999px}
+  .chip b{color:var(--gold)}
+
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(22px,3vw,30px);margin:6px 0 8px;font-weight:800} .sub{color:var(--muted);max-width:640px;margin:0 0 26px}
+
+  .steps{display:grid;gap:12px}
+  .step{display:grid;grid-template-columns:52px 1fr;gap:16px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 18px}
+  .step .no{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;color:#241b05;background:linear-gradient(135deg,var(--gold),var(--gold2))}
+  .step h3{margin:2px 0 5px;font-size:17px} .step p{margin:0;color:var(--muted);font-size:14px}
+  .step .qa{margin-top:9px;font-size:12.5px;color:var(--ok);display:flex;align-items:center;gap:7px}
+  .step .qa b{color:var(--text);font-weight:700}
+
+  .guar{background:linear-gradient(135deg,rgba(231,182,75,.12),rgba(255,106,61,.08));border:1px solid var(--line2);border-radius:18px;padding:30px}
+  .guar h2{margin-top:0} .guar ul{margin:14px 0 0;padding-left:20px;color:var(--muted)} .guar li{margin:8px 0}
+  .guar li b{color:var(--text)}
+  .sign{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:26px}
+  @media(max-width:640px){.sign{grid-template-columns:1fr}}
+  .sig{border-top:1px solid var(--line2);padding-top:10px;font-size:13px;color:var(--smoke)}
+
+  footer{padding:34px 0 56px;color:var(--muted);font-size:12.5px}
+  footer .fine{margin-top:12px;font-size:11.5px;color:var(--smoke);line-height:1.7;max-width:74ch}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="gate" id="gate">
+  <div class="vault" id="vault">
+    <div class="seal">&#9819;</div>
+    <h1>Telvergence Onboarding</h1>
+    <p>Enter passcode to continue</p>
+    <input id="pc" type="password" autocomplete="off" placeholder="Passcode" aria-label="Passcode" />
+    <button class="btn btn-gold go" id="go">Unlock &#8594;</button>
+    <div class="err" id="err"></div>
+    <div class="fine">Secure preview &middot; light client-side gate.</div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="crown">&#9819;</span> TELVERGENCE</div>
+    <nav class="links"><a href="#protocol">Protocol</a><a href="#qa">QA</a><a href="#guarantee">Guarantee</a></nav>
+    <a href="#guarantee" class="btn btn-gold">The Guarantee</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Client Onboarding &amp; Provisioning</div>
+    <h1>From a free Google listing to a <span>branded line that rings</span> &mdash; guaranteed in writing.</h1>
+    <p class="lead">The exact, repeatable protocol we run for every campaign: claim the free listing, provision a branded local Smart-DID, enable SMS, forward it anywhere, on a month-to-month carrier &mdash; with quality assurance checked at every gate.</p>
+    <div class="chips">
+      <span class="chip"><b>Free</b> Google listing</span>
+      <span class="chip"><b>Local</b> Smart-DID</span>
+      <span class="chip"><b>SMS</b>-enabled</span>
+      <span class="chip"><b>Remote</b> call-forward</span>
+      <span class="chip"><b>Month-to-month</b> carrier</span>
+      <span class="chip">Written <b>guarantee</b></span>
+    </div>
+  </div>
+</div>
+
+<section id="protocol">
+  <div class="wrap">
+    <div class="eyebrow">The Protocol</div>
+    <h2>Eight steps to live &mdash; QA-gated</h2>
+    <p class="sub">Every step has a verification gate before it advances. Nothing goes live until it passes.</p>
+    <div class="steps">
+      <div class="step"><div class="no">1</div><div><h3>Claim the free Google Business Profile</h3><p>Set up / verify the client's <b>free</b> Google listing: correct category, service area, hours, and a call button. This is the no-cost front door that drives the calls.</p><div class="qa">&#10003; <b>QA gate:</b> listing verified, category + service-area correct, call button present.</div></div></div>
+      <div class="step"><div class="no">2</div><div><h3>Provision the branded local Smart-DID</h3><p>Order a local-presence number in the client's area code; set caller-ID (CNAM) to the client's brand; apply STIR/SHAKEN attestation so outbound reads as trusted &mdash; the fix for "Spam Likely."</p><div class="qa">&#10003; <b>QA gate:</b> caller-ID displays the brand on a live test call; spam-score check clean.</div></div></div>
+      <div class="step"><div class="no">3</div><div><h3>Enable SMS on the number</h3><p>Register for A2P/10DLC texting on the same line; wire consent capture and automatic STOP/HELP handling so texting is compliant from day one.</p><div class="qa">&#10003; <b>QA gate:</b> two-way SMS round-trip verified; STOP honored.</div></div></div>
+      <div class="step"><div class="no">4</div><div><h3>Set remote call-forwarding</h3><p>Route the Smart-DID to wherever the client answers &mdash; cell, front desk, or team &mdash; with overflow and after-hours rules so no call is missed.</p><div class="qa">&#10003; <b>QA gate:</b> forward + overflow + after-hours paths each ring through.</div></div></div>
+      <div class="step"><div class="no">5</div><div><h3>Subscribe the carrier &mdash; month-to-month</h3><p>Activate the line on a <b>month-to-month</b> carrier subscription. No long-term contract; cancel anytime. Predictable per-line cost.</p><div class="qa">&#10003; <b>QA gate:</b> billing confirmed month-to-month; cancel terms in writing.</div></div></div>
+      <div class="step"><div class="no">6</div><div><h3>Wire the AI "Pitch &amp; Catch" intake</h3><p>AI answers and qualifies every inbound, books the appointment, and routes large opportunities to a closer &mdash; with per-line, per-agent call tracking (CDR) tying each job to the line that drove it.</p><div class="qa">&#10003; <b>QA gate:</b> test inbound qualified, booked, and logged to the right line.</div></div></div>
+      <div class="step"><div class="no">7</div><div><h3>Connect listing &rarr; line</h3><p>Point the Google listing's call button and any campaign links to the Smart-DID so every call is branded, forwarded, and tracked from one source of truth.</p><div class="qa">&#10003; <b>QA gate:</b> a call placed from the live listing rings the branded line and appears in tracking.</div></div></div>
+      <div class="step"><div class="no">8</div><div><h3>Go-live sign-off</h3><p>Full end-to-end walkthrough with the client before launch: caller-ID display, SMS, forwarding, intake, and tracking all demonstrated live and initialed.</p><div class="qa">&#10003; <b>QA gate:</b> client sign-off captured; the written guarantee is issued.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="qa">
+  <div class="wrap">
+    <div class="eyebrow">Quality Assurance</div>
+    <h2>QA is not a step &mdash; it's every step</h2>
+    <p class="sub">Each stage above carries its own verification gate. A campaign only advances when the prior gate passes, and the whole chain is re-tested at go-live. That is what "extreme QA throughout provisioning" means in practice.</p>
+  </div>
+</section>
+
+<section id="guarantee">
+  <div class="wrap">
+    <div class="guar">
+      <div class="eyebrow">In Writing</div>
+      <h2>&#9819; The Telvergence Satisfaction Guarantee</h2>
+      <p style="color:var(--muted);margin:0">Telvergence provisions and quality-assures your branded calling campaign end-to-end, and stands behind it in writing:</p>
+      <ul>
+        <li><b>It works, or we fix it.</b> Your branded local number will display your name on caller-ID, ring where you tell it to, and text &mdash; verified on a live test before go-live.</li>
+        <li><b>Month-to-month. Cancel anytime.</b> No long-term contract and no cancellation penalty. You stay because it performs, not because you're locked in.</li>
+        <li><b>QA at every gate.</b> Every provisioning step passes a documented verification before the next begins, and the full chain is re-tested at launch.</li>
+        <li><b>Named support.</b> A real point of contact through provisioning and after go-live &mdash; not a ticket queue.</li>
+        <li><b>Compliance built in.</b> STIR/SHAKEN attestation, E911, A2P/10DLC registration, and STOP/HELP handling are set up as standard.</li>
+      </ul>
+      <div class="sign">
+        <div class="sig">Authorized for Telvergence<br>_____________________________<br><span style="color:var(--muted)">Name / Title / Date</span></div>
+        <div class="sig">Accepted by Client<br>_____________________________<br><span style="color:var(--muted)">Name / Business / Date</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand" style="font-size:16px"><span class="crown">&#9819;</span> TELVERGENCE</div>
+    <div class="fine">onboarding.telvergence.com &middot; Branded local Smart-DID campaigns, provisioned and QA'd end-to-end with a written satisfaction guarantee. Draft terms for review &mdash; finalize specifics (pricing, SLAs, carrier names) before client execution. &copy; 2026 Telvergence.</div>
+  </div>
+</footer>
+
+<script>
+  var PASSCODE = "Telvergence-8832"; // <-- change this one line to update the shared passcode
+  var gate=document.getElementById('gate'),vault=document.getElementById('vault'),pc=document.getElementById('pc'),err=document.getElementById('err');
+  function unlock(){ if(pc.value===PASSCODE){ try{sessionStorage.setItem('cc_auth','1');}catch(e){} gate.classList.add('hide'); } else { err.textContent='Incorrect passcode.'; vault.classList.remove('shake'); void vault.offsetWidth; vault.classList.add('shake'); pc.select(); } }
+  try{ if(sessionStorage.getItem('cc_auth')==='1'){ gate.classList.add('hide'); } }catch(e){}
+  document.getElementById('go').addEventListener('click',unlock);
+  pc.addEventListener('keydown',function(e){ if(e.key==='Enter') unlock(); });
+  window.addEventListener('load',function(){ if(!gate.classList.contains('hide')) pc.focus(); });
+</script>
