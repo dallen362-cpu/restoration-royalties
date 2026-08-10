@@ -43,10 +43,20 @@ Clone the house template (see Assets). Every prospect page includes, in order:
 6. Video block (embed the :90 walkthrough).
 7. 10-line pack offer + economics + engagement tiers.
 
-## Step 3 — :90 video script
-Split-screen "their site vs. the offspring." Beats: hook (their site) → problem
-(money + language walking out) → reveal (the grid) → the brain + core → risk reversal
-(10-line pack, $0 out of pocket first) → CTA. Include shot list + on-screen supers.
+## Step 3 — The 3-V build (Voice · Vanity · Video)
+Every prospect gets all three V's, wired to the same 10 Smart DIDs:
+- **Voice agent** — each vanity line answered 24/7 (qualify → book → route live emergencies to a human).
+- **Vanity number** — the 10 memorable Smart DIDs from Step 2; flagship = the one recalled at the worst moment.
+- **Video** — a short spot per line with the vanity number ON SCREEN, produced free with Google's
+  video studio (Veo / "Flow" in Google AI Studio or Gemini): **10 free renders = 10 micro-spots, one per DID.**
+
+Video-pack rules: one ~8s prompt per vanity line, matched to that line's use-case; append a shared
+cinematic style suffix; generate the clip CLEAN then overlay the exact vanity number as a bold
+lower-third caption (AI video mangles on-screen text) — that overlay IS "the vanity number in the video";
+stitch into a 30–80s hero reel + end card, or use each micro-spot on its matching line/campaign.
+Also produce the split-screen ":90 walkthrough" (their site vs. the offspring) as the sales video.
+The turnkey site must include a **video block** (embed the final MP4/unlisted YouTube) above/near the DID grid.
+Reference pattern: Restoration Royalty, FAST Adjusting, YES Electrical.
 
 ## Step 4 — Vanity / DID scheme
 Vertical-specific vanity ideas + a **distinct tracked DID per source.**
@@ -59,6 +69,8 @@ John Campbell removed — counsel routing neutral). $22.95/line advanced before 
 100% satisfaction/full refund; no contract; no SSN/credit.
 
 ## Guardrails (non-negotiable)
+- **Phone numbers HUGE and prevalent everywhere** on every site: sticky call bar, giant hero number,
+  a mid-page call band, and the footer — the number is always on screen.
 - Compliance on every page/script: **TCPA, Do-Not-Call scrubbed, state LICENSE # shown.**
 - Substantiate or soften hard claims (E911, "carrier-grade") before external use.
 - Legal template stays **counsel-review-gated.**
