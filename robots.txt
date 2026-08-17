@@ -4,6 +4,7 @@ Disallow: /jimmy/
 Disallow: /vault/
 Disallow: /command/
 Disallow: /studio/
+Disallow: /app/
 Disallow: /menu/
 
 Sitemap: https://restorationroyalties.com/sitemap.xml
