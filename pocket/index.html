@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#04070F">
+<title>Telvergence — Pocket Presenter</title>
+<style>
+  :root{
+    --void:#04070F; --deep:#070D1B; --panel:#0D1526; --panel2:#131F36; --line:#1D2C48; --line2:#2C426B;
+    --ink:#EAF2FF; --muted:#93A6C4; --dim:#5E729A;
+    --cyan:#00D4FF; --lime:#00FF88; --gold:#FFC24B; --ember:#FF7A45; --violet:#8A7BFF;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--void);color:var(--ink);overflow-x:hidden;
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px}
+  .veil{position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(560px 360px at 50% -6%,rgba(0,212,255,.16),transparent 66%),
+               radial-gradient(460px 380px at 100% 16%,rgba(138,123,255,.12),transparent 60%)}
+  main{position:relative;z-index:1}
+
+  .bar{position:sticky;top:0;z-index:20;background:rgba(4,7,15,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:54px}
+  .logo{font-weight:800;letter-spacing:.16em;font-size:12px;text-transform:uppercase;color:var(--muted)}
+  .logo b{color:var(--cyan)}
+  .callnow{display:inline-flex;align-items:center;gap:7px;background:var(--lime);color:#04140A;font-weight:800;
+    font-size:12px;padding:8px 13px;border-radius:999px}
+
+  header.hero{padding:44px 0 20px;text-align:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--cyan);border:1px solid rgba(0,212,255,.3);border-radius:999px;padding:6px 14px;margin-bottom:18px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--lime);animation:bp 1.8s ease-out infinite}
+  @keyframes bp{0%{box-shadow:0 0 0 0 rgba(0,255,136,.7)}70%{box-shadow:0 0 0 9px rgba(0,255,136,0)}100%{box-shadow:0 0 0 0 rgba(0,255,136,0)}}
+  h1{margin:0 0 14px;font-size:clamp(28px,7.6vw,44px);line-height:1.05;letter-spacing:-.03em;font-weight:800;text-wrap:balance}
+  h1 span{background:linear-gradient(120deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{margin:0 auto 6px;max-width:40ch;color:var(--muted);font-size:16px}
+
+  section{padding:26px 0}
+  .kick{text-align:center;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:0 0 14px}
+
+  /* launch tiles */
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .tile{display:flex;flex-direction:column;justify-content:space-between;min-height:118px;background:linear-gradient(180deg,var(--panel2),var(--panel));
+    border:1px solid var(--line2);border-radius:18px;padding:16px;transition:transform .16s,border-color .16s}
+  .tile:active{transform:scale(.98)} .tile:hover{border-color:var(--cyan)}
+  .tile.wide{grid-column:1 / -1;flex-direction:row;align-items:center;gap:14px;min-height:0;padding:18px}
+  .tile .ic{font-size:24px}
+  .tile .tt{display:block;font-size:16px;font-weight:800;letter-spacing:-.01em}
+  .tile .td{display:block;font-size:12.5px;color:var(--muted);margin-top:3px}
+  .tile .go{align-self:flex-start;margin-top:10px;font-size:12px;font-weight:800;color:var(--cyan)}
+  .tile.wide .go{margin:0;flex:none} .tile.wide .body{flex:1;min-width:0}
+  .tile.hot{background:linear-gradient(180deg,rgba(0,255,136,.14),var(--panel));border-color:rgba(0,255,136,.4)}
+  .tile.hot .go{color:var(--lime)}
+  .lock{font-size:10px;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;font-weight:800;margin-top:8px}
+
+  /* pitch */
+  .pitch{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:16px;padding:20px 22px}
+  .pitch p{margin:0 0 12px;font-size:16px;line-height:1.6}
+  .pitch p:last-child{margin:0}
+  .pitch b{color:var(--ink)}
+  .pitch .big{font-size:19px;font-weight:800;letter-spacing:-.01em;color:var(--lime)}
+
+  .diffs{display:grid;gap:10px;margin-top:6px}
+  .diff{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:14px 16px}
+  .diff .n{color:var(--cyan);font-weight:800;font-size:14px;flex:none;width:20px}
+  .diff b{font-size:15px} .diff p{margin:2px 0 0;color:var(--muted);font-size:13.5px;line-height:1.5}
+
+  .offer{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line2);border-radius:20px;padding:26px;text-align:center}
+  .price{font-size:46px;font-weight:800;letter-spacing:-.03em;color:var(--lime);line-height:1}
+  .price small{font-size:15px;color:var(--muted);font-weight:600}
+  .offer ul{list-style:none;margin:16px auto 20px;padding:0;text-align:left;max-width:300px}
+  .offer li{padding:6px 0 6px 26px;position:relative;color:var(--muted);font-size:14px}
+  .offer li:before{content:"✓";position:absolute;left:0;color:var(--lime);font-weight:800}
+  .cta{display:flex;flex-direction:column;gap:10px}
+  .cta a{padding:16px;border-radius:13px;font-weight:800;font-size:16px}
+  .cta .call{background:var(--lime);color:#04140A}
+  .cta .mail{background:transparent;border:1px solid var(--line2);color:var(--ink)}
+
+  footer{padding:26px 0 60px;text-align:center;color:var(--dim);font-size:12px}
+  footer p{margin:0 0 6px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="veil"></div>
+<main>
+
+<div class="bar"><div class="wrap">
+  <div class="logo"><b>TEL</b>VERGENCE</div>
+  <a class="callnow" href="tel:+16892421041">📞 689-242-1041</a>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow"><span class="dot"></span> Live portfolio · tap anything</div>
+  <h1>I sell the sound of your <span>cash register.</span></h1>
+  <p class="lede">Ten branded numbers you own, an AI that answers every call, and a dashboard that shows the money moving — for $22.95 a line. Your phones ring in 24 hours, guaranteed.</p>
+</div></header>
+
+<section><div class="wrap">
+  <p class="kick">Show them live</p>
+  <div class="tiles">
+    <a class="tile hot wide" href="../demo/">
+      <span class="ic">🚀</span>
+      <span class="body"><span class="tt">The Capabilities Demo</span><span class="td">The full story that closes the room — nine capabilities, live proof, the deposit close.</span></span>
+      <span class="go">Open →</span>
+    </a>
+    <a class="tile" href="../studio/">
+      <span class="ic">📞</span>
+      <div><div class="tt">Number Studio</div><div class="td">Spell a word → your number, live.</div></div>
+      <span class="lock">Code · ACTIVATE</span>
+    </a>
+    <a class="tile" href="../jimmy/">
+      <span class="ic">👑</span>
+      <div><div class="tt">Full Portfolio</div><div class="td">FAST · RR · Electric · $25K white-label.</div></div>
+      <span class="lock">Code · ROYALTY2026</span>
+    </a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kick">The four sites</p>
+  <div class="tiles">
+    <a class="tile" href="../rr/"><span class="ic">🌊</span><div><div class="tt">Restoration Royalties</div><div class="td">Mold · water · roofing</div></div><span class="go">Open →</span></a>
+    <a class="tile" href="../fast/"><span class="ic">🛡️</span><div><div class="tt">FAST Adjusting</div><div class="td">Public adjusting</div></div><span class="go">Open →</span></a>
+    <a class="tile" href="../yes/"><span class="ic">⚡</span><div><div class="tt">YES Electrical</div><div class="td">Storm-power demand</div></div><span class="go">Open →</span></a>
+    <a class="tile" href="../telverge/"><span class="ic">🔢</span><div><div class="tt">TELVERGE</div><div class="td">Vanity number platform</div></div><span class="go">Open →</span></a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kick">The words that close</p>
+  <div class="pitch">
+    <p class="big">You don't have a service problem. You have a phone problem.</p>
+    <p>Your trucks are ready. Your crew is ready. The phone just isn't ringing enough to feed them. I fix that — not with ads you cross your fingers on, but with ten numbers you own, an AI that answers every call around the clock, and a live board that shows the profit as it lands.</p>
+    <p><b>$22.95 a line. $0 out of pocket today. Phones ring in 24 hours — guaranteed, or the first month is on me.</b> The only businesses that say no are the ones that don't need customers. You're not one of those, or you wouldn't be talking to me.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kick">Why it's a need, not a want</p>
+  <div class="diffs">
+    <div class="diff"><span class="n">1</span><div><b>We own the numbers.</b><p>Not rented leads everyone else also bought — your numbers, forever, with your name on the caller ID.</p></div></div>
+    <div class="diff"><span class="n">2</span><div><b>We answer every call.</b><p>24/7 AI intake. The competitor who lets it go to voicemail loses the customer to us.</p></div></div>
+    <div class="diff"><span class="n">3</span><div><b>We make weather sell.</b><p>Storm hits, demand routes to you before the competition wakes up.</p></div></div>
+    <div class="diff"><span class="n">4</span><div><b>We prove it in real time.</b><p>Every ring is a sale on a dashboard you watch. Marketing is a bet. This is a meter.</p></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="offer">
+    <div class="price">$22.95<small> / line / month</small></div>
+    <ul>
+      <li>Ten branded Smart-DIDs, your caller ID</li>
+      <li>24/7 AI intake + live profit dashboard</li>
+      <li>$0 today — nothing bills until it rings</li>
+      <li>Guaranteed, or the first month is on us</li>
+      <li>Scale to the $25K white-label when you're ready</li>
+    </ul>
+    <div class="cta">
+      <a class="call" href="tel:+16892421041">📞 Reserve your territory — 689-242-1041</a>
+      <a class="mail" href="mailto:contact@telvergence.com?subject=Reserve%20my%2010-line%20territory">✉️ Start my activation</a>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p><b>David Drew Allen</b> · Telvergence, Inc. · 689-242-1041 · contact@telvergence.com</p>
+  <p>Authorized Vitelity wholesale partner · every ring is a sale.</p>
+</div></footer>
+</main>
+</body>
+</html>
