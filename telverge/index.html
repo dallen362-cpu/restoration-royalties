@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>TELVERGE — 10 Numbers. One Brain.</title>
+<style>
+  :root{--midnight:#070C18;--card:#101a33;--card2:#0b1426;--line:#22304f;--cyan:#00D4FF;--lime:#00FF88;--ember:#FF6A2B;--gold:#ffd27a;--violet:#8b7bff;--ink:#eef4ff;--muted:#9fb3d6;--faint:#5c6b8c;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);background:radial-gradient(1200px 680px at 50% -10%,#122a5a,var(--midnight) 60%);line-height:1.6}
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px}
+  a{color:var(--cyan)}
+  .bar{position:sticky;top:0;z-index:20;display:flex;gap:14px;align-items:center;padding:12px 22px;background:rgba(7,12,24,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar .logo{font-weight:900;letter-spacing:1px}.bar .logo b{color:var(--cyan)}
+  .bar a{margin-left:auto;color:var(--cyan);text-decoration:none;font-weight:800;font-size:13px}
+  header{padding:46px 0 8px}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--ember)}
+  h1{font-size:clamp(32px,6vw,58px);font-family:Georgia,serif;font-weight:800;margin:10px 0 8px;letter-spacing:-.02em;line-height:1.05}
+  h1 span{background:linear-gradient(90deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .tagline{color:var(--muted);font-size:18px;max-width:62ch}
+  .demo-note{display:inline-block;margin-top:14px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,210,122,.4);border-radius:999px;padding:5px 12px;background:rgba(255,210,122,.06)}
+  section{padding:26px 0;border-top:1px solid var(--line)}
+  h2{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
+  .big{border-left:4px solid var(--ember);background:rgba(255,106,43,.08);border-radius:8px;padding:15px 17px;font-size:15.5px}.big b{color:var(--ink)}
+  .grid10{display:grid;gap:10px;grid-template-columns:1fr}@media(min-width:560px){.grid10{grid-template-columns:1fr 1fr}}
+  .did{position:relative;background:linear-gradient(180deg,var(--card),#0b1426);border:1px solid var(--line);border-radius:12px;padding:13px 14px 13px 46px;transition:border-color .15s,transform .15s}
+  .did:hover{border-color:var(--cyan);transform:translateY(-2px)}
+  .did .num{position:absolute;left:12px;top:13px;width:24px;height:24px;border-radius:7px;background:rgba(0,212,255,.12);border:1px solid rgba(0,212,255,.4);color:var(--cyan);font-weight:900;font-size:12px;display:flex;align-items:center;justify-content:center}
+  .did h4{font-size:14px;margin-bottom:2px}.did .vn{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--cyan);font-weight:800;font-size:12.5px}
+  .did p{color:var(--muted);font-size:12.5px;margin-top:4px}
+  .pillars{display:grid;gap:12px}@media(min-width:640px){.pillars{grid-template-columns:1fr 1fr 1fr}}
+  .p{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .p .n{font-weight:900;color:var(--ember);font-size:15px}.p p{color:var(--muted);font-size:13.5px;margin-top:5px}.p b{color:var(--ink)}
+  .offer{background:linear-gradient(180deg,rgba(255,106,43,.08),rgba(0,255,136,.05));border:1px solid var(--line);border-radius:14px;padding:18px}.offer b{color:var(--ink)}
+  .econ{display:grid;gap:10px;margin-top:8px}@media(min-width:560px){.econ{grid-template-columns:repeat(3,1fr)}}
+  .ec{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+  .ec .k{font-size:22px;font-weight:900;color:var(--lime)}.ec .l{font-size:12px;color:var(--muted);margin-top:3px}
+  .allit{margin-top:16px;background:linear-gradient(180deg,rgba(0,255,136,.08),rgba(0,212,255,.05));border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+  .allit .k{font:800 12px/1 ui-monospace,Menlo,monospace;letter-spacing:2px;color:var(--lime);text-transform:uppercase}
+  .allit .row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:14px 0 8px}
+  .allit .row span{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-weight:800}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+  .cta a{flex:1;min-width:200px;text-align:center;text-decoration:none;font-weight:800;border-radius:12px;padding:15px}
+  .cta .call{background:linear-gradient(180deg,#2bff9e,#00c46a);color:#04140a}
+  .cta .book{background:rgba(255,255,255,.05);color:var(--ink);border:1px solid var(--line)}
+  .sig{margin-top:22px;color:var(--muted);font-size:14px}.sig b{color:var(--ink)}
+  .disclaimer{border-top:1px solid var(--line);margin-top:26px;padding:16px 0 60px;color:var(--faint);font-size:11.5px}
+  .winnet{max-width:940px;margin:24px auto 0;padding:24px 22px 0;border-top:1px solid #22304f}
+  .winnet .wb{display:inline-block;font:800 11px/1 "Segoe UI",system-ui,sans-serif;letter-spacing:2px;color:#00D4FF;border:1px solid rgba(0,212,255,.4);border-radius:999px;padding:6px 12px;background:rgba(0,212,255,.06)}
+  .winnet h3b{display:block;color:#eef4ff;font:800 21px/1.3 Georgia,serif;margin:12px 0 6px}
+  .winnet .wp{color:#9fb3d6;font-size:14.5px;max-width:72ch;line-height:1.55}
+  .winnet .wr{display:grid;gap:10px;margin-top:16px}@media(min-width:640px){.winnet .wr{grid-template-columns:1fr 1fr 1fr}}
+  .winnet a.wc{display:block;text-decoration:none;background:#101a33;border:1px solid #22304f;border-radius:12px;padding:14px;transition:.15s}
+  .winnet a.wc:hover{border-color:#00D4FF;transform:translateY(-2px)}
+  .winnet a.wc.here{border-color:rgba(0,255,136,.5);background:rgba(0,255,136,.07)}
+  .winnet a.wc .t{font-weight:800;color:#eef4ff;font-size:15px}.winnet a.wc .s{color:#9fb3d6;font-size:12.5px;margin-top:3px}
+  .winnet .prov{color:#6e7ea0;font-size:11px;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="bar"><div class="logo"><b>TEL</b>VERGE</div><a href="https://claude.ai/code/artifact/05bc1433-4e1a-4944-ab50-b37837d55728">← Showroom</a></div>
+
+<header class="wrap">
+  <div class="eyebrow">TELVERGE · Powered by Telvergence UCCPXaaS · telverge.com</div>
+  <h1>10 numbers.<br><span>One brain.</span></h1>
+  <div class="tagline">Every business lives and dies by the phone. TELVERGE turns your business into a 10-line Smart-DID grid with an AI front desk that answers every call, books every job, and texts back every missed one — 24/7 — on numbers you own, from the phone already in your pocket.</div>
+  <div class="demo-note">10-line vanity pack · example numbers below · replace with your real DIDs at launch</div>
+</header>
+
+<div class="wrap">
+  <section>
+    <div class="big"><b>The insight:</b> a missed call is a lost customer — and most businesses miss 1 in 4. A phone number that just rings can't fix that. A <b>Smart DID</b> can: it knows the source, routes by language and priority, answers with AI 24/7, and texts the customer back if no one picks up. Ten of them become a command center that never lets revenue slip to voicemail.</div>
+  </section>
+
+  <section>
+    <h2>The 10-line vanity Smart-DID grid <span style="color:var(--faint);text-transform:none;letter-spacing:0"> (example numbers)</span></h2>
+    <div class="grid10">
+      <div class="did"><span class="num">1</span><h4>Flagship / brand line</h4><span class="vn">1-800-TELVERGE</span><p>Priority ring, never voicemail — the memorable line that owns your #1 promise.</p></div>
+      <div class="did"><span class="num">2</span><h4>24/7 AI answer</h4><span class="vn">1-844-AI-VOICE</span><p>The autonomous front desk — answers, qualifies, and books around the clock.</p></div>
+      <div class="did"><span class="num">3</span><h4>Sales / new accounts</h4><span class="vn">1-833-GO-SMART</span><p>Its own tracked line for new-customer demand.</p></div>
+      <div class="did"><span class="num">4</span><h4>New-line provisioning</h4><span class="vn">1-800-NEW-LINE</span><p>Spin up more numbers instantly, at little to no added cost.</p></div>
+      <div class="did"><span class="num">5</span><h4>The 10-line pack</h4><span class="vn">1-844-DID-GRID</span><p>Your whole grid on one dashboard — sources, calls, bookings.</p></div>
+      <div class="did"><span class="num">6</span><h4>Inbound overflow</h4><span class="vn">1-855-RING-247</span><p>When you're slammed, overflow routes so no call is ever dropped.</p></div>
+      <div class="did"><span class="num">7</span><h4>Missed-call rescue</h4><span class="vn">1-800-NO-MISS-1</span><p>Auto text-back on every missed call — the lost customer, recovered.</p></div>
+      <div class="did"><span class="num">8</span><h4>Outbound AI dialer</h4><span class="vn">1-833-DIAL-AI-1</span><p>Branded, compliant, recorded outbound — from your business number.</p></div>
+      <div class="did"><span class="num">9</span><h4>Autonomous agent</h4><span class="vn">1-844-CALL-BOT</span><p>The back-end AI that nurtures and follows up, hands-off.</p></div>
+      <div class="did"><span class="num">10</span><h4>Vanity flagship</h4><span class="vn">1-800-SMART-DID</span><p>The keyword number customers actually remember and dial.</p></div>
+    </div>
+    <p style="color:var(--faint);font-size:12px;margin-top:10px">Vanity spellings are examples for illustration — real DIDs are pulled from the Telvergence wholesale portal and assigned to your brand before launch; nothing published unowned.</p>
+  </section>
+
+  <section>
+    <h2>The critical core — one AI-driven system</h2>
+    <div class="pillars">
+      <div class="p"><div class="n">Inbound</div><p>10 tracked lines + 24/7 AI answer + SMS. Every source measured, every call prioritized, every missed call auto-texted back.</p></div>
+      <div class="p"><div class="n">Outbound</div><p>A compliant predictive/manual dialer works your list — branded caller-ID, recordings, callbacks — so you stop waiting for the phone.</p></div>
+      <div class="p"><div class="n">Command center</div><p>Calls, texts, booked jobs, ad spend and source on one live dashboard — real-time profit &amp; loss to the penny.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The 10-line pack — risk reversed onto us</h2>
+    <div class="offer">
+      Start with the <b>10-Line Smart-DID Pack + 30-Day Pilot.</b> We stand up all ten numbers, the AI answer, and a starter campaign. Your phone rings within 24 hours. <b>$0 out of pocket</b> — just <b>$22.95/line/month</b>, month-to-month, cancel anytime, and you own your numbers &amp; can port them any time. Your first jobs should cover it before you're ever billed, or Telvergence covers your first month.
+    </div>
+    <div class="econ">
+      <div class="ec"><div class="k">10</div><div class="l">Smart DIDs, each a sensor + router</div></div>
+      <div class="ec"><div class="k">$0</div><div class="l">out of pocket to start</div></div>
+      <div class="ec"><div class="k">24 hrs</div><div class="l">to your phones ringing</div></div>
+    </div>
+    <div class="allit">
+      <div class="k">All it takes to start</div>
+      <div class="row"><span><span style="color:var(--cyan)">①</span> A signed LOA</span><span><span style="color:var(--cyan)">②</span> A card on file</span></div>
+      <p style="color:var(--muted);font-size:14px;max-width:64ch;margin:0 auto">That's it — the system builds itself and runs on autopilot, eliminating the majority of your costs, risk, and labor.</p>
+    </div>
+  </section>
+
+  <section style="border-bottom:none">
+    <h2>The ask</h2>
+    <p style="color:var(--muted);font-size:15px">Let's stand up your 10-line Smart-DID grid and the 30-day pilot — a 20-minute call is all we need to begin. <b style="color:var(--ink)">I can have your phones ringing within 24 hours.</b></p>
+    <p style="font-family:Georgia,serif;font-weight:800;font-size:clamp(18px,3vw,24px);color:var(--ink);margin:14px 0 4px">Give me <span style="color:var(--gold)">1% of your trust</span> — I'll earn the other 99.</p>
+    <div class="cta">
+      <a class="call" href="tel:+18008358374">📞 Call to begin — 1-800-TELVERGE</a>
+      <a class="book" href="mailto:contact@telverge.com?subject=TELVERGE%20—%2010-Line%20Pilot">✉️ contact@telverge.com</a>
+    </div>
+    <p style="font-family:Georgia,serif;font-weight:800;font-size:clamp(20px,3.4vw,28px);text-align:center;margin:20px 0 4px;color:var(--ink)">You decide. <span style="background:linear-gradient(90deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">What's it going to be?</span></p>
+    <div class="sig">Looking forward to building this with you,<br><b>David Drew Allen</b> · President, Telvergence, Inc. · 689-242-1041 · contact@telvergence.com</div>
+  </section>
+
+  <div class="winnet">
+    <div class="wb">🔗 RESTORATION ROYALTY SUB-NETWORK</div>
+    <h3b>One platform. Every brand. Every storm job shared.</h3b>
+    <p class="wp">TELVERGE runs on the same Telvergence UCCPXaaS engine that powers the whole network — Restoration Royalties, FAST Adjusting, and YES Electrical — sharing one Smart-DID grid, one app, and real-time analytics &amp; automation.</p>
+    <div class="wr">
+      <a class="wc" href="https://claude.ai/code/artifact/148b5ac6-e1f5-46b7-922d-fcd2e4810c6d"><div class="t">🌊 Restoration Royalties</div><div class="s">Mold · Water · Roofing</div></a>
+      <a class="wc" href="https://claude.ai/code/artifact/e6b7545f-1bcd-4eaa-b568-e33743750b77"><div class="t">📋 FAST Adjusting Service</div><div class="s">Public adjusting · Claims</div></a>
+      <a class="wc" href="https://claude.ai/code/artifact/61bfa8bd-aca8-4400-aee3-7110ebc2b4e2"><div class="t">⚡ YES Electrical</div><div class="s">Power · Generators</div></a>
+    </div>
+    <p class="prov"><a href="https://claude.ai/code/artifact/5017fc40-585c-49c0-ab45-e2091e76d9bc" style="color:#00D4FF">↗ Sub-Network hub</a> · Powered by <b style="color:#9fb3d6">THE WEATHER INTELLIGENCE NETWORK</b> · ‹Your City› Storm Dispatch.</p>
+  </div>
+
+  <div class="disclaimer">
+    TELVERGE is a Telvergence, Inc. brand/demonstration site. Vanity numbers shown are illustrative examples pending assignment from the wholesale portal — nothing published unowned. Subscription pricing ($22.95/line) is the proposed program and adjustable. All solicitation and claims comply with applicable TCPA / Do-Not-Call / state rules, reviewed before launch. Confidential — TELVERGENCE.
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+DEPLOY MAP — restorationroyalties.com (GitHub Pages, main / root)
+
+/                        Site directory (menu of every funnel)
+/rr/                     Restoration Royalties — mold / water / roofing (SoFla)
+/fast/                   FAST Adjusting Service
+/yes/                    YES — Your Electrical Solutions (Miami)
+/telverge/               TELVERGE — Telvergence platform edition (10 vanity examples)
+/hub/                    Sub-Network Hub (master presentation)
+/showroom/               Telvergence Showroom / Inventory
+/vanity/                 Restoration Royalties — vanity edition
+/telvergence-platform/   Telvergence augmented edition (NOT telvergence.com)
+/jimmy/                  PASSCODE-GATED master packet for Jimmy (AES-256-GCM, not indexed)
+/legacy-index.html       Previous root page, preserved
+
+CNAME = restorationroyalties.com
+
+GoDaddy DNS required (Domains > restorationroyalties.com > DNS):
+  A     @    185.199.108.153
+  A     @    185.199.109.153
+  A     @    185.199.110.153
+  A     @    185.199.111.153
+  CNAME www  dallen362-cpu.github.io
+
+Repo must be Public for free GitHub Pages. Settings > Pages > Deploy from a branch > main / (root).
+telvergence.com is a separate production site and is not touched by this repo.

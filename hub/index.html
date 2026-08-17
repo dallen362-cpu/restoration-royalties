@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Restoration Royalty Sub-Network</title>
+<style>
+  :root{
+    --void:#050912;--void2:#070E1C;--panel:#0C1526;--panel2:#0A1120;--line:#1B2A47;--line2:#26385c;
+    --cyan:#00E5FF;--lime:#4DFF9E;--amber:#FFB03A;--ember:#FF7A3C;--red:#FF465C;--gold:#FFD27A;--violet:#9B8CFF;
+    --ink:#EAF2FF;--muted:#8AA0C4;--dim:#5A6C90;
+    --mono:ui-monospace,"SF Mono","Segoe UI Mono",Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Arial,sans-serif;
+    --serif:Cambria,Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--void);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;line-height:1.6;font-size:16px;
+    background-image:radial-gradient(1200px 700px at 80% -10%,rgba(0,229,255,.11),transparent 60%),radial-gradient(1000px 640px at 6% 106%,rgba(77,255,158,.07),transparent 60%)}
+  .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 22px}
+  a{color:var(--cyan);text-decoration:none}
+  h1,h2,h3{text-wrap:balance}
+
+  .topband{background:linear-gradient(90deg,var(--cyan),var(--lime));color:#03151a;text-align:center;font:800 11px/1 var(--mono);letter-spacing:1.5px;text-transform:uppercase;padding:8px 12px}
+
+  header{text-align:center;padding:54px 0 24px}
+  .kick{display:inline-block;font:800 11px/1 var(--mono);letter-spacing:2.4px;color:var(--cyan);border:1px solid rgba(0,229,255,.4);border-radius:999px;padding:7px 14px;background:rgba(0,229,255,.06)}
+  header h1{font:800 clamp(32px,6vw,58px)/1.05 var(--serif);margin:20px auto 12px;max-width:17ch}
+  header h1 .g{background:linear-gradient(92deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+  header .dek{color:var(--muted);font-size:clamp(16px,2.4vw,20px);max-width:64ch;margin:0 auto}
+  .power{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+  .power .pb{display:flex;align-items:center;gap:8px;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:999px;padding:9px 15px;font:700 12px/1 var(--sans)}
+  .power .pb .d{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime)}
+  .power .pb.win .d{background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+  .power .pb b{color:var(--cyan)}.power .pb .city{color:var(--gold)}
+
+  section{padding:46px 0;border-top:1px solid var(--line)}
+  .sec-k{font:800 11px/1 var(--mono);letter-spacing:2.4px;text-transform:uppercase;color:var(--cyan);text-align:center}
+  h2{font:800 clamp(24px,4vw,36px)/1.15 var(--serif);text-align:center;margin:12px auto 10px}
+  h2 .g{color:var(--lime)}
+  .lead{color:var(--muted);text-align:center;max-width:72ch;margin:0 auto 24px;font-size:16px}
+
+  /* shared-lead diagram */
+  .shared{display:grid;gap:26px;align-items:center}@media(min-width:880px){.shared{grid-template-columns:1fr 1fr}}
+  .sl-svg{width:100%;max-width:460px;margin:0 auto;display:block}
+  @keyframes dash{to{stroke-dashoffset:-40}}
+  .sl-flow{stroke-dasharray:5 6;animation:dash 1.6s linear infinite}
+  @media(prefers-reduced-motion:reduce){.sl-flow{animation:none}}
+  .sl-node{fill:#0C1526;stroke-width:2}
+  .sl-t{fill:#EAF2FF;font:800 13px var(--sans);text-anchor:middle}
+  .sl-s{fill:#8AA0C4;font:600 10px var(--mono);text-anchor:middle}
+  .sl-hub-t{fill:#00E5FF;font:800 12px var(--mono);text-anchor:middle;letter-spacing:.5px}
+  .payoffs{display:flex;flex-direction:column;gap:12px}
+  .po{display:flex;gap:13px;align-items:flex-start;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+  .po .e{font-size:22px;flex:none}
+  .po .tx b{color:var(--ink)}.po .tx span{color:var(--muted);font-size:14px}
+  .po .tag{font:700 10px/1 var(--mono);color:var(--lime);letter-spacing:.5px;display:block;margin-top:4px}
+
+  /* brand cards */
+  .brands{display:grid;gap:16px}@media(min-width:760px){.brands{grid-template-columns:repeat(3,1fr)}}
+  .brand{display:block;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:22px;transition:.16s;position:relative;overflow:hidden}
+  .brand:hover{transform:translateY(-3px)}
+  .brand.rr:hover{border-color:var(--cyan)}.brand.fa:hover{border-color:var(--violet)}.brand.ye:hover{border-color:var(--amber)}
+  .brand .ico{font-size:30px}
+  .brand h3{font:800 19px/1.2 var(--sans);margin:12px 0 4px}
+  .brand .role{font:700 10.5px/1 var(--mono);letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .brand.rr .role{color:var(--cyan)}.brand.fa .role{color:var(--violet)}.brand.ye .role{color:var(--amber)}
+  .brand p{color:var(--muted);font-size:13.5px;min-height:66px}
+  .brand .open{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font:800 13px/1 var(--sans);color:var(--lime)}
+
+  /* engine features */
+  .g3{display:grid;gap:14px}@media(min-width:760px){.g3{grid-template-columns:repeat(3,1fr)}}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:18px}
+  .card .ic{font-size:22px}.card h3{font-size:15.5px;margin:9px 0 5px}.card p{color:var(--muted);font-size:13.5px}
+  .card h3 .g{color:var(--lime)}
+
+  /* viral growth */
+  .viral{display:grid;gap:24px;align-items:center}@media(min-width:860px){.viral{grid-template-columns:1.1fr .9fr}}
+  .vsteps{display:flex;flex-direction:column;gap:12px}
+  .vs{display:flex;gap:14px;align-items:flex-start}
+  .vs .n{flex:none;width:34px;height:34px;border-radius:10px;background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.3);color:var(--cyan);font:800 15px/34px var(--mono);text-align:center}
+  .vs .tx h4{font-size:15.5px;margin-bottom:3px}.vs .tx p{color:var(--muted);font-size:13.5px}
+  /* mini card mock */
+  .cardmock{max-width:320px;margin:0 auto;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line2);border-radius:18px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+  .cardmock .cm-top{display:flex;align-items:center;gap:12px}
+  .cardmock .cm-av{width:52px;height:52px;border-radius:50%;border:2px solid var(--cyan);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 0 3px rgba(0,229,255,.12)}
+  .cardmock .cm-nm{font-weight:800;font-size:16px}
+  .cardmock .cm-rl{font:700 9.5px/1.3 var(--mono);letter-spacing:1px;text-transform:uppercase;color:var(--lime)}
+  .cardmock .cm-did{margin-top:16px;background:var(--void2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:10px}
+  .cardmock .cm-did .l{font:600 9px/1 var(--mono);letter-spacing:1.2px;text-transform:uppercase;color:var(--dim)}
+  .cardmock .cm-did .v{font:800 16px/1 var(--mono);color:var(--cyan);margin-top:5px}
+  .cardmock .cm-qr{width:40px;height:40px;margin-left:auto;border-radius:8px;background:
+    repeating-linear-gradient(90deg,var(--ink) 0 3px,transparent 3px 6px),
+    repeating-linear-gradient(0deg,var(--ink) 0 3px,transparent 3px 6px);background-color:#fff;opacity:.9}
+  .cardmock .cm-ft{margin-top:12px;font:600 10px/1.4 var(--mono);color:var(--muted);text-align:center}
+
+  /* city node */
+  .citywrap{max-width:900px;margin:0 auto;background:linear-gradient(180deg,rgba(255,210,122,.06),rgba(255,210,122,.02));border:1px solid rgba(255,210,122,.3);border-radius:18px;padding:24px;text-align:center}
+  .cityex{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px}
+  .cityex .c{font:800 13px/1 var(--sans);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+  .cityex .c b{color:var(--gold)}
+
+  /* numbers strip */
+  .nums{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}@media(min-width:760px){.nums{grid-template-columns:repeat(4,1fr)}}
+  .num{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:16px 14px;text-align:center}
+  .num .n{font:800 clamp(20px,3vw,27px)/1 var(--mono);color:var(--cyan)}
+  .num .n.g{color:var(--lime)}.num .n.a{color:var(--gold)}
+  .num .l{font:600 10px/1.35 var(--mono);letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:8px}
+
+  /* assets */
+  .assets{display:grid;gap:12px}@media(min-width:680px){.assets{grid-template-columns:repeat(2,1fr)}}
+  .asset{display:flex;gap:13px;align-items:center;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:15px;transition:.15s}
+  .asset:hover{border-color:var(--cyan);transform:translateY(-2px)}
+  .asset .e{font-size:22px}.asset .t{font-weight:800;font-size:15px}
+  .asset .t small{display:block;color:var(--muted);font-weight:600;font-size:12px;margin-top:2px}
+  .asset .go{margin-left:auto;color:var(--dim);font-size:20px}
+
+  .ask{text-align:center;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line2);border-radius:20px;padding:36px 24px}
+  .ask a.big{display:inline-block;margin-top:18px;background:linear-gradient(180deg,var(--lime),#25b083);color:#04231a;font-weight:800;padding:16px 34px;border-radius:14px;font-size:17px}
+  .ask .who{margin-top:18px;color:var(--muted);font-size:14px}.ask .who b{color:var(--ink)}
+  footer{text-align:center;color:var(--dim);font-size:12px;line-height:1.8;padding:28px 22px 50px;border-top:1px solid var(--line)}
+  footer b{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="topband">Restoration Royalty Sub-Network · One App · One Smart-DID Grid · Every Storm Job Shared in Real Time</div>
+
+<header class="wrap">
+  <span class="kick">◦ THE RESTORATION ROYALTY SUB-NETWORK</span>
+  <h1>Three brands. One app. <span class="g">Every storm job shared.</span></h1>
+  <p class="dek">Restoration Royalties, FAST Adjusting Service, and YES Electrical run on one shared Smart-DID network and app. When a storm hits a home, the lead flows across all three — one customer, three services, one real-time dispatch brain.</p>
+  <div class="power">
+    <span class="pb win"><span class="d"></span>Powered by <b>THE&nbsp;WEATHER&nbsp;INTELLIGENCE&nbsp;NETWORK</b></span>
+    <span class="pb"><span class="d"></span><span class="city">‹YOUR&nbsp;CITY›&nbsp;STORM&nbsp;DISPATCH</span></span>
+  </div>
+</header>
+
+<!-- SHARED LEAD -->
+<section><div class="wrap">
+  <div class="sec-k">THE SHARED-LEAD ENGINE</div>
+  <h2>One storm. <span class="g">Three payouts.</span></h2>
+  <p class="lead">A single damaged home is three jobs waiting to happen. The app captures the lead once, then routes it across the sub-network — so every partner earns from the same customer, and nobody re-buys the same lead.</p>
+  <div class="shared">
+    <svg class="sl-svg" viewBox="0 0 420 420" role="img" aria-label="One shared storm lead routed across Restoration Royalties, FAST Adjusting, and YES Electrical">
+      <!-- flow ring -->
+      <circle cx="210" cy="210" r="150" fill="none" stroke="#26385c" stroke-width="2" class="sl-flow"/>
+      <!-- hub -->
+      <circle cx="210" cy="210" r="64" fill="#070E1C" stroke="#00E5FF" stroke-width="1.5"/>
+      <text class="sl-hub-t" x="210" y="200">ONE APP</text>
+      <text class="sl-hub-t" x="210" y="216">Smart-DID</text>
+      <text class="sl-s" x="210" y="232">shared lead</text>
+      <!-- connectors -->
+      <g stroke="#4DFF9E" stroke-width="2" opacity=".55">
+        <line x1="210" y1="146" x2="210" y2="112"/>
+        <line x1="163" y1="243" x2="132" y2="272"/>
+        <line x1="257" y1="243" x2="288" y2="272"/>
+      </g>
+      <!-- nodes -->
+      <circle class="sl-node" cx="210" cy="76" r="52" stroke="#00E5FF"/>
+      <text class="sl-t" x="210" y="70">🌊 RR</text>
+      <text class="sl-s" x="210" y="88">restore it</text>
+
+      <circle class="sl-node" cx="110" cy="300" r="52" stroke="#9B8CFF"/>
+      <text class="sl-t" x="110" y="294">📋 FAST</text>
+      <text class="sl-s" x="110" y="312">maximize claim</text>
+
+      <circle class="sl-node" cx="310" cy="300" r="52" stroke="#FFB03A"/>
+      <text class="sl-t" x="310" y="294">⚡ YES</text>
+      <text class="sl-s" x="310" y="312">restore power</text>
+    </svg>
+    <div class="payoffs">
+      <div class="po"><span class="e">🌊</span><div class="tx"><b>Restoration Royalties</b> dries out the water, kills the mold, tarps the roof.<span class="tag">JOB #1 · $3K–$40K restoration</span></div></div>
+      <div class="po"><span class="e">📋</span><div class="tx"><b>FAST Adjusting</b> takes over the insurance claim and fights for the maximum payout.<span class="tag">JOB #2 · % of a $10K–$150K+ claim</span></div></div>
+      <div class="po"><span class="e">⚡</span><div class="tx"><b>YES Electrical</b> restores power, replaces the panel, installs the generator.<span class="tag">JOB #3 · $2K–$14K electrical</span></div></div>
+      <div class="po" style="border-color:rgba(77,255,158,.35);background:rgba(77,255,158,.05)"><span class="e">🔁</span><div class="tx"><b>Real-time analytics &amp; automation</b> hand the customer between all three, log every step, and expedite each job and payout.<span class="tag">ONE CUSTOMER · THREE REVENUE EVENTS</span></div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- BRANDS -->
+<section><div class="wrap">
+  <div class="sec-k">FOUR BRANDS · ONE PLATFORM</div>
+  <h2>Interrelated by design</h2>
+  <p class="lead">Each is a complete turnkey funnel with its own 10-line Smart-DID grid, Square + PayPal checkout, and UCCPXaaS platform — and all three backlink and share leads, customers, and analytics.</p>
+  <div class="brands">
+    <a class="brand rr" href="https://claude.ai/code/artifact/148b5ac6-e1f5-46b7-922d-fcd2e4810c6d">
+      <div class="ico">🌊</div><h3>Restoration Royalties</h3><div class="role">Mold · Water · Roofing</div>
+      <p>The first responder. Dries out the home, remediates mold, tarps the roof — the emergency call that starts every storm claim.</p>
+      <span class="open">Open funnel →</span>
+    </a>
+    <a class="brand fa" href="https://claude.ai/code/artifact/e6b7545f-1bcd-4eaa-b568-e33743750b77">
+      <div class="ico">📋</div><h3>FAST Adjusting Service</h3><div class="role">Public Adjusting · Claims</div>
+      <p>The homeowner's own adjuster. Documents the damage and fights the carrier to maximize the payout on the same storm claim.</p>
+      <span class="open">Open funnel →</span>
+    </a>
+    <a class="brand ye" href="https://claude.ai/code/artifact/61bfa8bd-aca8-4400-aee3-7110ebc2b4e2">
+      <div class="ico">⚡</div><h3>YES Electrical</h3><div class="role">Power · Generators</div>
+      <p>The power-restoration crew. Panels, rewires, and whole-home generators — the electrical half of every storm recovery.</p>
+      <span class="open">Open funnel →</span>
+    </a>
+    <a class="brand" style="grid-column:1/-1;display:flex;gap:18px;align-items:center;border-color:rgba(0,229,255,.35);background:linear-gradient(180deg,rgba(0,229,255,.06),rgba(155,140,255,.05))" href="https://claude.ai/code/artifact/5d8f0eba-4c94-4eaf-b9ed-06e4a5b35050">
+      <div class="ico" style="font-size:34px">🛡️</div>
+      <div>
+        <h3 style="margin:0 0 4px">Telvergence <span style="font:700 10px/1 var(--mono);letter-spacing:1.4px;color:var(--violet);text-transform:uppercase;white-space:nowrap">· The AI tech company · Brand 4</span></h3>
+        <p style="min-height:0">The platform, AI, and carrier network underneath all three — proof of concept → proof of claim → a satellite-backed, encrypted, national-security-grade essential-communications vision.</p>
+      </div>
+      <span class="open" style="margin-left:auto;white-space:nowrap">Open →</span>
+    </a>
+  </div>
+</div></section>
+
+<!-- ENGINE -->
+<section><div class="wrap">
+  <div class="sec-k">THE ENGINE UNDERNEATH</div>
+  <h2>One app. One Smart-DID grid. <span class="g">Real-time everything.</span></h2>
+  <p class="lead">The sub-network runs on Telvergence's UCCPXaaS platform — the same proprietary infrastructure inside each funnel, shared across all three brands.</p>
+  <div class="g3">
+    <div class="card"><div class="ic">📱</div><h3>Shared app + Smart-DID</h3><p>Every partner takes inbound &amp; outbound on their own business number from their existing phone — the personal cell is never exposed.</p></div>
+    <div class="card"><div class="ic">🔀</div><h3>Cross-brand routing</h3><p>A restoration lead becomes a claim lead becomes an electrical lead — handed between brands automatically, in real time.</p></div>
+    <div class="card"><div class="ic">📊</div><h3>Real-time analytics</h3><p>Every call, source, job, and payout on one live dashboard — the whole sub-network in one screen.</p></div>
+    <div class="card"><div class="ic">🤖</div><h3>Automation &amp; follow-up</h3><p>AI qualifies, books, texts, and nurtures 24/7 — expediting the processing of jobs and revenue for everyone involved.</p></div>
+    <div class="card"><div class="ic">🔒</div><h3>Confidential CRM/LMS</h3><p>Each partner's customers and pipeline stay in their own system — proprietary data never leaves the company.</p></div>
+    <div class="card"><div class="ic">🛡️</div><h3>Compliance built in</h3><p>STIR/SHAKEN, TCPA, DNC, TeleBlock, recorded lines — local-presence dialing that never gets blocked.</p></div>
+  </div>
+</div></section>
+
+<!-- SECOND BRAIN -->
+<section><div class="wrap">
+  <div class="sec-k">EACH NUMBER IS AN ASSET</div>
+  <h2>Every Smart-DID is a <span class="g">second brain</span></h2>
+  <p class="lead">A number isn't just a line — it's a programmable AI persona with its own skill set. Each DID can answer, qualify, route, and book on its own, becoming an owned digital asset that makes the vendor's business worth more.</p>
+  <div class="g3">
+    <div class="card"><div class="ic">🧠</div><h3>A persona per number</h3><p>Each Smart-DID becomes its own automated persona with a programmed set of skills — greeting, language, priority, qualifying, and dispatch logic all its own.</p></div>
+    <div class="card"><div class="ic">💎</div><h3>Owned digital assets</h3><p>Those personas and skills are digital assets that belong to the vendor — they compound in value and travel with the business at exit.</p></div>
+    <div class="card"><div class="ic">🧩</div><h3>À la carte dispatch</h3><p>Full-dispatch service across the entire customer life cycle — front end (capture, qualify, book) and back end (fulfillment, follow-up, reviews) — take only what you need.</p></div>
+  </div>
+  <div style="text-align:center;margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+    <span class="st done" style="font-size:11px">Software License Agreement</span>
+    <span class="st done" style="font-size:11px">Fulfillment Agreement</span>
+    <span class="st done" style="font-size:11px">Independent Sales Offering · ISO</span>
+  </div>
+  <p style="text-align:center;color:var(--dim);font-size:12.5px;margin-top:10px">Contracted à la carte — engage the front end, the back end, or the full dispatch stack.</p>
+  <div style="max-width:900px;margin:18px auto 0;background:linear-gradient(180deg,rgba(0,229,255,.06),rgba(0,229,255,.02));border:1px solid rgba(0,229,255,.3);border-radius:16px;padding:22px;text-align:center">
+    <div style="font:800 12px/1 var(--mono);letter-spacing:2px;color:var(--cyan)">◦ THE GOAL</div>
+    <div style="font:800 clamp(18px,2.8vw,25px)/1.35 var(--serif);margin:10px auto 6px;max-width:34ch">Eliminate the need for live employees, brick-and-mortar offices, overhead, and risk.</div>
+    <p style="color:var(--muted);font-size:14px;max-width:72ch;margin:0 auto">The AI personas run the front end 24/7 — capture, qualify, book, and dispatch — so a vendor can operate a fully automated business and simply fulfill the work, without the payroll, the lease, or the overhead that used to come with it.</p>
+  </div>
+</div></section>
+
+<!-- P&L COMMAND CENTER -->
+<section><div class="wrap">
+  <div class="sec-k">YOUR COMMAND CENTER</div>
+  <h2>Real-time profit &amp; loss — <span class="g">to the penny</span></h2>
+  <p class="lead">One easy-to-read dashboard, customized for your business, with the key operating indicators that matter — and live controls to change everything on the fly.</p>
+  <div style="max-width:900px;margin:0 auto;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line2);border-radius:18px;padding:22px">
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+      <span style="font:700 11px/1 var(--mono);letter-spacing:1.5px;color:var(--muted);text-transform:uppercase">◉ Your Business · Live P&amp;L</span>
+      <span style="margin-left:auto;font:700 10px/1 var(--mono);letter-spacing:1px;color:var(--lime);display:inline-flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime);display:inline-block"></span>LIVE · updated to the second</span>
+    </div>
+    <div style="text-align:center;background:var(--void2);border:1px solid rgba(77,255,158,.3);border-radius:14px;padding:18px;margin-bottom:14px">
+      <div style="font:600 10px/1 var(--mono);letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)">Net profit · today</div>
+      <div style="font:800 clamp(30px,6vw,46px)/1 var(--mono);color:var(--lime);margin-top:8px">+$18,432.57</div>
+    </div>
+    <div class="nums">
+      <div class="num"><div class="n">$41,905</div><div class="l">Revenue today</div></div>
+      <div class="num"><div class="n a">$23,472</div><div class="l">Cost · ads + lines</div></div>
+      <div class="num"><div class="n g">44%</div><div class="l">Net margin</div></div>
+      <div class="num"><div class="n">312 · 41</div><div class="l">Calls · booked</div></div>
+    </div>
+    <div style="margin-top:16px;border-top:1px dashed var(--line);padding-top:16px">
+      <div style="font:700 10px/1 var(--mono);letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Live controls — change anything, instantly</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <span style="font:700 12px/1 var(--sans);color:var(--ink);background:var(--void2);border:1px solid var(--line2);border-radius:9px;padding:9px 12px">⏸ Stop</span>
+        <span style="font:700 12px/1 var(--sans);color:var(--ink);background:var(--void2);border:1px solid var(--line2);border-radius:9px;padding:9px 12px">▶ Start</span>
+        <span style="font:700 12px/1 var(--sans);color:var(--ink);background:var(--void2);border:1px solid var(--line2);border-radius:9px;padding:9px 12px">⏬ Slow down</span>
+        <span style="font:700 12px/1 var(--sans);color:var(--ink);background:var(--void2);border:1px solid var(--line2);border-radius:9px;padding:9px 12px">⏫ Speed up</span>
+        <span style="font:700 12px/1 var(--sans);color:var(--ink);background:var(--void2);border:1px solid var(--line2);border-radius:9px;padding:9px 12px">🔀 Change leads</span>
+        <span style="font:700 12px/1 var(--sans);color:var(--ink);background:var(--void2);border:1px solid var(--line2);border-radius:9px;padding:9px 12px">📝 Change script</span>
+        <span style="font:700 12px/1 var(--sans);color:var(--ink);background:var(--void2);border:1px solid var(--line2);border-radius:9px;padding:9px 12px">🎁 Change offer</span>
+        <span style="font:700 12px/1 var(--sans);color:var(--ink);background:var(--void2);border:1px solid var(--line2);border-radius:9px;padding:9px 12px">📍 Change territory</span>
+        <span style="font:700 12px/1 var(--sans);color:var(--ink);background:var(--void2);border:1px solid var(--line2);border-radius:9px;padding:9px 12px">📡 Change channel</span>
+      </div>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:20px">Every call feeds a <b>bidirectional, real-time conduit</b> your company's customized "second brain" analyzes on the fly — then you, or the AI itself, adjust the leads, script, message, offer, product, territory, or channel instantly, and watch the P&amp;L respond to the penny.</p>
+  <div style="max-width:820px;margin:8px auto 0;background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.25);border-radius:14px;padding:18px;text-align:center">
+    <p style="color:var(--ink);font-size:14.5px;margin:0"><b>Built for how people actually want to be served.</b> <b class="g">67% of customers</b> prefer to solve common issues themselves rather than wait for a live agent — the AI handles the routine instantly, 24/7, with no hold time, then hands off to a person the moment it truly matters.</p>
+    <p style="color:var(--muted);font-size:13.5px;margin:10px auto 0;max-width:68ch">And automation doesn't have off days — it's <b style="color:var(--ink)">consistent, accurate, reliable, and courteous on every interaction</b>, and keeps sensitive details inside your own system.</p>
+    <p style="color:var(--dim);font-size:11.5px;margin:8px 0 0">Source: Zendesk CX Trends (self-service preference). Note: many consumers still prefer a human for complex issues — the model uses AI for the routine and routes to a person when it counts.</p>
+  </div>
+</div></section>
+
+<!-- PROFIT GUARDRAILS -->
+<section><div class="wrap">
+  <div class="sec-k">AUTOMATED PROFIT GUARDRAILS</div>
+  <h2>The dashboard that <span class="g">wouldn't let me fail</span></h2>
+  <p class="lead">For 20 years I ran telemarketing businesses to the penny on a ViciDial predictive-dialer admin dashboard — and never once missed payroll. The #1 reason businesses fail is owing employees money on payday you don't have. This dashboard kept inflows above outflows, every time. Now a mini version of it is built into your app.</p>
+  <div style="max-width:900px;margin:0 auto 20px;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line2);border-radius:18px;padding:22px">
+    <div style="font:700 11px/1 var(--mono);letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;text-align:center">The automated guardrail loop</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;font:800 13px/1.3 var(--sans)">
+      <span style="background:rgba(77,255,158,.1);border:1px solid rgba(77,255,158,.4);color:var(--lime);border-radius:10px;padding:10px 14px">In the profit zone → run</span>
+      <span style="color:var(--dim)">→</span>
+      <span style="background:rgba(255,70,92,.1);border:1px solid rgba(255,70,92,.4);color:var(--red);border-radius:10px;padding:10px 14px">Profit dips → auto-cut spending</span>
+      <span style="color:var(--dim)">→</span>
+      <span style="background:var(--void2);border:1px solid var(--line2);border-radius:10px;padding:10px 14px">Evaluate &amp; adjust</span>
+      <span style="color:var(--dim)">→</span>
+      <span style="background:var(--void2);border:1px solid var(--line2);border-radius:10px;padding:10px 14px">Resume — back in profit</span>
+      <span style="color:var(--dim)">↻</span>
+    </div>
+  </div>
+  <p class="lead" style="margin-bottom:14px">The key operating indicators it watches in real time:</p>
+  <div class="g3">
+    <div class="card"><div class="ic">📈</div><h3>ROI &amp; net profit / minute</h3><p>Know to the penny whether every minute of dialing is making or losing money.</p></div>
+    <div class="card"><div class="ic">💲</div><h3>Cost per lead</h3><p>Every source measured, so you spend only where it pays.</p></div>
+    <div class="card"><div class="ic">⏱️</div><h3>Average customer hold time</h3><p>Catch service slipping before it ever costs you a sale.</p></div>
+    <div class="card"><div class="ic">🎯</div><h3>Reps below quota — and why</h3><p>See who's under minimum, and the reason, instantly.</p></div>
+    <div class="card"><div class="ic">🚦</div><h3>Profit-zone status</h3><p>A live green/red line that governs whether the system spends or pauses.</p></div>
+    <div class="card"><div class="ic">🛡️</div><h3>Never miss payroll</h3><p>Inflows held above outflows by design — the guardrail against the #1 cause of failure.</p></div>
+  </div>
+  <p style="text-align:center;color:var(--ink);font:600 15.5px/1.5 var(--serif);font-style:italic;margin-top:18px">"The exact system that made me millions over decades — now in the hands of every business owner."</p>
+</div></section>
+
+<!-- PREDICTIVE INTELLIGENCE -->
+<section><div class="wrap">
+  <div class="sec-k">PREDICTIVE INTELLIGENCE</div>
+  <h2>It doesn't just answer the phone — <span class="g">it sees what's coming</span></h2>
+  <p class="lead">Real-time, to-the-penny intelligence: your second brain reads the whole market, forecasts demand, and tells you exactly what to do next.</p>
+  <div class="g3">
+    <div class="card"><div class="ic">🔮</div><h3>Forecast inventory to the penny</h3><p>Predict the right inventory to stock — <b>what, when, how much, and at what cost</b> — from live demand signals, so you're never over- or under-stocked.</p></div>
+    <div class="card"><div class="ic">🎚️</div><h3>Create demand · control supply</h3><p>Generate the calls on command and throttle capacity and territory to match — you own <b>both sides</b> of the equation, in real time.</p></div>
+    <div class="card"><div class="ic">🏷️</div><h3>Set your own price</h3><p>With live margin visibility, price your own product and service offering for <b>maximum profit</b> — and adjust it the moment the market moves.</p></div>
+  </div>
+</div></section>
+
+<!-- EVERY RING IS A SALE -->
+<section style="border-top:none;padding-top:0"><div class="wrap">
+  <div style="max-width:860px;margin:0 auto;background:linear-gradient(180deg,rgba(0,229,255,.06),rgba(77,255,158,.03));border:1px solid var(--line2);border-radius:18px;padding:26px;text-align:center">
+    <div style="font:800 12px/1 var(--mono);letter-spacing:2px;color:var(--cyan)">◦ THE MOMENT IT CLICKS</div>
+    <div style="font:800 clamp(20px,3.2vw,30px)/1.25 var(--serif);margin:12px auto 8px;max-width:26ch">Every ring becomes the <span class="g">sound of a sale.</span></div>
+    <p style="color:var(--muted);font-size:15px;max-width:76ch;margin:0 auto">The first time the phone starts ringing, the owner is blown away — they see the mechanism, and their brain wires the sound of a ringing phone to new revenue. From there it's simple: <b style="color:var(--ink)">turn up the volume and the quality of the calls</b>, and the business grows on command.</p>
+  </div>
+</div></section>
+
+<!-- WEATHER-TRIGGERED DEMAND -->
+<section><div class="wrap">
+  <div class="sec-k">WEATHER-TRIGGERED DEMAND</div>
+  <h2>The storm hits — the ads fire — <span class="g">the calendar fills</span></h2>
+  <p class="lead">As weather strikes a partner's territory in real time, their prospects get pummeled with targeted ads — in their area and across the USA — and every response is captured in the CRM/LMS we build for them.</p>
+  <div class="g3">
+    <div class="card"><div class="ic">⛈️</div><h3>Weather triggers the ads</h3><p>Live storm data lights up geo-targeted campaigns the instant a cell forms — local first, then nationwide — so demand is captured while it's hot.</p></div>
+    <div class="card"><div class="ic">🗂️</div><h3>Captured in <span class="g">your</span> CRM/LMS</h3><p>Every call, click, and form lands in the CRM/LMS we set up for you — a clean prospect profile, auto-onboarded, nothing lost.</p></div>
+    <div class="card"><div class="ic">📅</div><h3>Auto-booked in the queue</h3><p>Tied straight to your appointment scheduler — the prospect drops into the queue and the calendar fills itself.</p></div>
+  </div>
+  <div style="max-width:900px;margin:20px auto 0;background:linear-gradient(180deg,rgba(77,255,158,.08),rgba(77,255,158,.02));border:1px solid rgba(77,255,158,.35);border-radius:16px;padding:22px;text-align:center">
+    <div style="font:800 12px/1 var(--mono);letter-spacing:2px;color:var(--lime)">◦ THE DIVISION OF LABOR</div>
+    <div style="font:800 clamp(19px,3vw,26px)/1.3 var(--serif);margin:10px auto 6px;max-width:30ch"><span class="g">You fulfill.</span> We make the phone ring.</div>
+    <p style="color:var(--muted);font-size:14.5px;max-width:72ch;margin:0 auto;line-height:1.6">Telvergence does all the front-end work — the ads, the Smart-DID calls, the capture, and the scheduling — so our member vendor partners do only what they do best: show up and do the job.</p>
+  </div>
+</div></section>
+
+<!-- VIRAL GROWTH -->
+<section><div class="wrap">
+  <div class="sec-k">HOW THE NETWORK GROWS ITSELF</div>
+  <h2>Every partner <span class="g">recruits the next one</span></h2>
+  <p class="lead">The app issues a digital business card — with a unique Smart-DID embedded and assigned to that provider — in seconds. Each vendor adds more service providers, and the grid expands on its own.</p>
+  <div class="viral">
+    <div class="vsteps">
+      <div class="vs"><div class="n">1</div><div class="tx"><h4>A partner refers a peer</h4><p>Any network service provider invites another contractor — in their trade or an adjacent one — straight from the app.</p></div></div>
+      <div class="vs"><div class="n">2</div><div class="tx"><h4>The app auto-issues their card</h4><p>A branded digital business card is generated instantly, with a <b>unique Smart-DID embedded</b> and assigned to the new provider — inbound &amp; outbound ready.</p></div></div>
+      <div class="vs"><div class="n">3</div><div class="tx"><h4>They're live on the grid</h4><p>The new provider lights up as a beacon in their area code — sharing leads across the sub-network from day one.</p></div></div>
+      <div class="vs"><div class="n">4</div><div class="tx"><h4>The referrer earns</h4><p>Referral bonuses, override royalties, and ICO credits accrue to the partner who grew the network — the flywheel's viral loop.</p></div></div>
+    </div>
+    <div class="cardmock">
+      <div class="cm-top">
+        <div class="cm-av">🛰️</div>
+        <div><div class="cm-nm">New Partner</div><div class="cm-rl">‹City› Storm Dispatch · WIN</div></div>
+      </div>
+      <div class="cm-did">
+        <div><div class="l">Assigned Smart-DID</div><div class="v mono">(•••) •••-DISP</div></div>
+        <div class="cm-qr" aria-hidden="true"></div>
+      </div>
+      <div class="cm-ft">Auto-issued by the app · tap to call, text, save &amp; share</div>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:22px"><a href="https://claude.ai/code/artifact/2b1369fb-ac36-4a3b-9f43-8f6d449ea3e0">↗ See a live digital business card</a> &nbsp;·&nbsp; <a href="https://claude.ai/code/artifact/01c76111-fb08-4999-b497-6621a863bb5a">↗ Partner Program &amp; referral bonuses</a></p>
+</div></section>
+
+<!-- CARD CLONES ITSELF -->
+<section><div class="wrap">
+  <div class="sec-k">THE CARD THAT RECRUITS FOR YOU</div>
+  <h2>Every card you hand out can <span class="g">become another income stream</span></h2>
+  <p class="lead">The digital card we design for you to issue to prospects has a built-in path: any recipient can tap it to contact Telvergence and get their own — turning a business card into a recruiting engine.</p>
+  <div class="g3">
+    <div class="card"><div class="ic">💬</div><h3>Live in a few texts</h3><p>A prospect texts Telvergence right from your card, and a few SMS exchanges later their own Smart-DID is active with dial tone — plus a reseller/agent agreement for compensation.</p></div>
+    <div class="card"><div class="ic">📇</div><h3>Their own card &amp; number</h3><p>They get a branded digital card with their own embedded Smart-DID — ready to issue, refer, and earn from on day one.</p></div>
+    <div class="card"><div class="ic">📲</div><h3>Overflow to their mobile</h3><p>When our operator bank reaches capacity, we can route remote call-forwarded overflow calls straight to their mobile — so they earn from calls they'd otherwise never receive.</p></div>
+  </div>
+  <div style="max-width:860px;margin:18px auto 0;background:linear-gradient(180deg,rgba(0,229,255,.06),rgba(0,229,255,.02));border:1px solid rgba(0,229,255,.3);border-radius:16px;padding:22px;text-align:center">
+    <div style="font:800 12px/1 var(--mono);letter-spacing:2px;color:var(--cyan)">◦ THE LADDER</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;margin:14px 0 6px;font:800 14px/1 var(--sans)">
+      <span style="background:var(--void2);border:1px solid var(--line2);border-radius:10px;padding:10px 14px">Free reseller / agent</span>
+      <span style="color:var(--dim)">→</span>
+      <span style="background:var(--void2);border:1px solid var(--line2);border-radius:10px;padding:10px 14px">Distributor · overrides</span>
+      <span style="color:var(--dim)">→</span>
+      <span style="background:rgba(77,255,158,.1);border:1px solid rgba(77,255,158,.4);border-radius:10px;padding:10px 14px;color:var(--lime)">Own white-label brand · $25K</span>
+    </div>
+    <p style="color:var(--muted);font-size:14px;max-width:74ch;margin:8px auto 0">Start free, earn on referrals and overrides, and work your way up to your <b style="color:var(--ink)">own white-labeled brand</b> for a one-time <b class="g">$25K</b> license — the same build a lead-gen firm charges $25K just to attempt, except here it's a turnkey brand on a network that's already running.</p>
+  </div>
+</div></section>
+
+<!-- CUSTOMERS BECOME DISTRIBUTORS -->
+<section><div class="wrap">
+  <div class="sec-k">EVERY CUSTOMER · AN ADVOCATE</div>
+  <h2>The experience they can't stop <span class="g">talking about</span></h2>
+  <p class="lead">A flawless, confidential, always-courteous experience keeps customers coming back — and telling everyone they know. Then the app turns that word-of-mouth into income for them, and more business for you.</p>
+  <div class="g3">
+    <div class="card"><div class="ic">⭐</div><h3>They come back &amp; refer</h3><p>Quality this consistent earns repeat business and referrals to friends, family, and anyone who'll listen — the best marketing there is.</p></div>
+    <div class="card"><div class="ic">📲</div><h3>Their own Smart-DID</h3><p>Download the app and every customer is given their own assigned Smart-DID as a courtesy — ready to share and refer from.</p></div>
+    <div class="card"><div class="ic">💵</div><h3>Every subscriber a <span class="g">distributor</span></h3><p>Each subscriber is naturally endowed with the ability to earn referral commissions and override commissions through the app — automated and tracked, hands-off.</p></div>
+  </div>
+  <div style="max-width:820px;margin:18px auto 0;background:linear-gradient(180deg,rgba(77,255,158,.07),rgba(77,255,158,.02));border:1px solid rgba(77,255,158,.3);border-radius:14px;padding:18px;text-align:center">
+    <div style="font:800 12px/1 var(--mono);letter-spacing:2px;color:var(--lime)">◦ ZERO-COST GROWTH</div>
+    <p style="color:var(--ink);font-size:15px;margin:8px auto 0;max-width:70ch">Your business compounds through <b>cascading, word-of-mouth referrals</b> — a network effect where every happy customer becomes a channel and every subscriber can earn. Customer acquisition cost: <b class="g">$0</b>.</p>
+  </div>
+  <p style="text-align:center;color:var(--dim);font-size:12px;margin-top:12px">Referral/affiliate and override earnings vary and are not guaranteed; the program is subject to its terms and applicable law. Referral structures should be reviewed for compliance with FTC and applicable marketing rules.</p>
+</div></section>
+
+<!-- CITY DISPATCH -->
+<section><div class="wrap">
+  <div class="sec-k">LOCAL IDENTITY · NATIONAL NETWORK</div>
+  <h2>Every partner becomes their city's <span class="g">Storm Dispatch</span></h2>
+  <div class="citywrap">
+    <p style="color:var(--muted);font-size:15.5px;max-width:70ch;margin:0 auto">Each network service provider is co-branded as their own local storm-dispatch node — backed by the full national network, the shared grid, and the real-time console. Local trust, national muscle.</p>
+    <div class="cityex">
+      <div class="c">📍 <b>Miami</b> Storm Dispatch</div>
+      <div class="c">📍 <b>Orlando</b> Storm Dispatch</div>
+      <div class="c">📍 <b>Tampa</b> Storm Dispatch</div>
+      <div class="c">📍 <b>Houston</b> Storm Dispatch</div>
+      <div class="c">📍 <b>‹Your City›</b> Storm Dispatch</div>
+    </div>
+    <p style="color:var(--dim);font-size:13px;margin-top:16px">Powered by THE WEATHER INTELLIGENCE NETWORK · membership by dispatch region.</p>
+  </div>
+</div></section>
+
+<!-- NATIONAL SECURITY -->
+<section><div class="wrap">
+  <div class="sec-k">THE PLATFORM · NATIONAL-SECURITY VISION</div>
+  <h2>Built to stay up when <span class="g">everything else goes dark</span></h2>
+  <p class="lead">Underneath the network is Telvergence — engineering a private, <b>satellite-backed</b>, encrypted communications platform designed to survive fiber cuts and the legacy-telecom bottlenecks that failed during COVID-19 — and pursuing recognition as an essential communications service provider for the next major disruption. <span style="color:var(--dim)">(Forward-looking objectives &amp; pending applications — not a current government designation.)</span></p>
+  <div style="text-align:center"><a href="https://claude.ai/code/artifact/5d8f0eba-4c94-4eaf-b9ed-06e4a5b35050" style="display:inline-block;background:linear-gradient(180deg,#00E5FF,#0098c7);color:#03151a;font-weight:800;padding:14px 28px;border-radius:12px">🛡️ See the Telvergence platform &amp; roadmap →</a></div>
+</div></section>
+
+<!-- WHY NOW -->
+<section><div class="wrap">
+  <div class="sec-k">WHY NOW · THE TAILWINDS</div>
+  <h2>The mandates and the moment are <span class="g">here</span></h2>
+  <p class="lead">Three forces converge to make this the moment to adopt — recovery, regulation, and the shift to AI-native operations.</p>
+  <div class="g3">
+    <div class="card"><div class="ic">📈</div><h3>Post-COVID recovery</h3><p>The Ontario Chamber of Commerce's two post-pandemic objectives — overcome financial hardship and adopt all-things <b>Digital Main Street</b>. WIN delivers both at once: new revenue and full digital adoption, turnkey.</p></div>
+    <div class="card"><div class="ic">📞</div><h3>E-911 compliance, <span class="g">done for you</span></h3><p><b>Kari's Law</b> (direct 911 dialing) and <b>RAY BAUM'S Act</b> (dispatchable location) require compliant E-911 on multi-line phone systems — any business with more than one line, office, or occupant on the PSTN. WIN provisions registered, compliant Smart-DIDs plus E-411 directory listing — a legal requirement turned into a done-for-you feature.</p></div>
+    <div class="card"><div class="ic">🤖</div><h3>The 4th Industrial Revolution</h3><p>As the Moore's-Law and Metcalfe's-Law curves mature, machine-to-machine gives way to unified AI — "one intelligence." WIN is built AI-native for this era, positioning members as <b>first adopters</b> of the new standard.</p></div>
+  </div>
+  <p style="text-align:center;color:var(--dim);font-size:12px;margin-top:14px">Touchless, modern, compliant telecom. <span style="color:var(--dim)">E-411 directory listing is a value-added service, not a Kari's Law / RAY BAUM'S Act requirement.</span></p>
+  <div style="max-width:920px;margin:22px auto 0;background:linear-gradient(180deg,rgba(0,229,255,.08),rgba(77,255,158,.04));border:1px solid var(--line2);border-radius:18px;padding:26px;text-align:center">
+    <div style="font:800 13px/1 var(--mono);letter-spacing:3px;color:var(--cyan)">DOMINATEFROMTHE.CLOUD</div>
+    <div style="font:800 clamp(20px,3.2vw,30px)/1.25 var(--serif);margin:12px auto 8px;max-width:24ch">First adopters will <span class="g">dominate their industry from the cloud.</span></div>
+    <p style="color:var(--muted);font-size:14.5px;max-width:74ch;margin:0 auto">Late adopters go out of business — or become small-time local resellers buying wholesale from the first-adopting entity in their industry. The only question is which side of that line you're on.</p>
+  </div>
+</div></section>
+
+<!-- NUMBERS -->
+<section><div class="wrap">
+  <div class="sec-k">THE OPPORTUNITY BEHIND IT</div>
+  <h2>A board this big, an engine this compounding</h2>
+  <div class="nums">
+    <div class="num"><div class="n a">633,600</div><div class="l">Exclusive territories</div></div>
+    <div class="num"><div class="n g">$17.45B</div><div class="l">ARR ceiling</div></div>
+    <div class="num"><div class="n">6.34B</div><div class="l">Addressable lines</div></div>
+    <div class="num"><div class="n">$0</div><div class="l">Out of pocket to start</div></div>
+  </div>
+  <p class="lead" style="margin-top:20px"><a href="https://claude.ai/code/artifact/1e3f41e3-acca-4ee3-9446-522334b3541a">↗ Master business plan (the flywheel)</a> &nbsp;·&nbsp; <a href="https://claude.ai/code/artifact/6da27196-9d33-424f-bdde-a5c22ea2123b">↗ Revenue prospectus &amp; live calculator</a> &nbsp;·&nbsp; <a href="https://claude.ai/code/artifact/067df2e7-3564-4cc8-b41d-644cdf889924">↗ Live storm-dispatch console</a></p>
+</div></section>
+
+<!-- ASSETS -->
+<section><div class="wrap">
+  <div class="sec-k">EVERYTHING · ONE PLACE</div>
+  <h2>The complete built system</h2>
+  <div class="assets">
+    <a class="asset" href="https://claude.ai/code/artifact/1e3f41e3-acca-4ee3-9446-522334b3541a"><span class="e">🔁</span><span class="t">Master Business Plan<small>The Amazon flywheel + exit matrix</small></span><span class="go">›</span></a>
+    <a class="asset" href="https://claude.ai/code/artifact/6da27196-9d33-424f-bdde-a5c22ea2123b"><span class="e">📈</span><span class="t">Revenue Prospectus<small>Board math + live calculator</small></span><span class="go">›</span></a>
+    <a class="asset" href="https://claude.ai/code/artifact/067df2e7-3564-4cc8-b41d-644cdf889924"><span class="e">🛰️</span><span class="t">Storm Dispatch Console<small>National weather grid + beacons</small></span><span class="go">›</span></a>
+    <a class="asset" href="https://claude.ai/code/artifact/01c76111-fb08-4999-b497-6621a863bb5a"><span class="e">🤝</span><span class="t">Partner Program<small>Reseller · white-label · DID</small></span><span class="go">›</span></a>
+    <a class="asset" href="https://claude.ai/code/artifact/148b5ac6-e1f5-46b7-922d-fcd2e4810c6d"><span class="e">🌊</span><span class="t">Restoration Royalties<small>Mold · water · roofing funnel</small></span><span class="go">›</span></a>
+    <a class="asset" href="https://claude.ai/code/artifact/e6b7545f-1bcd-4eaa-b568-e33743750b77"><span class="e">📋</span><span class="t">FAST Adjusting Service<small>Public-adjusting claims funnel</small></span><span class="go">›</span></a>
+    <a class="asset" href="https://claude.ai/code/artifact/61bfa8bd-aca8-4400-aee3-7110ebc2b4e2"><span class="e">⚡</span><span class="t">YES Electrical<small>Power · generators funnel</small></span><span class="go">›</span></a>
+    <a class="asset" href="https://claude.ai/code/artifact/2b1369fb-ac36-4a3b-9f43-8f6d449ea3e0"><span class="e">📇</span><span class="t">Digital Business Card<small>Tap-to-call · embedded Smart-DID</small></span><span class="go">›</span></a>
+    <a class="asset" href="https://claude.ai/code/artifact/5d8f0eba-4c94-4eaf-b9ed-06e4a5b35050"><span class="e">🛡️</span><span class="t">Telvergence<small>The AI tech company · national-security vision</small></span><span class="go">›</span></a>
+  </div>
+</div></section>
+
+<!-- DATA IS THE ASSET -->
+<section><div class="wrap">
+  <div class="sec-k">THE DATA IS THE ASSET</div>
+  <h2>Without the data, a business is <span style="color:var(--red)">worthless</span>. With it — <span class="g">it's an asset.</span></h2>
+  <p class="lead">Every call, outcome, price, and customer fact is databased into a proprietary, consistent, reliable mechanism you own. That data — and the system that runs on it — is what turns a job into a company a buyer will pay multiples of revenue for.</p>
+  <div class="g3">
+    <div class="card"><div class="ic">🗄️</div><h3>Own the data</h3><p>The facts most owners never capture become a structured, proprietary asset — the difference between a worthless book of business and a sellable company.</p></div>
+    <div class="card"><div class="ic">📊</div><h3>Multiples of revenue</h3><p>A proven, recurring, data-backed mechanism is what earns an <b>exponential multiple of annual revenue</b> under any standard valuation method.</p></div>
+    <div class="card"><div class="ic">🚪</div><h3>A built-in exit</h3><p>First adopters build a real exit strategy into the business from day one — while it costs nothing to start.</p></div>
+  </div>
+  <div style="max-width:840px;margin:18px auto 0;background:linear-gradient(180deg,rgba(0,229,255,.08),rgba(77,255,158,.04));border:1px solid var(--line2);border-radius:16px;padding:22px;text-align:center">
+    <p style="color:var(--ink);font:800 clamp(17px,2.6vw,22px)/1.35 var(--serif);margin:0 auto;max-width:46ch">Be the first in your industry to adopt this — free — before your competitors do. <span class="g">Period. End of story.</span></p>
+  </div>
+  <p style="text-align:center;color:var(--dim);font-size:11.5px;margin-top:10px">Valuations and multiples are illustrative and depend on many factors; no specific sale, exit, or outcome is guaranteed.</p>
+</div></section>
+
+<!-- 80/20 -->
+<section><div class="wrap">
+  <div class="sec-k">INVERT THE EQUATION</div>
+  <h2>Flip your <span class="g">80/20</span></h2>
+  <p class="lead">Most operators today net ~20% and burn ~80% on overhead, staff, ads, and chasing work. This model inverts it.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:840px;margin:0 auto">
+    <div style="border:1px solid rgba(255,70,92,.3);background:rgba(255,70,92,.04);border-radius:16px;padding:20px">
+      <div style="font:800 12px/1 var(--mono);letter-spacing:1.4px;color:var(--red)">TODAY</div>
+      <div style="font:800 clamp(20px,3vw,29px)/1 var(--mono);color:var(--red);margin:10px 0 6px">20% net · 80% spent</div>
+      <p style="color:var(--muted);font-size:14px;margin:0">Payroll, a lease, ad spend, and chasing leads eat the margin — and your time.</p>
+    </div>
+    <div style="border:1px solid rgba(77,255,158,.35);background:rgba(77,255,158,.05);border-radius:16px;padding:20px">
+      <div style="font:800 12px/1 var(--mono);letter-spacing:1.4px;color:var(--lime)">THIS MODEL OF THE FUTURE</div>
+      <div style="font:800 clamp(20px,3vw,29px)/1 var(--mono);color:var(--lime);margin:10px 0 6px">80% net · 20% spent</div>
+      <p style="color:var(--muted);font-size:14px;margin:0">Automation runs the front end — you keep the margin <b style="color:var(--ink)">and</b> all your free time.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- CONFIGURE YOUR GRID -->
+<section><div class="wrap">
+  <div class="sec-k">CONFIGURE YOUR GRID</div>
+  <h2>Vanity, sequential, or <span class="g">a combination</span></h2>
+  <p class="lead">Your 10-line hunt group, your choice — built the way that fits your brand and your budget.</p>
+  <div class="g3">
+    <div class="card"><div class="ic">🔤</div><h3>Vanity numbers</h3><p>Memorable, keyword-spelling numbers (1-800-RESTORE) — a high-impact, long-term digital business asset. Toll-free vanity may carry an upfront activation cost due to their high demand and effectiveness.</p></div>
+    <div class="card"><div class="ic">🔢</div><h3>Sequential series</h3><p>A clean consecutive block across your hunt group — professional, easy to recall, and typically with no activation premium.</p></div>
+    <div class="card"><div class="ic">🎛️</div><h3>A combination</h3><p>The best of both — a flagship vanity line to anchor the brand, backed by a sequential series for tracking and overflow.</p></div>
+  </div>
+  <p style="text-align:center;color:var(--dim);font-size:12px;margin-top:12px">Toll-free vanity activation costs, if any, are quoted up front; standard local/sequential lines carry no activation premium.</p>
+</div></section>
+
+<!-- THE OFFER -->
+<section><div class="wrap">
+  <div class="sec-k">THE OFFER · ZERO RISK</div>
+  <h2>Not one penny <span class="g">out of pocket</span></h2>
+  <p class="lead">Every funnel, the app, the Smart-DIDs, the CRM/LMS, the ads, and the dispatch console — all of it stands up at <b>$0</b> to the partner. The only commitment is a simple month-to-month phone subscription — and even that is engineered to pay for itself before it's ever charged.</p>
+  <p style="text-align:center;font:800 clamp(17px,2.6vw,22px)/1.35 var(--serif);color:var(--ink);max-width:56ch;margin:6px auto 20px">All it takes to start: a signed <span class="g">LOA</span> and a <span class="g">card on file.</span> That's it — the system builds itself and runs on autopilot.</p>
+  <div style="max-width:920px;margin:0 auto;background:linear-gradient(180deg,rgba(77,255,158,.08),rgba(77,255,158,.02));border:1px solid rgba(77,255,158,.4);border-radius:18px;padding:26px">
+    <div class="g3" style="margin-bottom:4px">
+      <div class="card" style="background:var(--void2);text-align:center"><div class="ic">📞</div><h3>$22.95 / line / mo</h3><p>Enroll in the Bright Sound Communications remote call-forwarding subscription — month-to-month, cancel anytime. That's the whole cost.</p></div>
+      <div class="card" style="background:var(--void2);text-align:center"><div class="ic">⚡</div><h3>Phones ring <span class="g">day one</span></h3><p>Your Smart-DIDs go live and start ringing the same day they're activated — the campaign works from hour one.</p></div>
+      <div class="card" style="background:var(--void2);text-align:center"><div class="ic">🗓️</div><h3>Post-billed at 17 days</h3><p>The first subscription charge doesn't hit until 17 days after enrollment — you're earning long before you're billed.</p></div>
+    </div>
+    <div style="text-align:center;border-top:1px dashed rgba(77,255,158,.3);margin-top:16px;padding-top:18px">
+      <div style="font:800 12px/1 var(--mono);letter-spacing:2px;color:var(--lime)">◦ THE GUARANTEE</div>
+      <div style="font:800 clamp(18px,2.8vw,25px)/1.35 var(--serif);margin:10px auto 6px;max-width:52ch">New sales revenue should exceed your line fees before the first charge ever lands — <span class="g">or Telvergence pays your first month for you.</span></div>
+      <p style="color:var(--muted);font-size:13.5px;max-width:70ch;margin:0 auto">Because your phones ring on day one and you aren't billed until day 17, the jobs you book should cover the subscription before it's due. If they don't, Telvergence covers that first month's line fees. Either way — zero out of pocket to start.</p>
+    </div>
+  </div>
+  <div class="g3" style="margin-top:16px">
+    <div class="card"><div class="ic">💳</div><h3>Charged only on success</h3><p>You post a card on file for the monthly line charge — but it's billed <b>only if and when</b> Bright Sound successfully provisions your lines <b>and</b> you're completely satisfied with the call clarity and hand-off quality. Not satisfied? Cancel immediately — no further charges.</p></div>
+    <div class="card"><div class="ic">🔑</div><h3>You own your numbers</h3><p>The lines are the vendor's property at all times. Port or move them to any carrier you choose, <b>anytime, for any reason</b> — no lock-in, ever.</p></div>
+    <div class="card"><div class="ic">♾️</div><h3>Free new lines, infinite scale</h3><p>Telvergence is a global wholesale carrier and dial-tone provider — new lines are <b>free</b> and spin up instantly at scale, with little to no added infrastructure cost.</p></div>
+  </div>
+</div></section>
+
+<!-- THE ALTERNATIVE -->
+<section><div class="wrap">
+  <div style="max-width:920px;margin:0 auto;background:linear-gradient(180deg,rgba(255,70,92,.07),rgba(255,70,92,.02));border:1px solid rgba(255,70,92,.4);border-radius:18px;padding:26px;text-align:center">
+    <div style="font:800 12px/1 var(--mono);letter-spacing:2px;color:var(--red)">◦ THE ALTERNATIVE</div>
+    <div style="font:800 clamp(19px,3vw,27px)/1.3 var(--serif);margin:12px auto 8px;max-width:32ch">If you pass, your competitor up the street won't.</div>
+    <p style="color:var(--muted);font-size:14.5px;max-width:78ch;margin:0 auto">This costs you nothing today. Decline it, and the next call goes to your competitor — who, once they adopt, corners <b style="color:var(--ink)">every lead in your area</b> and then resells you those same jobs at <b style="color:var(--ink)">50% of the revenue</b> to do the work, while they collect the other half just for owning the funnel and routing it to you — or to whomever they choose. Territories are exclusive and claimed once. <span class="g">Be the one who owns it.</span></p>
+  </div>
+</div></section>
+
+<!-- START NOW · LOA -->
+<section><div class="wrap">
+  <div style="max-width:900px;margin:0 auto;background:linear-gradient(180deg,rgba(77,255,158,.1),rgba(0,229,255,.05));border:1px solid rgba(77,255,158,.4);border-radius:20px;padding:30px;text-align:center">
+    <div style="font:800 12px/1 var(--mono);letter-spacing:2.5px;color:var(--lime)">✍️ ONE SIGNATURE STARTS EVERYTHING</div>
+    <div style="font:800 clamp(22px,3.6vw,32px)/1.2 var(--serif);color:var(--ink);margin:14px auto 10px;max-width:26ch">Sign the LOA. Put a card on file. <span class="g">That's the whole order.</span></div>
+    <p style="color:var(--muted);font-size:15.5px;max-width:70ch;margin:0 auto 6px">No money down. Your Smart-DIDs go live and your phone starts ringing within 24 hours. Every build, every automation, and every dollar of setup is on us.</p>
+    <a href="https://claude.ai/code/artifact/01c76111-fb08-4999-b497-6621a863bb5a" style="display:inline-block;margin-top:16px;background:linear-gradient(180deg,var(--lime),#25b083);color:#04231a;font-weight:800;padding:16px 34px;border-radius:14px;font-size:17px">✍️ Sign your LOA &amp; start today →</a>
+  </div>
+</div></section>
+
+<!-- ASK -->
+<section><div class="wrap">
+  <div class="ask">
+    <div class="sec-k">THE ASK</div>
+    <h2>Claim your #1 position.</h2>
+    <p class="lead" style="margin:0 auto">A 20-minute call turns on your 30-day storm-capture pilot — $0 out of pocket, and you see booked jobs before you ever pay.</p>
+    <div style="font:800 clamp(18px,2.8vw,25px)/1.35 var(--serif);margin:16px auto 4px;max-width:36ch;color:var(--ink)">Go get a card, secure your #1 position in your industry now, and give me <span class="g">1% of your trust</span> — I'll earn the other 99%.</div>
+    <a class="big" href="https://claude.ai/code/artifact/01c76111-fb08-4999-b497-6621a863bb5a">✍️ Sign your LOA &amp; claim your #1 position →</a>
+    <div style="margin-top:14px;font:800 clamp(16px,2.4vw,20px)/1.4 var(--sans);color:var(--lime)">⚡ I can have your phones ringing within 24 hours.</div>
+    <div style="margin-top:12px;font:700 clamp(15px,2.2vw,18px)/1.4 var(--sans);color:var(--muted)">You have nothing to lose and everything to gain.</div>
+    <div style="margin-top:16px;font:800 clamp(22px,3.6vw,32px)/1.2 var(--serif);color:var(--ink)">You decide. <span class="g">What's it going to be?</span></div>
+    <div style="margin-top:16px;font:600 clamp(14px,2vw,16px)/1.55 var(--sans);color:var(--muted);max-width:66ch;margin-left:auto;margin-right:auto">And I'll be holding your hand the entire way — fully committed to your success, without a dollar out of pocket from you — until you see all this in action and the money coming in first. OK?</div>
+    <div class="who"><b>David Drew Allen</b> · President, Telvergence, Inc. · contact@telvergence.com</div>
+  </div>
+</div></section>
+
+<div class="wrap" style="padding:0 22px">
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;text-align:center;color:var(--muted);font:600 13.5px/1.5 var(--serif);font-style:italic;border-top:1px solid var(--line);padding-top:24px;margin-top:8px">
+    <span>"Fail to plan, and you plan to fail."</span><span style="color:var(--dim);font-style:normal">·</span>
+    <span>"That which can be measured can be improved."</span><span style="color:var(--dim);font-style:normal">·</span>
+    <span>"Passion leads to purpose, which leads to fulfillment."</span>
+  </div>
+</div>
+
+<footer>
+  Restoration Royalty Sub-Network · Restoration Royalties · FAST Adjusting Service · YES Electrical<br>
+  Powered by <b>THE WEATHER INTELLIGENCE NETWORK</b> · <b>‹Your City› Storm Dispatch</b> · built on Telvergence UCCPXaaS<br>
+  Illustrative demonstration package. Vanity/Smart-DID numbers are examples pending provisioning. Not a guarantee of results or an offer of securities.
+</footer>
+</body>
+</html>
