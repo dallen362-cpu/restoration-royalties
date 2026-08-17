@@ -91,6 +91,15 @@
 
 
 
+
+  .urgent{background:linear-gradient(90deg,rgba(255,122,69,.14),rgba(255,194,75,.1));border-top:1px solid rgba(255,122,69,.35);
+    border-bottom:1px solid rgba(255,122,69,.35);padding:16px 0}
+  .urgent .wrap{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+  .urgent .fl{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);
+    border:1px solid rgba(255,122,69,.5);border-radius:999px;padding:5px 12px;white-space:nowrap}
+  .urgent p{margin:0;font-size:15px;color:var(--ink);font-weight:600}
+  .urgent b{color:var(--gold)}
+
   /* command KPIs */
   .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;max-width:820px;margin:0 auto 22px;
     background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
@@ -151,6 +160,11 @@
   </div>
   <div class="trust">We build it, design it, and program it — <b style="color:var(--muted)">free</b>. $0 out of pocket. Guaranteed, or the first month is on us.</div>
 </div></header>
+
+<div class="urgent"><div class="wrap">
+  <span class="fl">⚡ First-mover only</span>
+  <p>One business per trade, per area code — <b>whoever adopts first locks their competition out.</b> The business down the street is our next call.</p>
+</div></div>
 
 <section><div class="wrap">
   <p class="kick">Why it's a no-brainer</p>
