@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>WIN Digital Card</title>
+<style>
+  :root{
+    --void:#050912;--panel:#0C1526;--panel2:#0A1120;--line:#1B2A47;
+    --cyan:#00E5FF;--lime:#4DFF9E;--amber:#FFB03A;--ember:#FF7A3C;
+    --ink:#EAF2FF;--muted:#8AA0C4;--dim:#5A6C90;
+    --mono:ui-monospace,"SF Mono","Segoe UI Mono",Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--void);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  body{min-height:100vh;display:flex;align-items:flex-start;justify-content:center;
+    background:radial-gradient(900px 520px at 50% -10%,rgba(0,229,255,.12),transparent 60%),
+      radial-gradient(700px 500px at 50% 120%,rgba(77,255,158,.08),transparent 60%),var(--void);
+    padding:22px 14px 48px}
+  .card{width:100%;max-width:440px}
+  a{text-decoration:none;color:inherit}
+
+  /* header */
+  .hd{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+    border-radius:20px 20px 0 0;padding:26px 22px 20px;text-align:center;position:relative;overflow:hidden}
+  .hd::before{content:"";position:absolute;inset:-40% -20% auto -20%;height:150px;
+    background:radial-gradient(closest-side,rgba(0,229,255,.18),transparent);pointer-events:none}
+  .mono{font-family:var(--mono)}
+  .mark{width:74px;height:74px;margin:0 auto 14px;border-radius:50%;position:relative;
+    border:2px solid var(--cyan);box-shadow:0 0 0 4px rgba(0,229,255,.10),inset 0 0 18px rgba(0,229,255,.35);
+    display:flex;align-items:center;justify-content:center;font-size:30px}
+  .mark .pulse{position:absolute;inset:0;border-radius:50%;border:2px solid var(--lime);
+    animation:pr 2.4s infinite ease-out;opacity:0}
+  @keyframes pr{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.5);opacity:0}}
+  .org{font:800 20px/1.2 var(--sans);letter-spacing:.3px}
+  .org b{color:var(--cyan)}
+  .sub{font:700 10px/1.4 var(--mono);letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);margin-top:8px}
+  .tag{color:var(--muted);font-size:13px;margin-top:12px;line-height:1.5;max-width:34ch;margin-left:auto;margin-right:auto}
+  .who{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+  .who .nm{font-weight:800;font-size:16px}
+  .who .rl{font:700 10px/1 var(--mono);letter-spacing:1.6px;text-transform:uppercase;color:var(--lime);margin-top:5px}
+
+  /* contact actions */
+  .acts{background:var(--panel2);border-left:1px solid var(--line);border-right:1px solid var(--line);
+    padding:14px 16px;display:grid;gap:9px}
+  .row{display:flex;align-items:center;gap:13px;background:var(--panel);border:1px solid var(--line);
+    border-radius:13px;padding:13px 15px;transition:.15s}
+  .row:hover{border-color:var(--cyan);transform:translateY(-1px)}
+  .row .ic{width:38px;height:38px;flex:none;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    font-size:17px;background:rgba(0,229,255,.10);border:1px solid rgba(0,229,255,.25)}
+  .row.g .ic{background:rgba(77,255,158,.10);border-color:rgba(77,255,158,.25)}
+  .row .tx{min-width:0}
+  .row .tx .l{font:700 10px/1 var(--mono);letter-spacing:1.5px;text-transform:uppercase;color:var(--dim)}
+  .row .tx .v{font-weight:700;font-size:15px;margin-top:4px;color:var(--ink);word-break:break-word}
+  .row .go{margin-left:auto;color:var(--dim);font-size:18px}
+
+  /* quick links */
+  .ql{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+    border-top:none;border-radius:0 0 20px 20px;padding:16px}
+  .ql h2{font:700 10px/1 var(--mono);letter-spacing:2px;text-transform:uppercase;color:var(--muted);
+    margin:2px 2px 12px;display:flex;align-items:center;gap:8px}
+  .ql h2 .i{color:var(--cyan)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .lk{display:flex;align-items:center;gap:10px;background:var(--panel2);border:1px solid var(--line);
+    border-radius:12px;padding:12px;transition:.15s}
+  .lk:hover{border-color:var(--cyan);transform:translateY(-2px)}
+  .lk .e{font-size:18px}
+  .lk .t{font-weight:700;font-size:12.5px;line-height:1.25}
+  .lk .t small{display:block;color:var(--muted);font-weight:600;font-size:10.5px;margin-top:2px}
+  .lk.wide{grid-column:1/3;justify-content:center;background:linear-gradient(180deg,var(--lime),#25b083);color:#04231a;border:none}
+  .lk.wide .t,.lk.wide .t small{color:#04231a}
+  .lk.pay{grid-column:1/3;justify-content:center;border-color:rgba(255,176,58,.4);background:rgba(255,176,58,.06)}
+
+  .foot{text-align:center;color:var(--dim);font-size:10.5px;line-height:1.7;margin-top:16px;padding:0 8px}
+  .foot .cp{margin-top:6px}
+  @media(prefers-reduced-motion:reduce){.pulse{animation:none}}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="hd">
+    <div class="mark">🛰️<span class="pulse"></span></div>
+    <div class="org">WEATHER INTELLIGENCE <b>NETWORK</b></div>
+    <div class="sub">Powered by Telvergence · UCCPXaaS</div>
+    <div class="tag">Nationwide storm-dispatch alliance of local emergency-service contractors — answered in real time.</div>
+    <div class="who">
+      <div class="nm">David Allen</div>
+      <div class="rl">Founder · Network Dispatch</div>
+    </div>
+  </div>
+
+  <div class="acts">
+    <a class="row" href="tel:+18339462739">
+      <span class="ic">📞</span>
+      <span class="tx"><span class="l">Call — dispatch line</span><span class="v mono">1-833-WIN-CREW</span></span>
+      <span class="go">›</span>
+    </a>
+    <a class="row" href="sms:+18339462739">
+      <span class="ic">💬</span>
+      <span class="tx"><span class="l">Text us</span><span class="v mono">1-833-946-2739</span></span>
+      <span class="go">›</span>
+    </a>
+    <a class="row g" href="mailto:contact@telvergence.com">
+      <span class="ic">✉️</span>
+      <span class="tx"><span class="l">Email</span><span class="v">contact@telvergence.com</span></span>
+      <span class="go">›</span>
+    </a>
+    <a class="row" href="/dispatch/">
+      <span class="ic">🛰️</span>
+      <span class="tx"><span class="l">Live dispatch console</span><span class="v">Storm Dispatch — command grid</span></span>
+      <span class="go">›</span>
+    </a>
+  </div>
+
+  <div class="ql">
+    <h2><span class="i">▦</span> The Network</h2>
+    <div class="grid">
+      <a class="lk" href="/rr/"><span class="e">🌊</span><span class="t">Restoration Royalties<small>Mold · Water · Roof</small></span></a>
+      <a class="lk" href="/vanity/"><span class="e">👑</span><span class="t">RR — Vanity Line<small>1-800-RESTORE</small></span></a>
+      <a class="lk" href="/yes/"><span class="e">⚡</span><span class="t">YES Electrical<small>Power · Generators</small></span></a>
+      <a class="lk" href="/orlando-roofing.html"><span class="e">🏠</span><span class="t">The Roofing Crew<small>Storm tarp · Roof</small></span></a>
+      <a class="lk wide" href="/cowork-campaign/nx8k4q2m9v7r/vault-7kq9x2m4/partner.html"><span class="e">🤝</span><span class="t">Partner Program — get your Smart-DID &amp; join</span></a>
+      <a class="lk pay" href="/rr/#pay"><span class="e">💳</span><span class="t">Pay deposit / invoice — Square &amp; PayPal</span></a>
+    </div>
+  </div>
+
+  <div class="foot">
+    Tap any line to call, text, or email · Smart-DIDs recorded for quality &amp; verification<br>
+    <span class="cp">1-833-WIN-CREW is a network vanity line pending provisioning · © Weather Intelligence Network</span>
+  </div>
+
+</div>
+</body>
+</html>

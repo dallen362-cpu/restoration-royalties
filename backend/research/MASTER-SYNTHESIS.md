@@ -42,7 +42,7 @@ All plug into TELVERGENCE (cloud comms engine) under the flagship promise **"Off
   - 🟠 Moderate: Miami Lakes, Miami Gardens, N. Miami/N. Miami Beach, Sunrise, Plantation
   - 🟡 Lower: W. Fort Lauderdale suburbs, Coral Springs, SW Palm Beach fringe
   - Structure: 3 ad groups by exposure level; angle = fast smoke/soot remediation + indoor-air recovery; offer = free smoke-damage inspection; 1 search + 1 retargeting + 1 emergency landing page.
-- **Orlando roofing seed leads** (near 8832 Southern Breeze Dr, 32836) captured from export 02:
+- **Orlando roofing seed leads** (in the Dr. Phillips / 32836 area) captured from export 02:
   Schick Roofing (407) 749-0808 · Bela Roofing (407) 250-4904 (Matt@belaroofing.com) · DRS Roofing (407) 240-1225 · Roof Top Services (407) 476-0260 · Summit Roofing Solutions (321) 332-3392 · Baker Roofing (407) 930-6079.
   → seed into BOSS CRM / ViciDial list. *(The original Vici roofing-leads CSV is in the user's backup — upload it and I'll normalize + load.)*
 - **"Office off the Roof" owner-recruitment play:** book 5 roofing owners for in-home estimates → pitch the white-label cloud system. Script captured in export 02.

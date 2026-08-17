@@ -1,0 +1,360 @@
+<title>FAST Adjusting Service — South Florida · 10 Numbers. One Brain.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<style>
+  :root{--midnight:#070C18;--card:#101a33;--card2:#0b1426;--line:#22304f;--cyan:#00D4FF;--lime:#00FF88;--ember:#FF6A2B;--gold:#ffd27a;--violet:#8b7bff;--ink:#eef4ff;--muted:#9fb3d6;--faint:#5c6b8c;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);background:radial-gradient(1200px 680px at 50% -10%,#122a5a,var(--midnight) 60%);line-height:1.6}
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px}
+  .bar{position:sticky;top:0;z-index:20;display:flex;gap:14px;align-items:center;padding:12px 22px;background:rgba(7,12,24,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar .logo{font-weight:900;letter-spacing:1px}.bar .logo b{color:var(--cyan)}
+  .bar a{margin-left:auto;color:var(--cyan);text-decoration:none;font-weight:800;font-size:13px}
+  header{padding:46px 0 8px}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--ember)}
+  h1{font-size:clamp(32px,6vw,58px);font-family:Georgia,serif;font-weight:800;margin:10px 0 8px;letter-spacing:-.02em;line-height:1.05}
+  h1 span{background:linear-gradient(90deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .tagline{color:var(--muted);font-size:18px;max-width:60ch}
+  .demo-note{display:inline-block;margin-top:14px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,210,122,.4);border-radius:999px;padding:5px 12px;background:rgba(255,210,122,.06)}
+  section{padding:26px 0;border-top:1px solid var(--line)}
+  h2{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
+  .big{border-left:4px solid var(--ember);background:rgba(255,106,43,.08);border-radius:8px;padding:15px 17px;font-size:15.5px}.big b{color:var(--ink)}
+  .bm{display:grid;gap:12px}@media(min-width:640px){.bm{grid-template-columns:1fr 1fr}}
+  .bc{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--card)}
+  .bc h3{font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:9px}
+  .bc.now h3{color:var(--faint)}.bc.next h3{color:var(--lime)}
+  .bc ul{list-style:none;font-size:13.5px;color:var(--muted)}.bc li{padding:5px 0 5px 20px;position:relative}
+  .bc.now li:before{content:"✕";position:absolute;left:0;color:var(--ember);font-weight:900}
+  .bc.next li:before{content:"✓";position:absolute;left:0;color:var(--lime);font-weight:900}
+  .bc.next li b{color:var(--ink)}
+  .grid10{display:grid;gap:10px;grid-template-columns:1fr}@media(min-width:560px){.grid10{grid-template-columns:1fr 1fr}}
+  .did{position:relative;background:linear-gradient(180deg,var(--card),#0b1426);border:1px solid var(--line);border-radius:12px;padding:13px 14px 13px 46px;transition:border-color .15s,transform .15s}
+  .did:hover{border-color:var(--cyan);transform:translateY(-2px)}
+  .did .num{position:absolute;left:12px;top:13px;width:24px;height:24px;border-radius:7px;background:rgba(0,212,255,.12);border:1px solid rgba(0,212,255,.4);color:var(--cyan);font-weight:900;font-size:12px;display:flex;align-items:center;justify-content:center}
+  .did h4{font-size:14px;margin-bottom:2px}.did .vn{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--cyan);font-weight:800;font-size:12.5px}
+  .did p{color:var(--muted);font-size:12.5px;margin-top:4px}
+  .brain{background:linear-gradient(180deg,rgba(139,123,255,.08),rgba(0,212,255,.04));border:1px solid var(--line);border-radius:14px;padding:18px}
+  .brain .row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;font-size:13px;color:var(--muted)}
+  .chip{font-weight:800;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--card)}
+  .chip.hot{color:var(--lime);border-color:rgba(0,255,136,.4)}
+  .arrow{color:var(--cyan);font-weight:900}
+  .pillars{display:grid;gap:12px}@media(min-width:640px){.pillars{grid-template-columns:1fr 1fr 1fr}}
+  .p{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .p .n{font-weight:900;color:var(--ember);font-size:15px}.p p{color:var(--muted);font-size:13.5px;margin-top:5px}.p b{color:var(--ink)}
+  .comp{margin-top:10px;font-size:12.5px;color:var(--faint)}.comp span{display:inline-block;font-weight:800;color:var(--lime);border:1px solid rgba(0,255,136,.35);border-radius:999px;padding:3px 9px;margin:2px 4px 2px 0}
+  .video{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:linear-gradient(180deg,#0e1830,#0a1122);aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}
+  .video .play{width:66px;height:66px;border-radius:50%;background:linear-gradient(180deg,#2bff9e,#00c46a);display:flex;align-items:center;justify-content:center;font-size:26px;color:#04140a;margin-bottom:12px}
+  .video .vt{font-weight:800}.video .vs{color:var(--muted);font-size:13px;margin-top:4px}
+  .video .tag{position:absolute;top:12px;left:12px;font-size:10.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,210,122,.4);border-radius:999px;padding:3px 9px}
+  .offer{background:linear-gradient(180deg,rgba(255,106,43,.08),rgba(0,255,136,.05));border:1px solid var(--line);border-radius:14px;padding:18px}.offer b{color:var(--ink)}
+  .econ{display:grid;gap:10px;margin-top:8px}@media(min-width:560px){.econ{grid-template-columns:repeat(3,1fr)}}
+  .ec{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+  .ec .k{font-size:22px;font-weight:900;color:var(--lime)}.ec .l{font-size:12px;color:var(--muted);margin-top:3px}
+  table{width:100%;border-collapse:collapse;margin-top:8px}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}td b{color:var(--ink)}
+  tr.rec td{background:rgba(0,255,136,.06)} tr.rec b{color:var(--lime)}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+  .cta a{flex:1;min-width:200px;text-align:center;text-decoration:none;font-weight:800;border-radius:12px;padding:15px}
+  .cta .call{background:linear-gradient(180deg,#2bff9e,#00c46a);color:#04140a}
+  .cta .book{background:rgba(255,255,255,.05);color:var(--ink);border:1px solid var(--line)}
+  .sig{margin-top:22px;color:var(--muted);font-size:14px}.sig b{color:var(--ink)}
+  .disclaimer{border-top:1px solid var(--line);margin-top:26px;padding:16px 0 60px;color:var(--faint);font-size:11.5px}
+
+  .mapwrap{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:linear-gradient(180deg,#0e1830,#0a1122);aspect-ratio:16/7;display:flex;align-items:center;justify-content:center}
+  .mapwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1}
+  .mapwrap .mapfallback{color:var(--muted);font-size:15px;font-weight:700;text-align:center;padding:20px;z-index:0}
+  .mapnote{color:var(--muted);font-size:13px;margin-top:10px}
+  .plat{border-left:4px solid var(--lime);background:rgba(0,255,136,.06);border-radius:8px;padding:14px 16px;font-size:14.5px;margin-bottom:14px}.plat b{color:var(--ink)}
+  .stack{display:grid;gap:8px}
+  .layer{position:relative;background:linear-gradient(180deg,var(--card),#0b1426);border:1px solid var(--line);border-radius:12px;padding:12px 14px 12px 56px}
+  .layer .ln{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:8px;background:rgba(0,212,255,.12);border:1px solid rgba(0,212,255,.4);color:var(--cyan);font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .layer h4{font-size:14px}.layer .tech{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--lime);font-size:10.5px;font-weight:800;letter-spacing:.5px;margin-left:6px}.layer p{color:var(--muted);font-size:12.5px;margin-top:3px}
+
+  .winnet{max-width:940px;margin:24px auto 0;padding:24px 22px 0;border-top:1px solid #22304f}
+  .winnet .wb{display:inline-block;font:800 11px/1 "Segoe UI",system-ui,sans-serif;letter-spacing:2px;color:#00D4FF;border:1px solid rgba(0,212,255,.4);border-radius:999px;padding:6px 12px;background:rgba(0,212,255,.06)}
+  .winnet h3{color:#eef4ff;font:800 21px/1.3 Georgia,serif;margin:12px 0 6px}
+  .winnet .wp{color:#9fb3d6;font-size:14.5px;max-width:72ch;line-height:1.55}
+  .winnet .wr{display:grid;gap:10px;margin-top:16px}@media(min-width:640px){.winnet .wr{grid-template-columns:1fr 1fr 1fr}}
+  .winnet a.wc{display:block;text-decoration:none;background:#101a33;border:1px solid #22304f;border-radius:12px;padding:14px;transition:border-color .15s,transform .15s}
+  .winnet a.wc:hover{border-color:#00D4FF;transform:translateY(-2px)}
+  .winnet a.wc.here{border-color:rgba(0,255,136,.5);background:rgba(0,255,136,.07)}
+  .winnet a.wc .t{font-weight:800;color:#eef4ff;font-size:15px}
+  .winnet a.wc .s{color:#9fb3d6;font-size:12.5px;margin-top:3px}
+  .winnet .prov{color:#6e7ea0;font-size:11px;margin-top:12px}
+</style>
+<div class="bar"><div class="logo"><b>FAST</b> ADJUSTING SERVICE · Showroom</div><a href="../showroom/">← Showroom</a></div>
+
+<header class="wrap">
+  <div class="eyebrow">TELVERGENCE × FAST Adjusting Service · Licensed Public Adjusters · South Florida</div>
+  <h1>10 numbers.<br><span>One brain.</span></h1>
+  <div class="tagline">After a storm, the insurance company sends <em>their</em> adjuster — who works for them. FAST sends yours. We turn FAST Adjusting into a 10-line Smart-DID grid across South Florida where every storm-damage claim is answered first, in the caller's language, and routed to a licensed public adjuster who fights to maximize the payout — never letting a five-figure claim slip to voicemail.</div>
+  <div class="demo-note">South Florida public-adjusting campaign · storm · water · roof · fire claims · 10-line pack · vanity numbers pending assignment</div>
+</header>
+
+<div class="wrap">
+  <section>
+    <div class="big"><b>The insight:</b> a public adjuster earns a percentage of a <b>$10,000–$150,000+</b> insurance claim — and in South Florida those claims are filed <b>after a storm, in English and Spanish, day and night, when the homeowner is panicking and about to accept a lowball offer.</b> Whoever answers first, documents the damage fastest, and fights the carrier hardest, wins — and maximizes — the claim. A phone number that just rings can't do that. A <b>Smart DID</b> can.</div>
+  </section>
+
+  <section>
+    <h2>Live benchmark — a typical restoration site vs. the offspring</h2>
+    <div class="bm">
+      <div class="bc now"><h3>The typical public adjuster — today</h3>
+        <ul>
+          <li>One number, <b>untracked</b> — no idea what drives a call</li>
+          <li>No <b>email or SMS</b> capture — claims die after hours</li>
+          <li>Voicemail on the post-storm call — the client signs the next PA</li>
+          <li>No <b>license #</b>, no "we maximize your payout" promise up top</li>
+          <li>No Spanish line in a Spanish-speaking market</li>
+          <li>Inbound only — you wait for the storm</li>
+        </ul></div>
+      <div class="bc next"><h3>The FAST Adjusting offspring</h3>
+        <ul>
+          <li><b>10 Smart DIDs</b>, every call source-tagged, recorded, mapped</li>
+          <li>Email + <b>SMS capture</b> and missed-call auto-callback</li>
+          <li><b>24/7 AI answer</b> — the fresh-damage call is never voicemail</li>
+          <li><b>Licensed + "we maximize your payout" guarantee</b> shown up top</li>
+          <li>Dedicated <b>Spanish line</b> with bilingual routing</li>
+          <li><b>Outbound dialer</b> works storm-hit ZIPs before the carrier settles</li>
+        </ul></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The 10-line Smart-DID grid — storm · water · roof · fire claims</h2>
+    <div class="grid10">
+      <div class="did"><span class="num">1</span><h4>Flagship / 24-7 New Storm-Damage Claim</h4><span class="vn">1-833-CLAIM-11</span><p>Priority ring, never voicemail — the fresh-damage line that owns your #1 promise: file fast, get paid.</p></div>
+      <div class="did"><span class="num">2</span><h4>Spanish / Bilingüe</h4><span class="vn">1-844-PAGO-YA-1</span><p>Routes Spanish callers to a bilingual adjuster path — a South Florida edge nobody else runs.</p></div>
+      <div class="did"><span class="num">3</span><h4>Denied / underpaid claim appeal</h4><span class="vn">1-800-NO-DENY-1</span><p>The reopened lowballed claim — high-value, its own tracked line.</p></div>
+      <div class="did"><span class="num">4</span><h4>Water / flood damage claim</h4><span class="vn">1-844-WET-CLAIM</span><p>Fast-response line routed straight to the on-call adjuster.</p></div>
+      <div class="did"><span class="num">5</span><h4>Roof / wind / hurricane claim</h4><span class="vn">1-855-ROOF-PAY</span><p>Surges on storm and hurricane alerts — capacity scales with the weather.</p></div>
+      <div class="did"><span class="num">6</span><h4>Fire &amp; smoke / total-loss claim</h4><span class="vn">1-844-FIRE-CLM</span><p>The high-ticket total-loss claim — separated and prioritized.</p></div>
+      <div class="did"><span class="num">7</span><h4>Google / paid-ads DID</h4><span class="vn">(305) tracked</span><p>Proves ad ROI to the dollar — swap the number, keep the data.</p></div>
+      <div class="did"><span class="num">8</span><h4>Commercial / condo &amp; HOA claim</h4><span class="vn">(954) tracked</span><p>Property managers and boards straight to the commercial claims desk.</p></div>
+      <div class="did"><span class="num">9</span><h4>Yard-sign / direct-mail DID</h4><span class="vn">(561) tracked</span><p>Attributes offline storm-ZIP campaigns so you stop guessing.</p></div>
+      <div class="did"><span class="num">10</span><h4>Outbound branded caller-ID</h4><span class="vn">1-833-CLAIM-11</span><p>The dialer's outbound face — branded, TCPA-compliant, recorded.</p></div>
+    </div>
+    <p style="color:var(--faint);font-size:12px;margin-top:10px">Vanity spellings and tracked numbers are examples — real DIDs pulled from the Telvergence wholesale portal before launch; nothing published unowned.</p>
+  </section>
+
+  <section>
+    <h2>Why "smart" — the brain behind the 10 numbers</h2>
+    <div class="brain">
+      <div class="row">
+        <span class="chip">Any of 10 DIDs</span><span class="arrow">→</span>
+        <span class="chip">source-tag (storm ZIP)</span><span class="arrow">→</span>
+        <span class="chip">language route</span><span class="arrow">→</span>
+        <span class="chip hot">priority (flood jumps queue)</span><span class="arrow">→</span>
+        <span class="chip">24/7 AI answer</span><span class="arrow">→</span>
+        <span class="chip">dispatch / SMS / auto-callback</span><span class="arrow">→</span>
+        <span class="chip hot">one command center</span>
+      </div>
+      <p style="color:var(--muted);font-size:13px;margin-top:14px;text-align:center">Each DID is <b>programmable</b>: it knows where the call came from, what language to route in, whether it's an active new-damage claim, and what to do if no one answers. Because Telvergence <b>controls the dial tone</b> (carrier API → our own private network), the routing lives on infrastructure we own — <b>your lead data never leaks</b> to a third-party platform.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>The critical core — a telemarketing-centric sales system</h2>
+    <div class="pillars">
+      <div class="p"><div class="n">Outbound</div><p>A predictive/manual dialer works storm-hit South Florida ZIPs for <b>new and underpaid claims</b> — branded caller-ID, compliant scripting, recordings, callbacks. You reach the homeowner before they accept the carrier's lowball.</p></div>
+      <div class="p"><div class="n">Inbound</div><p>10 tracked lines + 24/7 AI answer + SMS. Every source measured, every fresh-damage claim prioritized, every missed call auto-called-back.</p></div>
+      <div class="p"><div class="n">Command center</div><p>Calls, texts, booked jobs, ad spend and source — one live dashboard. You finally see which dollar produced which claim.</p></div>
+    </div>
+    <div class="comp">Built to compliance: <span>TCPA</span><span>Do-Not-Call scrubbed</span><span>State PA LIC # shown</span><span>Claims-rules ready</span> — lead data governed &amp; separated.</div>
+  </section>
+
+  <section>
+    <h2>Your live claims command center — real-time P&amp;L to the penny</h2>
+    <div style="background:linear-gradient(180deg,var(--card),#0b1426);border:1px solid var(--line);border-radius:16px;padding:20px">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px">
+        <span style="font:800 11px/1 ui-monospace,Menlo,monospace;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase">◉ FAST Adjusting · Live</span>
+        <span style="margin-left:auto;font:800 10px/1 ui-monospace,Menlo,monospace;letter-spacing:1px;color:var(--lime);display:inline-flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime);display:inline-block"></span>LIVE · to the second</span>
+      </div>
+      <div style="text-align:center;background:#0b1426;border:1px solid rgba(0,255,136,.3);border-radius:12px;padding:16px;margin-bottom:12px">
+        <div style="font:700 10px/1 ui-monospace,Menlo,monospace;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)">Signed-claim value · today</div>
+        <div style="font:900 clamp(28px,6vw,44px)/1 ui-monospace,Menlo,monospace;color:var(--lime);margin-top:8px">$214,800.00</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+        <div class="ec" style="text-align:left"><div class="k" style="color:var(--cyan)">6</div><div class="l">New claims signed today</div></div>
+        <div class="ec" style="text-align:left"><div class="k" style="color:var(--gold)">$21,480</div><div class="l">Your est. fee (10%)</div></div>
+        <div class="ec" style="text-align:left"><div class="k" style="color:var(--cyan)">118 · 9</div><div class="l">Calls · appts booked</div></div>
+        <div class="ec" style="text-align:left"><div class="k" style="color:var(--lime)">7.6%</div><div class="l">Cost of acquisition</div></div>
+      </div>
+      <div style="margin-top:14px;border-top:1px dashed var(--line);padding-top:14px">
+        <div style="font:800 10px/1 ui-monospace,Menlo,monospace;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:9px">Live controls — change anything instantly</div>
+        <div style="display:flex;gap:7px;flex-wrap:wrap;font:800 12px/1 'Segoe UI',system-ui;color:var(--ink)">
+          <span style="background:#0b1426;border:1px solid var(--line);border-radius:8px;padding:8px 11px">⏸ Stop</span>
+          <span style="background:#0b1426;border:1px solid var(--line);border-radius:8px;padding:8px 11px">▶ Start</span>
+          <span style="background:#0b1426;border:1px solid var(--line);border-radius:8px;padding:8px 11px">⏬ Slow</span>
+          <span style="background:#0b1426;border:1px solid var(--line);border-radius:8px;padding:8px 11px">⏫ Speed up</span>
+          <span style="background:#0b1426;border:1px solid var(--line);border-radius:8px;padding:8px 11px">🔀 Change leads</span>
+          <span style="background:#0b1426;border:1px solid var(--line);border-radius:8px;padding:8px 11px">📝 Change script</span>
+          <span style="background:#0b1426;border:1px solid var(--line);border-radius:8px;padding:8px 11px">🎁 Change offer</span>
+          <span style="background:#0b1426;border:1px solid var(--line);border-radius:8px;padding:8px 11px">📍 Change territory</span>
+          <span style="background:#0b1426;border:1px solid var(--line);border-radius:8px;padding:8px 11px">📡 Change channel</span>
+        </div>
+      </div>
+    </div>
+    <p style="color:var(--muted);font-size:13.5px;margin-top:12px">Every call feeds a bidirectional, real-time conduit your customized "second brain" analyzes on the fly — then you, or the AI, adjust the leads, script, offer, territory, or channel instantly and watch your P&amp;L move to the penny. <b style="color:var(--ink)">You fight the claim — we make the phone ring.</b></p>
+    <p style="color:var(--muted);font-size:13.5px;margin-top:8px">The first time it rings, you're hooked — every ring becomes the <b style="color:var(--ink)">sound of a new signed claim</b>. From there it's simple: turn up the volume and quality of the calls.</p>
+    <p style="color:var(--faint);font-size:11px;margin-top:6px">Illustrative live-demo figures for a public-adjusting campaign; actual results vary.</p>
+  </section>
+
+
+  <section>
+    <h2>Your South Florida service area — live &amp; geo-routed</h2>
+    <div class="mapwrap">
+      <div class="mapfallback">🗺️ South Florida Service Area<br>Miami-Dade · Broward · Palm Beach</div>
+      <iframe title="South Florida service area" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Fort+Lauderdale,+FL&z=8&output=embed"></iframe>
+    </div>
+    <p class="mapnote">Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest available adjuster across the tri-county — and outbound storm campaigns target the exact neighborhoods the weather just hit.</p>
+  </section>
+
+  <section>
+    <h2>The FAST Adjusting Service Platform — our UCCPXaaS + automation core</h2>
+    <div class="plat"><b>UCCPXaaS</b> = Unified Communications + Contact-Center + Communications-Platform + Everything-as-a-Service — the proprietary infrastructure that turns ten phone numbers into an autonomous revenue engine, owned end-to-end, not rented from a third party.</div>
+    <div class="stack">
+      <div class="layer"><span class="ln">1</span><h4>Smart-DID Sensor Layer <span class="tech">CPaaS</span></h4><p>Ten programmable numbers — each source-tagged, recorded, and geo-aware.</p></div>
+      <div class="layer"><span class="ln">2</span><h4>Carrier &amp; Dial-Tone Control <span class="tech">UCaaS</span></h4><p>We own the network path — routing runs on infrastructure we control, so your lead data never leaks.</p></div>
+      <div class="layer"><span class="ln">3</span><h4>Intelligent Routing Brain <span class="tech">AI&nbsp;ROUTING</span></h4><p>Geo, language, and emergency priority decided in milliseconds — the fresh-damage claim always jumps the queue.</p></div>
+      <div class="layer"><span class="ln">4</span><h4>Contact-Center Layer <span class="tech">CCaaS</span></h4><p>24/7 AI answer, live agents, and a predictive/manual outbound dialer — inbound and outbound in one system.</p></div>
+      <div class="layer"><span class="ln">5</span><h4>Automation &amp; Workflow <span class="tech">iPaaS</span></h4><p>CRM sync, SMS follow-up, missed-call auto-callback, review generation, and booking — hands-off.</p></div>
+      <div class="layer"><span class="ln">6</span><h4>Command Center <span class="tech">XaaS</span></h4><p>Every call, text, job, and ad dollar on one live dashboard — the whole business in one screen.</p></div>
+    </div>
+    <p style="color:var(--faint);font-size:11px;margin-top:10px">Proprietary platform architecture. Carrier &amp; infrastructure layer powered by Telvergence.</p>
+  </section>
+  <section>
+    <h2>The 90-second walkthrough</h2>
+    <div class="video">
+      <span class="tag">Video · like Restoration Royalties &amp; YES Electrical</span>
+      <div class="play">▶</div>
+      <div class="vt">FAST Adjusting Service, bred with Telvergence — 10 numbers, one brain</div>
+      <div class="vs">A typical site vs. the offspring · the Smart-DID grid · a flood call booked in 90 seconds. (Embed final MP4 / YouTube here.)</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The 10-line pack — risk reversed onto us</h2>
+    <div class="offer">
+      Start with the <b>10-Line Smart-DID Pack + 30-Day Storm-Capture Pilot.</b> We stand up all ten numbers, the AI answer, the Spanish route, and a starter outbound campaign across your target ZIPs. For 30 days every inbound claim is answered and dispatched and the dialer works storm-hit neighborhoods. <b>You see the signed claims first.</b> No contract, no SSN/credit info; Telvergence <b>advances the $22.95/line before you're ever charged</b>; 100% satisfaction / full refund. <b>You simply post a card on file that is charged only if and when your lines are successfully provisioned and you're satisfied with the call clarity and hand-off — first billed 17 days after enrollment, yet your phones ring day one, so your first jobs should cover it, or Telvergence pays your first month. You own your numbers and can port them to any carrier, anytime.</b>
+    </div>
+    <div class="econ">
+      <div class="ec"><div class="k">10</div><div class="l">Smart DIDs, each a sensor + router</div></div>
+      <div class="ec"><div class="k">$0</div><div class="l">out of pocket first — we advance the lines</div></div>
+      <div class="ec"><div class="k">30 days</div><div class="l">see booked jobs before you scale</div></div>
+    </div>
+    <div style="margin-top:16px;background:linear-gradient(180deg,rgba(0,255,136,.08),rgba(0,212,255,.05));border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center">
+      <div style="font:800 12px/1 ui-monospace,Menlo,monospace;letter-spacing:2px;color:var(--lime);text-transform:uppercase">All it takes to start</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:14px 0 8px">
+        <span style="background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-weight:800"><span style="color:var(--cyan)">①</span> A signed LOA <span style="color:var(--faint);font-weight:600;font-size:12px">(Letter of Agency)</span></span>
+        <span style="background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-weight:800"><span style="color:var(--cyan)">②</span> A card on file</span>
+      </div>
+      <p style="color:var(--muted);font-size:14px;max-width:64ch;margin:0 auto">That's it. The system builds itself and generates cash on autopilot — eliminating the majority of your costs, risks, and labor. You focus on signing and fighting claims.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Engagement tiers <span style="color:var(--faint);text-transform:none;letter-spacing:0"> (proposed &amp; adjustable)</span></h2>
+    <table>
+      <tr><td><b>Foundation</b> — 10-line grid + AI answer</td><td>$1,500 / mo</td></tr>
+      <tr class="rec"><td><b>Growth</b> — grid + outbound storm dialer + command center <span style="font-size:11px">recommended</span></td><td><b>$3,500 / mo</b></td></tr>
+      <tr><td><b>Performance split</b></td><td>share of new claims signed</td></tr>
+      <tr><td><b>Multi-market add-on</b> (add Tampa / Orlando / Midwest)</td><td>~$1,500 / market / mo</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Grow beyond your own claims — refer &amp; earn</h2>
+    <p style="color:var(--muted);font-size:14.5px;max-width:68ch;margin-bottom:14px">Every card the app gives you can be handed to another adjuster or contractor. They text to get their own 10-line grid — and you earn. A network that pays you to grow it.</p>
+    <div class="pillars">
+      <div class="p"><div class="n">Refer in a text</div><p>Hand your digital card to a peer; they text Telvergence and a few SMS later their own Smart-DID grid is live — and you collect a <b>referral bonus + overrides</b>.</p></div>
+      <div class="p"><div class="n">Overflow to you</div><p>When our operator bank hits capacity, overflow claim calls route to <b>your</b> mobile — extra signed claims you'd never have gotten.</p></div>
+      <div class="p"><div class="n">Own your brand</div><p>Work your way up to your <b>own white-labeled brand</b> for a one-time <b>$25K</b> — a turnkey brand on a network that's already running.</p></div>
+    </div>
+    <div style="display:flex;gap:9px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:16px;font-weight:800;font-size:13.5px">
+      <span style="background:var(--card);border:1px solid var(--line);border-radius:9px;padding:9px 13px">Free agent</span>
+      <span style="color:var(--faint)">→</span>
+      <span style="background:var(--card);border:1px solid var(--line);border-radius:9px;padding:9px 13px">Distributor · overrides</span>
+      <span style="color:var(--faint)">→</span>
+      <span style="background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.4);border-radius:9px;padding:9px 13px;color:var(--lime)">Own white-label · $25K</span>
+    </div>
+    <p style="color:var(--faint);font-size:11px;margin-top:12px;text-align:center">Referral/override earnings vary and are not guaranteed; program subject to its terms and applicable FTC/marketing rules.</p>
+  </section>
+
+  <section style="border-bottom:none">
+    <h2>The ask</h2>
+    <p style="color:var(--muted);font-size:15px">Let's stand up your 10-line Smart-DID claims grid and the 30-day South Florida storm-capture pilot — a 20-minute call is all we need to begin. <b style="color:var(--ink)">I can have your phones ringing within 24 hours.</b></p>
+    <p style="font-family:Georgia,serif;font-weight:800;font-size:clamp(18px,3vw,24px);color:var(--ink);margin:14px 0 4px">Give me <span style="color:var(--gold)">1% of your trust</span> — I'll earn the other 99.</p>
+    <div style="border-left:4px solid var(--ember);background:rgba(255,106,43,.08);border-radius:8px;padding:13px 15px;font-size:14px;color:var(--muted);margin:14px 0"><b style="color:var(--ink)">The alternative:</b> pass, and the next call goes to the public adjuster up the street — who corners your area's storm claims, then resells you the overflow at 50%. Territories are exclusive and claimed once.</div>
+    <div class="cta">
+      <a class="call" href="tel:+16892421041">📞 Call to begin — (689) 242-1041</a>
+      <a class="book" href="mailto:contact@fastadjustingservice.com?subject=FAST%20Adjusting%20Service%20—%2010-Line%20Pilot">✉️ contact@fastadjustingservice.com</a>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-weight:700;font-size:15px;margin:18px 0 0">You have nothing to lose and everything to gain.</p>
+    <p style="font-family:Georgia,serif;font-weight:800;font-size:clamp(20px,3.4vw,28px);text-align:center;margin:10px 0 4px;color:var(--ink)">You decide. <span style="background:linear-gradient(90deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">What's it going to be?</span></p>
+    <p style="text-align:center;color:var(--muted);font-size:14px;max-width:64ch;margin:14px auto 0">And I'll be holding your hand the entire way — fully committed to your success, without a dollar out of pocket from you — until you see all this in action and the money coming in first. OK?</p>
+    <div class="sig">Looking forward to building this with you,<br><b>David Drew Allen</b> · President, Telvergence, Inc. · 689-242-1041 · contact@fastadjustingservice.com</div>
+  </section>
+
+  
+<!-- PAYSECTION START -->
+<section class="paybox" id="pay" aria-label="Secure payments">
+  <div class="pay-inner">
+    <div class="pay-badge">🔒 SECURE PAYMENTS</div>
+    <h3 class="pay-h">Pay your deposit or invoice — safely, in seconds.</h3>
+    <p class="pay-p">Approved for service? Lock your crew's spot with a secure deposit, or settle an invoice online. Call to pay by card. Card payments are processed on <b>Square</b> and <b>PayPal</b>'s PCI-compliant, encrypted checkout — we never see or store your card number.</p>
+    <div class="pay-grid">
+      <a class="pay-card sq" href="tel:+18552235878" rel="nofollow noopener" target="_blank">
+        <div class="pay-logo">◼ Square</div>
+        <div class="pay-t">Pay by Card · Square Checkout</div>
+        <div class="pay-s">Visa · Mastercard · Amex · Discover · Apple Pay · Google Pay · Cash App</div>
+        <span class="pay-btn sqb">Pay with Square →</span>
+      </a>
+      <a class="pay-card pp" href="tel:+18552235878" rel="nofollow noopener" target="_blank">
+        <div class="pay-logo"><span class="ppa">Pay</span><span class="ppb">Pal</span></div>
+        <div class="pay-t">Pay with PayPal · Pay in 4</div>
+        <div class="pay-s">PayPal balance · Bank · Card · PayPal Credit · Pay-in-4 installments</div>
+        <span class="pay-btn ppbn">Pay with PayPal →</span>
+      </a>
+    </div>
+    <p class="pay-note">💡 <b>For business owners:</b> this block accepts <b>your</b> Square &amp; PayPal links — swap the two buttons for your own checkout URLs and payments land in your account. Or run it on <b>ours</b> to buy live, exclusive leads as we generate them. No setup fees, no long-term contract.</p>
+  </div>
+</section>
+<style>
+  .paybox{border-top:1px solid #22304f;padding:34px 0 6px}
+  .pay-inner{max-width:940px;margin:0 auto;padding:0 20px}
+  .pay-badge{display:inline-block;font:800 11px/1 "Segoe UI",system-ui,sans-serif;letter-spacing:2px;color:#00FF88;border:1px solid rgba(0,255,136,.4);border-radius:999px;padding:6px 12px;background:rgba(0,255,136,.06)}
+  .pay-h{color:#eef4ff;font:800 clamp(21px,3.4vw,27px)/1.25 "Segoe UI",system-ui,sans-serif;margin:12px 0 6px}
+  .pay-p{color:#9fb3d6;font-size:14.5px;line-height:1.55;max-width:70ch;margin:0 0 4px}
+  .pay-grid{display:grid;gap:14px;margin:18px 0 6px}@media(min-width:640px){.pay-grid{grid-template-columns:1fr 1fr}}
+  .pay-card{display:block;text-decoration:none;background:#101a33;border:1px solid #22304f;border-radius:14px;padding:18px;transition:border-color .15s,transform .15s}
+  .pay-card:hover{transform:translateY(-2px)}
+  .pay-card.sq:hover{border-color:#00D4FF}
+  .pay-card.pp:hover{border-color:#f0b64a}
+  .pay-logo{font:800 22px/1 "Segoe UI",system-ui,sans-serif;color:#eef4ff;margin-bottom:8px}
+  .pay-card.sq .pay-logo{color:#eef4ff}
+  .ppa{color:#0070E0}.ppb{color:#00B3E6}
+  .pay-t{color:#eef4ff;font-weight:800;font-size:15.5px}
+  .pay-s{color:#9fb3d6;font-size:12.5px;margin-top:4px;line-height:1.45}
+  .pay-btn{display:inline-block;margin-top:14px;font-weight:800;font-size:14.5px;padding:11px 18px;border-radius:11px}
+  .sqb{background:linear-gradient(180deg,#00D4FF,#0098c7);color:#03151a}
+  .ppbn{background:linear-gradient(180deg,#ffc439,#f0b64a);color:#1a2340}
+  .pay-note{color:#9fb3d6;font-size:12.5px;line-height:1.55;margin-top:12px;border-top:1px dashed #22304f;padding-top:12px}
+</style>
+<!-- PAYSECTION END -->
+
+<div class="winnet">
+  <div class="wb">🔗 RESTORATION ROYALTY SUB-NETWORK</div>
+  <h3>Three brands. One app. Every storm job shared in real time.</h3>
+  <p class="wp">Restoration Royalties, FAST Adjusting Service, and YES Electrical share one Smart-DID network and app — when a storm hits a home the lead flows across all three: restoration dries it out, the public adjuster maximizes the claim, the electrician restores the power. Shared leads, shared customers, and real-time analytics &amp; automation that expedite every job and every payout.</p>
+  <div class="wr">
+    <a class="wc" href="/rr/"><div class="t">🌊 Restoration Royalties</div><div class="s">Mold · Water · Roofing</div></a>
+    <a class="wc here" href="/fast/"><div class="t">📋 FAST Adjusting Service · You are here</div><div class="s">Public adjusting · Claims</div></a>
+    <a class="wc" href="/yes/"><div class="t">⚡ YES Electrical</div><div class="s">Power · Generators</div></a>
+  </div>
+  <p class="prov"><a href="/hub/" style="color:#00D4FF">↗ Sub-Network hub</a> · <a href="/plan/" style="color:#00D4FF">Master plan</a> · Powered by <b style="color:#9fb3d6">THE WEATHER INTELLIGENCE NETWORK</b> · ‹Your City› Storm Dispatch.</p>
+</div>
+
+<div class="disclaimer">
+    Prepared for FAST Adjusting Service (South Florida — Miami-Dade, Broward, Palm Beach) as a discussion proposal. Public insurance adjusting is licensed and regulated; the state public-adjuster license number of record is displayed on all public-facing material, and all solicitation and claims comply with applicable state adjusting rules, TCPA and Do-Not-Call requirements, reviewed before launch. Onboarding guarantee/indemnification is counsel-reviewed before each send. Vanity numbers shown are examples pending assignment from the wholesale portal. Confidential — TELVERGENCE.
+  </div>
+</div>

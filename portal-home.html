@@ -1,0 +1,76 @@
+<link rel="canonical" href="/">
+<title>Telvergence — Campaign Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root{--ink:#0b0e14;--panel:#161c2b;--panel2:#1a2233;--line:#26304a;--line2:#354162;--gold:#e7b64b;--gold2:#f6d27a;--ember:#ff6a3d;--smoke:#8a94a8;--text:#eef1f7;--muted:#aeb6c6;--ok:#37d39b}
+  *{box-sizing:border-box}html,body{margin:0;padding:0}
+  body{background:radial-gradient(900px 460px at 82% -10%,rgba(255,106,61,.15),transparent 60%),radial-gradient(700px 480px at 3% 8%,rgba(231,182,75,.10),transparent 55%),var(--ink);color:var(--text);font:16px/1.6 "Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+  .crown{color:var(--gold)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:700;border:1px solid var(--line2);cursor:pointer;font-size:14px}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#241b05;border-color:transparent}
+  .gate{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:radial-gradient(700px 400px at 50% 30%,rgba(231,182,75,.10),transparent 60%),var(--ink);padding:24px}
+  .gate.hide{display:none}
+  .vault{width:100%;max-width:420px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line2);border-radius:18px;padding:34px 28px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .vault .seal{font-size:40px;color:var(--gold2)}.vault h1{font-size:19px;margin:14px 0 4px}.vault p{color:var(--muted);font-size:13.5px;margin:0 0 18px}
+  .vault input{width:100%;padding:13px 14px;border-radius:10px;border:1px solid var(--line2);background:#0c111b;color:var(--text);font-size:15px;letter-spacing:1px;text-align:center}
+  .vault input:focus{outline:2px solid var(--gold);outline-offset:1px}
+  .vault .go{margin-top:12px;width:100%;justify-content:center}.vault .err{color:#ff5d5d;font-size:12.5px;min-height:16px;margin-top:10px}.vault .fine{color:var(--smoke);font-size:11px;margin-top:14px;line-height:1.6}
+  .shake{animation:shake .35s}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+  header{border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+  .hero .wrap{padding:56px 22px 30px}.eyebrow{color:var(--gold);font-weight:800;letter-spacing:2.6px;text-transform:uppercase;font-size:11.5px}
+  h1{font-size:clamp(30px,4.6vw,50px);line-height:1.05;margin:12px 0 12px;font-weight:800;text-wrap:balance}
+  h1 span{background:linear-gradient(135deg,var(--gold2),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{color:var(--muted);max-width:620px;font-size:clamp(15px,2vw,18px)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;padding:14px 0 60px}
+  .card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;transition:.15s}
+  .card:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .card h3{margin:0 0 4px;font-size:17px}.card .u{font-size:12px;color:var(--gold2)}.card p{color:var(--muted);font-size:13.5px;margin:9px 0 0}
+  footer{border-top:1px solid var(--line);padding:26px 0 50px;color:var(--smoke);font-size:12px}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="gate" id="gate">
+  <div class="vault" id="vault">
+    <div class="seal">&#9819;</div>
+    <h1>Telvergence Portal</h1>
+    <p>Enter passcode to continue</p>
+    <input id="pc" type="password" autocomplete="off" placeholder="Passcode" aria-label="Passcode" />
+    <button class="btn btn-gold go" id="go">Unlock &#8594;</button>
+    <div class="err" id="err"></div>
+    <div class="fine">Secure preview &middot; light client-side gate.</div>
+  </div>
+</div>
+
+<header><div class="wrap nav">
+  <div class="brand"><span class="crown">&#9819;</span> TELVERGENCE</div>
+  <a class="btn btn-gold" href="./showroom.html">Industry Showroom</a>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <div class="eyebrow">Campaign Portal</div>
+  <h1>Branded local lines that <span>ring, text, and convert.</span></h1>
+  <p class="lead">The Telvergence campaign showroom &mdash; every vertical below runs the same proven Smart-DID "Pitch &amp; Catch" model, provisioned and QA'd with a written guarantee.</p>
+</div></div>
+
+<div class="wrap"><div class="grid">
+  <a class="card" href="./showroom.html"><h3>&#128225; Industry Showroom</h3><div class="u">/showroom</div><p>The master portal &mdash; capability stack + every vertical.</p></a>
+  <a class="card" href="./win.html"><h3>&#127786;&#65039; WIN &middot; Weather Intelligence</h3><div class="u">/win</div><p>Storm-triggered roofing outreach + drone video-to-quote.</p></a>
+  <a class="card" href="./serotonin.html"><h3>&#129504; Serotonin Centers</h3><div class="u">/serotonin</div><p>Wellness patient-acquisition campaign.</p></a>
+  <a class="card" href="./bodywellness.html"><h3>&#127807; Body Wellness</h3><div class="u">/bodywellness</div><p>Med-spa / recovery member acquisition.</p></a>
+  <a class="card" href="./spin.html"><h3>&#128692; Spin Machine</h3><div class="u">/spin</div><p>Studio membership acquisition campaign.</p></a>
+  <a class="card" href="./onboarding.html"><h3>&#128222; Onboarding + Guarantee</h3><div class="u">/onboarding</div><p>Google listing &rarr; Smart-DID, QA-gated, written guarantee.</p></a>
+</div></div>
+
+<footer><div class="wrap">portal.telvergence.com &middot; &#9819; Telvergence &middot; Branded local Smart-DID campaigns. Demo content &mdash; confirm pricing &amp; guarantee terms before external use.</div></footer>
+
+<script>
+  var PASSCODE="Telvergence-8832"; // <-- change this one line to update the shared passcode
+  var gate=document.getElementById('gate'),vault=document.getElementById('vault'),pc=document.getElementById('pc'),err=document.getElementById('err');
+  function unlock(){ if(pc.value===PASSCODE){ try{sessionStorage.setItem('cc_auth','1');}catch(e){} gate.classList.add('hide'); } else { err.textContent='Incorrect passcode.'; vault.classList.remove('shake'); void vault.offsetWidth; vault.classList.add('shake'); pc.select(); } }
+  try{ if(sessionStorage.getItem('cc_auth')==='1'){ gate.classList.add('hide'); } }catch(e){}
+  document.getElementById('go').addEventListener('click',unlock);
+  pc.addEventListener('keydown',function(e){ if(e.key==='Enter') unlock(); });
+  window.addEventListener('load',function(){ if(!gate.classList.contains('hide')) pc.focus(); });
+</script>
