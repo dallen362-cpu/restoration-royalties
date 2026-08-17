@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /jimmy/
+Disallow: /vault/
+Disallow: /command/
+Disallow: /studio/
+Disallow: /menu/
+
+Sitemap: https://restorationroyalties.com/sitemap.xml
