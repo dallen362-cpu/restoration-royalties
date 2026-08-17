@@ -4,167 +4,110 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Final Materials Index</title>
+<title>Final Delivery</title>
 <style>
   :root{
-    --void:#050912; --deep:#080F1E; --panel:#0C1424; --panel2:#111C31; --line:#1E2E4A; --line2:#2A3F63;
-    --ink:#EAF2FF; --muted:#8FA3C0; --dim:#61759A;
+    --void:#050912; --panel:#0C1424; --panel2:#111C31; --line:#1E2E4A; --line2:#2A3F63;
+    --ink:#EAF2FF; --muted:#8FA3C0; --dim:#5E729A;
     --cyan:#00D4FF; --lime:#00FF88; --gold:#FFC24B; --ember:#FF7A45;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--void);color:var(--ink);
-    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased}
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:940px;margin:0 auto;padding:0 24px}
-
-  header.cover{padding:58px 0 34px;border-bottom:1px solid var(--line)}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+  header{padding:52px 0 30px;border-bottom:1px solid var(--line)}
   .eyebrow{display:inline-block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);
-    border:1px solid rgba(0,212,255,.35);border-radius:999px;padding:6px 14px;margin-bottom:20px}
-  h1{margin:0 0 12px;font-size:clamp(30px,5.4vw,48px);line-height:1.06;letter-spacing:-.025em;font-weight:800}
+    border:1px solid rgba(0,212,255,.35);border-radius:999px;padding:6px 14px;margin-bottom:18px}
+  h1{margin:0 0 10px;font-size:clamp(28px,5vw,44px);letter-spacing:-.025em;font-weight:800}
   h1 span{color:var(--lime)}
-  .sub{margin:0;max-width:60ch;color:var(--muted);font-size:17px}
-
-  section{padding:40px 0;border-bottom:1px solid var(--line)}
-  section:last-of-type{border-bottom:0}
-  .kick{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin:0 0 6px}
-  h2{margin:0 0 6px;font-size:23px;letter-spacing:-.02em;font-weight:800}
-  h2 .pc{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--void);background:var(--gold);
-    border-radius:5px;padding:3px 9px;margin-left:10px;vertical-align:middle;font-variant-numeric:tabular-nums}
-  .lead{margin:2px 0 20px;color:var(--muted);font-size:14px}
-
+  .sub{margin:0;color:var(--muted);font-size:16px;max-width:60ch}
+  .base{margin-top:16px;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;color:var(--gold)}
+  section{padding:34px 0;border-bottom:1px solid var(--line)}
+  .kick{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:0 0 4px}
+  h2{margin:0 0 16px;font-size:22px;letter-spacing:-.02em;font-weight:800}
   .rows{display:grid;gap:10px}
-  .row{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;
-    background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px 18px;
-    transition:border-color .16s,background .16s}
-  .row:hover{border-color:rgba(0,212,255,.5);background:var(--panel2)}
-  .row .t{font-size:15px;font-weight:700}
-  .row .d{font-size:13px;color:var(--muted);margin-top:2px}
-  .row .u{font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--cyan);
-    text-align:right;word-break:break-all}
-  .tag{display:inline-block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;
-    color:var(--void);border-radius:4px;padding:2px 7px;margin-right:8px;vertical-align:middle}
-  .tag.cy{background:var(--cyan)} .tag.li{background:var(--lime)} .tag.go{background:var(--gold)} .tag.em{background:var(--ember)}
-
+  .row{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;background:var(--panel);
+    border:1px solid var(--line);border-radius:12px;padding:14px 18px;transition:border-color .15s}
+  .row:hover{border-color:rgba(0,212,255,.5)}
+  .row.hot{border-color:rgba(0,255,136,.35);background:linear-gradient(180deg,rgba(0,255,136,.06),var(--panel))}
+  .t{font-size:15px;font-weight:700}
+  .d{font-size:13px;color:var(--muted);margin-top:2px}
+  .u{font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;color:var(--cyan);text-align:right;word-break:break-all}
+  .pw{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--void);background:var(--gold);border-radius:4px;padding:2px 7px;margin-left:8px}
   .note{margin-top:22px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold);
     border-radius:12px;padding:16px 18px;color:var(--muted);font-size:13px}
   .note b{color:var(--ink)}
-  footer{padding:28px 0 56px;color:var(--dim);font-size:12px}
-  footer p{margin:0 0 6px;max-width:72ch}
+  footer{padding:26px 0 56px;color:var(--dim);font-size:12px}
 </style>
 </head>
 <body>
-
-<header class="cover"><div class="wrap">
-  <div class="eyebrow">Final materials · August 17, 2026</div>
-  <h1>Everything, ready to <span>present.</span></h1>
-  <p class="sub">The complete, perfected set — presentation deck, client portfolio, live sites, and the full review catalog. One page, every link, every passcode.</p>
+<header><div class="wrap">
+  <div class="eyebrow">Final delivery · for review</div>
+  <h1>Everything, <span>ready to sell.</span></h1>
+  <p class="sub">Your complete Telvergence portfolio — live and verified. Every link below works right now; add each path to the base address.</p>
+  <div class="base">Base (works now): https://restoration-royalties.pages.dev &nbsp;→&nbsp; soon: https://restorationroyalties.com</div>
 </div></header>
 
 <section><div class="wrap">
-  <p class="kick">Lead with these</p>
-  <h2>Presentation set</h2>
-  <p class="lead">What you put in front of Jimmy or any prospect.</p>
+  <p class="kick">Send these to prospects</p>
+  <h2>Your selling surfaces</h2>
   <div class="rows">
-    <a class="row" href="https://restorationroyalties.com/jimmy/">
-      <div><div class="t"><span class="tag go">Portfolio</span>Launch Portfolio — the flagship</div>
-        <div class="d">Live site captures of all four funnels, the flywheel, the campaign, the close. Passcode <b>ROYALTY2026</b>.</div></div>
-      <div class="u">restorationroyalties.com/jimmy/</div>
-    </a>
-    <div class="row">
-      <div><div class="t"><span class="tag cy">Deck</span>Master Packet — PowerPoint (16 slides)</div>
-        <div class="d">The same story in slide form, with the live site screenshots. Delivered as a file in the chat.</div></div>
-      <div class="u">Telvergence-Master-Packet-RR-2026-08.pptx</div>
-    </div>
-    <a class="row" href="https://restorationroyalties.com/hub/">
-      <div><div class="t"><span class="tag cy">Deck</span>Sub-Network Hub</div>
-        <div class="d">The full argument in one scroll — shared-lead engine, command center, growth ladder, close.</div></div>
-      <div class="u">restorationroyalties.com/hub/</div>
-    </a>
+    <a class="row hot" href="https://restoration-royalties.pages.dev/">
+      <div><div class="t">🌐 The front door</div><div class="d">The domain itself — sells in 5 seconds: hook, offer, no-brainer, proof, reserve.</div></div>
+      <div class="u">/ (the bare domain)</div></a>
+    <a class="row hot" href="https://restoration-royalties.pages.dev/pocket/">
+      <div><div class="t">🚀 Pocket Presenter</div><div class="d">Your carry link — the whole pitch + every demo in one screen. Save to home screen.</div></div>
+      <div class="u">/pocket/</div></a>
+    <a class="row" href="https://restoration-royalties.pages.dev/demo/">
+      <div><div class="t">▶ Capabilities Demo</div><div class="d">The full story that closes the room.</div></div>
+      <div class="u">/demo/</div></a>
+    <a class="row" href="https://restoration-royalties.pages.dev/studio/">
+      <div><div class="t">📟 Number Studio<span class="pw">ACTIVATE</span></div><div class="d">Type a word → your number, live. The interactive wow.</div></div>
+      <div class="u">/studio/</div></a>
   </div>
 </div></section>
 
 <section><div class="wrap">
-  <p class="kick">The product</p>
-  <h2>The four live sites</h2>
-  <p class="lead">Standalone, shareable, public. Send any one on its own.</p>
+  <p class="kick">The four client sites</p>
+  <h2>Live proof</h2>
   <div class="rows">
-    <a class="row" href="https://restorationroyalties.com/rr/">
-      <div><div class="t"><span class="tag cy">RR</span>Restoration Royalties</div>
-        <div class="d">Mold · water damage · roofing — South Florida. The assigned (786) 400-1145→1154 block.</div></div>
-      <div class="u">restorationroyalties.com/rr/</div>
-    </a>
-    <a class="row" href="https://restorationroyalties.com/fast/">
-      <div><div class="t"><span class="tag go">FAST</span>FAST Adjusting Service</div>
-        <div class="d">Public-adjusting funnel with the live claims command center.</div></div>
-      <div class="u">restorationroyalties.com/fast/</div>
-    </a>
-    <a class="row" href="https://restorationroyalties.com/yes/">
-      <div><div class="t"><span class="tag em">YES</span>YES — Your Electrical Solutions</div>
-        <div class="d">Miami electrical prospect build — proves the model reproduces into any trade.</div></div>
-      <div class="u">restorationroyalties.com/yes/</div>
-    </a>
-    <a class="row" href="https://restorationroyalties.com/telverge/">
-      <div><div class="t"><span class="tag li">TELVERGE</span>TELVERGE platform edition</div>
-        <div class="d">Ten example vanity numbers — turns a curious contractor into an enrolled partner.</div></div>
-      <div class="u">restorationroyalties.com/telverge/</div>
-    </a>
+    <a class="row" href="https://restoration-royalties.pages.dev/rr/"><div><div class="t">🌊 Restoration Royalties</div><div class="d">Mold · water · roofing — 786-400 block assigned.</div></div><div class="u">/rr/</div></a>
+    <a class="row" href="https://restoration-royalties.pages.dev/fast/"><div><div class="t">🛡️ FAST Adjusting</div><div class="d">Public adjusting · 10 DIDs · 855-2-ADJUST.</div></div><div class="u">/fast/</div></a>
+    <a class="row" href="https://restoration-royalties.pages.dev/yes/"><div><div class="t">⚡ YES Electrical</div><div class="d">Template-ready · real numbers on interest.</div></div><div class="u">/yes/</div></a>
+    <a class="row" href="https://restoration-royalties.pages.dev/telverge/"><div><div class="t">🔢 TELVERGE</div><div class="d">The vanity-number platform edition.</div></div><div class="u">/telverge/</div></a>
   </div>
 </div></section>
 
 <section><div class="wrap">
-  <p class="kick">Review &amp; catalog</p>
-  <h2>The full body of work <span class="pc">passcode 32836</span></h2>
-  <p class="lead">Everything ever built, in one searchable inventory — 85 pages across eight categories.</p>
+  <p class="kick">For Jimmy tonight</p>
+  <h2>The customized portfolio</h2>
   <div class="rows">
-    <a class="row" href="https://restorationroyalties.com/vault/">
-      <div><div class="t"><span class="tag cy">Inventory</span>Master Inventory — all 85 pages</div>
-        <div class="d">Client funnels, platform builds, weather intelligence, ops consoles, decks, agreements. Passcode <b>32836</b>.</div></div>
-      <div class="u">restorationroyalties.com/vault/</div>
-    </a>
-    <a class="row" href="https://restorationroyalties.com/showroom/">
-      <div><div class="t"><span class="tag go">Showroom</span>Telvergence Showroom</div>
-        <div class="d">The curated public showroom of the network's best work.</div></div>
-      <div class="u">restorationroyalties.com/showroom/</div>
-    </a>
-    <a class="row" href="https://restorationroyalties.com/">
-      <div><div class="t"><span class="tag li">Directory</span>Site directory</div>
-        <div class="d">The public menu linking every funnel and catalog page.</div></div>
-      <div class="u">restorationroyalties.com</div>
-    </a>
+    <a class="row" href="https://restoration-royalties.pages.dev/jimmy/">
+      <div><div class="t">👑 Launch Portfolio<span class="pw">ROYALTY2026</span></div>
+        <div class="d">FAST + RR + Electric, the assembly-line engine, the $25K white-label — captures, flywheel, campaign, close.</div></div>
+      <div class="u">/jimmy/</div></a>
   </div>
 </div></section>
 
 <section><div class="wrap">
-  <p class="kick">Supporting</p>
-  <h2>Plans &amp; the math</h2>
+  <p class="kick">Your owner tools</p>
+  <h2>Behind the scenes</h2>
   <div class="rows">
-    <a class="row" href="https://restorationroyalties.com/plan/">
-      <div><div class="t">The WIN Flywheel — master business plan</div>
-        <div class="d">The flywheel, unit economics, market board, exit matrix.</div></div>
-      <div class="u">restorationroyalties.com/plan/</div>
-    </a>
-    <a class="row" href="https://restorationroyalties.com/prospectus/">
-      <div><div class="t">Revenue Prospectus + live calculator</div>
-        <div class="d">Exclusive-territory math, top-ten trades, ARR scenarios.</div></div>
-      <div class="u">restorationroyalties.com/prospectus/</div>
-    </a>
-    <a class="row" href="https://restorationroyalties.com/dispatch/">
-      <div><div class="t">WIN Storm Dispatch console</div>
-        <div class="d">Nationwide weather grid, partner beacons by area code and exchange.</div></div>
-      <div class="u">restorationroyalties.com/dispatch/</div>
-    </a>
+    <a class="row" href="https://restoration-royalties.pages.dev/command/"><div><div class="t">🎛️ Owner Command Center<span class="pw">32836</span></div><div class="d">App-format catalog of all 88 builds + live domains + credentials.</div></div><div class="u">/command/</div></a>
+    <a class="row" href="https://restoration-royalties.pages.dev/vault/"><div><div class="t">🗄️ Master Inventory<span class="pw">32836</span></div><div class="d">Searchable list of every page.</div></div><div class="u">/vault/</div></a>
+    <a class="row" href="https://restoration-royalties.pages.dev/menu/"><div><div class="t">🧭 Network directory</div><div class="d">Quick nav to every page.</div></div><div class="u">/menu/</div></a>
+    <a class="row" href="https://restoration-royalties.pages.dev/hub/"><div><div class="t">🎯 Sub-Network Hub · plan · prospectus</div><div class="d">The master deck and the numbers.</div></div><div class="u">/hub/ · /plan/ · /prospectus/</div></a>
   </div>
-
   <div class="note">
-    <b>Two access notes.</b> The links resolve on <b>restorationroyalties.com</b> once DNS finishes propagating (already live at <b>restoration-royalties.pages.dev</b> in the meantime — same paths). <b>/jimmy/</b> uses passcode <b>ROYALTY2026</b>; <b>/vault/</b> uses <b>32836</b>. Both are AES-encrypted — the passcode is required to read them. The example phone numbers on YES and TELVERGE are illustrative, pending assignment.
+    <b>Passwords, all in one place:</b> Studio → <b>ACTIVATE</b> · Jimmy portfolio → <b>ROYALTY2026</b> · Command &amp; Vault → <b>32836</b>.
+    The PowerPoint deck is delivered as a file in the chat. Numbers on YES &amp; TELVERGE are illustrative pending assignment.
   </div>
 </div></section>
 
 <footer><div class="wrap">
-  <p><b>Confidential — Telvergence, Inc.</b> Prepared for David Drew Allen. Not for redistribution.</p>
-  <p>Telvergence, Inc. · 7450 Dr. Phillips Blvd., Suite 213, Orlando, FL 32819 · contact@telvergence.com · 689-242-1041</p>
+  Telvergence, Inc. · David Drew Allen · 689-242-1041 · contact@telvergence.com · confidential.
 </div></footer>
-
 </body>
 </html>
