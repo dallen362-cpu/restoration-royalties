@@ -236,3 +236,9 @@ tr.rec td{background:rgba(0,255,136,.06)}tr.rec b{color:var(--lime)}
   padding:16px 18px;margin-top:26px;color:var(--muted);font-size:12.5px;line-height:1.6}
 .legalnotice b{color:var(--gold);font-weight:600}
 .licline .tbd{color:var(--gold);font-family:var(--fb);font-weight:600}
+
+/* narrow screens: let the video block grow to fit content so the centered
+   play button can never overflow upward into the top-left tag pill */
+@media(max-width:700px){
+  .video{aspect-ratio:auto;min-height:auto;padding:52px 18px 24px}
+}
