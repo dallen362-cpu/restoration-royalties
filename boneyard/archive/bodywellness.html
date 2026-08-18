@@ -1,0 +1,507 @@
+<!-- Deploy target: /bodywellness.html ; CNAME to telvergence.com -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="/bodywellness.html">
+<title>Body Wellness Connection — Branded-Local-Line Patient Acquisition | Powered by Telvergence</title>
+<style>
+  :root{
+    --ink:#0b0e14; --ink2:#0f1420; --panel:#161c2b; --line:#26304a;
+    --gold:#e7b64b; --gold2:#f6d27a; --ember:#ff6a3d; --smoke:#8a94a8;
+    --text:#eef1f7; --muted:#aeb6c6; --ok:#37d39b;
+    --rose:#f0a6b4;              /* one warm wellness accent — used sparingly */
+    --rose2:#f6c6cf;
+    --crit:#ff5d5d;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden}
+  body{
+    background:var(--ink); color:var(--text);
+    font:16px/1.6 "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .tnum{font-variant-numeric:tabular-nums}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:10px;font-weight:700;letter-spacing:.2px;cursor:pointer;border:1px solid transparent;font-size:15px}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#211a05}
+  .btn-ghost{border-color:var(--line);color:var(--text)}
+  .btn-gold:hover{filter:brightness(1.06)}
+  .btn-ghost:hover{border-color:var(--gold)}
+  .eyebrow{color:var(--gold);font-weight:700;letter-spacing:2.4px;text-transform:uppercase;font-size:12px}
+  .crown{font-size:1.15em;color:var(--gold)}
+  :focus-visible{outline:2px solid var(--gold2);outline-offset:2px;border-radius:8px}
+
+  /* ---------- passcode gate ---------- */
+  .gate{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(720px 420px at 50% 26%,rgba(240,166,180,.14),transparent 60%),
+      radial-gradient(600px 460px at 80% 90%,rgba(231,182,75,.10),transparent 60%),var(--ink);padding:24px}
+  .gate.hide{display:none}
+  .vault{width:100%;max-width:430px;background:linear-gradient(180deg,#1a2233,var(--panel));
+    border:1px solid var(--line);border-radius:18px;padding:36px 30px;text-align:center;
+    box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .vault .seal{font-size:42px;color:var(--gold2);line-height:1}
+  .vault .kick{color:var(--rose);font-weight:700;letter-spacing:2.4px;text-transform:uppercase;font-size:11px;margin-top:12px}
+  .vault h1{font-size:21px;margin:8px 0 4px;letter-spacing:.3px;font-weight:800}
+  .vault p{color:var(--muted);font-size:13.5px;margin:0 0 18px}
+  .vault input{width:100%;padding:13px 14px;border-radius:10px;border:1px solid var(--line);
+    background:#0c111b;color:var(--text);font-size:15px;letter-spacing:1px;text-align:center}
+  .vault input:focus{outline:2px solid var(--gold2);outline-offset:1px}
+  .vault .go{margin-top:12px;width:100%;justify-content:center}
+  .vault .err{color:var(--crit);font-size:12.5px;min-height:16px;margin-top:10px}
+  .vault .fine{color:var(--smoke);font-size:11px;margin-top:16px;line-height:1.6}
+  .shake{animation:shake .35s}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+
+  /* ---------- header ---------- */
+  header{position:sticky;top:0;z-index:20;background:rgba(11,14,20,.82);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.4px}
+  .brand small{color:var(--muted);font-weight:600;letter-spacing:1.6px;font-size:11px;text-transform:uppercase}
+  .nav .links{display:flex;gap:22px;font-size:14px;color:var(--muted)}
+  .nav .links a:hover{color:var(--text)}
+  @media(max-width:900px){.nav .links{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero::before{content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(900px 420px at 80% -10%,rgba(240,166,180,.22),transparent 60%),
+      radial-gradient(700px 500px at 5% 20%,rgba(231,182,75,.14),transparent 55%),
+      linear-gradient(180deg,#0b0e14,#0d1119 70%);}
+  .hero .wrap{position:relative;padding:70px 22px 60px}
+  .hero h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin:14px 0 12px;font-weight:800;text-wrap:balance}
+  .hero h1 span{background:linear-gradient(135deg,var(--gold2),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:640px;margin:0 0 26px}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .badge{font-size:12.5px;color:var(--muted);border:1px solid var(--line);background:var(--panel);padding:7px 12px;border-radius:999px}
+  .badge b{color:var(--gold)}
+  .stats{display:flex;gap:30px;flex-wrap:wrap;margin-top:30px;padding-top:24px;border-top:1px solid var(--line)}
+  .stat .n{font-size:26px;font-weight:800;color:var(--gold2);letter-spacing:.4px}
+  .stat .l{font-size:12px;color:var(--smoke);text-transform:uppercase;letter-spacing:1.2px;margin-top:2px}
+
+  /* ---------- sections ---------- */
+  section{padding:60px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(24px,3.2vw,36px);margin:8px 0 8px;font-weight:800}
+  h2 span{background:linear-gradient(135deg,var(--gold2),var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--muted);max-width:700px;margin:0 0 30px}
+
+  /* ---------- lines grid ---------- */
+  .lines{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+  .line{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .line .num{font-size:19px;font-weight:800;letter-spacing:.5px;color:var(--gold2)}
+  .line .num a:hover{text-decoration:underline}
+  .line .role{font-size:12.5px;color:var(--smoke);text-transform:uppercase;letter-spacing:1.2px;margin-top:6px}
+  .lines-note{margin-top:16px;font-size:13px;color:var(--muted)}
+  .pill{display:inline-block;font-size:11.5px;color:#0b1a12;background:var(--ok);border-radius:999px;padding:3px 9px;font-weight:700}
+  .pill.rose{background:var(--rose);color:#2a0f16}
+
+  /* ---------- card grids ---------- */
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;transition:.15s}
+  .card:hover{transform:translateY(-2px);border-color:var(--line)}
+  .card h3{margin:2px 0 8px;font-size:18px}
+  .card p{color:var(--muted);font-size:14.5px;margin:0}
+  .ic{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;background:linear-gradient(135deg,rgba(240,166,180,.20),rgba(231,182,75,.14));border:1px solid var(--line);margin-bottom:11px}
+  .ic.g{background:linear-gradient(135deg,rgba(231,182,75,.20),rgba(255,106,61,.14))}
+
+  /* ---------- pitch & catch ---------- */
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.pc{grid-template-columns:1fr}}
+  .pc .card ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
+  .pc .card li{margin:5px 0}
+  .tag{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;font-weight:800;display:block;margin-bottom:6px}
+  .tag.pitch{color:var(--rose)} .tag.catch{color:var(--gold)}
+
+  /* ---------- audience tabs ---------- */
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+  .tab{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:10px 16px;border-radius:999px;font-size:13.5px;font-weight:700;cursor:pointer;letter-spacing:.3px}
+  .tab:hover{color:var(--text);border-color:var(--gold)}
+  .tab[aria-selected="true"]{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#211a05;border-color:transparent}
+  .panel{display:none;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .panel.on{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .panel .who{color:var(--rose);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:11.5px}
+  .panel h3{margin:6px 0 6px;font-size:22px}
+  .panel .plead{color:var(--muted);max-width:640px;margin:0 0 16px;font-size:15px}
+  .panel .vp{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0 0 22px}
+  .vp .v{background:var(--ink2);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .vp .v b{color:var(--gold2);font-size:14.5px}
+  .vp .v p{color:var(--muted);font-size:13.5px;margin:5px 0 0}
+
+  /* ---------- guarantee ---------- */
+  .guar{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}
+  @media(max-width:760px){.guar{grid-template-columns:1fr}}
+  .guar .card{padding:24px}
+  .glist{list-style:none;margin:12px 0 0;padding:0}
+  .glist li{position:relative;padding:9px 0 9px 30px;border-top:1px solid var(--line);color:var(--muted);font-size:14.5px}
+  .glist li:first-child{border-top:none}
+  .glist li::before{content:"\2714";position:absolute;left:0;top:9px;color:var(--ok);font-weight:800}
+  .glist li b{color:var(--text)}
+  .qlist li::before{content:"\25C6";color:var(--rose)}
+  .trust{margin-top:16px;font-size:12.5px;color:var(--smoke);line-height:1.7;border-top:1px solid var(--line);padding-top:14px}
+
+  /* ---------- cta band ---------- */
+  .band{background:linear-gradient(135deg,rgba(231,182,75,.12),rgba(240,166,180,.10));text-align:center}
+  .band h2{margin-bottom:6px}
+  .callnow{font-size:clamp(26px,4vw,40px);font-weight:800;color:var(--gold2);letter-spacing:.5px;margin:12px 0}
+
+  footer{padding:40px 0 60px;color:var(--muted);font-size:13px}
+  footer .fine{margin-top:14px;font-size:12px;color:var(--smoke);line-height:1.7}
+  .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:24px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+    .card:hover{transform:none}
+  }
+</style>
+</head>
+<body class="locked">
+
+<!-- ========== PASSCODE GATE ========== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-label="Secure preview passcode">
+  <div class="vault" id="vault">
+    <div class="seal crown">&#9819;</div>
+    <div class="kick">Telvergence &middot; Body Wellness</div>
+    <h1>Secure Campaign Preview</h1>
+    <p>This branded-local-line preview is access-controlled. Enter the passcode to continue.</p>
+    <input id="code" type="password" inputmode="text" autocomplete="off" placeholder="Passcode" aria-label="Passcode" />
+    <button class="btn btn-gold go" id="unlock">Unlock Preview</button>
+    <div class="err" id="err" role="alert"></div>
+    <div class="fine">Secure preview — light client-side gate. Not for public distribution.</div>
+  </div>
+</div>
+
+<!-- ========== HEADER ========== -->
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="mark crown">&#9819;</span>&nbsp;TELVERGENCE&nbsp;<small>&middot; Body Wellness</small></div>
+    <nav class="links">
+      <a href="#lines">Local Lines</a>
+      <a href="#menu">Wellness Menu</a>
+      <a href="#pitchcatch">Pitch &amp; Catch</a>
+      <a href="#tech">Technology</a>
+      <a href="#audiences">Who It's For</a>
+      <a href="#guarantee">Guarantee</a>
+    </nav>
+    <a href="#contact" class="btn btn-gold">Book a Consult</a>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Body Wellness Connection &middot; Branded-Local-Line Patient Acquisition</div>
+    <h1>Fill more chairs.<br><span>Own the number that books them.</span></h1>
+    <p class="lead">Body Wellness Connection runs on Telvergence <b>Smart&#8209;DID</b> — branded local numbers your members actually answer, an AI intake desk that books the visit, and a satisfaction guarantee in plain English. HIPAA&#8209;ready infrastructure, month&#8209;to&#8209;month, no contract.</p>
+    <div class="cta">
+      <a href="tel:+14077208100" class="btn btn-gold">Call the Wellness Desk &#9742;</a>
+      <a href="#audiences" class="btn btn-ghost">See who it's for</a>
+    </div>
+    <div class="badges">
+      <span class="badge"><b>HIPAA</b>-ready</span>
+      <span class="badge">E911 Compliant</span>
+      <span class="badge">No Contract &middot; Month-to-Month</span>
+      <span class="badge"><b>STIR/SHAKEN</b> Branded ID</span>
+      <span class="badge">Powered by <b>Telvergence</b></span>
+    </div>
+    <div class="stats tnum">
+      <div class="stat"><div class="n">99.997%</div><div class="l">Uptime target</div></div>
+      <div class="stat"><div class="n">11,000+</div><div class="l">Rate centers</div></div>
+      <div class="stat"><div class="n">$22.95</div><div class="l">Per line / month</div></div>
+      <div class="stat"><div class="n">0% AR</div><div class="l">Prepaid billing</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== BRANDED LOCAL LINES ========== -->
+<section id="lines">
+  <div class="wrap">
+    <div class="eyebrow">The Wellness Switchboard</div>
+    <h2>Branded local lines &mdash; <span>one per touchpoint</span></h2>
+    <p class="sub">Real local-presence numbers with caller ID branded <b>&ldquo;BODY WELLNESS&rdquo;</b> and STIR/SHAKEN attestation, each routed to a purpose in the Pitch &amp; Catch flow. Local, named, and tracked &mdash; no &ldquo;Spam&nbsp;Likely,&rdquo; nothing for your front desk to install.</p>
+    <div class="lines tnum">
+      <div class="line"><div class="num"><a href="tel:+14077208100">(407) 720-8100</a></div><div class="role">Main Intake / New Members</div></div>
+      <div class="line"><div class="num"><a href="tel:+14077208101">(407) 720-8101</a></div><div class="role">Memberships &amp; Billing</div></div>
+      <div class="line"><div class="num"><a href="tel:+14077208102">(407) 720-8102</a></div><div class="role">IV Drip &amp; Recovery Bar</div></div>
+      <div class="line"><div class="num"><a href="tel:+14077208103">(407) 720-8103</a></div><div class="role">Cryo &amp; Cold Therapy</div></div>
+      <div class="line"><div class="num"><a href="tel:+14077208104">(407) 720-8104</a></div><div class="role">Massage &amp; Bodywork</div></div>
+      <div class="line"><div class="num"><a href="tel:+14077208105">(407) 720-8105</a></div><div class="role">Aesthetics &amp; Skin</div></div>
+      <div class="line"><div class="num"><a href="tel:+14077208106">(407) 720-8106</a></div><div class="role">Weight Management</div></div>
+      <div class="line"><div class="num"><a href="tel:+14077208107">(407) 720-8107</a></div><div class="role">Spanish Line / Bilingual</div></div>
+      <div class="line"><div class="num"><a href="tel:+14077208108">(407) 720-8108</a></div><div class="role">After-Hours / On-Call</div></div>
+    </div>
+    <p class="lines-note"><span class="pill">Provisioning</span> &nbsp;Branded DIDs provisioned via <b>Bright Sound Communications</b>; third-party verbal verification completes activation. <span style="color:var(--smoke)">Numbers shown are illustrative preview placeholders.</span></p>
+  </div>
+</section>
+
+<!-- ========== WELLNESS MENU ========== -->
+<section id="menu">
+  <div class="wrap">
+    <div class="eyebrow">What The Campaign Books</div>
+    <h2>The wellness menu</h2>
+    <p class="sub">The branded lines and AI intake feed real appointments across the clinic's recovery, aesthetics, and membership programs &mdash; every booking tied back to the line that drove it.</p>
+    <div class="cols">
+      <div class="card"><div class="ic">&#128137;</div><h3>IV Therapy &amp; Hydration</h3><p>Vitamin and hydration drips, immunity and recovery boosts, NAD+ &mdash; booked, confirmed, and reminded by SMS.</p></div>
+      <div class="card"><div class="ic">&#10052;&#65039;</div><h3>Cryotherapy &amp; Cold</h3><p>Whole-body cryo, localized cold therapy, and contrast recovery sessions with membership pricing.</p></div>
+      <div class="card"><div class="ic">&#128171;</div><h3>Massage &amp; Recovery</h3><p>Therapeutic massage, compression, and bodywork &mdash; rebooking prompts built into the intake flow.</p></div>
+      <div class="card"><div class="ic">&#10024;</div><h3>Aesthetics &amp; Skin</h3><p>Facials, injectables consults, and skin treatments routed to the right provider on the first call.</p></div>
+      <div class="card"><div class="ic">&#9878;&#65039;</div><h3>Weight Management</h3><p>Programs, coaching, and follow-up visits &mdash; no-show win-backs and check-ins handled automatically.</p></div>
+      <div class="card"><div class="ic">&#127793;</div><h3>Wellness Memberships</h3><p>Recurring memberships and packages; renewals, upgrades, and billing questions answered on a dedicated line.</p></div>
+    </div>
+    <p class="lines-note" style="color:var(--smoke)">Service set shown is an illustrative med-spa / recovery menu for this preview; final menu is configured to the clinic's actual offering.</p>
+  </div>
+</section>
+
+<!-- ========== PITCH & CATCH ========== -->
+<section id="pitchcatch">
+  <div class="wrap">
+    <div class="eyebrow">The Engine</div>
+    <h2>The Pitch &amp; Catch <span>intake campaign</span></h2>
+    <p class="sub">Branded local lines place the <b>pitch</b>; an AI-assisted intake desk <b>catches</b> every inbound &mdash; so bookings other clinics miss land with you, confirmed and routed.</p>
+    <div class="pc">
+      <div class="card">
+        <span class="tag pitch">&#9654; The Pitch &mdash; Outbound</span>
+        <h3>Reach members before they lapse</h3>
+        <ul>
+          <li>Re-engage lapsed members &amp; expired packages</li>
+          <li>Seasonal promos &mdash; IV boosts, cryo bundles, skin events</li>
+          <li>Membership renewals &amp; upgrade offers</li>
+          <li>Referral asks to your happiest clients</li>
+          <li>No-show &amp; cancellation win-backs</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag catch">&#9679; The Catch &mdash; Inbound</span>
+        <h3>Capture every call, book the visit</h3>
+        <ul>
+          <li>AI answers &amp; qualifies: service &rarr; new/returning &rarr; urgency</li>
+          <li>Books the appointment on the call; SMS confirm + reminders</li>
+          <li>HIPAA-ready intake capture; no info left on a sticky note</li>
+          <li>Memberships &amp; billing routed to the right line</li>
+          <li>Every booking tied to the line &amp; campaign that drove it</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TECHNOLOGY / SMART-DID ========== -->
+<section id="tech">
+  <div class="wrap">
+    <div class="eyebrow">The Infrastructure</div>
+    <h2>Smart-DID, built in</h2>
+    <p class="sub">Carrier-grade branded numbers, routed and compliant &mdash; running on the Telvergence platform with root-level PSTN access across 11,000+ rate centers.</p>
+    <div class="cols">
+      <div class="card"><div class="ic g">&#127991;&#65039;</div><h3>Branded Caller ID + STIR/SHAKEN</h3><p>CNAM set to &ldquo;BODY WELLNESS&rdquo; with STIR/SHAKEN attestation &mdash; the fix for &ldquo;Spam Likely&rdquo; so patients pick up.</p></div>
+      <div class="card"><div class="ic g">&#128241;</div><h3>Remote Call Forward</h3><p>Branded lines ring your existing cell or front desk. Nothing to install, no new hardware, no porting headache.</p></div>
+      <div class="card"><div class="ic g">&#128172;</div><h3>SMS On Every Line</h3><p>Two-way texting for confirmations, reminders, and rebooking &mdash; consented numbers only, reply STOP to opt out.</p></div>
+      <div class="card"><div class="ic g">&#128225;</div><h3>Per-Line CDR Tracking</h3><p>Know which line and campaign drove each booking; spot a flagged number and rotate the DID instantly.</p></div>
+      <div class="card"><div class="ic g">&#128197;</div><h3>Month-to-Month Carrier</h3><p>No contract, no term commitment &mdash; month-to-month at $22.95 per line. Cancel any time, for any reason.</p></div>
+      <div class="card"><div class="ic g">&#128737;&#65039;</div><h3>HIPAA-ready &amp; E911</h3><p>Patient information handled on HIPAA-ready, SOC&nbsp;2-aligned infrastructure; E911 registered on every calling line.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== AUDIENCE SEGMENTATION ========== -->
+<section id="audiences">
+  <div class="wrap">
+    <div class="eyebrow">Who It's For</div>
+    <h2>One platform, <span>six audiences</span></h2>
+    <p class="sub">The same Body Wellness stack &mdash; branded lines, AI intake, prepaid economics, written guarantee &mdash; tailored to the person reading it.</p>
+
+    <div class="tabs" role="tablist" aria-label="Audience segments">
+      <button class="tab" role="tab" aria-selected="true"  aria-controls="p-inv" id="t-inv">Investors</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-end" id="t-end">Members &amp; Patients</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-par" id="t-par">Partner Providers</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-dis" id="t-dis">Distributors</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-who" id="t-who">Wholesalers</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-agt" id="t-agt">Agents</button>
+    </div>
+
+    <div class="panel on" id="p-inv" role="tabpanel" aria-labelledby="t-inv">
+      <div class="who">Investors</div>
+      <h3>Own the number, own the margin</h3>
+      <p class="plead">Body Wellness is one vertical on a wholesale-class telecom + AI platform with prepaid, autonomous billing &mdash; infrastructure economics, not SaaS margins.</p>
+      <div class="vp">
+        <div class="v"><b>0% AR, 0% bad debt</b><p>Prepaid, programmable billing &mdash; revenue collected before service, no collections.</p></div>
+        <div class="v"><b>Owned inventory</b><p>Carrier-level DIDs across 11,000+ rate centers with SMS on every number &mdash; owned, not rented from Twilio.</p></div>
+        <div class="v"><b>Proprietary data moat</b><p>VICIdial + BOSS CRM call-data corpus training the AI runtime &mdash; competitors can't replicate it.</p></div>
+        <div class="v"><b>Five live brands</b><p>Wellness, storm-restoration, and more already running on one platform underneath.</p></div>
+      </div>
+      <a href="#contact" class="btn btn-gold">Request the investor brief</a>
+    </div>
+
+    <div class="panel" id="p-end" role="tabpanel" aria-labelledby="t-end">
+      <div class="who">Members &amp; Patients</div>
+      <h3>Book in one call or one text</h3>
+      <p class="plead">A local number you recognize, answered fast, with reminders so you never miss a session &mdash; and your information kept private.</p>
+      <div class="vp">
+        <div class="v"><b>Real local line</b><p>A branded local number &mdash; not a call center &mdash; that books your visit on the spot.</p></div>
+        <div class="v"><b>Text to book</b><p>Confirmations and reminders by SMS; reply to reschedule. Reply STOP any time.</p></div>
+        <div class="v"><b>Private by design</b><p>Intake handled on HIPAA-ready infrastructure &mdash; no SSN, banking, or credit info required.</p></div>
+        <div class="v"><b>Memberships made easy</b><p>Renew, upgrade, or ask a billing question on a dedicated line.</p></div>
+      </div>
+      <a href="tel:+14077208100" class="btn btn-gold">Call to book &#9742;</a>
+    </div>
+
+    <div class="panel" id="p-par" role="tabpanel" aria-labelledby="t-par">
+      <div class="who">Partner Providers &mdash; Studios &amp; Clinics</div>
+      <h3>Turnkey patient acquisition</h3>
+      <p class="plead">Med-spas, recovery studios, and wellness clinics get branded lines + AI intake wired to their existing phones &mdash; live in days, not months.</p>
+      <div class="vp">
+        <div class="v"><b>Nothing to install</b><p>Remote call forward to your current front desk or cell; no hardware, no porting.</p></div>
+        <div class="v"><b>Never miss a lead</b><p>AI catches after-hours and overflow calls and books the appointment.</p></div>
+        <div class="v"><b>Attribution built in</b><p>Per-line CDR shows exactly which campaign filled each chair.</p></div>
+        <div class="v"><b>Written guarantee</b><p>100% satisfaction, full refund, and total indemnification &mdash; in writing.</p></div>
+      </div>
+      <a href="#contact" class="btn btn-gold">Claim your branded lines</a>
+    </div>
+
+    <div class="panel" id="p-dis" role="tabpanel" aria-labelledby="t-dis">
+      <div class="who">Distributors</div>
+      <h3>Deploy the wellness kit by territory</h3>
+      <p class="plead">Package Body Wellness as a repeatable, branded offering and roll it out to clinic after clinic in your market &mdash; onboarding and guarantee templates included.</p>
+      <div class="vp">
+        <div class="v"><b>Repeatable playbook</b><p>Proven switchboard, intake flow, and onboarding packet ready to clone per clinic.</p></div>
+        <div class="v"><b>Bright Sound provisioning</b><p>Lines provisioned and verbally verified through the fulfillment partner &mdash; you sell, we activate.</p></div>
+        <div class="v"><b>Territory economics</b><p>Recurring per-line revenue across a book of clinics; prepaid, no AR to chase.</p></div>
+        <div class="v"><b>Co-branded assets</b><p>Demo, guarantee, and pitch materials you can put your name beside.</p></div>
+      </div>
+      <a href="#contact" class="btn btn-gold">Become a distributor</a>
+    </div>
+
+    <div class="panel" id="p-who" role="tabpanel" aria-labelledby="t-who">
+      <div class="who">Wholesalers</div>
+      <h3>Carrier inventory &amp; white-label</h3>
+      <p class="plead">Buy at the carrier level and white-label the entire stack &mdash; DIDs, hosted PBX, virtual fax, global termination, and the AI runtime under your own brand.</p>
+      <div class="vp">
+        <div class="v"><b>11,000+ rate centers</b><p>Wholesale DID inventory with SMS on every number and root-level PSTN access.</p></div>
+        <div class="v"><b>Full white-label</b><p>Reskin the switchboard, intake, and portal as your own product line.</p></div>
+        <div class="v"><b>Programmable API</b><p>Order, route, brand, and rotate numbers by API &mdash; provisioning in seconds.</p></div>
+        <div class="v"><b>Prepaid rails</b><p>Autonomous billing and metering on minutes, SMS, AI-agent seconds, and DID rental.</p></div>
+      </div>
+      <a href="#contact" class="btn btn-gold">Wholesale inventory access</a>
+    </div>
+
+    <div class="panel" id="p-agt" role="tabpanel" aria-labelledby="t-agt">
+      <div class="who">Agents</div>
+      <h3>Sign clinics, earn on every line</h3>
+      <p class="plead">A field- and tele-sales-friendly offer that sells itself: zero-risk onboarding, a written guarantee, and recurring commission on every line you place.</p>
+      <div class="vp">
+        <div class="v"><b>Easy yes</b><p>Free to initiate, cancel anytime, full refund &mdash; the objection-killer is in writing.</p></div>
+        <div class="v"><b>Recurring commissions</b><p>Affiliate-commission engine pays on the lines you bring, month after month.</p></div>
+        <div class="v"><b>No credit hurdles</b><p>No SSN, banking, or credit info required from the clinic to get started.</p></div>
+        <div class="v"><b>Ready-made pitch</b><p>This demo, the guarantee letter, and the switchboard are your leave-behind.</p></div>
+      </div>
+      <a href="#contact" class="btn btn-gold">Join as an agent</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GUARANTEE + QA ========== -->
+<section id="guarantee">
+  <div class="wrap">
+    <div class="eyebrow">Zero-Risk, In Writing</div>
+    <h2>The written <span>satisfaction guarantee</span></h2>
+    <p class="sub">Every Body Wellness onboarding is backed by a plain-English guarantee and extreme QA &mdash; the same standard offering extended to every Telvergence / Bright Sound client.</p>
+    <div class="guar">
+      <div class="card">
+        <div class="tag catch">The Guarantee</div>
+        <ul class="glist">
+          <li><b>Free to initiate. Cancel anytime.</b> Zero charge if you cancel before provisioning completes.</li>
+          <li><b>Never out of pocket first.</b> Telvergence advances the full $22.95 per line before you are ever charged.</li>
+          <li><b>100% satisfaction &mdash; full refund.</b> Not completely satisfied, for any reason? Full refund.</li>
+          <li><b>Equipment-fix guarantee.</b> If it can't be resolved by replacing equipment, full refund.</li>
+          <li><b>No contract, no personal info.</b> No term commitment; no SSN, driver's license, banking, or credit info.</li>
+          <li><b>Total indemnification.</b> David Drew Allen personally and Telvergence, Inc. hold you and your business harmless.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tag pitch">Extreme QA</div>
+        <ul class="glist qlist">
+          <li><b>Third-party verbal verification</b> via Bright Sound completes every activation.</li>
+          <li><b>STIR/SHAKEN attestation</b> monitored so branded ID stays trusted, not flagged.</li>
+          <li><b>Per-line CDR &amp; call scoring</b> &mdash; a flagged DID is rotated instantly.</li>
+          <li><b>HIPAA-ready handling</b> of every patient record captured at intake.</li>
+        </ul>
+        <div class="trust">
+          <b style="color:var(--muted)">Telvergence, Inc.</b> &mdash; Florida profit corporation, active &amp; in good standing. Verify at sunbiz.org (Doc.&nbsp;No.&nbsp;P20000043872). Corporate counsel: John&nbsp;M.&nbsp;Campbell,&nbsp;Esq.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA BAND ========== -->
+<section id="contact" class="band">
+  <div class="wrap">
+    <div class="eyebrow">Book Your Body Wellness Consult</div>
+    <h2>Let's fill your calendar this week</h2>
+    <div class="callnow tnum"><a href="tel:+14077208100">(407) 720-8100</a></div>
+    <p class="sub" style="margin:0 auto 22px">Branded local lines, AI intake, and a written guarantee &mdash; live in days, month-to-month, cancel any time.</p>
+    <a href="tel:+14077208100" class="btn btn-gold">Call the Wellness Desk &#9742;</a>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="wrap grid2">
+    <div>
+      <div class="brand" style="font-size:18px"><span class="mark crown">&#9819;</span>&nbsp;TELVERGENCE &middot; BODY WELLNESS</div>
+      <p style="color:var(--muted);margin:10px 0 0">A Telvergence, Inc. patient-acquisition campaign.<br>7450 Dr. Phillips Blvd., Suite 213, Orlando, FL 32819.</p>
+    </div>
+    <div>
+      <div class="eyebrow">Wellness Desk</div>
+      <p class="tnum" style="margin:8px 0 0"><a href="tel:+14077208100">(407) 720-8100</a> &nbsp;&rarr;&nbsp; 8108</p>
+      <p style="margin:4px 0 0;color:var(--muted)">contact@telvergence.com &middot; (855) TELVRG-1</p>
+      <p style="margin:4px 0 0;color:var(--gold2)">bodywellness.telvergence.com</p>
+    </div>
+  </div>
+  <div class="wrap fine">
+    &copy; 2026 Telvergence, Inc. Body Wellness Connection is a Telvergence branded-local-line campaign; numbers provisioned via Bright Sound Communications. Outbound calling is manual to consented contacts; SMS only to consented numbers (reply STOP to opt out). HIPAA-ready, SOC&nbsp;2-aligned, and E911 infrastructure claims, uptime targets, and the satisfaction/indemnification guarantee are subject to counsel and carrier substantiation before external use. Secure internal preview &mdash; figures, service menu, and DIDs shown are illustrative. Deploy target: bodywellness.telvergence.com (CNAME to telvergence.com).
+  </div>
+</footer>
+
+<script>
+(function(){
+  const PASSCODE = "Telvergence-8832"; // light client-side gate only — not real security
+  const gate=document.getElementById('gate'), vault=document.getElementById('vault'),
+        input=document.getElementById('code'), err=document.getElementById('err'),
+        btn=document.getElementById('unlock'), body=document.body;
+
+  function reveal(){ gate.classList.add('hide'); body.classList.remove('locked'); body.style.overflow=''; }
+  if(sessionStorage.getItem('bw_ok')==='1'){ reveal(); }
+  else { body.style.overflow='hidden'; setTimeout(()=>input && input.focus(),60); }
+
+  function tryUnlock(){
+    if(input.value===PASSCODE){ sessionStorage.setItem('bw_ok','1'); err.textContent=''; reveal(); }
+    else{
+      err.textContent='Incorrect passcode. Please try again.';
+      vault.classList.remove('shake'); void vault.offsetWidth; vault.classList.add('shake');
+      input.select();
+    }
+  }
+  btn.addEventListener('click', tryUnlock);
+  input.addEventListener('keydown', e=>{ if(e.key==='Enter') tryUnlock(); });
+
+  /* audience tabs */
+  const tabs=Array.from(document.querySelectorAll('.tab'));
+  tabs.forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      tabs.forEach(t=>t.setAttribute('aria-selected','false'));
+      document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+      tab.setAttribute('aria-selected','true');
+      const panel=document.getElementById(tab.getAttribute('aria-controls'));
+      if(panel) panel.classList.add('on');
+    });
+  });
+})();
+</script>
+</body>
+</html>

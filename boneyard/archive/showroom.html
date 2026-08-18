@@ -1,0 +1,687 @@
+<!-- Deploy target (GitHub Pages + Cloudflare): /showroom/ ; CNAME to telvergence.com -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Telvergence Industry Showroom — branded local Smart DID numbers, AI Pitch & Catch intake, per-line call tracking, and turnkey campaign verticals. Secure preview.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="/showroom/">
+<title>Telvergence — Industry Showroom | Branded Smart DID Campaigns</title>
+<style>
+  :root{
+    --ink:#0b0e14; --ink2:#0f1420; --panel:#161c2b; --line:#26304a;
+    --gold:#e7b64b; --gold2:#f6d27a; --ember:#ff6a3d; --smoke:#8a94a8;
+    --text:#eef1f7; --muted:#aeb6c6; --ok:#37d39b;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink); color:var(--text);
+    font:16px/1.6 "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body.locked{overflow:hidden}
+  a{color:inherit;text-decoration:none}
+  .tnum{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:700;letter-spacing:.2px;cursor:pointer;border:1px solid transparent;font-size:15px;transition:filter .15s,transform .15s,border-color .15s,background .15s}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#211a05}
+  .btn-ghost{border-color:var(--line);color:var(--text);background:transparent}
+  .btn-gold:hover{filter:brightness(1.06)}
+  .btn-ghost:hover{border-color:var(--gold)}
+  .eyebrow{color:var(--gold);font-weight:700;letter-spacing:2.4px;text-transform:uppercase;font-size:12px}
+  .crown{font-size:1.15em;color:var(--gold)}
+
+  /* focus visibility */
+  a:focus-visible,.btn:focus-visible,button:focus-visible,input:focus-visible{
+    outline:2px solid var(--gold2);outline-offset:3px;border-radius:8px;
+  }
+
+  /* header */
+  header{position:sticky;top:0;z-index:40;background:rgba(11,14,20,.82);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.4px}
+  .nav .links{display:flex;gap:22px;font-size:14px;color:var(--muted)}
+  .nav .links a:hover{color:var(--text)}
+  @media(max-width:900px){.nav .links{display:none}}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero::before{content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(900px 420px at 80% -10%,rgba(255,106,61,.28),transparent 60%),
+      radial-gradient(700px 500px at 5% 20%,rgba(231,182,75,.14),transparent 55%),
+      linear-gradient(180deg,#0b0e14,#0d1119 70%);}
+  .hero .wrap{position:relative;padding:74px 22px 66px}
+  .hero h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin:14px 0 12px;font-weight:800}
+  .hero h1 span{background:linear-gradient(135deg,var(--gold2),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:640px;margin:0 0 26px}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .badge{font-size:12.5px;color:var(--muted);border:1px solid var(--line);background:var(--panel);padding:7px 12px;border-radius:999px}
+  .badge b{color:var(--gold)}
+
+  /* sections */
+  section{padding:60px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(24px,3.2vw,36px);margin:8px 0 8px;font-weight:800}
+  .sub{color:var(--muted);max-width:700px;margin:0 0 30px}
+
+  /* card grids */
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;transition:border-color .15s,transform .15s}
+  .card.hoverable:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .card h3{margin:2px 0 8px;font-size:18px}
+  .card p{color:var(--muted);font-size:14.5px;margin:0}
+  .ic{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:19px;background:linear-gradient(135deg,rgba(231,182,75,.18),rgba(255,106,61,.14));border:1px solid var(--line);margin-bottom:10px}
+
+  /* pitch & catch */
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.pc{grid-template-columns:1fr}}
+  .pc .card ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
+  .pc .card li{margin:4px 0}
+  .tag{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;font-weight:800}
+  .tag.pitch{color:var(--ember)} .tag.catch{color:var(--gold)}
+
+  /* switchboard lines */
+  .lines{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+  .line{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .line .num{font-size:20px;font-weight:800;letter-spacing:.5px;color:var(--gold2)}
+  .line .role{font-size:12.5px;color:var(--smoke);text-transform:uppercase;letter-spacing:1.2px;margin-top:6px}
+  .lines-note{margin-top:16px;font-size:13px;color:var(--muted)}
+  .pill{display:inline-block;font-size:11.5px;color:#0b1a12;background:var(--ok);border-radius:999px;padding:3px 9px;font-weight:700}
+
+  /* showroom */
+  .show{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .demo{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;transition:.15s;position:relative}
+  .demo:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .demo h3{margin:0 0 4px;font-size:17px;display:flex;align-items:center;gap:8px}
+  .demo .u{font-size:12.5px;color:var(--gold2);word-break:break-all}
+  .demo p{color:var(--muted);font-size:14px;margin:8px 0 16px}
+  .demo .status{position:absolute;top:16px;right:16px;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--smoke)}
+  .demo .go{margin-top:auto;align-self:flex-start}
+
+  /* audience switcher */
+  .aud-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+  .aud-tab{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:9px 16px;border-radius:999px;font-weight:700;font-size:14px;letter-spacing:.3px;cursor:pointer;transition:.15s}
+  .aud-tab:hover{color:var(--text);border-color:var(--gold)}
+  .aud-tab.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#211a05;border-color:transparent}
+  .aud-panel{display:none}
+  .aud-panel.active{display:block}
+  .aud-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;align-items:start}
+  @media(max-width:760px){.aud-grid{grid-template-columns:1fr}}
+  .aud-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+  .aud-card h3{margin:0 0 6px;font-size:20px}
+  .aud-card .who{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);font-weight:800}
+  .aud-card ul{margin:14px 0 0;padding-left:18px;color:var(--muted);font-size:14.5px}
+  .aud-card li{margin:6px 0}
+  .aud-cta{background:linear-gradient(135deg,rgba(231,182,75,.10),rgba(255,106,61,.08));border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;justify-content:center}
+  .aud-cta .k{color:var(--gold2);font-weight:800;font-size:15px;margin-bottom:6px}
+  .aud-cta p{color:var(--muted);font-size:14px;margin:0 0 16px}
+
+  /* guarantee */
+  .guar{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){.guar{grid-template-columns:1fr}}
+  .guar ul{margin:8px 0 0;padding-left:20px;color:var(--muted);font-size:14.5px}
+  .guar li{margin:8px 0}
+  .guar li b{color:var(--text)}
+
+  /* pricing */
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .tier{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;position:relative;transition:.15s}
+  .tier:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .tier.feat{border-color:var(--gold)}
+  .tier .name{font-size:13px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);font-weight:800}
+  .tier .price{font-size:34px;font-weight:800;color:var(--gold2);margin:8px 0 2px}
+  .tier .price small{font-size:14px;color:var(--muted);font-weight:600}
+  .tier ul{margin:14px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
+  .tier li{margin:5px 0}
+  .tier .flag{position:absolute;top:-11px;right:16px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#211a05;font-size:11px;font-weight:800;letter-spacing:.6px;padding:3px 10px;border-radius:999px}
+
+  /* cta band */
+  .band{background:linear-gradient(135deg,rgba(231,182,75,.12),rgba(255,106,61,.10));text-align:center}
+  .band h2{margin-bottom:6px}
+  .callnow{font-size:clamp(26px,4vw,40px);font-weight:800;color:var(--gold2);letter-spacing:.5px;margin:12px 0}
+
+  footer{padding:40px 0 60px;color:var(--muted);font-size:13px}
+  footer .fine{margin-top:14px;font-size:12px;color:var(--smoke);line-height:1.7}
+  .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:24px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+  footer a:hover{color:var(--gold2)}
+
+  /* passcode gate */
+  #gate{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;
+    background:
+      radial-gradient(800px 400px at 78% -10%,rgba(255,106,61,.22),transparent 60%),
+      radial-gradient(650px 460px at 8% 18%,rgba(231,182,75,.12),transparent 55%),
+      linear-gradient(180deg,#0b0e14,#0d1119 70%);}
+  #gate[hidden]{display:none}
+  .gate-card{width:100%;max-width:420px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:34px 30px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+  .gate-card .brand{justify-content:center;font-size:20px;margin-bottom:6px}
+  .gate-card .eyebrow{display:block;margin-bottom:18px}
+  .gate-card h1{font-size:22px;margin:0 0 4px;font-weight:800}
+  .gate-card p.g{color:var(--muted);font-size:14px;margin:0 0 20px}
+  .gate-card label{display:block;text-align:left;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+  .gate-card input{width:100%;padding:13px 14px;border-radius:10px;border:1px solid var(--line);background:var(--ink2);color:var(--text);font-size:16px;letter-spacing:.4px}
+  .gate-card input::placeholder{color:var(--smoke)}
+  .gate-card .btn{width:100%;margin-top:14px}
+  .gate-err{min-height:20px;color:var(--ember);font-size:13px;margin-top:12px;font-weight:600}
+  .gate-note{margin-top:16px;font-size:11.5px;color:var(--smoke);display:flex;align-items:center;justify-content:center;gap:6px}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *{transition:none !important;animation:none !important}
+  }
+</style>
+</head>
+<body class="locked">
+
+<!-- ============ PASSCODE GATE (full-screen overlay) ============ -->
+<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <div class="brand"><span class="mark crown">&#9819;</span>&nbsp;TELVERGENCE</div>
+    <span class="eyebrow">Industry Showroom &middot; Portal B</span>
+    <h1 id="gateTitle">Secure Preview</h1>
+    <p class="g">Enter the access passcode to view the showroom.</p>
+    <form id="gateForm" autocomplete="off" novalidate>
+      <label for="gateInput">Access passcode</label>
+      <input id="gateInput" name="passcode" type="password" inputmode="text"
+             placeholder="Enter passcode" aria-describedby="gateErr" autocomplete="off" spellcheck="false">
+      <button type="submit" class="btn btn-gold">Unlock Showroom</button>
+      <div class="gate-err" id="gateErr" role="alert" aria-live="assertive"></div>
+    </form>
+    <div class="gate-note"><span aria-hidden="true">&#128274;</span> Secure preview &mdash; light client-side gate.</div>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="mark crown">&#9819;</span> TELVERGENCE</div>
+    <nav class="links" aria-label="Primary">
+      <a href="#platform">Platform</a>
+      <a href="#engine">Pitch &amp; Catch</a>
+      <a href="#switchboard">Switchboard</a>
+      <a href="#showroom">Showroom</a>
+      <a href="#audiences">Who It's For</a>
+      <a href="#guarantee">Guarantee</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-gold">Book a Demo</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">The Telvergence Industry Showroom</div>
+    <h1>One platform.<br><span>Every industry, branded and answered.</span></h1>
+    <p class="lead">Telvergence provisions branded local Smart DID numbers, catches every call with AI intake, and tracks it back to the line &mdash; then packages the whole engine as a turnkey campaign for any vertical. This is the master showroom of what we deploy.</p>
+    <div class="cta">
+      <a href="#contact" class="btn btn-gold">Book a Platform Demo &#9742;</a>
+      <a href="#showroom" class="btn btn-ghost">Enter the Showroom</a>
+    </div>
+    <div class="badges">
+      <span class="badge">FL Corp since <b>2020</b></span>
+      <span class="badge"><b>35+ yrs</b> telecom expertise</span>
+      <span class="badge">Sub-second DID provisioning</span>
+      <span class="badge">CNAM + <b>STIR/SHAKEN</b></span>
+      <span class="badge"><b>Written</b> 100% guarantee</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CAPABILITY STACK ============ -->
+<section id="platform">
+  <div class="wrap">
+    <div class="eyebrow">The Core Capability Stack</div>
+    <h2>Everything a campaign line needs &mdash; provisioned in seconds</h2>
+    <p class="sub">A carrier-grade communications platform: branded local presence, AI intake, and per-line attribution, delivered by API and backed in writing.</p>
+    <div class="cols">
+      <div class="card hoverable"><div class="ic">&#127991;&#65039;</div><h3>Branded Local Smart DIDs</h3><p>Real local-presence numbers with <b>CNAM</b> caller-ID branding and <b>STIR/SHAKEN</b> attestation &mdash; the cure for "Spam Likely."</p></div>
+      <div class="card hoverable"><div class="ic">&#128172;</div><h3>SMS-Enabled Lines</h3><p>Every DID is text-ready: two-way SMS for confirmations, follow-ups, and consented outreach (reply STOP to opt out).</p></div>
+      <div class="card hoverable"><div class="ic">&#128260;</div><h3>Remote Call Forwarding</h3><p>Point any branded number at any phone; re-route on the fly to queues, agents, overflow, or after-hours.</p></div>
+      <div class="card hoverable"><div class="ic">&#128197;</div><h3>Month-to-Month Carrier Subscription</h3><p>True carrier service, billed monthly. No contract, no term lock &mdash; cancel anytime.</p></div>
+      <div class="card hoverable"><div class="ic">&#9889;</div><h3>Sub-Second DID Provisioning</h3><p>Order local DIDs by area code and route them live in under a second &mdash; entirely by API.</p></div>
+      <div class="card hoverable"><div class="ic">&#128202;</div><h3>Per-Line / Per-Agent CDR</h3><p>Every call detail recorded and attributed to the exact line and agent that drove it &mdash; spot a flagged number and rotate instantly.</p></div>
+      <div class="card hoverable"><div class="ic">&#128737;&#65039;</div><h3>E911 &amp; Compliance</h3><p>E911 on every calling DID, STIR/SHAKEN attestation, and a CPNI / TCPA-aware calling posture built in.</p></div>
+      <div class="card hoverable"><div class="ic">&#129302;</div><h3>AI "Pitch &amp; Catch" Intake</h3><p>Outbound pitch, AI-answered inbound &mdash; every call qualified, triaged, and booked, with large opportunities routed to a closer.</p></div>
+      <div class="card hoverable"><div class="ic">&#9989;</div><h3>Written Guarantee + Extreme QA</h3><p>A written 100% satisfaction guarantee, with end-to-end QA on every line before a client is ever charged.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PITCH & CATCH ============ -->
+<section id="engine">
+  <div class="wrap">
+    <div class="eyebrow">The Engine</div>
+    <h2>The Pitch &amp; Catch Call Campaign</h2>
+    <p class="sub">Branded local lines place the <b>pitch</b>; an AI-assisted intake desk <b>catches</b> every inbound &mdash; so the leads other shops miss land with you, documented and routed.</p>
+    <div class="pc">
+      <div class="card">
+        <div class="tag pitch">&#9654; The Pitch &mdash; Outbound</div>
+        <h3>Reach the decision-makers first</h3>
+        <ul>
+          <li>Local-presence numbers by area code &mdash; not an 800 that gets screened</li>
+          <li>Branded CNAM so the name, not "Spam Likely," is what rings</li>
+          <li>Manual-dial posture to published business lines, suppression list enforced</li>
+          <li>SMS follow-up on consented numbers to warm the next touch</li>
+          <li>Each line mapped to a segment so attribution is clean</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tag catch">&#9679; The Catch &mdash; Inbound</div>
+        <h3>Capture every call, book the appointment</h3>
+        <ul>
+          <li>AI answers &amp; qualifies inbound around the clock</li>
+          <li>Structured capture: name &rarr; need &rarr; location &rarr; urgency</li>
+          <li>Safety-first triage; high-value opportunities handed to a closer</li>
+          <li>Call tracking ties each booking to the line that drove it</li>
+          <li>Appointment scheduled on the call, confirmed by SMS</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10-LINE SWITCHBOARD ============ -->
+<section id="switchboard">
+  <div class="wrap">
+    <div class="eyebrow">The Standard Deployment</div>
+    <h2>The 10-Line Switchboard</h2>
+    <p class="sub">The repeatable Telvergence unit: a block of ten branded local DIDs, each routed to a purpose in the Pitch &amp; Catch flow. Below is a live example &mdash; Restoration Royalty's Miami-Dade (786) switchboard, <span class="tnum">786-400-1145</span> &rarr; <span class="tnum">1154</span>.</p>
+    <div class="lines">
+      <div class="line"><div class="num tnum">786-400-1145</div><div class="role">Main Intake / Reception</div></div>
+      <div class="line"><div class="num tnum">786-400-1146</div><div class="role">Property Managers &amp; HOA</div></div>
+      <div class="line"><div class="num tnum">786-400-1147</div><div class="role">Insurance &amp; Public Adjusters</div></div>
+      <div class="line"><div class="num tnum">786-400-1148</div><div class="role">Partners / Overflow</div></div>
+      <div class="line"><div class="num tnum">786-400-1149</div><div class="role">Adjacent Trades</div></div>
+      <div class="line"><div class="num tnum">786-400-1150</div><div class="role">Commercial / Multifamily</div></div>
+      <div class="line"><div class="num tnum">786-400-1151</div><div class="role">Emergency / After-Hours</div></div>
+      <div class="line"><div class="num tnum">786-400-1152</div><div class="role">Bilingual / Spanish Line</div></div>
+      <div class="line"><div class="num tnum">786-400-1153</div><div class="role">Campaign Tracking DID</div></div>
+      <div class="line"><div class="num tnum">786-400-1154</div><div class="role">Reserve / White-Label</div></div>
+    </div>
+    <p class="lines-note"><span class="pill">Provisioned</span> &nbsp;All ten DIDs branded and routed. Activation is completed by third-party verbal verification (TPV) through <b>Bright Sound Communications</b> &mdash; the same extreme-QA step every client block passes before it goes live.</p>
+  </div>
+</section>
+
+<!-- ============ SHOWROOM ============ -->
+<section id="showroom">
+  <div class="wrap">
+    <div class="eyebrow">The Showroom</div>
+    <h2>One engine, every vertical</h2>
+    <p class="sub">The same branded-DID + Pitch &amp; Catch stack, dressed for each industry as a turnkey campaign site. Open a demo to see the pattern in the wild.</p>
+    <div class="show">
+
+      <a class="demo" href="https://restorationroyalties.com" target="_blank" rel="noopener noreferrer">
+        <div class="status">Restoration</div>
+        <h3>&#128293; Restoration Royalty</h3>
+        <div class="u">restorationroyalties.com</div>
+        <p>South Florida fire &amp; smoke restoration. Ten branded Miami-Dade lines feeding an AI intake desk &mdash; the flagship 10-line switchboard in action.</p>
+        <span class="btn btn-ghost go">View demo &rarr;</span>
+      </a>
+
+      <a class="demo" href="/win.html" target="_blank" rel="noopener noreferrer">
+        <div class="status">Roofing</div>
+        <h3>&#127786;&#65039; WIN &mdash; Weather Intelligence</h3>
+        <div class="u">win.telvergence.com</div>
+        <p>Storm-triggered roofing outreach: the Weather Intelligence Network fires the pitch the moment a ZIP takes damage, so branded lines reach owners first.</p>
+        <span class="btn btn-ghost go">View demo &rarr;</span>
+      </a>
+
+      <a class="demo" href="/serotonin.html" target="_blank" rel="noopener noreferrer">
+        <div class="status">Wellness</div>
+        <h3>&#129504; Serotonin Centers</h3>
+        <div class="u">serotonin.telvergence.com</div>
+        <p>Wellness &amp; mental-health intake campaign &mdash; branded local lines with AI-qualified booking and SMS confirmation for every consult.</p>
+        <span class="btn btn-ghost go">View demo &rarr;</span>
+      </a>
+
+      <a class="demo" href="/bodywellness.html" target="_blank" rel="noopener noreferrer">
+        <div class="status">Med-Spa</div>
+        <h3>&#128170; Body Wellness</h3>
+        <div class="u">bodywellness.telvergence.com</div>
+        <p>Body-wellness &amp; med-spa lead engine &mdash; branded numbers, SMS follow-up, and booked consultations tracked line by line.</p>
+        <span class="btn btn-ghost go">View demo &rarr;</span>
+      </a>
+
+      <a class="demo" href="/spin.html" target="_blank" rel="noopener noreferrer">
+        <div class="status">Amplifier</div>
+        <h3>&#127925; Spin Machine</h3>
+        <div class="u">spin.telvergence.com</div>
+        <p>The content &amp; engagement amplifier &mdash; the outreach spin-up that keeps every campaign line busy and every warm hand followed up.</p>
+        <span class="btn btn-ghost go">View demo &rarr;</span>
+      </a>
+
+      <div class="demo" style="border-style:dashed">
+        <div class="status">Your Brand</div>
+        <h3>&#10133; White-Label Vertical</h3>
+        <div class="u">&lt;your-brand&gt;.telvergence.com</div>
+        <p>Any industry, your name on the door. We stand up the switchboard, the intake, and the site &mdash; you run the campaign.</p>
+        <a href="#contact" class="btn btn-ghost go">Start one &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ AUDIENCE SEGMENTATION ============ -->
+<section id="audiences">
+  <div class="wrap">
+    <div class="eyebrow">Who It's For</div>
+    <h2>Pick your seat at the table</h2>
+    <p class="sub">The same platform reads differently depending on where you stand. Choose your role for the value proposition and next step built for you.</p>
+
+    <div class="aud-tabs" role="tablist" aria-label="Audience selector">
+      <button class="aud-tab active" data-aud="investors"   role="tab" aria-selected="true"  type="button">Investors</button>
+      <button class="aud-tab" data-aud="endusers"    role="tab" aria-selected="false" type="button">End-Users</button>
+      <button class="aud-tab" data-aud="partners"    role="tab" aria-selected="false" type="button">Partner-Providers</button>
+      <button class="aud-tab" data-aud="distributors" role="tab" aria-selected="false" type="button">Distributors</button>
+      <button class="aud-tab" data-aud="wholesalers" role="tab" aria-selected="false" type="button">Wholesalers</button>
+      <button class="aud-tab" data-aud="agents"      role="tab" aria-selected="false" type="button">Agents</button>
+    </div>
+
+    <div class="aud-panel active" data-aud="investors" role="tabpanel">
+      <div class="aud-grid">
+        <div class="aud-card">
+          <div class="who">Investors</div>
+          <h3>Recurring carrier revenue, asset-light</h3>
+          <ul>
+            <li>Month-to-month MRC per line &mdash; predictable, recurring subscription revenue</li>
+            <li>White-label model scales across verticals without re-tooling the stack</li>
+            <li>A multi-vertical showroom that proves the pattern repeats</li>
+            <li>Florida corporation in good standing since 2020, 35+ years of telecom depth</li>
+          </ul>
+        </div>
+        <div class="aud-cta">
+          <div class="k">Want the numbers?</div>
+          <p>Request the investor brief &mdash; unit economics, vertical roadmap, and the showroom walkthrough.</p>
+          <a href="#contact" class="btn btn-gold">Request the Investor Brief</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="aud-panel" data-aud="endusers" role="tabpanel">
+      <div class="aud-grid">
+        <div class="aud-card">
+          <div class="who">End-Users &middot; Businesses</div>
+          <h3>Branded numbers that actually get answered</h3>
+          <ul>
+            <li>Local caller-ID with your name &mdash; no more "Spam Likely" screening</li>
+            <li>AI intake catches every call and books the appointment for you</li>
+            <li>Zero-risk onboarding: no charge until provisioned, cancel anytime</li>
+            <li>No personal info required &mdash; no SSN, DL, banking, or credit</li>
+          </ul>
+        </div>
+        <div class="aud-cta">
+          <div class="k">Ready to try it?</div>
+          <p>Start a zero-risk pilot on a single line and watch the calls land.</p>
+          <a href="#contact" class="btn btn-gold">Start a Zero-Risk Pilot</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="aud-panel" data-aud="partners" role="tabpanel">
+      <div class="aud-grid">
+        <div class="aud-card">
+          <div class="who">Partner-Providers</div>
+          <h3>A turnkey campaign, gifted as value</h3>
+          <ul>
+            <li>We stand up your switchboard, intake desk, and campaign site &mdash; co-branded</li>
+            <li>Referral &amp; overflow routing between partner lines</li>
+            <li>Per-line attribution proves exactly which relationship drove the job</li>
+            <li>Written guarantee lets you offer clients total reassurance, no risk</li>
+          </ul>
+        </div>
+        <div class="aud-cta">
+          <div class="k">Let's build together</div>
+          <p>Become a partner-provider and add the phone engine to what you already sell.</p>
+          <a href="#contact" class="btn btn-gold">Become a Partner</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="aud-panel" data-aud="distributors" role="tabpanel">
+      <div class="aud-grid">
+        <div class="aud-card">
+          <div class="who">Distributors</div>
+          <h3>Resell the whole stack under your name</h3>
+          <ul>
+            <li>Full white-label platform &mdash; your brand on the door, our engine inside</li>
+            <li>Sub-second provisioning by API to spin up client blocks on demand</li>
+            <li>Per-line / per-agent CDR to manage an entire book of numbers</li>
+            <li>Month-to-month terms keep your offer flexible and easy to close</li>
+          </ul>
+        </div>
+        <div class="aud-cta">
+          <div class="k">Own a territory</div>
+          <p>Get distributor terms and the reseller toolkit.</p>
+          <a href="#contact" class="btn btn-gold">Get Distributor Terms</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="aud-panel" data-aud="wholesalers" role="tabpanel">
+      <div class="aud-grid">
+        <div class="aud-card">
+          <div class="who">Wholesalers</div>
+          <h3>DID blocks at volume, branded at scale</h3>
+          <ul>
+            <li>Bulk local DID blocks by area code from the wholesale VoIP portal</li>
+            <li>CNAM branding + STIR/SHAKEN attestation applied at scale</li>
+            <li>Month-to-month carrier subscription &mdash; no term lock on inventory</li>
+            <li>E911 and compliance registered on every calling number</li>
+          </ul>
+        </div>
+        <div class="aud-cta">
+          <div class="k">Buying in volume?</div>
+          <p>Request wholesale pricing on DID blocks and branded-number provisioning.</p>
+          <a href="#contact" class="btn btn-gold">Request Wholesale Pricing</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="aud-panel" data-aud="agents" role="tabpanel">
+      <div class="aud-grid">
+        <div class="aud-card">
+          <div class="who">Agents</div>
+          <h3>Local presence, tracked to your name</h3>
+          <ul>
+            <li>Branded local-presence dialing that gets more calls answered</li>
+            <li>Per-agent CDR &mdash; your calls, your bookings, measured cleanly</li>
+            <li>AI Pitch &amp; Catch books the appointment while you keep dialing</li>
+            <li>Compliant manual-dial posture with suppression-list enforcement</li>
+          </ul>
+        </div>
+        <div class="aud-cta">
+          <div class="k">Close more, chase less</div>
+          <p>Join as an agent and put a branded switchboard behind your name.</p>
+          <a href="#contact" class="btn btn-gold">Join as an Agent</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ GUARANTEE ============ -->
+<section id="guarantee">
+  <div class="wrap">
+    <div class="eyebrow">Zero-Risk Onboarding</div>
+    <h2>The written satisfaction guarantee</h2>
+    <p class="sub">Extreme QA runs through the entire provisioning process, and the client carries none of the risk. Every commitment below is put in writing before a single line goes live.</p>
+    <div class="guar">
+      <div class="card">
+        <div class="ic">&#9989;</div>
+        <h3>What we put in writing</h3>
+        <ul>
+          <li><b>Advanced, not charged.</b> Telvergence advances the per-line cost on a pre-loaded card <b>before</b> the client is ever billed.</li>
+          <li><b>Charged only when provisioned.</b> No charge until the line is live and verified.</li>
+          <li><b>Full refund, any circumstances.</b> Not completely satisfied? Full refund, no conditions.</li>
+          <li><b>Refund if we can't fix it.</b> If the problem can't be resolved via equipment replacement, full refund.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="ic">&#128272;</div>
+        <h3>What the client never risks</h3>
+        <ul>
+          <li><b>Free to initiate, cancel anytime</b> &mdash; no contract, no term commitment.</li>
+          <li><b>Zero charge before provisioning</b> completes.</li>
+          <li><b>No personal info</b> &mdash; no SSN, driver's license, banking, or credit ever requested.</li>
+          <li><b>Full indemnification</b> &mdash; joint &amp; several hold-harmless from Telvergence, Inc.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="lines-note">Every DID is tested end-to-end &mdash; CNAM, routing, SMS, and E911 &mdash; and activation is completed by third-party verbal verification through Bright Sound Communications before the client is charged.</p>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="plans">
+  <div class="wrap">
+    <div class="eyebrow">Platform Plans</div>
+    <h2>Pick a lane &mdash; scale when you're ready</h2>
+    <p class="sub">Representative monthly platform tiers, each with a one-time setup. Every plan is month-to-month; ask for a tailored quote against your line count and vertical.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="name">Launch</div>
+        <div class="price tnum">$499<small>/mo</small></div>
+        <p style="color:var(--muted);font-size:13.5px;margin:2px 0 0">Setup <span class="tnum">$1,499</span></p>
+        <ul>
+          <li>Branded local switchboard</li>
+          <li>CNAM + STIR/SHAKEN</li>
+          <li>Core AI intake</li>
+          <li>Per-line CDR tracking</li>
+        </ul>
+      </div>
+      <div class="tier feat">
+        <div class="flag">Most Popular</div>
+        <div class="name">Growth</div>
+        <div class="price tnum">$999<small>/mo</small></div>
+        <p style="color:var(--muted);font-size:13.5px;margin:2px 0 0">Setup <span class="tnum">$1,499</span></p>
+        <ul>
+          <li>Everything in Launch</li>
+          <li>Full Pitch &amp; Catch engine</li>
+          <li>SMS follow-up automation</li>
+          <li>Per-agent CDR + attribution</li>
+          <li>Written guarantee package</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="name">Command</div>
+        <div class="price tnum">$2,499<small>/mo</small></div>
+        <p style="color:var(--muted);font-size:13.5px;margin:2px 0 0">Setup <span class="tnum">$1,499</span></p>
+        <ul>
+          <li>Everything in Growth</li>
+          <li>Multi-vertical / white-label</li>
+          <li>Priority provisioning</li>
+          <li>Dedicated campaign desk</li>
+          <li>Custom routing &amp; overflow</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section id="contact" class="band">
+  <div class="wrap">
+    <div class="eyebrow">Book a Platform Demo</div>
+    <h2>See the switchboard light up</h2>
+    <div class="callnow"><a href="tel:+18558358741">(855) TELVRG-1</a></div>
+    <p class="sub" style="margin:0 auto 22px">Tell us the vertical and we'll stand up a branded switchboard, an AI intake desk, and a campaign site &mdash; on the zero-risk terms above.</p>
+    <div class="cta" style="justify-content:center;display:flex;gap:14px;flex-wrap:wrap">
+      <a href="mailto:contact@telvergence.com?subject=Telvergence%20Showroom%20Demo%20Request" class="btn btn-gold">Email contact@telvergence.com</a>
+      <a href="tel:+18558358741" class="btn btn-ghost">Call the Campaign Desk</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap grid2">
+    <div>
+      <div class="brand" style="font-size:18px"><span class="mark crown">&#9819;</span> TELVERGENCE, INC.</div>
+      <p style="color:var(--muted);margin:10px 0 0">Florida-chartered business communications platform &mdash; active &amp; in good standing since 2020.<br>Branded Smart DID campaigns for every industry.</p>
+    </div>
+    <div>
+      <div class="eyebrow">Showroom &amp; Contact</div>
+      <p style="margin:8px 0 0"><a href="/showroom/">showroom.telvergence.com</a></p>
+      <p style="margin:4px 0 0"><a href="mailto:contact@telvergence.com">contact@telvergence.com</a> &middot; <a href="tel:+18558358741">(855) TELVRG-1</a></p>
+      <p style="margin:4px 0 0;color:var(--muted)">Master HQ: telvergence.com</p>
+    </div>
+  </div>
+  <div class="wrap fine">
+    &copy; 2026 Telvergence, Inc. &mdash; Florida Profit Corporation, active &amp; in good standing (Sunbiz Doc. No. P20000043872). Branded Smart DID, remote call-forwarding, and AI intake provided as a month-to-month carrier subscription; activation completed via third-party verbal verification through Bright Sound Communications. Outbound calling is manual to published business lines with suppression-list enforcement; SMS only to consented numbers (reply STOP to opt out). E911 registered on every calling DID. Plan figures are representative and subject to a tailored quote. Secure preview &mdash; light client-side gate; not a substitute for authenticated access control.
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ===== Passcode (light client-side gate) ===== */
+  const PASSCODE = "Telvergence-8832";
+  var STORAGE_KEY = "tv-showroom-unlocked";
+  var gate  = document.getElementById("gate");
+  var form  = document.getElementById("gateForm");
+  var input = document.getElementById("gateInput");
+  var errEl = document.getElementById("gateErr");
+
+  function unlock(){
+    if(gate){ gate.setAttribute("hidden",""); gate.setAttribute("aria-hidden","true"); }
+    document.body.classList.remove("locked");
+    try{ sessionStorage.setItem(STORAGE_KEY, "1"); }catch(e){}
+  }
+  function alreadyUnlocked(){
+    try{ return sessionStorage.getItem(STORAGE_KEY) === "1"; }catch(e){ return false; }
+  }
+
+  if(alreadyUnlocked()){
+    unlock();
+  } else {
+    document.body.classList.add("locked");
+    if(input){ try{ input.focus(); }catch(e){} }
+  }
+
+  if(form){
+    form.addEventListener("submit", function(ev){
+      ev.preventDefault();
+      var val = (input && input.value ? input.value : "").trim();
+      if(val === PASSCODE){
+        if(errEl){ errEl.textContent = ""; }
+        unlock();
+        window.scrollTo(0,0);
+      } else {
+        if(errEl){ errEl.textContent = "Incorrect passcode. Please try again."; }
+        if(input){ input.select(); }
+      }
+    });
+  }
+
+  /* ===== Audience segmentation switcher ===== */
+  var tabs   = Array.prototype.slice.call(document.querySelectorAll(".aud-tab"));
+  var panels = Array.prototype.slice.call(document.querySelectorAll(".aud-panel"));
+  function activate(id){
+    tabs.forEach(function(t){
+      var on = t.getAttribute("data-aud") === id;
+      t.classList.toggle("active", on);
+      t.setAttribute("aria-selected", on ? "true" : "false");
+    });
+    panels.forEach(function(p){
+      p.classList.toggle("active", p.getAttribute("data-aud") === id);
+    });
+  }
+  tabs.forEach(function(t){
+    t.addEventListener("click", function(){ activate(t.getAttribute("data-aud")); });
+  });
+})();
+</script>
+
+</body>
+</html>

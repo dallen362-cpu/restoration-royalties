@@ -10,3 +10,13 @@
 /cowork-campaign/win-tv-launch.html    /cowork-campaign/   302
 /cowork-campaign/watch.html            /cowork-campaign/   302
 /cowork-campaign/kingdom-map.html      /cowork-campaign/   302
+
+# --- Superseded originals -> their standardized replacements (301 permanent).
+# The originals are preserved and still reachable at /boneyard/archive/<name>.html
+/win.html                        /win/           301
+/serotonin.html                  /serotonin/     301
+/bodywellness.html               /bodywellness/  301
+/spin.html                       /spin/          301
+/restoration-royalty-legacy.html /rr/            301
+/telvergence.html                /telvergence/   301
+/showroom.html                   /showroom/      301
