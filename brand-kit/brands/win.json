@@ -1,0 +1,211 @@
+{
+  "slug": "win",
+  "brandName": "WIN \u2014 Weather Intelligence Network",
+  "brandShortBold": "WIN",
+  "brandShortRest": " \u2014 WEATHER INTELLIGENCE",
+  "accent": "#38BDF8",
+  "lineCount": 10,
+  "eyebrow": "TELVERGENCE \u00d7 WIN \u00b7 Storm-triggered roofing \u00b7 Central Florida",
+  "h1a": "Every storm is a pipeline.",
+  "h1b": "We make it ring to you.",
+  "tagline": "A roof job is a <b>$8,000\u2013$40,000</b> decision, and the buying trigger falls out of the sky \u2014 a hail line, a wind event, a leak after the rain. WIN turns weather into demand: a <b>10-line Smart-DID grid</b> that fires the instant a storm crosses your ZIPs, so every damaged homeowner reaches you first, before the storm-chasers roll in.",
+  "demoNote": "Central Florida storm-roofing campaign \u00b7 hail \u00b7 wind \u00b7 leak \u00b7 inspection \u00b7 10-line pack \u00b7 numbers pending assignment",
+  "insight": "a roof replacement runs <b>$8,000\u2013$40,000</b> \u2014 and demand is created by the weather, in a spike, across specific ZIPs, on a specific afternoon. The contractor who is calling and answering <b>in that window</b> books the neighborhood; everyone else buys the leftovers from a lead broker. A phone number that just rings can't ride a storm. A <b>Smart DID</b>, triggered by the weather, can.",
+  "benchNowTitle": "The typical roofer \u2014 today",
+  "benchNow": [
+    "Waits for the phone to ring after a storm \u2014 too late",
+    "One untracked number; storm-chasers own the neighborhood first",
+    "No <b>Spanish line</b> in a Spanish-speaking market",
+    "No after-hours answer for the leak-tonight call",
+    "Buys aged shared leads from a broker at a premium",
+    "No weather trigger \u2014 reacts instead of striking"
+  ],
+  "benchNextTitle": "The WIN offspring",
+  "benchNext": [
+    "<b>Weather-triggered</b> outbound the moment a storm crosses your ZIPs",
+    "<b>10 Smart DIDs</b>, every call source-tagged, recorded, mapped",
+    "<b>24/7 AI answer</b> \u2014 the leak-tonight call is never voicemail",
+    "Dedicated <b>Spanish line</b> with bilingual routing",
+    "Your own exclusive leads \u2014 never resold, never shared",
+    "<b>Command center</b> shows the storm map and the pipeline together"
+  ],
+  "gridSub": "hail \u00b7 wind \u00b7 leak \u00b7 inspection \u00b7 commercial",
+  "dids": [
+    {
+      "h": "Flagship / 24-7 storm-damage line",
+      "vn": "1-800-WIN-ROOF",
+      "p": "Priority ring, never voicemail \u2014 the line that owns your #1 promise: a free inspection today.",
+      "pending": true
+    },
+    {
+      "h": "Spanish / Biling\u00fce",
+      "vn": "1-844-TECHO-YA",
+      "p": "Routes Spanish callers to a bilingual path \u2014 a Central Florida edge nobody else runs.",
+      "pending": true
+    },
+    {
+      "h": "Hail / wind damage",
+      "vn": "1-800-HAIL-HELP",
+      "p": "Fires on the hail map \u2014 the highest-intent storm call.",
+      "pending": true
+    },
+    {
+      "h": "Emergency leak / tarp tonight",
+      "vn": "1-833-LEAK-SOS",
+      "p": "The after-hours leak call routed straight to the on-call crew.",
+      "pending": true
+    },
+    {
+      "h": "Free inspection / claim assist",
+      "vn": "1-800-NEW-ROOF",
+      "p": "The inspection-booking line \u2014 your top-of-funnel workhorse.",
+      "pending": true
+    },
+    {
+      "h": "Insurance / claim-approved reroof",
+      "vn": "(407) tracked",
+      "p": "The claim-driven full replacement, separately measured.",
+      "pending": true
+    },
+    {
+      "h": "Commercial / flat roof",
+      "vn": "(689) tracked",
+      "p": "Property managers and flat-roof work to the commercial desk.",
+      "pending": true
+    },
+    {
+      "h": "Google / paid-ads DID",
+      "vn": "(321) tracked",
+      "p": "Proves ad ROI to the dollar \u2014 swap the number, keep the data.",
+      "pending": true
+    },
+    {
+      "h": "Door-knock / yard-sign DID",
+      "vn": "(352) tracked",
+      "p": "Attributes the storm-ZIP canvassing so you stop guessing.",
+      "pending": true
+    },
+    {
+      "h": "Outbound branded caller-ID",
+      "vn": "1-800-WIN-ROOF",
+      "p": "The weather-triggered dialer's face \u2014 branded, compliant, recorded.",
+      "pending": true
+    }
+  ],
+  "brainChips": [
+    {
+      "t": "Storm crosses a ZIP"
+    },
+    {
+      "t": "weather trigger fires",
+      "hot": true
+    },
+    {
+      "t": "outbound + inbound light up"
+    },
+    {
+      "t": "source-tag"
+    },
+    {
+      "t": "24/7 AI answer"
+    },
+    {
+      "t": "dispatch / SMS / auto-callback"
+    },
+    {
+      "t": "one command center",
+      "hot": true
+    }
+  ],
+  "pillars": [
+    {
+      "n": "Outbound",
+      "p": "A weather-triggered dialer works the exact ZIPs a storm just hit \u2014 <b>branded caller-ID, compliant scripting, recordings, callbacks</b>. You strike while the damage is fresh and the chasers are still driving in."
+    },
+    {
+      "n": "Inbound",
+      "p": "10 tracked lines + 24/7 AI answer + SMS. Every source measured, every leak call prioritized, every missed call auto-called-back."
+    },
+    {
+      "n": "Command center",
+      "p": "The storm map and your pipeline on one live dashboard \u2014 calls, texts, inspections booked, ad spend and source together."
+    }
+  ],
+  "commandCenter": {
+    "h2": "Your live storm command center",
+    "heroLabel": "Booked job value \u00b7 today",
+    "heroValue": "$96,200.00",
+    "vertical": "storm-roofing",
+    "tiles": [
+      {
+        "k": "8",
+        "l": "Inspections booked today",
+        "c": "cy"
+      },
+      {
+        "k": "$12,025",
+        "l": "Avg. job value",
+        "c": "go"
+      },
+      {
+        "k": "103 \u00b7 8",
+        "l": "Calls \u00b7 inspections",
+        "c": "cy"
+      },
+      {
+        "k": "4.7%",
+        "l": "Cost of acquisition",
+        "c": "lm"
+      }
+    ],
+    "controls": [
+      "\u23f8 Stop",
+      "\u25b6 Start",
+      "\u23ec Slow",
+      "\u23eb Speed up",
+      "\ud83d\udd00 Change leads",
+      "\ud83d\udcdd Change script",
+      "\ud83c\udf81 Change offer",
+      "\ud83d\udccd Change territory",
+      "\ud83d\udce1 Change channel"
+    ],
+    "note": "Every call feeds a real-time conduit that overlays the weather map on your pipeline \u2014 then you, or the AI, adjust the leads, script, offer, territory, or channel and watch the storm turn into booked jobs. <b>You roof the house \u2014 we make the phone ring.</b>"
+  },
+  "map": {
+    "h2": "Your Central Florida storm map \u2014 live &amp; geo-routed",
+    "fallback": "Central Florida<br>Orlando \u00b7 Winter Park \u00b7 Kissimmee \u00b7 Clermont",
+    "title": "Central Florida service area",
+    "q": "Orlando,+FL",
+    "z": 9,
+    "note": "Every Smart DID is weather-aware: when a storm crosses a ZIP, inbound calls surge and outbound fires on that exact footprint \u2014 routed to the nearest available crew across Central Florida."
+  },
+  "videoSub": "A typical roofer vs. the offspring \u00b7 the storm trigger \u00b7 a hail-damage inspection booked in 90 seconds. (Embed final MP4 / YouTube here.)",
+  "offerLead": "We stand up all ten numbers, the AI answer, the Spanish route, the weather trigger, and a starter storm-ZIP outbound campaign. For 30 days every inbound call is answered and every storm that crosses your footprint fires the dialer.",
+  "econUnit": "booked inspections before you scale",
+  "focusVerb": "roofing houses",
+  "referEarn": {
+    "unit": "jobs",
+    "peer": "contractor"
+  },
+  "alternative": "pass, and the next storm's neighborhood goes to the roofer running WIN across town \u2014 who works your ZIPs the afternoon the hail falls, while you wait for the phone. Territories are exclusive and claimed once.",
+  "seo": {
+    "title": "WIN \u2014 Weather Intelligence Network \u00d7 Telvergence \u2014 Storm-Roofing Proposal",
+    "description": "Telvergence proposal: WIN, a weather-triggered 10-line Smart-DID grid for a Central Florida roofing company \u2014 storm-map triggering, 24/7 AI answer, bilingual routing, and a live command center.",
+    "canonical": "https://restorationroyalties.com/win/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": "RoofingContractor",
+    "name": "WIN \u2014 Weather Intelligence Network",
+    "telephone": "+1-689-242-1041",
+    "areaServed": [
+      "Orange County",
+      "Osceola County",
+      "Seminole County",
+      "Central Florida"
+    ],
+    "description": "Storm-triggered roofing lead generation and 24/7 answering across Central Florida.",
+    "priceRange": "$$$"
+  },
+  "disclaimer": "Prepared for a Central Florida roofing contractor as a discussion proposal under the WIN \u2014 Weather Intelligence Network brand. Roofing is licensed and regulated; the contractor license number of record is displayed on all public-facing material. Weather data drives outreach timing only; all solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch. Numbers shown as pending assignment are reserved slots, not published lines."
+}
