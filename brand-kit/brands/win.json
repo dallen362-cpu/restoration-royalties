@@ -63,25 +63,25 @@
     },
     {
       "h": "Insurance / claim-approved reroof",
-      "vn": "(407) tracked",
+      "vn": "1-800-ROOF-CLAIM",
       "p": "The claim-driven full replacement, separately measured.",
       "pending": true
     },
     {
       "h": "Commercial / flat roof",
-      "vn": "(689) tracked",
+      "vn": "1-800-FLAT-ROOF",
       "p": "Property managers and flat-roof work to the commercial desk.",
       "pending": true
     },
     {
       "h": "Google / paid-ads DID",
-      "vn": "(321) tracked",
+      "vn": "1-800-FREE-ROOF",
       "p": "Proves ad ROI to the dollar \u2014 swap the number, keep the data.",
       "pending": true
     },
     {
       "h": "Door-knock / yard-sign DID",
-      "vn": "(352) tracked",
+      "vn": "1-833-STORM-ZIP",
       "p": "Attributes the storm-ZIP canvassing so you stop guessing.",
       "pending": true
     },
