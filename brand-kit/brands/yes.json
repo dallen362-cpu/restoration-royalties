@@ -1,0 +1,192 @@
+{
+  "slug": "yes",
+  "brandName": "YES \u2014 Your Electrical Solutions",
+  "brandShortBold": "YES",
+  "brandShortRest": " ELECTRICAL",
+  "accent": "#FFC24B",
+  "lineCount": 10,
+  "eyebrow": "TELVERGENCE \u00d7 YES \u2014 Your Electrical Solutions \u00b7 Miami-Dade \u00b7 South Florida",
+  "h1a": "Every outage is a customer.",
+  "h1b": "We make it ring to you.",
+  "tagline": "When the power goes out, nobody shops \u2014 they call the first electrician who answers. We turn YES into a <b>10-line Smart-DID grid</b> across Miami-Dade where every outage, panel, generator, and EV-charger call is answered instantly, in the caller's language, and routed to the nearest available truck.",
+  "demoNote": "Miami electrical campaign \u00b7 outage \u00b7 panel \u00b7 generator \u00b7 EV charger \u00b7 10-line pack \u00b7 numbers pending assignment",
+  "insight": "an electrical job runs <b>$400\u2013$15,000+</b> \u2014 panel upgrades, generators, and EV chargers sit at the top of that range, and the calls spike the moment the power drops or a storm is forecast. Demand arrives all at once, at night, and the electrician on a ladder cannot answer it. A phone number that just rings can't. A <b>Smart DID</b> can.",
+  "benchNowTitle": "The typical electrical contractor \u2014 today",
+  "benchNow": [
+    "One number, <b>untracked</b> \u2014 no idea which ad produced the call",
+    "Crew is on a job, so the outage call goes to <b>voicemail</b>",
+    "No <b>Spanish line</b> in a Spanish-speaking market",
+    "Emergency and scheduled work share one queue",
+    "No after-hours answer \u2014 when outages actually happen",
+    "Inbound only \u2014 no outbound to storm-hit or commercial accounts"
+  ],
+  "benchNextTitle": "The YES Electrical offspring",
+  "benchNext": [
+    "<b>10 Smart DIDs</b>, every call source-tagged, recorded, mapped",
+    "<b>24/7 AI answer</b> \u2014 the outage call is never voicemail",
+    "Dedicated <b>Spanish line</b> with bilingual routing",
+    "<b>Emergency line</b> jumps the queue automatically",
+    "Email + <b>SMS capture</b> and missed-call auto-callback",
+    "<b>Outbound dialer</b> works storm-hit ZIPs and commercial accounts"
+  ],
+  "gridSub": "outage \u00b7 panel \u00b7 generator \u00b7 EV \u00b7 commercial",
+  "dids": [
+    {
+      "h": "Flagship / 24-7 power emergency",
+      "vn": "1-800-POWER-ON",
+      "p": "Priority ring, never voicemail \u2014 the outage line that owns your #1 promise: someone comes tonight.",
+      "pending": true
+    },
+    {
+      "h": "Spanish / Biling\u00fce",
+      "vn": "1-844-LUZ-YA-1",
+      "p": "Routes Spanish callers to a bilingual path \u2014 a South Florida edge nobody else runs.",
+      "pending": true
+    },
+    {
+      "h": "Panel upgrade / rewire",
+      "vn": "1-800-NEW-PANEL",
+      "p": "The high-ticket residential job, separated and prioritized.",
+      "pending": true
+    },
+    {
+      "h": "Generator sales & install",
+      "vn": "1-800-GENERATOR",
+      "p": "Surges on every storm forecast \u2014 capacity scales with the weather.",
+      "pending": true
+    },
+    {
+      "h": "EV charger install",
+      "vn": "1-800-EV-CHARGE",
+      "p": "The fastest-growing residential add-on, tracked on its own.",
+      "pending": true
+    },
+    {
+      "h": "Commercial / property management",
+      "vn": "1-800-BIZ-VOLT",
+      "p": "Contract work routed to the commercial desk, not the retail queue.",
+      "pending": true
+    },
+    {
+      "h": "Storm power restoration",
+      "vn": "1-844-LIGHTS-ON",
+      "p": "Post-storm surge line \u2014 the calls that come in waves.",
+      "pending": true
+    },
+    {
+      "h": "Google / paid-ads DID",
+      "vn": "1-800-CALL-AMP",
+      "p": "Proves ad ROI to the dollar \u2014 swap the number, keep the data.",
+      "pending": true
+    },
+    {
+      "h": "Truck-wrap / yard-sign DID",
+      "vn": "1-800-24-VOLTS",
+      "p": "Attributes offline campaigns so you stop guessing.",
+      "pending": true
+    },
+    {
+      "h": "Outbound branded caller-ID",
+      "vn": "1-800-POWER-ON",
+      "p": "The dialer's outbound face \u2014 branded, compliant, recorded.",
+      "pending": true
+    }
+  ],
+  "pillars": [
+    {
+      "n": "Outbound",
+      "p": "A compliant dialer works <b>storm-hit ZIPs and commercial accounts</b> \u2014 branded caller-ID, compliant scripting, recordings, callbacks."
+    },
+    {
+      "n": "Inbound",
+      "p": "10 tracked lines + 24/7 AI answer + SMS. Every source measured, emergencies prioritized, every missed call auto-called-back."
+    },
+    {
+      "n": "Command center",
+      "p": "Calls, texts, booked jobs, ad spend and source \u2014 one live dashboard. You finally see which dollar produced which job."
+    }
+  ],
+  "complianceChips": [
+    "TCPA",
+    "Do-Not-Call scrubbed",
+    "State electrical license shown",
+    "Recorded with disclosure"
+  ],
+  "license": {
+    "label": "Florida electrical contractor license # of record",
+    "value": ""
+  },
+  "commandCenter": {
+    "h2": "Your live command center \u2014 the whole operation on one screen",
+    "heroLabel": "Booked job value \u00b7 today",
+    "heroValue": "$18,600.00",
+    "vertical": "electrical",
+    "tiles": [
+      {
+        "k": "9",
+        "l": "Jobs booked today",
+        "c": "cy"
+      },
+      {
+        "k": "$2,067",
+        "l": "Avg. job value",
+        "c": "go"
+      },
+      {
+        "k": "76 \u00b7 9",
+        "l": "Calls \u00b7 jobs booked",
+        "c": "cy"
+      },
+      {
+        "k": "5.8%",
+        "l": "Cost of acquisition",
+        "c": "lm"
+      }
+    ],
+    "controls": [
+      "\u23f8 Stop",
+      "\u25b6 Start",
+      "\u23ec Slow",
+      "\u23eb Speed up",
+      "\ud83d\udd00 Change leads",
+      "\ud83d\udcdd Change script",
+      "\ud83c\udf81 Change offer",
+      "\ud83d\udccd Change territory",
+      "\ud83d\udce1 Change channel"
+    ],
+    "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, territory, or channel instantly and watch your P&amp;L move. <b>You do the work \u2014 we make the phone ring.</b>"
+  },
+  "map": {
+    "h2": "Your Miami service area \u2014 live &amp; geo-routed",
+    "fallback": "Miami Service Area<br>Miami-Dade \u00b7 Broward",
+    "title": "Miami service area",
+    "q": "Miami,+FL",
+    "z": 9,
+    "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest available truck \u2014 and outbound storm campaigns target the neighborhoods that just lost power."
+  },
+  "videoSub": "A typical electrical site vs. the offspring \u00b7 the 10-line grid \u00b7 an outage call booked in 90 seconds. (Embed final MP4 / YouTube here.)",
+  "offerLead": "We stand up all ten numbers, the AI answer, the Spanish route, and a starter outbound campaign across your target ZIPs. For 30 days every inbound call is answered and dispatched while the dialer works storm-hit neighborhoods and commercial accounts.",
+  "focusVerb": "running trucks and closing jobs",
+  "referEarn": {
+    "unit": "jobs",
+    "peer": "contractor"
+  },
+  "alternative": "pass, and the next outage call goes to the electrician across town \u2014 who locks your ZIPs during the one week a year demand triples. Territories are exclusive and claimed once.",
+  "seo": {
+    "title": "YES Electrical \u00d7 Telvergence \u2014 10-Line Smart-DID Proposal",
+    "description": "Telvergence proposal: a 10-line Smart-DID grid for a Miami electrical contractor \u2014 24/7 AI answer, bilingual routing, emergency priority, generator and EV lines, and a live command center.",
+    "canonical": "https://restorationroyalties.com/yes/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": "Electrician",
+    "name": "YES \u2014 Your Electrical Solutions",
+    "areaServed": [
+      "Miami-Dade County",
+      "Broward County"
+    ],
+    "description": "Licensed Miami electrical contractor: panel upgrades, generators, EV chargers, storm power restoration, 24/7 emergency service.",
+    "priceRange": "$$"
+  },
+  "disclaimer": "Prepared for YES \u2014 Your Electrical Solutions (Miami-Dade / South Florida) as a discussion proposal. Electrical contracting is licensed and regulated; the state license number of record is displayed on all public-facing material. All solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch. Numbers shown as pending assignment are reserved slots, not published lines."
+}

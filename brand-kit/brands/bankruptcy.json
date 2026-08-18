@@ -1,0 +1,192 @@
+{
+  "slug": "bankruptcy",
+  "brandName": "Orlando Bankruptcy Firm",
+  "brandShortBold": "ORLANDO",
+  "brandShortRest": " BANKRUPTCY FIRM",
+  "accent": "#93A5F0",
+  "lineCount": 10,
+  "eyebrow": "TELVERGENCE \u00d7 Orlando Bankruptcy Firm \u00b7 Chapter 7 \u00b7 Chapter 13 \u00b7 Central Florida",
+  "h1a": "Every call is someone out of options.",
+  "h1b": "We make sure you answer.",
+  "tagline": "Someone facing a foreclosure sale date or a garnishment calls a bankruptcy attorney <b>once</b> \u2014 usually at night, usually terrified, usually after the letter arrives. If it goes to voicemail, they call the next firm. We turn this practice into a <b>10-line Smart-DID grid</b> where every consultation call is answered live, in the caller's language, and routed to intake while they still have time to act.",
+  "demoNote": "Central Florida consumer bankruptcy campaign \u00b7 Chapter 7 \u00b7 Chapter 13 \u00b7 foreclosure \u00b7 garnishment \u00b7 10-line pack \u00b7 numbers pending assignment",
+  "insight": "a consumer bankruptcy matter is a <b>$1,500\u2013$6,000</b> engagement \u2014 but the call comes at the worst moment of someone's life, and it comes <b>once</b>. Foreclosure sale dates, wage garnishments, and repossession notices all carry hard deadlines. The firm that answers live, at 9pm, is the firm that gets retained. A phone number that just rings can't do that. A <b>Smart DID</b> can.",
+  "benchNowTitle": "The typical bankruptcy practice \u2014 today",
+  "benchNow": [
+    "One office line, <b>untracked</b> \u2014 no idea which ad produced the retainer",
+    "Closed at 5pm, when the distressed caller finally works up the nerve",
+    "No <b>Spanish line</b> in a market that badly needs one",
+    "Chapter 7 and Chapter 13 callers land in the same undifferentiated queue",
+    "Emergency filings (sale date this week) get no priority routing",
+    "No structured follow-up on the consult that didn't book"
+  ],
+  "benchNextTitle": "The firm, rebuilt with Telvergence",
+  "benchNext": [
+    "<b>10 Smart DIDs</b>, every call source-tagged, recorded with disclosure",
+    "<b>24/7 live answer</b> \u2014 the 9pm call reaches a human, not a machine",
+    "Dedicated <b>Spanish line</b> with bilingual intake routing",
+    "<b>Emergency filing line</b> jumps the queue when a sale date is days away",
+    "Email + <b>SMS capture</b> with compliant consultation follow-up",
+    "Every source measured \u2014 you fund what actually produces retained clients"
+  ],
+  "gridSub": "Chapter 7 \u00b7 Chapter 13 \u00b7 foreclosure \u00b7 garnishment",
+  "dids": [
+    {
+      "h": "Flagship / 24-7 free consultation",
+      "vn": "1-800-FRESH-START",
+      "p": "Priority ring, never voicemail \u2014 the line that owns your #1 promise: a free, confidential consultation.",
+      "pending": true
+    },
+    {
+      "h": "Spanish / Biling\u00fce",
+      "vn": "1-844-AYUDA-YA",
+      "p": "Routes Spanish callers to a bilingual intake path \u2014 a Central Florida necessity.",
+      "pending": true
+    },
+    {
+      "h": "Emergency filing / sale date",
+      "vn": "1-800-STOP-SALE",
+      "p": "Hard-deadline callers jump the queue and reach intake immediately.",
+      "pending": true
+    },
+    {
+      "h": "Chapter 7 / liquidation",
+      "vn": "1-833-DEBT-FREE",
+      "p": "The volume matter, separately tracked and staffed.",
+      "pending": true
+    },
+    {
+      "h": "Chapter 13 / reorganization",
+      "vn": "1-800-KEEP-HOME",
+      "p": "The higher-value plan matter, routed to the attorney who handles them.",
+      "pending": true
+    },
+    {
+      "h": "Foreclosure defense",
+      "vn": "1-800-SAVE-HOME",
+      "p": "The homeowner in default \u2014 the most time-sensitive inbound you get.",
+      "pending": true
+    },
+    {
+      "h": "Wage garnishment / creditor harassment",
+      "vn": "1-800-STOP-CALLS",
+      "p": "Immediate-relief callers, separately measured.",
+      "pending": true
+    },
+    {
+      "h": "Google / paid-ads DID",
+      "vn": "1-800-FILE-BK-1",
+      "p": "Proves ad ROI to the dollar \u2014 swap the number, keep the data.",
+      "pending": true
+    },
+    {
+      "h": "Referral / partner attorney line",
+      "vn": "1-833-BK-HELP-1",
+      "p": "Attorneys and credit counselors who refer matters to you.",
+      "pending": true
+    },
+    {
+      "h": "Branded caller-ID / callback line",
+      "vn": "1-800-FRESH-START",
+      "p": "Your outbound face for returning consultation calls \u2014 branded and recorded.",
+      "pending": true
+    }
+  ],
+  "pillars": [
+    {
+      "n": "Inbound-first by design",
+      "p": "This practice runs <b>inbound and referral only</b>. Consumer debtors are the most protected class of callers under TCPA and FDCPA-adjacent rules, so we do not cold-call them \u2014 we make sure the person who is already reaching for you gets a human being."
+    },
+    {
+      "n": "24/7 intake",
+      "p": "10 tracked lines + round-the-clock live answer + SMS. Every source measured, emergency filings prioritized, every missed call auto-called-back within minutes."
+    },
+    {
+      "n": "Command center",
+      "p": "Calls, texts, consultations booked, ad spend and source \u2014 one live dashboard. You finally see which dollar produced which retained client."
+    }
+  ],
+  "complianceChips": [
+    "TCPA",
+    "Do-Not-Call scrubbed",
+    "Attorney advertising rules",
+    "Recorded with disclosure",
+    "Inbound & referral only"
+  ],
+  "license": {
+    "label": "Florida Bar number of record",
+    "value": ""
+  },
+  "commandCenter": {
+    "h2": "Your live intake command center",
+    "heroLabel": "Consultations booked \u00b7 today",
+    "heroValue": "11",
+    "vertical": "consumer-bankruptcy",
+    "tiles": [
+      {
+        "k": "11",
+        "l": "Consultations booked",
+        "c": "cy"
+      },
+      {
+        "k": "4",
+        "l": "Emergency matters flagged",
+        "c": "go"
+      },
+      {
+        "k": "73 \u00b7 11",
+        "l": "Calls \u00b7 consults booked",
+        "c": "cy"
+      },
+      {
+        "k": "31%",
+        "l": "After-hours share",
+        "c": "lm"
+      }
+    ],
+    "controls": [
+      "\u23f8 Stop",
+      "\u25b6 Start",
+      "\u23ec Slow",
+      "\u23eb Speed up",
+      "\ud83d\udcdd Change intake script",
+      "\ud83d\udccd Change territory",
+      "\ud83d\udce1 Change channel"
+    ],
+    "note": "Every call feeds a real-time conduit your intake team reviews on the fly \u2014 then you adjust the intake script, territory, or channel and watch the consultation calendar fill. <b>You practice law \u2014 we make sure the phone is answered.</b>"
+  },
+  "map": {
+    "h2": "Your Central Florida service area \u2014 live &amp; geo-routed",
+    "fallback": "Central Florida<br>Orlando \u00b7 Kissimmee \u00b7 Sanford \u00b7 Ocala",
+    "title": "Central Florida service area",
+    "q": "Orlando,+FL",
+    "z": 8,
+    "note": "Every Smart DID is geo-aware: inbound calls are tagged by county and routed to the right intake path \u2014 and 407 \u00b7 689 \u00b7 321 \u00b7 352 local presence means the caller sees a Central Florida number, not an out-of-state one."
+  },
+  "videoSub": "A typical bankruptcy firm site vs. the offspring \u00b7 the 10-line grid \u00b7 an emergency consultation booked in 90 seconds. (Embed final MP4 / YouTube here.)",
+  "offerLead": "We stand up all ten numbers, 24/7 live intake, the Spanish route, the emergency-filing priority path, and full source attribution across your Central Florida market. For 30 days every inbound call is answered and every consultation is booked.",
+  "econUnit": "consultations booked before you scale",
+  "focusVerb": "practicing law",
+  "alternative": "pass, and the 9pm foreclosure call goes to the firm advertising next to you \u2014 the caller only makes that call once. Territories are exclusive and claimed once.",
+  "legalNotice": "Attorney advertising. This is a proposal for communications infrastructure, not legal advice and not a solicitation of any specific matter. No result is promised or implied; past results do not predict future outcomes. If the firm qualifies as a debt relief agency, required 11 U.S.C. \u00a7\u00a7 527\u2013528 disclosures \u2014 including \"We are a debt relief agency. We help people file for bankruptcy relief under the Bankruptcy Code\" \u2014 must appear on all client-facing advertising. All outreach is inbound and referral-based; no outbound solicitation of consumer debtors is performed without prior review by the firm's counsel and compliance with Florida Bar advertising rules, TCPA, and applicable state law.",
+  "seo": {
+    "title": "Orlando Bankruptcy Firm \u00d7 Telvergence \u2014 10-Line Smart-DID Proposal",
+    "description": "Telvergence proposal: a 10-line Smart-DID grid for an Orlando consumer bankruptcy practice \u2014 24/7 live intake, bilingual routing, emergency-filing priority, and full source attribution.",
+    "canonical": "https://restorationroyalties.com/bankruptcy/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Orlando Bankruptcy Firm",
+    "description": "Consumer bankruptcy practice \u2014 Chapter 7, Chapter 13, foreclosure defense, and garnishment relief in Central Florida.",
+    "areaServed": [
+      "Orange County",
+      "Osceola County",
+      "Seminole County",
+      "Central Florida"
+    ],
+    "priceRange": "$$"
+  },
+  "disclaimer": "Prepared for a Central Florida consumer bankruptcy practice as a discussion proposal. The practice of law is licensed and regulated; the attorney of record and Florida Bar number are displayed on all public-facing material per Florida Bar advertising rules. Numbers shown as pending assignment are reserved slots, not published lines.",
+  "_noRefer": true
+}

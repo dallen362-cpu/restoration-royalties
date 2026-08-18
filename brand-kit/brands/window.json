@@ -1,0 +1,184 @@
+{
+  "slug": "window",
+  "brandName": "Miami Window & Door Replacement",
+  "brandShortBold": "WINDOW",
+  "brandShortRest": " & DOOR \u00b7 MIAMI",
+  "accent": "#5EEAD4",
+  "lineCount": 10,
+  "eyebrow": "TELVERGENCE \u00d7 Miami Window & Door Replacement \u00b7 Impact \u00b7 Hurricane Code",
+  "h1a": "Every impact quote is a contract.",
+  "h1b": "We make it ring to you.",
+  "tagline": "Impact windows are a <b>$15,000\u2013$60,000</b> decision made by a homeowner who is comparing three companies in one afternoon \u2014 usually right after a storm warning or an insurance letter. We turn this brand into a <b>10-line Smart-DID grid</b> where every impact, hurricane-code, and financing call is answered first, in the caller's language, and routed to a closer while the intent is still hot.",
+  "demoNote": "South Florida impact window & door campaign \u00b7 hurricane code \u00b7 financing \u00b7 insurance discount \u00b7 10-line pack \u00b7 numbers pending assignment",
+  "insight": "an impact window and door package is a <b>$15,000\u2013$60,000</b> ticket \u2014 and in South Florida the buying trigger is external: a hurricane forecast, an insurance premium hike, or a new code requirement. Demand arrives in a spike, all at once, and the company that answers during that spike takes the contract. A phone number that just rings can't absorb a spike. A <b>Smart DID</b> can.",
+  "benchNowTitle": "The typical window & door company \u2014 today",
+  "benchNow": [
+    "One office line, <b>untracked</b> \u2014 storm-spike calls overflow to voicemail",
+    "Nobody answers nights or weekends \u2014 when homeowners actually shop",
+    "No <b>Spanish line</b> in a majority-Hispanic market",
+    "Financing questions die on hold instead of becoming approvals",
+    "No follow-up on the quote that didn't close that day",
+    "Inbound only \u2014 no outbound to insurance-driven or storm-hit ZIPs"
+  ],
+  "benchNextTitle": "The Window & Door offspring",
+  "benchNext": [
+    "<b>10 Smart DIDs</b>, every call source-tagged, recorded, mapped",
+    "<b>24/7 AI answer</b> \u2014 the storm-spike call is never voicemail",
+    "Dedicated <b>Spanish line</b> with bilingual routing",
+    "<b>Financing line</b> routed straight to a pre-qualification path",
+    "Email + <b>SMS capture</b> with automatic quote follow-up",
+    "<b>Outbound dialer</b> works storm-hit and insurance-notice ZIPs"
+  ],
+  "gridSub": "impact \u00b7 hurricane code \u00b7 financing \u00b7 commercial",
+  "dids": [
+    {
+      "h": "Flagship / 24-7 free estimate",
+      "vn": "1-800-IMPACT-1",
+      "p": "Priority ring, never voicemail \u2014 the line that owns your #1 promise: a free in-home quote.",
+      "pending": true
+    },
+    {
+      "h": "Spanish / Biling\u00fce",
+      "vn": "1-844-VENTANAS",
+      "p": "Routes Spanish callers to a bilingual closer \u2014 a South Florida edge nobody else runs.",
+      "pending": true
+    },
+    {
+      "h": "Hurricane / storm-season surge",
+      "vn": "1-800-STORM-PROOF",
+      "p": "Absorbs the forecast spike \u2014 capacity scales with the weather, not your staff.",
+      "pending": true
+    },
+    {
+      "h": "Financing / monthly payment",
+      "vn": "1-833-EZ-FINANCE",
+      "p": "The objection that kills deals becomes its own tracked, pre-qualifying line.",
+      "pending": true
+    },
+    {
+      "h": "Insurance discount / wind mitigation",
+      "vn": "1-800-WIND-CODE",
+      "p": "The premium-savings angle \u2014 high intent, separately measured.",
+      "pending": true
+    },
+    {
+      "h": "Commercial / condo & HOA",
+      "vn": "1-844-NEW-GLASS",
+      "p": "Building-wide replacement routed to the commercial desk, not the retail queue.",
+      "pending": true
+    },
+    {
+      "h": "Door-only / entry & sliding",
+      "vn": "1-800-MY-DOORS",
+      "p": "The smaller ticket that feeds the bigger one, tracked on its own.",
+      "pending": true
+    },
+    {
+      "h": "Google / paid-ads DID",
+      "vn": "1-800-FREE-QUOTE",
+      "p": "Proves ad ROI to the dollar \u2014 swap the number, keep the data.",
+      "pending": true
+    },
+    {
+      "h": "Showroom / direct-mail DID",
+      "vn": "1-833-SHOWROOM",
+      "p": "Attributes offline campaigns so you stop guessing.",
+      "pending": true
+    },
+    {
+      "h": "Outbound branded caller-ID",
+      "vn": "1-800-IMPACT-1",
+      "p": "The dialer's outbound face \u2014 branded, compliant, recorded.",
+      "pending": true
+    }
+  ],
+  "pillars": [
+    {
+      "n": "Outbound",
+      "p": "A compliant dialer works <b>storm-hit and insurance-notice ZIPs</b> \u2014 branded caller-ID, compliant scripting, recordings, callbacks. You reach the homeowner while the premium letter is still on the counter."
+    },
+    {
+      "n": "Inbound",
+      "p": "10 tracked lines + 24/7 AI answer + SMS. Every source measured, financing calls pre-qualified, every missed call auto-called-back."
+    },
+    {
+      "n": "Command center",
+      "p": "Calls, texts, booked estimates, ad spend and source \u2014 one live dashboard. You finally see which dollar produced which contract."
+    }
+  ],
+  "commandCenter": {
+    "h2": "Your live command center \u2014 contract value in real time",
+    "heroLabel": "Quoted contract value \u00b7 today",
+    "heroValue": "$186,400.00",
+    "vertical": "impact-window",
+    "tiles": [
+      {
+        "k": "7",
+        "l": "In-home estimates set",
+        "c": "cy"
+      },
+      {
+        "k": "$26,628",
+        "l": "Avg. quoted package",
+        "c": "go"
+      },
+      {
+        "k": "61 \u00b7 7",
+        "l": "Calls \u00b7 estimates set",
+        "c": "cy"
+      },
+      {
+        "k": "4.9%",
+        "l": "Cost of acquisition",
+        "c": "lm"
+      }
+    ],
+    "controls": [
+      "\u23f8 Stop",
+      "\u25b6 Start",
+      "\u23ec Slow",
+      "\u23eb Speed up",
+      "\ud83d\udd00 Change leads",
+      "\ud83d\udcdd Change script",
+      "\ud83c\udf81 Change offer",
+      "\ud83d\udccd Change territory",
+      "\ud83d\udce1 Change channel"
+    ],
+    "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, territory, or channel instantly and watch your pipeline move. <b>You close the contracts \u2014 we make the phone ring.</b>"
+  },
+  "map": {
+    "h2": "Your South Florida service area \u2014 live &amp; geo-routed",
+    "fallback": "South Florida Service Area<br>Miami-Dade \u00b7 Broward \u00b7 Palm Beach",
+    "title": "Miami service area",
+    "q": "Miami,+FL",
+    "z": 8,
+    "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest available estimator \u2014 and outbound storm campaigns target the exact neighborhoods the forecast just threatened."
+  },
+  "videoSub": "A typical window company site vs. the offspring \u00b7 the 10-line grid \u00b7 an impact quote booked in 90 seconds. (Embed final MP4 / YouTube here.)",
+  "offerLead": "We stand up all ten numbers, the AI answer, the Spanish route, the financing path, and a starter outbound campaign across your target ZIPs. For 30 days every inbound call is answered and every estimate request is booked while the dialer works storm-hit neighborhoods.",
+  "econUnit": "booked estimates before you scale",
+  "focusVerb": "measuring and closing",
+  "referEarn": {
+    "unit": "contracts",
+    "peer": "contractor"
+  },
+  "alternative": "pass, and the next storm-spike call goes to the window company up the street \u2014 who locks your ZIPs during the one month a year demand triples. Territories are exclusive and claimed once.",
+  "seo": {
+    "title": "Miami Window & Door Replacement \u00d7 Telvergence \u2014 10-Line Smart-DID Proposal",
+    "description": "Telvergence proposal: a 10-line Smart-DID grid for a Miami impact window and door company \u2014 24/7 AI answer, bilingual routing, a financing line, and a live command center.",
+    "canonical": "https://restorationroyalties.com/window/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Miami Window & Door Replacement",
+    "description": "Impact window and door replacement, hurricane-code compliance, and wind-mitigation upgrades across South Florida.",
+    "areaServed": [
+      "Miami-Dade County",
+      "Broward County",
+      "Palm Beach County"
+    ],
+    "priceRange": "$$$"
+  },
+  "disclaimer": "Prepared for a South Florida impact window and door contractor as a discussion proposal. Contracting is licensed and regulated; the contractor license number of record is displayed on all public-facing material. All solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch. Numbers shown as pending assignment are reserved slots, not published lines."
+}

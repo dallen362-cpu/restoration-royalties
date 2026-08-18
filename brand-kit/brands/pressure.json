@@ -1,0 +1,243 @@
+{
+  "slug": "pressure",
+  "brandName": "Miami Pressure Washing",
+  "brandShortBold": "MIAMI",
+  "brandShortRest": " PRESSURE WASHING",
+  "accent": "#38BDF8",
+  "lineCount": 20,
+  "eyebrow": "TELVERGENCE \u00d7 Miami Pressure Washing \u00b7 Miami-Dade \u00b7 Broward",
+  "h1a": "Every dirty surface is a job.",
+  "h1b": "We make it ring to you.",
+  "tagline": "Pressure washing is won by whoever answers first \u2014 the caller is standing outside looking at the stain, phone in hand, and they book the first company that picks up. We turn this brand into a <b>20-line Smart-DID grid</b> across Miami-Dade and Broward where every roof, driveway, storefront, and HOA call is answered instantly, in the caller's language, and routed to the nearest available crew.",
+  "demoNote": "South Florida exterior-cleaning campaign \u00b7 roof \u00b7 driveway \u00b7 commercial \u00b7 HOA \u00b7 20-line pack \u00b7 numbers pending assignment",
+  "insight": "a pressure-washing job runs <b>$250\u2013$8,000+</b> \u2014 and the difference between a driveway and a full commercial contract is <b>which line the caller dialed.</b> These calls come in hot: someone is looking at mildew right now, calling three companies off a map, and hiring whoever answers. A phone number that just rings can't sort that. A <b>Smart DID</b> can.",
+  "benchNowTitle": "The typical pressure-washing company \u2014 today",
+  "benchNow": [
+    "One cell number, <b>untracked</b> \u2014 no idea which ad worked",
+    "Crew is on a roof, so the phone goes to <b>voicemail</b>",
+    "No <b>Spanish line</b> in a Spanish-speaking market",
+    "Residential and commercial hit the same line \u2014 big jobs get lost",
+    "No after-hours answer; the evening caller books a competitor",
+    "Inbound only \u2014 no outbound to HOAs or property managers"
+  ],
+  "benchNextTitle": "The Miami Pressure Washing offspring",
+  "benchNext": [
+    "<b>20 Smart DIDs</b>, every call source-tagged, recorded, mapped",
+    "<b>24/7 AI answer</b> \u2014 the crew never has to come off the roof",
+    "Dedicated <b>Spanish line</b> with bilingual routing",
+    "<b>Commercial and HOA calls</b> on their own priority lines",
+    "Email + <b>SMS capture</b> and missed-call auto-callback",
+    "<b>Outbound dialer</b> works property managers and HOA boards on contract cycles"
+  ],
+  "gridSub": "roof \u00b7 driveway \u00b7 commercial \u00b7 HOA \u00b7 fleet",
+  "dids": [
+    {
+      "h": "Flagship / 24-7 free quote",
+      "vn": "1-800-WASH-PRO",
+      "p": "Priority ring, never voicemail \u2014 the line that owns your #1 promise: a quote today.",
+      "pending": true
+    },
+    {
+      "h": "Spanish / Biling\u00fce",
+      "vn": "1-844-YA-LIMPIO",
+      "p": "Routes Spanish callers to a bilingual path \u2014 the South Florida edge nobody else runs.",
+      "pending": true
+    },
+    {
+      "h": "Roof soft-wash",
+      "vn": "1-800-ROOF-WASH",
+      "p": "The highest-ticket residential job, separated and prioritized.",
+      "pending": true
+    },
+    {
+      "h": "Driveway \u00b7 paver \u00b7 concrete",
+      "vn": "1-833-DRIVEWAY",
+      "p": "The volume workhorse \u2014 fast quote, fast schedule.",
+      "pending": true
+    },
+    {
+      "h": "Commercial / property management",
+      "vn": "1-800-BIZ-WASH",
+      "p": "Contract-sized work routed straight to the commercial desk, never the residential queue.",
+      "pending": true
+    },
+    {
+      "h": "HOA \u00b7 condo \u00b7 community",
+      "vn": "1-844-HOA-WASH",
+      "p": "Boards and community managers get their own line and their own callback SLA.",
+      "pending": true
+    },
+    {
+      "h": "Fleet \u00b7 parking garage",
+      "vn": "1-833-FLEET-WASH",
+      "p": "Recurring-contract work \u2014 the revenue that renews itself.",
+      "pending": true
+    },
+    {
+      "h": "Restaurant \u00b7 grease \u00b7 dumpster pad",
+      "vn": "1-844-DEGREASE",
+      "p": "Health-inspection-driven urgency, scheduled off-hours.",
+      "pending": true
+    },
+    {
+      "h": "Storefront \u00b7 retail \u00b7 plaza",
+      "vn": "1-800-STORE-WASH",
+      "p": "Multi-unit retail routed to the accounts that buy in bulk.",
+      "pending": true
+    },
+    {
+      "h": "Emergency \u00b7 same-day",
+      "vn": "1-800-SAME-DAY",
+      "p": "Surge line for the caller who needs it before an event or an inspection.",
+      "pending": true
+    },
+    {
+      "h": "Gutter cleaning",
+      "vn": "1-844-GUTTER-PRO",
+      "p": "The natural add-on \u2014 captured instead of referred away.",
+      "pending": true
+    },
+    {
+      "h": "Pool deck \u00b7 screen enclosure",
+      "vn": "1-800-POOL-DECK",
+      "p": "High-frequency South Florida job, its own tracked source.",
+      "pending": true
+    },
+    {
+      "h": "Solar panel cleaning",
+      "vn": "1-833-SOLAR-WASH",
+      "p": "Growing, high-margin niche with almost no competition answering.",
+      "pending": true
+    },
+    {
+      "h": "Boat \u00b7 dock \u00b7 seawall",
+      "vn": "1-844-DOCK-WASH",
+      "p": "Waterfront work \u2014 premium pricing, premium routing.",
+      "pending": true
+    },
+    {
+      "h": "Google / paid-ads DID",
+      "vn": "1-800-FREE-QUOTE",
+      "p": "Proves ad ROI to the dollar \u2014 swap the number, keep the data.",
+      "pending": true
+    },
+    {
+      "h": "Facebook / social DID",
+      "vn": "1-833-GET-CLEAN",
+      "p": "Separates social spend from search so you stop guessing.",
+      "pending": true
+    },
+    {
+      "h": "Yard-sign / door-hanger DID",
+      "vn": "1-844-NEW-SHINE",
+      "p": "Attributes offline neighborhood campaigns.",
+      "pending": true
+    },
+    {
+      "h": "Truck-wrap / vehicle DID",
+      "vn": "1-800-MR-WASH",
+      "p": "The number on the truck, measured like any other channel.",
+      "pending": true
+    },
+    {
+      "h": "Referral / partner line",
+      "vn": "1-833-REFER-PRO",
+      "p": "Roofers, realtors, and property managers who send you work.",
+      "pending": true
+    },
+    {
+      "h": "Outbound branded caller-ID",
+      "vn": "1-800-WASH-247",
+      "p": "The dialer's outbound face \u2014 branded, compliant, recorded.",
+      "pending": true
+    }
+  ],
+  "pillars": [
+    {
+      "n": "Outbound",
+      "p": "A compliant dialer works <b>property managers, HOA boards, and commercial plazas</b> on their contract cycles \u2014 branded caller-ID, recordings, callbacks. You reach the decision-maker before the contract renews with someone else."
+    },
+    {
+      "n": "Inbound",
+      "p": "20 tracked lines + 24/7 AI answer + SMS. Every source measured, commercial calls prioritized, every missed call auto-called-back."
+    },
+    {
+      "n": "Command center",
+      "p": "Calls, texts, booked jobs, ad spend and source \u2014 one live dashboard. You finally see which dollar produced which job."
+    }
+  ],
+  "commandCenter": {
+    "h2": "Your live command center \u2014 the whole operation on one screen",
+    "heroLabel": "Booked job value \u00b7 today",
+    "heroValue": "$14,850.00",
+    "vertical": "exterior-cleaning",
+    "tiles": [
+      {
+        "k": "23",
+        "l": "Jobs booked today",
+        "c": "cy"
+      },
+      {
+        "k": "$646",
+        "l": "Avg. ticket",
+        "c": "go"
+      },
+      {
+        "k": "94 \u00b7 23",
+        "l": "Calls \u00b7 jobs booked",
+        "c": "cy"
+      },
+      {
+        "k": "6.1%",
+        "l": "Cost of acquisition",
+        "c": "lm"
+      }
+    ],
+    "controls": [
+      "\u23f8 Stop",
+      "\u25b6 Start",
+      "\u23ec Slow",
+      "\u23eb Speed up",
+      "\ud83d\udd00 Change leads",
+      "\ud83d\udcdd Change script",
+      "\ud83c\udf81 Change offer",
+      "\ud83d\udccd Change territory",
+      "\ud83d\udce1 Change channel"
+    ],
+    "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, territory, or channel instantly and watch your P&amp;L move. <b>You run the crews \u2014 we make the phone ring.</b>"
+  },
+  "map": {
+    "h2": "Your South Florida service area \u2014 live &amp; geo-routed",
+    "fallback": "South Florida Service Area<br>Miami-Dade \u00b7 Broward",
+    "title": "Miami service area",
+    "q": "Miami,+FL",
+    "z": 9,
+    "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest available crew \u2014 and outbound campaigns target the exact neighborhoods and plazas you want under contract."
+  },
+  "videoSub": "A typical pressure-washing site vs. the offspring \u00b7 the 20-line grid \u00b7 a roof job booked in 90 seconds. (Embed final MP4 / YouTube here.)",
+  "offerLead": "We stand up all twenty numbers, the AI answer, the Spanish route, and a starter outbound campaign to property managers and HOA boards across your target ZIPs. For 30 days every inbound call is answered and dispatched while the dialer works the contract accounts.",
+  "econUnit": "booked jobs before you scale",
+  "focusVerb": "running crews and cashing checks",
+  "referEarn": {
+    "unit": "jobs",
+    "peer": "contractor"
+  },
+  "alternative": "pass, and the next call goes to the washing company across town \u2014 who corners the HOA and plaza contracts in your ZIPs, then subs you the overflow at half price. Territories are exclusive and claimed once.",
+  "seo": {
+    "title": "Miami Pressure Washing \u00d7 Telvergence \u2014 20-Line Smart-DID Proposal",
+    "description": "Telvergence proposal: a 20-line Smart-DID grid for a Miami pressure-washing company \u2014 24/7 AI answer, bilingual routing, commercial and HOA priority lines, and a live command center.",
+    "canonical": "https://restorationroyalties.com/pressure/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Miami Pressure Washing",
+    "description": "Exterior cleaning \u2014 roof soft-wash, driveways, commercial and HOA pressure washing across Miami-Dade and Broward.",
+    "areaServed": [
+      "Miami-Dade County",
+      "Broward County"
+    ],
+    "priceRange": "$$"
+  },
+  "disclaimer": "Prepared for a Miami-Dade / Broward pressure-washing operator as a discussion proposal. All solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch. Numbers shown as pending assignment are reserved slots, not published lines."
+}

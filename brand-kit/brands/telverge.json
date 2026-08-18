@@ -1,0 +1,183 @@
+{
+  "slug": "telverge",
+  "brandName": "TELVERGE",
+  "brandShortBold": "TEL",
+  "brandShortRest": "VERGE",
+  "accent": "#8A7BFF",
+  "lineCount": 10,
+  "eyebrow": "TELVERGENCE \u00d7 TELVERGE \u00b7 The vanity & Smart-DID platform",
+  "h1a": "Your word. Your number.",
+  "h1b": "Live in 24 hours.",
+  "tagline": "A number people <b>remember</b> is worth more than a number people look up. TELVERGE is the vanity and Smart-DID platform \u2014 spell your business into a toll-free number, put your name on the caller ID, and let a 24/7 AI answer every call it brings in. <b>Ten Smart-DID lines for $22.95 each.</b>",
+  "demoNote": "Vanity & Smart-DID platform \u00b7 toll-free \u00b7 branded caller ID \u00b7 AI answer \u00b7 10-line pack \u00b7 numbers pending assignment",
+  "insight": "a memorable number is the cheapest permanent advertising a business will ever own \u2014 it works on a truck, a sign, a radio spot, and a business card simultaneously, forever, and it never stops compounding. But a vanity number that rings into voicemail wastes every impression it earns. The number and the answering have to be <b>one system</b>. That's a <b>Smart DID</b>.",
+  "benchNowTitle": "A plain business number \u2014 today",
+  "benchNow": [
+    "Ten forgettable digits nobody recalls from a truck",
+    "<b>Untracked</b> \u2014 no idea which sign or ad produced the call",
+    "Rings out to voicemail after hours",
+    "Shows as an unknown number on caller ID",
+    "Locked to one carrier \u2014 porting is a fight",
+    "No routing, no language path, no priority"
+  ],
+  "benchNextTitle": "A TELVERGE Smart DID",
+  "benchNext": [
+    "A word people <b>remember</b> and dial from memory",
+    "Every call <b>source-tagged</b>, recorded, and mapped",
+    "<b>24/7 AI answer</b> \u2014 nothing rings out, ever",
+    "<b>Your name</b> on the caller ID, every outbound call",
+    "<b>You own it</b> \u2014 port to any carrier, anytime",
+    "Geo, language, and priority routing built in"
+  ],
+  "gridSub": "the platform's own grid",
+  "dids": [
+    {
+      "h": "Flagship / brand line",
+      "vn": "1-800-TELVERGE",
+      "p": "The front door \u2014 the number the whole brand is built on.",
+      "pending": true
+    },
+    {
+      "h": "24/7 AI answer",
+      "vn": "1-844-AI-VOICE",
+      "p": "The always-on answering layer every other line falls back to.",
+      "pending": true
+    },
+    {
+      "h": "Sales / new accounts",
+      "vn": "1-833-GO-SMART",
+      "p": "New business routed straight to a closer.",
+      "pending": true
+    },
+    {
+      "h": "New-line provisioning",
+      "vn": "1-800-NEW-LINE",
+      "p": "Existing customers adding lines \u2014 fast path, no queue.",
+      "pending": true
+    },
+    {
+      "h": "The 10-line pack",
+      "vn": "1-844-DID-GRID",
+      "p": "The core offer's own tracked line.",
+      "pending": true
+    },
+    {
+      "h": "Inbound overflow",
+      "vn": "1-855-RING-247",
+      "p": "Absorbs surge for any client whose own lines are saturated.",
+      "pending": true
+    },
+    {
+      "h": "Missed-call rescue",
+      "vn": "1-800-NO-MISS-1",
+      "p": "Auto-callback for every call that didn't connect.",
+      "pending": true
+    },
+    {
+      "h": "Outbound AI dialer",
+      "vn": "1-833-DIAL-AI-1",
+      "p": "The compliant outbound face \u2014 branded and recorded.",
+      "pending": true
+    },
+    {
+      "h": "Autonomous agent",
+      "vn": "1-844-CALL-BOT",
+      "p": "The fully automated intake path.",
+      "pending": true
+    },
+    {
+      "h": "Vanity flagship",
+      "vn": "1-800-SMART-DID",
+      "p": "The platform's showcase number.",
+      "pending": true
+    }
+  ],
+  "pillars": [
+    {
+      "n": "Outbound",
+      "p": "A compliant dialer with <b>branded caller-ID</b> so your name shows on every call \u2014 recordings, callbacks, DNC-scrubbed lists."
+    },
+    {
+      "n": "Inbound",
+      "p": "Every vanity line backed by 24/7 AI answer + SMS. Every source measured, every missed call auto-called-back."
+    },
+    {
+      "n": "Command center",
+      "p": "Calls, texts, conversions, ad spend and source \u2014 one live dashboard across every number you own."
+    }
+  ],
+  "commandCenter": {
+    "h2": "Your live platform command center",
+    "heroLabel": "Calls handled \u00b7 today",
+    "heroValue": "4,182",
+    "vertical": "platform",
+    "tiles": [
+      {
+        "k": "4,182",
+        "l": "Calls handled today",
+        "c": "cy"
+      },
+      {
+        "k": "99.2%",
+        "l": "Answer rate",
+        "c": "go"
+      },
+      {
+        "k": "38",
+        "l": "Active client grids",
+        "c": "cy"
+      },
+      {
+        "k": "1.4s",
+        "l": "Avg. answer time",
+        "c": "lm"
+      }
+    ],
+    "controls": [
+      "\u23f8 Stop",
+      "\u25b6 Start",
+      "\u23ec Slow",
+      "\u23eb Speed up",
+      "\ud83d\udd00 Change leads",
+      "\ud83d\udcdd Change script",
+      "\ud83c\udf81 Change offer",
+      "\ud83d\udccd Change territory",
+      "\ud83d\udce1 Change channel"
+    ],
+    "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, territory, or channel instantly and watch your P&amp;L move. <b>You do the work \u2014 we make the phone ring.</b>"
+  },
+  "map": {
+    "h2": "Nationwide coverage \u2014 local presence anywhere",
+    "fallback": "Nationwide Coverage<br>Local presence in any area code",
+    "title": "US coverage",
+    "q": "United+States",
+    "z": 4,
+    "note": "Pull a local number in any area code in the country \u2014 the caller sees a neighbor, you run one platform. Toll-free and vanity numbers route into the same brain."
+  },
+  "videoSub": "A plain number vs. a Smart DID \u00b7 spelling a word into a live line \u00b7 a call answered in 90 seconds. (Embed final MP4 / YouTube here.)",
+  "offerLead": "We pull your numbers, stand up the AI answer, brand your caller ID, and wire the whole grid into one dashboard. For 30 days every inbound call is answered and measured.",
+  "econUnit": "calls answered before you scale",
+  "focusVerb": "running your business",
+  "referEarn": {
+    "unit": "accounts",
+    "peer": "owner"
+  },
+  "alternative": "pass, and someone else spells your word first \u2014 vanity numbers are one-per-country and gone permanently once claimed.",
+  "seo": {
+    "title": "TELVERGE \u00d7 Telvergence \u2014 Vanity & Smart-DID Platform Proposal",
+    "description": "Telvergence proposal: TELVERGE vanity and Smart-DID platform \u2014 memorable toll-free numbers, branded caller ID, 24/7 AI answering, and a live command center. Ten lines for $22.95 each.",
+    "canonical": "https://restorationroyalties.com/telverge/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Vanity & toll-free business phone numbers with AI answering",
+    "provider": {
+      "@type": "Organization",
+      "name": "Telvergence"
+    },
+    "description": "Branded vanity and toll-free numbers with 24/7 AI answering and live dashboards.",
+    "areaServed": "US"
+  },
+  "disclaimer": "Prepared as a discussion proposal for the TELVERGE vanity and Smart-DID platform. Vanity spellings shown are examples pending assignment from the wholesale portal; nothing is published unowned. All solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch."
+}

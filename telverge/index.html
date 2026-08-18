@@ -1,157 +1,270 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<title>TELVERGE — Your word, your number</title>
-<style>
-  :root{--midnight:#070C18;--card:#101a33;--card2:#0b1426;--line:#22304f;--cyan:#00D4FF;--lime:#00FF88;--ember:#FF6A2B;--gold:#ffd27a;--violet:#8b7bff;--ink:#eef4ff;--muted:#9fb3d6;--faint:#5c6b8c;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);background:radial-gradient(1200px 680px at 50% -10%,#122a5a,var(--midnight) 60%);line-height:1.6}
-  .wrap{max-width:940px;margin:0 auto;padding:0 22px}
-  a{color:var(--cyan)}
-  .bar{position:sticky;top:0;z-index:20;display:flex;gap:14px;align-items:center;padding:12px 22px;background:rgba(7,12,24,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .bar .logo{font-weight:900;letter-spacing:1px}.bar .logo b{color:var(--cyan)}
-  .bar a{margin-left:auto;color:var(--cyan);text-decoration:none;font-weight:800;font-size:13px}
-  header{padding:46px 0 8px}
-  .eyebrow{font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--ember)}
-  h1{font-size:clamp(32px,6vw,58px);font-family:Georgia,serif;font-weight:800;margin:10px 0 8px;letter-spacing:-.02em;line-height:1.05}
-  h1 span{background:linear-gradient(90deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .tagline{color:var(--muted);font-size:18px;max-width:62ch}
-  .demo-note{display:inline-block;margin-top:14px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,210,122,.4);border-radius:999px;padding:5px 12px;background:rgba(255,210,122,.06)}
-  section{padding:26px 0;border-top:1px solid var(--line)}
-  h2{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
-  .big{border-left:4px solid var(--ember);background:rgba(255,106,43,.08);border-radius:8px;padding:15px 17px;font-size:15.5px}.big b{color:var(--ink)}
-  .grid10{display:grid;gap:10px;grid-template-columns:1fr}@media(min-width:560px){.grid10{grid-template-columns:1fr 1fr}}
-  .did{position:relative;background:linear-gradient(180deg,var(--card),#0b1426);border:1px solid var(--line);border-radius:12px;padding:13px 14px 13px 46px;transition:border-color .15s,transform .15s}
-  .did:hover{border-color:var(--cyan);transform:translateY(-2px)}
-  .did .num{position:absolute;left:12px;top:13px;width:24px;height:24px;border-radius:7px;background:rgba(0,212,255,.12);border:1px solid rgba(0,212,255,.4);color:var(--cyan);font-weight:900;font-size:12px;display:flex;align-items:center;justify-content:center}
-  .did h4{font-size:14px;margin-bottom:2px}.did .vn{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--cyan);font-weight:800;font-size:12.5px}
-  .did p{color:var(--muted);font-size:12.5px;margin-top:4px}
-  .pillars{display:grid;gap:12px}@media(min-width:640px){.pillars{grid-template-columns:1fr 1fr 1fr}}
-  .p{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
-  .p .n{font-weight:900;color:var(--ember);font-size:15px}.p p{color:var(--muted);font-size:13.5px;margin-top:5px}.p b{color:var(--ink)}
-  .offer{background:linear-gradient(180deg,rgba(255,106,43,.08),rgba(0,255,136,.05));border:1px solid var(--line);border-radius:14px;padding:18px}.offer b{color:var(--ink)}
-  .econ{display:grid;gap:10px;margin-top:8px}@media(min-width:560px){.econ{grid-template-columns:repeat(3,1fr)}}
-  .ec{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
-  .ec .k{font-size:22px;font-weight:900;color:var(--lime)}.ec .l{font-size:12px;color:var(--muted);margin-top:3px}
-  .allit{margin-top:16px;background:linear-gradient(180deg,rgba(0,255,136,.08),rgba(0,212,255,.05));border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
-  .allit .k{font:800 12px/1 ui-monospace,Menlo,monospace;letter-spacing:2px;color:var(--lime);text-transform:uppercase}
-  .allit .row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:14px 0 8px}
-  .allit .row span{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-weight:800}
-  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-  .cta a{flex:1;min-width:200px;text-align:center;text-decoration:none;font-weight:800;border-radius:12px;padding:15px}
-  .cta .call{background:linear-gradient(180deg,#2bff9e,#00c46a);color:#04140a}
-  .cta .book{background:rgba(255,255,255,.05);color:var(--ink);border:1px solid var(--line)}
-  .sig{margin-top:22px;color:var(--muted);font-size:14px}.sig b{color:var(--ink)}
-  .disclaimer{border-top:1px solid var(--line);margin-top:26px;padding:16px 0 60px;color:var(--faint);font-size:11.5px}
-  .winnet{max-width:940px;margin:24px auto 0;padding:24px 22px 0;border-top:1px solid #22304f}
-  .winnet .wb{display:inline-block;font:800 11px/1 "Segoe UI",system-ui,sans-serif;letter-spacing:2px;color:#00D4FF;border:1px solid rgba(0,212,255,.4);border-radius:999px;padding:6px 12px;background:rgba(0,212,255,.06)}
-  .winnet h3b{display:block;color:#eef4ff;font:800 21px/1.3 Georgia,serif;margin:12px 0 6px}
-  .winnet .wp{color:#9fb3d6;font-size:14.5px;max-width:72ch;line-height:1.55}
-  .winnet .wr{display:grid;gap:10px;margin-top:16px}@media(min-width:640px){.winnet .wr{grid-template-columns:1fr 1fr 1fr}}
-  .winnet a.wc{display:block;text-decoration:none;background:#101a33;border:1px solid #22304f;border-radius:12px;padding:14px;transition:.15s}
-  .winnet a.wc:hover{border-color:#00D4FF;transform:translateY(-2px)}
-  .winnet a.wc.here{border-color:rgba(0,255,136,.5);background:rgba(0,255,136,.07)}
-  .winnet a.wc .t{font-weight:800;color:#eef4ff;font-size:15px}.winnet a.wc .s{color:#9fb3d6;font-size:12.5px;margin-top:3px}
-  .winnet .prov{color:#6e7ea0;font-size:11px;margin-top:12px}
-</style>
-<meta property="og:title" content="TELVERGE — Your word, your number">
-<meta name="description" content="TELVERGE — claim your own memorable vanity phone number. Spell your business into a toll-free 1-800 number, branded, with 24/7 AI answering. Ten Smart-DID lines for $22.95.">
-<meta name="keywords" content="vanity phone numbers, toll-free numbers, custom business phone number, 1-800 numbers, memorable phone number, smart DID, branded caller ID, business phone line, AI answering">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#04070F">
+<title>TELVERGE × Telvergence — Vanity &amp; Smart-DID Platform Proposal</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Telvergence proposal: TELVERGE vanity and Smart-DID platform — memorable toll-free numbers, branded caller ID, 24/7 AI answering, and a live command center. Ten lines for $22.95 each.">
 <link rel="canonical" href="https://restorationroyalties.com/telverge/">
 <meta property="og:type" content="website">
+<meta property="og:title" content="TELVERGE × Telvergence — Vanity &amp; Smart-DID Platform Proposal">
 <meta property="og:url" content="https://restorationroyalties.com/telverge/">
-<meta property="og:description" content="TELVERGE — claim your own memorable vanity phone number. Spell your business into a toll-free 1-800 number, branded, with 24/7 AI answering. Ten Smart-DID lines for $22.95.">
+<meta property="og:description" content="Telvergence proposal: TELVERGE vanity and Smart-DID platform — memorable toll-free numbers, branded caller ID, 24/7 AI answering, and a live command center. Ten lines for $22.95 each.">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Vanity & toll-free business phone numbers with AI answering","provider":{"@type":"Organization","name":"Telvergence"},"description":"Claim your own branded vanity or toll-free number with 24/7 AI answering. Ten Smart-DID lines for $22.95.","areaServed":"US"}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2304070F'/%3E%3Ccircle cx='16' cy='16' r='4' fill='none' stroke='%2300FF88' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%232AD4F0' stroke-width='1.5' opacity='.6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Vanity & toll-free business phone numbers with AI answering","provider":{"@type":"Organization","name":"Telvergence"},"description":"Branded vanity and toll-free numbers with 24/7 AI answering and live dashboards.","areaServed":"US"}</script>
+<link rel="stylesheet" href="../brand-kit/brand.css">
+<style>:root{--accent:#8A7BFF;}</style>
 </head>
 <body>
-<div class="bar"><div class="logo"><b>TEL</b>VERGE</div><a href="/showroom/">← Showroom</a></div>
+<div class="bar">
+  <div class="logo"><b>TEL</b>VERGE <span class="sr">· Showroom</span></div>
+  <a href="../showroom/">← Showroom</a>
+</div>
 
 <header class="wrap">
-  <div class="eyebrow">TELVERGE · Powered by Telvergence UCCPXaaS · telverge.com</div>
-  <h1>Your word.<br><span>Your number, live.</span></h1>
-  <div class="tagline">Every business lives and dies by the phone. TELVERGE turns your business into a 10-line Smart-DID grid with an AI front desk that answers every call, books every job, and texts back every missed one — 24/7 — on numbers you own, from the phone already in your pocket.</div>
-  <div class="demo-note">10-line vanity pack · example numbers below · replace with your real DIDs at launch</div>
+  <div class="eyebrow">TELVERGENCE × TELVERGE · The vanity &amp; Smart-DID platform</div>
+  <h1>Your word. Your number.<br><span>Live in 24 hours.</span></h1>
+  <div class="tagline">A number people <b>remember</b> is worth more than a number people look up. TELVERGE is the vanity and Smart-DID platform — spell your business into a toll-free number, put your name on the caller ID, and let a 24/7 AI answer every call it brings in. <b>Ten Smart-DID lines for $22.95 each.</b></div>
+  <div class="demo-note">Vanity &amp; Smart-DID platform · toll-free · branded caller ID · AI answer · 10-line pack · numbers pending assignment</div>
 </header>
 
 <div class="wrap">
   <section>
-    <div class="big"><b>The insight:</b> a missed call is a lost customer — and most businesses miss 1 in 4. A phone number that just rings can't fix that. A <b>Smart DID</b> can: it knows the source, routes by language and priority, answers with AI 24/7, and texts the customer back if no one picks up. Ten of them become a command center that never lets revenue slip to voicemail.</div>
+    <div class="big"><b>The insight:</b> a memorable number is the cheapest permanent advertising a business will ever own — it works on a truck, a sign, a radio spot, and a business card simultaneously, forever, and it never stops compounding. But a vanity number that rings into voicemail wastes every impression it earns. The number and the answering have to be <b>one system</b>. That's a <b>Smart DID</b>.</div>
   </section>
 
   <section>
-    <h2>The 10-line vanity Smart-DID grid <span style="color:var(--faint);text-transform:none;letter-spacing:0"> (example numbers)</span></h2>
-    <div class="grid10">
-      <div class="did"><span class="num">1</span><h4>Flagship / brand line</h4><span class="vn">1-800-TELVERGE</span><p>Priority ring, never voicemail — the memorable line that owns your #1 promise.</p></div>
-      <div class="did"><span class="num">2</span><h4>24/7 AI answer</h4><span class="vn">1-844-AI-VOICE</span><p>The autonomous front desk — answers, qualifies, and books around the clock.</p></div>
-      <div class="did"><span class="num">3</span><h4>Sales / new accounts</h4><span class="vn">1-833-GO-SMART</span><p>Its own tracked line for new-customer demand.</p></div>
-      <div class="did"><span class="num">4</span><h4>New-line provisioning</h4><span class="vn">1-800-NEW-LINE</span><p>Spin up more numbers instantly, at little to no added cost.</p></div>
-      <div class="did"><span class="num">5</span><h4>The 10-line pack</h4><span class="vn">1-844-DID-GRID</span><p>Your whole grid on one dashboard — sources, calls, bookings.</p></div>
-      <div class="did"><span class="num">6</span><h4>Inbound overflow</h4><span class="vn">1-855-RING-247</span><p>When you're slammed, overflow routes so no call is ever dropped.</p></div>
-      <div class="did"><span class="num">7</span><h4>Missed-call rescue</h4><span class="vn">1-800-NO-MISS-1</span><p>Auto text-back on every missed call — the lost customer, recovered.</p></div>
-      <div class="did"><span class="num">8</span><h4>Outbound AI dialer</h4><span class="vn">1-833-DIAL-AI-1</span><p>Branded, compliant, recorded outbound — from your business number.</p></div>
-      <div class="did"><span class="num">9</span><h4>Autonomous agent</h4><span class="vn">1-844-CALL-BOT</span><p>The back-end AI that nurtures and follows up, hands-off.</p></div>
-      <div class="did"><span class="num">10</span><h4>Vanity flagship</h4><span class="vn">1-800-SMART-DID</span><p>The keyword number customers actually remember and dial.</p></div>
+    <h2>Live benchmark — today vs. the TELVERGE offspring</h2>
+    <div class="bm">
+      <div class="bc now"><h3>A plain business number — today</h3>
+        <ul>
+          <li>Ten forgettable digits nobody recalls from a truck</li>
+          <li><b>Untracked</b> — no idea which sign or ad produced the call</li>
+          <li>Rings out to voicemail after hours</li>
+          <li>Shows as an unknown number on caller ID</li>
+          <li>Locked to one carrier — porting is a fight</li>
+          <li>No routing, no language path, no priority</li>
+        </ul></div>
+      <div class="bc next"><h3>A TELVERGE Smart DID</h3>
+        <ul>
+          <li>A word people <b>remember</b> and dial from memory</li>
+          <li>Every call <b>source-tagged</b>, recorded, and mapped</li>
+          <li><b>24/7 AI answer</b> — nothing rings out, ever</li>
+          <li><b>Your name</b> on the caller ID, every outbound call</li>
+          <li><b>You own it</b> — port to any carrier, anytime</li>
+          <li>Geo, language, and priority routing built in</li>
+        </ul></div>
     </div>
-    <p style="color:var(--faint);font-size:12px;margin-top:10px">Vanity spellings are examples for illustration — real DIDs are pulled from the Telvergence wholesale portal and assigned to your brand before launch; nothing published unowned.</p>
   </section>
 
   <section>
-    <h2>The critical core — one AI-driven system</h2>
+    <h2>The 10-line Smart-DID grid — the platform&#x27;s own grid</h2>
+    <div class="grid10">
+      <div class="did"><span class="num">1</span><h4>Flagship / brand line</h4><span class="vn pending">1-800-TELVERGE <em>· pending assignment</em></span><p>The front door — the number the whole brand is built on.</p></div>
+      <div class="did"><span class="num">2</span><h4>24/7 AI answer</h4><span class="vn pending">1-844-AI-VOICE <em>· pending assignment</em></span><p>The always-on answering layer every other line falls back to.</p></div>
+      <div class="did"><span class="num">3</span><h4>Sales / new accounts</h4><span class="vn pending">1-833-GO-SMART <em>· pending assignment</em></span><p>New business routed straight to a closer.</p></div>
+      <div class="did"><span class="num">4</span><h4>New-line provisioning</h4><span class="vn pending">1-800-NEW-LINE <em>· pending assignment</em></span><p>Existing customers adding lines — fast path, no queue.</p></div>
+      <div class="did"><span class="num">5</span><h4>The 10-line pack</h4><span class="vn pending">1-844-DID-GRID <em>· pending assignment</em></span><p>The core offer&#x27;s own tracked line.</p></div>
+      <div class="did"><span class="num">6</span><h4>Inbound overflow</h4><span class="vn pending">1-855-RING-247 <em>· pending assignment</em></span><p>Absorbs surge for any client whose own lines are saturated.</p></div>
+      <div class="did"><span class="num">7</span><h4>Missed-call rescue</h4><span class="vn pending">1-800-NO-MISS-1 <em>· pending assignment</em></span><p>Auto-callback for every call that didn&#x27;t connect.</p></div>
+      <div class="did"><span class="num">8</span><h4>Outbound AI dialer</h4><span class="vn pending">1-833-DIAL-AI-1 <em>· pending assignment</em></span><p>The compliant outbound face — branded and recorded.</p></div>
+      <div class="did"><span class="num">9</span><h4>Autonomous agent</h4><span class="vn pending">1-844-CALL-BOT <em>· pending assignment</em></span><p>The fully automated intake path.</p></div>
+      <div class="did"><span class="num">10</span><h4>Vanity flagship</h4><span class="vn pending">1-800-SMART-DID <em>· pending assignment</em></span><p>The platform&#x27;s showcase number.</p></div>
+    </div>
+    <p class="fineprint left">Numbers marked <b>pending assignment</b> are reserved slots — real DIDs are pulled from the Telvergence wholesale portal before launch. Nothing is ever published unowned.</p>
+  </section>
+
+  <section>
+    <h2>Why "smart" — the brain behind the 10 numbers</h2>
+    <div class="brain">
+      <div class="row">
+        <span class="chip">Any DID in the grid</span>
+        <span class="arrow">→</span>
+        <span class="chip">source-tag</span>
+        <span class="arrow">→</span>
+        <span class="chip">language route</span>
+        <span class="arrow">→</span>
+        <span class="chip hot">priority queue</span>
+        <span class="arrow">→</span>
+        <span class="chip">24/7 AI answer</span>
+        <span class="arrow">→</span>
+        <span class="chip">dispatch / SMS / auto-callback</span>
+        <span class="arrow">→</span>
+        <span class="chip hot">one command center</span>
+      </div>
+      <p class="brainnote">Each DID is <b>programmable</b>: it knows where the call came from, what language to route in, how urgent it is, and what to do if no one answers. Because Telvergence <b>controls the dial tone</b> (carrier API → our own private network), the routing lives on infrastructure we own — <b>your lead data never leaks</b> to a third-party platform.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>The critical core — a telemarketing-centric sales system</h2>
     <div class="pillars">
-      <div class="p"><div class="n">Inbound</div><p>10 tracked lines + 24/7 AI answer + SMS. Every source measured, every call prioritized, every missed call auto-texted back.</p></div>
-      <div class="p"><div class="n">Outbound</div><p>A compliant predictive/manual dialer works your list — branded caller-ID, recordings, callbacks — so you stop waiting for the phone.</p></div>
-      <div class="p"><div class="n">Command center</div><p>Calls, texts, booked jobs, ad spend and source on one live dashboard — real-time profit &amp; loss to the penny.</p></div>
+      <div class="p"><div class="n">Outbound</div><p>A compliant dialer with <b>branded caller-ID</b> so your name shows on every call — recordings, callbacks, DNC-scrubbed lists.</p></div>
+      <div class="p"><div class="n">Inbound</div><p>Every vanity line backed by 24/7 AI answer + SMS. Every source measured, every missed call auto-called-back.</p></div>
+      <div class="p"><div class="n">Command center</div><p>Calls, texts, conversions, ad spend and source — one live dashboard across every number you own.</p></div>
+    </div>
+    <div class="comp">Built to compliance: <span>TCPA</span><span>Do-Not-Call scrubbed</span><span>Recorded with disclosure</span><span>Lawful calling hours</span> — lead data governed &amp; separated.</div>
+    
+  </section>
+
+  <section>
+    <h2>Your live platform command center</h2>
+    <div class="cc">
+      <div class="cchead">
+        <span class="ccname">◉ TELVERGE · Demo</span>
+        <span class="cclive"><span class="dot"></span>ILLUSTRATIVE</span>
+      </div>
+      <div class="cchero">
+        <div class="cclabel">Calls handled · today</div>
+        <div class="ccbig">4,182</div>
+      </div>
+      <div class="ccgrid">
+        <div class="ec tl"><div class="k cy">4,182</div><div class="l">Calls handled today</div></div>
+        <div class="ec tl"><div class="k go">99.2%</div><div class="l">Answer rate</div></div>
+        <div class="ec tl"><div class="k cy">38</div><div class="l">Active client grids</div></div>
+        <div class="ec tl"><div class="k lm">1.4s</div><div class="l">Avg. answer time</div></div>
+      </div>
+      <div class="ccctrls">
+        <div class="cclabel">Live controls — change anything instantly</div>
+        <div class="ctlrow">
+          <span class="ctl">⏸ Stop</span>
+          <span class="ctl">▶ Start</span>
+          <span class="ctl">⏬ Slow</span>
+          <span class="ctl">⏫ Speed up</span>
+          <span class="ctl">🔀 Change leads</span>
+          <span class="ctl">📝 Change script</span>
+          <span class="ctl">🎁 Change offer</span>
+          <span class="ctl">📍 Change territory</span>
+          <span class="ctl">📡 Change channel</span>
+        </div>
+      </div>
+    </div>
+    <p class="ccnote">Every call feeds a real-time conduit your customized "second brain" analyzes on the fly — then you, or the AI, adjust the leads, script, offer, territory, or channel instantly and watch your P&amp;L move. <b>You do the work — we make the phone ring.</b></p>
+    <p class="fineprint">Illustrative demo figures for a platform campaign — not actual client results. Your dashboard shows your real numbers.</p>
+  </section>
+
+  <section>
+    <h2>Nationwide coverage — local presence anywhere</h2>
+    <div class="mapwrap">
+      <div class="mapfallback">🗺️ Nationwide Coverage&lt;br&gt;Local presence in any area code</div>
+      <iframe title="US coverage" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=United+States&amp;z=4&amp;output=embed"></iframe>
+    </div>
+    <p class="mapnote">Pull a local number in any area code in the country — the caller sees a neighbor, you run one platform. Toll-free and vanity numbers route into the same brain.</p>
+  </section>
+  <section>
+    <h2>The Telvergence Platform — our UCCPXaaS + automation core</h2>
+    <div class="plat"><b>UCCPXaaS</b> = Unified Communications + Contact-Center + Communications-Platform + Everything-as-a-Service — the proprietary infrastructure that turns 10 phone numbers into an autonomous revenue engine, owned end-to-end, not rented from a third party.</div>
+    <div class="stack">
+      <div class="layer"><span class="ln">1</span><h4>Smart-DID Sensor Layer <span class="tech">CPaaS</span></h4><p>Programmable numbers — each source-tagged, recorded, and geo-aware.</p></div>
+      <div class="layer"><span class="ln">2</span><h4>Carrier &amp; Dial-Tone Control <span class="tech">UCaaS</span></h4><p>We own the network path — routing runs on infrastructure we control, so your lead data never leaks.</p></div>
+      <div class="layer"><span class="ln">3</span><h4>Intelligent Routing Brain <span class="tech">AI ROUTING</span></h4><p>Geo, language, and urgency decided in milliseconds — the hottest call always jumps the queue.</p></div>
+      <div class="layer"><span class="ln">4</span><h4>Contact-Center Layer <span class="tech">CCaaS</span></h4><p>24/7 AI answer, live agents, and a compliant outbound dialer — inbound and outbound in one system.</p></div>
+      <div class="layer"><span class="ln">5</span><h4>Automation &amp; Workflow <span class="tech">iPaaS</span></h4><p>CRM sync, SMS follow-up, missed-call auto-callback, review generation, and booking — hands-off.</p></div>
+      <div class="layer"><span class="ln">6</span><h4>Command Center <span class="tech">XaaS</span></h4><p>Every call, text, job, and ad dollar on one live dashboard — the whole business in one screen.</p></div>
+    </div>
+    <p class="fineprint left">Proprietary platform architecture. Carrier &amp; infrastructure layer powered by Telvergence.</p>
+  </section>
+
+  <section>
+    <h2>The 90-second walkthrough</h2>
+    <div class="video">
+      <span class="tag">Video · walkthrough</span>
+      <div class="play">▶</div>
+      <div class="vt">TELVERGE, bred with Telvergence — 10 numbers, one brain</div>
+      <div class="vs">A plain number vs. a Smart DID · spelling a word into a live line · a call answered in 90 seconds. (Embed final MP4 / YouTube here.)</div>
     </div>
   </section>
 
   <section>
     <h2>The 10-line pack — risk reversed onto us</h2>
     <div class="offer">
-      Start with the <b>10-Line Smart-DID Pack + 30-Day Pilot.</b> We stand up all ten numbers, the AI answer, and a starter campaign. Your phone rings within 24 hours. <b>$0 out of pocket</b> — just <b>$22.95/line/month</b>, month-to-month, cancel anytime, and you own your numbers &amp; can port them any time. Your first jobs should cover it before you're ever billed, or Telvergence covers your first month.
+      Start with the <b>10-Line Smart-DID Pack + 30-Day Pilot.</b> We pull your numbers, stand up the AI answer, brand your caller ID, and wire the whole grid into one dashboard. For 30 days every inbound call is answered and measured. <b>You see the booked business first.</b> No contract, no SSN/credit info; Telvergence <b>advances the $22.95/line before you're ever charged</b>; 100% satisfaction / full refund. <b>You simply post a card on file that is charged only if and when your lines are successfully provisioned and you're satisfied with the call clarity and hand-off — first billed 17 days after enrollment, yet your phones ring day one, so your first jobs should cover it, or Telvergence pays your first month. You own your numbers and can port them to any carrier, anytime.</b>
     </div>
     <div class="econ">
       <div class="ec"><div class="k">10</div><div class="l">Smart DIDs, each a sensor + router</div></div>
-      <div class="ec"><div class="k">$0</div><div class="l">out of pocket to start</div></div>
-      <div class="ec"><div class="k">24 hrs</div><div class="l">to your phones ringing</div></div>
+      <div class="ec"><div class="k">$0</div><div class="l">out of pocket first — we advance the lines</div></div>
+      <div class="ec"><div class="k">30 days</div><div class="l">see calls answered before you scale before you scale</div></div>
     </div>
-    <div class="allit">
-      <div class="k">All it takes to start</div>
-      <div class="row"><span><span style="color:var(--cyan)">①</span> A signed LOA</span><span><span style="color:var(--cyan)">②</span> A card on file</span></div>
-      <p style="color:var(--muted);font-size:14px;max-width:64ch;margin:0 auto">That's it — the system builds itself and runs on autopilot, eliminating the majority of your costs, risk, and labor.</p>
+    <div class="start">
+      <div class="cclabel gold">All it takes to start</div>
+      <div class="startrow">
+        <span class="startchip"><span class="i">①</span> A signed LOA <span class="sm">(Letter of Agency)</span></span>
+        <span class="startchip"><span class="i">②</span> A card on file</span>
+      </div>
+      <p>That's it. The system builds itself and generates cash on autopilot — eliminating the majority of your costs, risks, and labor. You focus on running your business.</p>
     </div>
   </section>
 
-  <section style="border-bottom:none">
-    <h2>The ask</h2>
-    <p style="color:var(--muted);font-size:15px">Let's stand up your 10-line Smart-DID grid and the 30-day pilot — a 20-minute call is all we need to begin. <b style="color:var(--ink)">I can have your phones ringing within 24 hours.</b></p>
-    <p style="font-family:Georgia,serif;font-weight:800;font-size:clamp(18px,3vw,24px);color:var(--ink);margin:14px 0 4px">Give me <span style="color:var(--gold)">1% of your trust</span> — I'll earn the other 99.</p>
-    <div class="cta">
-      <a class="call" href="tel:+18008358374">📞 Call to begin — 1-800-TELVERGE</a>
-      <a class="book" href="mailto:contact@telverge.com?subject=TELVERGE%20—%2010-Line%20Pilot">✉️ contact@telverge.com</a>
+  <section>
+    <h2>Engagement tiers <span class="soft">(proposed &amp; adjustable)</span></h2>
+    <table>
+      <tr><td><b>Foundation</b> — the Smart-DID grid + AI answer</td><td>$1,500 / mo</td></tr>
+      <tr class="rec"><td><b>Growth</b> — grid + outbound dialer + command center <span style="font-size:11px">recommended</span></td><td><b>$3,500 / mo</b></td></tr>
+      <tr><td><b>Performance split</b></td><td>share of new business booked</td></tr>
+      <tr><td><b>Multi-market add-on</b> (add a second metro)</td><td>~$1,500 / market / mo</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Grow beyond your own accounts — refer &amp; earn</h2>
+    <p class="lead">Every card the app gives you can be handed to another owner. They text to get their own 10-line grid — and you earn. A network that pays you to grow it.</p>
+    <div class="pillars">
+      <div class="p"><div class="n">Refer in a text</div><p>Hand your digital card to a peer; they text Telvergence and a few SMS later their own Smart-DID grid is live — and you collect a <b>referral bonus + overrides</b>.</p></div>
+      <div class="p"><div class="n">Overflow to you</div><p>When our operator bank hits capacity, overflow accounts calls route to <b>your</b> mobile — extra business you'd never have gotten.</p></div>
+      <div class="p"><div class="n">Own your brand</div><p>Work your way up to your <b>own white-labeled brand</b> for a one-time <b>$25K</b> — a turnkey brand on a network that's already running.</p></div>
     </div>
-    <p style="font-family:Georgia,serif;font-weight:800;font-size:clamp(20px,3.4vw,28px);text-align:center;margin:20px 0 4px;color:var(--ink)">You decide. <span style="background:linear-gradient(90deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">What's it going to be?</span></p>
+    <div class="ladder">
+      <span class="rung">Free agent</span><span class="sep">→</span>
+      <span class="rung">Distributor · overrides</span><span class="sep">→</span>
+      <span class="rung gold">Own white-label · $25K</span>
+    </div>
+    <p class="fineprint">Referral/override earnings vary and are not guaranteed; program subject to its terms and applicable FTC/marketing rules.</p>
+  </section>
+  <section class="last">
+    <h2>The ask</h2>
+    <p class="lead">Let's stand up your 10-line Smart-DID grid and the 30-day pilot — a 20-minute call is all we need to begin. <b>I can have your phones ringing within 24 hours.</b></p>
+    <p class="trust">Give me <span>1% of your trust</span> — I'll earn the other 99.</p>
+    <div class="alt"><b>The alternative:</b> pass, and someone else spells your word first — vanity numbers are one-per-country and gone permanently once claimed.</div>
+    <div class="cta">
+      <a class="call" href="tel:+16892421041">📞 Call to begin — (689) 242-1041</a>
+      <a class="book" href="mailto:contact@telvergence.com?subject=TELVERGE%20—%2010-Line%20Pilot">✉️ contact@telvergence.com</a>
+    </div>
+    <p class="nothing">You have nothing to lose and everything to gain.</p>
+    <p class="decide">You decide. <span>What's it going to be?</span></p>
+    <p class="hand">And I'll be holding your hand the entire way — fully committed to your success, without a dollar out of pocket from you — until you see all this in action and the money coming in first. OK?</p>
     <div class="sig">Looking forward to building this with you,<br><b>David Drew Allen</b> · President, Telvergence, Inc. · 689-242-1041 · contact@telvergence.com</div>
   </section>
-
-  <div class="winnet">
-    <div class="wb">🔗 RESTORATION ROYALTY SUB-NETWORK</div>
-    <h3b>One platform. Every brand. Every storm job shared.</h3b>
-    <p class="wp">TELVERGE runs on the same Telvergence UCCPXaaS engine that powers the whole network — Restoration Royalties, FAST Adjusting, and YES Electrical — sharing one Smart-DID grid, one app, and real-time analytics &amp; automation.</p>
-    <div class="wr">
-      <a class="wc" href="/rr/"><div class="t">🌊 Restoration Royalties</div><div class="s">Mold · Water · Roofing</div></a>
-      <a class="wc" href="/fast/"><div class="t">📋 FAST Adjusting Service</div><div class="s">Public adjusting · Claims</div></a>
-      <a class="wc" href="/yes/"><div class="t">⚡ YES Electrical</div><div class="s">Power · Generators</div></a>
-    </div>
-    <p class="prov"><a href="/hub/" style="color:#00D4FF">↗ Sub-Network hub</a> · Powered by <b style="color:#9fb3d6">THE WEATHER INTELLIGENCE NETWORK</b> · ‹Your City› Storm Dispatch.</p>
-  </div>
-
-  <div class="disclaimer">
-    TELVERGE is a Telvergence, Inc. brand/demonstration site. Vanity numbers shown are illustrative examples pending assignment from the wholesale portal — nothing published unowned. Subscription pricing ($22.95/line) is the proposed program and adjustable. All solicitation and claims comply with applicable TCPA / Do-Not-Call / state rules, reviewed before launch. Confidential — TELVERGENCE.
-  </div>
 </div>
+
+<div class="winnet wrap">
+  <div class="wb">🔗 TELVERGENCE SUB-NETWORK</div>
+  <h3>Brands that share one network, one app, and every lead in real time.</h3>
+  <p class="wp">Each brand runs its own Smart-DID grid on the same Telvergence backbone — so when a job touches more than one trade, the lead flows across the network instead of dying in a voicemail box. Shared leads, shared customers, real-time analytics and automation on every job.</p>
+  <div class="wr">
+    <a class="wc" href="/rr/"><div class="t">🌊 Restoration Royalties</div><div class="s">Mold · Water · Roofing</div></a>
+    <a class="wc" href="/fast/"><div class="t">📋 FAST Adjusting Service</div><div class="s">Public adjusting · Claims</div></a>
+    <a class="wc" href="/yes/"><div class="t">⚡ YES Electrical</div><div class="s">Power · Generators</div></a>
+  </div>
+  <p class="prov"><a href="/hub/">↗ Sub-Network hub</a> · <a href="/plan/">Master plan</a> · Powered by <b>THE WEATHER INTELLIGENCE NETWORK</b>.</p>
+</div>
+<div class="wrap">
+  <div class="disclaimer">Prepared as a discussion proposal for the TELVERGE vanity and Smart-DID platform. Vanity spellings shown are examples pending assignment from the wholesale portal; nothing is published unowned. All solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch. Confidential — TELVERGENCE.</div>
+</div>
+<script>
+(function(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){
+    document.querySelectorAll('section,.did,.p').forEach(function(x){x.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){
+    if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},
+    {rootMargin:'0px 0px -6% 0px',threshold:.06});
+  document.querySelectorAll('section,.did,.p').forEach(function(x){io.observe(x);});
+})();
+</script>
 </body>
 </html>
