@@ -16,6 +16,7 @@ Disallow: /studio/
 Disallow: /app/
 Disallow: /menu/
 Disallow: /showroom/
+Disallow: /boneyard/
 Disallow: /hub/
 Disallow: /dispatch/
 
