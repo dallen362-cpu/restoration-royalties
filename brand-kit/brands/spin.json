@@ -75,24 +75,24 @@
     },
     {
       "h": "Google / paid-ads DID",
-      "vn": "1-800-RIDE-NOW",
+      "vn": "407-812-7747",
       "p": "Proves ad ROI to the dollar \u2014 swap the number, keep the data.",
-      "pending": true
+      "pending": false
     },
     {
       "h": "Social / influencer promo DID",
-      "vn": "1-833-CLIP-IN-1",
+      "vn": "407-812-7748",
       "p": "Separates social spend so you stop guessing.",
-      "pending": true
+      "pending": false
     },
     {
       "h": "Outbound branded caller-ID",
-      "vn": "407-812-7740",
+      "vn": "407-812-7749",
       "p": "The trial-to-member dialer's face \u2014 branded, compliant, recorded.",
       "pending": false
     }
   ],
-  "didFootnote": "This block is <b>assigned</b> \u2014 407-812-7740 through 7746 are live lines; the remaining slots are reserved and pulled from the Telvergence wholesale portal before launch.",
+  "didFootnote": "This block is <b>assigned and paid</b> \u2014 407-812-7740 through 7749 are live lines on the Telvergence/Vitelity account.",
   "pillars": [
     {
       "n": "Trial-to-member outbound",
