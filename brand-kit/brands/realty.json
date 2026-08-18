@@ -158,16 +158,16 @@
     "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, farm area, or channel instantly and watch the pipeline move. <b>Your agents close \u2014 we make the phone ring.</b>"
   },
   "map": {
-    "h2": "Your Miami market \u2014 live &amp; geo-routed",
+    "h2": "Your Miami market \u2014 live & geo-routed",
     "fallback": "Miami Market<br>Miami-Dade \u00b7 Broward",
     "title": "Miami market area",
     "q": "Miami,+FL",
     "z": 9,
     "note": "Every Smart DID is geo-aware: inbound calls are tagged by listing and ZIP and routed to the agent on floor duty for that area \u2014 and outbound farming targets the exact neighborhoods you want to own."
   },
-  "videoSub": "A typical brokerage site vs. the offspring \u00b7 the 10-line grid \u00b7 a listing appointment set in 90 seconds. (Embed final MP4 / YouTube here.)",
+  "videoSub": "A typical brokerage site vs. the offspring \u00b7 the 10-line grid \u00b7 a listing appointment set in 90 seconds.",
   "offerLead": "We stand up all ten numbers, the AI answer, the bilingual routes, floor-duty rotation, and a starter outbound farming campaign across your target neighborhoods. For 30 days every inbound inquiry is answered and routed while the dialer works your farm.",
-  "econUnit": "appointments set before you scale",
+  "econUnit": "see appointments set before you scale",
   "focusVerb": "listing and closing",
   "referEarn": {
     "unit": "transactions",

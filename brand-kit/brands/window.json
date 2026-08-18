@@ -147,16 +147,16 @@
     "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, territory, or channel instantly and watch your pipeline move. <b>You close the contracts \u2014 we make the phone ring.</b>"
   },
   "map": {
-    "h2": "Your South Florida service area \u2014 live &amp; geo-routed",
+    "h2": "Your South Florida service area \u2014 live & geo-routed",
     "fallback": "South Florida Service Area<br>Miami-Dade \u00b7 Broward \u00b7 Palm Beach",
     "title": "Miami service area",
     "q": "Miami,+FL",
     "z": 8,
     "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest available estimator \u2014 and outbound storm campaigns target the exact neighborhoods the forecast just threatened."
   },
-  "videoSub": "A typical window company site vs. the offspring \u00b7 the 10-line grid \u00b7 an impact quote booked in 90 seconds. (Embed final MP4 / YouTube here.)",
+  "videoSub": "A typical window company site vs. the offspring \u00b7 the 10-line grid \u00b7 an impact quote booked in 90 seconds.",
   "offerLead": "We stand up all ten numbers, the AI answer, the Spanish route, the financing path, and a starter outbound campaign across your target ZIPs. For 30 days every inbound call is answered and every estimate request is booked while the dialer works storm-hit neighborhoods.",
-  "econUnit": "booked estimates before you scale",
+  "econUnit": "see booked estimates before you scale",
   "focusVerb": "measuring and closing",
   "referEarn": {
     "unit": "contracts",

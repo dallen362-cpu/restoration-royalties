@@ -154,16 +154,16 @@
     "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, service, or channel and watch the book fill. <b>You do the treatments \u2014 we make the phone ring.</b>"
   },
   "map": {
-    "h2": "Your Orlando service area \u2014 live &amp; geo-routed",
+    "h2": "Your Orlando service area \u2014 live & geo-routed",
     "fallback": "Orlando Metro<br>Orlando \u00b7 Winter Park \u00b7 Lake Nona",
     "title": "Orlando service area",
     "q": "Orlando,+FL",
     "z": 10,
     "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest location \u2014 and outbound rebooking targets clients near each med-spa."
   },
-  "videoSub": "A typical med-spa site vs. the offspring \u00b7 the 10-line grid \u00b7 a booking captured in 90 seconds. (Embed final MP4 / YouTube here.)",
+  "videoSub": "A typical med-spa site vs. the offspring \u00b7 the 10-line grid \u00b7 a booking captured in 90 seconds.",
   "offerLead": "We stand up all ten numbers, the 24/7 answer, the Spanish route, service-specific lines, and a starter rebooking campaign to lapsed clients. For 30 days every inbound booking is captured.",
-  "econUnit": "booked appointments before you scale",
+  "econUnit": "see booked appointments before you scale",
   "focusVerb": "doing treatments",
   "referEarn": {
     "unit": "clients",

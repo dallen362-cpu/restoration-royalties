@@ -158,16 +158,16 @@
     "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, territory, or channel instantly and watch your P&amp;L move. <b>You fight the claim \u2014 we make the phone ring.</b>"
   },
   "map": {
-    "h2": "Your South Florida service area \u2014 live &amp; geo-routed",
+    "h2": "Your South Florida service area \u2014 live & geo-routed",
     "fallback": "South Florida Service Area<br>Miami-Dade \u00b7 Broward \u00b7 Palm Beach",
     "title": "South Florida service area",
     "q": "Fort+Lauderdale,+FL",
     "z": 8,
     "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest available adjuster across the tri-county \u2014 and outbound storm campaigns target the exact neighborhoods the weather just hit."
   },
-  "videoSub": "A typical adjusting site vs. the offspring \u00b7 the 10-line grid \u00b7 a flood claim booked in 90 seconds. (Embed final MP4 / YouTube here.)",
+  "videoSub": "A typical adjusting site vs. the offspring \u00b7 the 10-line grid \u00b7 a flood claim booked in 90 seconds.",
   "offerLead": "We stand up all ten numbers, the AI answer, the Spanish route, and a starter outbound campaign across your target ZIPs. For 30 days every inbound claim is answered and dispatched while the dialer works storm-hit neighborhoods.",
-  "econUnit": "signed claims before you scale",
+  "econUnit": "see signed claims before you scale",
   "focusVerb": "signing and fighting claims",
   "referEarn": {
     "unit": "claims",

@@ -174,7 +174,7 @@ def service_map(b):
   <section>
     <h2>{e(m["h2"])}</h2>
     <div class="mapwrap">
-      <div class="mapfallback">🗺️ {e(m["fallback"])}</div>
+      <div class="mapfallback">🗺️ {e(m["fallback"]).replace("&lt;br&gt;","<br>")}</div>
       <iframe title="{e(m["title"])}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q={e(m["q"])}&amp;z={m.get("z",8)}&amp;output=embed"></iframe>
     </div>
     <p class="mapnote">{m["note"]}</p>
@@ -304,7 +304,7 @@ def render(b):
     <div class="econ">
       <div class="ec"><div class="k">{ln}</div><div class="l">Smart DIDs, each a sensor + router</div></div>
       <div class="ec"><div class="k">$0</div><div class="l">out of pocket first — we advance the lines</div></div>
-      <div class="ec"><div class="k">30 days</div><div class="l">see {e(b["econUnit"])} before you scale</div></div>
+      <div class="ec"><div class="k">30 days</div><div class="l">{e(b["econUnit"])}</div></div>
     </div>
     <div class="start">
       <div class="cclabel gold">All it takes to start</div>

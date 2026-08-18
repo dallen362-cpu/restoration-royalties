@@ -172,16 +172,16 @@
     "note": "Every call feeds a real-time conduit that overlays the weather map on your pipeline \u2014 then you, or the AI, adjust the leads, script, offer, territory, or channel and watch the storm turn into booked jobs. <b>You roof the house \u2014 we make the phone ring.</b>"
   },
   "map": {
-    "h2": "Your Central Florida storm map \u2014 live &amp; geo-routed",
+    "h2": "Your Central Florida storm map \u2014 live & geo-routed",
     "fallback": "Central Florida<br>Orlando \u00b7 Winter Park \u00b7 Kissimmee \u00b7 Clermont",
     "title": "Central Florida service area",
     "q": "Orlando,+FL",
     "z": 9,
     "note": "Every Smart DID is weather-aware: when a storm crosses a ZIP, inbound calls surge and outbound fires on that exact footprint \u2014 routed to the nearest available crew across Central Florida."
   },
-  "videoSub": "A typical roofer vs. the offspring \u00b7 the storm trigger \u00b7 a hail-damage inspection booked in 90 seconds. (Embed final MP4 / YouTube here.)",
+  "videoSub": "A typical roofer vs. the offspring \u00b7 the storm trigger \u00b7 a hail-damage inspection booked in 90 seconds.",
   "offerLead": "We stand up all ten numbers, the AI answer, the Spanish route, the weather trigger, and a starter storm-ZIP outbound campaign. For 30 days every inbound call is answered and every storm that crosses your footprint fires the dialer.",
-  "econUnit": "booked inspections before you scale",
+  "econUnit": "see booked inspections before you scale",
   "focusVerb": "roofing houses",
   "referEarn": {
     "unit": "jobs",

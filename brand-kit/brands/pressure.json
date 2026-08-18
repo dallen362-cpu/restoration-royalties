@@ -207,16 +207,16 @@
     "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, territory, or channel instantly and watch your P&amp;L move. <b>You run the crews \u2014 we make the phone ring.</b>"
   },
   "map": {
-    "h2": "Your South Florida service area \u2014 live &amp; geo-routed",
+    "h2": "Your South Florida service area \u2014 live & geo-routed",
     "fallback": "South Florida Service Area<br>Miami-Dade \u00b7 Broward",
     "title": "Miami service area",
     "q": "Miami,+FL",
     "z": 9,
     "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest available crew \u2014 and outbound campaigns target the exact neighborhoods and plazas you want under contract."
   },
-  "videoSub": "A typical pressure-washing site vs. the offspring \u00b7 the 20-line grid \u00b7 a roof job booked in 90 seconds. (Embed final MP4 / YouTube here.)",
+  "videoSub": "A typical pressure-washing site vs. the offspring \u00b7 the 20-line grid \u00b7 a roof job booked in 90 seconds.",
   "offerLead": "We stand up all twenty numbers, the AI answer, the Spanish route, and a starter outbound campaign to property managers and HOA boards across your target ZIPs. For 30 days every inbound call is answered and dispatched while the dialer works the contract accounts.",
-  "econUnit": "booked jobs before you scale",
+  "econUnit": "see booked jobs before you scale",
   "focusVerb": "running crews and cashing checks",
   "referEarn": {
     "unit": "jobs",

@@ -152,7 +152,7 @@ h2 .soft{color:var(--faint);text-transform:none;letter-spacing:0}
 /* video */
 .video{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;
   background:linear-gradient(180deg,var(--card2),var(--card));aspect-ratio:16/9;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;text-align:center;padding:20px}
+  align-items:center;justify-content:center;text-align:center;padding:48px 20px 22px;min-height:190px}
 .video .play{width:66px;height:66px;border-radius:50%;background:linear-gradient(180deg,#2bff9e,#00c46a);
   display:flex;align-items:center;justify-content:center;font-size:26px;color:#04140a;margin-bottom:13px}
 .video .vt{font-weight:700;font-family:var(--fd)}

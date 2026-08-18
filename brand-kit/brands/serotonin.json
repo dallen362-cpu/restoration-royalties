@@ -153,16 +153,16 @@
     "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, program, or channel and watch the schedule fill. <b>You change lives \u2014 we make the phone ring.</b>"
   },
   "map": {
-    "h2": "Your Central Florida service area \u2014 live &amp; geo-routed",
+    "h2": "Your Central Florida service area \u2014 live & geo-routed",
     "fallback": "Central Florida<br>Lake Nona \u00b7 Orlando \u00b7 Winter Park",
     "title": "Central Florida service area",
     "q": "Lake+Nona,+Orlando,+FL",
     "z": 10,
     "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest location \u2014 and outbound reactivation targets the members near each center."
   },
-  "videoSub": "A typical clinic site vs. the offspring \u00b7 the 10-line grid \u00b7 a consult booked in 90 seconds. (Embed final MP4 / YouTube here.)",
+  "videoSub": "A typical clinic site vs. the offspring \u00b7 the 10-line grid \u00b7 a consult booked in 90 seconds.",
   "offerLead": "We stand up all ten numbers, the 24/7 answer, the Spanish route, program-specific lines, and a starter reactivation campaign to lapsed members. For 30 days every inbound inquiry is answered and booked.",
-  "econUnit": "booked consults before you scale",
+  "econUnit": "see booked consults before you scale",
   "focusVerb": "treating patients",
   "referEarn": {
     "unit": "members",
