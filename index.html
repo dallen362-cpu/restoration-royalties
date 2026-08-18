@@ -3,406 +3,312 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#04070F">
-<title>Telvergence — Make Your Phone Ring</title>
-<style>
-  :root{
-    --void:#04070F; --deep:#070D1B; --panel:#0D1526; --panel2:#131F36; --line:#1D2C48; --line2:#2C426B;
-    --ink:#EAF2FF; --muted:#93A6C4; --dim:#5E729A;
-    --cyan:#00D4FF; --lime:#00FF88; --gold:#FFC24B; --ember:#FF7A45; --violet:#8A7BFF;
-  }
-  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--void);color:var(--ink);overflow-x:hidden;
-    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-  #bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55}
-  .veil{position:fixed;inset:0;z-index:1;pointer-events:none;
-    background:radial-gradient(720px 420px at 50% -8%,rgba(0,212,255,.15),transparent 66%),
-               radial-gradient(560px 460px at 92% 12%,rgba(138,123,255,.12),transparent 60%)}
-  main{position:relative;z-index:2}
-
-  .bar{position:sticky;top:0;z-index:30;background:rgba(4,7,15,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-  .logo{font-weight:800;letter-spacing:.16em;font-size:13px;text-transform:uppercase;color:var(--muted)}
-  .logo b{color:var(--cyan)}
-  .callnow{display:inline-flex;align-items:center;gap:8px;background:var(--lime);color:#04140A;font-weight:800;font-size:13px;padding:9px 16px;border-radius:999px;transition:filter .16s}
-  .callnow:hover{filter:brightness(1.08)}
-
-  header.hero{padding:84px 0 46px;text-align:center}
-  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-    color:var(--cyan);border:1px solid rgba(0,212,255,.3);border-radius:999px;padding:7px 15px;margin-bottom:24px}
-  .dot{width:7px;height:7px;border-radius:50%;background:var(--lime);animation:bp 1.8s ease-out infinite}
-  @keyframes bp{0%{box-shadow:0 0 0 0 rgba(0,255,136,.7)}70%{box-shadow:0 0 0 10px rgba(0,255,136,0)}100%{box-shadow:0 0 0 0 rgba(0,255,136,0)}}
-  h1{margin:0 auto 20px;max-width:16ch;font-size:clamp(34px,7vw,64px);line-height:1.03;letter-spacing:-.035em;font-weight:800;text-wrap:balance}
-  h1 span{background:linear-gradient(120deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .lede{margin:0 auto 30px;max-width:52ch;color:var(--muted);font-size:clamp(16px,2.4vw,20px)}
-  .herocta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:9px;padding:15px 26px;border-radius:13px;font-weight:800;font-size:16px;transition:filter .16s,transform .16s,border-color .16s}
-  .btn:active{transform:translateY(1px)}
-  .btn.primary{background:var(--lime);color:#04140A} .btn.primary:hover{filter:brightness(1.08)}
-  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line2)} .btn.ghost:hover{border-color:var(--cyan)}
-  .trust{margin-top:22px;color:var(--dim);font-size:13px}
-
-  section{padding:56px 0;border-top:1px solid var(--line)}
-  .kick{text-align:center;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin:0 0 12px}
-  h2{margin:0 auto 12px;max-width:20ch;text-align:center;font-size:clamp(26px,4vw,38px);letter-spacing:-.025em;font-weight:800;line-height:1.12;text-wrap:balance}
-  h2 span{color:var(--cyan)}
-  .sub{margin:0 auto 34px;max-width:56ch;text-align:center;color:var(--muted);font-size:16px}
-
-  /* no-brainer 3 steps */
-  .steps3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:900px;margin:0 auto}
-  .st{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;text-align:center}
-  .st .n{width:38px;height:38px;margin:0 auto 14px;border-radius:50%;background:var(--panel2);border:1px solid var(--line2);
-    color:var(--cyan);font-weight:800;display:flex;align-items:center;justify-content:center}
-  .st h3{margin:0 0 6px;font-size:18px} .st p{margin:0;color:var(--muted);font-size:14px}
-  .cantlose{max-width:760px;margin:26px auto 0;background:linear-gradient(180deg,rgba(0,255,136,.1),var(--panel));
-    border:1px solid rgba(0,255,136,.32);border-radius:16px;padding:22px 26px;text-align:center}
-  .cantlose b{color:var(--lime);font-size:20px} .cantlose p{margin:8px 0 0;color:var(--muted);font-size:15px}
-
-  /* capabilities */
-  .caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-  .cap{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;transition:border-color .16s,transform .16s}
-  .cap:hover{border-color:rgba(0,212,255,.5);transform:translateY(-3px)}
-  .cap .i{font-size:24px}.cap h3{margin:11px 0 6px;font-size:16px}.cap p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.55}
-
-  /* see it live */
-  .live{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
-  .lc{display:flex;flex-direction:column;justify-content:space-between;min-height:130px;background:linear-gradient(180deg,var(--panel2),var(--panel));
-    border:1px solid var(--line2);border-radius:18px;padding:20px;transition:transform .16s,border-color .16s}
-  .lc:hover{border-color:var(--cyan);transform:translateY(-3px)}
-  .lc.hot{background:linear-gradient(180deg,rgba(0,255,136,.13),var(--panel));border-color:rgba(0,255,136,.4)}
-  .lc .ic{font-size:24px}.lc h3{margin:10px 0 4px;font-size:18px}.lc p{margin:0;color:var(--muted);font-size:13.5px}
-  .lc .go{margin-top:12px;font-size:13px;font-weight:800;color:var(--cyan)}.lc.hot .go{color:var(--lime)}
-  .lc .lock{margin-top:12px;font-size:11px;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;font-weight:800}
-
-  .offer{max-width:560px;margin:0 auto;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line2);border-radius:22px;padding:32px;text-align:center}
-  .price{font-size:56px;font-weight:800;letter-spacing:-.03em;color:var(--lime);line-height:1}
-  .price small{font-size:17px;color:var(--muted);font-weight:600}
-  .offer ul{list-style:none;margin:18px auto 24px;padding:0;text-align:left;max-width:340px}
-  .offer li{padding:7px 0 7px 28px;position:relative;color:var(--muted);font-size:15px}
-  .offer li:before{content:"✓";position:absolute;left:0;color:var(--lime);font-weight:800}
-  .offer .btn{width:100%;justify-content:center;margin-bottom:10px}
-
-  footer{border-top:1px solid var(--line);padding:34px 0 64px;text-align:center;color:var(--dim);font-size:13px}
-  footer p{margin:0 0 7px} footer a{color:var(--muted)}
-  .fnav{margin-top:8px;font-size:12px}
-
-
-
-
-  .urgent{background:linear-gradient(90deg,rgba(255,122,69,.14),rgba(255,194,75,.1));border-top:1px solid rgba(255,122,69,.35);
-    border-bottom:1px solid rgba(255,122,69,.35);padding:16px 0}
-  .urgent .wrap{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
-  .urgent .fl{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);
-    border:1px solid rgba(255,122,69,.5);border-radius:999px;padding:5px 12px;white-space:nowrap}
-  .urgent p{margin:0;font-size:15px;color:var(--ink);font-weight:600}
-  .urgent b{color:var(--gold)}
-
-  /* command KPIs */
-  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;max-width:820px;margin:0 auto 22px;
-    background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-  .kpis>div{background:var(--deep);padding:18px 16px;text-align:center}
-  .kpis .n{font-size:26px;font-weight:800;letter-spacing:-.03em;color:var(--lime);font-variant-numeric:tabular-nums;line-height:1}
-  .kpis .n.cy{color:var(--cyan)} .kpis .n.go{color:var(--gold)}
-  .kpis .l{margin-top:7px;font-size:11.5px;color:var(--muted)}
-  .kpis .dl{margin-top:5px;font-size:10px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
-
-  /* referral + ladder */
-  .rf{background:linear-gradient(180deg,rgba(138,123,255,.1),var(--panel));border:1px solid var(--line2);border-radius:18px;padding:26px;text-align:center;max-width:820px;margin:0 auto 24px}
-  .rf h3{margin:0 0 8px;font-size:22px;letter-spacing:-.02em} .rf p{margin:0;color:var(--muted);font-size:15px;max-width:56ch;margin-inline:auto}
-  .rf .em{color:var(--lime);font-weight:800}
-  .ladder{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:940px;margin:0 auto}
-  .lg{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;position:relative;overflow:hidden}
-  .lg:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--cyan)}
-  .lg:nth-child(2):before{background:var(--lime)} .lg:nth-child(3):before{background:var(--gold)} .lg:nth-child(4):before{background:var(--ember)}
-  .lg .s{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:800}
-  .lg h4{margin:6px 0 6px;font-size:17px} .lg p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
-
-
-  .stakes{background:radial-gradient(700px 300px at 50% 50%,rgba(255,122,69,.12),transparent 70%)}
-  .stakes .wrap{text-align:center;padding:20px 0}
-  .stakes h2{max-width:22ch}
-  .stakes .big{font-size:clamp(26px,4.4vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.12;margin:0 auto 14px;max-width:20ch;text-wrap:balance}
-  .stakes .big em{font-style:normal;color:var(--ember)}
-  .stakes p{max-width:52ch;margin:0 auto;color:var(--muted);font-size:16px}
-  .stakes .q{margin-top:16px;font-size:18px;font-weight:800;color:var(--ink)}
-  .window{display:inline-flex;align-items:center;gap:10px;margin:4px auto 18px;background:rgba(255,122,69,.1);
-    border:1px solid rgba(255,122,69,.45);border-radius:999px;padding:9px 18px}
-  .window b{color:var(--ember);font-size:16px;letter-spacing:.02em} .window span{color:var(--muted);font-size:13px}
-
-  /* american dream */
-  .freedom{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;max-width:820px;margin:0 auto 22px}
-  .fx{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;font-size:14px;font-weight:700}
-  .fx s{color:var(--dim);text-decoration-color:var(--ember);font-weight:600}
-  .dreampay{max-width:720px;margin:0 auto;text-align:center;font-size:clamp(17px,2.6vw,21px);line-height:1.5;color:var(--muted)}
-  .dreampay b{color:var(--ink)} .dreampay .y{color:var(--lime);font-weight:800}
-
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style>
+<meta name="theme-color" content="#0B1B2E">
+<title>Restoration Royalty — 24/7 Florida Damage Restoration</title>
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta property="og:title" content="Telvergence — Make Your Phone Ring">
-<meta name="description" content="Ten branded phone numbers, a 24/7 AI that answers every call, and a live profit dashboard — for $22.95 a line. Your phones ring in 24 hours, guaranteed. Done-for-you customer acquisition for the trades.">
-<meta name="keywords" content="business phone numbers, AI call answering service, 24/7 answering service, lead generation for contractors, missed call solution, local vanity phone numbers, get more calls, small business marketing, telecom marketing, smart DID">
+<meta name="description" content="Restoration Royalty — IICRC-certified water, mold, fire, smoke, and storm damage restoration across Florida. 24/7 emergency response, every call answered on a branded line, insurance-documented, free inspection. Restoring peace of mind to your home and business.">
+<meta name="keywords" content="water damage restoration Florida, mold removal Miami, fire and smoke damage restoration, hurricane damage repair, roof tarp emergency, IICRC certified restoration, 24/7 emergency restoration, insurance restoration Palmetto Bay, flood cleanup South Florida">
 <link rel="canonical" href="https://restorationroyalties.com/">
 <meta property="og:type" content="website">
+<meta property="og:title" content="Restoration Royalty — 24/7 Florida Damage Restoration">
 <meta property="og:url" content="https://restorationroyalties.com/">
-<meta property="og:description" content="Ten branded phone numbers, a 24/7 AI that answers every call, and a live profit dashboard — for $22.95 a line. Your phones ring in 24 hours, guaranteed. Done-for-you customer acquisition for the trades.">
+<meta property="og:description" content="IICRC-certified water, mold, fire, and storm restoration across Florida. 24/7, every call answered on a branded line, insurance-documented, free inspection.">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Telvergence","url":"https://telvergence.com","email":"contact@telvergence.com","telephone":"+1-689-242-1041","description":"Done-for-you customer acquisition: branded Smart-DID phone numbers, 24/7 AI call answering, and live performance dashboards for local businesses.","areaServed":"US","slogan":"We make your phone ring off the hook."}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B1B2E'/%3E%3Cpath d='M7 21l2-9 3.5 4L16 9l3.5 7L23 12l2 9z' fill='none' stroke='%23F5A524' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Restoration Royalty LLC","image":"https://restorationroyalties.com/","description":"IICRC-certified water, mold, fire, smoke, and storm damage restoration across Florida. 24/7 emergency response, insurance-documented, free inspection.","telephone":"+1-786-400-1145","email":"contact@restorationroyalties.com","url":"https://restorationroyalties.com","address":{"@type":"PostalAddress","streetAddress":"9555 SW 175th Terrace","addressLocality":"Palmetto Bay","addressRegion":"FL","postalCode":"33157","addressCountry":"US"},"areaServed":["Miami","Miami Beach","Coral Gables","Coconut Grove","Homestead","Fort Myers","Cape Coral","Port Charlotte","Punta Gorda","Orlando","Venice","Pensacola","Tallahassee"],"slogan":"Restoring peace of mind to your home and business.","openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"},"knowsAbout":["Water Damage Restoration","Mold Remediation","Fire and Smoke Damage","Roof Tarping","Hurricane Damage Restoration"]}</script>
+<style>
+  :root{
+    --navy:#0B1B2E; --navy2:#12324F; --deep:#081521;
+    --paper:#F4F8FC; --paper2:#E8F0F8; --card:#FFFFFF; --line:#DCE7F1; --line2:#C6D6E6;
+    --ink:#132433; --muted:#54677B; --dim:#7C8EA1;
+    --blue:#1E63C4; --blue2:#2F80ED; --amber:#F5A524; --amber2:#FB8B24; --teal:#12A594; --red:#E5484D;
+    --fd:'Sora',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --fb:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --fm:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--fb);font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,.logo{font-family:var(--fd)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  .bar{position:sticky;top:0;z-index:50;background:rgba(11,27,46,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+  .logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:17px;letter-spacing:-.01em;white-space:nowrap}
+  .logo svg{flex:none}
+  .logo b{color:var(--amber);font-weight:800}
+  .barcta{display:flex;align-items:center;gap:12px}
+  .hours{display:none;color:#AFC2D6;font-size:12px;font-weight:600}
+  @media(min-width:760px){.hours{display:flex;align-items:center;gap:7px}}
+  .hours .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(18,165,148,.55)}70%{box-shadow:0 0 0 8px rgba(18,165,148,0)}100%{box-shadow:0 0 0 0 rgba(18,165,148,0)}}
+  .callbtn{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#2A1A00;font-weight:800;font-size:14.5px;padding:11px 18px;border-radius:11px;transition:filter .15s,transform .12s}
+  .callbtn:hover{filter:brightness(1.06)} .callbtn:active{transform:translateY(1px)}
+
+  header.hero{position:relative;background:
+    radial-gradient(1100px 520px at 78% -10%,rgba(47,128,237,.32),transparent 60%),
+    radial-gradient(720px 480px at 10% 110%,rgba(18,165,148,.16),transparent 60%),
+    linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);
+    color:#fff;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
+  header.hero:before{content:"";position:absolute;inset:0;opacity:.4;pointer-events:none;
+    background-image:radial-gradient(circle at 20% 30%,rgba(255,255,255,.05) 0 1px,transparent 1px),radial-gradient(circle at 70% 60%,rgba(255,255,255,.04) 0 1px,transparent 1px);
+    background-size:26px 26px,34px 34px}
+  .hero .wrap{position:relative;z-index:2;padding:60px 24px 54px;display:grid;gap:30px;grid-template-columns:1fr;align-items:center}
+  @media(min-width:920px){.hero .wrap{grid-template-columns:1.15fr .85fr;padding:76px 24px 68px}}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#BFE3DC;
+    background:rgba(18,165,148,.14);border:1px solid rgba(18,165,148,.4);border-radius:999px;padding:7px 14px;margin-bottom:20px}
+  h1{font-size:clamp(33px,5.4vw,54px);line-height:1.05;letter-spacing:-.03em;font-weight:800;text-wrap:balance}
+  h1 span{color:var(--amber)}
+  .lede{margin:18px 0 26px;max-width:52ch;color:#C7D6E5;font-size:clamp(16px,2.2vw,19px)}
+  .herocta{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:15px 24px;border-radius:12px;font-weight:800;font-size:16px;font-family:var(--fd);transition:filter .15s,transform .12s,background .15s,border-color .15s}
+  .btn:active{transform:translateY(1px)}
+  .btn.amber{background:var(--amber);color:#2A1A00;box-shadow:0 14px 30px -14px rgba(245,165,36,.7)} .btn.amber:hover{filter:brightness(1.06)}
+  .btn.ghost{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.28)} .btn.ghost:hover{background:rgba(255,255,255,.12)}
+  .herotrust{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 20px;color:#9FB4C8;font-size:13.5px;font-weight:600}
+  .herotrust span{display:inline-flex;align-items:center;gap:7px}
+  .herotrust .ck{color:var(--teal);font-weight:800}
+  .hcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:26px;backdrop-filter:blur(4px)}
+  .hcard h3{font-size:19px;color:#fff;margin-bottom:4px}
+  .hcard .p{color:#B9CADB;font-size:13.5px;margin-bottom:16px}
+  .hcard .num{display:block;font-family:var(--fd);font-weight:800;font-size:clamp(25px,4vw,33px);color:var(--amber);letter-spacing:-.02em}
+  .hcard .sm{color:#9FB4C8;font-size:12.5px;margin-top:2px}
+  .hcard .line{height:1px;background:rgba(255,255,255,.12);margin:16px 0}
+  .hcard ul{list-style:none;display:grid;gap:9px}
+  .hcard li{display:flex;gap:9px;color:#D6E3F0;font-size:14px} .hcard li b{color:#fff}
+  .hcard li .i{color:var(--teal);flex:none;font-weight:800}
+
+  .emg{background:linear-gradient(90deg,var(--amber2),var(--amber));color:#2A1600}
+  .emg .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 18px;padding:14px 24px;text-align:center;font-weight:700}
+  .emg b{font-weight:800}
+  .emg a{background:#2A1600;color:#fff;font-weight:800;padding:8px 16px;border-radius:9px;font-size:14px}
+
+  section{padding:64px 0}
+  .kick{text-align:center;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+  h2{text-align:center;font-size:clamp(26px,4vw,38px);letter-spacing:-.025em;line-height:1.12;font-weight:800;max-width:22ch;margin:0 auto 14px;text-wrap:balance}
+  .sub{text-align:center;max-width:62ch;margin:0 auto 40px;color:var(--muted);font-size:16.5px}
+
+  .svc{display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:620px){.svc{grid-template-columns:1fr 1fr}}
+  @media(min-width:960px){.svc{grid-template-columns:1fr 1fr 1fr}}
+  .sc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:transform .16s,box-shadow .16s,border-color .16s}
+  .sc:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(19,36,51,.4);border-color:var(--line2)}
+  .sc .ico{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:15px;background:var(--paper2)}
+  .sc h3{font-size:19px;margin-bottom:8px;letter-spacing:-.01em}
+  .sc p{color:var(--muted);font-size:14.5px;line-height:1.58}
+  .sc .more{margin-top:13px;font-weight:800;font-size:13.5px;color:var(--blue)}
+
+  .diff{background:var(--navy);color:#fff}
+  .diff h2{color:#fff} .diff .sub{color:#AFC2D6} .diff .kick{color:var(--amber)}
+  .dgrid{display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:640px){.dgrid{grid-template-columns:1fr 1fr}}
+  @media(min-width:980px){.dgrid{grid-template-columns:1fr 1fr 1fr}}
+  .dc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:22px}
+  .dc .i{font-size:24px}
+  .dc h3{font-size:17px;margin:11px 0 7px;color:#fff}
+  .dc p{color:#B9CADB;font-size:14px;line-height:1.56} .dc b{color:#fff}
+
+  /* branded line network */
+  .lines{background:var(--paper2)}
+  .lgrid{display:grid;gap:12px;grid-template-columns:1fr;max-width:1000px;margin:0 auto}
+  @media(min-width:620px){.lgrid{grid-template-columns:1fr 1fr}}
+  @media(min-width:960px){.lgrid{grid-template-columns:1fr 1fr 1fr}}
+  .ln{display:flex;flex-direction:column;gap:3px;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:16px 18px;transition:transform .14s,border-color .14s}
+  a.ln:hover{transform:translateY(-3px);border-color:var(--blue)}
+  .ln .n{font-family:var(--fm);font-weight:600;font-size:17px;color:var(--ink);letter-spacing:-.01em}
+  .ln .lbl{color:var(--muted);font-size:13px}
+  .ln.attr{background:transparent;border-style:dashed}
+  .ln.attr .n{color:var(--blue)}
+  .lcap{text-align:center;color:var(--muted);font-size:13.5px;max-width:70ch;margin:22px auto 0}
+  .lcap b{color:var(--ink)}
+  .lsub{text-align:center;font-family:var(--fm);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin:26px 0 12px}
+
+  .steps{display:grid;gap:14px;grid-template-columns:1fr;max-width:920px;margin:0 auto}
+  @media(min-width:760px){.steps{grid-template-columns:repeat(5,1fr)}}
+  .st{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .st .n{width:34px;height:34px;margin:0 auto 11px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .st h3{font-size:15.5px;margin-bottom:5px} .st p{color:var(--muted);font-size:12.5px;line-height:1.5}
+
+  .areas{background:var(--paper2)}
+  .arlist{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;max-width:900px;margin:0 auto}
+  .arlist span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:13.5px;font-weight:600;color:var(--ink)}
+  .arnote{text-align:center;color:var(--muted);font-size:14px;margin-top:22px}
+
+  .trust{display:grid;gap:14px;grid-template-columns:1fr 1fr;max-width:900px;margin:0 auto}
+  @media(min-width:720px){.trust{grid-template-columns:repeat(4,1fr)}}
+  .tb{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 14px}
+  .tb .b{font-family:var(--fd);font-weight:800;font-size:clamp(20px,3vw,26px);color:var(--blue);line-height:1.05}
+  .tb .l{color:var(--muted);font-size:12.5px;margin-top:8px}
+
+  .final{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;text-align:center}
+  .final h2{color:#fff} .final .sub{color:#C7D6E5} .final .herocta{justify-content:center}
+  .contactrow{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:center;color:#C7D6E5;font-size:14.5px}
+  .contactrow a{color:#fff;font-weight:700} .contactrow .i{color:var(--amber);margin-right:7px;font-weight:800}
+
+  footer{background:var(--deep);color:#8CA0B4;padding:34px 0 46px;font-size:13px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+  footer b{color:#C7D6E5}
+  footer .fdis{margin-top:14px;color:#5E7286;font-size:12px;line-height:1.7;max-width:82ch}
+
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
 </head>
 <body>
-<canvas id="bg"></canvas>
-<div class="veil"></div>
-<main>
 
 <div class="bar"><div class="wrap">
-  <div class="logo"><b>TEL</b>VERGENCE</div>
-  <a class="callnow" href="tel:+16892421041">📞 689-242-1041</a>
+  <div class="logo">
+    <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 21l2-10 4 5 4-8 4 8 4-5 2 10z" fill="none" stroke="#F5A524" stroke-width="2.4" stroke-linejoin="round"/></svg>
+    <span>Restoration <b>Royalty</b></span>
+  </div>
+  <div class="barcta">
+    <span class="hours"><span class="dot"></span> Open 24/7 · every call answered</span>
+    <a class="callbtn" href="tel:+17864001145">📞 (786) 400-1145</a>
+  </div>
 </div></div>
 
 <header class="hero"><div class="wrap">
-  <div class="eyebrow"><span class="dot"></span> Your phones ring in 24 hours — guaranteed</div>
-  <h1>We make your phone <span>ring off the hook.</span></h1>
-  <p class="lede">Ten branded phone numbers you own, an AI that answers every single call, and a live dashboard that shows the money moving in — for <b style="color:var(--ink)">$22.95 a line</b>. Nothing bills until it rings.</p>
-  <div class="herocta">
-    <a class="btn primary" href="tel:+16892421041">📞 Reserve your numbers</a>
-    <a class="btn ghost" href="demo/">▶ See it in action</a>
+  <div>
+    <div class="eyebrow">● IICRC-Certified · Licensed &amp; Insured · Statewide Florida</div>
+    <h1>When disaster strikes, we <span>restore peace of mind.</span></h1>
+    <p class="lede">Expert water, mold, fire, smoke, and storm damage restoration across Florida — answered 24/7 on a live line, on-site fast, and documented for your insurance from the first minute. Your home or business, made whole again.</p>
+    <div class="herocta">
+      <a class="btn amber" href="tel:+17864001145">📞 Call now — 24/7 response</a>
+      <a class="btn ghost" href="#inspection">Get a free inspection</a>
+    </div>
+    <div class="herotrust">
+      <span><span class="ck">✓</span> 24/7 emergency crews</span>
+      <span><span class="ck">✓</span> Insurance-documented</span>
+      <span><span class="ck">✓</span> Free inspection</span>
+      <span><span class="ck">✓</span> IICRC-certified technicians</span>
+    </div>
   </div>
-  <div class="trust">We build it, design it, and program it — <b style="color:var(--muted)">free</b>. $0 out of pocket. Guaranteed, or the first month is on us.</div>
+  <aside class="hcard">
+    <h3>Emergency? Start here.</h3>
+    <div class="p">One call reaches a real person, day or night — never a voicemail.</div>
+    <span class="num">(786) 400-1145</span>
+    <div class="sm">Answered 24 hours · 7 days · every call</div>
+    <div class="line"></div>
+    <ul>
+      <li><span class="i">✓</span><span>We arrive fast and <b>stop the damage</b> from spreading</span></li>
+      <li><span class="i">✓</span><span>We <b>document everything</b> your insurer needs</span></li>
+      <li><span class="i">✓</span><span>We restore — and <b>keep you updated</b> the whole way</span></li>
+    </ul>
+  </aside>
 </div></header>
 
-<div class="urgent"><div class="wrap">
-  <span class="fl">⚡ First-mover only</span>
-  <p>One business per trade, per area code — <b>whoever adopts first locks their competition out.</b> The business down the street is our next call.</p>
+<div class="emg"><div class="wrap">
+  <span>💧 Water, fire, mold, or storm damage? <b>Every minute counts.</b></span>
+  <a href="tel:+17864001145">Call (786) 400-1145</a>
 </div></div>
 
-<section><div class="wrap">
-  <p class="kick">Why it's a no-brainer</p>
-  <h2>Three steps. <span>Then your phone rings.</span></h2>
-  <div class="steps3">
-    <div class="st"><div class="n">1</div><h3>Pick your numbers</h3><p>Choose your trade and area code. Ten branded lines, yours. Takes minutes.</p></div>
-    <div class="st"><div class="n">2</div><h3>Sign one page + card</h3><p>No setup fee. Nothing is charged until your phones are actually ringing.</p></div>
-    <div class="st"><div class="n">3</div><h3>Ring in 24 hours</h3><p>The machine goes live. Calls come in, get answered, land on your calendar.</p></div>
-  </div>
-  <div class="cantlose">
-    <b>You cannot lose.</b>
-    <p>$0 today. If it doesn't ring in 24 hours, or you're not happy, the first month is on us. Worst case, you got a free month of a system that makes businesses money.</p>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <p class="kick">Why businesses need it</p>
-  <h2>Not a want. <span>A need.</span></h2>
-  <p class="sub">A business with a phone that doesn't ring is already dead — it just doesn't know it yet. We're the only line item that causes revenue instead of consuming it.</p>
-  <div class="caps">
-    <div class="cap"><div class="i">📞</div><h3>You own the numbers</h3><p>Not rented leads everyone else also bought — your numbers, forever, with your name on the caller ID.</p></div>
-    <div class="cap"><div class="i">🤖</div><h3>Every call answered</h3><p>24/7 AI intake. The competitor who lets it hit voicemail loses the customer to you.</p></div>
-    <div class="cap"><div class="i">🛰️</div><h3>Weather sells for you</h3><p>Storm hits, demand routes to you before the competition wakes up.</p></div>
-    <div class="cap"><div class="i">📊</div><h3>Proof in real time</h3><p>Every ring is a sale on a dashboard you watch. Marketing is a bet. This is a meter.</p></div>
+<section id="services"><div class="wrap">
+  <p class="kick">What we restore</p>
+  <h2>Full-service damage restoration, done right.</h2>
+  <p class="sub">IICRC-certified, licensed and insured across the state of Florida — with the training and equipment to handle any loss, residential or commercial.</p>
+  <div class="svc">
+    <div class="sc"><div class="ico">💧</div><h3>Water Damage</h3><p>IICRC-qualified water restoration. Our licensed experts assess the source, extract the water, and dry your structure completely — before hidden moisture becomes mold.</p><div class="more">24/7 water extraction →</div></div>
+    <div class="sc"><div class="ico">🦠</div><h3>Mold Removal</h3><p>Certified mold specialists trained in containment, engineering controls, and safe remediation — following approved industry practices to make your space healthy again.</p><div class="more">Mold remediation →</div></div>
+    <div class="sc"><div class="ico">🔥</div><h3>Fire &amp; Smoke Damage</h3><p>IICRC-certified technicians with specialized odor and smoke-removal and structural-drying equipment — clearing soot, smell, and damage after a fire.</p><div class="more">Fire &amp; smoke recovery →</div></div>
+    <div class="sc"><div class="ico">🛖</div><h3>Roof Tarps &amp; Shrink Wraps</h3><p>Professional roof tarping and shrink-wrap to stop further damage and keep your home or business secure until the roof can be inspected and repaired.</p><div class="more">Emergency board-up →</div></div>
+    <div class="sc"><div class="ico">🌀</div><h3>Hurricane &amp; Storm Damage</h3><p>Rapid storm-damage response across Florida — water intrusion, wind, roof and structural damage — mobilized the moment it's safe to work.</p><div class="more">Storm response →</div></div>
+    <div class="sc"><div class="ico">🏠</div><h3>Residential Restoration</h3><p>From a single room to a whole home, we manage the full restoration — repairs, drying, rebuild coordination — so your household gets back to normal.</p><div class="more">Whole-home restoration →</div></div>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <p class="kick">See it live</p>
-  <h2>Watch the machine <span>work.</span></h2>
-  <div class="live">
-    <a class="lc hot" href="demo/"><span class="ic">🚀</span><h3>Capabilities Demo</h3><p>The full story that closes the room.</p><span class="go">Open →</span></a>
-    <a class="lc hot" href="app/"><span class="ic">📊</span><h3>Live Command Center</h3><p>The real dashboard — watch the money move.</p><span class="go">Open →</span></a>
-    <a class="lc" href="studio/"><span class="ic">📟</span><h3>Number Studio</h3><p>Spell a word → your number, live.</p><span class="lock">Code · ACTIVATE</span></a>
-    <a class="lc" href="rr/"><span class="ic">🌊</span><h3>Restoration Royalties</h3><p>Mold · water · roofing.</p><span class="go">Open →</span></a>
-    <a class="lc" href="fast/"><span class="ic">🛡️</span><h3>FAST Adjusting</h3><p>Public adjusting.</p><span class="go">Open →</span></a>
-    <a class="lc" href="yes/"><span class="ic">⚡</span><h3>YES Electrical</h3><p>Storm-power demand.</p><span class="go">Open →</span></a>
-    <a class="lc" href="telverge/"><span class="ic">🔢</span><h3>TELVERGE</h3><p>The vanity number platform.</p><span class="go">Open →</span></a>
+<section class="diff"><div class="wrap">
+  <p class="kick">The Restoration Royalty difference</p>
+  <h2>The same crews you trust — now impossible to reach voicemail.</h2>
+  <p class="sub">We paired IICRC-certified restoration with a modern branded-line system, so a homeowner in a crisis always reaches a person, and every job is documented from minute one.</p>
+  <div class="dgrid">
+    <div class="dc"><div class="i">📞</div><h3>Every call answered, 24/7</h3><p>Day, night, weekend, holiday — your call reaches a live person on a branded, tracked line. <b>The competitor who lets it hit voicemail loses the job.</b></p></div>
+    <div class="dc"><div class="i">📋</div><h3>Insurance-documented from minute one</h3><p>Photos, moisture readings, and a written scope captured on-site and packaged for your adjuster — <b>so your claim moves faster and pays fairer.</b></p></div>
+    <div class="dc"><div class="i">⚡</div><h3>Fastest safe response</h3><p>Calls route to the nearest available crew across our Florida footprint, so help is dispatched the moment it's safe — not hours later.</p></div>
+    <div class="dc"><div class="i">🎓</div><h3>IICRC-certified, licensed &amp; insured</h3><p>Every technician is trained and certified through the Institute of Inspection, Cleaning and Restoration Certification — and we're fully licensed and insured across Florida.</p></div>
+    <div class="dc"><div class="i">🔎</div><h3>Free, no-obligation inspection</h3><p>We assess the damage and give you a clear, written path forward at no cost — before you commit to anything.</p></div>
+    <div class="dc"><div class="i">👑</div><h3>Restoring peace of mind</h3><p>One point of contact who keeps you informed at every step — because the worst part of a disaster is not knowing what happens next.</p></div>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <p class="kick">The edge nobody else has</p>
-  <h2>Old SEO is dead. <span>We put you where the AI looks.</span></h2>
-  <p class="sub">Nobody scrolls to page two of Google anymore — they ask an assistant. We register your enhanced telecom numbers and business directly into the AI and directory layer that those assistants pull from.</p>
-  <div class="caps">
-    <div class="cap"><div class="i">🧠</div><h3>Registered at the source</h3><p>Your numbers and listing go straight into the data the AI assistants and directories read — not buried in an ad auction.</p></div>
-    <div class="cap"><div class="i">🎯</div><h3>Perfect buyer-to-seller match</h3><p>When a customer asks for your service in your area, the match points to your line. The right buyer, handed the right seller.</p></div>
-    <div class="cap"><div class="i">⏱️</div><h3>No waiting to rank</h3><p>No months of SEO, no page-one gamble. You're in the answer layer from day one.</p></div>
-    <div class="cap"><div class="i">🌐</div><h3>Local to global</h3><p>The same registration reaches the customer next door and the one across the country — your own app carries it worldwide.</p></div>
+<section class="lines" id="lines"><div class="wrap">
+  <p class="kick">Ten branded lines · one promise</p>
+  <h2>Whatever your emergency, a Restoration Royalty line rings for it.</h2>
+  <p class="sub">Every number below carries the <b>Restoration Royalty</b> name on caller ID and is answered <b>24/7</b> — never voicemail. Call the one that fits your emergency, or just call the main line and we'll route you.</p>
+  <div class="lgrid">
+    <a class="ln" href="tel:+17864001145"><span class="n">(786) 400-1145</span><span class="lbl">24/7 water &amp; flood emergency — the main line</span></a>
+    <a class="ln" href="tel:+17864001148"><span class="n">(786) 400-1148</span><span class="lbl">Water extraction &amp; structural dry-out</span></a>
+    <a class="ln" href="tel:+17864001147"><span class="n">(786) 400-1147</span><span class="lbl">Mold &amp; black-mold remediation</span></a>
+    <a class="ln" href="tel:+17864001149"><span class="n">(786) 400-1149</span><span class="lbl">Roof leak &amp; storm tarp</span></a>
+    <a class="ln" href="tel:+17864001150"><span class="n">(786) 400-1150</span><span class="lbl">Commercial · condo &amp; HOA</span></a>
+    <a class="ln" href="tel:+17864001146"><span class="n">(786) 400-1146</span><span class="lbl">Español · línea bilingüe</span></a>
   </div>
+  <p class="lsub">Plus dedicated attribution lines — so every ad proves its worth</p>
+  <div class="lgrid">
+    <div class="ln attr"><span class="n">(786) 400-1151</span><span class="lbl">Google / paid search</span></div>
+    <div class="ln attr"><span class="n">(786) 400-1152</span><span class="lbl">Truck-wrap &amp; fleet</span></div>
+    <div class="ln attr"><span class="n">(786) 400-1153</span><span class="lbl">Direct-mail &amp; door-hangers</span></div>
+    <div class="ln attr"><span class="n">(786) 400-1154</span><span class="lbl">Outbound branded caller-ID</span></div>
+  </div>
+  <p class="lcap">All ten numbers ring the same trusted Restoration Royalty team — the branded lines let a customer reach the right crew fast, and the attribution lines let us prove which marketing actually brings jobs. <b>You get the calls; we make sure none are ever missed.</b></p>
 </div></section>
 
 <section><div class="wrap">
-  <p class="kick">The moment of intent</p>
-  <h2>We reach them <span>the instant they want it.</span></h2>
-  <p class="sub">The phone network is the root identity the whole internet trusts. We put your name and your keywords on it — and surface your offer at the exact moment a customer reaches for what you sell.</p>
-  <div class="caps">
-    <div class="cap"><div class="i">🪪</div><h3>Your name on every screen</h3><p>Branded caller ID and E-411 directory listings — when you call, and when anyone looks you up, your name and keywords show, not a random number.</p></div>
-    <div class="cap"><div class="i">👂</div><h3>Real-time intent signals</h3><p>We monitor public conversations and searches for the keywords you give us — the moment someone says they need your service, the signal fires.</p></div>
-    <div class="cap"><div class="i">⚡</div><h3>Your link, right then</h3><p>Your offer surfaces in that moment — connecting the impulse to buy with the ability to act, while the need is still top of mind.</p></div>
-    <div class="cap"><div class="i">🌍</div><h3>Verified, local to global</h3><p>Your number is your identity across the phone network and the AI/directory layer — trusted, matched, and reachable everywhere.</p></div>
-  </div>
-  <p class="sub" style="margin-top:22px;font-size:13px;color:var(--dim);max-width:60ch">Intent signals are drawn from public posts, mentions, and directory data where permitted — never private messages.</p>
-</div></section>
-
-<section><div class="wrap">
-  <p class="kick">Your own workforce</p>
-  <h2>Clone yourself — <span>then make each copy a specialist.</span></h2>
-  <p class="sub">Replicate your own persona, then bolt on new skill sets — sales, scheduling, intake, follow-up, support — and spin up enhanced, specialist versions of you. An entire team that is all <b style="color:var(--ink)">you</b>, at next to no cost.</p>
-  <div class="caps">
-    <div class="cap"><div class="i">🧬</div><h3>Replicate your persona</h3><p>Your voice, your standards, your way of doing business — captured once and copied as many times as you need.</p></div>
-    <div class="cap"><div class="i">➕</div><h3>Add unlimited skills</h3><p>Stack new abilities onto any copy — a closer, a scheduler, a support rep — building specialist versions of you on demand.</p></div>
-    <div class="cap"><div class="i">🌙</div><h3>Never off, never gone</h3><p>They work around the clock and never call in sick, never quit, and never skim the till — following your playbook to the letter.</p></div>
-    <div class="cap"><div class="i">💠</div><h3>Next to no cost</h3><p>A whole team of specialist versions of you for a fraction of one human wage — and every one of them stays on-brand, on-message, every time.</p></div>
+  <p class="kick">How it works</p>
+  <h2>Five steps from crisis to restored.</h2>
+  <div class="steps">
+    <div class="st"><div class="n">1</div><h3>You call</h3><p>A real person answers, 24/7 — and gathers what matters.</p></div>
+    <div class="st"><div class="n">2</div><h3>We respond</h3><p>The nearest crew mobilizes fast to stop the damage spreading.</p></div>
+    <div class="st"><div class="n">3</div><h3>We assess &amp; document</h3><p>On-site inspection, moisture readings, photos, written scope.</p></div>
+    <div class="st"><div class="n">4</div><h3>We restore</h3><p>Extraction, drying, remediation, and rebuild — done to standard.</p></div>
+    <div class="st"><div class="n">5</div><h3>Insurance handled</h3><p>We package the documentation your insurer needs to pay the claim.</p></div>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <p class="kick">You hold the controls</p>
-  <h2>An infinite team. <span>One dashboard. Your hand on the dial.</span></h2>
-  <p class="sub">Replicate them without limit — a hundred, a thousand — all working at once and coordinating with each other in real time. You watch it all from one screen and tune it on the fly.</p>
-  <div class="kpis">
-    <div><div class="n">$4.20</div><div class="l">Net profit / minute</div><div class="dl">▲ live</div></div>
-    <div><div class="n cy">$6.10</div><div class="l">Cost per lead</div><div class="dl">▼ optimal</div></div>
-    <div><div class="n go">1,240</div><div class="l">Calls in queue</div><div class="dl">demand high</div></div>
-    <div><div class="n">98.4%</div><div class="l">Fleet online</div><div class="dl">all systems go</div></div>
+<section class="areas" id="areas"><div class="wrap">
+  <p class="kick">Where we work</p>
+  <h2>Serving homes and businesses across Florida.</h2>
+  <div class="arlist">
+    <span>Miami</span><span>Miami Beach</span><span>Coral Gables</span><span>Coconut Grove</span><span>Homestead</span>
+    <span>Palmetto Bay</span><span>Fort Myers</span><span>North Fort Myers</span><span>Cape Coral</span><span>Lehigh Acres</span>
+    <span>Port Charlotte</span><span>Punta Gorda</span><span>Arcadia</span><span>Venice</span><span>Bokeelia</span>
+    <span>Plant City</span><span>Orlando</span><span>Pensacola</span><span>Tallahassee</span>
   </div>
-  <div class="caps">
-    <div class="cap"><div class="i">♾️</div><h3>Scale without limit</h3><p>Add as many specialist copies as the work demands — instantly, at next to no cost. The team grows the second demand does.</p></div>
-    <div class="cap"><div class="i">🔗</div><h3>Collaborate in real time</h3><p>They coordinate with each other automatically — handing off, backing up, covering the surge — so nothing is dropped.</p></div>
-    <div class="cap"><div class="i">🎚️</div><h3>Tune it on the fly</h3><p>Every key indicator on one screen. See a number slip and adjust the dial before it ever costs you a dollar.</p></div>
-    <div class="cap"><div class="i">💰</div><h3>Own demand, supply &amp; price</h3><p>You create the demand, control the supply, and set your own price — so the numbers stay in your favor, payday after payday.</p></div>
-  </div>
+  <p class="arnote">Don't see your city? We cover the entire state of Florida — <a href="tel:+17864001145" style="color:var(--blue);font-weight:700">call and ask</a>.</p>
 </div></section>
 
 <section><div class="wrap">
-  <p class="kick">Always on</p>
-  <h2>Any volume. Any hour. <span>Zero compromise.</span></h2>
-  <p class="sub">Your inbound operator is fully automated — every call, chat, and lead handled around the clock, 24 hours a day, 365 days a year, no matter how fast they come in.</p>
-  <div class="caps">
-    <div class="cap"><div class="i">🚦</div><h3>Never a busy signal</h3><p>Ten calls or ten thousand at once — every one is answered. No hold music that loses the customer, no overflow to voicemail.</p></div>
-    <div class="cap"><div class="i">📈</div><h3>Scales with the surge</h3><p>The system grows the instant volume does. A storm, a viral moment, a rush — it absorbs the spike without missing a beat.</p></div>
-    <div class="cap"><div class="i">🕛</div><h3>Never clocks out</h3><p>3am, Sunday, a holiday — it works while you sleep. The calls that used to ring out at night now book themselves.</p></div>
-    <div class="cap"><div class="i">🎯</div><h3>Performance never dips</h3><p>The thousandth call gets the same sharp, on-brand handling as the first. No tired reps, no bad days, no drop-off.</p></div>
+  <p class="kick">Why homeowners trust us</p>
+  <h2>Certified, insured, and always reachable.</h2>
+  <div class="trust">
+    <div class="tb"><div class="b">24/7</div><div class="l">Emergency response, every day</div></div>
+    <div class="tb"><div class="b">IICRC</div><div class="l">Certified technicians</div></div>
+    <div class="tb"><div class="b">Licensed<br>&amp; Insured</div><div class="l">Statewide Florida</div></div>
+    <div class="tb"><div class="b">$0</div><div class="l">Free inspection &amp; assessment</div></div>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <p class="kick">It compounds</p>
-  <h2>The bigger you get, <span>the stronger it gets.</span></h2>
-  <p class="sub">Most systems buckle as they grow. This one does the opposite — every call, every customer, every day makes it faster, smarter, and more efficient. And all of that value stays yours.</p>
-  <div class="caps">
-    <div class="cap"><div class="i">🔒</div><h3>Your data stays yours</h3><p>Locked down and encrypted. It's never sold, never siphoned to a middleman, never leaked. The record of your business is your asset — and you own it.</p></div>
-    <div class="cap"><div class="i">🧠</div><h3>It learns from every call</h3><p>Every interaction sharpens the script and the routing. The system you run in month twelve is smarter than the one you started with.</p></div>
-    <div class="cap"><div class="i">⚙️</div><h3>Scale makes it sharper</h3><p>More volume means more signal. The larger your enterprise grows, the faster and more efficient the whole machine becomes.</p></div>
-    <div class="cap"><div class="i">💎</div><h3>The data is the exit</h3><p>Years of clean, structured call and customer data is what turns a business worth its trucks into one worth a multiple. You're building the asset every single day.</p></div>
+<section class="final" id="inspection"><div class="wrap">
+  <p class="kick" style="color:var(--amber)">Get help now</p>
+  <h2>Talk to a real person — and get a free inspection.</h2>
+  <p class="sub">No robots, no voicemail, no obligation. Tell us what happened and we'll get a crew moving and your paperwork started.</p>
+  <div class="herocta">
+    <a class="btn amber" href="tel:+17864001145">📞 (786) 400-1145</a>
+    <a class="btn ghost" href="mailto:contact@restorationroyalties.com?subject=Free%20inspection%20request&body=My%20name%3A%0AProperty%20address%3A%0AWhat%20happened%3A%0ABest%20callback%20number%3A">✉️ Request an inspection</a>
   </div>
-</div></section>
-
-<section><div class="wrap">
-  <p class="kick">Where this is going</p>
-  <h2>The telecom network <span>of the future.</span></h2>
-  <p class="sub">When a pandemic shut down global commerce and forced the world remote overnight, the legacy phone system — wires in the ground — buckled under the load. That congestion disrupted businesses everywhere. We're built for what comes after it — so you're never at the mercy of it again.</p>
-  <div class="caps">
-    <div class="cap"><div class="i">🛰️</div><h3>Satellite-driven vision</h3><p>Designed toward a spectrum- and satellite-backed backbone — reach that doesn't depend on aging ground infrastructure.</p></div>
-    <div class="cap"><div class="i">🔐</div><h3>End-to-end encrypted</h3><p>Strong, modern encryption end to end — your calls and data protected in transit, not an afterthought.</p></div>
-    <div class="cap"><div class="i">📶</div><h3>Built to never bottleneck</h3><p>Architected to scale past the congestion that choked legacy wired networks when demand spiked overnight.</p></div>
-    <div class="cap"><div class="i">🌎</div><h3>Omni-channel reach</h3><p>Voice, text, and data on one platform — local to global, on the network the next decade is built on.</p></div>
-  </div>
-  <p class="sub" style="margin-top:22px;font-size:12.5px;color:var(--dim);max-width:64ch">Forward-looking: describes Telvergence's platform vision and roadmap. Satellite, spectrum, and resilience capabilities are design goals delivered in stages, not a claim of present nationwide coverage.</p>
-</div></section>
-
-<section><div class="wrap">
-  <p class="kick">It pays you back</p>
-  <h2>It doesn't just make you money. <span>It makes you an owner.</span></h2>
-  <div class="rf">
-    <h3>Your customers become your distributors.</h3>
-    <p>Every contractor you refer runs their own ten lines — and <span class="em">you earn a residual on every one of them, forever.</span> Refer three friends and your lines pay for themselves. Refer thirty and you've built an income stream that rings whether your own phone does or not.</p>
-  </div>
-  <div class="ladder">
-    <div class="lg"><div class="s">Rung 1</div><h4>Partner</h4><p>Run your ten lines. Take the calls the network routes you.</p></div>
-    <div class="lg"><div class="s">Rung 2</div><h4>Referrer</h4><p>Introduce the contractors you already know. Earn residual on every line they run.</p></div>
-    <div class="lg"><div class="s">Rung 3</div><h4>Distributor</h4><p>Hold a trade or a territory. Override the whole footprint, not one deal.</p></div>
-    <div class="lg"><div class="s">Rung 4</div><h4>White label · $25K</h4><p>Run the whole platform under your own brand — an asset with its own name and sale value.</p></div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <p class="kick">Why now</p>
-  <h2>The rules changed. <span>They favor the ready.</span></h2>
-  <p class="sub">Regulation and expectation both shifted toward exactly what we provide — and every business now has to meet the new bar. We meet it for you, built in.</p>
-  <div class="caps">
-    <div class="cap"><div class="i">🚨</div><h3>E-911 compliance, handled</h3><p>Federal law — Kari's Law and the RAY BAUM'S Act — now requires business phone systems to support direct 911 dialing and dispatchable location. Ours does it out of the box.</p></div>
-    <div class="cap"><div class="i">🧼</div><h3>Touchless &amp; remote-ready</h3><p>The post-pandemic standard is operations that run without a front desk or a physical office. Your whole phone presence lives in the cloud.</p></div>
-    <div class="cap"><div class="i">📇</div><h3>Verified directory presence</h3><p>To be found and trusted today, your business has to be registered and verified across the 411 / directory and AI layer. We register it for you.</p></div>
-    <div class="cap"><div class="i">✅</div><h3>Compliance as a feature</h3><p>What's a headache for everyone else is already done here — you get the modern standard the moment you go live, not a to-do list.</p></div>
-  </div>
-  <p class="sub" style="margin-top:22px;font-size:12.5px;color:var(--dim);max-width:64ch">E-911 direct-dial and dispatchable-location requirements are established U.S. law (Kari's Law, 2020; RAY BAUM'S Act §506). Touchless-operations and directory-verification points describe current business expectations and best practice.</p>
-</div></section>
-
-<section class="stakes"><div class="wrap">
-  <p class="kick">The stakes</p>
-  <p class="big">First adopters will <em>dominate from the cloud.</em></p>
-  <div class="window"><b>⏳ Under 16 months</b><span>— the window to be first, before every trade in every market is already claimed.</span></div>
-  <p>The businesses that move on this first will own their trade, their territory, and the phone. The ones who wait won't be able to compete on speed, cost, or reach — and in a few years they simply won't be here. This isn't an upgrade. It's the new floor.</p>
-  <p class="q">So which one are you?</p>
-</div></div></section>
-
-<section><div class="wrap">
-  <p class="kick">The bigger picture</p>
-  <h2>This is the American Dream — <span>now attainable.</span></h2>
-  <p class="sub">You leave behind everything that used to make owning a business hard.</p>
-  <div class="freedom">
-    <div class="fx"><s>Employees</s></div>
-    <div class="fx"><s>A place to show up to</s></div>
-    <div class="fx"><s>Overhead</s></div>
-    <div class="fx"><s>Risk</s></div>
-    <div class="fx"><s>Uncertainty</s></div>
-    <div class="fx"><s>Headaches</s></div>
-  </div>
-  <p class="dreampay">What's left is <b>your free time, net profit compounding exponentially,</b> and a customer base that grows from your street to the entire globe — with <b>your own app.</b><br><br>And it's all attainable with one word: <span class="y">Yes.</span></p>
-</div></section>
-
-<section><div class="wrap">
-  <p class="kick">Built for you</p>
-  <h2>Not off-the-shelf. <span>Custom-built for your industry.</span></h2>
-  <p class="sub">Telvergence has designed working solutions across a multitude of industries — restoration, adjusting, electrical, wellness, and more — and tailors one perfectly to your model. All of it running on the telecommunications network of the future: the phone system reborn as your growth engine.</p>
-</div></section>
-
-<section><div class="wrap">
-  <p class="kick">The offer</p>
-  <h2>Lock it in <span>before your competitor does.</span></h2>
-  <p class="sub">One 10-line pack per trade, per area code — <b style="color:var(--ink)">first to sign owns it.</b> The business down the street is our next call. Whoever says yes first gets the numbers, the territory, and the head start.</p>
-  <div class="offer">
-    <div style="font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:12px">Free setup · free design · free programming · $0 out of pocket</div>
-    <div class="price">$22.95<small> / line / month</small></div>
-    <ul>
-      <li>Ten branded Smart-DIDs, your caller ID</li>
-      <li>24/7 AI intake + live profit dashboard</li>
-      <li>$0 today — nothing bills until it rings</li>
-      <li>Guaranteed, or the first month is on us</li>
-      <li>Scale to the $25K white-label when you're ready</li>
-    </ul>
-    <a class="btn primary" href="tel:+16892421041">📞 Reserve now — 689-242-1041</a>
-    <a class="btn ghost" href="mailto:contact@telvergence.com?subject=Reserve%20my%2010-line%20territory">✉️ Start my activation</a>
+  <div class="contactrow">
+    <span><span class="i">📞</span><a href="tel:+17864001145">(786) 400-1145</a></span>
+    <span><span class="i">✉️</span><a href="mailto:contact@restorationroyalties.com">contact@restorationroyalties.com</a></span>
+    <span><span class="i">📍</span>9555 SW 175th Terrace, Palmetto Bay, FL 33157</span>
   </div>
 </div></section>
 
 <footer><div class="wrap">
-  <p><b style="color:var(--muted)">Telvergence, Inc.</b> · David Drew Allen · 689-242-1041 · contact@telvergence.com</p>
-  <p>Authorized Vitelity wholesale partner · every ring is a sale.</p>
-  <p class="fnav"><a href="menu/">Network directory</a></p>
-</div></footer>
-</main>
+  <div><b>Restoration Royalty LLC</b> · Restoring peace of mind to your home and business.</div>
+  <div>© 2026 Restoration Royalty LLC · IICRC-certified · Licensed &amp; insured in Florida</div>
+</div><div class="wrap"><p class="fdis">Restoration Royalty LLC provides IICRC-certified water, mold, fire, smoke, and storm damage restoration across Florida. Available 24/7 for emergencies. Free inspections are provided at no cost and with no obligation. Insurance documentation is provided to support your claim; coverage and claim decisions are determined by your insurer.</p></div></footer>
 
-<script>
-(function(){
-  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-  var c=document.getElementById('bg'),x=c.getContext('2d'),W,H,pts;
-  function rz(){W=c.width=innerWidth;H=c.height=innerHeight;pts=Array.from({length:Math.min(64,Math.floor(W/26))},function(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.22,vy:(Math.random()-.5)*.22};});}
-  function tick(){x.clearRect(0,0,W,H);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
-    for(var j=i+1;j<pts.length;j++){var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.hypot(dx,dy);if(d<130){x.strokeStyle='rgba(0,212,255,'+(0.09*(1-d/130))+')';x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke();}}
-    x.fillStyle='rgba(0,212,255,.45)';x.beginPath();x.arc(p.x,p.y,1.3,0,7);x.fill();}requestAnimationFrame(tick);}
-  rz();tick();addEventListener('resize',rz);
-})();
-</script>
 </body>
 </html>
