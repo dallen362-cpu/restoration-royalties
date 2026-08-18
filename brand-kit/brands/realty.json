@@ -88,8 +88,8 @@
     {
       "h": "Outbound branded caller-ID",
       "vn": "1-800-MY-MIAMI",
-      "p": "The dialer's outbound face \u2014 branded, compliant, recorded.",
-      "pending": true
+      "p": "The dialer's outbound face \u2014 it presents your flagship number as caller ID so every callback lands on the line you already track.",
+      "presents": true
     }
   ],
   "pillars": [

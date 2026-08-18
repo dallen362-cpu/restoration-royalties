@@ -26,8 +26,13 @@ def did_grid(b):
     for i, d in enumerate(b['dids'], 1):
         vn = d.get('vn', '')
         pend = d.get('pending', False)
-        vncls = 'vn pending' if pend else 'vn'
-        vntxt = e(vn) + (' <em>· pending assignment</em>' if pend else '')
+        pres = d.get('presents', False)
+        if pres:
+            vncls = 'vn presents'
+            vntxt = '<em>presents</em> ' + e(vn)
+        else:
+            vncls = 'vn pending' if pend else 'vn'
+            vntxt = e(vn) + (' <em>· pending assignment</em>' if pend else '')
         out.append(
             f'      <div class="did"><span class="num">{i}</span>'
             f'<h4>{e(d["h"])}</h4>'

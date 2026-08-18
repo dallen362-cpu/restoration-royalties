@@ -242,3 +242,8 @@ tr.rec td{background:rgba(0,255,136,.06)}tr.rec b{color:var(--lime)}
 @media(max-width:700px){
   .video{aspect-ratio:auto;min-height:auto;padding:52px 18px 24px}
 }
+
+/* outbound caller-ID line: presents the flagship number, not a separate DID */
+.did .vn.presents{color:var(--muted)}
+.did .vn.presents em{font-style:normal;color:var(--faint);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
+.bar a{white-space:nowrap}

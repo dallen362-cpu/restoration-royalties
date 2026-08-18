@@ -88,8 +88,8 @@
     {
       "h": "Outbound branded caller-ID",
       "vn": "(407) 720-8100",
-      "p": "The rebooking dialer's face \u2014 branded, compliant, recorded.",
-      "pending": false
+      "p": "Your outbound face \u2014 it presents your flagship number as caller ID so every callback lands on the line you already track.",
+      "presents": true
     }
   ],
   "complianceChips": [

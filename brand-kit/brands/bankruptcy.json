@@ -88,8 +88,8 @@
     {
       "h": "Branded caller-ID / callback line",
       "vn": "1-800-FRESH-START",
-      "p": "Your outbound face for returning consultation calls \u2014 branded and recorded.",
-      "pending": true
+      "p": "Your outbound face \u2014 it presents your flagship number as caller ID so every callback lands on the line you already track.",
+      "presents": true
     }
   ],
   "pillars": [
