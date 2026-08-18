@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /$
+Disallow: /rr/
+Disallow: /fast/
+Disallow: /yes/
+Disallow: /telverge/
+Disallow: /vanity/
+Disallow: /pressure/
+Disallow: /window/
+Disallow: /realty/
+Disallow: /bankruptcy/
+Disallow: /jimmy/
+Disallow: /vault/
+Disallow: /command/
+Disallow: /studio/
+Disallow: /app/
+Disallow: /menu/
+Disallow: /showroom/
+Disallow: /boneyard/
+Disallow: /hub/
+Disallow: /dispatch/
+
+Sitemap: https://restorationroyalties.com/sitemap.xml

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telvergence — Activate Your Free Call-Center Campaign</title>
+<style>
+  :root{--ink:#070b16;--panel:#111a2e;--panel2:#0d1526;--line:#213050;--cyan:#2dd4ea;--cyan-dim:#1a90a3;--gold:#f0b64a;--lime:#3ef0a0;--text:#eaf1ff;--muted:#9fb0cc;--faint:#61789e}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:radial-gradient(1100px 620px at 80% -8%,rgba(45,212,234,.10),transparent 60%),radial-gradient(900px 520px at 0% 4%,rgba(143,125,255,.08),transparent 55%),var(--ink);color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:0 18px}
+  a{color:var(--cyan);text-decoration:none}
+  .bar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:12px;padding:12px 18px;background:rgba(7,11,22,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.6px;font-size:17px}
+  .logo b{color:var(--cyan)} .dot{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime)}
+  .bar .sp{margin-left:auto}
+  .callbtn{background:linear-gradient(180deg,var(--cyan),var(--cyan-dim));color:#03151a;font-weight:800;padding:9px 14px;border-radius:10px;font-size:13px}
+  .hero{padding:44px 0 8px;text-align:center}
+  .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;color:var(--cyan)}
+  h1{font-size:clamp(26px,5.4vw,42px);line-height:1.06;letter-spacing:-.02em;font-weight:800;margin:12px auto 10px;max-width:16ch}
+  h1 .g{background:linear-gradient(92deg,var(--cyan),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{color:#d5e2fb;max-width:52ch;margin:0 auto;font-size:16px}
+  .guar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:16px 0 6px}
+  .g-pill{font-size:12px;font-weight:800;color:var(--lime);border:1px solid rgba(62,240,160,.4);background:rgba(62,240,160,.08);border-radius:999px;padding:5px 11px}
+  .prog{display:flex;gap:6px;margin:22px 0 14px}
+  .prog .s{flex:1;height:6px;border-radius:999px;background:#0c1626;border:1px solid var(--line)}
+  .prog .s.on{background:linear-gradient(90deg,var(--cyan),var(--lime));border-color:transparent}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:26px}
+  .step{display:none} .step.on{display:block}
+  .step h2{font-size:20px;font-weight:800;margin-bottom:2px}
+  .step .hint{color:var(--muted);font-size:13.5px;margin-bottom:12px}
+  label.f{display:block;font-size:12px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--faint);margin:12px 0 5px}
+  input,select,textarea{width:100%;background:#0c1626;border:1px solid var(--line);border-radius:12px;color:var(--text);padding:12px 13px;font-size:16px;font-family:inherit}
+  textarea{min-height:74px;resize:vertical}
+  .opts{display:grid;gap:9px;margin-top:6px}
+  .opt{display:flex;gap:11px;align-items:flex-start;background:#0c1626;border:1px solid var(--line);border-radius:12px;padding:12px 13px;cursor:pointer}
+  .opt input{width:auto;margin-top:3px}
+  .opt.sel{border-color:var(--cyan);background:rgba(45,212,234,.1)}
+  .opt b{font-size:15px} .opt span{display:block;color:var(--muted);font-size:13px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .chip{background:#0c1626;border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-weight:800;font-variant-numeric:tabular-nums;cursor:pointer;font-size:14.5px}
+  .chip.sel{border-color:var(--cyan);background:rgba(45,212,234,.12);color:var(--cyan)}
+  .nav{display:flex;gap:10px;margin-top:18px}
+  .btn{flex:1;padding:14px;border-radius:13px;font-weight:800;font-size:16px;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer}
+  .btn.pri{background:linear-gradient(180deg,var(--lime),#25b083);color:#04231a;border-color:transparent}
+  .btn.cyan{background:linear-gradient(180deg,var(--cyan),var(--cyan-dim));color:#03151a;border-color:transparent}
+  .est{background:#0c1626;border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:12px}
+  .est .big{font-size:30px;font-weight:800;color:var(--lime);font-variant-numeric:tabular-nums}
+  .est .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+  .done{display:none;text-align:center;padding:14px 0}
+  .done.on{display:block}
+  .done .check{font-size:44px}
+  .foot{padding:20px 0 60px;color:var(--faint);font-size:12px;text-align:center}
+  .review{font-size:14px;color:#cfe0fb}
+  .review div{padding:6px 0;border-bottom:1px solid var(--line)}
+  .review b{color:var(--text)}
+</style>
+</head>
+<body>
+<div style="background:linear-gradient(90deg,#f0b64a,#ff7a6b);color:#1a0d00;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;text-align:center;font-size:12.5px;padding:8px 12px">⚡ Adopt full-blown automation — or die ⚡</div>
+<div class="bar">
+  <span class="logo"><span class="dot"></span><b>TEL</b>VERGENCE</span>
+  <span class="sp"></span>
+  <a class="callbtn" href="tel:+16892421041">&#9742; 689-242-1041</a>
+</div>
+
+<header class="hero wrap">
+  <div class="eyebrow">Free Campaign Activation</div>
+  <h1>Turn on your own <span class="g">call-center campaign</span> — free.</h1>
+  <p>Tell us about your business in 3 minutes. We build it, load your data, and either route the calls to you or answer and book them for you. You watch the jobs come in.</p>
+  <div class="guar">
+    <span class="g-pill">$0 out of pocket</span>
+    <span class="g-pill">Zero-cost guarantee</span>
+    <span class="g-pill">Live in days</span>
+    <span class="g-pill">You keep the jobs</span>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="card">
+  <div class="prog" id="prog"></div>
+
+  <!-- STEP 1 -->
+  <div class="step on" data-step="0">
+    <h2>1 &middot; Your business</h2>
+    <div class="hint">So we know who we're building for.</div>
+    <label class="f">Business name</label><input id="biz" placeholder="Acme Roofing">
+    <label class="f">Your name</label><input id="name" placeholder="Jane Owner">
+    <label class="f">Best cell / phone</label><input id="phone" inputmode="tel" placeholder="(407) 555-0100">
+    <label class="f">Email</label><input id="email" inputmode="email" placeholder="you@business.com">
+    <label class="f">Website (optional)</label><input id="site" placeholder="acmeroofing.com">
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step" data-step="1">
+    <h2>2 &middot; Your market &amp; offer</h2>
+    <div class="hint">What you sell and where. Helps us target &amp; price it.</div>
+    <label class="f">Industry / what you do</label><input id="industry" placeholder="Roofing, restoration, HVAC, medical, legal…">
+    <label class="f">Service area (city or ZIP)</label><input id="area" placeholder="Orlando, FL / 32836">
+    <label class="f">What makes a great lead / your best offer</label><textarea id="offer" placeholder="Free roof inspection; storm-damage claims; new HVAC install…"></textarea>
+    <label class="f">Average value of one closed job ($)</label><input id="jobval" inputmode="numeric" placeholder="7500">
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step" data-step="2">
+    <h2>3 &middot; Your data &amp; leads</h2>
+    <div class="hint">We can reactivate your old customers, pull fresh local leads, or both.</div>
+    <div class="opts" id="dataOpts">
+      <label class="opt"><input type="radio" name="data" value="Send my past customer list"><span><b>I'll send my past customer list</b><span>Reactivate old &amp; past customers for repeat/referral revenue.</span></span></label>
+      <label class="opt"><input type="radio" name="data" value="Pull fresh local leads for me"><span><b>Pull fresh local leads for me</b><span>We source segmented, local-presence leads in your area.</span></span></label>
+      <label class="opt"><input type="radio" name="data" value="Both"><span><b>Both</b><span>Reactivate my list AND add fresh local leads.</span></span></label>
+    </div>
+    <label class="f">Paste a few sample contacts (optional)</label><textarea id="sample" placeholder="Name, phone, city — a few rows so we can format your upload."></textarea>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step" data-step="3">
+    <h2>4 &middot; How calls are handled</h2>
+    <div class="hint">Your choice — route to you, we answer for you, or both.</div>
+    <div class="opts" id="callOpts">
+      <label class="opt"><input type="radio" name="calls" value="Route calls straight to me"><span><b>Route calls straight to me</b><span>Every interested prospect rings your phone live.</span></span></label>
+      <label class="opt"><input type="radio" name="calls" value="Telvergence answers & books for me"><span><b>You answer &amp; book for me</b><span>Our AI + live agents qualify and book onto your calendar.</span></span></label>
+      <label class="opt"><input type="radio" name="calls" value="Hybrid"><span><b>Hybrid</b><span>We qualify, then warm-transfer the hot ones to you.</span></span></label>
+    </div>
+    <label class="f">Best number to send calls / callbacks to</label><input id="dest" inputmode="tel" placeholder="(407) 555-0100">
+    <label class="f">Best hours to reach you</label><input id="hours" placeholder="Mon–Fri 8a–6p">
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step" data-step="4">
+    <h2>5 &middot; Your Smart number</h2>
+    <div class="hint">Pick a branded number for the campaign. No card today.</div>
+    <label class="f">Market (area code)</label>
+    <select id="npa">
+      <option value="407">407 · Orlando</option><option value="321">321 · Space Coast</option>
+      <option value="689">689 · Orlando</option><option value="305">305 · Miami</option>
+      <option value="786">786 · Miami</option><option value="954">954 · Ft. Lauderdale</option>
+      <option value="813">813 · Tampa</option><option value="800">800 · Toll-free</option>
+    </select>
+    <label class="f">Pick an available number</label>
+    <div class="chips" id="chips"></div>
+
+    <div class="est">
+      <div class="l">Your zero-risk profit snapshot</div>
+      <div class="big" id="profit">$—</div>
+      <div class="l" id="profitnote">Enter your job value in step 2 to see this.</div>
+    </div>
+    <label class="f">Estimated closes per month you could handle</label><input id="closes" inputmode="numeric" placeholder="4" oninput="calcProfit()">
+
+    <div style="margin-top:14px" class="review" id="review"></div>
+  </div>
+
+  <!-- DONE -->
+  <div class="done" data-step="done">
+    <div class="check">✅</div>
+    <h2 style="margin:6px 0">Your campaign request is in.</h2>
+    <p style="color:var(--muted);font-size:14.5px;max-width:46ch;margin:6px auto 14px">Telvergence will build it, load your data, and turn it on — <b>$0 out of pocket</b>. We'll confirm your Smart number and go-live. One tap below sends us everything so we can start.</p>
+    <a class="btn cyan" id="sendBtn" href="#" style="display:inline-block;flex:none;padding:14px 22px">&#9993; Send my activation to Telvergence</a>
+    <p style="color:var(--faint);font-size:12px;margin-top:12px">Or call David directly: <a href="tel:+16892421041">(689) 242-1041</a></p>
+  </div>
+
+  <div class="nav" id="nav">
+    <button class="btn" id="back" onclick="go(-1)" style="display:none">Back</button>
+    <button class="btn pri" id="next" onclick="go(1)">Continue</button>
+  </div>
+</div>
+
+<div class="foot">TELVERGENCE, Inc. &middot; $0 out of pocket &middot; 30-day satisfaction guarantee &middot; $22.95/line only if you're happy &middot; telvergence.com</div>
+</div>
+
+<script>
+  var step=0, TOTAL=5;
+  var prog=document.getElementById('prog');
+  for(var i=0;i<TOTAL;i++){var d=document.createElement('div');d.className='s';prog.appendChild(d);}
+  function paint(){
+    document.querySelectorAll('.prog .s').forEach(function(s,i){s.className='s'+(i<=step&&step<TOTAL?' on':'');});
+    document.querySelectorAll('.step').forEach(function(el){el.classList.remove('on');});
+    document.querySelector('.done').classList.remove('on');
+    document.getElementById('back').style.display = step>0 ? '' : 'none';
+    if(step<TOTAL){
+      document.querySelector('.step[data-step="'+step+'"]').classList.add('on');
+      document.getElementById('nav').style.display='flex';
+      document.getElementById('next').textContent = step===TOTAL-1 ? 'Activate my free campaign' : 'Continue';
+      if(step===TOTAL-1){ renderReview(); calcProfit(); }
+    } else {
+      document.querySelector('.done').classList.add('on');
+      document.getElementById('nav').style.display='none';
+      buildSend();
+    }
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function go(dir){ step+=dir; if(step<0)step=0; if(step>TOTAL)step=TOTAL; paint(); }
+
+  document.querySelectorAll('.opts').forEach(function(g){
+    g.addEventListener('change',function(){ g.querySelectorAll('.opt').forEach(function(o){o.classList.toggle('sel',o.querySelector('input').checked);}); });
+  });
+
+  var npa=document.getElementById('npa'),chips=document.getElementById('chips'),didSel=null;
+  function pad(n){return ('000'+n).slice(-4);}
+  function seedFor(c){var base=parseInt(c,10)*7%9000+1000,o=[];for(var i=0;i<4;i++){var line=(base+i*1373)%9000+1000,pre=(base+i*31)%800+200;o.push(c+'-'+pre+'-'+pad(line));}return o;}
+  function renderChips(){chips.innerHTML='';didSel=null;seedFor(npa.value).forEach(function(num){var d=document.createElement('div');d.className='chip';d.textContent=num;d.onclick=function(){document.querySelectorAll('#chips .chip').forEach(function(c){c.classList.remove('sel');});d.classList.add('sel');didSel=num;renderReview();};chips.appendChild(d);});}
+  npa.onchange=renderChips; renderChips();
+
+  function val(id){return (document.getElementById(id)||{}).value||'';}
+  function radio(name){var el=document.querySelector('input[name="'+name+'"]:checked');return el?el.value:'';}
+
+  function calcProfit(){
+    var jv=parseFloat(val('jobval'))||0, cl=parseFloat(val('closes'))||4;
+    var p=jv*cl;
+    document.getElementById('profit').textContent = p>0 ? '$'+p.toLocaleString()+' / mo' : '$—';
+    document.getElementById('profitnote').textContent = p>0 ? ('At '+cl+' closed jobs/mo × $'+jv.toLocaleString()+' — with $0 out of pocket.') : 'Enter your job value in step 2 to see this.';
+  }
+  function renderReview(){
+    var r=document.getElementById('review');
+    r.innerHTML =
+      '<div><b>Business:</b> '+ (val('biz')||'—') +'</div>'+
+      '<div><b>Industry / area:</b> '+ (val('industry')||'—') +' · '+ (val('area')||'—') +'</div>'+
+      '<div><b>Data:</b> '+ (radio('data')||'—') +'</div>'+
+      '<div><b>Call handling:</b> '+ (radio('calls')||'—') +'</div>'+
+      '<div><b>Smart number:</b> '+ (didSel||('choose a '+npa.value+' number above')) +'</div>';
+  }
+  function buildSend(){
+    var body =
+      'NEW TELVERGENCE FREE CAMPAIGN ACTIVATION\n\n'+
+      'Business: '+val('biz')+'\nContact: '+val('name')+'\nPhone: '+val('phone')+'\nEmail: '+val('email')+'\nWebsite: '+val('site')+'\n\n'+
+      'Industry: '+val('industry')+'\nService area: '+val('area')+'\nOffer / good lead: '+val('offer')+'\nAvg job value: $'+val('jobval')+'\n\n'+
+      'Data plan: '+radio('data')+'\nSample contacts:\n'+val('sample')+'\n\n'+
+      'Call handling: '+radio('calls')+'\nSend calls to: '+val('dest')+'\nBest hours: '+val('hours')+'\n\n'+
+      'Requested Smart number: '+(didSel||('(pick a '+npa.value+')'))+'\nEst. closes/mo: '+val('closes')+'\n\n'+
+      '$0 out of pocket — please build, load, and activate.';
+    var href='mailto:contact@telvergence.com?subject='+encodeURIComponent('Free Campaign Activation — '+(val('biz')||'New business'))+'&body='+encodeURIComponent(body);
+    document.getElementById('sendBtn').setAttribute('href',href);
+  }
+</script>
+</body>
+</html>

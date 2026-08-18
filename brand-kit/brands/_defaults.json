@@ -1,0 +1,122 @@
+{
+  "robots": "noindex, nofollow",
+  "ctaPhone": "(689) 242-1041",
+  "ctaPhoneHref": "+16892421041",
+  "ctaEmail": "contact@telvergence.com",
+  "platformName": "Telvergence",
+  "econUnit": "see booked jobs before you scale",
+  "focusVerb": "doing the work",
+  "brainChips": [
+    {
+      "t": "Any DID in the grid"
+    },
+    {
+      "t": "source-tag"
+    },
+    {
+      "t": "language route"
+    },
+    {
+      "t": "priority queue",
+      "hot": true
+    },
+    {
+      "t": "24/7 AI answer"
+    },
+    {
+      "t": "dispatch / SMS / auto-callback"
+    },
+    {
+      "t": "one command center",
+      "hot": true
+    }
+  ],
+  "brainNote": "Each DID is <b>programmable</b>: it knows where the call came from, what language to route in, how urgent it is, and what to do if no one answers. Because Telvergence <b>controls the dial tone</b> (carrier API \u2192 our own private network), the routing lives on infrastructure we own \u2014 <b>your lead data never leaks</b> to a third-party platform.",
+  "complianceChips": [
+    "TCPA",
+    "Do-Not-Call scrubbed",
+    "Recorded with disclosure",
+    "Lawful calling hours"
+  ],
+  "stack": [
+    {
+      "h": "Smart-DID Sensor Layer",
+      "tech": "CPaaS",
+      "p": "Programmable numbers \u2014 each source-tagged, recorded, and geo-aware."
+    },
+    {
+      "h": "Carrier & Dial-Tone Control",
+      "tech": "UCaaS",
+      "p": "We own the network path \u2014 routing runs on infrastructure we control, so your lead data never leaks."
+    },
+    {
+      "h": "Intelligent Routing Brain",
+      "tech": "AI ROUTING",
+      "p": "Geo, language, and urgency decided in milliseconds \u2014 the hottest call always jumps the queue."
+    },
+    {
+      "h": "Contact-Center Layer",
+      "tech": "CCaaS",
+      "p": "24/7 AI answer, live agents, and a compliant outbound dialer \u2014 inbound and outbound in one system."
+    },
+    {
+      "h": "Automation & Workflow",
+      "tech": "iPaaS",
+      "p": "CRM sync, SMS follow-up, missed-call auto-callback, review generation, and booking \u2014 hands-off."
+    },
+    {
+      "h": "Command Center",
+      "tech": "XaaS",
+      "p": "Every call, text, job, and ad dollar on one live dashboard \u2014 the whole business in one screen."
+    }
+  ],
+  "tiers": [
+    {
+      "name": "Foundation",
+      "sub": " \u2014 the Smart-DID grid + AI answer",
+      "price": "$1,500 / mo"
+    },
+    {
+      "name": "Growth",
+      "sub": " \u2014 grid + outbound dialer + command center",
+      "price": "$3,500 / mo",
+      "rec": true
+    },
+    {
+      "name": "Performance split",
+      "sub": "",
+      "price": "share of new business booked"
+    },
+    {
+      "name": "Multi-market add-on",
+      "sub": " (add a second metro)",
+      "price": "~$1,500 / market / mo"
+    }
+  ],
+  "referEarn": {
+    "unit": "jobs",
+    "peer": "owner"
+  },
+  "videoSub": "A typical site vs. the offspring \u00b7 the Smart-DID grid \u00b7 a live call booked in 90 seconds.",
+  "didFootnote": "Numbers marked <b>pending assignment</b> are reserved slots \u2014 real DIDs are pulled from the Telvergence wholesale portal before launch. Nothing is ever published unowned.",
+  "winnetBadge": "TELVERGENCE SUB-NETWORK",
+  "winnetH": "Brands that share one network, one app, and every lead in real time.",
+  "winnetP": "Each brand runs its own Smart-DID grid on the same Telvergence backbone \u2014 so when a job touches more than one trade, the lead flows across the network instead of dying in a voicemail box. Shared leads, shared customers, real-time analytics and automation on every job.",
+  "winnet": [
+    {
+      "slug": "rr",
+      "t": "\ud83c\udf0a Restoration Royalties",
+      "s": "Mold \u00b7 Water \u00b7 Roofing"
+    },
+    {
+      "slug": "fast",
+      "t": "\ud83d\udccb FAST Adjusting Service",
+      "s": "Public adjusting \u00b7 Claims"
+    },
+    {
+      "slug": "yes",
+      "t": "\u26a1 YES Electrical",
+      "s": "Power \u00b7 Generators"
+    }
+  ]
+}

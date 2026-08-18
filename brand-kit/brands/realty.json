@@ -1,0 +1,194 @@
+{
+  "slug": "realty",
+  "brandName": "Miami Realty Group",
+  "brandShortBold": "MIAMI",
+  "brandShortRest": " REALTY GROUP",
+  "accent": "#C4A55C",
+  "lineCount": 10,
+  "eyebrow": "TELVERGENCE \u00d7 Miami Realty Group \u00b7 Residential \u00b7 Commercial \u00b7 Investment",
+  "h1a": "Every inquiry is a commission.",
+  "h1b": "We make it ring to you.",
+  "tagline": "In real estate the lead has a shelf life measured in <b>minutes</b> \u2014 a buyer inquiring on a listing calls the next agent if you don't pick up. We turn this brokerage into a <b>10-line Smart-DID grid</b> where every listing, buyer, seller, and investor call is answered instantly, in the caller's language, and routed to the right agent on floor \u2014 with every source measured to the dollar.",
+  "demoNote": "Miami brokerage campaign \u00b7 listings \u00b7 buyers \u00b7 sellers \u00b7 investors \u00b7 rentals \u00b7 10-line pack \u00b7 numbers pending assignment",
+  "insight": "a single Miami transaction pays a <b>$9,000\u2013$60,000+</b> commission \u2014 and the industry's own data is brutal: the agent who responds <b>first</b> wins the overwhelming majority of inquiries. Every listing sign, portal lead, and open-house card produces calls at unpredictable hours, and an agent showing property cannot answer them. A phone number that just rings can't. A <b>Smart DID</b> can.",
+  "benchNowTitle": "The typical brokerage \u2014 today",
+  "benchNow": [
+    "Agent cell numbers, <b>untracked</b> \u2014 no idea which listing produced the call",
+    "Agent is at a showing, so the buyer calls the next agent",
+    "No <b>Spanish or Portuguese line</b> in an international market",
+    "Portal leads and sign calls hit the same number \u2014 nothing attributable",
+    "No after-hours answer; evening and weekend buyers are lost",
+    "No structured follow-up on the inquiry that didn't convert that day"
+  ],
+  "benchNextTitle": "The Miami Realty Group offspring",
+  "benchNext": [
+    "<b>10 Smart DIDs</b>, every call source-tagged, recorded, mapped to a listing",
+    "<b>24/7 AI answer</b> \u2014 the buyer inquiry is never voicemail",
+    "Dedicated <b>Spanish + Portuguese</b> bilingual routing",
+    "<b>Per-listing and per-portal DIDs</b> \u2014 you know which sign produced which deal",
+    "Email + <b>SMS capture</b> with automatic inquiry follow-up",
+    "<b>Floor-duty routing</b> \u2014 the right agent, on rotation, every time"
+  ],
+  "gridSub": "listings \u00b7 buyers \u00b7 sellers \u00b7 investors \u00b7 rentals",
+  "dids": [
+    {
+      "h": "Flagship / 24-7 main line",
+      "vn": "1-800-MY-MIAMI",
+      "p": "Priority ring, never voicemail \u2014 the brokerage's front door.",
+      "pending": true
+    },
+    {
+      "h": "Spanish / Biling\u00fce",
+      "vn": "1-844-SU-CASA-1",
+      "p": "Routes Spanish callers to a bilingual agent path \u2014 essential in this market.",
+      "pending": true
+    },
+    {
+      "h": "Portuguese / Brazilian buyers",
+      "vn": "1-833-BR-MIAMI",
+      "p": "The international buyer segment most brokerages cannot answer.",
+      "pending": true
+    },
+    {
+      "h": "Buyer inquiries / listing sign",
+      "vn": "1-800-SEE-HOMES",
+      "p": "The sign-call line \u2014 tagged to the listing so you know which property produced it.",
+      "pending": true
+    },
+    {
+      "h": "Seller / free home valuation",
+      "vn": "1-800-SOLD-FAST",
+      "p": "The listing-appointment line \u2014 your highest-value inbound call.",
+      "pending": true
+    },
+    {
+      "h": "Investor / income property",
+      "vn": "1-844-CASH-FLOW",
+      "p": "Cash and portfolio buyers routed to the agents who handle them.",
+      "pending": true
+    },
+    {
+      "h": "Commercial / retail & office",
+      "vn": "1-800-BIZ-SPACE",
+      "p": "Separated from residential so commercial inquiries never sit in a retail queue.",
+      "pending": true
+    },
+    {
+      "h": "Rentals / property management",
+      "vn": "1-833-FOR-RENT",
+      "p": "High-volume, low-ticket calls kept off the sales lines.",
+      "pending": true
+    },
+    {
+      "h": "Portal leads (Zillow \u00b7 Realtor)",
+      "vn": "1-800-HOME-HUNT",
+      "p": "Proves portal ROI to the dollar \u2014 swap the number, keep the data.",
+      "pending": true
+    },
+    {
+      "h": "Outbound branded caller-ID",
+      "vn": "1-800-MY-MIAMI",
+      "p": "The dialer's outbound face \u2014 it presents your flagship number as caller ID so every callback lands on the line you already track.",
+      "presents": true
+    }
+  ],
+  "pillars": [
+    {
+      "n": "Outbound",
+      "p": "A compliant dialer works <b>expired listings, FSBOs, and farm areas</b> \u2014 branded caller-ID, compliant scripting, recordings, callbacks. Every call is DNC-scrubbed before the list ever runs."
+    },
+    {
+      "n": "Inbound",
+      "p": "10 tracked lines + 24/7 AI answer + SMS. Every listing source measured, floor-duty rotation honored, every missed call auto-called-back."
+    },
+    {
+      "n": "Command center",
+      "p": "Calls, texts, appointments set, ad spend and source \u2014 one live dashboard. You finally see which listing and which portal produced which closing."
+    }
+  ],
+  "complianceChips": [
+    "TCPA",
+    "Do-Not-Call scrubbed",
+    "FREC advertising rules",
+    "Brokerage name & license shown",
+    "Recorded with disclosure"
+  ],
+  "license": {
+    "label": "Florida real estate brokerage license #",
+    "value": ""
+  },
+  "commandCenter": {
+    "h2": "Your live command center \u2014 pipeline in real time",
+    "heroLabel": "Pipeline volume \u00b7 today",
+    "heroValue": "$4,280,000",
+    "vertical": "brokerage",
+    "tiles": [
+      {
+        "k": "9",
+        "l": "Appointments set today",
+        "c": "cy"
+      },
+      {
+        "k": "$475K",
+        "l": "Avg. price point",
+        "c": "go"
+      },
+      {
+        "k": "132 \u00b7 9",
+        "l": "Calls \u00b7 appts set",
+        "c": "cy"
+      },
+      {
+        "k": "3.4%",
+        "l": "Cost of acquisition",
+        "c": "lm"
+      }
+    ],
+    "controls": [
+      "\u23f8 Stop",
+      "\u25b6 Start",
+      "\u23ec Slow",
+      "\u23eb Speed up",
+      "\ud83d\udd00 Change leads",
+      "\ud83d\udcdd Change script",
+      "\ud83c\udf81 Change offer",
+      "\ud83d\udccd Change farm area",
+      "\ud83d\udce1 Change channel"
+    ],
+    "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, farm area, or channel instantly and watch the pipeline move. <b>Your agents close \u2014 we make the phone ring.</b>"
+  },
+  "map": {
+    "h2": "Your Miami market \u2014 live & geo-routed",
+    "fallback": "Miami Market<br>Miami-Dade \u00b7 Broward",
+    "title": "Miami market area",
+    "q": "Miami,+FL",
+    "z": 9,
+    "note": "Every Smart DID is geo-aware: inbound calls are tagged by listing and ZIP and routed to the agent on floor duty for that area \u2014 and outbound farming targets the exact neighborhoods you want to own."
+  },
+  "videoSub": "A typical brokerage site vs. the offspring \u00b7 the 10-line grid \u00b7 a listing appointment set in 90 seconds.",
+  "offerLead": "We stand up all ten numbers, the AI answer, the bilingual routes, floor-duty rotation, and a starter outbound farming campaign across your target neighborhoods. For 30 days every inbound inquiry is answered and routed while the dialer works your farm.",
+  "econUnit": "see appointments set before you scale",
+  "focusVerb": "listing and closing",
+  "referEarn": {
+    "unit": "transactions",
+    "peer": "broker"
+  },
+  "alternative": "pass, and the next buyer inquiry goes to the brokerage down Brickell \u2014 who answers in ten seconds while your agent is at a showing. Territories are exclusive and claimed once.",
+  "seo": {
+    "title": "Miami Realty Group \u00d7 Telvergence \u2014 10-Line Smart-DID Proposal",
+    "description": "Telvergence proposal: a 10-line Smart-DID grid for a Miami real estate brokerage \u2014 24/7 AI answer, bilingual routing, per-listing attribution, floor-duty routing, and a live command center.",
+    "canonical": "https://restorationroyalties.com/realty/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Miami Realty Group",
+    "description": "Residential, commercial, and investment real estate brokerage serving Miami-Dade and Broward.",
+    "areaServed": [
+      "Miami-Dade County",
+      "Broward County"
+    ],
+    "priceRange": "$$$"
+  },
+  "disclaimer": "Prepared for a Miami real estate brokerage as a discussion proposal. Real estate brokerage is licensed and regulated; the brokerage name and Florida license number of record are displayed on all public-facing material per FREC advertising rules. All solicitation complies with TCPA, Do-Not-Call, and applicable state requirements, reviewed before launch. Numbers shown as pending assignment are reserved slots, not published lines."
+}

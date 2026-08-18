@@ -1,0 +1,185 @@
+{
+  "slug": "spin",
+  "brandName": "Spin Machine",
+  "brandShortBold": "SPIN",
+  "brandShortRest": " MACHINE",
+  "accent": "#FB7185",
+  "lineCount": 10,
+  "eyebrow": "TELVERGENCE \u00d7 Spin Machine \u00b7 Indoor Cycling Studio \u00b7 Member Acquisition",
+  "h1a": "Every trial is a membership.",
+  "h1b": "We make it ring to you.",
+  "tagline": "A boutique-fitness member is worth <b>$1,500\u2013$3,000 a year</b> \u2014 and the studio's whole growth problem is turning a curious first-timer into a standing class booking. We turn Spin Machine into a <b>10-line Smart-DID grid</b> where every trial, membership, and class inquiry is answered instantly, booked, and followed up until they clip in.",
+  "demoNote": "Indoor cycling studio campaign \u00b7 free trial \u00b7 membership \u00b7 class packs \u00b7 corporate \u00b7 10-line pack",
+  "insight": "an indoor-cycling member pays <b>$1,500\u2013$3,000</b> a year and stays for years once hooked \u2014 but the first-timer decides on impulse, usually after a friend or an ad, and books whoever answers with a friendly voice. A rung-out phone during a class loses that member. A phone number that just rings can't answer mid-ride. A <b>Smart DID</b> can.",
+  "benchNowTitle": "The typical studio \u2014 today",
+  "benchNow": [
+    "Everyone's in class, so the trial call goes to <b>voicemail</b>",
+    "One untracked number \u2014 no idea which ad filled the ride",
+    "No after-hours answer for the evening impulse sign-up",
+    "No <b>Spanish line</b> in a bilingual market",
+    "Trials, memberships, and corporate share one queue",
+    "No follow-up on the first-timer who didn't come back"
+  ],
+  "benchNextTitle": "The Spin Machine offspring",
+  "benchNext": [
+    "<b>24/7 answer</b> \u2014 the impulse sign-up is captured, not lost",
+    "<b>10 Smart DIDs</b>, every call source-tagged, recorded",
+    "Dedicated <b>Spanish line</b> with bilingual routing",
+    "<b>Purpose lines</b> \u2014 free trial, membership, class packs, corporate",
+    "Email + <b>SMS capture</b> with automatic trial-to-member follow-up",
+    "<b>Command center</b> ties every ad dollar to a filled bike"
+  ],
+  "gridSub": "free trial \u00b7 membership \u00b7 class packs \u00b7 corporate",
+  "dids": [
+    {
+      "h": "Flagship / 24-7 free-trial line",
+      "vn": "407-812-7740",
+      "p": "Priority ring, never voicemail \u2014 the line that owns your #1 promise: book your first ride free.",
+      "pending": false
+    },
+    {
+      "h": "Spanish / Biling\u00fce",
+      "vn": "407-812-7741",
+      "p": "Routes Spanish callers to a bilingual booking path.",
+      "pending": false
+    },
+    {
+      "h": "Membership / join & upgrade",
+      "vn": "407-812-7742",
+      "p": "The core recurring-revenue line, routed to a closer.",
+      "pending": false
+    },
+    {
+      "h": "Class packs / drop-in",
+      "vn": "407-812-7743",
+      "p": "The lower-commitment entry point that feeds membership.",
+      "pending": false
+    },
+    {
+      "h": "Corporate / group & team",
+      "vn": "407-812-7744",
+      "p": "Corporate wellness and team bookings, separately measured.",
+      "pending": false
+    },
+    {
+      "h": "Events / private ride",
+      "vn": "407-812-7745",
+      "p": "Birthdays, bachelorette, and private buyouts on their own line.",
+      "pending": false
+    },
+    {
+      "h": "Retention / win-back",
+      "vn": "407-812-7746",
+      "p": "Lapsed members reactivated \u2014 fast path, no queue.",
+      "pending": false
+    },
+    {
+      "h": "Google / paid-ads DID",
+      "vn": "407-812-7747",
+      "p": "Proves ad ROI to the dollar \u2014 swap the number, keep the data.",
+      "pending": false
+    },
+    {
+      "h": "Social / influencer promo DID",
+      "vn": "407-812-7748",
+      "p": "Separates social spend so you stop guessing.",
+      "pending": false
+    },
+    {
+      "h": "Outbound branded caller-ID",
+      "vn": "407-812-7749",
+      "p": "The trial-to-member dialer's face \u2014 branded, compliant, recorded.",
+      "pending": false
+    }
+  ],
+  "didFootnote": "This block is <b>assigned and paid</b> \u2014 407-812-7740 through 7749 are live lines on the Telvergence/Vitelity account.",
+  "pillars": [
+    {
+      "n": "Trial-to-member outbound",
+      "p": "A compliant dialer works <b>trial no-shows and lapsed riders</b> \u2014 branded caller-ID, friendly scripting, recordings, callbacks. You convert the curious and win back the drifted."
+    },
+    {
+      "n": "Inbound",
+      "p": "10 tracked lines + 24/7 answer + SMS. Every source measured, every inquiry routed, every missed call auto-called-back."
+    },
+    {
+      "n": "Command center",
+      "p": "Calls, texts, trials booked, ad spend and source \u2014 one live dashboard. You finally see which ad filled which bike."
+    }
+  ],
+  "commandCenter": {
+    "h2": "Your live studio command center",
+    "heroLabel": "New-member value \u00b7 today",
+    "heroValue": "$21,600.00",
+    "vertical": "fitness",
+    "tiles": [
+      {
+        "k": "14",
+        "l": "Trials booked today",
+        "c": "cy"
+      },
+      {
+        "k": "$1,929",
+        "l": "Avg. annual member value",
+        "c": "go"
+      },
+      {
+        "k": "47 \u00b7 14",
+        "l": "Calls \u00b7 trials",
+        "c": "cy"
+      },
+      {
+        "k": "4.4%",
+        "l": "Cost of acquisition",
+        "c": "lm"
+      }
+    ],
+    "controls": [
+      "\u23f8 Stop",
+      "\u25b6 Start",
+      "\u23ec Slow",
+      "\u23eb Speed up",
+      "\ud83d\udd00 Change leads",
+      "\ud83d\udcdd Change script",
+      "\ud83c\udf81 Change offer",
+      "\ud83d\udccd Change territory",
+      "\ud83d\udce1 Change channel"
+    ],
+    "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, class, or channel and watch the ride fill. <b>You lead the class \u2014 we make the phone ring.</b>"
+  },
+  "map": {
+    "h2": "Your Orlando service area \u2014 live & geo-routed",
+    "fallback": "Orlando Metro<br>Orlando \u00b7 Winter Park \u00b7 Baldwin Park",
+    "title": "Orlando service area",
+    "q": "Orlando,+FL",
+    "z": 11,
+    "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest studio \u2014 and outbound win-back targets riders near each location."
+  },
+  "videoSub": "A typical studio site vs. the offspring \u00b7 the 10-line grid \u00b7 a free trial booked in 90 seconds.",
+  "offerLead": "We stand up all ten numbers, the 24/7 answer, the Spanish route, purpose-specific lines, and a starter win-back campaign to lapsed riders. For 30 days every inbound trial is captured.",
+  "econUnit": "see booked trials before you scale",
+  "focusVerb": "leading rides",
+  "referEarn": {
+    "unit": "members",
+    "peer": "owner"
+  },
+  "alternative": "pass, and the next impulse sign-up joins the studio down the block \u2014 while yours rings out mid-class. Territories are exclusive and claimed once.",
+  "seo": {
+    "title": "Spin Machine \u00d7 Telvergence \u2014 10-Line Smart-DID Proposal",
+    "description": "Telvergence proposal: a 10-line Smart-DID grid for an indoor cycling studio \u2014 24/7 answer, purpose-specific lines, bilingual routing, win-back outbound, and a live command center.",
+    "canonical": "https://restorationroyalties.com/spin/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": "HealthClub",
+    "name": "Spin Machine",
+    "telephone": "+1-407-812-7740",
+    "areaServed": [
+      "Orange County",
+      "Central Florida"
+    ],
+    "description": "Boutique indoor cycling studio \u2014 free trials, memberships, class packs, and corporate rides in Orlando.",
+    "priceRange": "$$"
+  },
+  "disclaimer": "Prepared for Spin Machine (Orlando) as a discussion proposal. All solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch. Numbers shown as pending assignment are reserved slots, not published lines."
+}

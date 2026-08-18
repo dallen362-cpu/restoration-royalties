@@ -1,0 +1,206 @@
+{
+  "slug": "fast",
+  "brandName": "FAST Adjusting Service",
+  "brandShortBold": "FAST",
+  "brandShortRest": " ADJUSTING SERVICE",
+  "accent": "#FF9E5E",
+  "lineCount": 10,
+  "eyebrow": "TELVERGENCE \u00d7 FAST Adjusting Service \u00b7 Licensed Public Adjusters \u00b7 South Florida",
+  "h1a": "Every claim is a check.",
+  "h1b": "We make it ring to you.",
+  "tagline": "After a storm the insurance company sends <em>their</em> adjuster \u2014 who works for them. FAST sends yours. We turn FAST Adjusting into a <b>10-line Smart-DID grid</b> across South Florida where every storm-damage claim is answered first, in the caller's language, and routed to a licensed public adjuster who fights to maximize the payout \u2014 never letting a five-figure claim slip to voicemail.",
+  "demoNote": "South Florida public-adjusting campaign \u00b7 storm \u00b7 water \u00b7 roof \u00b7 fire claims \u00b7 10-line pack \u00b7 numbers pending assignment",
+  "insight": "a public adjuster earns a percentage of a <b>$10,000\u2013$150,000+</b> insurance claim \u2014 and those claims are filed after a storm, in English and Spanish, day and night, when the homeowner is panicking and about to accept a lowball offer. Whoever answers first, documents fastest, and fights hardest wins \u2014 and maximizes \u2014 the claim. A phone number that just rings can't do that. A <b>Smart DID</b> can.",
+  "benchNowTitle": "The typical public adjuster \u2014 today",
+  "benchNow": [
+    "One number, <b>untracked</b> \u2014 no idea what drives a call",
+    "No <b>email or SMS</b> capture \u2014 claims die after hours",
+    "Voicemail on the post-storm call \u2014 the client signs the next PA",
+    "No <b>license #</b> or payout promise shown up top",
+    "No Spanish line in a Spanish-speaking market",
+    "Inbound only \u2014 you wait for the storm"
+  ],
+  "benchNextTitle": "The FAST Adjusting offspring",
+  "benchNext": [
+    "<b>10 Smart DIDs</b>, every call source-tagged, recorded, mapped",
+    "Email + <b>SMS capture</b> and missed-call auto-callback",
+    "<b>24/7 AI answer</b> \u2014 the fresh-damage call is never voicemail",
+    "<b>License + payout commitment</b> shown up top",
+    "Dedicated <b>Spanish line</b> with bilingual routing",
+    "<b>Outbound dialer</b> works storm-hit ZIPs before the carrier settles"
+  ],
+  "gridSub": "storm \u00b7 water \u00b7 roof \u00b7 fire claims",
+  "dids": [
+    {
+      "h": "Flagship / 24-7 New Storm-Damage Claim",
+      "vn": "1-800-CLAIM-PRO",
+      "p": "Priority ring, never voicemail \u2014 the fresh-damage line that owns your #1 promise: file fast, get paid.",
+      "pending": true
+    },
+    {
+      "h": "Spanish / Biling\u00fce",
+      "vn": "1-844-PAGO-YA-1",
+      "p": "Routes Spanish callers to a bilingual adjuster path \u2014 a South Florida edge nobody else runs.",
+      "pending": true
+    },
+    {
+      "h": "Denied / underpaid claim appeal",
+      "vn": "1-800-NO-DENIAL",
+      "p": "The reopened lowballed claim \u2014 high-value, its own tracked line.",
+      "pending": true
+    },
+    {
+      "h": "Water / flood damage claim",
+      "vn": "1-844-WET-CLAIM",
+      "p": "Fast-response line routed straight to the on-call adjuster.",
+      "pending": true
+    },
+    {
+      "h": "Roof / wind / hurricane claim",
+      "vn": "1-800-ROOF-PAID",
+      "p": "Surges on storm and hurricane alerts \u2014 capacity scales with the weather.",
+      "pending": true
+    },
+    {
+      "h": "Fire & smoke / total-loss claim",
+      "vn": "1-844-FIRE-CLAIM",
+      "p": "The high-ticket total-loss claim \u2014 separated and prioritized.",
+      "pending": true
+    },
+    {
+      "h": "Google / paid-ads DID",
+      "vn": "1-800-MAX-CLAIM",
+      "p": "Proves ad ROI to the dollar \u2014 swap the number, keep the data.",
+      "pending": true
+    },
+    {
+      "h": "Commercial / condo & HOA claim",
+      "vn": "1-800-HOA-CLAIM",
+      "p": "Property managers and boards straight to the commercial claims desk.",
+      "pending": true
+    },
+    {
+      "h": "Yard-sign / direct-mail DID",
+      "vn": "1-833-GET-PAID-1",
+      "p": "Attributes offline storm-ZIP campaigns so you stop guessing.",
+      "pending": true
+    },
+    {
+      "h": "Outbound branded caller-ID",
+      "vn": "1-800-CLAIM-PRO",
+      "p": "The dialer's outbound face \u2014 it presents your flagship number as caller ID so every callback lands on the line you already track.",
+      "presents": true
+    }
+  ],
+  "pillars": [
+    {
+      "n": "Outbound",
+      "p": "A compliant dialer works storm-hit South Florida ZIPs for <b>new and underpaid claims</b> \u2014 branded caller-ID, compliant scripting, recordings, callbacks. You reach the homeowner before they accept the carrier's lowball."
+    },
+    {
+      "n": "Inbound",
+      "p": "10 tracked lines + 24/7 AI answer + SMS. Every source measured, every fresh-damage claim prioritized, every missed call auto-called-back."
+    },
+    {
+      "n": "Command center",
+      "p": "Calls, texts, signed claims, ad spend and source \u2014 one live dashboard. You finally see which dollar produced which claim."
+    }
+  ],
+  "complianceChips": [
+    "TCPA",
+    "Do-Not-Call scrubbed",
+    "State PA license shown",
+    "Claims-rules ready",
+    "Recorded with disclosure"
+  ],
+  "license": {
+    "label": "Florida public adjuster license # of record",
+    "value": ""
+  },
+  "commandCenter": {
+    "h2": "Your live claims command center",
+    "heroLabel": "Signed-claim value \u00b7 today",
+    "heroValue": "$214,800.00",
+    "vertical": "public-adjusting",
+    "tiles": [
+      {
+        "k": "6",
+        "l": "New claims signed today",
+        "c": "cy"
+      },
+      {
+        "k": "$21,480",
+        "l": "Your est. fee (10%)",
+        "c": "go"
+      },
+      {
+        "k": "118 \u00b7 9",
+        "l": "Calls \u00b7 appts booked",
+        "c": "cy"
+      },
+      {
+        "k": "7.6%",
+        "l": "Cost of acquisition",
+        "c": "lm"
+      }
+    ],
+    "controls": [
+      "\u23f8 Stop",
+      "\u25b6 Start",
+      "\u23ec Slow",
+      "\u23eb Speed up",
+      "\ud83d\udd00 Change leads",
+      "\ud83d\udcdd Change script",
+      "\ud83c\udf81 Change offer",
+      "\ud83d\udccd Change territory",
+      "\ud83d\udce1 Change channel"
+    ],
+    "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, territory, or channel instantly and watch your P&amp;L move. <b>You fight the claim \u2014 we make the phone ring.</b>"
+  },
+  "map": {
+    "h2": "Your South Florida service area \u2014 live & geo-routed",
+    "fallback": "South Florida Service Area<br>Miami-Dade \u00b7 Broward \u00b7 Palm Beach",
+    "title": "South Florida service area",
+    "q": "Fort+Lauderdale,+FL",
+    "z": 8,
+    "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest available adjuster across the tri-county \u2014 and outbound storm campaigns target the exact neighborhoods the weather just hit."
+  },
+  "videoSub": "A typical adjusting site vs. the offspring \u00b7 the 10-line grid \u00b7 a flood claim booked in 90 seconds.",
+  "offerLead": "We stand up all ten numbers, the AI answer, the Spanish route, and a starter outbound campaign across your target ZIPs. For 30 days every inbound claim is answered and dispatched while the dialer works storm-hit neighborhoods.",
+  "econUnit": "see signed claims before you scale",
+  "focusVerb": "signing and fighting claims",
+  "referEarn": {
+    "unit": "claims",
+    "peer": "adjuster"
+  },
+  "alternative": "pass, and the next call goes to the public adjuster up the street \u2014 who corners your area's storm claims, then resells you the overflow at 50%. Territories are exclusive and claimed once.",
+  "ctaEmail": "contact@fastadjustingservice.com",
+  "seo": {
+    "title": "FAST Adjusting Service \u00d7 Telvergence \u2014 10-Line Smart-DID Proposal",
+    "description": "Telvergence proposal: a 10-line Smart-DID grid for FAST Adjusting Service \u2014 24/7 AI answer, bilingual routing, claim-type priority lines, and a live claims command center.",
+    "canonical": "https://restorationroyalties.com/fast/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "FAST Adjusting Service",
+    "telephone": "+1-855-223-5878",
+    "email": "contact@fastadjustingservice.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10387 SW 186 St, Ste 106",
+      "addressLocality": "Cutler Bay",
+      "addressRegion": "FL",
+      "postalCode": "33157",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      "Miami-Dade County",
+      "Broward County",
+      "Palm Beach County"
+    ],
+    "description": "Licensed public adjusters maximizing insurance claim payouts for South Florida property owners.",
+    "priceRange": "$$"
+  },
+  "disclaimer": "Prepared for FAST Adjusting Service (South Florida \u2014 Miami-Dade, Broward, Palm Beach) as a discussion proposal. Public insurance adjusting is licensed and regulated; the state public-adjuster license number of record is displayed on all public-facing material, and all solicitation and claims comply with applicable state adjusting rules, TCPA and Do-Not-Call requirements, reviewed before launch. Vanity numbers shown are examples pending assignment from the wholesale portal."
+}

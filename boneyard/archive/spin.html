@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<!-- Deploy target: /spin.html ; CNAME to telvergence.com -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spin Machine — Indoor Cycling Studio Member-Acquisition Campaign | Powered by Telvergence</title>
+<meta name="description" content="Spin Machine: a Telvergence branded-local-line member-acquisition campaign for indoor cycling studios. Smart-DID lines, AI Pitch &amp; Catch intake, and a written satisfaction guarantee.">
+<link rel="canonical" href="/spin.html">
+<style>
+  :root{
+    --ink:#0b0e14; --ink2:#0f1420; --panel:#161c2b; --line:#26304a;
+    --gold:#e7b64b; --gold2:#f6d27a; --ember:#ff6a3d; --smoke:#8a94a8;
+    --text:#eef1f7; --muted:#aeb6c6; --ok:#37d39b;
+    --volt:#19e3ff;               /* one energetic accent — electric cyan, used sparingly */
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden}
+  body{
+    background:var(--ink); color:var(--text);
+    font:16px/1.6 "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .tnum{font-variant-numeric:tabular-nums}
+  .btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:700;letter-spacing:.2px;cursor:pointer;border:1px solid transparent;font-size:15px}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#211a05}
+  .btn-ghost{border-color:var(--line);color:var(--text)}
+  .btn-volt{border-color:rgba(25,227,255,.5);color:var(--volt);background:rgba(25,227,255,.06)}
+  .btn-gold:hover{filter:brightness(1.06)}
+  .btn-ghost:hover{border-color:var(--gold)}
+  .btn-volt:hover{border-color:var(--volt);box-shadow:0 0 0 3px rgba(25,227,255,.12)}
+  .eyebrow{color:var(--gold);font-weight:700;letter-spacing:2.4px;text-transform:uppercase;font-size:12px}
+  .crown{font-size:1.15em}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--volt);outline-offset:3px;border-radius:8px}
+
+  /* ===== passcode gate ===== */
+  #gate{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:22px;
+    background:
+      radial-gradient(700px 420px at 78% -10%,rgba(25,227,255,.16),transparent 60%),
+      radial-gradient(700px 500px at 6% 18%,rgba(255,106,61,.14),transparent 55%),
+      linear-gradient(180deg,#0b0e14,#0d1119 70%);}
+  #gate .box{max-width:420px;width:100%;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:30px 26px;text-align:center}
+  #gate .mk{font-size:34px;line-height:1}
+  #gate h1{font-size:22px;margin:14px 0 4px;font-weight:800}
+  #gate p{color:var(--muted);font-size:14px;margin:0 0 18px}
+  #gate .row{display:flex;gap:10px}
+  #gate input{flex:1;background:var(--ink2);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:12px 14px;font-size:15px}
+  #gate .err{color:var(--ember);font-size:13px;margin:12px 0 0;min-height:18px;font-weight:600}
+  #gate .fine{color:var(--smoke);font-size:11.5px;margin-top:16px;letter-spacing:.3px}
+  body.locked{overflow:hidden;height:100vh}
+  body.locked #app{filter:blur(6px);pointer-events:none;user-select:none}
+
+  /* ===== header ===== */
+  header{position:sticky;top:0;z-index:20;background:rgba(11,14,20,.82);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.4px;white-space:nowrap}
+  .brand .mark{color:var(--gold)}
+  .brand .sep{color:var(--smoke);font-weight:400}
+  .brand .sm{color:var(--volt)}
+  .nav .links{display:flex;gap:20px;font-size:14px;color:var(--muted)}
+  .nav .links a:hover{color:var(--text)}
+  @media(max-width:900px){.nav .links{display:none}}
+
+  /* ===== hero ===== */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero::before{content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(900px 420px at 82% -10%,rgba(25,227,255,.18),transparent 60%),
+      radial-gradient(760px 460px at 78% 0%,rgba(255,106,61,.22),transparent 62%),
+      radial-gradient(700px 500px at 4% 22%,rgba(231,182,75,.14),transparent 55%),
+      linear-gradient(180deg,#0b0e14,#0d1119 70%);}
+  .hero .wrap{position:relative;padding:70px 22px 60px}
+  .hero h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin:14px 0 12px;font-weight:800}
+  .hero h1 span{background:linear-gradient(135deg,var(--gold2),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:640px;margin:0 0 26px}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .badge{font-size:12.5px;color:var(--muted);border:1px solid var(--line);background:var(--panel);padding:7px 12px;border-radius:999px}
+  .badge b{color:var(--gold)}
+  .badge .v{color:var(--volt)}
+
+  /* equalizer / cadence accent */
+  .eq{display:inline-flex;gap:4px;align-items:flex-end;height:22px;margin-left:2px;vertical-align:-4px}
+  .eq i{width:4px;background:linear-gradient(180deg,var(--volt),var(--ember));border-radius:2px;height:40%;animation:bounce 1s ease-in-out infinite}
+  .eq i:nth-child(2){animation-delay:.15s;height:80%}
+  .eq i:nth-child(3){animation-delay:.3s;height:55%}
+  .eq i:nth-child(4){animation-delay:.45s;height:95%}
+  .eq i:nth-child(5){animation-delay:.6s;height:65%}
+  @keyframes bounce{0%,100%{height:30%}50%{height:100%}}
+
+  /* stat strip */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:30px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .stat .n{font-size:26px;font-weight:800;color:var(--gold2)}
+  .stat .n small{color:var(--volt);font-size:15px}
+  .stat .l{font-size:12px;color:var(--smoke);text-transform:uppercase;letter-spacing:1.1px;margin-top:2px}
+
+  /* ===== sections ===== */
+  section{padding:60px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(24px,3.2vw,36px);margin:8px 0 8px;font-weight:800}
+  .sub{color:var(--muted);max-width:680px;margin:0 0 30px}
+
+  /* card grids */
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;transition:transform .15s,border-color .15s}
+  .card:hover{transform:translateY(-2px);border-color:var(--gold)}
+  .card h3{margin:2px 0 8px;font-size:18px}
+  .card p{color:var(--muted);font-size:14.5px;margin:0}
+  .card code{color:var(--gold2);background:rgba(231,182,75,.08);padding:1px 5px;border-radius:5px;font-size:13px}
+  .ic{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:19px;background:linear-gradient(135deg,rgba(231,182,75,.18),rgba(255,106,61,.14));border:1px solid var(--line);margin-bottom:10px}
+  .ic.v{background:linear-gradient(135deg,rgba(25,227,255,.16),rgba(231,182,75,.12))}
+
+  /* membership pricing */
+  .price{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .plan{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;transition:transform .15s,border-color .15s;position:relative}
+  .plan:hover{transform:translateY(-3px);border-color:var(--gold)}
+  .plan.feat{border-color:var(--volt);box-shadow:0 0 0 1px rgba(25,227,255,.25)}
+  .plan .tagtop{position:absolute;top:-11px;left:24px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:800;background:linear-gradient(135deg,var(--volt),var(--ember));color:#06121a;padding:3px 10px;border-radius:999px}
+  .plan h3{margin:2px 0 2px;font-size:17px}
+  .plan .amt{font-size:34px;font-weight:800;color:var(--gold2);margin:8px 0 2px}
+  .plan .amt small{font-size:14px;color:var(--muted);font-weight:600}
+  .plan ul{list-style:none;margin:14px 0 18px;padding:0;color:var(--muted);font-size:14px}
+  .plan li{padding:5px 0 5px 22px;position:relative}
+  .plan li::before{content:"\2713";position:absolute;left:0;color:var(--ok);font-weight:800}
+  .plan .btn{width:100%;text-align:center}
+
+  /* instructors */
+  .crew{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .rider{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center;transition:transform .15s,border-color .15s}
+  .rider:hover{transform:translateY(-2px);border-color:var(--gold)}
+  .rider .av{width:64px;height:64px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:28px;background:linear-gradient(135deg,rgba(255,106,61,.22),rgba(25,227,255,.16));border:1px solid var(--line)}
+  .rider h3{margin:0 0 2px;font-size:16px}
+  .rider .spec{color:var(--volt);font-size:12.5px;text-transform:uppercase;letter-spacing:1.1px}
+  .rider p{color:var(--muted);font-size:13.5px;margin:8px 0 0}
+
+  /* switchboard lines */
+  .lines{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+  .line{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .line .num{font-size:19px;font-weight:800;letter-spacing:.4px;color:var(--gold2)}
+  .line.main .num{color:var(--volt)}
+  .line .num a:hover{text-decoration:underline}
+  .line .role{font-size:12.5px;color:var(--smoke);text-transform:uppercase;letter-spacing:1.2px;margin-top:6px}
+  .lines-note{margin-top:16px;font-size:13px;color:var(--muted)}
+  .pill{display:inline-block;font-size:11.5px;color:#0b1a12;background:var(--ok);border-radius:999px;padding:3px 9px;font-weight:700}
+  .pill.v{background:var(--volt);color:#06121a}
+
+  /* pitch & catch */
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.pc{grid-template-columns:1fr}}
+  .pc .card ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
+  .pc .card li{margin:5px 0}
+  .tag{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;font-weight:800}
+  .tag.pitch{color:var(--ember)} .tag.catch{color:var(--gold)}
+
+  /* audience segmentation tabs */
+  .segtabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+  .segtabs button{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:9px 16px;border-radius:999px;font-size:13.5px;font-weight:700;cursor:pointer;letter-spacing:.3px}
+  .segtabs button[aria-selected="true"]{color:#06121a;background:linear-gradient(135deg,var(--gold),var(--gold2));border-color:transparent}
+  .segpanel{display:none;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .segpanel.on{display:block}
+  .segpanel .eyebrow{color:var(--volt)}
+  .segpanel h3{font-size:22px;margin:8px 0 6px}
+  .segpanel .who{color:var(--muted);max-width:640px;margin:0 0 16px}
+  .segpanel ul{margin:0 0 20px;padding-left:18px;color:var(--muted);font-size:14.5px;columns:2;column-gap:26px}
+  @media(max-width:560px){.segpanel ul{columns:1}}
+  .segpanel li{margin:6px 0;break-inside:avoid}
+  .segcta{display:flex;gap:12px;flex-wrap:wrap}
+
+  /* guarantee */
+  .guar{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center}
+  @media(max-width:760px){.guar{grid-template-columns:1fr}}
+  .seal{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px;text-align:center}
+  .seal .ring{width:120px;height:120px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:46px;border:2px solid var(--gold);background:radial-gradient(circle at 50% 30%,rgba(231,182,75,.18),transparent 70%)}
+  .seal .big{font-size:20px;font-weight:800;color:var(--gold2)}
+  .seal .small{color:var(--muted);font-size:13px;margin-top:4px}
+  .guar ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:14.5px}
+  .guar li{margin:7px 0}
+
+  /* cta band */
+  .band{background:linear-gradient(135deg,rgba(25,227,255,.10),rgba(255,106,61,.10));text-align:center}
+  .band h2{margin-bottom:6px}
+  .callnow{font-size:clamp(26px,4vw,40px);font-weight:800;color:var(--gold2);letter-spacing:.5px;margin:12px 0}
+  .callnow small{display:block;font-size:14px;color:var(--volt);font-weight:700;letter-spacing:2px;text-transform:uppercase}
+
+  footer{padding:40px 0 60px;color:var(--muted);font-size:13px}
+  footer .fine{margin-top:14px;font-size:12px;color:var(--smoke);line-height:1.7}
+  .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:24px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important}
+    .eq i{height:70%}
+  }
+</style>
+</head>
+<body class="locked">
+
+<!-- ============ PASSCODE GATE ============ -->
+<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-h">
+  <div class="box">
+    <div class="mk"><span style="color:var(--gold)">&#9819;</span> <span style="color:var(--volt)">&#127950;&#65039;</span></div>
+    <h1 id="gate-h">Spin Machine &middot; Secure Preview</h1>
+    <p>Enter the campaign passcode to view this demo.</p>
+    <div class="row">
+      <input id="gate-input" type="password" placeholder="Passcode" autocomplete="off" aria-label="Campaign passcode">
+      <button id="gate-btn" class="btn btn-gold">Unlock</button>
+    </div>
+    <div class="err" id="gate-err" role="alert"></div>
+    <div class="fine">&#128274; Secure preview &mdash; light client-side gate.</div>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app" aria-hidden="true">
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="mark crown">&#9819;</span> TELVERGENCE <span class="sep">&middot;</span> <span class="sm">SPIN MACHINE</span></div>
+    <nav class="links">
+      <a href="#ride">The Ride</a>
+      <a href="#memberships">Memberships</a>
+      <a href="#crew">Instructors</a>
+      <a href="#switchboard">Local Lines</a>
+      <a href="#pitchcatch">Pitch &amp; Catch</a>
+      <a href="#audiences">Who It's For</a>
+      <a href="#guarantee">Guarantee</a>
+    </nav>
+    <a href="#memberships" class="btn btn-gold">First Ride Free</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Telvergence Branded-Local-Line Member-Acquisition Campaign</div>
+    <h1>Clip in. Turn it up.<br><span>Fill every seat.</span>
+      <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+    </h1>
+    <p class="lead">Spin Machine is a high-energy indoor cycling studio &mdash; and this is the phone-and-intake engine that keeps the roster full. Branded local numbers place the invite, an AI desk catches every call, and no lead rolls off the bike.</p>
+    <div class="cta">
+      <a href="tel:+14078127746" class="btn btn-gold">Call 407-812-SPIN &#9742;</a>
+      <a href="#memberships" class="btn btn-ghost">Claim Your First Ride Free</a>
+      <a href="#audiences" class="btn btn-volt">Who It's For</a>
+    </div>
+    <div class="badges">
+      <span class="badge">Branded Caller-ID: <b>SPIN MACHINE</b></span>
+      <span class="badge"><span class="v">STIR/SHAKEN</span> Anti-Spam</span>
+      <span class="badge">Month-to-Month Carrier</span>
+      <span class="badge">AI <b>Pitch &amp; Catch</b> Intake</span>
+      <span class="badge"><b>Written</b> Satisfaction Guarantee</span>
+      <span class="badge">Powered by <b>Telvergence</b></span>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="n">10</div><div class="l">Branded Local Lines</div></div>
+      <div class="stat"><div class="n tnum">45<small>+</small></div><div class="l">Classes / Week</div></div>
+      <div class="stat"><div class="n tnum">98<small>%</small></div><div class="l">Calls Answered</div></div>
+      <div class="stat"><div class="n tnum">&lt;1<small>s</small></div><div class="l">DID Provisioning</div></div>
+      <div class="stat"><div class="n">0</div><div class="l">"Spam Likely" Flags</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- THE RIDE / CLASSES -->
+<section id="ride">
+  <div class="wrap">
+    <div class="eyebrow">The Ride</div>
+    <h2>Classes built for every fitness level</h2>
+    <p class="sub">45-minute rides in a candle-lit, bass-heavy studio &mdash; power metrics on every bike, a live leaderboard on the wall, and instructors who ride with you.</p>
+    <div class="cols">
+      <div class="card"><div class="ic v">&#128293;</div><h3>Machine 45 &mdash; Signature</h3><p>The flagship ride. Climbs, sprints, and choreographed hills to a curated playlist. All levels welcome.</p></div>
+      <div class="card"><div class="ic v">&#9889;</div><h3>Power Watts</h3><p>Data-driven training on the leaderboard &mdash; ride to your FTP zones and chase a new personal record.</p></div>
+      <div class="card"><div class="ic v">&#127925;</div><h3>Beat Drop Rhythm</h3><p>Choreographed to the beat. Tap-backs, push-ups, and pure momentum &mdash; the party ride.</p></div>
+      <div class="card"><div class="ic v">&#127774;</div><h3>Sunrise Sprint</h3><p>30-minute express before work. Quick, brutal, and out the door by 7am.</p></div>
+      <div class="card"><div class="ic v">&#128170;</div><h3>Ride + Arms</h3><p>Cycling plus a weighted upper-body block on the bike. Cardio and strength in one seat.</p></div>
+      <div class="card"><div class="ic v">&#127793;</div><h3>Foundations</h3><p>Brand-new to the bike? Setup, form, and cadence basics &mdash; no leaderboard, no pressure.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIPS -->
+<section id="memberships">
+  <div class="wrap">
+    <div class="eyebrow">Memberships &amp; Packages</div>
+    <h2>Ride your way &mdash; no lock-in</h2>
+    <p class="sub">Month-to-month, just like our carrier plan. Pause anytime. Your first ride is always free.</p>
+    <div class="price">
+      <div class="plan">
+        <h3>First Ride Free</h3>
+        <div class="amt">$0</div>
+        <ul>
+          <li>One full Machine 45 class</li>
+          <li>Shoes &amp; towel included</li>
+          <li>Bike setup with an instructor</li>
+          <li>No card required to book</li>
+        </ul>
+        <a href="tel:+14078127746" class="btn btn-ghost">Book by Phone</a>
+      </div>
+      <div class="plan">
+        <h3>10-Ride Pack</h3>
+        <div class="amt">$180<small> / pack</small></div>
+        <ul>
+          <li>10 classes, no expiry pressure</li>
+          <li>$18 a ride &mdash; best flex rate</li>
+          <li>Book any class type</li>
+          <li>Shareable with a partner</li>
+        </ul>
+        <a href="#audiences" class="btn btn-ghost">Choose Pack</a>
+      </div>
+      <div class="plan feat">
+        <div class="tagtop">Most Popular</div>
+        <h3>Unlimited Monthly</h3>
+        <div class="amt">$149<small> / mo</small></div>
+        <ul>
+          <li>Unlimited classes, all types</li>
+          <li>Priority bike reservation</li>
+          <li>Free shoe rental every ride</li>
+          <li>Month-to-month &mdash; pause anytime</li>
+          <li>2 guest passes / month</li>
+        </ul>
+        <a href="tel:+14078127746" class="btn btn-gold">Start Unlimited</a>
+      </div>
+      <div class="plan">
+        <h3>Founder Annual</h3>
+        <div class="amt">$1,290<small> / yr</small></div>
+        <ul>
+          <li>Two months free vs. monthly</li>
+          <li>Locked founder rate for life</li>
+          <li>Reserved bike + merch kit</li>
+          <li>Bring-a-friend Fridays</li>
+        </ul>
+        <a href="#audiences" class="btn btn-ghost">Go Founder</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTORS -->
+<section id="crew">
+  <div class="wrap">
+    <div class="eyebrow">The Crew</div>
+    <h2>Your instructor lineup</h2>
+    <p class="sub">The reason members rebook. Every ride is led, not looped &mdash; real coaches calling real numbers on the leaderboard.</p>
+    <div class="crew">
+      <div class="rider"><div class="av">&#127908;</div><h3>Mara V.</h3><div class="spec">Rhythm &amp; Beat Drop</div><p>Ex-dancer turned cycle coach. If the playlist slaps, it's hers.</p></div>
+      <div class="rider"><div class="av">&#9889;</div><h3>Deacon R.</h3><div class="spec">Power Watts</div><p>Cat-2 roadie. Lives on the leaderboard and will find your FTP.</p></div>
+      <div class="rider"><div class="av">&#127774;</div><h3>Priya S.</h3><div class="spec">Sunrise Sprint</div><p>5am energy that shouldn't be legal. Short rides, big output.</p></div>
+      <div class="rider"><div class="av">&#128293;</div><h3>Tone B.</h3><div class="spec">Ride + Arms</div><p>Strength background. Makes the weighted block count without wrecking form.</p></div>
+      <div class="rider"><div class="av">&#127793;</div><h3>Elena M.</h3><div class="spec">Foundations</div><p>The gentlest intro on the schedule. First-timers ask for her by name.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SWITCHBOARD / BRANDED LOCAL LINES -->
+<section id="switchboard">
+  <div class="wrap">
+    <div class="eyebrow">The Campaign Switchboard</div>
+    <h2>10 branded local lines &mdash; 407-812-7740 &rarr; 7749</h2>
+    <p class="sub">Real local-presence (407) numbers, branded caller-ID "SPIN MACHINE," each routed to a purpose in the Pitch &amp; Catch flow. Every flyer, ad, and QR code gets its own trackable line &mdash; so you know which one filled the class.</p>
+    <div class="lines">
+      <div class="line main"><div class="num"><a href="tel:+14078127746">407-812-7746</a></div><div class="role">Main / New-Member &mdash; "SPIN"</div></div>
+      <div class="line"><div class="num"><a href="tel:+14078127740">407-812-7740</a></div><div class="role">Class Booking &amp; Waitlist</div></div>
+      <div class="line"><div class="num"><a href="tel:+14078127741">407-812-7741</a></div><div class="role">Membership &amp; Billing</div></div>
+      <div class="line"><div class="num"><a href="tel:+14078127742">407-812-7742</a></div><div class="role">First-Ride-Free Promo (tracked)</div></div>
+      <div class="line"><div class="num"><a href="tel:+14078127743">407-812-7743</a></div><div class="role">Corporate &amp; Team Rides</div></div>
+      <div class="line"><div class="num"><a href="tel:+14078127744">407-812-7744</a></div><div class="role">Private Events &amp; Buyouts</div></div>
+      <div class="line"><div class="num"><a href="tel:+14078127745">407-812-7745</a></div><div class="role">Instructor Recruiting</div></div>
+      <div class="line"><div class="num"><a href="tel:+14078127747">407-812-7747</a></div><div class="role">Retail &amp; Merch</div></div>
+      <div class="line"><div class="num"><a href="tel:+14078127748">407-812-7748</a></div><div class="role">Spanish / Bilingual Line</div></div>
+      <div class="line"><div class="num"><a href="tel:+14078127749">407-812-7749</a></div><div class="role">Franchise / Partner Studios</div></div>
+    </div>
+    <p class="lines-note"><span class="pill v">Demo</span> &nbsp;Illustrative provisioning block. Numbers are ordered, branded, SMS-enabled, and CDR-tracked on a month-to-month carrier &mdash; rotate any flagged DID instantly.</p>
+  </div>
+</section>
+
+<!-- PITCH & CATCH -->
+<section id="pitchcatch">
+  <div class="wrap">
+    <div class="eyebrow">The Engine</div>
+    <h2>The Pitch &amp; Catch member-acquisition flow</h2>
+    <p class="sub">Branded local lines place the <b>pitch</b>; an AI-assisted intake desk <b>catches</b> every inbound &mdash; so the rider who called at 9pm still gets booked into Saturday's 8am.</p>
+    <div class="pc">
+      <div class="card">
+        <div class="tag pitch">&#9654; The Pitch &mdash; Outbound</div>
+        <h3>Fill the seats before class opens</h3>
+        <ul>
+          <li>Win-back texts to lapsed members ("we saved your bike")</li>
+          <li>Waitlist blasts when a spot opens in a sold-out ride</li>
+          <li>First-Ride-Free invites to local leads &amp; walk-bys</li>
+          <li>Corporate &amp; team-ride outreach to nearby offices</li>
+          <li>New-studio / franchise launch campaigns</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tag catch">&#9679; The Catch &mdash; Inbound</div>
+        <h3>Answer every call, book the ride</h3>
+        <ul>
+          <li>AI answers &amp; qualifies: new rider / member / event</li>
+          <li>Structured capture: name &rarr; class &rarr; date &rarr; shoe size</li>
+          <li>Books directly to the schedule &amp; texts a confirmation</li>
+          <li>After-hours calls remote-forward to the on-call coach</li>
+          <li>CDR ties each booking to the line &amp; flyer that drove it</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SMART-DID TECHNOLOGY -->
+<section id="tech">
+  <div class="wrap">
+    <div class="eyebrow">The Infrastructure</div>
+    <h2>The Telvergence Smart-DID stack</h2>
+    <p class="sub">The same real-time number platform behind every Telvergence campaign &mdash; ordered, routed, branded, and compliant by API, in seconds.</p>
+    <div class="cols">
+      <div class="card"><div class="ic">&#9889;</div><h3>Sub-1-Second Provisioning</h3><p>Order local-presence DIDs by area code (407 / 321 / 689) and route them to the front desk on the fly &mdash; <code>listnpa</code> &rarr; <code>getlocaldid</code> &rarr; <code>reroute</code>.</p></div>
+      <div class="card"><div class="ic">&#127991;&#65039;</div><h3>Branded Caller-ID (Anti-Spam)</h3><p>CNAM set to "SPIN MACHINE" via <code>lidb</code>, plus STIR/SHAKEN attestation &mdash; the fix for "Spam Likely" so members actually pick up.</p></div>
+      <div class="card"><div class="ic v">&#128241;</div><h3>Two-Way SMS</h3><p>Class reminders, waitlist openings, and "reply Y to hold your bike" &mdash; every branded line texts, consent &amp; STOP enforced.</p></div>
+      <div class="card"><div class="ic">&#128260;</div><h3>Remote Forward</h3><p>After-hours and overflow calls forward to the on-call coach's cell &mdash; no missed booking, no answering service.</p></div>
+      <div class="card"><div class="ic">&#128197;</div><h3>Month-to-Month Carrier</h3><p>No annual telecom contract. Add or drop lines with the season &mdash; the same no-lock-in posture you give members.</p></div>
+      <div class="card"><div class="ic v">&#128225;</div><h3>CDR Call Tracking</h3><p>Per-DID and per-agent call records; see exactly which flyer, ad, or QR code drove each ride &mdash; rotate a flagged number instantly.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE SEGMENTATION -->
+<section id="audiences">
+  <div class="wrap">
+    <div class="eyebrow">Who It's For</div>
+    <h2>One platform, six audiences</h2>
+    <p class="sub">Spin Machine is a studio brand <em>and</em> a Telvergence campaign template. Pick your lane &mdash; the value proposition and next step are tailored to you.</p>
+
+    <div class="segtabs" role="tablist" aria-label="Audience segments">
+      <button role="tab" aria-selected="true" data-seg="inv">Investors</button>
+      <button role="tab" aria-selected="false" data-seg="mem">Members</button>
+      <button role="tab" aria-selected="false" data-seg="stu">Partner Studios</button>
+      <button role="tab" aria-selected="false" data-seg="dis">Distributors</button>
+      <button role="tab" aria-selected="false" data-seg="whl">Wholesalers</button>
+      <button role="tab" aria-selected="false" data-seg="agt">Agents</button>
+    </div>
+
+    <div class="segpanel on" id="seg-inv" role="tabpanel">
+      <div class="eyebrow">Investors</div>
+      <h3>A repeatable, tracked acquisition machine</h3>
+      <p class="who">Recurring-revenue memberships plus a phone-and-intake engine whose every dollar of spend is attributable by CDR. The studio is the pilot; the campaign template is the asset.</p>
+      <ul>
+        <li>Subscription MRR with month-to-month churn visibility</li>
+        <li>Cost-per-acquisition tracked per line, flyer, and QR code</li>
+        <li>Franchise / multi-unit template that ports to any studio</li>
+        <li>Low telecom overhead &mdash; no annual carrier lock-in</li>
+        <li>AI intake caps front-desk labor as locations scale</li>
+        <li>Written-guarantee + QA model reduces refund leakage</li>
+      </ul>
+      <div class="segcta">
+        <a href="#contact" class="btn btn-gold">Request the Investor Deck</a>
+        <a href="#tech" class="btn btn-ghost">See the Unit Economics</a>
+      </div>
+    </div>
+
+    <div class="segpanel" id="seg-mem" role="tabpanel">
+      <div class="eyebrow">Members</div>
+      <h3>Your first ride is on us</h3>
+      <p class="who">All the energy, none of the contract. Book by phone or text, get a real confirmation, and ride your way &mdash; month-to-month, pause anytime.</p>
+      <ul>
+        <li>First full class free &mdash; shoes and towel included</li>
+        <li>Text a branded local line to hold your bike</li>
+        <li>Unlimited, packs, or founder rates &mdash; no lock-in</li>
+        <li>Waitlist alerts the second a seat opens</li>
+        <li>Instructor-led rides for every level</li>
+        <li>Written satisfaction guarantee on every membership</li>
+      </ul>
+      <div class="segcta">
+        <a href="tel:+14078127746" class="btn btn-gold">Claim First Ride Free</a>
+        <a href="#memberships" class="btn btn-ghost">See Memberships</a>
+      </div>
+    </div>
+
+    <div class="segpanel" id="seg-stu" role="tabpanel">
+      <div class="eyebrow">Partner Studios</div>
+      <h3>Plug the engine into your studio</h3>
+      <p class="who">Keep your brand and your bikes &mdash; add Telvergence branded lines, AI intake, and CDR tracking so your front desk stops dropping calls and your classes fill themselves.</p>
+      <ul>
+        <li>Your own branded caller-ID &amp; local numbers</li>
+        <li>AI Pitch &amp; Catch books rides into your schedule</li>
+        <li>Win-back &amp; waitlist SMS out of the box</li>
+        <li>Per-campaign CDR so you know what's working</li>
+        <li>Remote-forward to your on-call coach after hours</li>
+        <li>Month-to-month &mdash; onboard in days, not quarters</li>
+      </ul>
+      <div class="segcta">
+        <a href="tel:+14078127749" class="btn btn-gold">Become a Partner Studio</a>
+        <a href="#pitchcatch" class="btn btn-ghost">How Pitch &amp; Catch Works</a>
+      </div>
+    </div>
+
+    <div class="segpanel" id="seg-dis" role="tabpanel">
+      <div class="eyebrow">Distributors</div>
+      <h3>Own a territory of studios</h3>
+      <p class="who">Take the Spin Machine campaign template to every studio, gym, and boutique in your region. You deliver the local relationships; Telvergence delivers the platform and the QA.</p>
+      <ul>
+        <li>Protected territory &amp; multi-studio rollout kit</li>
+        <li>White-label branded-line packages to resell</li>
+        <li>Tiered margin on every studio you activate</li>
+        <li>Central dashboard across all your accounts</li>
+        <li>Co-branded launch campaigns per studio</li>
+        <li>Extreme-QA program keeps your book clean</li>
+      </ul>
+      <div class="segcta">
+        <a href="#contact" class="btn btn-gold">Open a Territory</a>
+        <a href="#contact" class="btn btn-ghost">Distributor Application</a>
+      </div>
+    </div>
+
+    <div class="segpanel" id="seg-whl" role="tabpanel">
+      <div class="eyebrow">Wholesalers</div>
+      <h3>Branded lines at wholesale rates</h3>
+      <p class="who">Buy DID capacity, CNAM, STIR/SHAKEN attestation, and SMS in bulk &mdash; then bundle it into your own fitness or local-business offering.</p>
+      <ul>
+        <li>Volume DID &amp; SMS pricing on a month-to-month rate card</li>
+        <li>Bulk CNAM registration &amp; branded caller-ID</li>
+        <li>API access to provisioning &amp; CDR feeds</li>
+        <li>Number-pool management &amp; instant rotation</li>
+        <li>Rebrandable Pitch &amp; Catch intake layer</li>
+        <li>Compliance posture (STIR/SHAKEN, consent) included</li>
+      </ul>
+      <div class="segcta">
+        <a href="#contact" class="btn btn-gold">Request Rate Card</a>
+        <a href="#tech" class="btn btn-ghost">See the DID Stack</a>
+      </div>
+    </div>
+
+    <div class="segpanel" id="seg-agt" role="tabpanel">
+      <div class="eyebrow">Agents</div>
+      <h3>Sell the campaign, earn the residual</h3>
+      <p class="who">Every studio, gym, and boutique fitness brand in your book needs booked seats. Bring Spin Machine's branded-line campaign to them and earn on the recurring plan.</p>
+      <ul>
+        <li>Recurring commission on every active line</li>
+        <li>Ready-made demo (this page) to pitch with</li>
+        <li>Fast month-to-month sign-ups &mdash; low buyer friction</li>
+        <li>Written guarantee makes the close easier</li>
+        <li>QA team backs up every account you sell</li>
+        <li>Deal-reg &amp; per-agent CDR attribution</li>
+      </ul>
+      <div class="segcta">
+        <a href="tel:+14078127745" class="btn btn-gold">Join the Agent Program</a>
+        <a href="#contact" class="btn btn-ghost">Get the Pitch Kit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE + QA -->
+<section id="guarantee">
+  <div class="wrap">
+    <div class="eyebrow">The Promise</div>
+    <h2>Written satisfaction guarantee &amp; extreme QA</h2>
+    <p class="sub">Not a slogan &mdash; a document. Every membership and every partner account is backed in writing and monitored by a dedicated quality team.</p>
+    <div class="guar">
+      <div>
+        <ul>
+          <li><b>In writing.</b> Members and partner studios get the satisfaction guarantee on paper &mdash; terms, remedy, and timeline spelled out.</li>
+          <li><b>Extreme QA.</b> Calls are scored, intake accuracy is audited, and every booking is confirmed &mdash; no ghost reservations, no dropped leads.</li>
+          <li><b>Rotate on flag.</b> Any line that drifts toward a spam flag is pulled and replaced same-day, so your caller-ID stays clean.</li>
+          <li><b>Consent-first.</b> SMS only to opted-in numbers, STOP honored instantly, suppression list enforced.</li>
+          <li><b>You only pay for booked rides.</b> The engine is judged on seats filled, not calls placed.</li>
+        </ul>
+      </div>
+      <div class="seal">
+        <div class="ring">&#128220;</div>
+        <div class="big">Guaranteed &mdash; In Writing</div>
+        <div class="small">Satisfaction guarantee + extreme-QA program on every Spin Machine account.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section id="contact" class="band">
+  <div class="wrap">
+    <div class="eyebrow">Ready to fill the room?</div>
+    <h2>Book a ride or open a line</h2>
+    <div class="callnow"><a href="tel:+14078127746">407-812-7746</a><small>407-812-SPIN</small></div>
+    <p class="sub" style="margin:0 auto">Members: your first ride is free. Studios, distributors, wholesalers &amp; agents: this same page is your pitch &mdash; call the line above or use your segment's CTA.</p>
+    <a href="tel:+14078127746" class="btn btn-gold">Call the Campaign Desk</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap grid2">
+    <div>
+      <div class="brand" style="font-size:18px"><span class="mark crown">&#9819;</span> TELVERGENCE <span class="sep">&middot;</span> <span class="sm">SPIN MACHINE</span></div>
+      <p style="color:var(--muted);margin:10px 0 0">Indoor cycling studio member-acquisition campaign.<br>Branded local lines &middot; AI Pitch &amp; Catch &middot; written guarantee.</p>
+    </div>
+    <div>
+      <div class="eyebrow">Campaign Desk</div>
+      <p style="margin:8px 0 0"><a href="tel:+14078127746">407-812-7746</a> &nbsp;&rarr;&nbsp; 407-812-7749</p>
+      <p style="margin:4px 0 0;color:var(--muted)"><a href="/spin.html">spin.telvergence.com</a></p>
+    </div>
+  </div>
+  <div class="wrap fine">
+    &copy; 2026 Telvergence &middot; Spin Machine. Demo campaign page. Phone numbers shown are an illustrative provisioning block. Outbound calling is manual to consented / published lines with suppression-list enforcement; SMS only to opted-in numbers (reply STOP to opt out). Branded caller-ID, STIR/SHAKEN attestation, and CDR tracking provided via the Telvergence Smart-DID platform on a month-to-month basis.
+  </div>
+</footer>
+
+</div><!-- /#app -->
+
+<script>
+(function(){
+  const PASSCODE = "Telvergence-8832"; // Secure preview — light client-side gate (not real security)
+  const KEY = "spinmachine_unlocked";
+  const gate  = document.getElementById('gate');
+  const app   = document.getElementById('app');
+  const input = document.getElementById('gate-input');
+  const btn   = document.getElementById('gate-btn');
+  const err   = document.getElementById('gate-err');
+
+  function reveal(){
+    gate.style.display = 'none';
+    document.body.classList.remove('locked');
+    app.setAttribute('aria-hidden','false');
+  }
+  function tryUnlock(){
+    if(input.value === PASSCODE){
+      try{ sessionStorage.setItem(KEY,'1'); }catch(e){}
+      reveal();
+    } else {
+      err.textContent = 'Incorrect passcode — try again.';
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  // Already unlocked this session?
+  let unlocked = false;
+  try{ unlocked = sessionStorage.getItem(KEY) === '1'; }catch(e){}
+  if(unlocked){ reveal(); } else { input.focus(); }
+
+  btn.addEventListener('click', tryUnlock);
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ tryUnlock(); } });
+  input.addEventListener('input', function(){ err.textContent = ''; });
+
+  // ---- Audience segmentation tabs ----
+  const tabs = document.querySelectorAll('.segtabs button');
+  const panels = { inv:'seg-inv', mem:'seg-mem', stu:'seg-stu', dis:'seg-dis', whl:'seg-whl', agt:'seg-agt' };
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){ x.setAttribute('aria-selected','false'); });
+      t.setAttribute('aria-selected','true');
+      Object.values(panels).forEach(function(id){ document.getElementById(id).classList.remove('on'); });
+      document.getElementById(panels[t.dataset.seg]).classList.add('on');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

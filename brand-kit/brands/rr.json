@@ -1,0 +1,205 @@
+{
+  "slug": "rr",
+  "brandName": "Restoration Royalties",
+  "brandShortBold": "RESTORATION",
+  "brandShortRest": " ROYALTIES",
+  "accent": "#2AD4F0",
+  "lineCount": 10,
+  "eyebrow": "TELVERGENCE \u00d7 Restoration Royalties \u00b7 Miami-Dade \u00b7 Broward \u00b7 Palm Beach",
+  "h1a": "Every leak is a lead.",
+  "h1b": "We make it ring to you.",
+  "tagline": "A water or mold emergency is a <b>$3,000\u2013$40,000</b> decision made in a panic, at 2am, in whatever language the homeowner speaks. We turn Restoration Royalties into a <b>10-line Smart-DID grid</b> across South Florida where every emergency call is answered first, routed by damage type, and dispatched to a crew \u2014 never letting a five-figure job slip to voicemail.",
+  "demoNote": "South Florida restoration campaign \u00b7 mold \u00b7 water \u00b7 roofing \u00b7 10-line pack \u00b7 Smart-DIDs assigned (786-400 block)",
+  "insight": "a restoration job runs <b>$3,000\u2013$40,000</b> \u2014 and the homeowner calls while water is still running across the floor, day or night, in English or Spanish. Whoever answers first, arrives fastest, and documents best wins the job <b>and</b> the insurance file. A phone number that just rings can't do that. A <b>Smart DID</b> can.",
+  "benchNowTitle": "The typical mold & water company \u2014 today",
+  "benchNow": [
+    "One number, <b>untracked</b> \u2014 no idea what drives a call",
+    "No <b>email or SMS</b> capture \u2014 leads die after hours",
+    "Voicemail on the 2am flood call \u2014 the homeowner calls the next company",
+    "No <b>IICRC credentials</b> or guarantee shown up top",
+    "No Spanish line in a Spanish-speaking market",
+    "Inbound only \u2014 you wait for the storm"
+  ],
+  "benchNextTitle": "The Restoration Royalties offspring",
+  "benchNext": [
+    "<b>10 Smart DIDs</b>, every call source-tagged, recorded, mapped",
+    "Email + <b>SMS capture</b> and missed-call auto-callback",
+    "<b>24/7 AI answer</b> \u2014 the emergency call is never voicemail",
+    "<b>Credentials + guarantee</b> shown up top",
+    "Dedicated <b>Spanish line</b> with bilingual routing",
+    "<b>Outbound dialer</b> works storm-hit ZIPs before the competition wakes up"
+  ],
+  "gridSub": "mold \u00b7 water \u00b7 roofing \u00b7 commercial",
+  "dids": [
+    {
+      "h": "Flagship / 24-7 Water & Flood Emergency",
+      "vn": "(786) 400-1145",
+      "p": "Priority ring, never voicemail \u2014 the line that owns your #1 promise: someone answers, right now.",
+      "pending": false
+    },
+    {
+      "h": "Spanish / Biling\u00fce",
+      "vn": "(786) 400-1146",
+      "p": "Routes Spanish callers to a bilingual path \u2014 a South Florida edge nobody else runs.",
+      "pending": false
+    },
+    {
+      "h": "Mold remediation / black mold",
+      "vn": "(786) 400-1147",
+      "p": "The health-driven call, separated and prioritized.",
+      "pending": false
+    },
+    {
+      "h": "Water extraction / structural dry-out",
+      "vn": "(786) 400-1148",
+      "p": "Fast-response line routed straight to the on-call crew.",
+      "pending": false
+    },
+    {
+      "h": "Roof leak / storm tarp",
+      "vn": "(786) 400-1149",
+      "p": "Surges on storm alerts \u2014 capacity scales with the weather.",
+      "pending": false
+    },
+    {
+      "h": "Commercial / condo & HOA",
+      "vn": "(786) 400-1150",
+      "p": "Property managers and boards straight to the commercial desk.",
+      "pending": false
+    },
+    {
+      "h": "Google / paid-ads DID",
+      "vn": "(786) 400-1151",
+      "p": "Proves ad ROI to the dollar \u2014 swap the number, keep the data.",
+      "pending": false
+    },
+    {
+      "h": "Truck-wrap / fleet DID",
+      "vn": "(786) 400-1152",
+      "p": "The number on the truck, measured like any other channel.",
+      "pending": false
+    },
+    {
+      "h": "Direct-mail / door-hanger DID",
+      "vn": "(786) 400-1153",
+      "p": "Attributes offline storm-ZIP campaigns so you stop guessing.",
+      "pending": false
+    },
+    {
+      "h": "Outbound branded caller-ID",
+      "vn": "(786) 400-1154",
+      "p": "The dialer's outbound face \u2014 branded, compliant, recorded.",
+      "pending": false
+    }
+  ],
+  "didFootnote": "This block is <b>assigned and live</b> \u2014 (786) 400-1145 through 1154, CNAM \"RESTORATION ROYALTY\", forwarding to (786) 340-5777. Line roles above are the routing map of record; confirm against the showroom sheet before launch.",
+  "pillars": [
+    {
+      "n": "Outbound",
+      "p": "A compliant dialer works storm-hit South Florida ZIPs for <b>fresh water and mold damage</b> \u2014 branded caller-ID, compliant scripting, recordings, callbacks."
+    },
+    {
+      "n": "Inbound",
+      "p": "10 tracked lines + 24/7 AI answer + SMS. Every source measured, every emergency prioritized, every missed call auto-called-back."
+    },
+    {
+      "n": "Command center",
+      "p": "Calls, texts, booked jobs, ad spend and source \u2014 one live dashboard. You finally see which dollar produced which job."
+    }
+  ],
+  "complianceChips": [
+    "TCPA",
+    "Do-Not-Call scrubbed",
+    "IICRC-grade standards",
+    "Recorded with disclosure"
+  ],
+  "license": {
+    "label": "IICRC certification / Florida license # of record",
+    "value": ""
+  },
+  "commandCenter": {
+    "h2": "Your live command center \u2014 the whole operation on one screen",
+    "heroLabel": "Booked job value \u00b7 today",
+    "heroValue": "$47,300.00",
+    "vertical": "restoration",
+    "tiles": [
+      {
+        "k": "5",
+        "l": "Jobs booked today",
+        "c": "cy"
+      },
+      {
+        "k": "$9,460",
+        "l": "Avg. job value",
+        "c": "go"
+      },
+      {
+        "k": "87 \u00b7 5",
+        "l": "Calls \u00b7 jobs booked",
+        "c": "cy"
+      },
+      {
+        "k": "5.2%",
+        "l": "Cost of acquisition",
+        "c": "lm"
+      }
+    ],
+    "controls": [
+      "\u23f8 Stop",
+      "\u25b6 Start",
+      "\u23ec Slow",
+      "\u23eb Speed up",
+      "\ud83d\udd00 Change leads",
+      "\ud83d\udcdd Change script",
+      "\ud83c\udf81 Change offer",
+      "\ud83d\udccd Change territory",
+      "\ud83d\udce1 Change channel"
+    ],
+    "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, territory, or channel instantly and watch your P&amp;L move. <b>You dry the house \u2014 we make the phone ring.</b>"
+  },
+  "map": {
+    "h2": "Your South Florida service area \u2014 live & geo-routed",
+    "fallback": "South Florida Service Area<br>Miami-Dade \u00b7 Broward \u00b7 Palm Beach",
+    "title": "South Florida service area",
+    "q": "Fort+Lauderdale,+FL",
+    "z": 8,
+    "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest available crew across the tri-county \u2014 and outbound storm campaigns target the exact neighborhoods the weather just hit."
+  },
+  "videoSub": "A typical restoration site vs. the offspring \u00b7 the 10-line grid \u00b7 a flood call booked in 90 seconds.",
+  "offerLead": "We stand up all ten numbers, the AI answer, the Spanish route, and a starter outbound campaign across your target ZIPs. For 30 days every inbound emergency is answered and dispatched while the dialer works storm-hit neighborhoods.",
+  "focusVerb": "drying houses and closing files",
+  "referEarn": {
+    "unit": "jobs",
+    "peer": "contractor"
+  },
+  "alternative": "pass, and the next 2am flood call goes to the restoration company up the street \u2014 who corners your ZIPs, then resells you the overflow at half price. Territories are exclusive and claimed once.",
+  "ctaEmail": "contact@restorationroyalties.com",
+  "seo": {
+    "title": "Restoration Royalties \u00d7 Telvergence \u2014 10-Line Smart-DID Proposal",
+    "description": "Telvergence proposal: a 10-line Smart-DID grid for Restoration Royalties \u2014 24/7 AI answer, bilingual routing, damage-type priority lines, and a live command center.",
+    "canonical": "https://restorationroyalties.com/rr/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Restoration Royalties",
+    "telephone": "+1-786-340-5777",
+    "email": "contact@restorationroyalties.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "13727 SW 152 St, Suite 288",
+      "addressLocality": "Miami",
+      "addressRegion": "FL",
+      "postalCode": "33177",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      "Miami-Dade County",
+      "Broward County",
+      "Palm Beach County"
+    ],
+    "description": "Water damage, mold, and roofing restoration across South Florida.",
+    "priceRange": "$$"
+  },
+  "disclaimer": "Prepared for Restoration Royalty LLC (South Florida \u2014 Miami-Dade, Broward, Palm Beach) as a discussion proposal. Restoration work is licensed and regulated; the license and certification numbers of record are displayed on all public-facing material. All solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch."
+}
