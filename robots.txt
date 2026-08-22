@@ -19,5 +19,6 @@ Disallow: /showroom/
 Disallow: /boneyard/
 Disallow: /hub/
 Disallow: /dispatch/
+Disallow: /backend/
 
 Sitemap: https://restorationroyalties.com/sitemap.xml
