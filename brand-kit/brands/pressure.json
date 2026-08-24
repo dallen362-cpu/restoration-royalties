@@ -240,25 +240,5 @@
     "priceRange": "$$"
   },
   "disclaimer": "Prepared for Coastal Crown Pressure Washing (Jimmy Mejia, Owner) as a discussion proposal. All solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch. Numbers shown as pending assignment are reserved slots, not published lines.",
-  "didFootnote": "The 20 lines are <b>local-presence Smart-DIDs</b>: <b>10 on the Restoration Royalties combo (786·400)</b> and <b>10 on the FAST Adjusting combo (645·231)</b> — the same NPA·NXX already assigned to those brands, so Coastal Crown sits inside both territories. Coastal Crown's existing line <b>786-365-8395</b> stays theirs and routes into the grid; it is not one of the 20. Slots are reserved — real DIDs are pulled from the wholesale portal before launch, never published unowned.",
-  "winnetBadge": "WIN — WEATHER INTELLIGENCE NETWORK",
-  "winnetH": "South Florida Storm Dispatch — four trades, one network, every lead shared live.",
-  "winnetP": "Coastal Crown is the first vendor enrolled in WIN. Its grid deliberately covers the Restoration Royalties territory (786·400) and the FAST Adjusting territory (645·231), so one storm-driven lead can touch every trade: FAST adjusts the claim, Restoration Royalties restores, Coastal Crown cleans the exterior. The app manages the hand-off, tracking and archiving — every call source-tagged, every lead moving across the network instead of dying in a voicemail box.",
-  "winnet": [
-    {
-      "slug": "rr",
-      "t": "🌊 Restoration Royalties",
-      "s": "Mold · Water · Roofing · (786·400)"
-    },
-    {
-      "slug": "fast",
-      "t": "📋 FAST Adjusting Service",
-      "s": "Public adjusting · Claims · (645·231)"
-    },
-    {
-      "slug": "yes",
-      "t": "⚡ YES Electrical",
-      "s": "Power · Generators"
-    }
-  ]
+  "didFootnote": "The 20 lines are <b>local-presence Smart-DIDs</b>: <b>10 on the Restoration Royalties combo (786·400)</b> and <b>10 on the FAST Adjusting combo (645·231)</b> — the same NPA·NXX already assigned to those brands, so Coastal Crown sits inside both territories. Coastal Crown's existing line <b>786-365-8395</b> stays theirs and routes into the grid; it is not one of the 20. Slots are reserved — real DIDs are pulled from the wholesale portal before launch, never published unowned."
 }
