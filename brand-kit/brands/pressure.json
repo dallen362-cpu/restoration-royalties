@@ -1,154 +1,154 @@
 {
   "slug": "pressure",
-  "brandName": "South Florida Storm Wash",
-  "brandShortBold": "STORM",
-  "brandShortRest": " WASH · SoFla",
-  "accent": "#38BDF8",
+  "brandName": "Coastal Crown Pressure Washing",
+  "brandShortBold": "COASTAL",
+  "brandShortRest": " CROWN",
+  "accent": "#E8A93C",
   "lineCount": 20,
-  "eyebrow": "TELVERGENCE × WIN — South Florida Storm Dispatch · First Enrolled Vendor · Miami-Dade · Broward",
-  "h1a": "Every storm leaves a job on every surface.",
-  "h1b": "We make it ring to you — and to the whole network.",
-  "tagline": "First vendor enrolled in the <b>Weather Intelligence Network (WIN)</b> — \"South Florida Storm Dispatch.\" This pressure-washing brand runs a <b>20-line Smart-DID grid</b> that deliberately overlaps both partner territories: <b>10 local lines on the Restoration Royalties combo (786·400)</b> and <b>10 on the FAST Adjusting combo (645·231)</b>. When a storm hits, the same lead can move across all three — FAST adjusts the claim, Restoration Royalties restores, Storm Wash cleans — with the app tracking, handing off, and archiving every lead in real time.",
-  "demoNote": "WIN South Florida Storm Dispatch · dual-territory 20-line pack (786·400 + 645·231) · numbers pending Vitelity selection",
-  "insight": "a pressure-washing job runs <b>$250–$8,000+</b> — and the difference between a driveway and a full commercial contract is <b>which line the caller dialed.</b> These calls come in hot: someone is looking at mildew right now, calling three companies off a map, and hiring whoever answers. A phone number that just rings can't sort that. A <b>Smart DID</b> can.",
-  "benchNowTitle": "The typical pressure-washing company — today",
+  "eyebrow": "TELVERGENCE × WIN — South Florida Storm Dispatch · First Enrolled Vendor · Residential & Commercial",
+  "h1a": "Cleaner surfaces. Better impressions.",
+  "h1b": "Now every one of them rings to you.",
+  "tagline": "Coastal Crown already has the part most contractors never get right — real before-and-after proof, a clean brand, and a quote flyer that closes. The gap is what happens <b>after someone picks up the phone</b>. We put a <b>20-line Smart-DID grid</b> behind the brand, deliberately covering <b>both partner territories</b>: 10 lines on the Restoration Royalties combo (<b>786·400</b>) and 10 on the FAST Adjusting combo (<b>645·231</b>). Every house wash, driveway, roof, pool deck and fence call is answered instantly, in the caller's language, and routed to the nearest crew — and storm leads move across all three brands instead of dying in a voicemail box.",
+  "demoNote": "Coastal Crown Pressure Washing · Jimmy Mejia, Owner · Serving South Florida · 20-line dual-territory pack · numbers pending assignment",
+  "insight": "a pressure-washing job runs <b>$250–$8,000+</b> — and the difference between a driveway and a full commercial contract is <b>which line the caller dialed</b>. Coastal Crown's own flyer proves the work; the caller is standing outside looking at the stain with the card in hand. But <b>every one of those calls lands on a single untracked cell number</b> — so there is no way to know which flyer, sign, or post produced the job, and no answer when the crew is already on a roof.",
+  "benchNowTitle": "Coastal Crown today — one number carrying everything",
   "benchNow": [
-    "One cell number, <b>untracked</b> — no idea which ad worked",
-    "Crew is on a roof, so the phone goes to <b>voicemail</b>",
+    "One number, <b>786-365-8395</b>, carrying every call — <b>untracked</b>",
+    "Crew is on a roof, so the call goes to <b>voicemail</b>",
     "No <b>Spanish line</b> in a Spanish-speaking market",
-    "Residential and commercial hit the same line — big jobs get lost",
-    "No after-hours answer; the evening caller books a competitor",
-    "Inbound only — no outbound to HOAs or property managers"
+    "House-wash and commercial contracts share one queue",
+    "No after-hours answer — evening callers book a competitor",
+    "Great before/after proof, but <b>no way to tell which asset produced the lead</b>"
   ],
-  "benchNextTitle": "The Miami Pressure Washing offspring",
+  "benchNextTitle": "Coastal Crown on the Telvergence grid",
   "benchNext": [
-    "<b>20 Smart DIDs</b>, every call source-tagged, recorded, mapped",
-    "<b>24/7 AI answer</b> — the crew never has to come off the roof",
+    "<b>20 Smart DIDs</b> — every call source-tagged, recorded, mapped",
+    "<b>24/7 AI answer</b> — the crew never comes off the roof to answer",
     "Dedicated <b>Spanish line</b> with bilingual routing",
-    "<b>Commercial and HOA calls</b> on their own priority lines",
+    "<b>Commercial &amp; HOA</b> calls on their own priority lines",
     "Email + <b>SMS capture</b> and missed-call auto-callback",
-    "<b>Outbound dialer</b> works property managers and HOA boards on contract cycles"
+    "<b>Overlaps RR (786·400) and FAST (645·231)</b> — shared storm leads across the network"
   ],
-  "gridSub": "10 on 786·400 (RR territory) · 10 on 645·231 (FAST territory)",
+  "gridSub": "house wash · driveway · roof · pool deck · fence · commercial",
   "dids": [
     {
-      "h": "Flagship · 24/7 free quote",
+      "h": "Flagship · free estimate 24/7",
       "vn": "(786) 400-XXXX",
-      "p": "<b>RR grid · 786·400.</b> Priority ring, never voicemail — owns the #1 promise: a quote today.",
+      "p": "<b>RR territory · 786·400.</b> Priority ring, never voicemail — owns the promise on the card: a free estimate today.",
       "pending": true
     },
     {
       "h": "Spanish · Bilingüe",
       "vn": "(786) 400-XXXX",
-      "p": "<b>RR grid · 786·400.</b> Routes Spanish callers to a bilingual path — the South Florida edge nobody else runs.",
+      "p": "<b>RR territory · 786·400.</b> Routes Spanish callers to a bilingual path — the South Florida edge nobody else runs.",
       "pending": true
     },
     {
-      "h": "Roof soft-wash · post-storm",
+      "h": "House washing",
       "vn": "(786) 400-XXXX",
-      "p": "<b>RR grid · 786·400.</b> Highest-ticket residential job; pairs with Restoration Royalties roofing work.",
+      "p": "<b>RR territory · 786·400.</b> Their #1 residential service, tracked on its own line.",
       "pending": true
     },
     {
-      "h": "Driveway · paver · concrete",
+      "h": "Driveway &amp; sidewalk",
       "vn": "(786) 400-XXXX",
-      "p": "<b>RR grid · 786·400.</b> The volume workhorse — fast quote, fast schedule.",
+      "p": "<b>RR territory · 786·400.</b> The volume workhorse — fast quote, fast schedule.",
       "pending": true
     },
     {
-      "h": "Pool deck · screen enclosure",
+      "h": "Roof washing (soft-wash)",
       "vn": "(786) 400-XXXX",
-      "p": "<b>RR grid · 786·400.</b> High-frequency South Florida job, its own tracked source.",
+      "p": "<b>RR territory · 786·400.</b> Highest-ticket residential job; pairs directly with Restoration Royalties roofing work.",
       "pending": true
     },
     {
-      "h": "Gutter cleaning",
+      "h": "Pool deck cleaning",
       "vn": "(786) 400-XXXX",
-      "p": "<b>RR grid · 786·400.</b> The natural add-on — captured instead of referred away.",
+      "p": "<b>RR territory · 786·400.</b> High-frequency South Florida job, its own tracked source.",
       "pending": true
     },
     {
-      "h": "Solar panel cleaning",
+      "h": "Fence cleaning",
       "vn": "(786) 400-XXXX",
-      "p": "<b>RR grid · 786·400.</b> Growing, high-margin niche with almost no one answering.",
+      "p": "<b>RR territory · 786·400.</b> The natural add-on — captured instead of referred away.",
       "pending": true
     },
     {
-      "h": "Boat · dock · seawall",
+      "h": "Post-storm exterior cleanup",
       "vn": "(786) 400-XXXX",
-      "p": "<b>RR grid · 786·400.</b> Waterfront work — premium pricing, premium routing.",
-      "pending": true
-    },
-    {
-      "h": "Post-restoration exterior",
-      "vn": "(786) 400-XXXX",
-      "p": "<b>RR grid · 786·400.</b> Mold/water jobs Restoration Royalties restores, then hands the exterior wash straight to this line.",
+      "p": "<b>RR territory · 786·400.</b> Storm-driven demand handed straight over from the WIN network.",
       "pending": true
     },
     {
       "h": "RR partner / referral line",
       "vn": "(786) 400-XXXX",
-      "p": "<b>RR grid · 786·400.</b> Restoration Royalties sends overflow and finished jobs here in real time via the app.",
+      "p": "<b>RR territory · 786·400.</b> Restoration Royalties passes finished jobs and overflow here in real time.",
+      "pending": true
+    },
+    {
+      "h": "Before/after flyer &amp; door-hanger DID",
+      "vn": "(786) 400-XXXX",
+      "p": "<b>RR territory · 786·400.</b> Attributes the printed flyer campaign to the dollar.",
       "pending": true
     },
     {
       "h": "Commercial / property management",
       "vn": "(645) 231-XXXX",
-      "p": "<b>FAST grid · 645·231.</b> Contract-sized work routed straight to the commercial desk.",
+      "p": "<b>FAST territory · 645·231.</b> Contract-sized work routed straight to the commercial desk.",
       "pending": true
     },
     {
       "h": "HOA · condo · community",
       "vn": "(645) 231-XXXX",
-      "p": "<b>FAST grid · 645·231.</b> Boards and community managers get their own line and callback SLA.",
+      "p": "<b>FAST territory · 645·231.</b> Boards and community managers get their own line and callback SLA.",
       "pending": true
     },
     {
       "h": "Storefront · retail · plaza",
       "vn": "(645) 231-XXXX",
-      "p": "<b>FAST grid · 645·231.</b> Multi-unit retail routed to the accounts that buy in bulk.",
+      "p": "<b>FAST territory · 645·231.</b> Multi-unit retail routed to the accounts that buy in bulk.",
       "pending": true
     },
     {
-      "h": "Restaurant · grease · dumpster pad",
+      "h": "Restaurant · dumpster pad · grease",
       "vn": "(645) 231-XXXX",
-      "p": "<b>FAST grid · 645·231.</b> Health-inspection urgency, scheduled off-hours.",
+      "p": "<b>FAST territory · 645·231.</b> Health-inspection urgency, scheduled off-hours.",
       "pending": true
     },
     {
       "h": "Fleet · parking garage",
       "vn": "(645) 231-XXXX",
-      "p": "<b>FAST grid · 645·231.</b> Recurring-contract work — revenue that renews itself.",
+      "p": "<b>FAST territory · 645·231.</b> Recurring-contract work — revenue that renews itself.",
       "pending": true
     },
     {
       "h": "Emergency · same-day",
       "vn": "(645) 231-XXXX",
-      "p": "<b>FAST grid · 645·231.</b> Surge line for the caller who needs it before an event or inspection.",
+      "p": "<b>FAST territory · 645·231.</b> For the caller who needs it before an event, showing, or inspection.",
       "pending": true
     },
     {
-      "h": "Storm / claims cleanup",
+      "h": "Claims / storm cleanup (FAST tie-in)",
       "vn": "(645) 231-XXXX",
-      "p": "<b>FAST grid · 645·231.</b> Post-loss cleanup that pairs with FAST Adjusting claims — handed off through the network.",
+      "p": "<b>FAST territory · 645·231.</b> Post-loss cleanup that pairs with FAST Adjusting claims.",
       "pending": true
     },
     {
       "h": "Google / paid-ads DID",
       "vn": "(645) 231-XXXX",
-      "p": "<b>FAST grid · 645·231.</b> Proves ad ROI to the dollar — swap the number, keep the data.",
+      "p": "<b>FAST territory · 645·231.</b> Proves ad ROI to the dollar — swap the number, keep the data.",
       "pending": true
     },
     {
       "h": "Facebook / social DID",
       "vn": "(645) 231-XXXX",
-      "p": "<b>FAST grid · 645·231.</b> Separates social spend from search so you stop guessing.",
+      "p": "<b>FAST territory · 645·231.</b> Separates social spend from search so you stop guessing.",
       "pending": true
     },
     {
       "h": "Outbound branded caller-ID",
       "vn": "(645) 231-XXXX",
-      "p": "<b>FAST grid · 645·231.</b> The dialer's outbound face to HOAs & property managers — branded, compliant, recorded.",
+      "p": "<b>FAST territory · 645·231.</b> The dialer's outbound face to HOAs &amp; property managers — branded, compliant, recorded.",
       "pending": true
     }
   ],
@@ -207,43 +207,43 @@
     "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly — then you, or the AI, adjust the leads, script, offer, territory, or channel instantly and watch your P&amp;L move. <b>You run the crews — we make the phone ring.</b>"
   },
   "map": {
-    "h2": "Your South Florida service area — live & geo-routed",
+    "h2": "Coastal Crown's South Florida service area — live &amp; geo-routed",
     "fallback": "South Florida Service Area<br>Miami-Dade · Broward",
     "title": "Miami service area",
     "q": "Miami,+FL",
     "z": 9,
     "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest available crew — and outbound campaigns target the exact neighborhoods and plazas you want under contract."
   },
-  "videoSub": "A typical pressure-washing site vs. the offspring · the 20-line grid · a roof job booked in 90 seconds.",
-  "offerLead": "We stand up all twenty numbers, the AI answer, the Spanish route, and a starter outbound campaign to property managers and HOA boards across your target ZIPs. For 30 days every inbound call is answered and dispatched while the dialer works the contract accounts.",
+  "videoSub": "Coastal Crown's real before/after proof · the 20-line dual-territory grid · a roof job booked in 90 seconds.",
+  "offerLead": "We stand up all twenty numbers, the AI answer, the Spanish route, and a starter outbound campaign to property managers and HOA boards across your ZIPs. For 30 days every inbound call is answered and dispatched while the dialer works the contract accounts — and your existing number keeps ringing right into the same brain.",
   "econUnit": "see booked jobs before you scale",
   "focusVerb": "running crews and cashing checks",
   "referEarn": {
     "unit": "jobs",
     "peer": "contractor"
   },
-  "alternative": "pass, and the next call goes to the washing company across town — who corners the HOA and plaza contracts in your ZIPs, then subs you the overflow at half price. Territories are exclusive and claimed once.",
+  "alternative": "pass, and the next washing company corners the HOA and plaza contracts in your ZIPs — then subs you the overflow at half price. Territories are exclusive and claimed once.",
   "seo": {
-    "title": "South Florida Storm Wash × Telvergence — WIN Storm Dispatch 20-Line Smart-DID",
-    "description": "First WIN (Weather Intelligence Network) vendor: a 20-line Smart-DID grid for South Florida pressure washing, overlapping the Restoration Royalties (786·400) and FAST Adjusting (645·231) territories for shared storm-driven leads.",
+    "title": "Coastal Crown Pressure Washing × Telvergence — 20-Line Smart-DID Proposal",
+    "description": "Telvergence proposal for Coastal Crown Pressure Washing: a 20-line Smart-DID grid covering the Restoration Royalties (786·400) and FAST Adjusting (645·231) territories — 24/7 AI answer, bilingual routing, commercial and HOA priority lines, and a live command center.",
     "canonical": "https://restorationroyalties.com/pressure/"
   },
   "jsonLd": {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "South Florida Storm Wash",
-    "description": "Exterior cleaning — roof soft-wash, driveways, commercial and HOA pressure washing across Miami-Dade and Broward.",
+    "name": "Coastal Crown Pressure Washing",
+    "description": "Pressure washing — house washing, driveways and sidewalks, roof washing, pool decks and fences across South Florida. Residential & commercial. Free estimates.",
     "areaServed": [
       "Miami-Dade County",
       "Broward County"
     ],
     "priceRange": "$$"
   },
-  "disclaimer": "Prepared for a Miami-Dade / Broward pressure-washing operator as a discussion proposal. All solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch. Numbers shown as pending assignment are reserved slots, not published lines.",
-  "didFootnote": "The 20 lines are <b>local-presence Smart-DIDs</b> to be selected from the Vitelity wholesale portal on two combos: <b>10 × (786) 400-xxxx</b> (matching Restoration Royalties) and <b>10 × (645) 231-xxxx</b> (matching FAST Adjusting). Slots are reserved; real numbers are pulled and assigned before launch — nothing is ever published unowned.",
+  "disclaimer": "Prepared for Coastal Crown Pressure Washing (Jimmy Mejia, Owner) as a discussion proposal. All solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch. Numbers shown as pending assignment are reserved slots, not published lines.",
+  "didFootnote": "The 20 lines are <b>local-presence Smart-DIDs</b>: <b>10 on the Restoration Royalties combo (786·400)</b> and <b>10 on the FAST Adjusting combo (645·231)</b> — the same NPA·NXX already assigned to those brands, so Coastal Crown sits inside both territories. Coastal Crown's existing line <b>786-365-8395</b> stays theirs and routes into the grid; it is not one of the 20. Slots are reserved — real DIDs are pulled from the wholesale portal before launch, never published unowned.",
   "winnetBadge": "WIN — WEATHER INTELLIGENCE NETWORK",
-  "winnetH": "South Florida Storm Dispatch — three trades, one network, every lead shared live.",
-  "winnetP": "Storm Wash is the first vendor enrolled in WIN. It shares the Restoration Royalties territory (786·400) and the FAST Adjusting territory (645·231) on purpose: one storm-driven lead can touch all three trades. The app manages the hand-off, tracking, and archiving — a claim goes to FAST, the restoration goes to Restoration Royalties, and the exterior wash comes here, with every call source-tagged and every lead flowing across the network instead of dying in a voicemail box.",
+  "winnetH": "South Florida Storm Dispatch — four trades, one network, every lead shared live.",
+  "winnetP": "Coastal Crown is the first vendor enrolled in WIN. Its grid deliberately covers the Restoration Royalties territory (786·400) and the FAST Adjusting territory (645·231), so one storm-driven lead can touch every trade: FAST adjusts the claim, Restoration Royalties restores, Coastal Crown cleans the exterior. The app manages the hand-off, tracking and archiving — every call source-tagged, every lead moving across the network instead of dying in a voicemail box.",
   "winnet": [
     {
       "slug": "rr",
