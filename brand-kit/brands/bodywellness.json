@@ -5,16 +5,16 @@
   "brandShortRest": " WELLNESS CONNECTION",
   "accent": "#F472B6",
   "lineCount": 10,
-  "eyebrow": "TELVERGENCE \u00d7 Body Wellness Connection \u00b7 Med-Spa \u00b7 Aesthetics \u00b7 Orlando",
+  "eyebrow": "TELVERGENCE × Body Wellness Connection · Med-Spa · Aesthetics · Orlando",
   "h1a": "Every booking is a regular.",
   "h1b": "We make it ring to you.",
-  "tagline": "A med-spa lives on <b>rebooking</b> \u2014 the first appointment is worth hundreds, the loyal client is worth thousands a year. We turn Body Wellness Connection into a <b>10-line Smart-DID grid</b> where every injectable, laser, and body-contouring inquiry is answered instantly, booked, and followed up \u2014 so a first visit becomes a standing appointment.",
-  "demoNote": "Orlando med-spa & aesthetics campaign \u00b7 injectables \u00b7 laser \u00b7 body contouring \u00b7 membership \u00b7 10-line pack",
-  "insight": "a med-spa client spends <b>$300\u2013$1,000</b> per visit and <b>$3,000\u2013$10,000+</b> a year once loyal \u2014 and the booking impulse is emotional and immediate. When the front desk is mid-treatment and the call rings out, that impulse books somewhere else. A phone number that just rings can't hold it. A <b>Smart DID</b> can.",
-  "benchNowTitle": "The typical med-spa \u2014 today",
+  "tagline": "A med-spa lives on <b>rebooking</b> — the first appointment is worth hundreds, the loyal client is worth thousands a year. We turn Body Wellness Connection into a <b>10-line Smart-DID grid</b> where every injectable, laser, and body-contouring inquiry is answered instantly, booked, and followed up — so a first visit becomes a standing appointment.",
+  "demoNote": "Orlando med-spa & aesthetics campaign · injectables · laser · body contouring · membership · 10-line pack",
+  "insight": "a med-spa client spends <b>$300–$1,000</b> per visit and <b>$3,000–$10,000+</b> a year once loyal — and the booking impulse is emotional and immediate. When the front desk is mid-treatment and the call rings out, that impulse books somewhere else. A phone number that just rings can't hold it. A <b>Smart DID</b> can.",
+  "benchNowTitle": "The typical med-spa — today",
   "benchNow": [
     "Front desk is mid-treatment, so the booking call goes to <b>voicemail</b>",
-    "One untracked number \u2014 no idea which promo filled the book",
+    "One untracked number — no idea which promo filled the book",
     "No after-hours answer for the evening scroll-and-book client",
     "No <b>Spanish line</b> in a bilingual market",
     "Injectables, laser, and body calls share one queue",
@@ -22,73 +22,73 @@
   ],
   "benchNextTitle": "The Body Wellness offspring",
   "benchNext": [
-    "<b>24/7 answer</b> \u2014 the after-hours booking is captured, not lost",
+    "<b>24/7 answer</b> — the after-hours booking is captured, not lost",
     "<b>10 Smart DIDs</b>, every call source-tagged, recorded with consent",
     "Dedicated <b>Spanish line</b> with bilingual routing",
-    "<b>Service-specific lines</b> \u2014 injectables, laser, body contouring",
+    "<b>Service-specific lines</b> — injectables, laser, body contouring",
     "Email + <b>SMS capture</b> with automatic rebooking reminders",
     "HIPAA-aware handling on infrastructure you control"
   ],
-  "gridSub": "injectables \u00b7 laser \u00b7 body contouring \u00b7 membership",
+  "gridSub": "injectables · laser · body contouring · membership",
   "dids": [
     {
       "h": "Flagship / 24-7 new-client booking",
-      "vn": "(407) 720-8100",
-      "p": "Priority ring, never voicemail \u2014 the line that owns your #1 promise: booked on the first call.",
+      "vn": "1-800-GLOW-247",
+      "p": "Priority ring, never voicemail — the line that owns your #1 promise: booked on the first call.",
       "pending": false
     },
     {
-      "h": "Spanish / Biling\u00fce",
-      "vn": "(407) 720-8101",
+      "h": "Spanish / Bilingüe",
+      "vn": "1-844-BELLA-YA",
       "p": "Routes Spanish callers to a bilingual booking path.",
       "pending": false
     },
     {
       "h": "Injectables / Botox & filler",
-      "vn": "(407) 720-8102",
+      "vn": "1-800-BOTOX-11",
       "p": "The impulse-driven, highest-frequency booking, on its own line.",
       "pending": false
     },
     {
       "h": "Laser / skin & hair",
-      "vn": "(407) 720-8103",
+      "vn": "1-800-LASER-RX",
       "p": "The higher-ticket package, routed to the right coordinator.",
       "pending": false
     },
     {
       "h": "Body contouring / sculpting",
-      "vn": "(407) 720-8104",
-      "p": "The multi-session program \u2014 your best recurring revenue.",
+      "vn": "1-800-SCULPT-1",
+      "p": "The multi-session program — your best recurring revenue.",
       "pending": false
     },
     {
       "h": "Membership / VIP & renewals",
-      "vn": "(407) 720-8105",
-      "p": "Loyal clients rebooking and renewing \u2014 fast path, no queue.",
+      "vn": "1-800-VIP-GLOW",
+      "p": "Loyal clients rebooking and renewing — fast path, no queue.",
       "pending": false
     },
     {
       "h": "Events / group & bridal",
-      "vn": "(407) 720-8106",
+      "vn": "1-833-GLOW-EVENT",
       "p": "Bridal parties and group bookings, separately measured.",
       "pending": false
     },
     {
       "h": "Google / paid-ads DID",
-      "vn": "(407) 720-8107",
-      "p": "Proves ad ROI to the dollar \u2014 swap the number, keep the data.",
+      "vn": "1-800-NEW-GLOW",
+      "p": "Proves ad ROI to the dollar — swap the number, keep the data.",
       "pending": false
     },
     {
       "h": "Social / influencer promo DID",
-      "vn": "(407) 720-8108",
+      "vn": "1-833-GLOW-SOCIAL",
       "p": "Separates social and influencer spend so you stop guessing.",
       "pending": false
     },
     {
       "h": "Outbound branded caller-ID",
-      "vn": "(407) 720-8100",
-      "p": "Your outbound face \u2014 it presents your flagship number as caller ID so every callback lands on the line you already track.",
+      "vn": "1-800-GLOW-CALL",
+      "p": "Your outbound face — it presents your flagship number as caller ID so every callback lands on the line you already track.",
       "presents": true
     }
   ],
@@ -98,11 +98,11 @@
     "HIPAA-aware call handling",
     "Recorded with disclosure & consent"
   ],
-  "didFootnote": "This block is <b>assigned and paid</b> \u2014 (407) 720-8100 through 8108 are live lines on the Telvergence/Vitelity account.",
+  "didFootnote": "This block is <b>assigned and paid</b> — (407) 720-8100 through 8108 are live lines on the Telvergence/Vitelity account.",
   "pillars": [
     {
       "n": "Rebooking outbound",
-      "p": "A compliant dialer works <b>lapsed clients and no-shows</b> for rebooking \u2014 branded caller-ID, consented scripting, recordings. You refill the book from clients who already love you."
+      "p": "A compliant dialer works <b>lapsed clients and no-shows</b> for rebooking — branded caller-ID, consented scripting, recordings. You refill the book from clients who already love you."
     },
     {
       "n": "Inbound",
@@ -110,12 +110,12 @@
     },
     {
       "n": "Command center",
-      "p": "Calls, texts, appointments booked, ad spend and source \u2014 one live dashboard. You finally see which promo produced which regular."
+      "p": "Calls, texts, appointments booked, ad spend and source — one live dashboard. You finally see which promo produced which regular."
     }
   ],
   "commandCenter": {
     "h2": "Your live booking command center",
-    "heroLabel": "Booked service value \u00b7 today",
+    "heroLabel": "Booked service value · today",
     "heroValue": "$12,840.00",
     "vertical": "med-spa",
     "tiles": [
@@ -130,8 +130,8 @@
         "c": "go"
       },
       {
-        "k": "58 \u00b7 19",
-        "l": "Calls \u00b7 appointments",
+        "k": "58 · 19",
+        "l": "Calls · appointments",
         "c": "cy"
       },
       {
@@ -141,27 +141,27 @@
       }
     ],
     "controls": [
-      "\u23f8 Stop",
-      "\u25b6 Start",
-      "\u23ec Slow",
-      "\u23eb Speed up",
-      "\ud83d\udd00 Change leads",
-      "\ud83d\udcdd Change script",
-      "\ud83c\udf81 Change offer",
-      "\ud83d\udccd Change territory",
-      "\ud83d\udce1 Change channel"
+      "⏸ Stop",
+      "▶ Start",
+      "⏬ Slow",
+      "⏫ Speed up",
+      "🔀 Change leads",
+      "📝 Change script",
+      "🎁 Change offer",
+      "📍 Change territory",
+      "📡 Change channel"
     ],
-    "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, service, or channel and watch the book fill. <b>You do the treatments \u2014 we make the phone ring.</b>"
+    "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly — then you, or the AI, adjust the leads, script, offer, service, or channel and watch the book fill. <b>You do the treatments — we make the phone ring.</b>"
   },
   "map": {
-    "h2": "Your Orlando service area \u2014 live & geo-routed",
-    "fallback": "Orlando Metro<br>Orlando \u00b7 Winter Park \u00b7 Lake Nona",
+    "h2": "Your Orlando service area — live & geo-routed",
+    "fallback": "Orlando Metro<br>Orlando · Winter Park · Lake Nona",
     "title": "Orlando service area",
     "q": "Orlando,+FL",
     "z": 10,
-    "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest location \u2014 and outbound rebooking targets clients near each med-spa."
+    "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest location — and outbound rebooking targets clients near each med-spa."
   },
-  "videoSub": "A typical med-spa site vs. the offspring \u00b7 the 10-line grid \u00b7 a booking captured in 90 seconds.",
+  "videoSub": "A typical med-spa site vs. the offspring · the 10-line grid · a booking captured in 90 seconds.",
   "offerLead": "We stand up all ten numbers, the 24/7 answer, the Spanish route, service-specific lines, and a starter rebooking campaign to lapsed clients. For 30 days every inbound booking is captured.",
   "econUnit": "see booked appointments before you scale",
   "focusVerb": "doing treatments",
@@ -169,10 +169,10 @@
     "unit": "clients",
     "peer": "owner"
   },
-  "alternative": "pass, and the next after-hours booking goes to the med-spa down the road \u2014 while yours rings out mid-treatment. Territories are exclusive and claimed once.",
+  "alternative": "pass, and the next after-hours booking goes to the med-spa down the road — while yours rings out mid-treatment. Territories are exclusive and claimed once.",
   "seo": {
-    "title": "Body Wellness Connection \u00d7 Telvergence \u2014 10-Line Smart-DID Proposal",
-    "description": "Telvergence proposal: a 10-line Smart-DID grid for an Orlando med-spa \u2014 24/7 answer, service-specific lines, bilingual routing, HIPAA-aware handling, and a live booking command center.",
+    "title": "Body Wellness Connection × Telvergence — 10-Line Smart-DID Proposal",
+    "description": "Telvergence proposal: a 10-line Smart-DID grid for an Orlando med-spa — 24/7 answer, service-specific lines, bilingual routing, HIPAA-aware handling, and a live booking command center.",
     "canonical": "https://restorationroyalties.com/bodywellness/"
   },
   "jsonLd": {
@@ -184,7 +184,7 @@
       "Orange County",
       "Central Florida"
     ],
-    "description": "Med-spa and aesthetics \u2014 injectables, laser, and body contouring in Orlando.",
+    "description": "Med-spa and aesthetics — injectables, laser, and body contouring in Orlando.",
     "priceRange": "$$$"
   },
   "disclaimer": "Prepared for Body Wellness Connection (Orlando) as a discussion proposal. Aesthetic and medical communications are subject to HIPAA and applicable advertising rules; call handling is configured HIPAA-aware. All solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch."
