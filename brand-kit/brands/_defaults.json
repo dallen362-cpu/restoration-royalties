@@ -57,7 +57,7 @@
     {
       "h": "Contact-Center Layer",
       "tech": "CCaaS",
-      "p": "24/7 AI answer, live agents, and a compliant outbound dialer — inbound and outbound in one system."
+      "p": "24/7 <b>Grok-powered AI voice agent</b>, live agents, and a compliant outbound dialer — inbound and outbound in one system, answered in the caller's language."
     },
     {
       "h": "Automation & Workflow",
@@ -99,9 +99,9 @@
   },
   "videoSub": "A typical site vs. the offspring · the Smart-DID grid · a live call booked in 90 seconds.",
   "didFootnote": "Numbers marked <b>pending assignment</b> are reserved slots — real DIDs are pulled from the Telvergence wholesale portal before launch. Nothing is ever published unowned.",
-  "winnetBadge": "TELVERGENCE SUB-NETWORK",
-  "winnetH": "Brands that share one network, one app, and every lead in real time.",
-  "winnetP": "Each brand runs its own Smart-DID grid on the same Telvergence backbone — so when a job touches more than one trade, the lead flows across the network instead of dying in a voicemail box. Shared leads, shared customers, real-time analytics and automation on every job.",
+  "winnetBadge": "WIN · REGISTERED VENDOR-PARTNER NETWORK",
+  "winnetH": "One local network. Every call and lead cross-referred, SLA-backed, and monetized for the whole group.",
+  "winnetP": "These are official, <b>registered WIN distribution vendor partners</b> — each running its own branded Smart-DID grid on the shared Telvergence backbone under a <b>brand SLA</b>. When a job touches more than one trade, the lead flows to the right partner <b>in real time</b> instead of dying in a voicemail box. It's a <b>supercharged local marketplace</b> — think Angie's List, but real-time, telecom-powered, and the leads belong to the network, not a middleman.",
   "winnet": [
     {
       "slug": "rr",
@@ -111,17 +111,82 @@
     {
       "slug": "fast",
       "t": "📋 FAST Adjusting Service",
-      "s": "Public adjusting · Claims"
-    },
-    {
-      "slug": "yes",
-      "t": "⚡ YES Electrical",
-      "s": "Power · Generators"
+      "s": "Public adjusting · Mold claims"
     },
     {
       "slug": "pressure",
       "t": "👑 Coastal Crown Pressure Washing",
-      "s": "Pressure washing · 786·400 + 645·231"
+      "s": "Exterior · Roof · Mold wash"
+    },
+    {
+      "slug": "yes",
+      "t": "⚡ YES Electrical",
+      "s": "Power · Generators · EV"
+    },
+    {
+      "slug": "window",
+      "t": "🪟 Miami Window & Door",
+      "s": "Impact windows · Storm"
+    },
+    {
+      "slug": "realty",
+      "t": "🏠 Miami Realty Group",
+      "s": "Buy · Sell · Invest"
+    },
+    {
+      "slug": "bankruptcy",
+      "t": "⚖️ Orlando Bankruptcy Firm",
+      "s": "Debt relief · Fresh start"
+    },
+    {
+      "slug": "bodywellness",
+      "t": "💫 Body Wellness Connection",
+      "s": "Med-spa · Aesthetics"
+    },
+    {
+      "slug": "serotonin",
+      "t": "🧬 Serotonin Centers",
+      "s": "Weight loss · Hormone"
+    },
+    {
+      "slug": "spin",
+      "t": "🚴 Spin Machine",
+      "s": "Studio fitness"
     }
-  ]
+  ],
+  "compareBadge": "Old way vs Telvergence — the new model",
+  "compareH": "Angie's List, Slack + Twilio, and generic SaaS — vs a network that's actually yours.",
+  "compareRows": [
+    {
+      "d": "Who owns the lead",
+      "old": "Angie's List rents you a lead it also sold to five competitors; generic SaaS parks your data on someone else's platform.",
+      "new": "You own the dial tone. Every lead lands on numbers we create and control, and never leaves your WIN network."
+    },
+    {
+      "d": "Who answers, 24/7",
+      "old": "Voicemail, a form auto-reply, or an offshore call center you rent by the minute.",
+      "new": "Our own <b>Grok-powered AI voice agent</b> answers instantly in the caller's language — qualifies, books, and routes live emergencies to a human."
+    },
+    {
+      "d": "The telephone numbers",
+      "old": "Slack + Twilio you wire together yourself and pray it holds — no CNAM, no routing brain, numbers you rent from a reseller.",
+      "new": "<b>We create and control the numbers ourselves</b> through our Vitelity portal — carrier-grade, branded, and ours. That control is the moat competitors can't rent."
+    },
+    {
+      "d": "Knowing what works",
+      "old": "No idea which ad, sign, or post produced the call.",
+      "new": "Every call source-tagged to the dollar on one live command center."
+    },
+    {
+      "d": "The network effect",
+      "old": "You're one gray listing among thousands, fighting on price.",
+      "new": "A closed WIN vendor network where the other local trades refer leads straight to <b>you</b>."
+    },
+    {
+      "d": "The cost model",
+      "old": "Pay-per-lead you don't own, or per-seat SaaS that climbs forever.",
+      "new": "Flat $22.95/line. Own your numbers, port anytime, cancel anytime."
+    }
+  ],
+  "comparePunch": "Angie's List sells your prospects to your competitors. Slack + Twilio is a toolkit you have to build. Generic SaaS forgets you have a phone. <b>Telvergence gives you a private, Grok-voice-agent-powered network on numbers we create and control for you</b> — where the leads are yours and every partner brand feeds you more."
 }

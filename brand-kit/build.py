@@ -187,6 +187,49 @@ def service_map(b):
 
 
 # ---------------------------------------------------------------- page
+def compare(b):
+    rows = b.get('compareRows')
+    if not rows:
+        return ''
+    body = ''.join(
+        '<div class="cmpr">'
+        f'<div class="cmpd">{e(r["d"])}</div>'
+        f'<div class="cmpo"><span class="cmpt bad">✕ Old way</span><p>{e(r["old"])}</p></div>'
+        f'<div class="cmpn"><span class="cmpt good">✓ Telvergence</span><p>{e(r["new"])}</p></div>'
+        '</div>'
+        for r in rows)
+    style = (
+        "<style>"
+        ".cmphead,.cmpr{display:grid;grid-template-columns:150px 1fr 1fr;gap:12px;align-items:stretch}"
+        ".cmphead>div{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);padding:6px 2px;font-weight:700}"
+        ".cmpr{border-top:1px solid var(--line);padding:12px 0}"
+        ".cmpd{font-size:13.5px;color:var(--ink);font-weight:600;align-self:center}"
+        ".cmpo,.cmpn{border-radius:11px;padding:11px 13px}"
+        ".cmpo{background:rgba(255,90,80,.06);border:1px solid rgba(255,90,80,.22)}"
+        ".cmpn{background:rgba(62,240,160,.06);border:1px solid rgba(62,240,160,.3)}"
+        ".cmpt{font-size:10.5px;font-weight:800;letter-spacing:.04em}"
+        ".cmpt.bad{color:#ff8a7a}.cmpt.good{color:var(--lime)}"
+        ".cmpo p{color:var(--muted);font-size:13px;margin-top:5px}"
+        ".cmpn p{color:var(--ink);font-size:13px;margin-top:5px}"
+        ".cmppunch{margin-top:16px;border-left:3px solid var(--accent);background:rgba(42,212,240,.06);border-radius:10px;padding:14px 16px;font-size:15px;color:var(--ink)}"
+        "@media(max-width:720px){.cmphead{display:none}.cmpr{grid-template-columns:1fr}.cmpd{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint)}}"
+        "</style>")
+    head = ('<div class="cmphead"><div>&nbsp;</div>'
+            "<div>Angie's List · Slack + Twilio · generic SaaS</div>"
+            "<div>Telvergence</div></div>")
+    badge = e(b.get("compareBadge", "Old way vs Telvergence"))
+    h = e(b.get("compareH", "The old way vs the Telvergence way."))
+    punch = b.get("comparePunch", "")
+    return (
+        '\n  <section>\n'
+        f'    <div class="wb" style="color:var(--gold);border:1px solid rgba(255,194,75,.4);display:inline-block;border-radius:999px;padding:6px 13px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px">⚔️ {badge}</div>\n'
+        f'    <h2>{h}</h2>\n'
+        f'    {style}\n    {head}\n    {body}\n'
+        f'    <div class="cmppunch">{punch}</div>\n'
+        '  </section>')
+
+
+
 def render(b):
     ln = b['lineCount']
     acc = b.get('accent', '#2AD4F0')
@@ -343,6 +386,7 @@ def render(b):
     <div class="sig">Looking forward to building this with you,<br><b>David Drew Allen</b> · President, Telvergence, Inc. · 689-242-1041 · contact@telvergence.com</div>
   </section>
 </div>
+{compare(b)}
 {winnet(b)}
 <div class="wrap">
   {legal}<div class="disclaimer">{b["disclaimer"]} Confidential — TELVERGENCE.</div>
