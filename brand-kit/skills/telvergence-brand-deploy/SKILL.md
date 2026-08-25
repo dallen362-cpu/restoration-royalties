@@ -142,3 +142,15 @@ of the motto in action:
   tokens, section rhythm, disclosure/contact blocks. Consistency is not cosmetic; it is the moat.
 - [ ] **Indexing consistency:** lives at `telvergence/<slug>/`, registered in the showroom, one
   predictable shape. If it breaks the pattern, it does not ship.
+
+## THE HANDOFF STANDARD (converging technologies — install in every gigapress build)
+When a deliverable must land in a repo/venue the producing session cannot reach, NEVER rely on
+attachments or paste. The standard is the **public raw-URL handoff**:
+1. Commit the finished artifact(s) to a reachable public repo under `handoff/` (new paths only).
+2. Verify each file at its `raw.githubusercontent.com/<owner>/<repo>/main/...` URL (200 + byte count + content marker).
+3. Hand the executing session a DETERMINISTIC prompt: "fetch these exact URLs, use bytes verbatim —
+   do not edit or improve — one commit, then verify these exact live markers."
+4. The producing session independently re-verifies the live result before any outbound comms reference it.
+Why it's the offspring of converging technologies: the gigapress builds it, GitHub serves it as a
+public artery, any session anywhere applies it byte-perfectly, and the live site is the proof.
+Every future cross-repo/cross-session deploy uses this pattern. No lost files, no drift, no trust gaps.
