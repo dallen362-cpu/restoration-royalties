@@ -154,3 +154,34 @@ attachments or paste. The standard is the **public raw-URL handoff**:
 Why it's the offspring of converging technologies: the gigapress builds it, GitHub serves it as a
 public artery, any session anywhere applies it byte-perfectly, and the live site is the proof.
 Every future cross-repo/cross-session deploy uses this pattern. No lost files, no drift, no trust gaps.
+
+## THE VOICE STANDARD (mandatory on every gigapress output)
+Every brand/client page the gigapress produces ships with BOTH voice modules — no exceptions:
+1. **Read-aloud** — an audio button/icon on the page so any visitor can have the content read to
+   them (speechSynthesis with the quality-ranked best-voice picker: prefer Google US English /
+   Natural / Neural / Enhanced voices; en-US first).
+2. **Line Concierge** — the two-way voice assistant (mic in via SpeechRecognition, best-voice out),
+   loaded with that brand's knowledge file so a visitor can hold an open verbal back-and-forth
+   about ANY area of the site. Scoped `lc-*` styles, honest "live demo assistant" labeling,
+   `prefers-reduced-motion` safe, zero external dependencies. Reference implementation lives on
+   telvergence/branson/ and all four /live/ brand pages.
+
+## THE CLIENT-FILE + SMART-DID LIFECYCLE (the product spec behind the demo)
+The concierge demo previews the full product. The production lifecycle, standard for every client:
+1. **Converse** — visitor talks to the site (any section, voice or text). Every exchange is
+   **documented into their client file** — the same file the case/CRM dashboard tracks.
+2. **Onboard → pay → accept** — self-service intake, payment, and acceptance on the page.
+3. **Smart-DID issued & activated LIVE** — on acceptance, the system app assigns the client their
+   own Smart-DID: a dedicated, encrypted direct line that *knows their file and persona*, rings
+   straight to their team, and (legal vertical) is built for secure live video — remote hearings,
+   depositions, conferences. The new gold standard: confidentiality by design on a number that is
+   theirs alone.
+4. **Auto-SMS triggering** — activation fires the welcome SMS from their new line; ongoing
+   updates (bookings, documents, milestones) trigger compliant SMS to/from that same DID
+   (TCPA prior-express-written-consent captured at intake — the SMS TMCP lineage).
+5. Every later conversation — web, voice, SMS — appends to the same client file, attached to
+   that DID. One number, one file, one relationship.
+HONESTY RULE for demos: until a real LLM/API key and telephony backend are wired, label the
+on-page assistant as a demo drawing from the brand's knowledge file, and present the lifecycle
+as the platform capability it demonstrates. Never imply live encryption/compliance certifications
+that are not yet provisioned. (LLM upgrade path: Anthropic/xAI API key + small proxy — paid tier.)
