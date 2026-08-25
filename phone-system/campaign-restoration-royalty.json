@@ -9,8 +9,9 @@
     "The property address, including unit number?",
     "Your name and the best callback number?",
     "Is this a home or a business, and are you the owner?",
-    "Is an insurance claim started or planned? (If yes: our partnered public adjusters can help maximize it.)"
+    "Is an insurance claim started or planned? (If yes: our partnered licensed public adjusters can assist with the claim.)"
   ],
+  "safety_rule": "If there is any risk to life or safety — gas smell, structural collapse, electrical hazard near standing water, fire, or injury — tell the caller to hang up and dial 911 immediately; the intake can wait. Only continue once the caller confirms there is no immediate danger.",
   "emergency_rule": "If water is actively flowing: first tell the caller where the main shut-off valve usually is and to shut it if safely possible, then continue intake. Active flooding or safety risk is priority dispatch — the two-hour window.",
   "booking_window": "emergency: crew en route within 2 hours; standard: same-day or next-morning arrival window confirmed by text",
   "signoff": "Help is on the way — you'll get a confirmation text from this number in about a minute.",

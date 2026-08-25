@@ -21,7 +21,9 @@ async function call(cmd, params = {}) {
   return text;
 }
 
-const ok = (text) => /(<status>\s*ok\s*<\/status>|\bok\b|\bsuccess\b)/i.test(text);
+// Strict success detection: the XML status field, or a bare ok/success as the ENTIRE
+// (trimmed) response — never a substring match inside error text (money ops depend on this).
+const ok = (text) => /<status>\s*ok\s*<\/status>/i.test(text) || /^\s*(ok|success)\s*$/i.test(text);
 
 // List DIDs available for purchase in a rate center (or by NPA/NPANXX).
 async function searchDids({ state, ratecenter, npa, npanxx }) {
