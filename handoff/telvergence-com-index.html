@@ -437,7 +437,17 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
     if(/Samantha|Aria|Jenny|Ava|Allison/i.test(n))s+=5;if(/^en(-|_)US/i.test(v.lang))s+=3;else if(/^en/i.test(v.lang))s+=1;
     if(s>bs){bs=s;best=v}});bestVoice=best;}
   if('speechSynthesis' in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}
-  function speak(t,done){try{var u=new SpeechSynthesisUtterance(t);if(bestVoice)u.voice=bestVoice;u.rate=1.03;u.onend=function(){done&&done()};speechSynthesis.speak(u);}catch(e){done&&done()}}
+  /* neural-first: try the /tts proxy (Claude-quality voice); fall back to the browser voice until the key is live */
+  var TTS_URL='https://restorationroyalties.com/tts', ttsDead=false;
+  function speakLocal(t,done){try{var u=new SpeechSynthesisUtterance(t);if(bestVoice)u.voice=bestVoice;u.rate=1.03;u.onend=function(){done&&done()};speechSynthesis.speak(u);}catch(e){done&&done()}}
+  function speak(t,done){
+    if(window.__nvAudio){try{window.__nvAudio.pause()}catch(e){}}
+    if(ttsDead||!window.fetch){speakLocal(t,done);return;}
+    fetch(TTS_URL,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({text:t})})
+      .then(function(r){if(!r.ok)throw 0;return r.blob();})
+      .then(function(b){var a=new Audio(URL.createObjectURL(b));window.__nvAudio=a;a.onended=function(){done&&done()};a.onerror=function(){speakLocal(t,done)};a.play().catch(function(){speakLocal(t,done)});})
+      .catch(function(){ttsDead=true;speakLocal(t,done);});
+  }
 
   /* ---------- PLAY THE BRIEFING (talking-document narration) ---------- */
   var playBtn=document.getElementById('playBrief'),playing=false;
