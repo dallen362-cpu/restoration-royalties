@@ -283,3 +283,11 @@ countries restrict DID issuance; the softened phrasing is unfalsifiable and lose
    wording (TCPA discipline): follow-ups, reactivation, review requests, storm alerts to existing
    customers/consented lists — never cold-blast language. The flywheel sentence: the Smart-DID
    answers everything inbound; the dialer works everything outbound; ONE owned number does both.
+12. **Programmatic carrier provisioning (Built, Not Promised provenance)** — a custom-coded AI phone
+   system exists for the Restoration Royalty campaign with a DIRECT CARRIER API integration
+   (Vitelity-class wholesale: programmatic DID search / purchase / provision / route). Public wording:
+   "programmatic carrier provisioning — numbers searched, scored, purchased, and live in minutes;
+   the dial tone itself is software to us." NEVER name on pages: the engineer, the AI vendor, or the
+   carrier (same discipline as items 9-11). SECURITY (absolute): the carrier API key lives ONLY in
+   environment variables / a secrets manager — never in chat, email, code committed to any repo
+   (this repo is PUBLIC), or a page; if ever exposed, rotate immediately.
