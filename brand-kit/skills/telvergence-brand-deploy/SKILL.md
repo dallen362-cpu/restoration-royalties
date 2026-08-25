@@ -226,3 +226,80 @@ A new client is a SWAP of the three C's — minutes, not weeks:
   booking calendar, CRM hookup, SMS consent capture.
 SALES MOTION: show the shelf model live → provoke the reaction → onboard in the app → provision + registry-embed
 → activated Smart-DID sends the welcome text. That is the gigapress AI Mashup Telvergence system.
+
+## VOICE CAPABILITY STANDARD — MAXIMUM-TIER PARITY (claims doctrine)
+Every capability claim about the Telvergence voice agent quotes what the frontier speech-to-speech
+stack delivers AT ITS MAXIMUM SUBSCRIPTION TIER — presented as native Telvergence capability, and the
+underlying provider is NEVER named on any page, packet, or email (provider-agnostic rule is absolute).
+The canonical claim set (each item traceable to the provider's primary documentation — re-verify against
+the provider docs whenever the frontier moves, and update every surface together):
+1. **True speech-to-speech** — no transcribe-then-reply pipeline; sub-second turn-taking.
+2. **Natural interruption** — speak over it and it stops, listens, and adjusts (live barge-in).
+3. **25 languages** — understands 25 languages; answers in the caller's own.
+4. **Expressive delivery** — laughter, whispers, pauses on cue; tone that matches the moment.
+5. **Brand-cloned voice** — a custom voice cloned for the brand from a short reference recording.
+6. **Telephony-native** — carrier-grade codecs (μ-law-class); built for real phone lines, not just web widgets.
+7. **Acts while it talks** — mid-call tool execution: lookups, availability, booking before the hangup.
+8. **Word-perfect records** — word-level timestamps, speaker-separated transcripts, filed to the CRM.
+RULES: quote the capability, never the provider · never claim past the max tier's documented feature set ·
+no invented figures (latency/language counts come from provider docs, nothing else) · when the provider's
+max tier gains a capability, all brand pages inherit the upgraded claim set in the next press run.
+
+## PRICING DOCTRINE — UCaaS, PER ANSWERED LINE (never per seat)
+Value metric: the answered line, priced PER BRAND — never per seat (per-seat is the legacy-UCaaS
+frame; our AI front office replaces the seats). All plans month-to-month, 30-day guarantee. The entry
+tier equals the price the live network actually pays ($229.50) — the ladder is PROVABLE, not aspirational.
+THE LADDER (good-better-best + custom, "Most Popular" on the tier we want sold):
+- **Smart Line — $229.50/mo per brand**: 1 rate-center Smart-DID (vanity search incl.) · 24/7
+  speech-to-speech answering (caller's language) · booking + SMS confirms + welcome text · CNAM +
+  411/e-411 registries · speaker-separated transcripts + live dashboard · E911 + STIR/SHAKEN.
+- **Front Office — $499/mo per brand** (MOST POPULAR): + up to 3 Smart-DIDs · brand-cloned voice ·
+  mid-call actions (booked before hangup) · CRM backfill · follow-up sequences + attribution ·
+  app onboarding + admin command dashboard.
+- **Market Command — $999/mo per market**: + up to 10 Smart-DIDs on AI-scored rate centers · premium
+  vanity acquisition · storm/event dispatch · cross-brand referral routing · quarterly rescore ·
+  priority provisioning.
+- **Network / Empire — from $2,499/mo, custom**: multi-market networks · white-label (client becomes
+  the provider) · private encrypted client lines (legal) · API · dedicated manager.
+FEES: activation $499/brand (number engineering + registry embed + voice clone + onboarding) — WAIVED
+on annual (annual = pay 10 months, get 12). Legacy-system white-glove migration $1,499.
+RULES: every brand page shows the same ladder · the concierge KB answers pricing out loud with the
+same numbers · price changes update page + KB + packet together · discounts are structural (annual,
+founding-client) never ad-hoc · the entry tier must always equal a price a real client actually pays.
+
+## GLOBAL + OWN-NUMBER ADDENDA (to the Voice Capability Standard)
+9. **Your number, not theirs** — the voice engine answers on the business's OWN Smart-DIDs
+   (bring-your-own-number telephony). The number stays the client's digital asset; the intelligence
+   rides on it. Never pitch a vendor-rented line.
+10. **Global dial tone** — wholesale carrier-grade agreements stand up instant local numbers in
+   markets ACROSS THE GLOBE (in-country presence in minutes). Paired with 25-languages-on-the-fly,
+   one platform serves any market: "every numbering plan on Earth has its 305."
+HONESTY: say "markets across the globe / worldwide" — never the absolute "every country" (some
+countries restrict DID issuance; the softened phrasing is unfalsifiable and loses no thunder).
+11. **Our own dialer core (outbound muscle)** — aside from the AI voice engine, the platform runs
+   OUR OWN predictive-dialer / contact-center core (Vici-class, operated and hardened since 2019 —
+   the BOSS lineage). Public wording: "our own predictive-dialer core" — NEVER name the dialer
+   software on pages (same discipline as the AI provider). ALL outbound claims are CONSENT-BASED
+   wording (TCPA discipline): follow-ups, reactivation, review requests, storm alerts to existing
+   customers/consented lists — never cold-blast language. The flywheel sentence: the Smart-DID
+   answers everything inbound; the dialer works everything outbound; ONE owned number does both.
+12. **Programmatic carrier provisioning (Built, Not Promised provenance)** — a custom-coded AI phone
+   system exists for the Restoration Royalty campaign with a DIRECT CARRIER API integration
+   (Vitelity-class wholesale: programmatic DID search / purchase / provision / route). Public wording:
+   "programmatic carrier provisioning — numbers searched, scored, purchased, and live in minutes;
+   the dial tone itself is software to us." NEVER name on pages: the engineer, the AI vendor, or the
+   carrier (same discipline as items 9-11). SECURITY (absolute): the carrier API key lives ONLY in
+   environment variables / a secrets manager — never in chat, email, code committed to any repo
+   (this repo is PUBLIC), or a page; if ever exposed, rotate immediately.
+13. **The scale-economics thesis (investor language)** — zero-employee front office · no fixed
+   overhead · near-zero marginal cost per added line · every new subscriber drives unit cost DOWN
+   while the AI underneath compounds (bigger, faster, smarter as the frontier advances).
+   The line: "Scale doesn't cost this platform. Scale pays it." Wording discipline: "near-zero
+   marginal cost" and "software economics", never literal "infinite" or guaranteed-cost claims.
+14. **Big Data · IoT · critical mass (thesis threads)** — every Smart-DID is a LIVE SENSOR on its
+   market (IoT made local: the listening post); every answered call is an OWNED data point (demand
+   by rate center, language mix, storm response, conversion by exchange) feeding the territory-scoring
+   engine — the network reads markets better with every ring. CRITICAL MASS: when a market's lines +
+   data + referrals tip into self-sustaining growth, the first operator there owns the market — this
+   is the quantitative form of the first-adopter race. Wording discipline: the network's own call
+   data only — never claim third-party data purchases or surveillance; "telemetry the network owns."

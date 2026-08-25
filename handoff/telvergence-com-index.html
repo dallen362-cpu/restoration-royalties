@@ -277,6 +277,7 @@ input, textarea, select { font: inherit; }
   flex-direction: column;
   gap: var(--space-6);
   z-index: 999;
+  overflow-y: auto;
 }
 .nav__mobile-menu.active { display: flex; }
 .nav__mobile-menu a {
@@ -1275,6 +1276,7 @@ input, textarea, select { font: inherit; }
 }
 @media (max-width: 480px) {
   .footer__top { grid-template-columns: 1fr; }
+  .btn { white-space: normal; }
 }
 
 /* ===== SCROLL REVEAL ===== */
@@ -1429,7 +1431,7 @@ input, textarea, select { font: inherit; }
         <div class="ob-step"><span class="ob-n">1</span><div><b>Business captured</b><br><span class="ob-d">"Sunrise Roofing — Orlando, FL"</span></div><span class="ob-s">…</span></div>
         <div class="ob-step"><span class="ob-n">2</span><div><b>Territory scored</b><br><span class="ob-d">Rate center: Orlando · NPA 407 — high trust, low saturation</span></div><span class="ob-s">…</span></div>
         <div class="ob-step"><span class="ob-n">3</span><div><b>Smart-DID assigned</b><br><span class="ob-d">(407) 555-01XX · CNAM "SUNRISE ROOFING"</span></div><span class="ob-s">…</span></div>
-        <div class="ob-step"><span class="ob-n">4</span><div><b>AI answering live</b><br><span class="ob-d">24/7 · English · Español · Kreyòl · Português</span></div><span class="ob-s">…</span></div>
+        <div class="ob-step"><span class="ob-n">4</span><div><b>AI answering live</b><br><span class="ob-d">24/7 · English · Español · Kreyòl · Português · 25 languages in all</span></div><span class="ob-s">…</span></div>
         <div class="ob-step"><span class="ob-n">5</span><div><b>First call → booked → CRM</b><br><span class="ob-d">Job on the calendar, recording &amp; transcript logged</span></div><span class="ob-s">…</span></div>
       </div>
       <div class="ob-live" id="obLive">⏳ onboarding…</div>
@@ -1483,7 +1485,7 @@ input, textarea, select { font: inherit; }
       <p class="section-sub" style="margin-left:auto;margin-right:auto;">Everyone is bolting a chatbot onto a website. Telvergence fused frontier-class AI with the telephone network itself — the wave everyone is chasing (AI agents, voice AI, speed-to-lead), delivered where business actually happens: on a ringing local line.</p>
     </div>
     <div class="industries__grid">
-      <div class="industry__card reveal"><span class="industry__card-emoji" aria-hidden="true">🤖</span><h3>A full front-office agent</h3><p>Not an IVR, not a chatbot — an agent that completes the job: answers 24/7 in the caller's language, qualifies, books to the calendar, follows up, and logs every word to the CRM.</p></div>
+      <div class="industry__card reveal"><span class="industry__card-emoji" aria-hidden="true">🤖</span><h3>A full front-office agent</h3><p>Not an IVR, not a chatbot — an agent that completes the job: answers 24/7 in the caller's language, qualifies, books to the calendar, follows up, and logs every word to the CRM. Speak over it and it adjusts — and it executes while it talks, booking the job before the caller hangs up.</p></div>
       <div class="industry__card reveal reveal-delay-1"><span class="industry__card-emoji" aria-hidden="true">🗣️</span><h3>Voice-first, human-grade</h3><p>Natural conversation in both directions — on the phone line and on your website. Your customers talk; it talks back, understands, and acts.</p></div>
       <div class="industry__card reveal reveal-delay-2"><span class="industry__card-emoji" aria-hidden="true">⚙️</span><h3>Automation end-to-end</h3><p>Onboarding, number provisioning, caller-ID branding, booking, SMS follow-up, records — agentic workflows run the whole front office. Humans only where they belong: at the customer's door.</p></div>
       <div class="industry__card reveal reveal-delay-3"><span class="industry__card-emoji" aria-hidden="true">🧠</span><h3>Frontier-class, vendor-free</h3><p>Powered by frontier AI under the hood, provider-agnostic by design — we run the best models available and swap as the frontier moves. You get the capability; you never bet on one vendor.</p></div>
@@ -1680,7 +1682,7 @@ input, textarea, select { font: inherit; }
         </div>
         <div>
           <h3>AI That Actually Works For You</h3>
-          <p>Not chatbot fluff. Real AI that transcribes calls in real-time, detects customer sentiment, routes calls to the right person, and predicts which leads are ready to buy. It learns your business and gets smarter every day — turning every conversation into actionable intelligence.</p>
+          <p>Not chatbot fluff — a true speech-to-speech voice engine. It answers in under a second in the caller's language across 25 languages; interrupt it mid-sentence and it stops, listens, and adjusts. It can laugh, whisper, and pause like a person — even speak in a custom voice cloned for your brand — and while it talks, it works: checks availability, books the job, looks up answers live, and files a word-perfect, speaker-separated transcript to your CRM. All of it on your own numbers — the line stays your asset; the intelligence rides on it.</p>
         </div>
       </div>
 
@@ -1778,7 +1780,7 @@ input, textarea, select { font: inherit; }
     <p class="section-label">The Battle Cry</p>
     <h2 class="section-header">A local call, answered, is the whole game.</h2>
     <p style="font-size:clamp(1.15rem,2.6vw,1.5rem);font-weight:700;max-width:34ch;margin:0 auto 14px;line-height:1.4;background:linear-gradient(100deg,#00FF88,#00D4FF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">&ldquo;A call from a local number in your own rate center gets answered. An out-of-area caller-ID gets ignored.&rdquo;</p>
-    <p class="section-sub" style="margin-left:auto;margin-right:auto;">Pickup rate is everything — one missed call is a job walking to the next firm. Telvergence puts a rate-center-local number in front of your business, answers it 24/7 in the caller’s language, and books the job. You don’t rent leads. <strong>You own the number, and you own the answer.</strong></p>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto;">Pickup rate is everything — one missed call is a job walking to the next firm. Telvergence puts a rate-center-local number in front of your business, answers it 24/7 in the caller’s language, and books the job. You don’t rent leads. <strong>You own the number, and you own the answer.</strong> And the map doesn't stop at the border: the same carrier-grade agreements stand up instant local dial tone in markets across the globe — answered in the caller's language, on the fly.</p>
   </div>
 </section>
 
@@ -1962,129 +1964,129 @@ input, textarea, select { font: inherit; }
     <div class="reveal" style="text-align: center;">
       <p class="section-label">Pricing</p>
       <h2 class="section-header">Transparent Pricing. No Surprises.</h2>
-      <p class="section-sub" style="margin-left: auto; margin-right: auto;">Every plan includes what most providers charge extra for. Pick the stage that matches where your business is — and where it's going.</p>
+      <p class="section-sub" style="margin-left: auto; margin-right: auto;">You don't pay per seat — you pay per answered line. Every plan is month-to-month with a 30-day guarantee, priced per brand. The entry tier is the exact plan our own live network runs on.</p>
     </div>
 
     <div class="pricing__grid">
       <!-- Starter -->
       <div class="pricing__card reveal">
-        <p class="pricing__tier">Starter</p>
-        <p class="pricing__tagline">You're replacing your phone system and getting smarter</p>
+        <p class="pricing__tier">Smart Line</p>
+        <p class="pricing__tagline">The line that answers itself — the plan our live network runs on</p>
         <div class="pricing__price">
-          <span class="pricing__amount">$499</span>
-          <span class="pricing__period">/month</span>
+          <span class="pricing__amount">$229.50</span>
+          <span class="pricing__period">/month per brand</span>
         </div>
         <div class="pricing__features">
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>Business phone system with AI assistant</span>
+            <span>1 Smart-DID engineered into your rate center (vanity search included)</span>
           </div>
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>Unlimited calling &amp; messaging</span>
+            <span>24/7 speech-to-speech AI answering — sub-second, interruption-native, caller's language</span>
           </div>
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>Smart call routing &amp; auto-attendant</span>
+            <span>Books to your calendar + SMS confirmations &amp; welcome text</span>
           </div>
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>Caller ID reputation management</span>
+            <span>CNAM branded caller-ID + 411/e-411 directory registration</span>
           </div>
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>E911 compliance built in</span>
+            <span>Word-perfect, speaker-separated transcripts + live dashboard</span>
           </div>
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>Real-time call dashboard</span>
+            <span>E911 + STIR/SHAKEN verified identity built in</span>
           </div>
         </div>
         <a href="#contact" class="btn btn--secondary" style="width: 100%;">Get Started</a>
-        <p class="pricing__fit">Perfect for businesses with 1–25 employees</p>
+        <p class="pricing__fit">One location, done missing calls — month-to-month, 30-day guarantee</p>
       </div>
 
       <!-- Growth -->
       <div class="pricing__card pricing__card--popular reveal reveal-delay-1">
         <span class="pricing__popular-badge">Most Popular</span>
-        <p class="pricing__tier">Growth</p>
-        <p class="pricing__tagline">You're automating and scaling across channels</p>
+        <p class="pricing__tier">Front Office</p>
+        <p class="pricing__tagline">The AI becomes your front office — it answers, acts, and closes</p>
         <div class="pricing__price">
-          <span class="pricing__amount">$999</span>
-          <span class="pricing__period">/month</span>
+          <span class="pricing__amount">$499</span>
+          <span class="pricing__period">/month per brand</span>
         </div>
         <div class="pricing__features">
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>Everything in Starter</span>
+            <span>Everything in Smart Line + up to 3 Smart-DIDs</span>
           </div>
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>AI call transcription &amp; sentiment analysis</span>
+            <span>Custom voice cloned for your brand</span>
           </div>
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>CRM integration (Salesforce, HubSpot, etc.)</span>
+            <span>Mid-call actions: availability checks, booked before the hangup</span>
           </div>
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>Campaign call tracking &amp; attribution</span>
+            <span>CRM integration + client-file backfill in real time</span>
           </div>
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>Custom analytics dashboard</span>
+            <span>Automated follow-up sequences + campaign attribution</span>
           </div>
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>Automated follow-up sequences</span>
+            <span>App-driven onboarding + admin command dashboard</span>
           </div>
         </div>
         <a href="#contact" class="btn btn--primary" style="width: 100%;">Get Started</a>
-        <p class="pricing__fit">Perfect for businesses with 25–100 employees</p>
+        <p class="pricing__fit">The business that never misses, never forgets, never sleeps</p>
       </div>
 
       <!-- Enterprise -->
       <div class="pricing__card reveal reveal-delay-2">
-        <p class="pricing__tier">Enterprise</p>
-        <p class="pricing__tagline">You're building an empire</p>
+        <p class="pricing__tier">Market Command</p>
+        <p class="pricing__tagline">You're not running a shop — you're running a territory</p>
         <div class="pricing__price">
-          <span class="pricing__amount">$2,499</span>
-          <span class="pricing__period">/month</span>
+          <span class="pricing__amount">$999</span>
+          <span class="pricing__period">/month per market</span>
         </div>
         <div class="pricing__features">
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>Everything in Growth</span>
+            <span>Everything in Front Office + up to 10 Smart-DIDs</span>
           </div>
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>White-label your own platform</span>
+            <span>AI-scored territory portfolio across rate centers</span>
           </div>
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>Auditable call records</span>
+            <span>Premium vanity acquisition (the 786-938-MOLD class)</span>
           </div>
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>Multi-location management</span>
+            <span>Storm/event dispatch routing to ready crews</span>
           </div>
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>Dedicated account manager</span>
+            <span>Cross-brand referral routing — one lead feeds your network</span>
           </div>
           <div class="pricing__feature">
             <span class="pricing__check">✓</span>
-            <span>Custom integrations &amp; API access</span>
+            <span>Quarterly territory rescore + priority provisioning</span>
           </div>
         </div>
-        <a href="#contact" class="btn btn--secondary" style="width: 100%;">Contact Sales</a>
-        <p class="pricing__fit">Perfect for 100+ employees or franchise operations</p>
+        <a href="#contact" class="btn btn--secondary" style="width: 100%;">Get Started</a>
+        <p class="pricing__fit">Operators, multi-brand owners, market-takers</p>
       </div>
     </div>
 
     <div class="pricing__setup reveal">
-      <p><strong>One-time setup: $1,499</strong> — Includes full migration, number porting, AI configuration, CRM integration, team training, and custom configuration. We handle everything.</p>
-      <p style="margin-top: var(--space-3);"><a href="#contact" style="color: var(--color-primary); font-weight: 700;">Schedule a consultation →</a> We'll audit your current setup and show you exactly how much you'll save.</p>
+      <p><strong>Network / Empire — custom, from $2,499/month:</strong> multi-market brand networks, white-label (become the provider to your own clients), private encrypted client lines for legal, API access, and a dedicated account manager. <a href="#contact" style="color: var(--color-primary); font-weight: 700;">Contact sales →</a></p>
+      <p style="margin-top: var(--space-3);"><strong>One-time activation: $499 per brand</strong> — rate-center number engineering, registry embed (CNAM + directories), brand voice, and app onboarding. Waived on annual plans (pay for 10 months, get 12). Full white-glove migration from a legacy phone system: $1,499.</p>
     </div>
   </div>
 </section>
@@ -2509,7 +2511,7 @@ input, textarea, select { font: inherit; }
 </style>
 <script>
 (function(){
-  var KB=[[["which ai", "what ai", "powered by", "model", "llm", "chatgpt", "openai", "claude", "grok", "gemini", "engine"], "The engine is frontier-class AI, provider-agnostic by design - we run the best models available under the hood and swap as the frontier moves, so you get the capability without betting on any one vendor. What matters is what it does: answers, books, follows up, and logs every interaction on your own local line."],[["onboard", "onboarding", "sign up", "signup", "get started", "how do i start", "activate", "app"], "Onboarding is the product: the app captures your business, scores your territory, assigns a branded Smart-DID in your own rate center, arms 24/7 AI answering, and your first call books straight to the calendar and CRM - it ends with a welcome text from your new number. Use the contact form on this page to start."],[["original", "classic", "old site", "heritage", "history"], "The original telvergence.com is preserved forever at telvergence.com/original/ - nothing here is ever overwritten. The site you are on now is the 100X platform release: the live network, the talking concierge, and the proof."],[["what", "telvergence", "platform", "do", "who"], "Telvergence is one platform for every call, message, and customer interaction. We put a local, rate-center phone number in front of your business, answer it 24/7 with AI in the caller's language, book the job, and log everything to your CRM. Instead of buying shared leads, you own the number and the answer."], [["rate", "center", "local", "secret", "sauce", "why", "pickup", "number"], "The whole game in one sentence: a call from a local number in your own rate center gets answered - an out-of-area caller-ID gets ignored. Local call origination and termination inside your own market is the Telvergence secret sauce, and it is why our phones convert."], [["brand", "brands", "proof", "example", "examples", "live", "network", "who uses"], "Scroll to the Live Network section - every card is a real, live property you can tap right now: Restoration Royalties (our flagship storm-dispatch command on the Weather Intelligence Network), FAST Adjusting, Coastal Crown, YES Electrical, and a turnkey law-firm build, Branson Ainsworth."], [["smart", "did", "issue", "assign"], "We issue you local Smart-DIDs - programmable numbers provisioned in your exact rate center, branded to you, that ring into 24/7 AI intake and your CRM. A storefront with no storefront."], [["ai", "bot", "answer", "how", "work"], "The AI answers every call 24/7 in the caller's language, screens and qualifies the lead, books it straight to a calendar, and logs the whole interaction to your CRM - no receptionist, no missed calls."], [["law", "legal", "attorney", "firm", "private", "encrypted", "video", "hearing", "deposition"], "For law firms we issue a private, encrypted client Smart-DID that knows the case file, rings straight to the legal team, and is built for secure live video - remote hearings, depositions, and conferences. The new gold standard in legal communications."], [["price", "pricing", "cost", "how much", "plan", "plans"], "See the Pricing section on this page - plans scale from a single local line to a full multi-brand network. For a tailored quote, use the contact form or email contact@telvergence.com."], [["start", "demo", "contact", "get", "sign", "onboard", "activate", "talk"], "Easiest path: use the contact form on this page, or email contact@telvergence.com. We can have a branded, booking-ready local line live fast - onboard, activate the Smart-DID, and your phone starts printing."], [["industry", "industries", "contractor", "restoration", "healthcare", "financial", "real estate", "franchise"], "We build for contractors and home services, healthcare and wellness, financial services, real estate, legal, and multi-location franchises - workflows designed around how each industry actually operates, not generic features."], [["storm", "weather", "win", "dispatch"], "The Weather Intelligence Network turns severe weather into dispatch: when a storm hits a market, calls route instantly to ready crews in that same rate center. Restoration Royalties is the live command center for Miami-Dade."]], GREET="Welcome to Telvergence. Ask me anything - what we do, the local-number edge, our live brands, pricing, or how to get your own booking-ready line. Speak or type.";
+  var KB=[[["which ai", "what ai", "powered by", "model", "llm", "chatgpt", "openai", "claude", "grok", "gemini", "engine"], "The engine is frontier-class AI, provider-agnostic by design - we run the best models available under the hood and swap as the frontier moves, so you get the capability without betting on any one vendor. What matters is what it does: answers, books, follows up, and logs every interaction on your own local line."],[["dialer", "outbound", "campaign", "campaigns", "predictive", "call center", "contact center", "follow up", "reactivation"], "Inbound is only half the machine. Aside from the AI voice engine, we run our own predictive-dialer core - carrier-grade outbound infrastructure we have operated and hardened since 2019. It drives consent-based outbound on the same owned, CNAM-branded numbers: follow-ups, reactivation, review requests, storm alerts - every call logged to the CRM. One owned number, answering inbound and working outbound."],[["global", "international", "country", "countries", "world", "worldwide", "border", "language", "languages", "translate"], "The most incredible part: our wholesale carrier-grade agreements stand up instant local dial tone in markets across the globe - a local, in-country number provisioned in minutes - and the AI answers in the caller's own language, on the fly, across 25 languages. The border is gone and so is the language barrier: every numbering plan on Earth has its 305 - enter a market, engineer the local number, own the answer."],[["onboard", "onboarding", "sign up", "signup", "get started", "how do i start", "activate", "app"], "Onboarding is the product: the app captures your business, scores your territory, assigns a branded Smart-DID in your own rate center, arms 24/7 AI answering, and your first call books straight to the calendar and CRM - it ends with a welcome text from your new number. Use the contact form on this page to start."],[["original", "classic", "old site", "heritage", "history"], "The original telvergence.com is preserved forever at telvergence.com/original/ - nothing here is ever overwritten. The site you are on now is the 100X platform release: the live network, the talking concierge, and the proof."],[["what", "telvergence", "platform", "do", "who"], "Telvergence is one platform for every call, message, and customer interaction. We put a local, rate-center phone number in front of your business, answer it 24/7 with AI in the caller's language, book the job, and log everything to your CRM. Instead of buying shared leads, you own the number and the answer."], [["rate", "center", "local", "secret", "sauce", "why", "pickup", "number"], "The whole game in one sentence: a call from a local number in your own rate center gets answered - an out-of-area caller-ID gets ignored. Local call origination and termination inside your own market is the Telvergence secret sauce, and it is why our phones convert."], [["brand", "brands", "proof", "example", "examples", "live", "network", "who uses"], "Scroll to the Live Network section - every card is a real, live property you can tap right now: Restoration Royalties (our flagship storm-dispatch command on the Weather Intelligence Network), FAST Adjusting, Coastal Crown, YES Electrical, and a turnkey law-firm build, Branson Ainsworth."], [["smart", "did", "issue", "assign"], "We issue you local Smart-DIDs - programmable numbers provisioned in your exact rate center, branded to you, that ring into 24/7 AI intake and your CRM. A storefront with no storefront."], [["ai", "bot", "answer", "how", "work"], "The AI answers every call 24/7 in the caller's language, screens and qualifies the lead, books it straight to a calendar, and logs the whole interaction to your CRM - no receptionist, no missed calls."], [["law", "legal", "attorney", "firm", "private", "encrypted", "video", "hearing", "deposition"], "For law firms we issue a private, encrypted client Smart-DID that knows the case file, rings straight to the legal team, and is built for secure live video - remote hearings, depositions, and conferences. The new gold standard in legal communications."], [["price", "pricing", "cost", "how much", "plan", "plans"], "Four plans, priced per brand line - never per seat, all month-to-month with a 30-day guarantee. Smart Line at two twenty-nine fifty a month: one rate-center Smart-DID with 24/7 speech-to-speech AI answering, booking, registries, and transcripts - the exact plan our live network runs on. Front Office at four ninety-nine: three lines, your brand's cloned voice, mid-call booking, CRM backfill. Market Command at nine ninety-nine: ten lines, an AI-scored territory portfolio, vanity numbers, storm dispatch. Network and white-label from twenty-four ninety-nine, custom. Activation is four ninety-nine per brand, waived on annual - see the Pricing section, or email contact@telvergence.com."], [["start", "demo", "contact", "get", "sign", "onboard", "activate", "talk"], "Easiest path: use the contact form on this page, or email contact@telvergence.com. We can have a branded, booking-ready local line live fast - onboard, activate the Smart-DID, and your phone starts printing."], [["industry", "industries", "contractor", "restoration", "healthcare", "financial", "real estate", "franchise"], "We build for contractors and home services, healthcare and wellness, financial services, real estate, legal, and multi-location franchises - workflows designed around how each industry actually operates, not generic features."], [["storm", "weather", "win", "dispatch"], "The Weather Intelligence Network turns severe weather into dispatch: when a storm hits a market, calls route instantly to ready crews in that same rate center. Restoration Royalties is the live command center for Miami-Dade."]], GREET="Welcome to Telvergence. Ask me anything - what we do, the local-number edge, our live brands, pricing, or how to get your own booking-ready line. Speak or type.";
   var fab=document.getElementById('lcFab'),panel=document.getElementById('lcPanel'),log=document.getElementById('lcLog'),
       inp=document.getElementById('lcIn'),send=document.getElementById('lcSend'),mic=document.getElementById('lcMic'),
       mute=document.getElementById('lcMute'),x=document.getElementById('lcX');
