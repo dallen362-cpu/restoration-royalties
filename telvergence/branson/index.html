@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Branson Ainsworth PLLC — a 24/7 multilingual client-intake platform with self-service booking and a live case-management dashboard. A concept demonstration by Telvergence, Inc.">
+<meta name="robots" content="noindex,nofollow">
+<title>Branson Ainsworth PLLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+:root{
+  --void:#0B0F16; --deep:#0F141E; --panel:#141B27; --panel2:#1A2331; --line:#25303F; --line2:#37475c;
+  --cream:#F2EDE2; --muted:#A9B2C0; --faint:#6E7A8B;
+  --gold:#C9A24B; --gold2:#E3C579; --burg:#8E3B48;
+  --fd:'Fraunces',Georgia,serif; --fb:'Hanken Grotesk',Arial,sans-serif; --fm:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--cream);background:var(--void);line-height:1.6;overflow-x:hidden;
+  background-image:radial-gradient(1100px 620px at 78% -10%,rgba(201,162,75,.10),transparent 60%),
+                   radial-gradient(800px 500px at 8% 6%,rgba(142,59,72,.10),transparent 58%)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+h1,h2,h3{font-family:var(--fd);font-weight:600;letter-spacing:-.01em;line-height:1.1;text-wrap:balance}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+a{color:var(--gold2)}
+.bar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;padding:14px 22px;background:rgba(11,15,22,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{font-family:var(--fd);font-weight:700;font-size:19px;letter-spacing:.01em}
+.logo b{color:var(--gold)}
+.prop{font-family:var(--fm);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);border:1px solid var(--line2);border-radius:999px;padding:5px 10px}
+.call{margin-left:auto;font-family:var(--fb);font-weight:700;font-size:13.5px;color:var(--void);background:linear-gradient(100deg,var(--gold),var(--gold2));border-radius:999px;padding:9px 18px;text-decoration:none;white-space:nowrap}
+header{padding:70px 0 40px;text-align:center}
+.kick{font-family:var(--fm);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+h1{font-size:clamp(38px,6.6vw,72px);margin:18px auto;max-width:16ch}
+h1 em{font-style:italic;color:var(--gold2)}
+.dek{color:var(--muted);font-size:clamp(16px,2.3vw,20px);max-width:60ch;margin:0 auto}
+.dek b{color:var(--cream)}
+.cta{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{font-family:var(--fb);font-weight:700;font-size:15px;text-decoration:none;border-radius:10px;padding:14px 26px}
+.btn.g{background:linear-gradient(100deg,var(--gold),var(--gold2));color:var(--void)}
+.btn.o{border:1px solid var(--line2);color:var(--cream)}
+section{padding:46px 0;border-top:1px solid var(--line)}
+.k{font-family:var(--fm);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+h2{font-size:clamp(26px,4vw,38px);margin-bottom:8px}
+.lead{color:var(--muted);font-size:16px;max-width:70ch}
+.lead b{color:var(--cream)}
+.stat{display:grid;gap:14px;margin-top:22px}
+@media(min-width:720px){.stat{grid-template-columns:repeat(3,1fr)}}
+.sc{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+.sc .v{font-family:var(--fd);font-weight:700;font-size:34px;color:var(--gold2)}
+.sc .l{color:var(--muted);font-size:13.5px;margin-top:6px}
+.flow{display:grid;gap:12px;margin-top:22px}
+@media(min-width:760px){.flow{grid-template-columns:repeat(4,1fr)}}
+.fc{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+.fc .n{font-family:var(--fm);font-size:12px;color:var(--void);background:var(--gold);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;margin:0 auto 10px;font-weight:600}
+.fc h4{font-family:var(--fd);font-size:16px;margin-bottom:4px}
+.fc p{font-size:12.5px;color:var(--muted)}
+.pa{display:grid;gap:12px;margin-top:20px}
+@media(min-width:640px){.pa{grid-template-columns:repeat(3,1fr)}}
+.pc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.pc h4{font-family:var(--fd);font-size:17px;color:var(--cream);margin-bottom:3px}
+.pc p{font-size:12.5px;color:var(--muted)}
+.pc .ed{font-family:var(--fm);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.two{display:grid;gap:18px;margin-top:20px}
+@media(min-width:820px){.two{grid-template-columns:1fr 1fr}}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line2);border-radius:18px;padding:22px}
+.langrow{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}
+.lg{cursor:pointer;font-family:var(--fm);font-size:12px;color:var(--muted);border:1px solid var(--line2);border-radius:999px;padding:6px 12px}
+.lg.on{color:var(--void);background:var(--gold);border-color:var(--gold);font-weight:600}
+.greet{font-size:16px;color:var(--cream);border-left:3px solid var(--gold);padding:8px 0 8px 14px;min-height:52px;font-style:italic}
+.speak{margin-top:12px;cursor:pointer;font-family:var(--fb);font-weight:700;font-size:13.5px;color:var(--void);background:linear-gradient(100deg,var(--gold),var(--gold2));border:0;border-radius:10px;padding:11px 16px}
+ul.chk{list-style:none;margin:6px 0} ul.chk li{position:relative;padding:6px 0 6px 26px;font-size:14px;color:var(--muted)}
+ul.chk li:before{content:"✦";position:absolute;left:2px;color:var(--gold)} ul.chk li b{color:var(--cream)}
+.embed{width:100%;height:200px;border:0;border-radius:12px;margin-top:14px;background:#0a1119}
+.form{display:grid;gap:10px;margin-top:12px}
+.form input,.form select{font-family:var(--fb);font-size:15px;color:var(--cream);background:var(--void);border:1px solid var(--line2);border-radius:10px;padding:12px 14px;outline:none}
+.form input:focus{border-color:var(--gold)}
+.formmsg{font-size:13px;color:var(--gold2);min-height:20px}
+.close{text-align:center;padding:56px 0}
+.close h2{margin-bottom:10px}
+footer{border-top:1px solid var(--line);padding:24px 0 60px;color:var(--faint);font-size:11.5px;line-height:1.6;text-align:center}
+.disc{max-width:74ch;margin:0 auto}
+.blabel{font-family:var(--fm);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin:2px 0 10px}
+.days,.slots{display:flex;flex-wrap:wrap;gap:8px}
+.bchip{cursor:pointer;font-family:var(--fb);font-size:13px;color:var(--cream);background:var(--void);border:1px solid var(--line2);border-radius:10px;padding:9px 12px;text-align:center;min-width:70px}
+.bchip:hover{border-color:var(--gold)}
+.bchip.sel{background:linear-gradient(100deg,var(--gold),var(--gold2));color:var(--void);border-color:var(--gold);font-weight:700}
+.bchip.taken{opacity:.3;cursor:not-allowed;text-decoration:line-through}
+.bchip small{display:block;font-family:var(--fm);font-size:10px;color:var(--faint);margin-top:2px}
+.bchip.sel small{color:var(--void)}
+.lnk{background:none;border:0;color:var(--muted);font-family:var(--fb);font-size:12.5px;cursor:pointer;margin-top:12px;text-decoration:underline}
+.conf{text-align:center;padding:8px 0}
+.conf .big{font-family:var(--fd);font-size:21px;color:var(--gold2);margin:6px 0}
+.conf a.b{display:block;margin:8px 0;font-family:var(--fb);font-weight:700;font-size:14px;text-decoration:none;border-radius:10px;padding:12px}
+.conf a.gc{background:linear-gradient(100deg,var(--gold),var(--gold2));color:var(--void)}
+.conf a.ml{border:1px solid var(--line2);color:var(--cream)}
+</style>
+
+<div class="bar">
+  <div class="logo"><b>BRANSON</b> AINSWORTH <span style="color:var(--faint);font-weight:400;font-size:12px">PLLC</span></div>
+  <span class="prop">Concept proposal · Telvergence</span>
+  <a class="call" href="tel:+14074769855">📞 (407) 476‑9855</a>
+</div>
+
+<div class="wrap">
+
+<header>
+  <div class="kick">Bankruptcy &amp; Debt Relief · Orlando · Serving Floridians 30+ Years</div>
+  <h1>Your anchor in financial turbulence — <em>answering every call.</em></h1>
+  <p class="dek">When someone is drowning in debt, they call the firm that <b>picks up</b>. Branson Ainsworth never sends that call to voicemail — <b>live intake, 24/7, in their language</b>, with the consultation booked before fear talks them out of it. Help for today, hope for tomorrow.</p>
+  <div class="cta">
+    <a class="btn g" href="#consult">Request a consultation</a>
+    <a class="btn o" href="tel:+14074769855">Call the firm</a>
+  </div>
+</header>
+
+<!-- THE PROBLEM/VALUE -->
+<section>
+  <div class="k">Why intake is everything</div>
+  <h2>A missed call is a lost case — and a lost fee.</h2>
+  <p class="lead">People in financial crisis call late, scared, and only once. After‑hours, lunch, court, a full front desk — that's exactly when they reach out. Branson Ainsworth closes that gap completely, so no one who needs help slips away.</p>
+  <div class="stat">
+    <div class="sc"><div class="v">24/7</div><div class="l">Live intake — nights, weekends, overflow</div></div>
+    <div class="sc"><div class="v">1 ring</div><div class="l">Answered before they hang up</div></div>
+    <div class="sc"><div class="v">Every $</div><div class="l">Captured intake = fees that used to walk</div></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="k">How your intake engine works</div>
+  <h2>From ring to booked consultation</h2>
+  <div class="flow">
+    <div class="fc"><div class="n">1</div><h4>Local line rings</h4><p>An Orlando number your clients trust — answered instantly.</p></div>
+    <div class="fc"><div class="n">2</div><h4>AI intake answers</h4><p>24/7, in the caller's language — professional, calm, on‑script.</p></div>
+    <div class="fc"><div class="n">3</div><h4>Qualifies &amp; books</h4><p>Captures the matter, runs your intake questions, books the consult to your calendar.</p></div>
+    <div class="fc"><div class="n">4</div><h4>Straight to you</h4><p>Full transcript + details to your CRM — with a conflict‑check flag before you take the meeting.</p></div>
+  </div>
+</section>
+
+<!-- PRACTICE AREAS -->
+<section>
+  <div class="k">Practice areas</div>
+  <h2>Help for today, hope for tomorrow</h2>
+  <div class="pa">
+    <div class="pc"><h4>Consumer Bankruptcy</h4><p>Chapter 7 fresh start — wipe qualifying debt, keep your footing.</p></div>
+    <div class="pc"><h4>Chapter 13 Reorganization</h4><p>Restructure and catch up — stop the bleeding on your terms.</p></div>
+    <div class="pc"><h4>Business Bankruptcy</h4><p>Chapter 11 &amp; Subchapter V — restructure and keep operating.</p></div>
+    <div class="pc"><h4>Foreclosure &amp; Mortgage Mod</h4><p>Stop the sale date; modify and stay in your home.</p></div>
+    <div class="pc"><h4>Student Loan Debt</h4><p>Repayment options and relief strategies that fit real life.</p></div>
+    <div class="pc"><h4>Litigation &amp; MCA Defense</h4><p>Business &amp; commercial litigation; merchant cash-advance defense.</p></div>
+  </div>
+  <p class="lead" style="margin-top:16px">Serving Floridians for over 30 years — <b>Robert Branson · Jeffrey S. Ainsworth · Jacob D. Flentke · Jennifer L. Morando · Cole B. Branson.</b></p>
+</section>
+
+<!-- VANITY NUMBERS -->
+<style>
+.vg{display:grid;gap:10px;margin-top:20px}
+@media(min-width:560px){.vg{grid-template-columns:1fr 1fr}}
+@media(min-width:860px){.vg{grid-template-columns:1fr 1fr 1fr}}
+.vn{display:flex;align-items:baseline;gap:10px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.vn:hover{border-color:var(--gold)}
+.vn .w{font-family:var(--fd);font-weight:700;font-size:17px;color:var(--gold2);white-space:nowrap}
+.vn .d{font-family:var(--fm);font-size:11.5px;color:var(--muted)}
+.vn.flag{border-color:var(--gold);background:linear-gradient(180deg,rgba(201,162,75,.12),var(--panel))}
+</style>
+<section>
+  <div class="k">Your memorable number · illustrative examples</div>
+  <h2>The number a client remembers at 2 a.m.</h2>
+  <p class="lead">A vanity line is the cheapest marketing a firm will ever own — it turns a billboard, a bus bench, or a pen into a phone call. Examples of what Telvergence can secure and brand for Branson Ainsworth:</p>
+  <div class="vg">
+    <div class="vn flag"><span class="w">1-800-ANCHOR-1</span><span class="d">flagship · 262-4671 · "your anchor"</span></div>
+    <div class="vn"><span class="w">1-800-SLEEP-EZ</span><span class="d">753-3739 · "sleep at night"</span></div>
+    <div class="vn"><span class="w">1-800-RESTART</span><span class="d">737-8278</span></div>
+    <div class="vn"><span class="w">1-800-NEW-LIFE</span><span class="d">639-5433</span></div>
+    <div class="vn"><span class="w">1-800-DEBT-END</span><span class="d">332-8363</span></div>
+    <div class="vn"><span class="w">1-800-NO-DEBTS</span><span class="d">663-3287</span></div>
+    <div class="vn"><span class="w">1-800-CHAPTER</span><span class="d">242-7837</span></div>
+    <div class="vn"><span class="w">1-800-DEBT-911</span><span class="d">332-8911</span></div>
+    <div class="vn"><span class="w">1-844-FILE-CH7</span><span class="d">345-3247</span></div>
+    <div class="vn"><span class="w">407-RESTART</span><span class="d">Orlando local · 737-8278</span></div>
+  </div>
+  <p class="lead" style="margin-top:12px;font-size:12.5px;color:var(--faint)">Numbers shown are illustrative examples to demonstrate what is possible; exact availability is confirmed at provisioning and the winning pick is branded across the firm's caller-ID, site, and marketing.</p>
+</section>
+
+<!-- INTAKE VOICE + CONSULT -->
+<section>
+  <div class="k">Live · the intake floor</div>
+  <h2>Watch the phones get answered</h2>
+  <p class="lead" style="margin:0 auto 4px;text-align:center">This is the front office running with no receptionist — every caller met in seconds, in their language, qualified, and booked. <b>Live simulation.</b></p>
+  <div class="lci">
+    <div class="lci-board" id="lciBoard"></div>
+    <div class="lci-kpis">
+      <div class="lci-kpi"><div class="lci-v" id="lciAns">184</div><div class="lci-l">Calls answered today</div></div>
+      <div class="lci-kpi"><div class="lci-v" id="lciBk">47</div><div class="lci-l">Consults booked</div></div>
+      <div class="lci-kpi"><div class="lci-v">0:02</div><div class="lci-l">Avg pickup</div></div>
+      <div class="lci-kpi"><div class="lci-v"><span id="lciQ">1</span> <span class="lci-live">live</span></div><div class="lci-l">On the line now</div></div>
+    </div>
+  </div>
+</section>
+<style>
+.lci{display:grid;gap:14px;margin-top:22px}
+@media(min-width:860px){.lci{grid-template-columns:1.55fr 1fr}}
+.lci-board{display:flex;flex-direction:column;gap:10px}
+.lci-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:12px;padding:12px 14px;transition:border-color .4s}
+.lci-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(201,162,75,.16)}
+.lci-row.s0 .lci-dot{background:var(--burg);box-shadow:0 0 0 4px rgba(142,59,72,.18);animation:lciPulse 1s infinite}
+.lci-row.s3 .lci-dot{background:var(--gold2);box-shadow:0 0 0 4px rgba(227,197,121,.22)}
+.lci-row.s3{border-color:var(--gold)}
+@keyframes lciPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.35);opacity:.55}}
+.lci-who{min-width:0}
+.lci-name{font-family:var(--fd);font-weight:600;font-size:14.5px;color:var(--cream)}
+.lci-meta{font-family:var(--fm);font-size:11px;color:var(--faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lci-stat{font-family:var(--fm);font-size:11px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;padding:5px 10px;border-radius:999px;border:1px solid var(--line2);color:var(--muted)}
+.lci-row.s0 .lci-stat{color:var(--gold2);border-color:rgba(227,197,121,.4)}
+.lci-row.s1 .lci-stat{color:var(--gold);border-color:rgba(201,162,75,.4)}
+.lci-row.s2 .lci-stat{color:var(--cream);border-color:var(--line2)}
+.lci-row.s3 .lci-stat{color:var(--void);background:linear-gradient(100deg,var(--gold),var(--gold2));border-color:transparent;font-weight:700}
+.lci-kpis{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
+.lci-kpi{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
+.lci-v{font-family:var(--fd);font-weight:700;font-size:30px;color:var(--gold2);font-variant-numeric:tabular-nums}
+.lci-l{color:var(--muted);font-size:12px;margin-top:4px}
+.lci-live{font-family:var(--fm);font-size:10px;color:var(--burg);letter-spacing:.1em;text-transform:uppercase;vertical-align:middle}
+</style>
+<script>
+(function(){
+  var board=document.getElementById('lciBoard');if(!board)return;
+  var reduce=false;try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+  var names=['M. Torres','J. Baptiste','R. Alvarez','D. Okafor','L. Nguyen','P. Silva','A. Jean-Louis','C. Reyes','K. Dupont','S. Mensah'];
+  var langs=['English','Espanol','Kreyol','Portugues'];
+  var matters=['Chapter 7','Chapter 13','Foreclosure','Student loans','Business Ch. 11','Mortgage mod'];
+  var areas=['407','321','689','754','305'];
+  var stages=['Incoming call','AI answering','Qualified','Booked ✓'];
+  var rows=[];var N=4;
+  function rnd(a){return a[Math.floor(Math.random()*a.length)];}
+  function newCall(){var n4=(1000+Math.floor(Math.random()*9000));return {name:rnd(names),meta:'('+rnd(areas)+') '+(200+Math.floor(Math.random()*799))+'-'+n4+' · '+rnd(langs)+' · '+rnd(matters),stage:0};}
+  for(var i=0;i<N;i++){var el=document.createElement('div');el.className='lci-row s0';el.innerHTML='<span class="lci-dot"></span><div class="lci-who"><div class="lci-name"></div><div class="lci-meta"></div></div><div class="lci-stat"></div>';board.appendChild(el);rows.push({el:el,call:newCall()});}
+  function paint(r){r.el.className='lci-row s'+r.call.stage;r.el.querySelector('.lci-name').textContent=r.call.name;r.el.querySelector('.lci-meta').textContent=r.call.meta;r.el.querySelector('.lci-stat').textContent=stages[r.call.stage];}
+  rows.forEach(function(r,i){r.call.stage=Math.min(i,3);paint(r);});
+  var ansEl=document.getElementById('lciAns'),bkEl=document.getElementById('lciBk'),qEl=document.getElementById('lciQ');
+  var ans=184,bk=47;
+  function tick(r){
+    if(r.call.stage<3){r.call.stage++;paint(r);
+      if(r.call.stage===1){ans++;ansEl.textContent=ans;}
+      setTimeout(function(){tick(r);}, r.call.stage===3?1700:1200+Math.random()*600);
+    } else {bk++;bkEl.textContent=bk;
+      setTimeout(function(){r.call=newCall();r.call.stage=0;paint(r);var q=1+Math.floor(Math.random()*3);qEl.textContent=q;setTimeout(function(){tick(r);},900+Math.random()*700);},1200);
+    }
+  }
+  if(reduce){return;}
+  rows.forEach(function(r,i){setTimeout(function(){tick(r);},400+i*650);});
+})();
+</script>
+<section>
+  <div class="k">The intake line, and your consult desk</div>
+  <h2>Hear it answer — then book the meeting</h2>
+  <div class="two">
+    <div class="card">
+      <div style="font-family:var(--fd);font-size:18px;margin-bottom:2px">24/7 intake, in your client's language</div>
+      <div class="langrow" id="langs">
+        <span class="lg on" data-l="en">English</span><span class="lg" data-l="es">Español</span>
+        <span class="lg" data-l="ht">Kreyòl</span><span class="lg" data-l="pt">Português</span>
+      </div>
+      <div class="greet" id="greet">Thank you for calling Branson Ainsworth. You are not alone in this — I can start your case and book your consultation right now. May I ask what you are dealing with?</div>
+      <button class="speak" id="speak">🔊 Hear the greeting</button>
+      <ul class="chk" style="margin-top:14px">
+        <li><b>Never a missed client</b> — overflow, after‑hours, holidays.</li>
+        <li><b>Professional &amp; on‑script</b> — your intake questions, every time.</li>
+        <li><b>Booked to your calendar</b>, transcript to your CRM.</li>
+      </ul>
+    </div>
+    <div class="card" id="consult">
+      <div style="font-family:var(--fd);font-size:18px;margin-bottom:6px">Request a consultation</div>
+      <div id="bk">
+        <div class="bstep" data-s="0"><div class="blabel">1 · Pick a day</div><div class="days" id="days"></div></div>
+        <div class="bstep" data-s="1" hidden><div class="blabel">2 · Pick a time</div><div class="slots" id="slots"></div><button class="lnk" data-b="0">← change day</button></div>
+        <div class="bstep" data-s="2" hidden><div class="blabel">3 · Your details</div>
+          <div class="form">
+            <input id="nm" placeholder="Full name">
+            <input id="ph" placeholder="Phone" inputmode="tel">
+            <input id="em" placeholder="Email">
+            <select id="mt"><option value="">Matter type…</option><option>Consumer Bankruptcy (Ch 7)</option><option>Chapter 13</option><option>Business Bankruptcy</option><option>Foreclosure / Mortgage</option><option>Student Loans</option><option>Litigation / MCA Defense</option><option>Other</option></select>
+            <button class="speak" id="confirm" style="width:100%">Confirm my appointment →</button>
+            <div class="formmsg" id="fm"></div>
+          </div>
+          <button class="lnk" data-b="1">← change time</button></div>
+        <div class="bstep" data-s="3" hidden><div class="conf" id="conf"></div></div>
+      </div>
+      <div class="loccard">
+  <div class="locmap" aria-hidden="true"><span class="pin"></span></div>
+  <div class="locbody">
+    <div class="lockick">The office</div>
+    <div class="locname">Branson Ainsworth PLLC</div>
+    <div class="locaddr">1501 E Concord St · Orlando, FL 32803</div>
+    <a class="locbtn" href="https://maps.google.com/maps?q=1501+E+Concord+St+Orlando+FL+32803" target="_blank" rel="noopener">Get directions &rarr;</a>
+  </div>
+</div>
+<style>
+.loccard{display:grid;grid-template-columns:132px 1fr;gap:0;margin-top:14px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:linear-gradient(180deg,var(--panel2),var(--panel));min-height:120px}
+@media(max-width:520px){.loccard{grid-template-columns:96px 1fr}}
+.locmap{position:relative;background:linear-gradient(90deg,rgba(201,162,75,.16) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(0deg,rgba(201,162,75,.16) 1px,transparent 1px) 0 0/22px 22px,radial-gradient(120px 120px at 60% 40%,rgba(142,59,72,.30),transparent 70%),var(--void);border-right:1px solid var(--line)}
+.locmap:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 46%,rgba(227,197,121,.35) 47%,rgba(227,197,121,.35) 49%,transparent 50%)}
+.pin{position:absolute;top:50%;left:60%;width:16px;height:16px;transform:translate(-50%,-70%);background:var(--gold2);border-radius:50% 50% 50% 0;rotate:-45deg;box-shadow:0 0 0 4px rgba(201,162,75,.22),0 6px 14px rgba(0,0,0,.5)}
+.pin:after{content:"";position:absolute;top:4px;left:4px;width:8px;height:8px;background:var(--void);border-radius:50%}
+.locbody{padding:16px 18px;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.lockick{font-family:var(--fm);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.locname{font-family:var(--fd);font-weight:700;font-size:18px;color:var(--cream)}
+.locaddr{color:var(--muted);font-size:13.5px}
+.locbtn{margin-top:8px;align-self:flex-start;font-family:var(--fb);font-weight:700;font-size:13px;color:var(--void);background:linear-gradient(100deg,var(--gold),var(--gold2));border-radius:999px;padding:8px 16px;text-decoration:none}
+</style>
+    </div>
+  </div>
+</section>
+
+<!-- ADMIN CASE DASHBOARD -->
+<style>
+.dash{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line2);border-radius:18px;padding:20px;margin-top:20px}
+.dhead{display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:14px}
+.dhead .cn{font-family:var(--fm);font-size:11px;color:var(--gold)}
+.dhead .nm{font-family:var(--fd);font-size:19px;color:var(--cream)}
+.dhead .mt{font-size:12.5px;color:var(--muted)}
+.dhead .pill{margin-left:auto;font-family:var(--fm);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--void);background:var(--gold);border-radius:999px;padding:5px 11px}
+.dgrid{display:grid;gap:16px}@media(min-width:820px){.dgrid{grid-template-columns:1.4fr 1fr}}
+.dcol h5{font-family:var(--fm);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+.doc{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.doc .dn{flex:1;color:var(--cream)}
+.doc .sp{font-family:var(--fm);font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.sp.signed{color:#7BE3A6;border:1px solid rgba(123,227,166,.4)}
+.sp.up{color:var(--gold2);border:1px solid rgba(227,197,121,.4)}
+.sp.shared{color:#7Fc4ff;border:1px solid rgba(127,196,255,.4)}
+.sp.pend{color:var(--faint);border:1px solid var(--line2)}
+.db{cursor:pointer;font-family:var(--fb);font-size:11px;font-weight:700;color:var(--cream);background:var(--void);border:1px solid var(--line2);border-radius:8px;padding:6px 9px}
+.db:hover{border-color:var(--gold)}
+.cpanel{background:var(--void);border:1px solid var(--line);border-radius:12px;padding:14px}
+.crow{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);padding:5px 0}
+.crow b{color:var(--cream)} .ok{color:#7BE3A6}
+.log{margin-top:12px;background:#080c12;border:1px solid var(--line);border-radius:10px;padding:10px;font-family:var(--fm);font-size:10.5px;color:var(--muted);max-height:150px;overflow:auto}
+.log div{padding:2px 0;border-bottom:1px solid rgba(255,255,255,.03)}
+.heritage{font-family:var(--fm);font-size:10.5px;color:var(--faint);margin-top:14px;text-align:center}
+</style>
+<section id="admin">
+  <div class="k">Inside the firm · case-management dashboard</div>
+  <h2>Every client tracked — intake to discharge</h2>
+  <p class="lead">The same BOSS case-management engine we perfected in <b>Rescore Law</b> and <b>5th Capital</b> — now behind Branson Ainsworth, with the lawyer-specific opt-in and marketing limits built in. Live sample case below.</p>
+  <div class="dash">
+    <div class="dhead">
+      <div><div class="cn">CASE #BA-2026-001</div><div class="nm">David Drew Allen</div><div class="mt">Chapter 7 Consumer Bankruptcy · opened Aug 25, 2026</div></div>
+      <span class="pill" id="cstatus">Documents in progress</span>
+    </div>
+    <div class="dgrid">
+      <div class="dcol">
+        <h5>Document tracker</h5>
+        <div id="docs"></div>
+      </div>
+      <div class="dcol">
+        <h5>Compliance &amp; consent</h5>
+        <div class="cpanel">
+          <div class="crow"><span class="ok">✓</span> <b>SMS opt-in</b> — TCPA prior express written consent captured <span style="color:var(--faint)">(SMS TMCP)</span></div>
+          <div class="crow"><span class="ok">✓</span> <b>Email opt-in</b> — captured at intake</div>
+          <div class="crow"><span class="ok">✓</span> <b>Attorney-advertising rules</b> — FL Bar Ch. 4-7 honored: client-initiated only, no unsolicited outreach</div>
+          <div class="crow"><span class="ok">✓</span> <b>Debt-relief disclosures</b> — §527 / §528 delivered &amp; acknowledged</div>
+          <div class="log" id="log"></div>
+        </div>
+      </div>
+    </div>
+    <div class="heritage">BOSS case-management engine · lineage: Rescore Law → 5th Capital (Steven Allen) → SMS TMCP compliance · powered by Telvergence</div>
+  </div>
+</section>
+
+<!-- GAP -->
+<style>.cmp2{display:grid;gap:16px;margin-top:20px}@media(min-width:820px){.cmp2{grid-template-columns:1fr 1fr}}
+.cc2{border:1px solid var(--line);border-radius:16px;padding:20px;background:var(--panel)}
+.cc2.now{opacity:.9} .cc2.new{border-color:var(--gold);background:linear-gradient(180deg,rgba(201,162,75,.10),var(--panel))}
+.cc2 h4{font-family:var(--fd);font-size:15px;margin-bottom:10px} .cc2.now h4{color:var(--faint)} .cc2.new h4{color:var(--gold2)}
+.cc2 ul{list-style:none} .cc2 li{position:relative;padding:6px 0 6px 24px;font-size:13.5px;color:var(--muted)}
+.cc2.now li:before{content:"✕";position:absolute;left:0;color:var(--burg)} .cc2.new li:before{content:"✓";position:absolute;left:0;color:var(--gold)}
+.cc2.new li b{color:var(--cream)}</style>
+<section>
+  <div class="k">Your current site vs. this version</div>
+  <h2>Same firm. A different era.</h2>
+  <p class="lead">bransonlaw.com today is a fine, traditional brochure — it tells your story. This version <b>captures the client while they are still on the phone.</b></p>
+  <div class="cmp2">
+    <div class="cc2 now"><h4>A traditional brochure site</h4><ul>
+      <li>A phone number that goes to voicemail after hours</li>
+      <li>A contact form most people never fill out</li>
+      <li>English only — misses much of Central Florida</li>
+      <li>No way to book a consult without a callback</li>
+      <li>No call tracking, no intake capture, no follow-up</li>
+      <li>The scared 11 p.m. caller dials the next firm</li>
+    </ul></div>
+    <div class="cc2 new"><h4>Branson Ainsworth, on Telvergence</h4><ul>
+      <li><b>24/7 live AI intake</b> — every call answered in one ring</li>
+      <li><b>25 languages</b>, switching mid-call</li>
+      <li><b>Self-service booking</b> — client picks the slot themselves</li>
+      <li><b>A branded vanity number</b> they remember at 2 a.m.</li>
+      <li><b>Every call tracked</b>, transcribed, and logged to your CRM</li>
+      <li><b>Conflict-check flag</b> before you take the meeting</li>
+    </ul></div>
+  </div>
+</section>
+
+<div class="close">
+  <div class="k">Branson Ainsworth PLLC · 1501 E Concord St, Orlando</div>
+  <h2>The firm that answers is the one they trust.</h2>
+  <p class="lead" style="margin:10px auto 0">Let's put this intake engine on your line — and turn every call into a case.</p>
+  <div class="cta"><a class="btn g" href="tel:+14074769855">Call to get started</a></div>
+</div>
+
+</div>
+
+<footer>
+  <div class="disc">
+  <b>Concept proposal prepared by Telvergence, Inc. for Branson Ainsworth PLLC</b> — a demonstration of a 24/7 client-intake platform, not the firm's official website. Firm details (practice areas, attorneys, address, phone) are drawn from public sources for accuracy; the vanity numbers are illustrative examples. The self-booking form is a non-functional demo.<br><br>
+  <b>We are a debt relief agency. We help people file for bankruptcy relief under the Bankruptcy Code.</b> (Federal disclosure, 11 U.S.C. §528.)<br><br>
+  Attorney advertising. Informational only; not legal advice, a solicitation, or a guarantee of any result. No attorney-client relationship is formed by viewing this page. Prior results do not guarantee a similar outcome.
+  </div>
+</footer>
+
+<script>
+(function(){
+  var g={en:"Thank you for calling Branson Ainsworth. You are not alone in this. I can start your case and book your consultation right now. May I ask what you are dealing with?",
+   es:"Gracias por llamar a Branson Ainsworth. No está solo en esto. Puedo iniciar su caso y agendar su consulta ahora mismo. ¿Puede decirme qué situación enfrenta?",
+   ht:"Mèsi paske ou rele Branson Ainsworth. Ou pa poukont ou. Mwen ka kòmanse ka ou a epi pran yon randevou kounye a. Èske ou ka di m ki pwoblèm w ap fè fas?",
+   pt:"Obrigado por ligar para a Branson Ainsworth. Você não está sozinho nisso. Posso iniciar o seu caso e agendar a sua consulta agora. Pode me dizer qual é a situação?"};
+  var lm={en:'en-US',es:'es-US',ht:'fr-FR',pt:'pt-BR'}, cur='en';
+  document.querySelectorAll('#langs .lg').forEach(function(l){l.onclick=function(){
+    document.querySelectorAll('#langs .lg').forEach(function(x){x.classList.remove('on')});l.classList.add('on');
+    cur=l.dataset.l; document.getElementById('greet').textContent=g[cur];};});
+  document.getElementById('speak').onclick=function(){
+    if(!('speechSynthesis'in window))return; speechSynthesis.cancel();
+    var u=new SpeechSynthesisUtterance(g[cur]); u.lang=lm[cur]||'en-US'; u.rate=0.97;
+    var vs=speechSynthesis.getVoices(),v=vs.find(function(x){return x.lang&&x.lang.toLowerCase().indexOf(lm[cur].slice(0,2))===0}); if(v)u.voice=v;
+    speechSynthesis.speak(u);};
+  if('speechSynthesis'in window)speechSynthesis.getVoices();
+  var days=document.getElementById('days'), slots=document.getElementById('slots');
+  var pick={time:null,dayLabel:'',dobj:null};
+  var steps=[].slice.call(document.querySelectorAll('#bk .bstep'));
+  function show(n){steps.forEach(function(s){s.hidden=(+s.dataset.s!==n)})}
+  var d=new Date(), made=0;
+  while(made<8){ d.setDate(d.getDate()+1); var wd=d.getDay(); if(wd===0||wd===6) continue;
+    (function(dd){ var el=document.createElement('div'); el.className='bchip';
+      el.innerHTML=dd.toLocaleDateString(undefined,{weekday:'short'})+'<small>'+dd.toLocaleDateString(undefined,{month:'short',day:'numeric'})+'</small>';
+      el.onclick=function(){document.querySelectorAll('#days .bchip').forEach(function(x){x.classList.remove('sel')});el.classList.add('sel');pick.dobj=dd;pick.dayLabel=dd.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'});buildSlots(dd);show(1)};
+      days.appendChild(el);
+    })(new Date(d)); made++;
+  }
+  var SLOTS=['9:00 AM','10:00 AM','11:00 AM','1:00 PM','2:00 PM','3:00 PM','4:00 PM'];
+  function buildSlots(dd){ slots.innerHTML='';
+    SLOTS.forEach(function(t,i){ var taken=((dd.getDate()+i)%5===0); var el=document.createElement('div'); el.className='bchip'+(taken?' taken':''); el.textContent=t;
+      if(!taken)el.onclick=function(){document.querySelectorAll('#slots .bchip').forEach(function(x){x.classList.remove('sel')});el.classList.add('sel');pick.time=t;show(2)};
+      slots.appendChild(el);
+    });
+  }
+  document.querySelectorAll('#bk [data-b]').forEach(function(b){b.onclick=function(){show(+b.dataset.b)}});
+  document.getElementById('confirm').onclick=function(){
+    var nm=document.getElementById('nm').value.trim(), ph=document.getElementById('ph').value.trim(), em=document.getElementById('em').value.trim(), mt=document.getElementById('mt').value;
+    if(!nm||!ph){document.getElementById('fm').textContent='Please add your name and phone to confirm.';return;}
+    var s=new Date(pick.dobj), hm=pick.time.match(/(\d+):(\d+)\s*(AM|PM)/), h=(+hm[1]%12)+(hm[3]==='PM'?12:0);
+    s.setHours(h,+hm[2],0,0); var e=new Date(s); e.setHours(s.getHours()+1);
+    function z(n){return(n<10?'0':'')+n} function f(x){return ''+x.getFullYear()+z(x.getMonth()+1)+z(x.getDate())+'T'+z(x.getHours())+z(x.getMinutes())+'00'}
+    var gcal='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Consultation - Branson Ainsworth PLLC')+'&dates='+f(s)+'/'+f(e)+'&details='+encodeURIComponent('Consultation for '+nm+' ('+(mt||'general matter')+'). Phone: '+ph)+'&location='+encodeURIComponent('Orlando, FL');
+    var mail='mailto:intake@bransonlaw.com?subject='+encodeURIComponent('Consultation request - '+nm)+'&body='+encodeURIComponent('Name: '+nm+'\nPhone: '+ph+'\nEmail: '+em+'\nMatter: '+(mt||'')+'\nRequested: '+pick.dayLabel+' at '+pick.time);
+    try{localStorage.setItem('branson-appt',JSON.stringify({nm:nm,day:pick.dayLabel,time:pick.time}))}catch(err){}
+    document.getElementById('conf').innerHTML='<div style="font-size:34px">&#10003;</div><div class="big">Appointment booked</div><div style="color:var(--muted);font-size:14px">'+nm+' &middot; '+pick.dayLabel+' at '+pick.time+'</div><a class="b gc" href="'+gcal+'" target="_blank" rel="noopener">Add to Google Calendar</a><a class="b ml" href="'+mail+'">Email the firm to confirm</a><a class="b ml" href="tel:+14074769855">Call the firm</a><div style="color:var(--faint);font-size:11px;margin-top:8px">Demo booking. On the live site this drops into the firm calendar and sends confirmation by text and email.</div>';
+    show(3);
+  };
+  show(0);
+
+  // ---- Case dashboard ----
+  var DOCS=[
+    {n:'Retainer &amp; Engagement Agreement',s:'signed'},
+    {n:'Debt Relief Agency Disclosure (§527/528)',s:'signed'},
+    {n:'Financial Disclosure / Means Test',s:'up'},
+    {n:'Creditor Matrix',s:'shared'},
+    {n:'Pay stubs — last 60 days',s:'up'},
+    {n:'Tax returns — 2 years',s:'pend'},
+    {n:'Photo ID &amp; SSN card',s:'pend'},
+    {n:'§521 Document Checklist',s:'up'}
+  ];
+  var LB={signed:'Signed',up:'Uploaded',shared:'Shared w/ client',pend:'Pending'};
+  var docsEl=document.getElementById('docs'), logEl=document.getElementById('log');
+  function stamp(){var d=new Date();function z(n){return(n<10?'0':'')+n}return z(d.getHours())+':'+z(d.getMinutes())+':'+z(d.getSeconds())}
+  function log(m){if(!logEl)return;var e=document.createElement('div');e.textContent='['+stamp()+'] '+m;logEl.insertBefore(e,logEl.firstChild)}
+  function render(){ if(!docsEl)return; docsEl.innerHTML='';
+    DOCS.forEach(function(dc,i){ var row=document.createElement('div'); row.className='doc';
+      var btn = dc.s==='pend' ? '<button class="db" data-a="up" data-i="'+i+'">Upload</button>'
+              : dc.s==='up'  ? '<button class="db" data-a="share" data-i="'+i+'">Share</button>'
+              : dc.s==='shared' ? '<button class="db" data-a="sign" data-i="'+i+'">Mark signed</button>' : '';
+      row.innerHTML='<span class="dn">'+dc.n+'</span><span class="sp '+dc.s+'">'+LB[dc.s]+'</span>'+btn;
+      docsEl.appendChild(row);
+    });
+    docsEl.querySelectorAll('.db').forEach(function(b){b.onclick=function(){
+      var i=+b.dataset.i,a=b.dataset.a;
+      if(a==='up'){DOCS[i].s='up';log('Uploaded: '+DOCS[i].n.replace(/&amp;/g,'&'))}
+      else if(a==='share'){DOCS[i].s='shared';log('Shared with client: '+DOCS[i].n.replace(/&amp;/g,'&'))}
+      else if(a==='sign'){DOCS[i].s='signed';log('E-signed: '+DOCS[i].n.replace(/&amp;/g,'&'))}
+      try{localStorage.setItem('ba-case-001',JSON.stringify(DOCS.map(function(d){return d.s})))}catch(e){}
+      render(); updateStatus();
+    }});
+  }
+  function updateStatus(){var cs=document.getElementById('cstatus');if(!cs)return;
+    var pend=DOCS.filter(function(d){return d.s==='pend'}).length;
+    cs.textContent = pend===0 ? 'Ready to file' : (pend+' document'+(pend>1?'s':'')+' pending');
+  }
+  try{var saved=JSON.parse(localStorage.getItem('ba-case-001'));if(saved&&saved.length===DOCS.length)DOCS.forEach(function(d,i){d.s=saved[i]})}catch(e){}
+  render(); updateStatus();
+  log('Case opened · consent captured (SMS TMCP) · disclosures delivered');
+
+})();
+</script>
+</body>
+</html>
