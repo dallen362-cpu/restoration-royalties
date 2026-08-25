@@ -226,3 +226,21 @@ A new client is a SWAP of the three C's — minutes, not weeks:
   booking calendar, CRM hookup, SMS consent capture.
 SALES MOTION: show the shelf model live → provoke the reaction → onboard in the app → provision + registry-embed
 → activated Smart-DID sends the welcome text. That is the gigapress AI Mashup Telvergence system.
+
+## VOICE CAPABILITY STANDARD — MAXIMUM-TIER PARITY (claims doctrine)
+Every capability claim about the Telvergence voice agent quotes what the frontier speech-to-speech
+stack delivers AT ITS MAXIMUM SUBSCRIPTION TIER — presented as native Telvergence capability, and the
+underlying provider is NEVER named on any page, packet, or email (provider-agnostic rule is absolute).
+The canonical claim set (each item traceable to the provider's primary documentation — re-verify against
+the provider docs whenever the frontier moves, and update every surface together):
+1. **True speech-to-speech** — no transcribe-then-reply pipeline; sub-second turn-taking.
+2. **Natural interruption** — speak over it and it stops, listens, and adjusts (live barge-in).
+3. **25 languages** — understands 25 languages; answers in the caller's own.
+4. **Expressive delivery** — laughter, whispers, pauses on cue; tone that matches the moment.
+5. **Brand-cloned voice** — a custom voice cloned for the brand from a short reference recording.
+6. **Telephony-native** — carrier-grade codecs (μ-law-class); built for real phone lines, not just web widgets.
+7. **Acts while it talks** — mid-call tool execution: lookups, availability, booking before the hangup.
+8. **Word-perfect records** — word-level timestamps, speaker-separated transcripts, filed to the CRM.
+RULES: quote the capability, never the provider · never claim past the max tier's documented feature set ·
+no invented figures (latency/language counts come from provider docs, nothing else) · when the provider's
+max tier gains a capability, all brand pages inherit the upgraded claim set in the next press run.
