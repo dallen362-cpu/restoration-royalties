@@ -266,3 +266,13 @@ on annual (annual = pay 10 months, get 12). Legacy-system white-glove migration 
 RULES: every brand page shows the same ladder · the concierge KB answers pricing out loud with the
 same numbers · price changes update page + KB + packet together · discounts are structural (annual,
 founding-client) never ad-hoc · the entry tier must always equal a price a real client actually pays.
+
+## GLOBAL + OWN-NUMBER ADDENDA (to the Voice Capability Standard)
+9. **Your number, not theirs** — the voice engine answers on the business's OWN Smart-DIDs
+   (bring-your-own-number telephony). The number stays the client's digital asset; the intelligence
+   rides on it. Never pitch a vendor-rented line.
+10. **Global dial tone** — wholesale carrier-grade agreements stand up instant local numbers in
+   markets ACROSS THE GLOBE (in-country presence in minutes). Paired with 25-languages-on-the-fly,
+   one platform serves any market: "every numbering plan on Earth has its 305."
+HONESTY: say "markets across the globe / worldwide" — never the absolute "every country" (some
+countries restrict DID issuance; the softened phrasing is unfalsifiable and loses no thunder).
