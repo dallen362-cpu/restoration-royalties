@@ -244,3 +244,25 @@ the provider docs whenever the frontier moves, and update every surface together
 RULES: quote the capability, never the provider · never claim past the max tier's documented feature set ·
 no invented figures (latency/language counts come from provider docs, nothing else) · when the provider's
 max tier gains a capability, all brand pages inherit the upgraded claim set in the next press run.
+
+## PRICING DOCTRINE — UCaaS, PER ANSWERED LINE (never per seat)
+Value metric: the answered line, priced PER BRAND — never per seat (per-seat is the legacy-UCaaS
+frame; our AI front office replaces the seats). All plans month-to-month, 30-day guarantee. The entry
+tier equals the price the live network actually pays ($229.50) — the ladder is PROVABLE, not aspirational.
+THE LADDER (good-better-best + custom, "Most Popular" on the tier we want sold):
+- **Smart Line — $229.50/mo per brand**: 1 rate-center Smart-DID (vanity search incl.) · 24/7
+  speech-to-speech answering (caller's language) · booking + SMS confirms + welcome text · CNAM +
+  411/e-411 registries · speaker-separated transcripts + live dashboard · E911 + STIR/SHAKEN.
+- **Front Office — $499/mo per brand** (MOST POPULAR): + up to 3 Smart-DIDs · brand-cloned voice ·
+  mid-call actions (booked before hangup) · CRM backfill · follow-up sequences + attribution ·
+  app onboarding + admin command dashboard.
+- **Market Command — $999/mo per market**: + up to 10 Smart-DIDs on AI-scored rate centers · premium
+  vanity acquisition · storm/event dispatch · cross-brand referral routing · quarterly rescore ·
+  priority provisioning.
+- **Network / Empire — from $2,499/mo, custom**: multi-market networks · white-label (client becomes
+  the provider) · private encrypted client lines (legal) · API · dedicated manager.
+FEES: activation $499/brand (number engineering + registry embed + voice clone + onboarding) — WAIVED
+on annual (annual = pay 10 months, get 12). Legacy-system white-glove migration $1,499.
+RULES: every brand page shows the same ladder · the concierge KB answers pricing out loud with the
+same numbers · price changes update page + KB + packet together · discounts are structural (annual,
+founding-client) never ad-hoc · the entry tier must always equal a price a real client actually pays.
