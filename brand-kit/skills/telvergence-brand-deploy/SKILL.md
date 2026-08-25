@@ -314,3 +314,15 @@ play → THE PLANS (UCaaS ladder) → fourth-revolution thesis (scale economics 
 critical mass) → first-adopter CTA → concierge. Every new brand build presses THIS stack with the
 three C's swapped (Content, Collateral, Communications credentials). V3 itself is FROZEN-PERFECT:
 no edits without David's explicit instruction; press runs copy from it, never into it.
+
+## DESIGN COLLECTIONS — TWO LOOKS, ONE ENGINE (V2 productized, declared 8/25)
+The shelf now carries two proven DESIGN EDITIONS; every press run picks one, the engine underneath
+(voice, Command Deck, Smart-DIDs, concierge, plans) never changes:
+- **The Talking Edition (FLAGSHIP)** — the official V3 format: editorial/serif/gold "front page of
+  your industry." For brands selling AUTHORITY (law, adjusting, restoration, legacy trades).
+- **The Signal Edition** — the V2 format (Sora/Hanken, cyan-lime on void, product-app energy),
+  live demo at telvergence.com/v2/. For brands selling MOMENTUM (tech-forward, startups, franchises).
+PRICING RULE (absolute): both editions INCLUDED at every plan tier — the look is never an upcharge,
+because the engine is the product. **Bespoke Edition — one-time $2,499** (from-scratch identity, the
+Branson treatment). Positioning line: "Choose your front page. The engine stays the same."
+The /v2/ page doubles as the Signal Edition's living showroom — preserved AND selling.
