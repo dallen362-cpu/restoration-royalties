@@ -411,6 +411,29 @@ footer{border-top:1px solid var(--line);padding:24px 0 60px;color:var(--faint);f
 
 </div>
 
+
+<!-- BATTLE CRY -->
+<section class="bc-wrap" id="battlecry">
+  <div class="bc-in">
+    <div class="bc-k">The battle cry</div>
+    <h2 class="bc-h">A local call, answered, is the whole game.</h2>
+    <p class="bc-big">&ldquo;A call from a local number in your own rate center gets answered. An out-of-area caller-ID gets ignored.&rdquo;</p>
+    <p class="bc-p">A debtor in crisis at 2 a.m. dials a 407 number and a trusted local voice answers in their language — before fear talks them out of getting help. An out-of-area caller-ID would never get that pickup.</p>
+    <p class="bc-p">That is the Telvergence secret sauce: <b>rate-center call origination and termination</b> inside your own market — every ring local, trusted, and booked, on the Weather Intelligence Network.</p>
+    <div class="bc-card"><b>The private client line — the new gold standard for law.</b> Every client is assigned their own Smart-DID: a dedicated, encrypted direct line that knows their case file and persona, rings straight to their legal team, and is built to carry secure live video for remote hearings, depositions, and attorney conferences. Confidentiality by design, on a number that is theirs alone.</div>
+  </div>
+</section>
+<style>
+.bc-wrap{padding:52px 22px;border-top:1px solid #25303F;background:radial-gradient(700px 360px at 50% 0%,#C9A24B14,transparent 65%)}
+.bc-in{max-width:880px;margin:0 auto;text-align:center}
+.bc-k{font-family:monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#C9A24B;margin-bottom:10px}
+.bc-h{font-size:clamp(26px,4.4vw,40px);line-height:1.1;margin:0 0 14px;color:#F2EDE2}
+.bc-big{font-size:clamp(18px,2.8vw,24px);font-weight:700;color:#C9A24B;max-width:34ch;margin:0 auto 14px;line-height:1.35}
+.bc-p{color:#F2EDE2;opacity:.82;font-size:15px;max-width:64ch;margin:0 auto 10px;line-height:1.6}
+.bc-card{margin:18px auto 0;max-width:60ch;text-align:left;background:#141B27;border:1px solid #C9A24B55;border-radius:14px;padding:16px 18px;color:#F2EDE2;opacity:.95;font-size:14px;line-height:1.6}
+.bc-card b{color:#C9A24B}
+</style>
+
 <footer>
   <div class="disc">
   <b>Concept proposal prepared by Telvergence, Inc. for Branson Ainsworth PLLC</b> — a demonstration of a 24/7 client-intake platform, not the firm's official website. Firm details (practice areas, attorneys, address, phone) are drawn from public sources for accuracy; the vanity numbers are illustrative examples. The self-booking form is a non-functional demo.<br><br>
@@ -511,5 +534,83 @@ footer{border-top:1px solid var(--line);padding:24px 0 60px;color:var(--faint);f
 
 })();
 </script>
+
+<!-- LINE CONCIERGE -->
+<button class="lc-fab" id="lcFab" aria-label="Talk to Branson Ainsworth">🎙</button>
+<div class="lc-panel lc-hide" id="lcPanel" role="dialog" aria-label="Branson Ainsworth voice assistant">
+  <div class="lc-head"><b>Talk to Branson Ainsworth</b><span class="lc-x" id="lcX">✕</span></div>
+  <div class="lc-sub">Live demo assistant — speak or type; it answers out loud from this brand&#39;s knowledge file.</div>
+  <div class="lc-log" id="lcLog"></div>
+  <div class="lc-row">
+    <button class="lc-mic" id="lcMic" title="Hold a conversation by voice">🎤</button>
+    <input class="lc-in" id="lcIn" type="text" placeholder="Ask about services, booking, the local-number edge…">
+    <button class="lc-send" id="lcSend">➤</button>
+    <button class="lc-mute" id="lcMute" title="Toggle voice replies">🔊</button>
+  </div>
+</div>
+<style>
+.lc-fab{position:fixed;right:18px;bottom:18px;z-index:90;width:58px;height:58px;border-radius:50%;border:0;cursor:pointer;font-size:24px;color:#04070F;background:#C9A24B;box-shadow:0 8px 24px rgba(0,0,0,.45);animation:lcPulse 2.4s infinite}
+@keyframes lcPulse{0%,100%{box-shadow:0 8px 24px rgba(0,0,0,.45),0 0 0 0 #C9A24B55}50%{box-shadow:0 8px 24px rgba(0,0,0,.45),0 0 0 14px transparent}}
+@media (prefers-reduced-motion:reduce){.lc-fab{animation:none}}
+.lc-panel{position:fixed;right:18px;bottom:88px;z-index:91;width:min(360px,calc(100vw - 36px));background:#141B27;border:1px solid #C9A24B66;border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.55);display:flex;flex-direction:column;overflow:hidden;font-family:inherit}
+.lc-hide{display:none}
+.lc-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;color:#F2EDE2;border-bottom:1px solid #25303F;font-size:15px}
+.lc-x{cursor:pointer;opacity:.7;padding:2px 6px}
+.lc-sub{padding:8px 14px;color:#F2EDE2;opacity:.55;font-size:11px;border-bottom:1px solid #25303F}
+.lc-log{height:230px;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.lc-m{max-width:88%;padding:8px 11px;border-radius:12px;font-size:13px;line-height:1.45;color:#F2EDE2}
+.lc-m.u{align-self:flex-end;background:#C9A24B22;border:1px solid #C9A24B44}
+.lc-m.b{align-self:flex-start;background:rgba(255,255,255,.05);border:1px solid #25303F}
+.lc-row{display:flex;gap:6px;padding:10px;border-top:1px solid #25303F}
+.lc-in{flex:1;min-width:0;background:rgba(255,255,255,.06);border:1px solid #25303F;border-radius:9px;color:#F2EDE2;padding:9px 10px;font-size:13px}
+.lc-mic,.lc-send,.lc-mute{border:0;border-radius:9px;cursor:pointer;font-size:15px;padding:0 11px;background:#C9A24B;color:#04070F}
+.lc-mic.rec{background:#FF6B6B;color:#fff}
+.lc-mute.off{opacity:.45}
+</style>
+<script>
+(function(){
+  var KB=[[["chapter", "7", "bankruptcy", "fresh", "start"], "Chapter 7 is the fresh start: qualifying debt is wiped so you can get back on your footing. Book a free consultation right on this page and an attorney will review your situation."], [["chapter", "13", "reorganization", "plan", "payment"], "Chapter 13 reorganizes your debt into a plan you can actually live with — it can stop foreclosure and let you catch up on your terms."], [["foreclosure", "house", "home", "save", "sale"], "Foreclosure defense is one of our core practices — filing can stop a sale date and protect your home. The sooner you call, the more options you have."], [["student", "loan", "loans"], "We work on student-loan repayment options and relief strategies that fit real life."], [["book", "appointment", "consultation", "schedule", "meet"], "Scroll to the booking section on this page — pick a day, pick a time, and your consultation is set. You will get a calendar confirmation."], [["phone", "number", "call", "reach"], "You can reach the firm at (407) 476-9855 — a local Orlando number, answered around the clock."], [["language", "spanish", "espanol", "kreyol", "creole", "portuguese"], "Intake answers in English, Espanol, Kreyol, and Portugues — whichever the caller speaks."], [["private", "line", "encrypted", "secure", "video", "hearing", "deposition", "smart", "did"], "Every client is assigned a private Smart-DID: a dedicated encrypted line that knows your case file, rings straight to your legal team, and is built for secure live video — remote hearings, depositions, and conferences. It is your number, and yours alone."], [["rate", "center", "local", "secret", "sauce", "why", "pickup"], "The whole game in one sentence: a call from a local number in your own rate center gets answered — an out-of-area caller-ID gets ignored. Local origination and termination is the Telvergence secret sauce."], [["cost", "fee", "price", "how", "much"], "Fees depend on your situation — the consultation covers it plainly, with no surprises. Booking one costs nothing."]];
+  var GREET="Thank you for calling Branson Ainsworth. I can tell you about our services, booking a consultation, or how the private client line works. How can I help?";
+  var fab=document.getElementById('lcFab'),panel=document.getElementById('lcPanel'),log=document.getElementById('lcLog'),
+      inp=document.getElementById('lcIn'),send=document.getElementById('lcSend'),mic=document.getElementById('lcMic'),
+      mute=document.getElementById('lcMute'),x=document.getElementById('lcX');
+  var speakOn=true,greeted=false,bestVoice=null;
+  function pickVoice(){
+    var vs=speechSynthesis.getVoices()||[];var best=null,bs=-1;
+    vs.forEach(function(v){var s=0,n=v.name||'';
+      if(/Google US English/i.test(n))s+=8; if(/natural|neural/i.test(n))s+=7; if(/enhanced|premium/i.test(n))s+=6;
+      if(/Samantha|Aria|Jenny|Ava|Allison/i.test(n))s+=5; if(/^en(-|_)US/i.test(v.lang))s+=3; else if(/^en/i.test(v.lang))s+=1;
+      if(s>bs){bs=s;best=v}});
+    bestVoice=best;
+  }
+  if('speechSynthesis' in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}
+  function say(t){
+    if(!speakOn||!('speechSynthesis' in window))return;
+    try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);
+    if(bestVoice)u.voice=bestVoice;u.rate=1.02;u.pitch=1.0;speechSynthesis.speak(u);}catch(e){}
+  }
+  function add(t,who){var d=document.createElement('div');d.className='lc-m '+who;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function answer(q){
+    var ql=q.toLowerCase(),best=null,bs=0;
+    KB.forEach(function(e){var s=0;e[0].forEach(function(k){if(ql.indexOf(k)>-1)s++});if(s>bs){bs=s;best=e}});
+    var a=best?best[1]:('Great question — the fastest answer is a live one. Call (407) 476-9855 and a local voice picks up, or use the booking on this page. You can also ask me about services, pricing, or why a local number changes everything.');
+    add(a,'b');say(a);
+  }
+  function submit(){var q=(inp.value||'').trim();if(!q)return;add(q,'u');inp.value='';setTimeout(function(){answer(q)},250);}
+  fab.onclick=function(){panel.classList.toggle('lc-hide');
+    if(!greeted&&!panel.classList.contains('lc-hide')){greeted=true;add(GREET,'b');say(GREET);}};
+  x.onclick=function(){panel.classList.add('lc-hide');try{speechSynthesis.cancel()}catch(e){}};
+  send.onclick=submit; inp.addEventListener('keydown',function(e){if(e.key==='Enter')submit()});
+  mute.onclick=function(){speakOn=!speakOn;mute.classList.toggle('off',!speakOn);if(!speakOn)try{speechSynthesis.cancel()}catch(e){}};
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(SR){var rec=new SR();rec.lang='en-US';rec.interimResults=false;rec.maxAlternatives=1;var recOn=false;
+    rec.onresult=function(ev){var t=ev.results[0][0].transcript;inp.value=t;submit();};
+    rec.onend=function(){recOn=false;mic.classList.remove('rec')};
+    rec.onerror=function(){recOn=false;mic.classList.remove('rec')};
+    mic.onclick=function(){if(recOn){rec.stop();return}try{speechSynthesis.cancel()}catch(e){}recOn=true;mic.classList.add('rec');try{rec.start()}catch(e){recOn=false;mic.classList.remove('rec')}};
+  }else{mic.onclick=function(){add('Voice input is not supported in this browser — type your question and I will still answer out loud.','b');};}
+})();
+</script>
+
 </body>
 </html>
