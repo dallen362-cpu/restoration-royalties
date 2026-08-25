@@ -303,3 +303,14 @@ countries restrict DID issuance; the softened phrasing is unfalsifiable and lose
    data + referrals tip into self-sustaining growth, the first operator there owns the market — this
    is the quantitative form of the first-adopter race. Wording discipline: the network's own call
    data only — never claim third-party data purchases or surveillance; "telemetry the network owns."
+
+## 🏛 THE OFFICIAL FORMAT — V3 "THE TALKING EDITION" (declared by David 8/25/2026: "the final version and the official version hands down")
+V3 (restorationroyalties.com/telvergence/v3/, Branson-format Fraunces/gold) is THE official Telvergence
+format and the gigapress master template for every future press run. Its canonical section stack:
+ticker → talking hero (Play the briefing + Ask it anything) → onboarding app demo → battle cry →
+live network → territory drilldown → COMMAND DECK (KPIs + real-time ROI to the penny + live intake
+feed + line status) → worked example → THE SCIENCE → voice engine (max-tier capabilities) → global
+play → THE PLANS (UCaaS ladder) → fourth-revolution thesis (scale economics + Big Data/IoT +
+critical mass) → first-adopter CTA → concierge. Every new brand build presses THIS stack with the
+three C's swapped (Content, Collateral, Communications credentials). V3 itself is FROZEN-PERFECT:
+no edits without David's explicit instruction; press runs copy from it, never into it.
