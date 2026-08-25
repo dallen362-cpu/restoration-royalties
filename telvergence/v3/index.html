@@ -91,6 +91,42 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
 .lc-mic,.lc-send,.lc-mute{border:0;border-radius:9px;cursor:pointer;font-size:15px;padding:0 11px;background:linear-gradient(120deg,var(--cyan),var(--lime));color:#0B0F16}
 .lc-mic.rec{background:#FF5A5A;color:#fff}
 .lc-mute.off{opacity:.45}
+/* command deck */
+.cd-app{max-width:880px;margin:26px auto 0;background:#10151d;border:1px solid rgba(201,162,75,.45);border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.5);text-align:left}
+.cd-bar{display:flex;align-items:center;gap:7px;padding:11px 15px;border-bottom:1px solid #25303F;color:#A9B2C0;font-size:12px}
+.cd-bar b{color:var(--ink);margin-left:6px;font-size:12.5px}
+.cd-live{margin-left:auto;font-family:var(--fm);font-size:10px;letter-spacing:.12em;color:var(--lime)}
+.cd-live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--lime);margin-right:6px;animation:cdB 1.6s infinite}
+@keyframes cdB{0%,100%{opacity:1}50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.cd-live::before{animation:none}}
+.cd-kpis{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #25303F}
+@media(min-width:680px){.cd-kpis{grid-template-columns:repeat(6,1fr)}}
+.cd-k{padding:13px 10px;text-align:center;border-right:1px solid rgba(37,48,63,.6)}
+.cd-k:last-child{border-right:0}
+.cd-k .v{font-family:var(--fd);font-weight:800;font-size:19px;color:var(--ink);font-variant-numeric:tabular-nums}
+.cd-k .l{font-family:var(--fm);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#6E7A8B;margin-top:3px}
+.cd-roi{display:grid;gap:10px;grid-template-columns:1fr;padding:15px;border-bottom:1px solid #25303F;background:rgba(201,162,75,.05)}
+@media(min-width:680px){.cd-roi{grid-template-columns:1.2fr 1.2fr 1fr}}
+.cd-r .rv{font-family:var(--fd);font-weight:800;font-size:clamp(20px,3vw,26px);color:var(--lime);font-variant-numeric:tabular-nums}
+.cd-r .rv.cost{color:var(--cyan)}
+.cd-r .rl{font-family:var(--fm);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#A9B2C0;margin-top:3px}
+.cd-cols{display:grid;grid-template-columns:1fr}
+@media(min-width:680px){.cd-cols{grid-template-columns:1.35fr 1fr}}
+.cd-feed{padding:10px 15px;border-right:1px solid rgba(37,48,63,.6);min-height:172px}
+.cd-h{font-family:var(--fm);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:#6E7A8B;padding:4px 0 7px}
+.cd-row{display:flex;gap:9px;align-items:center;font-size:12px;color:var(--muted);padding:5px 0;border-top:1px solid rgba(37,48,63,.5);font-variant-numeric:tabular-nums}
+.cd-row .t{font-family:var(--fm);font-size:10.5px;color:#6E7A8B;flex:none}
+.cd-row .n{color:var(--ink);flex:none}
+.cd-row .g{margin-left:auto;flex:none;font-family:var(--fm);font-size:9.5px;letter-spacing:.08em;padding:2px 7px;border-radius:20px}
+.cd-row .g.bk{color:#0B0F16;background:var(--lime)}
+.cd-row .g.ql{color:var(--cyan);border:1px solid var(--cyan)}
+.cd-row .g.fu{color:#A9B2C0;border:1px solid #25303F}
+.cd-lines{padding:10px 15px}
+.cd-ln{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);padding:6px 0;border-top:1px solid rgba(37,48,63,.5)}
+.cd-ln b{color:var(--ink);font-weight:600}
+.cd-ln .d{width:7px;height:7px;border-radius:50%;background:var(--lime);flex:none;animation:cdB 1.6s infinite}
+.cd-ln .num{margin-left:auto;font-family:var(--fm);font-size:11px;color:var(--cyan)}
+.cd-note{padding:10px 15px;border-top:1px solid #25303F;font-size:11px;color:#6E7A8B}
 </style></head><body>
 
 <div class="ticker"><span>⚡ BULLETIN — TELVERGENCE V3, THE TALKING EDITION · This page speaks its own briefing and answers your questions out loud · A running network you can tap · Businesses onboarded in minutes, answering themselves in one ring · Tap ▶ to hear it, tap 🎙 to talk to it ⚡</span></div>
@@ -213,6 +249,71 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
     chips.appendChild(b);
   });
   render(MK[0]);
+})();
+</script>
+
+<section class="wrap" id="command">
+  <div class="k">The Command Deck · Key Operating Indicators</div>
+  <h2 data-say="The command deck. Every key operating indicator of the business, living and breathing on one screen — calls answered, jobs booked, answer speed, lines live — and the number that matters most: return on investment, computed in real time, to the penny. Revenue driven against platform cost, ticking by the second, because a digital asset that answers its own phone appreciates by the second. Your whole company. Live. In the palm of your hand.">Your whole company. Live.<br>In the palm of your hand.</h2>
+  <p class="sub" style="margin-top:10px;">This is the admin&rsquo;s view — the operating system behind every brand on the network. Watch the ROI meter: <strong style="color:var(--ink)">revenue vs. cost, to the penny, ticking by the second.</strong></p>
+  <div class="cd-app" id="cdApp">
+    <div class="cd-bar"><span class="ob-dot"></span><span class="ob-dot"></span><span class="ob-dot"></span><b>TELVERGENCE COMMAND DECK — ADMIN</b><span class="cd-live" id="cdClock">LIVE</span></div>
+    <div class="cd-kpis">
+      <div class="cd-k"><div class="v" id="cdCalls">—</div><div class="l">Calls answered today</div></div>
+      <div class="cd-k"><div class="v">1 ring</div><div class="l">Avg. answer</div></div>
+      <div class="cd-k"><div class="v" id="cdJobs">—</div><div class="l">Jobs booked today</div></div>
+      <div class="cd-k"><div class="v">6</div><div class="l">Lines live</div></div>
+      <div class="cd-k"><div class="v">25</div><div class="l">Languages</div></div>
+      <div class="cd-k"><div class="v">24/7</div><div class="l">Uptime posture</div></div>
+    </div>
+    <div class="cd-roi">
+      <div class="cd-r"><div class="rv" id="cdRev">$0.00</div><div class="rl">Revenue driven · month to date</div></div>
+      <div class="cd-r"><div class="rv cost" id="cdCost">$0.0000</div><div class="rl">Platform cost · month to date</div></div>
+      <div class="cd-r"><div class="rv" id="cdRoi">115×</div><div class="rl">Return on investment · live</div></div>
+    </div>
+    <div class="cd-cols">
+      <div class="cd-feed"><div class="cd-h">Live intake feed</div><div id="cdFeed"></div></div>
+      <div class="cd-lines"><div class="cd-h">Line status</div>
+        <div class="cd-ln"><span class="d"></span><b>Restoration Royalties</b><span class="num">786-807-MOLD</span></div>
+        <div class="cd-ln"><span class="d"></span><b>FAST Adjusting</b><span class="num">855-2-ADJUST</span></div>
+        <div class="cd-ln"><span class="d"></span><b>Coastal Crown</b><span class="num">786-938-MOLD</span></div>
+        <div class="cd-ln"><span class="d"></span><b>YES Electrical</b><span class="num">786-340-57XX</span></div>
+        <div class="cd-ln"><span class="d"></span><b>Branson Ainsworth</b><span class="num">Private line</span></div>
+        <div class="cd-ln"><span class="d"></span><b>645 overlay reserve</b><span class="num">645-251-78XX</span></div>
+      </div>
+    </div>
+    <div class="cd-note">Live demo interface — activity and ROI are an illustrative planning model (22 jobs/mo × $1,200 avg ticket vs. the $229.50/mo Smart Line plan), computed in real time to the penny. The lines are real — tap any of them in the network section above.</div>
+  </div>
+</section>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  if(!$('cdApp'))return;
+  var REV_S=26400/(30*86400), COST_S=229.50/(30*86400);
+  function mtd(){var n=new Date();return (n-new Date(n.getFullYear(),n.getMonth(),1))/1000}
+  function fmt(x,d){return '$'+x.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d})}
+  function tick(){var s=mtd();
+    $('cdRev').textContent=fmt(REV_S*s,2);
+    $('cdCost').textContent=fmt(COST_S*s,4);
+    $('cdRoi').textContent=Math.round(REV_S/COST_S)+'×';
+    var n=new Date(),day=(n-new Date(n.getFullYear(),n.getMonth(),n.getDate()))/1000;
+    var calls=Math.floor(day/86400*74)+Math.floor(day/97)%3;
+    $('cdCalls').textContent=calls;
+    $('cdJobs').textContent=Math.floor(calls*0.35);
+    $('cdClock').textContent='LIVE · '+n.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+  }
+  tick();setInterval(tick,250);
+  var LINES=['786-807-MOLD','855-2-ADJUST','786-938-MOLD','786-340-57XX','645-251-78XX'];
+  var LANG=['EN','ES','HT','PT','EN','ES'];
+  var OUT=[['BOOKED','bk'],['QUALIFIED','ql'],['BOOKED','bk'],['FOLLOW-UP','fu'],['BOOKED','bk'],['QUALIFIED','ql']];
+  var feed=$('cdFeed'),i=0;
+  function row(){var n=new Date(),o=OUT[i%OUT.length];
+    var el=document.createElement('div');el.className='cd-row';
+    el.innerHTML='<span class="t">'+n.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})+'</span><span class="n">'+LINES[i%LINES.length]+'</span><span>'+LANG[i%LANG.length]+'</span><span class="g '+o[1]+'">'+o[0]+'</span>';
+    feed.insertBefore(el,feed.firstChild);
+    while(feed.children.length>5)feed.removeChild(feed.lastChild);
+    i++;}
+  row();row();row();setInterval(row,4200);
 })();
 </script>
 
@@ -347,6 +448,7 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
   var KB=[[["coastal", "crown", "selection", "chosen", "ten lines", "portfolio", "938", "pressure"], "Coastal Crown's ten lines were engineered like a portfolio: demand mapped across Miami-Dade and Broward, trust anchored in the legacy 305 and 786 area codes, the flagship vanity 786-938-MOLD in the Perrine rate center, virgin 645-overlay numbers for a clean reputation runway, a 954 Broward expansion flag, and the owned 239 Fort Myers block audited as zero-cost reserve. Every number scored by the territory model before purchase - each one a digital asset that appreciates with every answered call."],[["fourth", "revolution", "singularity", "post-covid", "post covid", "operating system", "first adopter", "automation", "why now", "thesis"], "The third industrial revolution - computers, the web, software - is ending. The fourth is AI at full automation, racing toward singularity, and it is a first-adopter race for industry dominance. Post-COVID, winning businesses run a new operating system: predictable, consistent, reliable, automated. Telvergence is that operating system fused to the telephone network - and first adopters take the ground the late ones rent back forever."],[["drill", "drilldown", "market", "territory", "stats", "score", "tvs", "area code", "exchange", "npa", "nxx"], "Use the Territory Drilldown section: tap a market chip - Miami-Dade, Perrine, Fort Myers, Orlando, or the national vanity - and you see the rate-center read, the territory score meters, and the chain that makes the phone ring by itself: Smart-DID in the rate center, CNAM-branded caller-ID, 411 and directory listings, and AI answer engines resolving to your number."],
    [["what","telvergence","platform","do","who","about"],"Telvergence puts a local, rate-center phone number in front of your business, answers it 24/7 with AI in the caller's language, books the job, and logs everything to your CRM. You own the number and you own the answer."],
    [["v3","version","edition","talking","different","new"],"You are on V3, the Talking Edition — a site that speaks its own briefing and converses by voice. V2 lives at telvergence.com and V1 is preserved at telvergence.com/original/. Nothing is ever overwritten - three versions, one platform."],
+   [["dashboard","command","deck","kpi","indicator","indicators","metrics","roi","return","penny","palm","admin"],"Scroll to the Command Deck - the admin's living dashboard: calls answered, jobs booked, answer speed, and lines live, with ROI computed in real time to the penny - revenue driven against platform cost, ticking by the second. It's the whole company, live, in the palm of your hand. The figures are an illustrative planning model, clearly labeled - but the lines on the status board are real."],
    [["provision","provisioning","how fast","light up","buy a number","new number","carrier api","built","promised"],"Built, not promised: the flagship campaign runs a custom-coded AI phone system with direct carrier-API provisioning - numbers are searched, scored, purchased, and live programmatically, in minutes, not weeks. That is why onboarding ends with your new line already answering: the dial tone itself is software to us."],
    [["dialer","outbound","campaign","campaigns","predictive","call center","contact center","follow up","reactivation"],"Inbound is only half the machine. Aside from the AI voice engine, we run our own predictive-dialer core - carrier-grade outbound infrastructure we have operated and hardened since 2019. It drives consent-based outbound on the same owned, CNAM-branded numbers: follow-ups, reactivation, review requests, storm alerts - every call logged to the CRM. The Smart-DID answers everything inbound; the dialer works everything outbound; one owned number does both."],
    [["global","international","country","countries","world","worldwide","language","languages","spanish","translate","border"],"This is the most incredible part: our wholesale carrier-grade agreements stand up instant local dial tone in markets across the globe - a local, in-country number provisioned in minutes - and the voice engine understands 25 languages and answers in the caller's own, on the fly. The border is gone and so is the language barrier. Every numbering plan on Earth has its 305: enter a market, engineer the local number, own the answer."],
