@@ -1,0 +1,318 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Telvergence V3 — The Talking Edition. A site that speaks its own briefing, answers your questions by voice, and onboards a business before your eyes.">
+<meta name="robots" content="noindex,nofollow">
+<title>Telvergence V3 — The Talking Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--void:#04070F;--deep:#080F1C;--card:#0C1626;--card2:#111F36;--line:#1B2B44;--line2:#2A426A;
+  --ink:#EAF4FF;--muted:#93A8C6;--faint:#5C769B;--cyan:#00D4FF;--lime:#00FF88;--gold:#FFD24B;
+  --fd:'Sora',sans-serif;--fb:'Hanken Grotesk',Arial,sans-serif;--fm:'IBM Plex Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{max-width:100%;overflow-x:hidden}
+body{font-family:var(--fb);color:var(--ink);background:var(--void);line-height:1.6;
+  background-image:radial-gradient(1100px 640px at 50% -10%,rgba(0,255,136,.10),transparent 60%),radial-gradient(860px 560px at 90% 5%,rgba(0,212,255,.09),transparent 58%)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+h1,h2{font-family:var(--fd);letter-spacing:-.02em;line-height:1.08;text-wrap:balance}
+a{color:var(--cyan)}
+.ticker{background:linear-gradient(90deg,rgba(0,212,255,.14),rgba(0,255,136,.14));border-bottom:1px solid var(--line);padding:8px 0;overflow:hidden;white-space:nowrap}
+.ticker span{display:inline-block;font-family:var(--fm);font-size:11px;letter-spacing:.08em;color:var(--ink);animation:tick 28s linear infinite;padding-left:100%}
+@keyframes tick{to{transform:translateX(-100%)}}
+header{padding:56px 0 30px;text-align:center}
+.kick{display:inline-block;font-family:var(--fm);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#04121f;background:linear-gradient(100deg,var(--gold),#FFE9A6);border-radius:999px;padding:5px 13px;font-weight:700}
+h1{font-size:clamp(40px,8vw,78px);font-weight:800;margin:18px 0 10px}
+h1 span{background:linear-gradient(100deg,var(--lime),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.dek{color:var(--muted);font-size:clamp(16px,2.4vw,20px);max-width:52ch;margin:0 auto}
+.dek b{color:var(--ink)}
+.ctas{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{font-family:var(--fd);font-weight:800;font-size:15px;text-decoration:none;border:0;border-radius:12px;padding:15px 26px;cursor:pointer}
+.btn.g{background:linear-gradient(100deg,var(--lime),var(--cyan));color:#04121f}
+.btn.o{background:transparent;border:1px solid var(--line2);color:var(--ink)}
+.now{margin-top:14px;font-family:var(--fm);font-size:11px;color:var(--faint)}
+section{padding:44px 0;border-top:1px solid var(--line)}
+.k{font-family:var(--fm);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;text-align:center}
+h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bottom:8px}
+.sub{color:var(--muted);font-size:15.5px;text-align:center;max-width:62ch;margin:0 auto}
+/* onboarding app */
+.ob-app{max-width:640px;margin:26px auto 0;background:#0a1622;border:1px solid rgba(0,212,255,.35);border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.5);text-align:left}
+.ob-bar{display:flex;align-items:center;gap:7px;padding:11px 15px;border-bottom:1px solid #16273a;color:#8aa0b8;font-size:12px}
+.ob-bar b{color:var(--ink);margin-left:6px;font-size:12.5px}
+.ob-dot{width:9px;height:9px;border-radius:50%;background:#1e3348}
+.ob-step{display:flex;align-items:center;gap:13px;padding:11px 16px;opacity:.32;transition:opacity .5s;border-bottom:1px solid rgba(22,39,58,.6)}
+.ob-step:last-child{border-bottom:0}
+.ob-step.on{opacity:1}
+.ob-step.done .ob-s{color:var(--lime)}
+.ob-n{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;color:#04121f;background:linear-gradient(120deg,var(--cyan),var(--lime))}
+.ob-step b{color:var(--ink);font-size:14px}
+.ob-d{color:#8aa0b8;font-size:12px}
+.ob-s{margin-left:auto;font-size:15px;color:#3a5570}
+.ob-live{padding:11px 16px;border-top:1px solid #16273a;font-size:12.5px;color:var(--lime);font-family:var(--fm)}
+/* battle cry */
+.bc{font-family:var(--fd);font-weight:800;font-size:clamp(20px,3.6vw,30px);line-height:1.35;text-align:center;max-width:34ch;margin:18px auto 8px;background:linear-gradient(100deg,var(--lime),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+/* live network */
+.net{display:grid;gap:12px;margin-top:24px}
+@media(min-width:680px){.net{grid-template-columns:1fr 1fr 1fr}}
+.nc{position:relative;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:14px;padding:16px;transition:border-color .25s}
+.nc:hover{border-color:var(--cyan)}
+.nc .e{font-size:24px}
+.nc h3{font-family:var(--fd);font-size:16px;margin:8px 0 3px;color:var(--ink)}
+.nc p{font-size:12.5px;color:var(--muted)}
+.nc a{position:absolute;inset:0;text-indent:-9999px}
+.nc .go{font-family:var(--fm);font-size:11px;color:var(--lime);margin-top:8px;display:block}
+/* science strip */
+.sci{display:grid;gap:12px;margin-top:22px}
+@media(min-width:680px){.sci{grid-template-columns:1fr 1fr}}
+.sc{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:14px;padding:16px}
+.sc b{color:var(--cyan);font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:5px}
+.sc p{font-size:13px;color:var(--muted)}
+.sc p strong{color:var(--ink)}
+.cta-end{text-align:center;padding:50px 0 70px;border-top:1px solid var(--line)}
+.cta-end h2{margin-bottom:12px}
+.foot{color:var(--faint);font-size:11.5px;text-align:center;padding:0 0 90px}
+/* concierge */
+.lc-fab{position:fixed;right:18px;bottom:18px;z-index:9000;width:62px;height:62px;border-radius:50%;border:0;cursor:pointer;font-size:26px;color:#04121f;background:linear-gradient(120deg,var(--cyan),var(--lime));box-shadow:0 10px 28px rgba(0,0,0,.5);animation:lcP 2.4s infinite}
+@keyframes lcP{0%,100%{box-shadow:0 10px 28px rgba(0,0,0,.5),0 0 0 0 rgba(0,212,255,.4)}50%{box-shadow:0 10px 28px rgba(0,0,0,.5),0 0 0 16px transparent}}
+@media (prefers-reduced-motion:reduce){.lc-fab{animation:none}}
+.lc-panel{position:fixed;right:18px;bottom:92px;z-index:9001;width:min(372px,calc(100vw - 36px));background:#0a1622;border:1px solid rgba(0,212,255,.4);border-radius:16px;box-shadow:0 20px 55px rgba(0,0,0,.6);display:flex;flex-direction:column;overflow:hidden}
+.lc-hide{display:none}
+.lc-head{display:flex;align-items:center;justify-content:space-between;padding:13px 15px;color:var(--ink);border-bottom:1px solid #16273a;font-size:15px;font-weight:700}
+.lc-x{cursor:pointer;opacity:.7;padding:2px 6px}
+.lc-sub{padding:8px 15px;color:#8aa0b8;font-size:11px;border-bottom:1px solid #16273a}
+.lc-log{height:240px;overflow-y:auto;padding:12px 15px;display:flex;flex-direction:column;gap:8px}
+.lc-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.lc-m.u{align-self:flex-end;background:rgba(0,212,255,.16);border:1px solid rgba(0,212,255,.35)}
+.lc-m.b{align-self:flex-start;background:rgba(255,255,255,.05);border:1px solid #16273a}
+.lc-row{display:flex;gap:6px;padding:10px;border-top:1px solid #16273a}
+.lc-in{flex:1;min-width:0;background:rgba(255,255,255,.06);border:1px solid #16273a;border-radius:9px;color:var(--ink);padding:9px 10px;font-size:13px}
+.lc-mic,.lc-send,.lc-mute{border:0;border-radius:9px;cursor:pointer;font-size:15px;padding:0 11px;background:linear-gradient(120deg,var(--cyan),var(--lime));color:#04121f}
+.lc-mic.rec{background:#FF5A5A;color:#fff}
+.lc-mute.off{opacity:.45}
+</style></head><body>
+
+<div class="ticker"><span>⚡ BULLETIN — TELVERGENCE V3, THE TALKING EDITION · This page speaks its own briefing and answers your questions out loud · A running network you can tap · Businesses onboarded in minutes, answering themselves in one ring · Tap ▶ to hear it, tap 🎙 to talk to it ⚡</span></div>
+
+<header class="wrap">
+  <span class="kick">V3 · The Talking Edition</span>
+  <h1>The website is <span>over</span>.<br>This is a colleague.</h1>
+  <p class="dek">It <b>speaks its briefing</b>. It <b>answers your questions by voice</b>. It <b>onboards a business in front of you</b>. Everything the modern AI wave promises — already fused to the telephone network, already running.</p>
+  <div class="ctas">
+    <button class="btn g" id="playBrief">▶ Play the briefing</button>
+    <button class="btn o" id="askBtn">🎙 Ask it anything</button>
+  </div>
+  <div class="now">Live now · no account needed · works on any device</div>
+</header>
+
+<section class="wrap" id="demo">
+  <div class="k">The App · Live</div>
+  <h2 data-say="Watch a business come online. This is the whole product in twenty seconds: automated onboarding, from a business name to a ringing, booking, CRM-connected local line. No salesperson, no setup meetings — the app does it.">Watch a business come online.</h2>
+  <p class="sub">From a name to a ringing, booking, CRM-connected local line — no salesperson, no meetings. The app does it.</p>
+  <div class="ob-app" role="img" aria-label="Simulated onboarding sequence">
+    <div class="ob-bar"><span class="ob-dot"></span><span class="ob-dot"></span><span class="ob-dot"></span><b>Telvergence App — New Subscriber</b></div>
+    <div id="obSteps">
+      <div class="ob-step"><span class="ob-n">1</span><div><b>Business captured</b><br><span class="ob-d">"Sunrise Roofing — Orlando, FL"</span></div><span class="ob-s">…</span></div>
+      <div class="ob-step"><span class="ob-n">2</span><div><b>Territory scored</b><br><span class="ob-d">Rate center: Orlando · NPA 407 — high trust, low saturation</span></div><span class="ob-s">…</span></div>
+      <div class="ob-step"><span class="ob-n">3</span><div><b>Smart-DID assigned</b><br><span class="ob-d">(407) 555-01XX · CNAM "SUNRISE ROOFING" · 411/e-411 listed</span></div><span class="ob-s">…</span></div>
+      <div class="ob-step"><span class="ob-n">4</span><div><b>AI answering live</b><br><span class="ob-d">24/7 · English · Español · Kreyòl · Português</span></div><span class="ob-s">…</span></div>
+      <div class="ob-step"><span class="ob-n">5</span><div><b>First call → booked → CRM</b><br><span class="ob-d">Job on the calendar, recording &amp; transcript logged</span></div><span class="ob-s">…</span></div>
+    </div>
+    <div class="ob-live" id="obLive">⏳ onboarding…</div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="k">The Battle Cry</div>
+  <h2 data-say="The battle cry. A call from a local number in your own rate center gets answered. An out-of-area caller ID gets ignored. A local call, answered, is the whole game — you own the number, and you own the answer.">A local call, answered, is the whole game.</h2>
+  <p class="bc">&ldquo;A call from a local number in your own rate center gets answered. An out-of-area caller-ID gets ignored.&rdquo;</p>
+  <p class="sub">You don&#39;t rent leads. <strong style="color:var(--ink)">You own the number, and you own the answer.</strong></p>
+</section>
+
+<section class="wrap" id="network">
+  <div class="k">Not a Promise · A Running Network</div>
+  <h2 data-say="The live network. Every one of these is a real, running property — restoration, claims adjusting, pressure washing, electrical, and a turnkey law-firm build. Tap any of them and they answer.">Tap it. It answers.</h2>
+  <div class="net">
+    <div class="nc"><span class="e">👑</span><h3>Restoration Royalties</h3><p>WIN storm-dispatch command · Miami-Dade · 786-807-MOLD</p><span class="go">Open →</span><a href="https://restorationroyalties.com/" target="_blank" rel="noopener">RR</a></div>
+    <div class="nc"><span class="e">🌀</span><h3>RR Live</h3><p>The live intake floor — watch calls become bookings</p><span class="go">Open →</span><a href="https://restorationroyalties.com/rr/live/" target="_blank" rel="noopener">RRL</a></div>
+    <div class="nc"><span class="e">📋</span><h3>FAST Adjusting</h3><p>Claims intake &amp; fee capture, 10-line grid</p><span class="go">Open →</span><a href="https://restorationroyalties.com/fast/live/" target="_blank" rel="noopener">FA</a></div>
+    <div class="nc"><span class="e">💦</span><h3>Coastal Crown</h3><p>Pressure washing, repeat-revenue plans</p><span class="go">Open →</span><a href="https://restorationroyalties.com/pressure/live/" target="_blank" rel="noopener">CC</a></div>
+    <div class="nc"><span class="e">⚡</span><h3>YES Electrical</h3><p>Storm-ready dispatch, memorable lines</p><span class="go">Open →</span><a href="https://restorationroyalties.com/yes/live/" target="_blank" rel="noopener">YE</a></div>
+    <div class="nc"><span class="e">⚖️</span><h3>Branson Ainsworth</h3><p>Turnkey law-firm build — intake, booking, case dashboard</p><span class="go">Open →</span><a href="https://restorationroyalties.com/telvergence/branson/" target="_blank" rel="noopener">BA</a></div>
+  </div>
+</section>
+
+<section class="wrap" id="drill">
+  <div class="k">Territory Drilldown · Interactive</div>
+  <h2 data-say="Pick a market and watch the numbers work. Every area code and exchange maps to a rate center; our AI scores the territory, and the registry chain — branded caller ID, directory listings, AI answer engines — is what makes the phone ring by itself.">Pick a market. Watch the numbers work.</h2>
+  <p class="sub">Tap a Smart-DID market below — see the rate-center read, the territory score, and the chain that ends with <strong style="color:var(--ink)">customers calling your business.</strong></p>
+  <div id="ddChips" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:18px;"></div>
+  <div class="dd-panel" id="ddPanel" style="max-width:720px;margin:16px auto 0;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line2);border-radius:16px;padding:18px 20px;text-align:left;"></div>
+  <p class="sub" style="margin-top:10px;font-size:11.5px;color:var(--faint);">Territory Value Score meters are an illustrative model of the live scoring engine; rate-center and overlay facts are real.</p>
+</section>
+<style>
+.dd-chip{font-family:var(--fm);font-size:12px;border:1px solid var(--line2);border-radius:999px;padding:8px 14px;color:var(--ink);background:transparent;cursor:pointer}
+.dd-chip.on{background:linear-gradient(100deg,var(--cyan),var(--lime));color:#04121f;border-color:transparent;font-weight:700}
+.dd-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dd-num{font-family:var(--fm);font-size:19px;color:var(--lime);font-weight:700}
+.dd-rc{color:var(--muted);font-size:13px}
+.dd-meters{margin-top:12px;display:grid;gap:8px}
+.dd-m{display:grid;grid-template-columns:150px 1fr 34px;gap:10px;align-items:center;font-size:12px;color:var(--muted)}
+.dd-bar{height:8px;border-radius:99px;background:#0a1622;overflow:hidden}
+.dd-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--lime));width:0;transition:width .8s ease}
+.dd-chain{margin-top:14px;border-top:1px solid var(--line);padding-top:12px;font-size:12.5px;color:var(--muted);line-height:1.7}
+.dd-chain b{color:var(--ink)}
+.dd-go{display:inline-block;margin-top:10px;font-family:var(--fm);font-size:12px;color:var(--lime)}
+</style>
+<script>
+(function(){
+  var MK=[
+   {id:"dade",chip:"786 · Miami-Dade",num:"786-807-MOLD",rc:"Rate center: Miami · NPA 786/305 (+645 overlay, 2023)",
+    m:[["NPA trust",92],["Household density",96],["Niche spend (restoration)",90],["Open runway (low saturation)",62]],
+    ch:"A flooded Dade kitchen → their AI or their memory resolves the MOLD vanity → CNAM shows RESTORATION ROYALTIES → answered in one ring, tech dispatched from the same rate center.",
+    url:"https://restorationroyalties.com/",label:"See the flagship live →"},
+   {id:"perrine",chip:"786-938 · Perrine",num:"786-938-MOLD",rc:"Rate center: Perrine (Miami-Dade) · NPA 786",
+    m:[["NPA trust",92],["Household density",84],["Niche spend (exterior clean)",74],["Open runway",78]],
+    ch:"The green creep on a driveway → a local 786 ring beats any out-of-area ad → branded caller-ID, booked before dinner, on a maintenance plan by spring.",
+    url:"https://restorationroyalties.com/pressure/live/",label:"See Coastal Crown live →"},
+   {id:"ftmyers",num:"(239) 744-57XX",chip:"239 · Fort Myers",rc:"Rate center: Fort Myers · NPA 239 (SW Florida)",
+    m:[["NPA trust",88],["Household density",76],["Storm exposure value",95],["Open runway",81]],
+    ch:"Hurricane alley: when weather hits SW Florida, WIN routes the surge to ready crews holding 239 rate-center lines — local rings, local trucks, booked jobs.",
+    url:"https://restorationroyalties.com/yes/live/",label:"See storm-ready YES live →"},
+   {id:"orlando",chip:"407 · Orlando",num:"407 / 321 / 689",rc:"Rate center: Orlando · NPA 407 + 321/689 overlays",
+    m:[["NPA trust",94],["Population reach",92],["Niche spend (legal)",89],["Open runway",70]],
+    ch:"A debtor in crisis at 2 a.m. dials a 407 line → answered in their language → consultation booked before fear wins → the firm&#39;s case file opens itself.",
+    url:"https://restorationroyalties.com/telvergence/branson/",label:"See the law-firm build live →"},
+   {id:"national",chip:"855 · National vanity",num:"855-2-ADJUST",rc:"Toll-free vanity · paired with rate-center local lines per market",
+    m:[["Memorability",93],["Brand authority",85],["Coverage",98],["Local-trust (needs pairing)",45]],
+    ch:"The national brand line for recall and radio — always paired with rate-center local Smart-DIDs so every market still gets the local ring that gets answered.",
+    url:"https://restorationroyalties.com/fast/live/",label:"See FAST Adjusting live →"}
+  ];
+  var chips=document.getElementById('ddChips'),panel=document.getElementById('ddPanel');
+  function render(mk){
+    var h='<div class="dd-h"><span class="dd-num">'+mk.num+'</span><span class="dd-rc">'+mk.rc+'</span></div><div class="dd-meters">';
+    mk.m.forEach(function(x){h+='<div class="dd-m"><span>'+x[0]+'</span><div class="dd-bar"><div class="dd-fill" data-w="'+x[1]+'"></div></div><span>'+x[1]+'</span></div>';});
+    h+='</div><div class="dd-chain"><b>Why this phone rings by itself:</b> Smart-DID provisioned in this rate center → <b>CNAM-branded caller-ID</b> → listed in <b>411/e-411 + online directories</b> → structured, verified data that <b>AI answer engines resolve</b> when customers ask their assistant → the call arrives on your line → <b>answered in one ring, booked, logged</b>. '+mk.ch+'</div><a class="dd-go" href="'+mk.url+'" target="_blank" rel="noopener">'+mk.label+'</a>';
+    panel.innerHTML=h;
+    setTimeout(function(){panel.querySelectorAll('.dd-fill').forEach(function(f){f.style.width=f.getAttribute('data-w')+'%'})},60);
+  }
+  MK.forEach(function(mk,i){
+    var b=document.createElement('button');b.className='dd-chip'+(i===0?' on':'');b.textContent=mk.chip;
+    b.onclick=function(){document.querySelectorAll('.dd-chip').forEach(function(c){c.classList.remove('on')});b.classList.add('on');render(mk);};
+    chips.appendChild(b);
+  });
+  render(MK[0]);
+})();
+</script>
+
+<section class="wrap">
+  <div class="k">The Science</div>
+  <h2 data-say="The science. One: markets are read through the numbering plan — area codes and exchanges map to rate centers, and our AI scores every territory before a number is placed. Two: it runs on wholesale carrier-grade telecom agreements — the dial tone itself, with branded caller ID in the CNAM registry, directory listings, verified caller identity, and carrier-grade call records. Three: from the first onboarding call, everything is captured and backfilled into the client file in real time. Four: the business owns its line and its data — nothing lives on an employee's personal phone, which is a liability in every industry and a compliance violation in regulated ones.">Why it works — in four moves.</h2>
+  <div class="sci">
+    <div class="sc"><b>1 · The numbering plan</b><p>Area codes + exchanges map to <strong>rate centers</strong>. Our AI scores each territory — density, trade value, saturation, local trust — so numbers are <strong>engineered into markets</strong>, not bought.</p></div>
+    <div class="sc"><b>2 · Carrier-grade foundation</b><p>Wholesale telecom agreements at the <strong>dial-tone layer</strong>: CNAM-branded caller-ID, 411/e-411 &amp; directory listings, STIR/SHAKEN verified identity, carrier-grade call records.</p></div>
+    <div class="sc"><b>3 · Live capture &amp; backfill</b><p>From the first onboarding call, every interaction is answered, recorded with disclosure, transcribed, and <strong>backfilled to the client file &amp; CRM in real time</strong>.</p></div>
+    <div class="sc"><b>4 · Data sovereignty</b><p>The <strong>business owns the line</strong> — every number, call, text, and record is company property. Nothing lives on personal cell phones: a liability everywhere, a <strong>compliance violation</strong> in regulated industries.</p></div>
+  </div>
+</section>
+
+<div class="cta-end wrap">
+  <div class="k">First Adopters</div>
+  <h2 data-say="The reaction we hear is: how is that possible — and how much to have it customized for my business right now? If that is your question, email contact at telvergence dot com, or just ask this page: tap the microphone.">&ldquo;How much to have this for <i>my</i> business — right now?&rdquo;</h2>
+  <p class="sub">That&#39;s the right question. Call or text <a href="tel:+16892421041"><b>(689) 242-1041</b></a> · <a href="mailto:contact@telvergence.com"><b>contact@telvergence.com</b></a> — or just ask this page: tap the 🎙.</p>
+</div>
+
+<div class="foot">Telvergence, Inc. · V3 — The Talking Edition (evolution preview). V2 lives at <a href="https://telvergence.com/">telvergence.com</a> · V1 preserved at <a href="https://telvergence.com/original/">/original/</a>. Nothing is ever overwritten.</div>
+
+<button class="lc-fab" id="lcFab" aria-label="Talk to Telvergence">🎙</button>
+<div class="lc-panel lc-hide" id="lcPanel" role="dialog" aria-label="Telvergence voice assistant">
+  <div class="lc-head"><b>Talk to Telvergence</b><span class="lc-x" id="lcX">✕</span></div>
+  <div class="lc-sub">Live demo assistant — speak or type; it answers out loud about the platform.</div>
+  <div class="lc-log" id="lcLog"></div>
+  <div class="lc-row">
+    <button class="lc-mic" id="lcMic" title="Talk by voice">🎤</button>
+    <input class="lc-in" id="lcIn" type="text" placeholder="Ask about the platform, brands, the science…">
+    <button class="lc-send" id="lcSend">➤</button>
+    <button class="lc-mute" id="lcMute" title="Toggle voice">🔊</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ---------- shared best-voice engine ---------- */
+  var bestVoice=null;
+  function pickVoice(){var vs=speechSynthesis.getVoices()||[],best=null,bs=-1;vs.forEach(function(v){var s=0,n=v.name||'';
+    if(/Google US English/i.test(n))s+=8;if(/natural|neural/i.test(n))s+=7;if(/enhanced|premium/i.test(n))s+=6;
+    if(/Samantha|Aria|Jenny|Ava|Allison/i.test(n))s+=5;if(/^en(-|_)US/i.test(v.lang))s+=3;else if(/^en/i.test(v.lang))s+=1;
+    if(s>bs){bs=s;best=v}});bestVoice=best;}
+  if('speechSynthesis' in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}
+  function speak(t,done){try{var u=new SpeechSynthesisUtterance(t);if(bestVoice)u.voice=bestVoice;u.rate=1.03;u.onend=function(){done&&done()};speechSynthesis.speak(u);}catch(e){done&&done()}}
+
+  /* ---------- PLAY THE BRIEFING (talking-document narration) ---------- */
+  var playBtn=document.getElementById('playBrief'),playing=false;
+  var brief=["Telvergence, version three. The talking edition. The website is over — this is a colleague."];
+  document.querySelectorAll('[data-say]').forEach(function(el){brief.push(el.getAttribute('data-say'))});
+  brief.push("That is Telvergence. Call six eight nine, two four two, one zero four one — or tap the microphone and ask this page anything.");
+  function playSeq(i){
+    if(!playing)return;
+    if(i>=brief.length){playing=false;playBtn.textContent='▶ Play the briefing';return;}
+    speak(brief[i],function(){setTimeout(function(){playSeq(i+1)},350)});
+  }
+  playBtn.onclick=function(){
+    if(playing){playing=false;try{speechSynthesis.cancel()}catch(e){};playBtn.textContent='▶ Play the briefing';return;}
+    playing=true;playBtn.textContent='⏸ Stop the briefing';try{speechSynthesis.cancel()}catch(e){};playSeq(0);
+  };
+
+  /* ---------- onboarding demo loop ---------- */
+  var steps=document.querySelectorAll('#obSteps .ob-step'),live=document.getElementById('obLive');
+  var msgs=["⏳ capturing business…","📍 scoring territory (TVS)…","☎️ provisioning Smart-DID + CNAM + e-411…","🤖 AI answering armed…","✅ LIVE — first call booked. Total time: seconds, not weeks."];
+  var oi=0;
+  function otick(){
+    if(oi>0){steps[oi-1].classList.add('done');steps[oi-1].querySelector('.ob-s').textContent='✓';}
+    if(oi>=steps.length){live.textContent=msgs[4];setTimeout(oreset,5200);return;}
+    steps[oi].classList.add('on');live.textContent=msgs[Math.min(oi,msgs.length-1)];
+    oi++;setTimeout(otick,1600);
+  }
+  function oreset(){oi=0;steps.forEach(function(st){st.classList.remove('on','done');st.querySelector('.ob-s').textContent='…'});setTimeout(otick,700);}
+  var reduce=false;try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+  if(reduce){steps.forEach(function(st){st.classList.add('on','done');st.querySelector('.ob-s').textContent='✓'});live.textContent=msgs[4];}
+  else setTimeout(otick,900);
+
+  /* ---------- concierge ---------- */
+  var KB=[[["drill", "drilldown", "market", "territory", "stats", "score", "tvs", "area code", "exchange", "npa", "nxx"], "Use the Territory Drilldown section: tap a market chip - Miami-Dade, Perrine, Fort Myers, Orlando, or the national vanity - and you see the rate-center read, the territory score meters, and the chain that makes the phone ring by itself: Smart-DID in the rate center, CNAM-branded caller-ID, 411 and directory listings, and AI answer engines resolving to your number."],
+   [["what","telvergence","platform","do","who","about"],"Telvergence puts a local, rate-center phone number in front of your business, answers it 24/7 with AI in the caller's language, books the job, and logs everything to your CRM. You own the number and you own the answer."],
+   [["v3","version","edition","talking","different","new"],"You are on V3, the Talking Edition — a site that speaks its own briefing and converses by voice. V2 lives at telvergence.com and V1 is preserved at telvergence.com/original/. Nothing is ever overwritten - three versions, one platform."],
+   [["rate","center","local","secret","sauce","why","pickup","science","number"],"A call from a local number in your own rate center gets answered - an out-of-area caller-ID gets ignored. Our AI scores territories through the numbering plan itself: area code, exchange, density, trade value, saturation. Numbers are engineered into markets, not bought."],
+   [["carrier","wholesale","dial","tone","cnam","411","directory","stir","shaken"],"It runs on wholesale carrier-grade telecom agreements - the dial-tone layer. That means CNAM-branded caller-ID, 411 and e-411 directory listings, STIR/SHAKEN verified identity, and carrier-grade call records on every line."],
+   [["capture","backfill","record","data","personal","phone","compliance","security","own"],"From the first onboarding call, everything is captured, transcribed, and backfilled to the client file and CRM in real time. The business owns its line and data - nothing lives on employees' personal phones, which is a liability everywhere and a compliance violation in regulated industries."],
+   [["onboard","onboarding","sign","start","activate","app","how do i","get started","price","cost","much"],"Onboarding is the product: capture your business, score your territory, assign a branded Smart-DID, arm 24/7 AI answering - your first call books to the calendar and your new number texts you the welcome. Call or text (689) 242-1041 to start; pricing scales from a single local line to a full multi-brand network."],
+   [["brand","brands","live","network","proof","example"],"Six live properties are one tap away in the network section: Restoration Royalties and its live floor, FAST Adjusting, Coastal Crown, YES Electrical, and the Branson Ainsworth law-firm build. Every one answers its own phone."],
+   [["which ai","what ai","powered","model","llm","grok","claude","openai","gemini","engine"],"Frontier-class AI, provider-agnostic by design - we run the best models under the hood and swap as the frontier moves. What matters is what it does: answers, books, follows up, and logs it all on your own local line."],
+   [["law","legal","attorney","firm","branson","private","encrypted","hearing","deposition"],"For law firms: 24/7 multilingual intake, self-service booking, a case-management dashboard, a private encrypted client Smart-DID built for secure video hearings and depositions, and the evidence engine - port a client's number and every collector call becomes carrier-grade proof. See the Branson Ainsworth build in the network section."]
+  ];
+  var GREET="Welcome to Telvergence V3 - the Talking Edition. Ask me anything: the platform, the science, the live brands, or how onboarding works. Speak or type.";
+  var fab=document.getElementById('lcFab'),panel=document.getElementById('lcPanel'),log=document.getElementById('lcLog'),
+      inp=document.getElementById('lcIn'),send=document.getElementById('lcSend'),mic=document.getElementById('lcMic'),
+      mute=document.getElementById('lcMute'),x=document.getElementById('lcX');
+  var speakOn=true,greeted=false;
+  function say(t){if(!speakOn||!('speechSynthesis' in window))return;try{speechSynthesis.cancel();playing=false;playBtn.textContent='▶ Play the briefing';speak(t)}catch(e){}}
+  function add(t,w){var d=document.createElement('div');d.className='lc-m '+w;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function answer(q){var ql=q.toLowerCase(),best=null,bs=0;KB.forEach(function(e){var s=0;e[0].forEach(function(k){if(ql.indexOf(k)>-1)s++});if(s>bs){bs=s;best=e}});
+    var a=best?best[1]:"Great question - the fastest answer is a live one: call or text (689) 242-1041. Or ask me about the platform, the science, the brands, V3, or onboarding.";add(a,'b');say(a);}
+  function submit(){var q=(inp.value||'').trim();if(!q)return;add(q,'u');inp.value='';setTimeout(function(){answer(q)},250);}
+  function openPanel(){panel.classList.remove('lc-hide');if(!greeted){greeted=true;add(GREET,'b');say(GREET);}}
+  fab.onclick=function(){if(panel.classList.contains('lc-hide'))openPanel();else{panel.classList.add('lc-hide');try{speechSynthesis.cancel()}catch(e){}}};
+  document.getElementById('askBtn').onclick=openPanel;
+  x.onclick=function(){panel.classList.add('lc-hide');try{speechSynthesis.cancel()}catch(e){}};
+  send.onclick=submit;inp.addEventListener('keydown',function(e){if(e.key==='Enter')submit()});
+  mute.onclick=function(){speakOn=!speakOn;mute.classList.toggle('off',!speakOn);if(!speakOn)try{speechSynthesis.cancel()}catch(e){}};
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(SR){var rec=new SR();rec.lang='en-US';rec.interimResults=false;var recOn=false;
+    rec.onresult=function(ev){inp.value=ev.results[0][0].transcript;submit();};
+    rec.onend=function(){recOn=false;mic.classList.remove('rec')};rec.onerror=function(){recOn=false;mic.classList.remove('rec')};
+    mic.onclick=function(){if(recOn){rec.stop();return}try{speechSynthesis.cancel()}catch(e){}recOn=true;mic.classList.add('rec');try{rec.start()}catch(e){recOn=false;mic.classList.remove('rec')}};
+  }else{mic.onclick=function(){add('Voice input is not supported in this browser - type your question and I will still answer out loud.','b');};}
+})();
+</script>
+</body></html>
