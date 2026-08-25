@@ -435,7 +435,7 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
     if(ttsDead||!window.fetch){speakLocal(t,done);return;}
     fetch(TTS_URL,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({text:t})})
       .then(function(r){if(!r.ok)throw 0;return r.blob();})
-      .then(function(b){var a=new Audio(URL.createObjectURL(b));window.__nvAudio=a;a.onended=function(){done&&done()};a.onerror=function(){speakLocal(t,done)};a.play().catch(function(){speakLocal(t,done)});})
+      .then(function(b){var u=URL.createObjectURL(b),a=new Audio(u);window.__nvAudio=a;a.onended=function(){URL.revokeObjectURL(u);done&&done()};a.onerror=function(){URL.revokeObjectURL(u);speakLocal(t,done)};a.play().catch(function(){URL.revokeObjectURL(u);speakLocal(t,done)});})
       .catch(function(){ttsDead=true;speakLocal(t,done);});
   }
 
