@@ -185,3 +185,44 @@ HONESTY RULE for demos: until a real LLM/API key and telephony backend are wired
 on-page assistant as a demo drawing from the brand's knowledge file, and present the lifecycle
 as the platform capability it demonstrates. Never imply live encryption/compliance certifications
 that are not yet provisioned. (LLM upgrade path: Anthropic/xAI API key + small proxy — paid tier.)
+
+## THE FRONT-END DOCTRINE (every build, no exceptions)
+A gigapress output is never a brochure. Every site ships as a **functioning app**:
+- **It talks** — conversational voice concierge (mic in, best-voice out), loaded with the brand's knowledge.
+- **It's alive** — real-time UI: live intake floor / stats band / animated automations visibly solving the
+  industry's real problem (calls answered, qualified, booked, tracked).
+- **Two tools, in their face** — CLIENT side: self-service booking + voice conversation, on the page.
+  ADMIN side: the working dashboard demo (case/job file, documents, consent, audit log).
+- **The KPI of a build is the reaction**: "How is that possible — and how much do I pay to have that
+  customized for MY business right now?" If a build can't provoke that, it isn't done. (Reference:
+  the Branson demo — first-adopter reaction achieved across an attorney audience.)
+
+## DRINK OUR OWN CHAMPAGNE (telvergence.com = reference implementation)
+telvergence.com runs the very system it sells: talking cover ("Your Business, Answering Itself."),
+the onboarding app demo (business → territory → Smart-DID → AI live → booked-to-CRM), scheduling/contact
+as the single CTA, and the dash customization demonstrated with TELVERGENCE'S OWN content. Perfect the
+system there first; every improvement backports into the press for all brands.
+
+## DISCOVERY DOCTRINE — REGISTRY-FIRST, AI-FIRST (old-school SEO is legacy)
+Every Smart-DID ships **registry-complete** on activation:
+1. **CNAM registry** — the brand name embedded in caller-ID (CNAM) so every outbound ring is branded.
+2. **411 / e-411 + online business directories** — the number and NAP listed in directory assistance
+   and the online directories (run the listing-foundation skill: GBP + Tier-1 citations + reviews link).
+3. **Live, provable, structured pages** — the gigapress site itself, schema-clean.
+WHY: buyers increasingly ask their AI assistant, not a search page. AI answers resolve from structured,
+verified sources — telecom registries, directory data, live pages. Registry-clean numbers + live sites are
+what a subscriber's AI finds and CALLS. Pitch it as first-adopter positioning: "your customers' AI will
+find you and call this number." Optimize for answer engines (AEO); treat classic SEO as the legacy channel.
+(Honesty rule: state this as positioning and design intent — no invented traffic/ranking statistics.)
+
+## THE SHELF (industry models → the assembly line)
+Build each industry model ONCE, prove it, shelve it:
+legal = Branson · restoration = Restoration Royalties · adjusting = FAST · pressure = Coastal Crown ·
+electrical = YES · (next industries join the shelf the same way).
+A new client is a SWAP of the three C's — minutes, not weeks:
+- **Content** — industry copy, offers, FAQ/knowledge file for the concierge.
+- **Collateral** — name, palette, logo, vanity scheme, packet (dark, battle-cry splash, two-tools strip).
+- **Communications credentials** — Smart-DIDs (rate-center scored), CNAM, e-411/directories, email,
+  booking calendar, CRM hookup, SMS consent capture.
+SALES MOTION: show the shelf model live → provoke the reaction → onboard in the app → provision + registry-embed
+→ activated Smart-DID sends the welcome text. That is the gigapress AI Mashup Telvergence system.
