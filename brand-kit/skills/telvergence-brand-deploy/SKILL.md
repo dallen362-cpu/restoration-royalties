@@ -291,3 +291,8 @@ countries restrict DID issuance; the softened phrasing is unfalsifiable and lose
    carrier (same discipline as items 9-11). SECURITY (absolute): the carrier API key lives ONLY in
    environment variables / a secrets manager — never in chat, email, code committed to any repo
    (this repo is PUBLIC), or a page; if ever exposed, rotate immediately.
+13. **The scale-economics thesis (investor language)** — zero-employee front office · no fixed
+   overhead · near-zero marginal cost per added line · every new subscriber drives unit cost DOWN
+   while the AI underneath compounds (bigger, faster, smarter as the frontier advances).
+   The line: "Scale doesn't cost this platform. Scale pays it." Wording discipline: "near-zero
+   marginal cost" and "software economics", never literal "infinite" or guaranteed-cost claims.
