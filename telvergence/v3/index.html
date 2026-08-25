@@ -5,32 +5,32 @@
 <title>Telvergence V3 — The Talking Edition</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-:root{--void:#04070F;--deep:#080F1C;--card:#0C1626;--card2:#111F36;--line:#1B2B44;--line2:#2A426A;
-  --ink:#EAF4FF;--muted:#93A8C6;--faint:#5C769B;--cyan:#00D4FF;--lime:#00FF88;--gold:#FFD24B;
-  --fd:'Sora',sans-serif;--fb:'Hanken Grotesk',Arial,sans-serif;--fm:'IBM Plex Mono',monospace}
+:root{--void:#0B0F16;--deep:#0F141E;--card:#141B27;--card2:#1A2331;--line:#25303F;--line2:#37475c;
+  --ink:#F2EDE2;--muted:#A9B2C0;--faint:#6E7A8B;--cyan:#E3C579;--lime:#C9A24B;--gold:#8E3B48;
+  --fd:'Fraunces',Georgia,serif;--fb:'Hanken Grotesk',Arial,sans-serif;--fm:'IBM Plex Mono',monospace}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 html,body{max-width:100%;overflow-x:hidden}
 body{font-family:var(--fb);color:var(--ink);background:var(--void);line-height:1.6;
-  background-image:radial-gradient(1100px 640px at 50% -10%,rgba(0,255,136,.10),transparent 60%),radial-gradient(860px 560px at 90% 5%,rgba(0,212,255,.09),transparent 58%)}
+  background-image:radial-gradient(1100px 640px at 50% -10%,rgba(201,162,75,.12),transparent 60%),radial-gradient(860px 560px at 90% 5%,rgba(142,59,72,.10),transparent 58%)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 .wrap{max-width:960px;margin:0 auto;padding:0 20px}
 h1,h2{font-family:var(--fd);letter-spacing:-.02em;line-height:1.08;text-wrap:balance}
 a{color:var(--cyan)}
-.ticker{background:linear-gradient(90deg,rgba(0,212,255,.14),rgba(0,255,136,.14));border-bottom:1px solid var(--line);padding:8px 0;overflow:hidden;white-space:nowrap}
+.ticker{background:linear-gradient(90deg,rgba(201,162,75,.14),rgba(227,197,121,.14));border-bottom:1px solid var(--line);padding:8px 0;overflow:hidden;white-space:nowrap}
 .ticker span{display:inline-block;font-family:var(--fm);font-size:11px;letter-spacing:.08em;color:var(--ink);animation:tick 28s linear infinite;padding-left:100%}
 @keyframes tick{to{transform:translateX(-100%)}}
 header{padding:56px 0 30px;text-align:center}
-.kick{display:inline-block;font-family:var(--fm);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#04121f;background:linear-gradient(100deg,var(--gold),#FFE9A6);border-radius:999px;padding:5px 13px;font-weight:700}
+.kick{display:inline-block;font-family:var(--fm);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#0B0F16;background:linear-gradient(100deg,#C9A24B,#E3C579);border-radius:999px;padding:5px 13px;font-weight:700}
 h1{font-size:clamp(40px,8vw,78px);font-weight:800;margin:18px 0 10px}
 h1 span{background:linear-gradient(100deg,var(--lime),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .dek{color:var(--muted);font-size:clamp(16px,2.4vw,20px);max-width:52ch;margin:0 auto}
 .dek b{color:var(--ink)}
 .ctas{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .btn{font-family:var(--fd);font-weight:800;font-size:15px;text-decoration:none;border:0;border-radius:12px;padding:15px 26px;cursor:pointer}
-.btn.g{background:linear-gradient(100deg,var(--lime),var(--cyan));color:#04121f}
+.btn.g{background:linear-gradient(100deg,var(--lime),var(--cyan));color:#0B0F16}
 .btn.o{background:transparent;border:1px solid var(--line2);color:var(--ink)}
 .now{margin-top:14px;font-family:var(--fm);font-size:11px;color:var(--faint)}
 section{padding:44px 0;border-top:1px solid var(--line)}
@@ -38,19 +38,19 @@ section{padding:44px 0;border-top:1px solid var(--line)}
 h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bottom:8px}
 .sub{color:var(--muted);font-size:15.5px;text-align:center;max-width:62ch;margin:0 auto}
 /* onboarding app */
-.ob-app{max-width:640px;margin:26px auto 0;background:#0a1622;border:1px solid rgba(0,212,255,.35);border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.5);text-align:left}
-.ob-bar{display:flex;align-items:center;gap:7px;padding:11px 15px;border-bottom:1px solid #16273a;color:#8aa0b8;font-size:12px}
+.ob-app{max-width:640px;margin:26px auto 0;background:#10151d;border:1px solid rgba(201,162,75,.45);border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.5);text-align:left}
+.ob-bar{display:flex;align-items:center;gap:7px;padding:11px 15px;border-bottom:1px solid #25303F;color:#A9B2C0;font-size:12px}
 .ob-bar b{color:var(--ink);margin-left:6px;font-size:12.5px}
-.ob-dot{width:9px;height:9px;border-radius:50%;background:#1e3348}
+.ob-dot{width:9px;height:9px;border-radius:50%;background:#2a3542}
 .ob-step{display:flex;align-items:center;gap:13px;padding:11px 16px;opacity:.32;transition:opacity .5s;border-bottom:1px solid rgba(22,39,58,.6)}
 .ob-step:last-child{border-bottom:0}
 .ob-step.on{opacity:1}
 .ob-step.done .ob-s{color:var(--lime)}
-.ob-n{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;color:#04121f;background:linear-gradient(120deg,var(--cyan),var(--lime))}
+.ob-n{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;color:#0B0F16;background:linear-gradient(120deg,var(--cyan),var(--lime))}
 .ob-step b{color:var(--ink);font-size:14px}
-.ob-d{color:#8aa0b8;font-size:12px}
-.ob-s{margin-left:auto;font-size:15px;color:#3a5570}
-.ob-live{padding:11px 16px;border-top:1px solid #16273a;font-size:12.5px;color:var(--lime);font-family:var(--fm)}
+.ob-d{color:#A9B2C0;font-size:12px}
+.ob-s{margin-left:auto;font-size:15px;color:#6E7A8B}
+.ob-live{padding:11px 16px;border-top:1px solid #25303F;font-size:12.5px;color:var(--lime);font-family:var(--fm)}
 /* battle cry */
 .bc{font-family:var(--fd);font-weight:800;font-size:clamp(20px,3.6vw,30px);line-height:1.35;text-align:center;max-width:34ch;margin:18px auto 8px;background:linear-gradient(100deg,var(--lime),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 /* live network */
@@ -74,21 +74,21 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
 .cta-end h2{margin-bottom:12px}
 .foot{color:var(--faint);font-size:11.5px;text-align:center;padding:0 0 90px}
 /* concierge */
-.lc-fab{position:fixed;right:18px;bottom:18px;z-index:9000;width:62px;height:62px;border-radius:50%;border:0;cursor:pointer;font-size:26px;color:#04121f;background:linear-gradient(120deg,var(--cyan),var(--lime));box-shadow:0 10px 28px rgba(0,0,0,.5);animation:lcP 2.4s infinite}
-@keyframes lcP{0%,100%{box-shadow:0 10px 28px rgba(0,0,0,.5),0 0 0 0 rgba(0,212,255,.4)}50%{box-shadow:0 10px 28px rgba(0,0,0,.5),0 0 0 16px transparent}}
+.lc-fab{position:fixed;right:18px;bottom:18px;z-index:9000;width:62px;height:62px;border-radius:50%;border:0;cursor:pointer;font-size:26px;color:#0B0F16;background:linear-gradient(120deg,var(--cyan),var(--lime));box-shadow:0 10px 28px rgba(0,0,0,.5);animation:lcP 2.4s infinite}
+@keyframes lcP{0%,100%{box-shadow:0 10px 28px rgba(0,0,0,.5),0 0 0 0 rgba(201,162,75,.45)}50%{box-shadow:0 10px 28px rgba(0,0,0,.5),0 0 0 16px transparent}}
 @media (prefers-reduced-motion:reduce){.lc-fab{animation:none}}
-.lc-panel{position:fixed;right:18px;bottom:92px;z-index:9001;width:min(372px,calc(100vw - 36px));background:#0a1622;border:1px solid rgba(0,212,255,.4);border-radius:16px;box-shadow:0 20px 55px rgba(0,0,0,.6);display:flex;flex-direction:column;overflow:hidden}
+.lc-panel{position:fixed;right:18px;bottom:92px;z-index:9001;width:min(372px,calc(100vw - 36px));background:#10151d;border:1px solid rgba(201,162,75,.45);border-radius:16px;box-shadow:0 20px 55px rgba(0,0,0,.6);display:flex;flex-direction:column;overflow:hidden}
 .lc-hide{display:none}
-.lc-head{display:flex;align-items:center;justify-content:space-between;padding:13px 15px;color:var(--ink);border-bottom:1px solid #16273a;font-size:15px;font-weight:700}
+.lc-head{display:flex;align-items:center;justify-content:space-between;padding:13px 15px;color:var(--ink);border-bottom:1px solid #25303F;font-size:15px;font-weight:700}
 .lc-x{cursor:pointer;opacity:.7;padding:2px 6px}
-.lc-sub{padding:8px 15px;color:#8aa0b8;font-size:11px;border-bottom:1px solid #16273a}
+.lc-sub{padding:8px 15px;color:#A9B2C0;font-size:11px;border-bottom:1px solid #25303F}
 .lc-log{height:240px;overflow-y:auto;padding:12px 15px;display:flex;flex-direction:column;gap:8px}
 .lc-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13px;line-height:1.45;color:var(--ink)}
-.lc-m.u{align-self:flex-end;background:rgba(0,212,255,.16);border:1px solid rgba(0,212,255,.35)}
-.lc-m.b{align-self:flex-start;background:rgba(255,255,255,.05);border:1px solid #16273a}
-.lc-row{display:flex;gap:6px;padding:10px;border-top:1px solid #16273a}
-.lc-in{flex:1;min-width:0;background:rgba(255,255,255,.06);border:1px solid #16273a;border-radius:9px;color:var(--ink);padding:9px 10px;font-size:13px}
-.lc-mic,.lc-send,.lc-mute{border:0;border-radius:9px;cursor:pointer;font-size:15px;padding:0 11px;background:linear-gradient(120deg,var(--cyan),var(--lime));color:#04121f}
+.lc-m.u{align-self:flex-end;background:rgba(201,162,75,.16);border:1px solid rgba(201,162,75,.45)}
+.lc-m.b{align-self:flex-start;background:rgba(255,255,255,.05);border:1px solid #25303F}
+.lc-row{display:flex;gap:6px;padding:10px;border-top:1px solid #25303F}
+.lc-in{flex:1;min-width:0;background:rgba(255,255,255,.06);border:1px solid #25303F;border-radius:9px;color:var(--ink);padding:9px 10px;font-size:13px}
+.lc-mic,.lc-send,.lc-mute{border:0;border-radius:9px;cursor:pointer;font-size:15px;padding:0 11px;background:linear-gradient(120deg,var(--cyan),var(--lime));color:#0B0F16}
 .lc-mic.rec{background:#FF5A5A;color:#fff}
 .lc-mute.off{opacity:.45}
 </style></head><body>
@@ -96,7 +96,7 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
 <div class="ticker"><span>⚡ BULLETIN — TELVERGENCE V3, THE TALKING EDITION · This page speaks its own briefing and answers your questions out loud · A running network you can tap · Businesses onboarded in minutes, answering themselves in one ring · Tap ▶ to hear it, tap 🎙 to talk to it ⚡</span></div>
 
 <header class="wrap">
-  <span class="kick">V3 · The Talking Edition</span>
+  <span class="kick">BULLETIN · V3 · THE TALKING EDITION</span>
   <h1>The website is <span>over</span>.<br>This is a colleague.</h1>
   <p class="dek">It <b>speaks its briefing</b>. It <b>answers your questions by voice</b>. It <b>onboards a business in front of you</b>. Everything the modern AI wave promises — already fused to the telephone network, already running.</p>
   <div class="ctas">
@@ -153,13 +153,13 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
 </section>
 <style>
 .dd-chip{font-family:var(--fm);font-size:12px;border:1px solid var(--line2);border-radius:999px;padding:8px 14px;color:var(--ink);background:transparent;cursor:pointer}
-.dd-chip.on{background:linear-gradient(100deg,var(--cyan),var(--lime));color:#04121f;border-color:transparent;font-weight:700}
+.dd-chip.on{background:linear-gradient(100deg,var(--cyan),var(--lime));color:#0B0F16;border-color:transparent;font-weight:700}
 .dd-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .dd-num{font-family:var(--fm);font-size:19px;color:var(--lime);font-weight:700}
 .dd-rc{color:var(--muted);font-size:13px}
 .dd-meters{margin-top:12px;display:grid;gap:8px}
 .dd-m{display:grid;grid-template-columns:150px 1fr 34px;gap:10px;align-items:center;font-size:12px;color:var(--muted)}
-.dd-bar{height:8px;border-radius:99px;background:#0a1622;overflow:hidden}
+.dd-bar{height:8px;border-radius:99px;background:#10151d;overflow:hidden}
 .dd-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--lime));width:0;transition:width .8s ease}
 .dd-chain{margin-top:14px;border-top:1px solid var(--line);padding-top:12px;font-size:12.5px;color:var(--muted);line-height:1.7}
 .dd-chain b{color:var(--ink)}
@@ -170,28 +170,38 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
   var MK=[
    {id:"dade",chip:"786 · Miami-Dade",num:"786-807-MOLD",rc:"Rate center: Miami · NPA 786/305 (+645 overlay, 2023)",
     m:[["NPA trust",92],["Household density",96],["Niche spend (restoration)",90],["Open runway (low saturation)",62]],
+    inv:[["786-807-MOLD",1],["786-938-MOLD",1],["786-340-57XX",1],["305 / 954 blocks",0]],
     ch:"A flooded Dade kitchen → their AI or their memory resolves the MOLD vanity → CNAM shows RESTORATION ROYALTIES → answered in one ring, tech dispatched from the same rate center.",
     url:"https://restorationroyalties.com/",label:"See the flagship live →"},
    {id:"perrine",chip:"786-938 · Perrine",num:"786-938-MOLD",rc:"Rate center: Perrine (Miami-Dade) · NPA 786",
     m:[["NPA trust",92],["Household density",84],["Niche spend (exterior clean)",74],["Open runway",78]],
+    inv:[["786-938-MOLD",1],["(239) 744-57XX ×5",1]],
     ch:"The green creep on a driveway → a local 786 ring beats any out-of-area ad → branded caller-ID, booked before dinner, on a maintenance plan by spring.",
     url:"https://restorationroyalties.com/pressure/live/",label:"See Coastal Crown live →"},
    {id:"ftmyers",num:"(239) 744-57XX",chip:"239 · Fort Myers",rc:"Rate center: Fort Myers · NPA 239 (SW Florida)",
     m:[["NPA trust",88],["Household density",76],["Storm exposure value",95],["Open runway",81]],
+    inv:[["(239) 744-5710–14",1],["Storm-surge blocks",0]],
     ch:"Hurricane alley: when weather hits SW Florida, WIN routes the surge to ready crews holding 239 rate-center lines — local rings, local trucks, booked jobs.",
     url:"https://restorationroyalties.com/yes/live/",label:"See storm-ready YES live →"},
    {id:"orlando",chip:"407 · Orlando",num:"407 / 321 / 689",rc:"Rate center: Orlando · NPA 407 + 321/689 overlays",
     m:[["NPA trust",94],["Population reach",92],["Niche spend (legal)",89],["Open runway",70]],
+    inv:[["407 rate-center blocks",0],["321 / 689 overlays",0],["Legal vanities on request",0]],
     ch:"A debtor in crisis at 2 a.m. dials a 407 line → answered in their language → consultation booked before fear wins → the firm&#39;s case file opens itself.",
     url:"https://restorationroyalties.com/telvergence/branson/",label:"See the law-firm build live →"},
+   {id:"645",chip:"645 · Miami overlay",num:"645-251-78XX",rc:"Rate center: Miami · NPA 645 — the 2023 Miami-Dade overlay",
+    m:[["Virgin-number cleanliness",97],["CNAM branding runway",95],["Household density",96],["Open runway",88]],
+    inv:[["645-251-7791",1],["645-251-7824/25",1],["645-231-1770–79 ×10",1]],
+    ch:"The newest Miami-Dade overlay: virgin numbers with no spam history — clean CNAM, clean reputation, full Dade local presence. The freshest inventory in the strongest market.",
+    url:"https://restorationroyalties.com/rr/live/",label:"See a Dade line answer live →"},
    {id:"national",chip:"855 · National vanity",num:"855-2-ADJUST",rc:"Toll-free vanity · paired with rate-center local lines per market",
     m:[["Memorability",93],["Brand authority",85],["Coverage",98],["Local-trust (needs pairing)",45]],
+    inv:[["855-2-ADJUST",1],["645-231-77XX ×10",1]],
     ch:"The national brand line for recall and radio — always paired with rate-center local Smart-DIDs so every market still gets the local ring that gets answered.",
     url:"https://restorationroyalties.com/fast/live/",label:"See FAST Adjusting live →"}
   ];
   var chips=document.getElementById('ddChips'),panel=document.getElementById('ddPanel');
   function render(mk){
-    var h='<div class="dd-h"><span class="dd-num">'+mk.num+'</span><span class="dd-rc">'+mk.rc+'</span></div><div class="dd-meters">';
+    var h='<div class="dd-h"><span class="dd-num">'+mk.num+'</span><span class="dd-rc">'+mk.rc+'</span></div>';if(mk.inv){h+='<div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;">';mk.inv.forEach(function(iv){h+='<span style="font-family:var(--fm);font-size:11px;border:1px solid '+(iv[1]?'rgba(227,197,121,.5)':'var(--line2)')+';border-radius:8px;padding:4px 9px;color:'+(iv[1]?'var(--lime)':'var(--muted)')+';">'+iv[0]+(iv[1]?' · LIVE':' · READY')+'</span>'});h+='</div>';}h+='<div class="dd-meters">';
     mk.m.forEach(function(x){h+='<div class="dd-m"><span>'+x[0]+'</span><div class="dd-bar"><div class="dd-fill" data-w="'+x[1]+'"></div></div><span>'+x[1]+'</span></div>';});
     h+='</div><div class="dd-chain"><b>Why this phone rings by itself:</b> Smart-DID provisioned in this rate center → <b>CNAM-branded caller-ID</b> → listed in <b>411/e-411 + online directories</b> → structured, verified data that <b>AI answer engines resolve</b> when customers ask their assistant → the call arrives on your line → <b>answered in one ring, booked, logged</b>. '+mk.ch+'</div><a class="dd-go" href="'+mk.url+'" target="_blank" rel="noopener">'+mk.label+'</a>';
     panel.innerHTML=h;
@@ -223,7 +233,7 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
   <p class="sub">That&#39;s the right question. Call or text <a href="tel:+16892421041"><b>(689) 242-1041</b></a> · <a href="mailto:contact@telvergence.com"><b>contact@telvergence.com</b></a> — or just ask this page: tap the 🎙.</p>
 </div>
 
-<div class="foot">Telvergence, Inc. · V3 — The Talking Edition (evolution preview). V2 lives at <a href="https://telvergence.com/">telvergence.com</a> · V1 preserved at <a href="https://telvergence.com/original/">/original/</a>. Nothing is ever overwritten.</div>
+<div class="foot">Telvergence, Inc. · V3 — The Talking Edition, in the Branson format (evolution preview). V2 lives at <a href="https://telvergence.com/">telvergence.com</a> · V1 preserved at <a href="https://telvergence.com/original/">/original/</a>. Nothing is ever overwritten.</div>
 
 <button class="lc-fab" id="lcFab" aria-label="Talk to Telvergence">🎙</button>
 <div class="lc-panel lc-hide" id="lcPanel" role="dialog" aria-label="Telvergence voice assistant">
@@ -243,7 +253,7 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
   /* ---------- shared best-voice engine ---------- */
   var bestVoice=null;
   function pickVoice(){var vs=speechSynthesis.getVoices()||[],best=null,bs=-1;vs.forEach(function(v){var s=0,n=v.name||'';
-    if(/Google US English/i.test(n))s+=8;if(/natural|neural/i.test(n))s+=7;if(/enhanced|premium/i.test(n))s+=6;
+    if(/Online/i.test(n)&&/Natural/i.test(n))s+=12;if(/Google US English/i.test(n))s+=8;if(/natural|neural/i.test(n))s+=7;if(/enhanced|premium/i.test(n))s+=6;
     if(/Samantha|Aria|Jenny|Ava|Allison/i.test(n))s+=5;if(/^en(-|_)US/i.test(v.lang))s+=3;else if(/^en/i.test(v.lang))s+=1;
     if(s>bs){bs=s;best=v}});bestVoice=best;}
   if('speechSynthesis' in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}

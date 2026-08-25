@@ -2515,7 +2515,7 @@ input, textarea, select { font: inherit; }
       mute=document.getElementById('lcMute'),x=document.getElementById('lcX');
   var speakOn=true,greeted=false,bestVoice=null;
   function pickVoice(){var vs=speechSynthesis.getVoices()||[],best=null,bs=-1;vs.forEach(function(v){var s=0,n=v.name||'';
-    if(/Google US English/i.test(n))s+=8;if(/natural|neural/i.test(n))s+=7;if(/enhanced|premium/i.test(n))s+=6;
+    if(/Online/i.test(n)&&/Natural/i.test(n))s+=12;if(/Google US English/i.test(n))s+=8;if(/natural|neural/i.test(n))s+=7;if(/enhanced|premium/i.test(n))s+=6;
     if(/Samantha|Aria|Jenny|Ava|Allison/i.test(n))s+=5;if(/^en(-|_)US/i.test(v.lang))s+=3;else if(/^en/i.test(v.lang))s+=1;
     if(s>bs){bs=s;best=v}});bestVoice=best;}
   if('speechSynthesis' in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}
