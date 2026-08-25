@@ -284,6 +284,29 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--faint);f
   </div>
 </section>
 
+
+<!-- BATTLE CRY -->
+<section class="bc-wrap" id="battlecry">
+  <div class="bc-in">
+    <div class="bc-k">The battle cry</div>
+    <h2 class="bc-h">A local call, answered, is the whole game.</h2>
+    <p class="bc-big">&ldquo;A call from a local number in your own rate center gets answered. An out-of-area caller-ID gets ignored.&rdquo;</p>
+    <p class="bc-p">A Dade homeowner with a flooded kitchen dials 786-807-MOLD and a local voice answers instantly — dispatching a tech from their own rate center while the water is still standing.</p>
+    <p class="bc-p">That is the Telvergence secret sauce: <b>rate-center call origination and termination</b> inside your own market — every ring local, trusted, and booked, on the Weather Intelligence Network.</p>
+    
+  </div>
+</section>
+<style>
+.bc-wrap{padding:52px 22px;border-top:1px solid #1B2B44;background:radial-gradient(700px 360px at 50% 0%,#2AD4F014,transparent 65%)}
+.bc-in{max-width:880px;margin:0 auto;text-align:center}
+.bc-k{font-family:monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#2AD4F0;margin-bottom:10px}
+.bc-h{font-size:clamp(26px,4.4vw,40px);line-height:1.1;margin:0 0 14px;color:#EAF4FF}
+.bc-big{font-size:clamp(18px,2.8vw,24px);font-weight:700;color:#2AD4F0;max-width:34ch;margin:0 auto 14px;line-height:1.35}
+.bc-p{color:#EAF4FF;opacity:.82;font-size:15px;max-width:64ch;margin:0 auto 10px;line-height:1.6}
+.bc-card{margin:18px auto 0;max-width:60ch;text-align:left;background:#0C1626;border:1px solid #2AD4F055;border-radius:14px;padding:16px 18px;color:#EAF4FF;opacity:.95;font-size:14px;line-height:1.6}
+.bc-card b{color:#2AD4F0}
+</style>
+
 <footer>
   Restoration Royalty LLC · 24/7 Emergency Restoration · Miami · a Telvergence Live™ site<br>
   <span class="note">Live board, KPIs, and callback are an interactive demonstration of the platform. Restoration Royalty is a family-owned business in the WIN partner network. Powered by Telvergence, Inc.</span>
@@ -376,6 +399,84 @@ footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--faint);f
     if(v)u.voice=v; speechSynthesis.speak(u);
   };
   if('speechSynthesis'in window){speechSynthesis.getVoices();}
+})();
+</script>
+
+
+<!-- LINE CONCIERGE -->
+<button class="lc-fab" id="lcFab" aria-label="Talk to Restoration Royalties">🎙</button>
+<div class="lc-panel lc-hide" id="lcPanel" role="dialog" aria-label="Restoration Royalties voice assistant">
+  <div class="lc-head"><b>Talk to Restoration Royalties</b><span class="lc-x" id="lcX">✕</span></div>
+  <div class="lc-sub">Live demo assistant — speak or type; it answers out loud from this brand&#39;s knowledge file.</div>
+  <div class="lc-log" id="lcLog"></div>
+  <div class="lc-row">
+    <button class="lc-mic" id="lcMic" title="Hold a conversation by voice">🎤</button>
+    <input class="lc-in" id="lcIn" type="text" placeholder="Ask about services, booking, the local-number edge…">
+    <button class="lc-send" id="lcSend">➤</button>
+    <button class="lc-mute" id="lcMute" title="Toggle voice replies">🔊</button>
+  </div>
+</div>
+<style>
+.lc-fab{position:fixed;right:18px;bottom:18px;z-index:90;width:58px;height:58px;border-radius:50%;border:0;cursor:pointer;font-size:24px;color:#04070F;background:#2AD4F0;box-shadow:0 8px 24px rgba(0,0,0,.45);animation:lcPulse 2.4s infinite}
+@keyframes lcPulse{0%,100%{box-shadow:0 8px 24px rgba(0,0,0,.45),0 0 0 0 #2AD4F055}50%{box-shadow:0 8px 24px rgba(0,0,0,.45),0 0 0 14px transparent}}
+@media (prefers-reduced-motion:reduce){.lc-fab{animation:none}}
+.lc-panel{position:fixed;right:18px;bottom:88px;z-index:91;width:min(360px,calc(100vw - 36px));background:#0C1626;border:1px solid #2AD4F066;border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.55);display:flex;flex-direction:column;overflow:hidden;font-family:inherit}
+.lc-hide{display:none}
+.lc-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;color:#EAF4FF;border-bottom:1px solid #1B2B44;font-size:15px}
+.lc-x{cursor:pointer;opacity:.7;padding:2px 6px}
+.lc-sub{padding:8px 14px;color:#EAF4FF;opacity:.55;font-size:11px;border-bottom:1px solid #1B2B44}
+.lc-log{height:230px;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.lc-m{max-width:88%;padding:8px 11px;border-radius:12px;font-size:13px;line-height:1.45;color:#EAF4FF}
+.lc-m.u{align-self:flex-end;background:#2AD4F022;border:1px solid #2AD4F044}
+.lc-m.b{align-self:flex-start;background:rgba(255,255,255,.05);border:1px solid #1B2B44}
+.lc-row{display:flex;gap:6px;padding:10px;border-top:1px solid #1B2B44}
+.lc-in{flex:1;min-width:0;background:rgba(255,255,255,.06);border:1px solid #1B2B44;border-radius:9px;color:#EAF4FF;padding:9px 10px;font-size:13px}
+.lc-mic,.lc-send,.lc-mute{border:0;border-radius:9px;cursor:pointer;font-size:15px;padding:0 11px;background:#2AD4F0;color:#04070F}
+.lc-mic.rec{background:#FF6B6B;color:#fff}
+.lc-mute.off{opacity:.45}
+</style>
+<script>
+(function(){
+  var KB=[[["mold", "remediation", "smell", "test"], "Mold remediation is our flagship service — assessment, containment, removal, and verification. Call 786-807-MOLD and a local tech is dispatched from your own area."], [["water", "flood", "leak", "dry"], "Water damage worsens by the hour. We answer 24/7, dispatch local, and dry the structure before mold takes hold."], [["fire", "smoke", "soot"], "Fire and smoke restoration — from soot removal to full rebuild coordination, handled by the network."], [["storm", "hurricane", "dispatch", "win", "weather"], "We are the storm-dispatch command of the Weather Intelligence Network: when weather hits Miami-Dade, calls route instantly to ready crews in the same rate center."], [["phone", "number", "call", "reach"], "Call 786-807-MOLD — a Miami-Dade local vanity you will remember at 2 a.m."], [["partner", "network", "referral", "brands"], "Restoration Royalties anchors a referred network of branded partners — adjusting, pressure washing, electrical — one call can bring the whole team."], [["rate", "center", "local", "secret", "sauce", "why", "pickup"], "A call from a local number in your own rate center gets answered — an out-of-area caller-ID gets ignored. Local origination and termination is the whole game, and it is why our phones convert."], [["insurance", "claim", "adjuster"], "Our partner FAST Adjusting handles the insurance-claim side so you are not negotiating alone."]];
+  var GREET="Welcome to Restoration Royalties, the flagship of the Weather Intelligence Network. Ask me about mold, water, fire, storm dispatch, or why our local numbers get answered.";
+  var fab=document.getElementById('lcFab'),panel=document.getElementById('lcPanel'),log=document.getElementById('lcLog'),
+      inp=document.getElementById('lcIn'),send=document.getElementById('lcSend'),mic=document.getElementById('lcMic'),
+      mute=document.getElementById('lcMute'),x=document.getElementById('lcX');
+  var speakOn=true,greeted=false,bestVoice=null;
+  function pickVoice(){
+    var vs=speechSynthesis.getVoices()||[];var best=null,bs=-1;
+    vs.forEach(function(v){var s=0,n=v.name||'';
+      if(/Google US English/i.test(n))s+=8; if(/natural|neural/i.test(n))s+=7; if(/enhanced|premium/i.test(n))s+=6;
+      if(/Samantha|Aria|Jenny|Ava|Allison/i.test(n))s+=5; if(/^en(-|_)US/i.test(v.lang))s+=3; else if(/^en/i.test(v.lang))s+=1;
+      if(s>bs){bs=s;best=v}});
+    bestVoice=best;
+  }
+  if('speechSynthesis' in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}
+  function say(t){
+    if(!speakOn||!('speechSynthesis' in window))return;
+    try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);
+    if(bestVoice)u.voice=bestVoice;u.rate=1.02;u.pitch=1.0;speechSynthesis.speak(u);}catch(e){}
+  }
+  function add(t,who){var d=document.createElement('div');d.className='lc-m '+who;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function answer(q){
+    var ql=q.toLowerCase(),best=null,bs=0;
+    KB.forEach(function(e){var s=0;e[0].forEach(function(k){if(ql.indexOf(k)>-1)s++});if(s>bs){bs=s;best=e}});
+    var a=best?best[1]:('Great question — the fastest answer is a live one. Call 786-807-MOLD and a local voice picks up, or use the booking on this page. You can also ask me about services, pricing, or why a local number changes everything.');
+    add(a,'b');say(a);
+  }
+  function submit(){var q=(inp.value||'').trim();if(!q)return;add(q,'u');inp.value='';setTimeout(function(){answer(q)},250);}
+  fab.onclick=function(){panel.classList.toggle('lc-hide');
+    if(!greeted&&!panel.classList.contains('lc-hide')){greeted=true;add(GREET,'b');say(GREET);}};
+  x.onclick=function(){panel.classList.add('lc-hide');try{speechSynthesis.cancel()}catch(e){}};
+  send.onclick=submit; inp.addEventListener('keydown',function(e){if(e.key==='Enter')submit()});
+  mute.onclick=function(){speakOn=!speakOn;mute.classList.toggle('off',!speakOn);if(!speakOn)try{speechSynthesis.cancel()}catch(e){}};
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(SR){var rec=new SR();rec.lang='en-US';rec.interimResults=false;rec.maxAlternatives=1;var recOn=false;
+    rec.onresult=function(ev){var t=ev.results[0][0].transcript;inp.value=t;submit();};
+    rec.onend=function(){recOn=false;mic.classList.remove('rec')};
+    rec.onerror=function(){recOn=false;mic.classList.remove('rec')};
+    mic.onclick=function(){if(recOn){rec.stop();return}try{speechSynthesis.cancel()}catch(e){}recOn=true;mic.classList.add('rec');try{rec.start()}catch(e){recOn=false;mic.classList.remove('rec')}};
+  }else{mic.onclick=function(){add('Voice input is not supported in this browser — type your question and I will still answer out loud.','b');};}
 })();
 </script>
 
