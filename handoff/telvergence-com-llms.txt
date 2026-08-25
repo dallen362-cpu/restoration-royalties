@@ -1,0 +1,29 @@
+# Telvergence
+
+> AI-receptionist and UCaaS platform: 24/7 speech-to-speech answering on local Smart-DID phone numbers, priced per answered line, per brand — from $229.50/mo — with a live network of running brands you can call.
+
+## About
+
+Telvergence provisions a business with a local "Smart-DID" phone number in its own rate center — branded caller-ID (CNAM), 411/e-411 and directory listings — then answers that line 24/7 with speech-to-speech AI that books jobs, logs recordings and transcripts, and feeds the CRM. The company's stated thesis: "A call from a local number in your own rate center gets answered. An out-of-area caller-ID gets ignored."
+
+Pricing is per answered line, per brand — never per seat — month to month with a 30-day guarantee:
+
+- Smart Line — $229.50/mo: one rate-center Smart-DID, 24/7 speech-to-speech answering, booking, registries, transcripts (the plan Telvergence's own live network runs on)
+- Front Office — $499/mo: three lines, the brand's cloned voice, mid-call booking, CRM backfill
+- Market Command — $999/mo: ten lines, AI-scored territory portfolio, vanity numbers, storm dispatch
+- Network — from $2,499/mo, custom: white-label, multi-market, private encrypted lines
+- Activation: $499 per brand, waived on annual
+
+The platform is demonstrated by a live network of running properties — including Restoration Royalties (786-807-MOLD, Miami-Dade restoration), FAST Adjusting (855-2-ADJUST, claims intake), Coastal Crown (pressure washing), and YES Electrical (storm-ready dispatch) — real lines that answer when called.
+
+## Pages
+
+- [Home — The Talking Edition](https://telvergence.com/): The current official edition — a site that speaks its own briefing, answers questions by voice, and demonstrates live onboarding, territory drilldowns, plans, and the running brand network
+- [Prior edition](https://telvergence.com/v2/): An earlier edition of telvergence.com, preserved unchanged
+- [Original edition](https://telvergence.com/original/): The first edition of telvergence.com, preserved unchanged
+- [Investor page](https://telvergence.com/opportunity/): The investment opportunity overview for Telvergence
+
+## Contact
+
+- Email: contact@telvergence.com
+- Phone (call or text): (689) 242-1041
