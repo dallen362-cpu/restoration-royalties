@@ -277,6 +277,7 @@ input, textarea, select { font: inherit; }
   flex-direction: column;
   gap: var(--space-6);
   z-index: 999;
+  overflow-y: auto;
 }
 .nav__mobile-menu.active { display: flex; }
 .nav__mobile-menu a {
@@ -1275,6 +1276,7 @@ input, textarea, select { font: inherit; }
 }
 @media (max-width: 480px) {
   .footer__top { grid-template-columns: 1fr; }
+  .btn { white-space: normal; }
 }
 
 /* ===== SCROLL REVEAL ===== */
