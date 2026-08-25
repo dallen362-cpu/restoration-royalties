@@ -296,3 +296,10 @@ countries restrict DID issuance; the softened phrasing is unfalsifiable and lose
    while the AI underneath compounds (bigger, faster, smarter as the frontier advances).
    The line: "Scale doesn't cost this platform. Scale pays it." Wording discipline: "near-zero
    marginal cost" and "software economics", never literal "infinite" or guaranteed-cost claims.
+14. **Big Data · IoT · critical mass (thesis threads)** — every Smart-DID is a LIVE SENSOR on its
+   market (IoT made local: the listening post); every answered call is an OWNED data point (demand
+   by rate center, language mix, storm response, conversion by exchange) feeding the territory-scoring
+   engine — the network reads markets better with every ring. CRITICAL MASS: when a market's lines +
+   data + referrals tip into self-sustaining growth, the first operator there owns the market — this
+   is the quantitative form of the first-adopter race. Wording discipline: the network's own call
+   data only — never claim third-party data purchases or surveillance; "telemetry the network owns."
