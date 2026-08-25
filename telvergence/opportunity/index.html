@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Telvergence — the opportunity: a rate-center Smart-DID platform that turns local calls into booked jobs. Prepared overview.">
+<meta name="robots" content="noindex,nofollow">
+<title>The Opportunity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+:root{
+  --void:#04070F;--deep:#080F1C;--card:#0C1626;--card2:#111F36;--line:#1B2B44;--line2:#2A426A;
+  --ink:#EAF4FF;--muted:#93A8C6;--faint:#5C769B;
+  --cyan:#2AD4F0;--lime:#39F58C;--gold:#FFD24B;--amber:#F2A93B;--violet:#8A7BFF;--red:#FF6B6B;
+  --fd:'Sora',sans-serif;--fb:'Hanken Grotesk',Arial,sans-serif;--fm:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--void);line-height:1.55;overflow-x:hidden;
+  background-image:radial-gradient(1200px 700px at 50% -10%,rgba(57,245,140,.12),transparent 60%),
+                   radial-gradient(900px 600px at 88% 6%,rgba(42,212,240,.10),transparent 58%)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+h1,h2,h3{font-family:var(--fd);letter-spacing:-.02em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+a{color:var(--cyan)}
+.bar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;padding:12px 20px;background:rgba(4,7,15,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar .lg{font-family:var(--fd);font-weight:800;letter-spacing:.08em;font-size:12.5px;text-transform:uppercase}
+.bar .lg b{color:var(--lime)}
+.bar .badge{margin-left:auto;font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,210,75,.35);border-radius:999px;padding:5px 11px}
+header{padding:58px 0 20px;text-align:center}
+.eyebrow{font-family:var(--fm);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan)}
+h1{font-size:clamp(38px,7.5vw,72px);font-weight:800;line-height:1;margin:16px 0}
+h1 span{background:linear-gradient(100deg,var(--lime),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.dek{color:var(--muted);font-size:clamp(17px,2.4vw,21px);max-width:36ch;margin:0 auto}
+.dek b{color:var(--ink)}
+.scroll{margin-top:20px;font-family:var(--fm);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+section{padding:40px 0;border-top:1px solid var(--line)}
+.k{font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:8px;text-align:center}
+h2{font-size:clamp(26px,4.2vw,38px);font-weight:800;text-align:center;margin-bottom:8px}
+.sub{color:var(--muted);font-size:16px;text-align:center;max-width:60ch;margin:0 auto}
+.flow{display:grid;gap:12px;margin-top:26px;counter-reset:s}
+@media(min-width:720px){.flow{grid-template-columns:repeat(4,1fr)}}
+.fc{position:relative;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:16px;padding:18px 15px;text-align:center}
+.fc .n{font-family:var(--fm);font-size:11px;color:var(--void);background:var(--lime);width:22px;height:22px;border-radius:50%;display:grid;place-items:center;margin:0 auto 10px;font-weight:700}
+.fc .e{font-size:30px}
+.fc h4{font-size:15px;margin:8px 0 4px}
+.fc p{font-size:12.5px;color:var(--muted)}
+.fc .ar{display:none}
+@media(min-width:720px){.fc:not(:last-child) .ar{display:block;position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--lime);font-size:20px;z-index:2}}
+.bignum{text-align:center;margin:26px 0 6px}
+.bignum .v{font-family:var(--fd);font-weight:800;font-size:clamp(48px,11vw,96px);line-height:1;background:linear-gradient(100deg,var(--gold),var(--amber));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.bignum .l{color:var(--muted);font-size:15px;margin-top:8px}
+.proof{display:grid;gap:14px;margin-top:24px}
+@media(min-width:720px){.proof{grid-template-columns:repeat(3,1fr)}}
+.pc{display:block;text-decoration:none;border:1px solid var(--line2);border-radius:18px;padding:20px;background:linear-gradient(180deg,var(--card2),var(--card));transition:transform .15s,box-shadow .15s,border-color .15s}
+.pc:hover{transform:translateY(-3px);border-color:var(--lime);box-shadow:0 24px 50px -30px rgba(57,245,140,.5)}
+.pc .tag{font-family:var(--fm);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
+.pc h4{font-size:19px;margin:6px 0}
+.pc .num{font-family:var(--fm);color:var(--gold);font-size:14px}
+.pc p{font-size:13px;color:var(--muted);margin-top:8px}
+.pc .go{margin-top:12px;font-family:var(--fd);font-weight:700;font-size:13px;color:var(--lime)}
+.tblwrap{overflow-x:auto;margin-top:22px}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:520px;font-variant-numeric:tabular-nums}
+th{background:var(--deep);color:var(--cyan);text-align:left;padding:10px 12px;font-family:var(--fm);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;border-bottom:1px solid var(--line2)}
+td{border-bottom:1px solid var(--line);padding:10px 12px;color:var(--muted)}
+td b{color:var(--ink)} .g{color:var(--gold);font-weight:700} .li{color:var(--lime);font-weight:700}
+tr.tot td{background:rgba(255,210,75,.06);border-top:1px solid var(--line2)}
+.offer{background:linear-gradient(180deg,rgba(57,245,140,.08),var(--card));border:1px solid var(--line2);border-radius:22px;padding:26px;margin-top:24px}
+.price{text-align:center;margin-bottom:16px}
+.price .amt{font-family:var(--fd);font-weight:800;font-size:clamp(44px,9vw,68px);background:linear-gradient(100deg,var(--lime),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.price .u{color:var(--muted);font-size:14px;display:block;margin-top:6px}
+.inc{display:grid;gap:9px}
+@media(min-width:600px){.inc{grid-template-columns:1fr 1fr}}
+.inc div{position:relative;padding:10px 12px 10px 34px;background:var(--card2);border:1px solid var(--line);border-radius:11px;font-size:13.5px;color:var(--muted)}
+.inc div:before{content:"✓";position:absolute;left:12px;color:var(--lime);font-weight:800}
+.inc div b{color:var(--ink)}
+.terms{display:grid;gap:10px;margin-top:16px}
+@media(min-width:720px){.terms{grid-template-columns:repeat(4,1fr)}}
+.tm{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px}
+.tm .v{font-family:var(--fd);font-weight:800;font-size:24px;color:var(--gold)}
+.tm .l{font-size:12px;color:var(--muted);margin-top:4px}
+.why{display:grid;gap:12px;margin-top:22px}
+@media(min-width:680px){.why{grid-template-columns:1fr 1fr}}
+.wc{border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--card);font-size:13.5px;color:var(--muted)}
+.wc b{color:var(--ink)}
+.cta{text-align:center;padding:52px 0 30px}
+.cta h2{margin-bottom:12px}
+.cta a{display:inline-block;margin-top:8px;font-family:var(--fd);font-weight:800;font-size:17px;color:var(--void);background:linear-gradient(100deg,var(--lime),var(--cyan));border-radius:999px;padding:16px 34px;text-decoration:none}
+.cta .big{display:block;margin-top:22px}
+footer{padding:26px 0 60px;border-top:1px solid var(--line);color:var(--faint);font-size:11px;text-align:center;line-height:1.6}
+</style>
+
+<div class="bar">
+  <div class="lg"><b>TELVERGENCE</b> · The Opportunity</div>
+  <span class="badge">Prepared for Stefano</span>
+</div>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">A ringing phone is a cash register</div>
+  <h1>We build the <span>money machine</span>.<br>It's ringing right now.</h1>
+  <p class="dek">Local phone numbers + an AI that answers every call + a directory that makes them ring = <b>booked jobs, on autopilot.</b> Turnkey. Already running. <b>For sale.</b></p>
+  <div class="scroll">↓ 60-second read</div>
+</header>
+
+<!-- FOR THE BUILDER -->
+<section>
+  <div class="k">Stefano — you build homes</div>
+  <h2>This is the machine that sells and services every one.</h2>
+  <p class="sub">You already create the single most valuable thing in this whole model: <b>new homeowners in a specific rate center.</b> The machine turns each one into recurring revenue — and you're the ideal owner, not just the investor.</p>
+  <div class="why">
+    <div class="wc"><b>Never miss a buyer again.</b> A new-construction line answers every buyer call 24/7 in any language and books the walkthrough on the spot. In building, one missed call is a lost sale — this ends that.</div>
+    <div class="wc"><b>Own the homeowner after closing.</b> Attach turnkey home-services brands — impact windows, electrical, pressure washing, restoration — to every home you deliver. Recurring revenue on inventory <b>you already built.</b></div>
+    <div class="wc"><b>The trades are already in the catalog.</b> Windows &amp; Doors, YES Electrical, Coastal Crown, Restoration Royalty — the exact trades that surround your builds. Buy them turnkey; they feed off your pipeline from day one.</div>
+    <div class="wc"><b>Local to your community.</b> Every buyer and homeowner gets a number local to the exact NPA/NXX you're building in — answered instantly, a field tech dispatched right there. Your development becomes its own switchboard.</div>
+  </div>
+  <p class="sub" style="margin-top:18px;color:var(--ink);font-weight:600">You fund it tonight — and the first brand it prints from is the pipeline you already own.</p>
+</section>
+
+<!-- CHEF + SOCIAL -->
+<section>
+  <div class="k">And the other worlds you live in</div>
+  <h2>A chef and restaurateur. A dad watching the follower count. Covered.</h2>
+  <div class="why">
+    <div class="wc"><b>Your restaurant — never a missed table.</b> The AI answers every reservation, takeout, and catering call 24/7 in any language and books it straight in. A busy line at 7pm is money walking out the door — this ends it, on your own local number with your brand on the caller-ID.</div>
+    <div class="wc"><b>Catering &amp; private events, captured.</b> The line that catches the party inquiry at midnight, books the tasting, and logs it to the CRM — the high-ticket bookings most kitchens lose to voicemail.</div>
+    <div class="wc"><b>The follower machine — real, not bought.</b> Every happy customer becomes public proof: reviews posted, local ranking climbing, content the directory pushes out. <b>Organic reach that compounds</b> — the kind of following even your kids would respect, because it's earned from real results, not purchased.</div>
+    <div class="wc"><b>One dashboard, every venture.</b> Homes, restaurant, reputation — the same machine, the same live board, every ring turned into revenue <b>and</b> reach. You already run empires; this one runs itself.</div>
+  </div>
+</section>
+
+<!-- HOW IT PRINTS -->
+<section>
+  <div class="k">How the machine prints</div>
+  <h2>Four steps. One outcome: money.</h2>
+  <div class="flow">
+    <div class="fc"><div class="n">1</div><div class="e">📞</div><h4>A local number rings</h4><p>Engineered to look local — so people actually answer.</p><span class="ar">→</span></div>
+    <div class="fc"><div class="n">2</div><div class="e">🤖</div><h4>AI answers, 24/7</h4><p>In the caller's language, in one ring. Never a missed call.</p><span class="ar">→</span></div>
+    <div class="fc"><div class="n">3</div><div class="e">📋</div><h4>The job is booked</h4><p>Captured to the CRM with the address and service. Automatically.</p><span class="ar">→</span></div>
+    <div class="fc"><div class="n">4</div><div class="e">💵</div><h4>You get paid</h4><p>Then it repeats — and every month it gets cheaper to do.</p></div>
+  </div>
+  <div class="bignum"><div class="v">&lt; 1%</div><div class="l">What the whole phone platform costs, vs. the revenue it drives</div></div>
+</section>
+
+<!-- PROOF: LIVE -->
+<section>
+  <div class="k">This is real — tap and see</div>
+  <h2>Three machines, running live</h2>
+  <p class="sub">Not slides. Working sites that behave like the live telecom product. Open them — the lines ring, the AI answers, the callback fires.</p>
+  <div class="proof">
+    <a class="pc" href="https://claude.ai/code/artifact/1a3e428d-06f7-4e13-97eb-563a99520931" target="_blank" rel="noopener">
+      <div class="tag">Emergency restoration</div><h4>Restoration Royalty</h4><div class="num">786-807-MOLD</div>
+      <p>24/7 dispatch board. The highest-urgency calls in the market.</p><div class="go">See it live →</div></a>
+    <a class="pc" href="https://claude.ai/code/artifact/808c83f0-9ea6-4bf4-99c1-381551ea851c" target="_blank" rel="noopener">
+      <div class="tag">Public adjusting</div><h4>FAST Adjusting</h4><div class="num">855-2-ADJUST</div>
+      <p>Live claims desk. The highest revenue-per-customer brand.</p><div class="go">See it live →</div></a>
+    <a class="pc" href="https://claude.ai/code/artifact/bc616fd5-ab23-45e9-a449-680e4fc13029" target="_blank" rel="noopener">
+      <div class="tag">Pressure washing</div><h4>Coastal Crown</h4><div class="num">786-938-MOLD</div>
+      <p>Repeat-revenue engine. Recurring maintenance income.</p><div class="go">See it live →</div></a>
+  </div>
+</section>
+
+<!-- THE MONEY -->
+<section>
+  <div class="k">The money, spoon-fed</div>
+  <h2>What one operator's network can produce</h2>
+  <p class="sub">A single owner running three of these brands. Planning model — the levers are simple: never miss a call, and rank locally so the phone keeps ringing.</p>
+  <div class="tblwrap"><table>
+    <tr><th>Brand</th><th>Conservative /mo</th><th>Expected /mo</th></tr>
+    <tr><td><b>Restoration Royalty</b> · remediation</td><td>$20,000</td><td class="li">$33,000</td></tr>
+    <tr><td><b>FAST Adjusting</b> · claim fees</td><td>$12,500</td><td class="li">$26,000</td></tr>
+    <tr><td><b>Coastal Crown</b> · washing + plans</td><td>$6,500</td><td class="li">$12,000</td></tr>
+    <tr><td><b>Cross-referral</b> · one lead → three brands</td><td>$5,800</td><td class="li">$14,200</td></tr>
+    <tr class="tot"><td><b>Network total</b></td><td class="g">$44,800/mo</td><td class="g">$85,200/mo</td></tr>
+    <tr class="tot"><td><b>Annualized</b></td><td class="g">$538K</td><td class="g">$1.02M</td></tr>
+  </table></div>
+  <p class="sub" style="margin-top:12px;font-size:13px;color:var(--faint)">Illustrative planning model with stated assumptions — not a guarantee. Excludes the operator's own labor/material cost; projects revenue driven by the phone-and-directory engine.</p>
+</section>
+
+<!-- INTERACTIVE CALCULATOR -->
+<style>
+.calcbox{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line2);border-radius:20px;padding:24px;margin-top:22px}
+.crow{margin:16px 0}
+.crow label{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--fm);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+.crow label b{color:var(--lime);font-size:16px;text-transform:none}
+input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:999px;background:var(--line2);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--lime);cursor:pointer;box-shadow:0 0 0 5px rgba(57,245,140,.18)}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border:0;border-radius:50%;background:var(--lime);cursor:pointer}
+.cout{text-align:center;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.cout .v{font-family:var(--fd);font-weight:800;font-size:clamp(42px,10vw,80px);background:linear-gradient(100deg,var(--gold),var(--amber));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;font-variant-numeric:tabular-nums}
+.cout .l{color:var(--muted);font-size:14px;margin-top:8px}
+.cout .yr{color:var(--lime);font-family:var(--fm);font-size:16px;margin-top:10px}
+.cmiss{margin-top:16px;font-size:13.5px;color:var(--red);text-align:center;background:rgba(255,107,107,.08);border:1px solid rgba(255,107,107,.25);border-radius:12px;padding:11px}
+.cmiss b{color:#FF9B9B}
+</style>
+<section id="calc">
+  <div class="k">Move the slider — watch it print</div>
+  <h2>Your money machine, live</h2>
+  <p class="sub">Drag it. This is one brand, once the phone actually gets answered.</p>
+  <div class="calcbox">
+    <div class="crow">
+      <label>Booked jobs a month <b><span id="cD">22</span>/mo</b></label>
+      <input type="range" id="calls" min="5" max="80" value="22">
+    </div>
+    <div class="crow">
+      <label>Average job value <b>$<span id="cT">1,200</span></b></label>
+      <input type="range" id="ticket" min="150" max="4000" step="50" value="1200">
+    </div>
+    <div class="cout">
+      <div class="v" id="mo">$0</div>
+      <div class="l">booked revenue / month · one brand</div>
+      <div class="yr" id="yr">$0 / year</div>
+    </div>
+    <div class="cmiss" id="miss"></div>
+  </div>
+  <p class="sub" style="margin-top:12px;font-size:12.5px;color:var(--faint)">Model: booked jobs × average job value. The AI never missing a call is what raises the job count — that's the whole game. Illustrative, one brand; a network runs several and they refer each other.</p>
+</section>
+
+<!-- THE MARGIN / FUTURE -->
+<section>
+  <div class="k">Why the margin is unreal</div>
+  <h2>No employees. No storefront. Just the phone — and a local tech.</h2>
+  <p class="sub">The entire front office is AI — the numbers, the answering, the booking, the follow-up. The <b>only</b> human cost is the field tech who shows up to do the work, dispatched to the customer's door <b>inside their own NPA/NXX rate center</b>, so fulfillment is always local. Delete the office lease, the receptionist, the payroll department — and a ringing phone becomes near-pure margin.</p>
+  <div class="why">
+    <div class="wc"><b>AI front office, 24/7.</b> Numbers, answering in 25 languages, booking, CRM, follow-up — all automated. It never sleeps, never quits, never asks for a raise.</div>
+    <div class="wc"><b>Humans only at the endpoint.</b> One field tech, dispatched on-site to the subscriber's location <b>within their own rate center</b> — the work is done local, the overhead is done remote.</div>
+    <div class="wc"><b>Zero brick-and-mortar.</b> No storefront, no office, no walk-in overhead — the business lives in the cloud and on the phone.</div>
+    <div class="wc"><b>The result: net you keep.</b> The overhead that eats a normal home-services business is engineered out. What's left over is the printing.</div>
+  </div>
+</section>
+
+<!-- WHAT YOU BUY -->
+<section>
+  <div class="k">What you'd own</div>
+  <h2>A turnkey property — live on day one</h2>
+  <div class="offer">
+    <div class="price"><div class="amt">$25,000</div><span class="u">per running brand · pick one or more from the inventory</span></div>
+    <div class="inc">
+      <div><b>The brand site</b> — the live telecom app you just saw</div>
+      <div><b>10 local numbers</b> — engineered, branded, yours</div>
+      <div><b>The AI voice agent</b> — 25 languages, answers every call</div>
+      <div><b>The AI directory</b> — makes the phone ring, for free</div>
+      <div><b>The CRM</b> — every call & lead logged and provable</div>
+      <div><b>Set up FREE by Telvergence</b> — you do nothing</div>
+    </div>
+    <div class="terms">
+      <div class="tm"><div class="v">$0</div><div class="l">Down to start</div></div>
+      <div class="tm"><div class="v">5 × $5K</div><div class="l">Paid from the revenue it makes</div></div>
+      <div class="tm"><div class="v">Day 1</div><div class="l">Live &amp; ringing</div></div>
+      <div class="tm"><div class="v">100%</div><div class="l">Yours — a sellable asset</div></div>
+    </div>
+    <p class="sub" style="margin-top:16px">Plus the app inventory available to acquire — including <b>Drone Video-to-Quote</b> (upload footage → instant AI estimate + invoice) and the photo-to-invoice engine. <b>The machine buys itself out of its own output.</b></p>
+  </div>
+</section>
+
+<!-- WHY -->
+<section>
+  <div class="k">Why this, why now</div>
+  <h2>You're not buying a website. You're buying equity.</h2>
+  <div class="why">
+    <div class="wc"><b>Provable books.</b> Every call and job is logged — auditable revenue a buyer can verify. That's what makes it worth a multiple, not just a paycheck.</div>
+    <div class="wc"><b>Assets that transfer.</b> The numbers, the brand, the listings, the CRM history — a buyer can't recreate them at retail. They come with the deal.</div>
+    <div class="wc"><b>Recurring revenue.</b> Maintenance plans and claim pipelines pay in overlapping waves — valued far above one-off work.</div>
+    <div class="wc"><b>A network, not a company.</b> Interlocked brands feeding each other referrals — priced as a platform, not a single trade shop.</div>
+  </div>
+  <div style="text-align:center;margin-top:22px">
+    <a href="https://claude.ai/code/artifact/37dc2303-1e8f-4f3b-a75f-46886b9da012" target="_blank" rel="noopener" style="font-family:var(--fd);font-weight:700;font-size:15px">📖 See everything we've built &amp; control — the full Asset Book →</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="k">The ask</div>
+  <h2>Fund it tonight. Own a machine that's already printing.</h2>
+  <p class="sub">Pick one or more turnkey properties from the inventory. Your investment goes to work immediately — and you hold a live, revenue-producing asset backed by everything in the Asset Book.</p>
+  <a href="tel:16892421041">📞 Call David — (689) 242-1041</a>
+  <span class="big"><a href="mailto:contact@telvergence.com" style="background:transparent;color:var(--cyan);border:1px solid var(--line2)">✉️ contact@telvergence.com</a></span>
+  <div style="margin:28px auto 0;display:inline-block;text-align:left;background:var(--card2);border:1px solid var(--line2);border-radius:14px;padding:16px 22px">
+    <div style="font-family:var(--fm);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:9px">Fund instantly to reserve a property</div>
+    <div style="font-size:14.5px;color:var(--muted);line-height:1.9">
+      PayPal · <b style="color:var(--ink)">[ your PayPal ]</b><br>
+      Cash App · <b style="color:var(--ink)">[ $YourCashtag ]</b><br>
+      Wire / card / owner-financing · <span style="color:var(--ink)">on request</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Telvergence, Inc. · David Drew Allen, President · (689) 242-1041 · contact@telvergence.com<br>
+  Prepared as an opportunity overview for a prospective investor/buyer. The live sites are working demonstrations of the platform. Revenue figures are illustrative planning models with stated assumptions — not guarantees of results, and not an offer of securities. Specific terms are documented per transaction.
+</footer>
+
+</div>
+<script>
+(function(){
+  var calls=document.getElementById('calls'), ticket=document.getElementById('ticket');
+  var cD=document.getElementById('cD'), cT=document.getElementById('cT');
+  var mo=document.getElementById('mo'), yr=document.getElementById('yr'), miss=document.getElementById('miss');
+  function money(n){ return '$'+Math.round(n).toLocaleString(); }
+  function calc(){
+    var c=+calls.value, t=+ticket.value;
+    cD.textContent=c; cT.textContent=t.toLocaleString();
+    var monthly=c*t;
+    var lost=6*t;
+    mo.textContent=money(monthly);
+    yr.textContent=money(monthly*12)+' / year';
+    miss.innerHTML='Miss just <b>6 calls</b> a month and that’s <b>'+money(lost)+'</b> gone to voicemail — the AI catches every one, so the job count keeps climbing.';
+  }
+  calls.addEventListener('input',calc); ticket.addEventListener('input',calc); calc();
+})();
+</script>
+
+
+</body>
+</html>
