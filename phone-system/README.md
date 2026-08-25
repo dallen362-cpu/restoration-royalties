@@ -30,9 +30,8 @@ vitelity.js — carrier API layer: search / order / route / CNAM / SMS
 
 ```bash
 cd phone-system
-npm install          # express + @anthropic-ai/sdk (or run: node server.js with Node 22+, fetch is built in)
-cp .env.example .env # fill in credentials — see SECURITY below
-node server.js
+cp .env.example .env   # fill in credentials — see SECURITY below (no npm install: Node core only, Node 20.6+)
+node server.js         # .env loads automatically (process.loadEnvFile); host secret managers also work
 ```
 
 Point the DID's route (SIP/forward in the carrier portal, or via `/provision`) at a voice
@@ -41,12 +40,16 @@ webhook gateway works; the endpoint speaks plain JSON in/out so it is gateway-ag
 
 ## Endpoints
 
+Every endpoint except `/health` requires the `X-Webhook-Secret` header matching `WEBHOOK_SECRET`
+(min 16 chars) — **the server fails closed**: until the secret is set, protected routes return 503.
+
 | Endpoint | Method | Purpose |
 |---|---|---|
-| `/provision` | POST `{ratecenter, state, npa?, route}` | search → order → route → CNAM a new DID |
-| `/voice` | POST `{callId, from, to, speech}` | one conversational turn; returns `{say, done, outcome}` |
+| `/health` | GET | liveness + config presence check (presence only, not validity; never echoes secrets) |
+| `/search` | POST `{state, ratecenter, npa?}` | **read-only** DID inventory search — the safe carrier-credential test; never buys |
+| `/provision` | POST `{ratecenter, state, npa?, route}` | search → order (**spends money**) → route → CNAM a new DID |
+| `/voice` | POST `{callId, from, to, speech}` | one conversational turn; returns `{say, done}`; intake completion carries structured `{problem, severity, address, name, callback, window}` into the dispatch SMS |
 | `/sms` | POST `{to, message}` | send SMS from the campaign line |
-| `/health` | GET | liveness + config presence check (never echoes secrets) |
 
 ## SECURITY (absolute rules)
 
@@ -54,7 +57,10 @@ webhook gateway works; the endpoint speaks plain JSON in/out so it is gateway-ag
   secret manager — never in code, never committed, never pasted into chat or email.
 - The carrier API key was previously present on a machine outside our control → **rotate it**
   in the carrier portal before first use of this build.
-- `calls.log.jsonl` contains caller PII — it is gitignored; never commit it.
+- `calls.log.jsonl` contains caller PII — gitignored, created with owner-only (600) permissions;
+  never commit it, and set a retention policy (rotate/purge on a schedule) before real volume.
+- `WEBHOOK_SECRET` gates every endpoint except `/health`; generate with `openssl rand -hex 24` and
+  configure the same value in the voice gateway's outbound headers.
 
 ## Environment
 
@@ -62,6 +68,7 @@ webhook gateway works; the endpoint speaks plain JSON in/out so it is gateway-ag
 |---|---|
 | `VITELITY_LOGIN` / `VITELITY_PASS` | carrier API credentials (portal → API access) |
 | `ANTHROPIC_API_KEY` | the AI layer |
-| `CLAUDE_MODEL` | default `claude-sonnet-5` |
+| `CLAUDE_MODEL` | default `claude-sonnet-5` (current Claude Sonnet model id, confirmed valid) |
+| `WEBHOOK_SECRET` | min 16 chars; required — all endpoints except `/health` refuse to serve without it |
 | `DISPATCH_SMS_TO` | crew phone for dispatch alerts (E.164) |
 | `PORT` | default 3000 |
