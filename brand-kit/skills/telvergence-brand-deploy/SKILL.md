@@ -276,3 +276,10 @@ founding-client) never ad-hoc · the entry tier must always equal a price a real
    one platform serves any market: "every numbering plan on Earth has its 305."
 HONESTY: say "markets across the globe / worldwide" — never the absolute "every country" (some
 countries restrict DID issuance; the softened phrasing is unfalsifiable and loses no thunder).
+11. **Our own dialer core (outbound muscle)** — aside from the AI voice engine, the platform runs
+   OUR OWN predictive-dialer / contact-center core (Vici-class, operated and hardened since 2019 —
+   the BOSS lineage). Public wording: "our own predictive-dialer core" — NEVER name the dialer
+   software on pages (same discipline as the AI provider). ALL outbound claims are CONSENT-BASED
+   wording (TCPA discipline): follow-ups, reactivation, review requests, storm alerts to existing
+   customers/consented lists — never cold-blast language. The flywheel sentence: the Smart-DID
+   answers everything inbound; the dialer works everything outbound; ONE owned number does both.
