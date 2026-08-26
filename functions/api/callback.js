@@ -37,15 +37,17 @@ function normPhone(raw) {
   return null;
 }
 
+// Vitelity outbound SMS. Per this account's API docs the send command is `sendsms` on the
+// smsout-api host (NOT `sendshort` on api.vitelity.net). Success = <status>ok</status> / x[[ok[[x.
 async function sendSms(env, { from, to, message }) {
   const qs = new URLSearchParams({
     login: env.VITELITY_LOGIN, pass: env.VITELITY_PASS,
-    cmd: "sendshort", xml: "yes", src: from, dst: to, msg: message,
+    cmd: "sendsms", xml: "yes", src: from, dst: to, msg: message,
   });
-  const r = await fetch((env.VITELITY_API_URL || "https://api.vitelity.net/api.php") + "?" + qs);
+  const r = await fetch((env.VITELITY_SMS_URL || "https://smsout-api.vitelity.net/api.php") + "?" + qs);
   const text = await r.text();
-  const ok = /<status>\s*ok\s*<\/status>/i.test(text) || /^\s*(ok|success)\s*$/i.test(text);
-  if (!ok) throw new Error("sms send failed");
+  const ok = /<status>\s*ok\s*<\/status>/i.test(text) || /x\[\[ok\[\[x/i.test(text) || /^\s*ok\s*$/i.test(text);
+  if (!ok) throw new Error("sms send failed: " + String(text).slice(0, 160));
   return true;
 }
 
