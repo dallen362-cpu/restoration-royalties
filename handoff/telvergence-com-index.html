@@ -226,7 +226,66 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
 .faq summary::after{content:"+";color:var(--cyan);font-weight:400;font-size:22px;line-height:1;flex:none}
 .faq details[open] summary::after{content:"\2013"}
 .faq .fa{padding:0 18px 16px;font-size:13.5px;color:var(--muted);line-height:1.7}
+/* ---- language flag bar + whole-site translator ---- */
+.langbar{display:flex;gap:6px;align-items:center;overflow-x:auto;padding:7px 12px;background:#080b12;border-bottom:1px solid var(--line);-webkit-overflow-scrolling:touch}
+.langbar::-webkit-scrollbar{height:0}
+.langbar .lbl{font-family:var(--fm);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);flex:none;margin-right:2px}
+.flagbtn{flex:none;display:inline-flex;align-items:center;gap:5px;font-family:var(--fb);font-size:12px;color:var(--muted);background:transparent;border:1px solid var(--line2);border-radius:999px;padding:5px 10px;cursor:pointer;white-space:nowrap;transition:border-color .2s,color .2s}
+.flagbtn .fg{font-size:14px;line-height:1}
+.flagbtn:hover{border-color:var(--cyan);color:var(--ink)}
+.flagbtn.on{background:linear-gradient(120deg,var(--cyan),var(--lime));color:#0B0F16;border-color:transparent;font-weight:700}
+/* neutralize Google's injected translate banner/tooltip so our layout stays intact */
+.goog-te-banner-frame,.goog-te-balloon-frame,#goog-gt-tt,.goog-tooltip,.goog-tooltip *{display:none!important}
+.goog-te-gadget{height:0;overflow:hidden;font-size:0}
+body{top:0!important}
+font.goog-text-highlight{background:none!important;box-shadow:none!important}
+#google_translate_element{position:absolute;left:-9999px;top:0;height:0;overflow:hidden}
 </style></head><body>
+
+<div id="google_translate_element"></div>
+<div class="langbar" id="langbar" aria-label="Choose your language — the whole site converts"><span class="lbl">🌐 Read this site in</span></div>
+<script>
+window.__tvLang='en'; window.__tvVoiceLang='en-US'; window.__tvTX={};
+window.__tvTranslate=function(text,target,cb){
+  target=target||window.__tvLang;
+  if(!text){cb(text);return;}
+  var key=target+'::'+text; if(window.__tvTX[key]){cb(window.__tvTX[key]);return;}
+  try{
+    fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl='+encodeURIComponent(target)+'&dt=t&q='+encodeURIComponent(text))
+      .then(function(r){return r.json()})
+      .then(function(d){var out=(d&&d[0]?d[0].map(function(s){return s&&s[0]?s[0]:''}).join(''):'')||text;window.__tvTX[key]=out;cb(out);})
+      .catch(function(){cb(text);});
+  }catch(e){cb(text);}
+};
+window.googleTranslateElementInit=function(){
+  try{new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'en,es,ht,pt,fr,de,zh-CN,ar,hi,ja,it,ru,ko,vi',autoDisplay:false},'google_translate_element');}catch(e){}
+};
+(function(){
+  var FLAGS=[
+   {c:'en',v:'en-US',f:'🇺🇸',n:'English'},{c:'es',v:'es-ES',f:'🇪🇸',n:'Español'},
+   {c:'ht',v:'fr-FR',f:'🇭🇹',n:'Kreyòl'},{c:'pt',v:'pt-BR',f:'🇧🇷',n:'Português'},
+   {c:'fr',v:'fr-FR',f:'🇫🇷',n:'Français'},{c:'de',v:'de-DE',f:'🇩🇪',n:'Deutsch'},
+   {c:'zh-CN',v:'zh-CN',f:'🇨🇳',n:'中文'},{c:'ar',v:'ar-SA',f:'🇸🇦',n:'العربية'},
+   {c:'hi',v:'hi-IN',f:'🇮🇳',n:'हिन्दी'},{c:'ja',v:'ja-JP',f:'🇯🇵',n:'日本語'}
+  ];
+  var bar=document.getElementById('langbar'); if(!bar)return;
+  function setCookie(v){try{document.cookie='googtrans='+v+';path=/';document.cookie='googtrans='+v+';path=/;domain=.'+location.hostname.replace(/^www\./,'');}catch(e){}}
+  function applyGoogle(code){
+    var combo=document.querySelector('.goog-te-combo');
+    if(combo){combo.value=(code==='en'?'':code);combo.dispatchEvent(new Event('change'));return true;}
+    setCookie(code==='en'?'/en/en':'/en/'+code); location.reload(); return true;
+  }
+  function pick(L,btn){
+    window.__tvLang=L.c; window.__tvVoiceLang=L.v;
+    [].forEach.call(bar.querySelectorAll('.flagbtn'),function(b){b.classList.remove('on')}); if(btn)btn.classList.add('on');
+    try{document.documentElement.setAttribute('lang',L.c);}catch(e){}
+    var tries=0; (function go(){var combo=document.querySelector('.goog-te-combo'); if(combo||tries++>24){applyGoogle(L.c);return;} setTimeout(go,220);})();
+  }
+  FLAGS.forEach(function(L,i){var b=document.createElement('button');b.className='flagbtn'+(i===0?' on':'');b.type='button';
+    b.innerHTML='<span class="fg">'+L.f+'</span> '+L.n;b.onclick=function(){pick(L,b)};bar.appendChild(b);});
+})();
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 
 <div class="ticker"><span>⚡ BULLETIN — TELVERGENCE · THE TALKING EDITION · This page speaks its own briefing and answers your questions out loud · A running network you can tap · Businesses onboarded in minutes, answering themselves in one ring · Tap ▶ to hear it, tap 🎙 to talk to it ⚡</span></div>
 
@@ -694,9 +753,18 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
     speechSynthesis.cancel=function(){if(window.__nvAudio){try{window.__nvAudio.pause()}catch(e){}}_nvCancel();};}
   /* neural-first: try the /tts proxy (Claude-quality voice); fall back to the browser voice until the key is live */
   var TTS_URL='https://restorationroyalties.com/tts', ttsDead=false;
-  function speakLocal(t,done){try{var u=new SpeechSynthesisUtterance(t);if(bestVoice)u.voice=bestVoice;u.rate=1.03;u.onend=function(){done&&done()};speechSynthesis.speak(u);}catch(e){done&&done()}}
+  function pickBestLangVoice(code){if(!code)return null;var vs=speechSynthesis.getVoices()||[],base=String(code).split('-')[0].toLowerCase();
+    var ex=vs.filter(function(v){return (v.lang||'').toLowerCase()===String(code).toLowerCase()});if(ex.length)return ex[0];
+    var lo=vs.filter(function(v){return (v.lang||'').toLowerCase().indexOf(base)===0});return lo.length?lo[0]:null;}
+  function speakLocal(t,done){try{var u=new SpeechSynthesisUtterance(t);
+    var L=window.__tvLang;
+    if(L&&L!=='en'){u.lang=window.__tvVoiceLang||'en-US';var lv=pickBestLangVoice(u.lang);if(lv)u.voice=lv;}
+    else if(bestVoice)u.voice=bestVoice;
+    u.rate=1.03;u.onend=function(){done&&done()};speechSynthesis.speak(u);}catch(e){done&&done()}}
   function speak(t,done){
     if(window.__nvAudio){try{window.__nvAudio.pause()}catch(e){}}
+    var L=window.__tvLang;
+    if(L&&L!=='en'&&window.__tvTranslate){window.__tvTranslate(t,L,function(tr){speakLocal(tr,done);});return;}
     if(ttsDead||!window.fetch){speakLocal(t,done);return;}
     fetch(TTS_URL,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({text:t})})
       .then(function(r){if(!r.ok)throw 0;return r.blob();})
@@ -822,10 +890,14 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
       mute=document.getElementById('lcMute'),x=document.getElementById('lcX');
   var speakOn=true,greeted=false;
   function say(t){if(!speakOn||!('speechSynthesis' in window))return;try{speechSynthesis.cancel();playing=false;playBtn.textContent='▶ Play the briefing';speak(t)}catch(e){}}
-  function add(t,w){var d=document.createElement('div');d.className='lc-m '+w;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
-  function answer(q){var ql=q.toLowerCase(),best=null,bs=0;KB.forEach(function(e){var s=0;e[0].forEach(function(k){if(ql.indexOf(k)>-1)s++});if(s>bs){bs=s;best=e}});
-    var a=best?best[1]:"Great question - the fastest answer is a live one: call or text (689) 242-1041. Or ask me about the platform, the science, the brands, pricing, or onboarding.";add(a,'b');say(a);}
-  function submit(){var q=(inp.value||'').trim();if(!q)return;add(q,'u');inp.value='';setTimeout(function(){answer(q)},250);}
+  function add(t,w,noTx){var d=document.createElement('div');d.className='lc-m '+w+(noTx?' notranslate':'');d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function matchAndReply(qEn){var ql=String(qEn).toLowerCase(),best=null,bs=0;KB.forEach(function(e){var s=0;e[0].forEach(function(k){if(ql.indexOf(k)>-1)s++});if(s>bs){bs=s;best=e}});
+    var a=best?best[1]:"Great question - the fastest answer is a live one: call or text (689) 242-1041. Or ask me about the platform, the science, the brands, pricing, or onboarding.";
+    add(a,'b');say(a);}  /* the Google translator converts the displayed answer; say() speaks it in the chosen language */
+  function answer(q){var L=window.__tvLang;
+    if(L&&L!=='en'&&window.__tvTranslate){window.__tvTranslate(q,'en',function(qen){matchAndReply(qen)});}
+    else{matchAndReply(q);}}
+  function submit(){var q=(inp.value||'').trim();if(!q)return;add(q,'u',true);inp.value='';setTimeout(function(){answer(q)},250);}
   function openPanel(){panel.classList.remove('lc-hide');if(!greeted){greeted=true;add(GREET,'b');say(GREET);}}
   fab.onclick=function(){if(panel.classList.contains('lc-hide'))openPanel();else{panel.classList.add('lc-hide');try{speechSynthesis.cancel()}catch(e){}}};
   document.getElementById('askBtn').onclick=openPanel;
@@ -836,7 +908,7 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
   if(SR){var rec=new SR();rec.lang='en-US';rec.interimResults=false;var recOn=false;
     rec.onresult=function(ev){inp.value=ev.results[0][0].transcript;submit();};
     rec.onend=function(){recOn=false;mic.classList.remove('rec')};rec.onerror=function(){recOn=false;mic.classList.remove('rec')};
-    mic.onclick=function(){if(recOn){rec.stop();return}try{speechSynthesis.cancel()}catch(e){}recOn=true;mic.classList.add('rec');try{rec.start()}catch(e){recOn=false;mic.classList.remove('rec')}};
+    mic.onclick=function(){if(recOn){rec.stop();return}try{speechSynthesis.cancel()}catch(e){}try{rec.lang=window.__tvVoiceLang||'en-US'}catch(e){}recOn=true;mic.classList.add('rec');try{rec.start()}catch(e){recOn=false;mic.classList.remove('rec')}};
   }else{mic.onclick=function(){add('Voice input is not supported in this browser - type your question and I will still answer out loud.','b');};}
 })();
 </script>
