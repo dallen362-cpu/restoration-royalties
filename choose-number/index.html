@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#04070F">
+<title>Choose Your Own Number × Telvergence — Real-Time DID Issuance</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="A Telvergence concept demo: a self-serve front door to DID issuance. Search a rate center, pick your own telephone number, see carrier cost + our markup, and watch it hot-flash live into your app — a white-label overlay of a carrier's number-ordering portal, private-labeled as Telvergence.">
+<link rel="canonical" href="https://restorationroyalties.com/choose-number/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Choose Your Own Number × Telvergence — Real-Time DID Issuance">
+<meta property="og:url" content="https://restorationroyalties.com/choose-number/">
+<meta property="og:description" content="Pick your number, watch it go live. A white-label overlay of a carrier's number-ordering API, private-labeled as Telvergence — we set the markup, billing &amp; collections included.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2304070F'/%3E%3Cg fill='%232AD4F0'%3E%3Ccircle cx='10' cy='10' r='1.7'/%3E%3Ccircle cx='16' cy='10' r='1.7'/%3E%3Ccircle cx='22' cy='10' r='1.7'/%3E%3Ccircle cx='10' cy='16' r='1.7'/%3E%3Ccircle cx='16' cy='16' r='1.7'/%3E%3Ccircle cx='22' cy='16' r='1.7'/%3E%3Ccircle cx='10' cy='22' r='1.7'/%3E%3Ccircle cx='16' cy='22' r='1.7'/%3E%3C/g%3E%3Ccircle cx='22' cy='22' r='2.1' fill='%2300FF88'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../brand-kit/brand.css">
+<style>
+:root{--accent:#2AD4F0;}
+
+/* honest badge chip */
+.honest{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--fm);font-size:10.5px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px dashed var(--line2);border-radius:999px;
+  padding:7px 14px;background:rgba(255,255,255,.02)}
+.honest::before{content:"◑";color:var(--accent)}
+
+/* ===== picker shell ===== */
+.picker{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);
+  border-radius:20px;padding:18px;box-shadow:0 40px 90px -50px rgba(42,212,240,.5)}
+.pk-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:15px;padding:2px 4px}
+.pk-title{font-family:var(--fm);font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.pk-title b{color:var(--accent)}
+.pk-portal{margin-left:auto;font-family:var(--fm);font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--violet);display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(138,123,255,.4);
+  border-radius:999px;padding:5px 11px;background:rgba(138,123,255,.07)}
+
+/* segmented type toggle */
+.seg{display:inline-flex;gap:4px;background:var(--void);border:1px solid var(--line);border-radius:11px;padding:4px;margin-bottom:12px;flex-wrap:wrap}
+.seg button{font-family:var(--fm);font-size:11px;font-weight:600;letter-spacing:.05em;color:var(--muted);background:transparent;
+  border:none;border-radius:8px;padding:9px 15px;cursor:pointer;transition:background .16s,color .16s;text-transform:uppercase}
+.seg button.on{background:linear-gradient(180deg,rgba(42,212,240,.18),rgba(42,212,240,.08));color:var(--accent);
+  box-shadow:inset 0 0 0 1px rgba(42,212,240,.4)}
+.seg button:hover:not(.on){color:var(--ink)}
+
+/* search fields */
+.searchbar{display:grid;gap:10px;grid-template-columns:1fr}
+@media(min-width:680px){.searchbar{grid-template-columns:1fr 1.4fr auto}}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.field input{font-family:var(--fm);font-size:14px;font-weight:600;color:var(--ink);background:var(--void);
+  border:1px solid var(--line);border-radius:11px;padding:12px 13px;transition:border-color .16s}
+.field input:focus{outline:none;border-color:var(--accent)}
+.field input::placeholder{color:var(--faint);font-weight:500;letter-spacing:.02em}
+.searchbtn{align-self:end;font-family:var(--fd);font-weight:700;font-size:14px;color:#04140a;
+  background:linear-gradient(180deg,#3ce0fb,#12bfe0);border:none;border-radius:11px;padding:13px 20px;cursor:pointer;
+  box-shadow:0 12px 30px -16px rgba(42,212,240,.7);transition:filter .16s,transform .12s;white-space:nowrap}
+.searchbtn:hover{filter:brightness(1.07)}.searchbtn:active{transform:translateY(1px)}
+
+/* markup control */
+.markbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:13px;background:var(--void);
+  border:1px solid var(--line);border-radius:12px;padding:12px 15px}
+.markbar .ml{font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--lime)}
+.markbar .mfield{display:inline-flex;align-items:center;gap:4px;font-family:var(--fm);font-weight:600;color:var(--ink);
+  background:var(--card);border:1px solid var(--line2);border-radius:9px;padding:6px 10px}
+.markbar .mfield span{color:var(--faint)}
+.markbar .mfield input{width:56px;font-family:var(--fm);font-size:13px;font-weight:600;color:var(--accent);background:transparent;border:none;text-align:right}
+.markbar .mfield input:focus{outline:none}
+.markbar .mn{font-size:12px;color:var(--muted);flex:1;min-width:180px}
+.markbar .mn b{color:var(--ink);font-weight:600}
+
+/* result grid */
+.rmeta{font-family:var(--fm);font-size:10.5px;font-weight:600;letter-spacing:.06em;color:var(--faint);margin:16px 2px 10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rmeta b{color:var(--accent)}
+.results{display:grid;gap:10px;grid-template-columns:1fr}
+@media(min-width:560px){.results{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.results{grid-template-columns:1fr 1fr 1fr}}
+.ncard{position:relative;text-align:left;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);
+  border-radius:14px;padding:15px 16px;cursor:pointer;transition:border-color .16s,transform .16s,box-shadow .16s;
+  animation:cardin .4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes cardin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ncard:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 16px 36px -26px var(--accent)}
+.ncard.sel{border-color:var(--lime);box-shadow:0 0 0 1px var(--lime),0 18px 40px -26px rgba(0,255,136,.6);
+  background:linear-gradient(180deg,rgba(0,255,136,.08),rgba(42,212,240,.04))}
+.ncard .tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:9px}
+.ncard .tg{font-family:var(--fm);font-size:8.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:6px;padding:3px 7px}
+.tg.local{color:var(--accent);border:1px solid rgba(42,212,240,.4);background:rgba(42,212,240,.07)}
+.tg.tollfree{color:var(--gold);border:1px solid rgba(255,194,75,.4);background:rgba(255,194,75,.07)}
+.tg.vanity{color:var(--violet);border:1px solid rgba(138,123,255,.45);background:rgba(138,123,255,.09)}
+.tg.premium{color:var(--gold);border:1px solid rgba(255,194,75,.4);background:rgba(255,194,75,.07)}
+.tg.flag{color:var(--lime);border:1px solid rgba(0,255,136,.4);background:rgba(0,255,136,.07)}
+.ncard .num{font-family:var(--fm);font-weight:600;font-size:18px;color:var(--ink);letter-spacing:.01em;line-height:1.15}
+.ncard.van .num{color:var(--violet)}
+.ncard .star{color:var(--gold)}
+.ncard .lbl{font-size:11.5px;color:var(--muted);margin-top:5px}
+.ncard .dial{font-family:var(--fm);font-size:10px;color:var(--faint);margin-top:3px}
+.ncard .priceln{margin-top:11px;padding-top:10px;border-top:1px dashed var(--line);font-family:var(--fm);font-size:10.5px;color:var(--faint);line-height:1.6}
+.ncard .priceln .c{color:var(--muted)}
+.ncard .priceln .m{color:var(--accent)}
+.ncard .priceln .pr{color:var(--lime);font-size:15px;font-weight:600}
+.ncard .pick{position:absolute;top:14px;right:14px;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line2);
+  display:flex;align-items:center;justify-content:center;font-size:11px;color:transparent;transition:.16s}
+.ncard.sel .pick{border-color:var(--lime);background:var(--lime);color:var(--void)}
+.rempty{grid-column:1/-1;text-align:center;color:var(--faint);font-size:13px;padding:26px}
+
+/* ===== summary + activation ===== */
+.summary{margin-top:16px;border:1px solid rgba(0,255,136,.3);border-radius:16px;padding:18px;
+  background:linear-gradient(180deg,rgba(0,255,136,.07),rgba(42,212,240,.03));
+  display:none;grid-template-columns:1fr;gap:16px;align-items:center}
+.summary.show{display:grid}
+@media(min-width:640px){.summary.show{grid-template-columns:1fr auto}}
+.sm-l .sm-k{font-family:var(--fm);font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.sm-num{font-family:var(--fm);font-weight:600;font-size:clamp(22px,4.4vw,30px);color:var(--ink);letter-spacing:.01em;margin-top:6px}
+.sm-sub{font-size:12.5px;color:var(--muted);margin-top:5px}
+.sm-price{font-family:var(--fm);font-weight:600;color:var(--lime)}
+.reserve{font-family:var(--fd);font-weight:800;font-size:15px;color:#04140a;background:linear-gradient(180deg,#2bff9e,#00c46a);
+  border:none;border-radius:13px;padding:16px 26px;cursor:pointer;white-space:nowrap;box-shadow:0 14px 34px -16px rgba(0,255,136,.7);
+  transition:filter .16s,transform .12s}
+.reserve:hover{filter:brightness(1.06)}.reserve:active{transform:translateY(1px)}
+.reserve:disabled{filter:saturate(.4) brightness(.9);cursor:default}
+
+/* activation sequence */
+.activate{margin-top:16px;border:1px solid var(--line);border-radius:16px;padding:18px;background:var(--void);display:none}
+.activate.show{display:block}
+.astep{display:flex;align-items:center;gap:13px;padding:12px 4px;opacity:.34;transition:opacity .4s}
+.astep.on{opacity:1}
+.astep .ai{width:26px;height:26px;flex:none;border-radius:50%;border:2px solid var(--line2);color:var(--faint);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-family:var(--fm);font-weight:600}
+.astep.on .ai{border-color:var(--accent);border-top-color:transparent;color:var(--accent);animation:aspin .8s linear infinite}
+.astep.done{opacity:1}
+.astep.done .ai{border-color:var(--lime);background:var(--lime);color:var(--void);animation:none}
+@keyframes aspin{to{transform:rotate(360deg)}}
+.astep .at{font-weight:600;font-size:14px;color:var(--ink)}
+.astep .at small{display:block;font-family:var(--fm);font-weight:500;font-size:10px;color:var(--faint);letter-spacing:.03em;margin-top:1px}
+.astep.on .at small{color:var(--accent)}.astep.done .at small{color:var(--lime)}
+.livecard{margin-top:6px;text-align:center;border-radius:15px;padding:24px 18px;border:1px solid rgba(0,255,136,.32);
+  background:linear-gradient(180deg,rgba(0,255,136,.1),rgba(42,212,240,.04));opacity:0;transform:translateY(10px) scale(.98);
+  transition:opacity .5s cubic-bezier(.2,.7,.2,1),transform .5s cubic-bezier(.2,.7,.2,1)}
+.livecard.show{opacity:1;transform:none;animation:lpulse 1.9s ease-in-out infinite}
+@keyframes lpulse{0%,100%{box-shadow:0 0 0 0 rgba(0,255,136,.24)}50%{box-shadow:0 0 34px -6px rgba(0,255,136,.46)}}
+.livecard .lc-ic{font-size:30px}
+.livecard .lc-t{font-family:var(--fd);font-weight:800;font-size:18px;color:var(--ink);letter-spacing:-.02em;margin-top:7px}
+.livecard .lc-num{font-family:var(--fm);font-weight:600;font-size:17px;color:var(--lime);margin-top:6px}
+.livecard .lc-badge{margin-top:12px;display:inline-flex;align-items:center;gap:7px;font-family:var(--fm);font-size:10px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(42,212,240,.4);border-radius:999px;padding:6px 12px;background:rgba(42,212,240,.06)}
+.livecard .lc-badge .d{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 9px var(--lime);animation:blink 1.8s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.livecard .lc-go{display:inline-flex;align-items:center;gap:7px;margin-top:14px;text-decoration:none;font-family:var(--fd);font-weight:700;
+  font-size:14px;color:#04140a;background:linear-gradient(180deg,#3ce0fb,#12bfe0);border-radius:11px;padding:11px 20px;
+  transition:filter .16s,transform .12s}
+.livecard .lc-go:hover{filter:brightness(1.07)}.livecard .lc-go:active{transform:translateY(1px)}
+
+.pk-cap{color:var(--faint);font-size:11.5px;line-height:1.55;margin-top:14px;text-align:center;max-width:80ch;margin-inline:auto}
+.pk-cap b{color:var(--muted);font-weight:600}
+
+/* how it works strip */
+.howrows{display:grid;gap:10px}@media(min-width:640px){.howrows{grid-template-columns:1fr 1fr}}
+.hr{display:flex;gap:13px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px;
+  opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s cubic-bezier(.2,.7,.2,1),border-color .16s}
+.hr.in{opacity:1;transform:none}.hr:hover{border-color:var(--line2)}
+.hr .ic{width:40px;height:40px;flex:none;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;
+  background:rgba(42,212,240,.1);border:1px solid rgba(42,212,240,.35)}
+.hr .n{font-family:var(--fd);font-weight:700;font-size:15px;color:var(--ink)}
+.hr .n b{color:var(--accent);font-weight:700}
+.hr p{color:var(--muted);font-size:13px;margin-top:4px}.hr p b{color:var(--ink);font-weight:600}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="logo"><b>TELVERGENCE</b> · CHOOSE YOUR NUMBER <span class="sr">· Real-Time DID Issuance</span></div>
+  <a href="../showroom/">← Showroom</a>
+</div>
+
+<header class="wrap">
+  <div class="eyebrow">TELVERGENCE × Choose Your Number · Real-Time DID Issuance · White-Label Carrier</div>
+  <h1>Pick your number.<br><span>Watch it go live.</span></h1>
+  <div class="tagline">The self-serve front door to a phone line: <b>search a rate center, choose the exact number you want</b> — local, toll-free, or a vanity word — see the price, and <b>reserve it in one tap</b>. Behind the glass it's a <b>white-label overlay of a carrier's number-ordering portal</b>, privately labeled as Telvergence — we set the markup, and the number hot-flashes straight into your app.</div>
+  <div class="honest">Illustrative concept demo · example numbers pending assignment · no live ordering on this page</div>
+</header>
+
+<div class="wrap">
+  <section>
+    <div class="big"><b>The concept:</b> issuing a business line should feel like picking a username. A prospect opens this window, types an area code and maybe a word — <b>"MOLD," "RESERVE"</b> — and instantly sees numbers they can own. The portal is <b>ours over the carrier's rails</b>: Telvergence private-labels a wholesale number-ordering API as its own storefront, prices it with <b>our margin on carrier cost</b>, and the carrier handles <b>billing &amp; collections free</b> under our private-label permission. Pick a number below and run the flow.</div>
+  </section>
+
+  <!-- ===================== CENTERPIECE — THE PICKER ===================== -->
+  <section>
+    <h2>Choose your number — search, pick, and activate</h2>
+    <div class="picker">
+      <div class="pk-head">
+        <span class="pk-title"><b>TELVERGENCE</b> · Number Storefront</span>
+        <span class="pk-portal">◈ White-label carrier portal</span>
+      </div>
+
+      <div class="seg" id="seg" role="tablist" aria-label="Number type">
+        <button data-type="local" class="on">Local</button>
+        <button data-type="tollfree">Toll-Free</button>
+        <button data-type="vanity">Vanity ★</button>
+      </div>
+
+      <form class="searchbar" id="searchForm">
+        <div class="field">
+          <label for="area">Area code / rate center</label>
+          <input id="area" inputmode="numeric" maxlength="3" value="786" autocomplete="off" aria-label="Area code">
+        </div>
+        <div class="field">
+          <label for="word">Vanity word (optional)</label>
+          <input id="word" maxlength="12" value="MOLD" placeholder="MOLD · RESERVE · CLAIMS" autocomplete="off" aria-label="Vanity word">
+        </div>
+        <button class="searchbtn" type="submit">Search numbers</button>
+      </form>
+
+      <div class="markbar">
+        <span class="ml">Your markup</span>
+        <span class="mfield"><span>$</span><input id="markup" inputmode="decimal" value="20.00" aria-label="Monthly markup in dollars">/mo</span>
+        <span class="mn"><b>We</b> set the margin. Carrier cost is illustrative; your price = cost + this markup. Change it and every price updates live.</span>
+      </div>
+
+      <div class="rmeta" id="rmeta"></div>
+      <div class="results" id="results" aria-live="polite"></div>
+
+      <!-- selection summary -->
+      <div class="summary" id="summary">
+        <div class="sm-l">
+          <div class="sm-k">✓ Number selected</div>
+          <div class="sm-num" id="smNum">—</div>
+          <div class="sm-sub" id="smSub">—</div>
+        </div>
+        <button class="reserve" id="reserveBtn" type="button">Reserve &amp; activate →</button>
+      </div>
+
+      <!-- activation sequence -->
+      <div class="activate" id="activate">
+        <div class="astep" data-a="0"><div class="ai">1</div><div class="at">Reserving via carrier API<small>number held on the wholesale portal</small></div></div>
+        <div class="astep" data-a="1"><div class="ai">2</div><div class="at">Private-labeled as Telvergence<small>white-label overlay · our storefront, their rails</small></div></div>
+        <div class="astep" data-a="2"><div class="ai">3</div><div class="at">Billing &amp; collections enabled<small>handled free under our private-label permission</small></div></div>
+        <div class="astep" data-a="3"><div class="ai">4</div><div class="at">● LIVE<small>registered · inbound + outbound ready</small></div></div>
+        <div class="livecard" id="livecard">
+          <div class="lc-ic">☎</div>
+          <div class="lc-t">Your number is hot-flashed live — ready in your app</div>
+          <div class="lc-num" id="lcNum">—</div>
+          <div class="lc-badge"><span class="d"></span>DID issued · registered</div>
+          <div><a class="lc-go" href="../softphone/">see it answer →</a></div>
+        </div>
+      </div>
+
+    </div>
+    <p class="pk-cap"><b>Illustrative concept demo — client-side only.</b> Numbers are generated as examples and are pending assignment; the pricing and the reservation animation are scripted. No live carrier ordering, provisioning, or billing occurs on this page.</p>
+  </section>
+
+  <!-- HOW IT WORKS / WHITE-LABEL STRIP -->
+  <section>
+    <h2>How it works — you pick, we provision, over their rails</h2>
+    <div class="howrows">
+      <div class="hr"><div class="ic">👆</div><div><div class="n"><b>You pick, we provision</b></div><p><b>Real-time DID issuance</b> the moment you choose — the number you clicked is reserved and lit as your live business line, not a request in a queue.</p></div></div>
+      <div class="hr"><div class="ic">◈</div><div><div class="n"><b>Our portal over their rails</b></div><p>A <b>white-label overlay of the carrier's number-ordering API</b> — the same wholesale inventory, private-labeled as Telvergence, so the whole storefront looks and bills as ours.</p></div></div>
+      <div class="hr"><div class="ic">📈</div><div><div class="n"><b>We set the markup</b></div><p>Our <b>margin on carrier cost</b> — transparent and ours to set. Cost plus our markup is your price; the spread is the business, and it's controlled from one dial.</p></div></div>
+      <div class="hr"><div class="ic">🧾</div><div><div class="n"><b>Billing &amp; collections included</b></div><p>Handled <b>free under our private-label permission</b> — the carrier runs invoicing and collections beneath our brand, so there's nothing for you to run.</p></div></div>
+      <div class="hr"><div class="ic">📜</div><div><div class="n"><b>Backed by an executed wholesale agreement</b></div><p>This isn&rsquo;t a pitch for access — Telvergence operates under a <b>long-standing, executed wholesale agreement</b> with the underlying carrier. The rails, the private-label permission, and the markup model are already ours to use.</p></div></div>
+    </div>
+  </section>
+
+  <!-- CLOSE -->
+  <section class="last">
+    <h2>The ask</h2>
+    <p class="lead">Let's put this storefront on your brand — a self-serve window where your prospects <b>choose their own number and watch it go live</b>, priced with your markup, billed and collected for you. <b>A 20-minute call is all it takes to see it running on your numbers.</b></p>
+    <p class="trust">Give me <span>1% of your trust</span> — I'll earn the other 99.</p>
+    <div class="cta">
+      <a class="call" href="tel:+16892421041">📞 Call to begin — (689) 242-1041</a>
+      <a class="book" href="mailto:contact@telvergence.com?subject=Choose%20Your%20Own%20Number%20%E2%80%94%20White-Label%20DID%20Storefront">✉️ contact@telvergence.com</a>
+    </div>
+    <p class="decide">You decide. <span>What's it going to be?</span></p>
+    <div class="sig">Looking forward to building this with you,<br><b>David Drew Allen</b> · President, Telvergence, Inc. · 689-242-1041 · contact@telvergence.com</div>
+  </section>
+
+  <div class="disclaimer">Illustrative concept demonstration only. The number picker generates <b>example numbers client-side</b> — every number shown is a fictional example <b>pending assignment</b>, not a published or reserved line. Pricing (carrier cost, markup, and monthly price) is illustrative; <b>no real carrier pricing is represented as fact</b>. The "reserve &amp; activate" sequence is a scripted animation — <b>no live carrier ordering, provisioning, billing, or collections occurs on this page</b>, and carrier white-label terms shown here are illustrative. No personal data, secrets, or payment details are collected. Only public contact details — (689) 242-1041 / contact@telvergence.com — are real. Confidential — TELVERGENCE.</div>
+</div>
+
+<script>
+/* ===== reveal-on-scroll (house convention) ===== */
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(reduce){document.querySelectorAll('section,.hr').forEach(function(x){x.classList.add('in');});}
+  else{
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},
+      {rootMargin:'0px 0px -6% 0px',threshold:.06});
+    document.querySelectorAll('section,.hr').forEach(function(x){io.observe(x);});
+  }
+})();
+
+/* ===== the interactive number picker ===== */
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var seg=document.getElementById('seg'),
+      form=document.getElementById('searchForm'),
+      areaEl=document.getElementById('area'),
+      wordEl=document.getElementById('word'),
+      markEl=document.getElementById('markup'),
+      rmeta=document.getElementById('rmeta'),
+      results=document.getElementById('results'),
+      summary=document.getElementById('summary'),
+      smNum=document.getElementById('smNum'),
+      smSub=document.getElementById('smSub'),
+      reserveBtn=document.getElementById('reserveBtn'),
+      activate=document.getElementById('activate'),
+      livecard=document.getElementById('livecard'),
+      lcNum=document.getElementById('lcNum'),
+      asteps=[].slice.call(document.querySelectorAll('.astep'));
+
+  var type='local', cards=[], selIdx=-1, actTimers=[];
+
+  /* letter → keypad digit */
+  var KEYPAD={A:2,B:2,C:2,D:3,E:3,F:3,G:4,H:4,I:4,J:5,K:5,L:5,M:6,N:6,O:6,P:7,Q:7,R:7,S:7,T:8,U:8,V:8,W:9,X:9,Y:9,Z:9};
+  function w2d(w){return (w||'').toUpperCase().replace(/[^A-Z]/g,'').split('').map(function(c){return KEYPAD[c];}).join('');}
+  function cleanWord(w){return (w||'').toUpperCase().replace(/[^A-Z]/g,'');}
+
+  /* rate-center labels for a handful of common codes */
+  var RC={'786':'Miami, FL','305':'Miami, FL','954':'Fort Lauderdale, FL','561':'West Palm Beach, FL',
+    '407':'Orlando, FL','813':'Tampa, FL','212':'New York, NY','646':'New York, NY','718':'Brooklyn, NY',
+    '415':'San Francisco, CA','310':'Los Angeles, CA','213':'Los Angeles, CA','312':'Chicago, IL',
+    '702':'Las Vegas, NV','404':'Atlanta, GA','617':'Boston, MA','206':'Seattle, WA','214':'Dallas, TX',
+    '713':'Houston, TX','602':'Phoenix, AZ','303':'Denver, CO','512':'Austin, TX','202':'Washington, DC'};
+
+  function rd(){return Math.floor(Math.random()*10);}
+  function nxx(){var n=2+Math.floor(Math.random()*8),a=rd(),b=rd();if(a===1&&b===1)b=2;return ''+n+a+b;}
+  function digits(n){var s='';for(var i=0;i<n;i++)s+=rd();return s;}
+  function fmt7(s){return s.slice(0,3)+'-'+s.slice(3);}
+  function money(n){return '$'+n.toFixed(2);}
+  function markup(){var v=parseFloat(markEl.value);return (isNaN(v)||v<0)?0:v;}
+
+  /* build one card object; cost & premium are illustrative */
+  function localCard(area,cost,flag){
+    var p=nxx(),s=digits(4),disp='('+area+') '+p+'-'+s;
+    return {kind:'local',disp:disp,dial:disp,label:(RC[area]||'Local rate center')+' · Local DID',
+      cost:cost,premium:0,star:false,flag:!!flag,tags:flag?[['flag','★ Flagship']]:[['local','Local']]};
+  }
+  function tollCard(cost){
+    var pfx=['800','833','844','888'][Math.floor(Math.random()*4)],s=digits(7);
+    var disp='1-'+pfx+'-'+fmt7(s);
+    return {kind:'tollfree',disp:disp,dial:disp,label:'Toll-Free · nationwide reach',
+      cost:cost,premium:0,star:false,flag:false,tags:[['tollfree','Toll-Free '+pfx]]};
+  }
+  /* vanity built from the typed word (letters → keypad digits) */
+  function vanityToll(word){
+    var wd=w2d(word),W=cleanWord(word),pfx=['800','833','844'][Math.floor(Math.random()*3)];
+    var dispWord, dialSuf, tail;
+    if(wd.length>=7){dispWord=W.slice(0,7);dialSuf=wd.slice(0,7);tail='1-'+pfx+'-'+dispWord;}
+    else{var lead=digits(7-wd.length);dispWord=W;dialSuf=lead+wd;tail='1-'+pfx+'-'+lead+'-'+dispWord;}
+    return {kind:'vanity',disp:tail,dial:'1-'+pfx+'-'+fmt7(dialSuf),label:'Toll-Free vanity · spells "'+W+'"',
+      cost:3.95,premium:8.00,star:true,flag:false,tags:[['vanity','★ Vanity'],['premium','Premium']]};
+  }
+  function vanityLocal(area,word){
+    var wd=w2d(word),W=cleanWord(word),p=nxx();
+    var four=(wd+'0000').slice(0,4),Wshow=(W+'').slice(0,4);
+    var disp='('+area+') '+p+'-'+Wshow;
+    return {kind:'vanity',disp:disp,dial:'('+area+') '+p+'-'+four,label:(RC[area]||'Local')+' vanity · spells "'+Wshow+'"',
+      cost:2.95,premium:6.00,star:true,flag:false,tags:[['vanity','★ Vanity'],['premium','Premium']]};
+  }
+
+  function generate(){
+    var area=(areaEl.value||'786').replace(/[^0-9]/g,'').slice(0,3)||'786';
+    areaEl.value=area;
+    var word=wordEl.value, hasWord=cleanWord(word).length>=2;
+    var out=[];
+    if(type==='local'){
+      if(hasWord) out.push(vanityLocal(area,word));
+      out.push(localCard(area,2.95,true)); /* flagship @ $22.95 w/ default markup */
+      var costs=[1.95,2.45,2.95,2.25,3.25,2.75,1.75,2.95];
+      for(var i=0;i<8&&out.length<10;i++) out.push(localCard(area,costs[i%costs.length],false));
+    } else if(type==='tollfree'){
+      if(hasWord){out.push(vanityToll(word));out.push(vanityToll(word));}
+      out.push({kind:'tollfree',disp:'1-800-'+fmt7(digits(7)),dial:'',label:'Toll-Free · nationwide reach',
+        cost:2.95,premium:0,star:false,flag:true,tags:[['flag','★ Flagship']]});
+      out[out.length-1].dial=out[out.length-1].disp;
+      var tc=[3.95,3.75,4.25,3.95,4.15,3.85,3.95];
+      for(var j=0;j<7&&out.length<10;j++) out.push(tollCard(tc[j%tc.length]));
+    } else { /* vanity */
+      var vw=hasWord?word:'RESERVE';
+      out.push(vanityToll(vw));out.push(vanityLocal(area,vw));out.push(vanityToll(vw));
+      out.push(vanityToll(vw));out.push(vanityLocal(area,vw));
+      /* a plain flagship so the $22.95 line is always present */
+      out.push(localCard(area,2.95,true));
+      while(out.length<9) out.push(vanityToll(vw));
+    }
+    cards=out.slice(0,10);
+    selIdx=-1;
+    renderMeta(area,word);
+    renderCards();
+    hideSummary();
+  }
+
+  function renderMeta(area,word){
+    var w=cleanWord(word), lbl=RC[area]||'rate center '+area;
+    var bits=['<b>'+cards.length+'</b> example numbers'];
+    if(type==='local') bits.push('local · '+lbl);
+    if(type==='tollfree') bits.push('toll-free · 800 / 833 / 844 / 888');
+    if(type==='vanity') bits.push('vanity · spelling "'+(w||'RESERVE')+'"');
+    bits.push('pending assignment');
+    rmeta.innerHTML='◈ '+bits.join(' &nbsp;·&nbsp; ');
+  }
+
+  function priceHtml(c){
+    var price=c.cost+markup()+c.premium;
+    var line='<span class="c">cost '+money(c.cost)+'</span> + <span class="m">markup '+money(markup())+'</span>';
+    if(c.premium>0) line+=' <span class="m">+ premium '+money(c.premium)+'</span>';
+    line+=' =<br><span class="pr">'+money(price)+'</span>/mo';
+    return line;
+  }
+
+  function renderCards(){
+    results.innerHTML='';
+    if(!cards.length){results.innerHTML='<div class="rempty">No numbers — try another area code or word.</div>';return;}
+    cards.forEach(function(c,i){
+      var el=document.createElement('button');
+      el.type='button';
+      el.className='ncard'+(c.kind==='vanity'?' van':'')+(i===selIdx?' sel':'');
+      el.style.animationDelay=(i*40)+'ms';
+      var tags=c.tags.map(function(t){return '<span class="tg '+t[0]+'">'+t[1]+'</span>';}).join('');
+      var numHtml=c.star?('<span class="star">★</span> '+c.disp):c.disp;
+      el.innerHTML='<div class="pick">✓</div>'+
+        '<div class="tags">'+tags+'</div>'+
+        '<div class="num">'+numHtml+'</div>'+
+        '<div class="lbl">'+c.label+'</div>'+
+        (c.dial&&c.dial!==c.disp?'<div class="dial">dials '+c.dial+'</div>':'')+
+        '<div class="priceln">'+priceHtml(c)+'</div>';
+      el.addEventListener('click',function(){select(i);});
+      results.appendChild(el);
+    });
+  }
+
+  function repriceOnly(){
+    /* update price lines + summary without regenerating numbers */
+    [].slice.call(results.querySelectorAll('.ncard')).forEach(function(el,i){
+      var pl=el.querySelector('.priceln'); if(pl&&cards[i]) pl.innerHTML=priceHtml(cards[i]);
+    });
+    if(selIdx>-1) fillSummary(cards[selIdx]);
+  }
+
+  function fillSummary(c){
+    var price=c.cost+markup()+c.premium;
+    smNum.innerHTML=(c.star?'<span style="color:var(--gold)">★</span> ':'')+c.disp;
+    var sub=c.label+' · <span class="sm-price">'+money(price)+'/mo</span>';
+    if(c.dial&&c.dial!==c.disp) sub+=' · dials '+c.dial;
+    smSub.innerHTML=sub;
+  }
+  function hideSummary(){summary.classList.remove('show');activate.classList.remove('show');clearAct();}
+
+  function select(i){
+    selIdx=i;
+    [].slice.call(results.querySelectorAll('.ncard')).forEach(function(el,k){el.classList.toggle('sel',k===i);});
+    fillSummary(cards[i]);
+    summary.classList.add('show');
+    activate.classList.remove('show'); clearAct(); resetSteps();
+    reserveBtn.disabled=false; reserveBtn.textContent='Reserve & activate →';
+    summary.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
+  }
+
+  function clearAct(){actTimers.forEach(clearTimeout);actTimers=[];}
+  function resetSteps(){asteps.forEach(function(s){s.classList.remove('on','done');
+    var ai=s.querySelector('.ai');if(ai)ai.textContent=(parseInt(s.dataset.a,10)+1);});livecard.classList.remove('show');}
+  function stepOn(n){var s=asteps[n];if(s)s.classList.add('on');}
+  function stepDone(n){var s=asteps[n];if(!s)return;s.classList.remove('on');s.classList.add('done');
+    var ai=s.querySelector('.ai');if(ai)ai.textContent='✓';}
+
+  function runActivation(){
+    if(selIdx<0) return;
+    var c=cards[selIdx];
+    lcNum.textContent=c.disp;
+    activate.classList.add('show');
+    reserveBtn.disabled=true; reserveBtn.textContent='Activating…';
+    resetSteps();
+    activate.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
+
+    if(reduce){
+      asteps.forEach(function(_,i){stepDone(i);});
+      livecard.classList.add('show');
+      reserveBtn.textContent='● Live';
+      return;
+    }
+    clearAct();
+    function T(d,fn){actTimers.push(setTimeout(fn,d));}
+    /* step 1 */
+    stepOn(0);
+    T(1100,function(){stepDone(0);stepOn(1);});
+    T(2300,function(){stepDone(1);stepOn(2);});
+    T(3600,function(){stepDone(2);stepOn(3);});
+    T(4900,function(){stepDone(3);livecard.classList.add('show');reserveBtn.textContent='● Live';});
+  }
+
+  /* ===== events ===== */
+  seg.addEventListener('click',function(e){
+    var b=e.target.closest('button[data-type]'); if(!b)return;
+    [].slice.call(seg.children).forEach(function(x){x.classList.remove('on');});
+    b.classList.add('on'); type=b.dataset.type; generate();
+  });
+  form.addEventListener('submit',function(e){e.preventDefault();generate();});
+  markEl.addEventListener('input',repriceOnly);
+  reserveBtn.addEventListener('click',runActivation);
+
+  /* first load */
+  generate();
+})();
+</script>
+</body>
+</html>
