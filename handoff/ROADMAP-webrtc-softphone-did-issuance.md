@@ -96,6 +96,61 @@ Reflected now on `/softphone/` ("One Private Network" band).
   issuance on this exact Acrobits + Sinch stack. Still referenced as active by David.
 - **Telvergence blueprints (2022)** — internal design docs for this unification.
 
+## RECOVERY LANE FINDINGS (cowork session, 2026-08-26 evening — update as reports arrive)
+- **`telvergence-portals` is EMPTY** (bare "create your first file" repo). Confirmed dead end — stop
+  hunting it; the master export's note that it was created empty is accurate.
+- **`TELVERGENCE_MASTER_MAX_LATEST.zip` found locally** in `C:\Users\dalle\Downloads` (several copies,
+  plus 2026-08-09 master code exports). Unzipped to
+  `C:\Users\dalle\AI-Master-Brain\Telvergence\RECOVERY\master-max\extracted\` — 20 files:
+  **Project_Phoenix, Carriers_and_APIs, white-label agreements, sales scripts, call lists.**
+  Mining in progress for the Sinch/Vitelity integration + Derek/ContactAM material.
+- **Currency gap:** the local zip is the **2026-07-17 snapshot**; the live private repo
+  `telvergence-master-max` has a couple of August 2026 commits on top. Neither session can pull the
+  live repo right now (private, out of both sessions' scope; browser downloads don't land in
+  Downloads from the automation profile). If mining surfaces references to newer material, David
+  downloads a fresh ZIP manually (github.com → Code → Download ZIP) or adds the repo to this
+  session's sources — otherwise the July snapshot stands.
+
+## RECOVERY INVENTORY (cowork session, 2026-08-26 — structured findings)
+Staged under `C:\Users\dalle\AI-Master-Brain\Telvergence\RECOVERY\master-max\extracted\TELVERGENCE_MASTER_MAX\`.
+The July snapshot is **13 markdown docs + 4 spreadsheets — NO source code of any kind.**
+
+- **P1 · Derek's ContactAM / VICIdial dialer blueprint — FOUND (docs):**
+  `07_Tech_and_Product/Project_Phoenix/Project-Phoenix-Infrastructure-Backup-2026-04-21.md`
+  (rebuild blueprint: mission, ViciBox 11 clean-install sequence, asset inventory; names Derek +
+  ContactAM + VICIdial) + `Project_Phoenix/BACKUP_RECOVERY_MAP.md` +
+  `00_Command_Center/{MANUAL_DIAL_FALLBACK.md, CURRENT_STATUS_2026-07-10.md, GO_LIVE_CHECKLIST_2026-07-11.md}`.
+  → This is the rebuild RECIPE; the running system's images/scripts are in the "still missing" list below.
+- **P2 · Sinch/Acrobits/Vitelity integration — docs only, NO code:**
+  `08_Carriers_and_APIs/API_INTEGRATION_STATUS.md` (status of Vitelity/Inteliquent/Sinch + Vultr +
+  VICIdial + Stripe; auth values deliberately not stored in the file). The actual integration code is
+  NOT in the repo.
+- **P3 · Executed Vitelity WHOLESALE agreement — NOT present anywhere reachable.** The repo has
+  Telvergence's OWN white-label MSA *template* (`01_Core_Offer/telvergence-pricing-and-white-label-agreements.md`)
+  and draft Bright Sound billing clauses — not a signed Vitelity wholesale contract. Google Drive has only
+  **two Letters of Authorization (LOAs) to Vitelity** + an account-lockdown playbook. HONEST STATUS: the
+  Vitelity relationship is evidenced by LOAs + the account, not a located signed "wholesale agreement."
+  If a signed wholesale contract exists it's in David's email or the deprovisioned ContactAM OneDrive.
+
+### STILL MISSING → all point to the ContactAM OneDrive (dave@contactam.com) / synced Windows box
+Per the repo's own "Still missing" list — the running-system artifacts, none in any reachable location:
+custom-patched Aug-2025 ISO, current ViciBox/VICIdial production image, April-2026 Phoenix server
+snapshot, **`agi-DID_route.agi`** (the DID routing script), live trunk config, current Vitelity
+peering/IP-auth values, current campaign DB export. The recovery map points ALL of these to the
+**Contact America OneDrive (dave@contactam.com)**, which `06_DIGITAL-IDENTITY` notes flag as
+**DEPROVISIONED**. ⭐ DAVID-ONLY TRAIL: regaining that OneDrive (or the synced Windows machine) is the
+single unlock for the actual running dialer + real integration code. This session cannot reach it.
+
+### Google Drive — adjacent material NOT in the repo (stage into RECOVERY)
+Located by the cowork session, higher-value than the markdown docs:
+- **2026-08-09 master CODE export** — newer than the July zip; may contain the actual code the July
+  docs-only snapshot lacks. HIGHEST PRIORITY to stage & inspect.
+- Vitelity Provisioning Spec · Vitelity API reference · **Vitelity↔Sinch Lockdown Playbook** · the two
+  Vitelity LOAs · **Acrobits private-label softphone PDF** · **EZ VoIP (2020) doc + "EZ VOIP" folder** ·
+  Reliant welcome-letter samples · **"Vici Logons" ContactAM config**.
+These cover the EZ VoIP / Acrobits / Sinch / Vitelity heritage concretely — the functional spec for the
+Phase-1/2/3 build even if the live production code stays locked in the OneDrive.
+
 ## Recoverable assets to pull in when building this (do NOT rebuild from scratch)
 - **The 2022 Sinch API integration code** that unified **Sinch + Acrobits with Vitelity** — David has
   this "API code line." Likely lives in the private repos **`dallen362-cpu/telvergence-master-max`**
