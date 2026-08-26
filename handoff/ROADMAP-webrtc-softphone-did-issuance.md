@@ -53,6 +53,14 @@ business pays **$5K down without blinking."
   CRM field map, worker-queue schema, DB tables; split into 3 idempotent services).
 - **Cloudflare Functions already in repo**: `functions/api/callback.js` (SMS callback via Vitelity),
   `functions/tts.js` (neural voice) — the seams to extend.
+- **Derek's ContactAM dialing-campaign blueprint folder** — Derek built an "awesome" outbound dialing
+  campaign solution for ContactAM (dave@contactam.com) using Claude. David has the full blueprint folder
+  and all files → use as a **quick, easy rebuild reference** for the dialer/phone-system, NOT a rebuild
+  from scratch. In-repo partial reference already present: `backend/VICIDIAL-SETUP.md`,
+  `backend/VICIDIAL-EXTRACTION-PROMPT.md`, `backend/vicidial-client.js`, `backend/BOSS-CRM-LMS-SCHEMA.md`,
+  `backend/INGESTION-AND-SYNTHESIS.md`. The full Derek/ContactAM folder likely lives in David's local
+  archives / Google Drive or the private `telvergence-master-max` repo — gather it before rebuilding.
+  (This is the "Derek phone system" resurrection lane noted in the master plan.)
 
 ## Related recoverable Perplexity work (separate, noted for the same "recover, don't rebuild" reason)
 - **Drone video-to-quote** — landing/demo exists (`win.html`); the AI estimation engine was only
