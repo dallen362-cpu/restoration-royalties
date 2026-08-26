@@ -180,6 +180,17 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
 .cd-ln .d{width:7px;height:7px;border-radius:50%;background:var(--lime);flex:none;animation:cdB 1.6s infinite}
 .cd-ln .num{margin-left:auto;font-family:var(--fm);font-size:11px;color:var(--cyan)}
 .cd-note{padding:10px 15px;border-top:1px solid #25303F;font-size:11px;color:#6E7A8B}
+/* ---- product hero emphasis (the thing we sell + deliver) ---- */
+.hprod{max-width:720px;margin:6px auto 2px;text-align:center}
+.hprod .badge{display:inline-block;font-family:var(--fm);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#0B0F16;background:linear-gradient(120deg,var(--cyan),var(--lime));padding:6px 14px;border-radius:999px;font-weight:700}
+.hprod .picon{font-size:clamp(48px,9vw,68px);line-height:1;margin:16px 0 4px;filter:drop-shadow(0 8px 22px rgba(201,162,75,.35))}
+.hprod h2{font-family:var(--fd);font-weight:800;font-size:clamp(28px,5.4vw,46px);line-height:1.08;color:var(--ink);margin:6px 0 10px}
+.hprod h2 span{background:linear-gradient(100deg,var(--lime),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hprod .psub{font-size:15.5px;color:var(--muted);max-width:54ch;margin:0 auto}
+.hprod .pdeliver{font-family:var(--fm);font-size:12px;letter-spacing:.05em;color:var(--lime);margin:12px 0 2px}
+/* ---- plan-card "Get started" buttons ---- */
+.pc-go{margin-top:12px;border:0;border-radius:10px;cursor:pointer;font-family:var(--fb);font-weight:700;font-size:13.5px;padding:11px 16px;background:linear-gradient(120deg,var(--cyan),var(--lime));color:#0B0F16;width:100%;transition:opacity .2s}
+.pc-go:hover{opacity:.9}
 </style></head><body>
 
 <div class="ticker"><span>⚡ BULLETIN — TELVERGENCE · THE TALKING EDITION · This page speaks its own briefing and answers your questions out loud · A running network you can tap · Businesses onboarded in minutes, answering themselves in one ring · Tap ▶ to hear it, tap 🎙 to talk to it ⚡</span></div>
@@ -213,6 +224,27 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
   <div class="now">Live now · no account needed · works on any device</div>
 </header>
 
+<section class="wrap" id="callme">
+  <div class="hprod">
+    <span class="badge">The Product · Live · Buy It Today</span>
+    <div class="picon" aria-hidden="true">📞</div>
+    <h2>Your phone, <span>answering itself.</span></h2>
+    <p class="psub" data-say="This is the product. Your phone, answering itself — a local line that answers every call, twenty-four seven, books the job, and never misses a lead. It is exactly what we build, sell, and deliver. Leave your number and the live line calls you right back in about a minute.">This is what we build, sell, and deliver — a local line that answers every call 24/7, books the job, and never misses a lead. Try it now: leave your number and it calls <i>you</i> back in about a minute.</p>
+    <div class="pdeliver">✓ Live &amp; working — not a mockup. Tap below and your phone rings.</div>
+  </div>
+  <div class="cb">
+    <div class="cb-app">
+      <h3 id="cbHead">📞 Have us call you — right now.</h3>
+      <div class="cbp" id="cbSub">Enter your number. A specialist rings you back in about a minute.</div>
+      <div class="cb-row">
+        <input class="cb-in" id="cbPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Your mobile number" aria-label="Your mobile number">
+        <button class="cb-go" id="cbGo">Call me now</button>
+      </div>
+      <div class="cb-msg" id="cbMsg"></div>
+    </div>
+  </div>
+</section>
+
 <section class="wrap" id="languages">
   <div class="k">The Feature · Answers in Any Language</div>
   <h2 data-say="Answers in any language. Tap a language and hear a business answer its own phone in it — English, Spanish, Haitian Creole, Portuguese, French, Mandarin. One line, twenty-five languages, always the caller's own.">Tap a language. Hear it answer.</h2>
@@ -228,22 +260,6 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
           <div class="lang-hint">🔊 Tap a language above — the line answers out loud.</div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="wrap" id="callme">
-  <div class="k">Talk to a Human · Now</div>
-  <h2 data-say="Talk to a specialist in sixty seconds. Leave your number and a specialist calls you right back, in about a minute. This is the line answering — live.">Talk to a specialist in 60 seconds.</h2>
-  <div class="cb">
-    <div class="cb-app">
-      <h3>📞 Have us call you — right now.</h3>
-      <div class="cbp">Enter your number. A specialist rings you back in about a minute.</div>
-      <div class="cb-row">
-        <input class="cb-in" id="cbPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Your mobile number" aria-label="Your mobile number">
-        <button class="cb-go" id="cbGo">Call me now</button>
-      </div>
-      <div class="cb-msg" id="cbMsg"></div>
     </div>
   </div>
 </section>
@@ -483,10 +499,10 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
   <div class="k">The Plans · UCaaS, Priced Like It Should Be</div>
   <h2 data-say="The plans. You never pay per seat — you pay per answered line, per brand, month to month, with a thirty-day guarantee. Smart Line, two hundred twenty-nine fifty a month: one rate-center Smart-DID, twenty-four-seven speech-to-speech answering, booking, registries, transcripts — the exact plan our own live network runs on. Front Office, four ninety-nine: three lines, your brand's cloned voice, mid-call booking, CRM backfill. Market Command, nine ninety-nine: ten lines, an AI-scored territory portfolio, vanity numbers, storm dispatch. And Network, from twenty-four ninety-nine, custom: white-label, multi-market, private encrypted lines. Activation four ninety-nine per brand — waived on annual.">Per answered line. Never per seat.</h2>
   <div class="sci">
-    <div class="sc"><b>Smart Line · $229.50/mo</b><p>1 rate-center Smart-DID (vanity search included) · 24/7 speech-to-speech answering in the caller&rsquo;s language · books + confirms by SMS · CNAM + 411/e-411 registries · speaker-separated transcripts + dashboard. <strong>The plan the live network runs on.</strong></p></div>
-    <div class="sc"><b>Front Office · $499/mo</b><p>Everything above + <strong>3 Smart-DIDs</strong> · your brand&rsquo;s <strong>cloned voice</strong> · mid-call actions — booked before the hangup · CRM backfill in real time · follow-up sequences · admin command dashboard.</p></div>
-    <div class="sc"><b>Market Command · $999/mo</b><p>Everything above + <strong>10 Smart-DIDs</strong> engineered across AI-scored rate centers · premium vanity acquisition · storm/event dispatch · cross-brand referral routing · quarterly territory rescore.</p></div>
-    <div class="sc"><b>Network · from $2,499/mo</b><p>Multi-market brand networks · <strong>white-label</strong> — become the provider · private encrypted client lines (legal) · API + dedicated manager. <strong>Activation $499/brand — waived on annual.</strong> Month-to-month · 30-day guarantee.</p></div>
+    <div class="sc"><b>Smart Line · $229.50/mo</b><p>1 rate-center Smart-DID (vanity search included) · 24/7 speech-to-speech answering in the caller&rsquo;s language · books + confirms by SMS · CNAM + 411/e-411 registries · speaker-separated transcripts + dashboard. <strong>The plan the live network runs on.</strong></p><button class="pc-go" data-plan="Smart Line · $229.50/mo" data-stripe="">Get started →</button></div>
+    <div class="sc"><b>Front Office · $499/mo</b><p>Everything above + <strong>3 Smart-DIDs</strong> · your brand&rsquo;s <strong>cloned voice</strong> · mid-call actions — booked before the hangup · CRM backfill in real time · follow-up sequences · admin command dashboard.</p><button class="pc-go" data-plan="Front Office · $499/mo" data-stripe="">Get started →</button></div>
+    <div class="sc"><b>Market Command · $999/mo</b><p>Everything above + <strong>10 Smart-DIDs</strong> engineered across AI-scored rate centers · premium vanity acquisition · storm/event dispatch · cross-brand referral routing · quarterly territory rescore.</p><button class="pc-go" data-plan="Market Command · $999/mo" data-stripe="">Get started →</button></div>
+    <div class="sc"><b>Network · from $2,499/mo</b><p>Multi-market brand networks · <strong>white-label</strong> — become the provider · private encrypted client lines (legal) · API + dedicated manager. <strong>Activation $499/brand — waived on annual.</strong> Month-to-month · 30-day guarantee.</p><button class="pc-go" data-plan="Network · from $2,499/mo" data-stripe="">Get started →</button></div>
   </div>
 </section>
 
@@ -579,12 +595,31 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
       var v=(inp.value||'').replace(/[^\d]/g,'');
       if(v.length<10){msg.className='cb-msg err';msg.textContent='Enter a valid mobile number.';return;}
       go.disabled=true;msg.className='cb-msg';msg.textContent='Connecting…';
-      fetch(CB_URL,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({phone:inp.value,brand:'Telvergence'})})
+      fetch(CB_URL,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({phone:inp.value,brand:(window.__tvPlan||'Telvergence')})})
         .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j}},function(){return {ok:false,j:{}}})})
         .then(function(res){if(res.ok&&res.j&&res.j.ok){msg.className='cb-msg ok';msg.textContent='✓ Calling you now — answer your phone.';}else{fallback();}go.disabled=false;})
         .catch(function(){fallback();go.disabled=false;});
     };
     inp.addEventListener('keydown',function(e){if(e.key==='Enter')go.click();});
+  })();
+
+  /* ---------- PLAN "Get started" → contact flow (Stripe-ready) ---------- */
+  (function(){
+    var btns=document.querySelectorAll('.pc-go'); if(!btns.length)return;
+    var head=document.getElementById('cbHead'), sub=document.getElementById('cbSub'), inp=document.getElementById('cbPhone');
+    [].forEach.call(btns,function(b){
+      b.addEventListener('click',function(){
+        var plan=b.getAttribute('data-plan')||'Telvergence';
+        var stripe=b.getAttribute('data-stripe');
+        /* When David drops a Stripe Payment Link into data-stripe, the button becomes real checkout — no redesign. */
+        if(stripe){window.location.href=stripe;return;}
+        window.__tvPlan=plan;
+        if(head)head.textContent='📞 Start '+plan.split(' · ')[0]+' — we call you now.';
+        if(sub)sub.textContent='Enter your number for the '+plan+' plan. A specialist rings you back in about a minute to get you live.';
+        var t=document.getElementById('callme'); if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+        setTimeout(function(){try{inp&&inp.focus()}catch(e){}},450);
+      });
+    });
   })();
 
   /* ---------- PLAY THE BRIEFING (talking-document narration) ---------- */
