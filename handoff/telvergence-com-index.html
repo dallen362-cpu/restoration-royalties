@@ -191,6 +191,20 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
 /* ---- plan-card "Get started" buttons ---- */
 .pc-go{margin-top:12px;border:0;border-radius:10px;cursor:pointer;font-family:var(--fb);font-weight:700;font-size:13.5px;padding:11px 16px;background:linear-gradient(120deg,var(--cyan),var(--lime));color:#0B0F16;width:100%;transition:opacity .2s}
 .pc-go:hover{opacity:.9}
+/* ---- v2 stats/trust marquee (ported to V4 hero) ---- */
+.statmarq{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;max-width:760px;margin:24px auto 0;background:var(--line2);border:1px solid var(--line2);border-radius:14px;overflow:hidden}
+@media(min-width:680px){.statmarq{grid-template-columns:repeat(4,1fr)}}
+.statmarq .sm{background:linear-gradient(180deg,var(--card2),var(--card));padding:16px 12px;text-align:center}
+.statmarq .v{font-family:var(--fd);font-weight:800;font-size:clamp(19px,3.2vw,26px);line-height:1;background:linear-gradient(100deg,var(--lime),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.statmarq .l{font-family:var(--fm);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:7px}
+/* ---- buy / full-product marquee ---- */
+.buymarq{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;max-width:900px;margin:6px auto 0;background:linear-gradient(120deg,rgba(201,162,75,.13),rgba(227,197,121,.05));border:1px solid rgba(201,162,75,.45);border-radius:16px;padding:20px 24px}
+.buymarq .bm-k{font-family:var(--fm);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
+.buymarq .bm-h{font-family:var(--fd);font-weight:800;font-size:clamp(20px,3.2vw,27px);color:var(--ink);margin:4px 0 6px;line-height:1.1}
+.buymarq .bm-p{font-size:13.5px;color:var(--muted);max-width:54ch}
+.buymarq .bm-p b{color:var(--ink)}
+.buymarq .bm-go{flex:none;border-radius:11px;font-family:var(--fb);font-weight:700;font-size:15px;padding:13px 22px;background:linear-gradient(120deg,var(--cyan),var(--lime));color:#0B0F16;text-decoration:none;white-space:nowrap}
+@media(max-width:640px){.buymarq{flex-direction:column;align-items:flex-start}.buymarq .bm-go{width:100%;text-align:center}}
 </style></head><body>
 
 <div class="ticker"><span>⚡ BULLETIN — TELVERGENCE · THE TALKING EDITION · This page speaks its own briefing and answers your questions out loud · A running network you can tap · Businesses onboarded in minutes, answering themselves in one ring · Tap ▶ to hear it, tap 🎙 to talk to it ⚡</span></div>
@@ -222,6 +236,12 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
     <button class="btn o" id="askBtn">🎙 Ask it anything</button>
   </div>
   <div class="now">Live now · no account needed · works on any device</div>
+  <div class="statmarq" role="list" aria-label="Network at a glance">
+    <div class="sm" role="listitem"><div class="v">6</div><div class="l">Live properties on the network</div></div>
+    <div class="sm" role="listitem"><div class="v">24/7</div><div class="l">AI answering</div></div>
+    <div class="sm" role="listitem"><div class="v">STIR/SHAKEN</div><div class="l">Verified caller-ID</div></div>
+    <div class="sm" role="listitem"><div class="v">0</div><div class="l">Missed calls</div></div>
+  </div>
 </header>
 
 <section class="wrap" id="callme">
@@ -242,6 +262,17 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
       </div>
       <div class="cb-msg" id="cbMsg"></div>
     </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="buymarq">
+    <div>
+      <div class="bm-k">The Full Product · Buy It Today</div>
+      <div class="bm-h">Own your number. Own the answer.</div>
+      <div class="bm-p">Every plan is the whole engine — 24/7 speech-to-speech answering, booking, registries, and the command dashboard. From <b>$229.50/mo</b> · month-to-month · 30-day guarantee.</div>
+    </div>
+    <a class="bm-go" href="#plans">See plans &amp; get started →</a>
   </div>
 </section>
 
