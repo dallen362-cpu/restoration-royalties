@@ -1,0 +1,127 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Telvergence — Members</title>
+<style>
+  :root{
+    --ink:#0a0d13;--ink2:#0f1420;--panel:#151b28;--panel2:#1a2233;--line:#28324c;--line2:#354162;
+    --gold:#e7b64b;--gold2:#f6d27a;--ember:#ff6a3d;--steel:#5b8cff;--steel2:#93b4ff;
+    --text:#eef1f7;--muted:#a9b2c4;--smoke:#7d8798;--ok:#37d39b;--warn:#ffb454;--crit:#ff5d5d;
+  }
+  *{box-sizing:border-box} html,body{margin:0;padding:0}
+  body{background:radial-gradient(1000px 500px at 82% -12%,rgba(255,106,61,.14),transparent 60%),radial-gradient(800px 520px at 3% 8%,rgba(91,140,255,.14),transparent 55%),var(--ink);
+    color:var(--text);font:16px/1.6 "Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:840px;margin:0 auto;padding:0 20px}
+  .tnum{font-variant-numeric:tabular-nums}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 17px;border-radius:10px;font-weight:700;border:1px solid var(--line2);cursor:pointer;font-size:14px}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#241b05;border-color:transparent}
+
+  /* gate */
+  .gate{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:radial-gradient(700px 400px at 50% 30%,rgba(91,140,255,.12),transparent 60%),var(--ink);padding:24px}
+  .gate.hide{display:none}
+  .vault{width:100%;max-width:410px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line2);border-radius:18px;padding:32px 26px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .vault .seal{font-size:38px;color:var(--gold2)} .vault h1{font-size:18px;margin:12px 0 4px} .vault p{color:var(--muted);font-size:13px;margin:0 0 16px}
+  .vault input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line2);background:#0c111b;color:var(--text);font-size:15px;letter-spacing:1px;text-align:center}
+  .vault input:focus{outline:2px solid var(--steel);outline-offset:1px}
+  .vault .go{margin-top:12px;width:100%;justify-content:center} .vault .err{color:var(--crit);font-size:12px;min-height:15px;margin-top:9px}
+  .shake{animation:shake .35s} @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+  header{padding:30px 0 6px}
+  .eyebrow{font-weight:800;letter-spacing:2.4px;text-transform:uppercase;font-size:11px;color:var(--gold)}
+  h1.title{font-size:clamp(26px,5vw,40px);font-weight:800;margin:8px 0 6px;text-wrap:balance;line-height:1.08}
+  h1.title .g{background:linear-gradient(135deg,var(--gold2),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{color:var(--muted);margin:0 0 8px}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0 8px}
+  @media(max-width:620px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:12px;padding:13px 12px;text-align:center}
+  .stat .n{font-size:22px;font-weight:800} .stat.g .n{color:var(--gold2)} .stat.s .n{color:var(--steel2)}
+  .stat .l{font-size:11px;color:var(--muted);margin-top:2px}
+
+  section{padding:26px 0;border-top:1px solid var(--line)}
+  .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+  .sec-head .dot{width:10px;height:10px;border-radius:3px}
+  .biz .dot{background:var(--gold)} .too .dot{background:var(--steel)}
+  h2{font-size:20px;font-weight:800;margin:0}
+  .sub{color:var(--muted);font-size:13.5px;margin:2px 0 16px}
+
+  .rows{display:flex;flex-direction:column;gap:9px}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px 14px;transition:.14s;text-decoration:none}
+  .row:hover{border-color:var(--line2)} a.row:hover{border-color:var(--gold)}
+  .row .t{font-weight:700;font-size:14.5px} .row .d{color:var(--muted);font-size:12.5px;margin-top:1px}
+  .row .r{flex:0 0 auto;font-size:11px;letter-spacing:.5px;text-transform:uppercase;font-weight:800;padding:4px 9px;border-radius:999px;white-space:nowrap}
+  .r.live{color:#04170f;background:var(--ok)} .r.priv{color:var(--muted);border:1px solid var(--line2)} .r.code{color:#0b1220;background:var(--steel2)} .r.master{color:#1a1305;background:var(--gold2)}
+
+  .banner{background:linear-gradient(135deg,rgba(91,140,255,.12),rgba(255,106,61,.08));border:1px solid var(--line2);border-radius:11px;padding:11px 14px;color:var(--muted);font-size:12.5px;margin-bottom:14px}
+  .banner b{color:var(--text)}
+  footer{padding:26px 0 50px;border-top:1px solid var(--line);color:var(--smoke);font-size:11.5px;line-height:1.7}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+
+<div class="gate" id="gate"><div class="vault" id="vault">
+  <div class="seal">&#9819;</div><h1>Telvergence Members</h1><p>Private &middot; enter passcode</p>
+  <input id="pc" type="password" autocomplete="off" placeholder="Passcode" aria-label="Passcode">
+  <button class="btn btn-gold go" id="go">Open &#8594;</button><div class="err" id="err"></div>
+</div></div>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Telvergence &middot; Members Area</div>
+    <h1 class="title">Everything we've built &mdash; <span class="g">live, in one place.</span></h1>
+    <p class="lead">The running network, the working tools, and the source. Tap any row.</p>
+    <div class="stats">
+      <div class="stat g"><div class="n tnum">10</div><div class="l">live properties &amp; editions</div></div>
+      <div class="stat g"><div class="n tnum">25</div><div class="l">languages, one line</div></div>
+      <div class="stat s"><div class="n tnum">5</div><div class="l">brands on the network</div></div>
+      <div class="stat s"><div class="n">1</div><div class="l">source of truth (repo)</div></div>
+    </div>
+  </header>
+
+  <!-- LIVE NETWORK -->
+  <section class="biz">
+    <div class="sec-head"><span class="dot"></span><h2>&#9819; The Live Network</h2></div>
+    <p class="sub">Every one is live and public &mdash; tap to open. This is the showroom you demo from.</p>
+    <div class="rows">
+      <a class="row" href="https://telvergence.com/" target="_blank" rel="noopener"><div><div class="t">Telvergence &mdash; The Talking Edition</div><div class="d">telvergence.com &middot; the official flagship</div></div><span class="r live">Live</span></a>
+      <a class="row" href="https://restorationroyalties.com/telvergence/v3/" target="_blank" rel="noopener"><div><div class="t">V3 Master (Command Deck + ROI)</div><div class="d">restorationroyalties.com/telvergence/v3/ &middot; the master template</div></div><span class="r master">Master</span></a>
+      <a class="row" href="https://telvergence.com/v2/" target="_blank" rel="noopener"><div><div class="t">The Signal Edition (v2)</div><div class="d">telvergence.com/v2/ &middot; the modern product look</div></div><span class="r live">Live</span></a>
+      <a class="row" href="https://telvergence.com/original/" target="_blank" rel="noopener"><div><div class="t">The Original (v1)</div><div class="d">telvergence.com/original/ &middot; preserved heritage</div></div><span class="r live">Live</span></a>
+      <a class="row" href="https://telvergence.com/branson/" target="_blank" rel="noopener"><div><div class="t">Branson Ainsworth PLLC &mdash; law-firm build</div><div class="d">telvergence.com/branson/ &middot; the turnkey demo</div></div><span class="r live">Live</span></a>
+      <a class="row" href="https://telvergence.com/opportunity/" target="_blank" rel="noopener"><div><div class="t">The Opportunity &mdash; investor page</div><div class="d">telvergence.com/opportunity/ &middot; the money model + calculator</div></div><span class="r live">Live</span></a>
+      <a class="row" href="https://restorationroyalties.com/rr/live/" target="_blank" rel="noopener"><div><div class="t">Restoration Royalties &mdash; live floor</div><div class="d">786-807-MOLD &middot; Miami-Dade storm dispatch</div></div><span class="r live">Live</span></a>
+      <a class="row" href="https://restorationroyalties.com/fast/live/" target="_blank" rel="noopener"><div><div class="t">FAST Adjusting &mdash; live claims desk</div><div class="d">855-2-ADJUST</div></div><span class="r live">Live</span></a>
+      <a class="row" href="https://restorationroyalties.com/pressure/live/" target="_blank" rel="noopener"><div><div class="t">Coastal Crown &mdash; pressure washing</div><div class="d">786-938-MOLD</div></div><span class="r live">Live</span></a>
+      <a class="row" href="https://restorationroyalties.com/yes/live/" target="_blank" rel="noopener"><div><div class="t">YES Electrical</div><div class="d">storm-ready dispatch</div></div><span class="r live">Live</span></a>
+    </div>
+  </section>
+
+  <!-- TOOLS & CODE -->
+  <section class="too">
+    <div class="sec-head"><span class="dot"></span><h2>&#128296; Tools &amp; Code</h2></div>
+    <div class="banner">&#128273; <b>Working infrastructure.</b> These are the engines behind the network &mdash; the source, the AI phone system, and the doctrine.</div>
+    <div class="rows">
+      <a class="row" href="https://github.com/dallen362-cpu/restoration-royalties" target="_blank" rel="noopener"><div><div class="t">Full source code &mdash; the repository</div><div class="d">github.com/dallen362-cpu/restoration-royalties &middot; every site, proxy, and tool</div></div><span class="r code">Code</span></a>
+      <a class="row" href="https://github.com/dallen362-cpu/restoration-royalties/tree/main/phone-system" target="_blank" rel="noopener"><div><div class="t">The AI Phone System</div><div class="d">phone-system/ &middot; Claude intake agent + Vitelity provisioning</div></div><span class="r code">Code</span></a>
+      <a class="row" href="https://github.com/dallen362-cpu/restoration-royalties/tree/main/functions" target="_blank" rel="noopener"><div><div class="t">Voice + Click-to-Call proxies</div><div class="d">functions/ &middot; neural /tts + /api/callback (Cloudflare)</div></div><span class="r code">Code</span></a>
+      <a class="row" href="https://github.com/dallen362-cpu/restoration-royalties/tree/main/brand-kit/skills" target="_blank" rel="noopener"><div><div class="t">The Gigapress Doctrine</div><div class="d">brand-kit/skills/ &middot; the repeatable build standard</div></div><span class="r code">Code</span></a>
+      <a class="row" href="https://restorationroyalties.com/telvergence/v3/#command" target="_blank" rel="noopener"><div><div class="t">Admin Command Deck</div><div class="d">the live KPI + ROI dashboard</div></div><span class="r master">Tool</span></a>
+      <a class="row" href="https://restorationroyalties.com/llms.txt" target="_blank" rel="noopener"><div><div class="t">AI-discovery brief (llms.txt)</div><div class="d">what AI answer engines read to find and quote the network</div></div><span class="r live">Live</span></a>
+    </div>
+  </section>
+
+  <footer>
+    &#9819; Telvergence Members &mdash; business showcase for David Drew Allen. Private by convention, not a security boundary: this passcode gate keeps the page out of casual view but is not encryption &mdash; keep nothing confidential here. For a real client portal with protected data, ask about the Cloudflare-secured members build. Contact: contact@telvergence.com &middot; (689) 242-1041.
+  </footer>
+</div>
+
+<script>
+  var PASSCODE="TELVERGENCE-2026";
+  var gate=document.getElementById('gate'),vault=document.getElementById('vault'),pc=document.getElementById('pc'),err=document.getElementById('err');
+  function unlock(){ if(pc.value.trim().toUpperCase()===PASSCODE){ try{sessionStorage.setItem('tv_members','1');}catch(e){} gate.classList.add('hide'); } else { err.textContent='Incorrect passcode.'; vault.classList.remove('shake'); void vault.offsetWidth; vault.classList.add('shake'); pc.select(); } }
+  try{ if(sessionStorage.getItem('tv_members')==='1'){ gate.classList.add('hide'); } }catch(e){}
+  document.getElementById('go').addEventListener('click',unlock);
+  pc.addEventListener('keydown',function(e){ if(e.key==='Enter') unlock(); });
+  window.addEventListener('load',function(){ if(!gate.classList.contains('hide')) pc.focus(); });
+</script>
+</body></html>
