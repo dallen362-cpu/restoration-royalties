@@ -64,6 +64,16 @@ source-tagged to you. Use this original FAST site as the template for how the DI
 offer should look and read. (Reflected now in `/softphone/`'s "Grow the Network" band and the concept
 pages' refer-&-earn ladder: Free agent → Distributor · overrides → Own white-label · $25K.)
 
+## Self-serve "Choose Your Own Number" + the Vitelity white-label economics
+Prospects pick their own number through a **white-label overlay of Vitelity's number-ordering portal
+via API** — Telvergence privately labels the carrier's ordering rails as our own. Key economics:
+- **We set the markup** on carrier cost (e.g., cost → $22.95/mo flagship line). The margin is ours.
+- **Vitelity provides free billing & collections** under our private-label permission — nothing for the
+  end customer (or us) to run.
+- **Backed by an EXECUTED, long-standing wholesale agreement** with the carrier (Vitelity) — this is the
+  real commercial/legal basis for private-label + markup + real-time DID issuance. NOT aspirational.
+- Front-end concept demo: `/choose-number/` (search → pick → markup pricing → reserve & hot-flash live → app).
+
 ## The proven stack — blueprinted & run in 2022 (NOT vaporware)
 - **Acrobits** — embeddable white-label softphone client/SDK (drops into any app).
 - **Sinch** — CPaaS platform for real-time DID issuance & activation + voice.
