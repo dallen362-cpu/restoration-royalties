@@ -74,10 +74,32 @@ export async function onRequestOptions({ request }) {
 export async function onRequestPost({ request, env }) {
   const h = cors(request);
   const origin = request.headers.get("Origin");
-  if (origin && !ALLOWED.has(origin)) return json({ error: "forbidden origin" }, 403, {});
+  // REQUIRE an allowlisted browser Origin. This closes the no-Origin (curl / server-side) path a
+  // scanner would use to pump paid SMS. Origin is still spoofable by a determined non-browser client —
+  // Cloudflare Turnstile (verified below when TURNSTILE_SECRET is set) is the real human gate.
+  if (!origin || !ALLOWED.has(origin)) return json({ error: "forbidden origin" }, 403, {});
 
   const configured = env.VITELITY_LOGIN && env.VITELITY_PASS && env.CALLBACK_ALERT_TO && env.CALLBACK_FROM;
   if (!configured) return json({ error: "callback not configured" }, 503, h);
+
+  // Optional human gate: once TURNSTILE_SECRET is set in Cloudflare, require a valid Turnstile token.
+  // Stays inert until the secret exists AND the widget sends a token, so it's safe to ship ahead of them.
+  if (env.TURNSTILE_SECRET) {
+    let peek = {};
+    try { peek = await request.clone().json(); } catch {}
+    const token = peek && peek.turnstileToken;
+    if (!token) return json({ error: "verification required" }, 403, h);
+    try {
+      const v = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ secret: env.TURNSTILE_SECRET, response: token,
+          remoteip: request.headers.get("CF-Connecting-IP") || "" }),
+      });
+      const out = await v.json();
+      if (!out.success) return json({ error: "verification failed" }, 403, h);
+    } catch { return json({ error: "verification error" }, 502, h); }
+  }
 
   let body;
   try { body = await request.json(); } catch { return json({ error: "bad request" }, 400, h); }
