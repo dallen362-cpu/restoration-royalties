@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0A0E1A">
+<title>Case Study — The Smoke &amp; Fire Campaign</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="How Telvergence built the Restoration Royalties Smoke & Fire Damage campaign from a single plume week into a documented, compliance-checked, resellable operating system — and why the same engine redeploys to every wildfire market on earth.">
+<link rel="canonical" href="https://restorationroyalties.com/case-studies/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Case Study — The Smoke &amp; Fire Campaign">
+<meta property="og:url" content="https://restorationroyalties.com/case-studies/">
+<meta property="og:description" content="A plume-week ad idea, iterated into an operating system. Eight versions, start to finish. Built for South Florida — ready for every fire on earth.">
+<meta property="og:image" content="https://restorationroyalties.com/case-studies/assets/fire-everglades.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0E1A'/%3E%3Cpath d='M16 6c2 4-1 5-1 8a3 3 0 006 0c0-1 0-2-1-3 3 2 5 5 5 9a9 9 0 01-18 0c0-5 5-8 9-14z' fill='%23ff8a3d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#0A0E1A;--deep:#0E1526;--card:#141d31;--card2:#1a2740;--line:#25324f;--line2:#3a4c70;
+  --ink:#F4EEE6;--muted:#A9B6CC;--faint:#6C7C97;
+  --amber:#ffc24b;--orange:#ff8a3d;--red:#ff5a4d;--ember:#ff7a45;--lime:#7fe0a6;
+  --fd:'Fraunces',Georgia,serif;--fb:'Hanken Grotesk',Arial,sans-serif;--fm:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--void);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:700;letter-spacing:-.02em;text-wrap:balance}
+a{color:var(--amber)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+.k{font-family:var(--fm);font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+
+/* bar */
+.bar{position:sticky;top:0;z-index:30;display:flex;gap:14px;align-items:center;padding:12px 22px;background:rgba(10,14,26,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar .logo{font-family:var(--fd);font-weight:700;letter-spacing:.02em;font-size:15px}
+.bar .logo b{color:var(--amber)}
+.bar a{margin-left:auto;color:var(--amber);text-decoration:none;font-weight:600;font-size:13px}
+
+/* hero */
+.hero{position:relative;min-height:clamp(420px,72vh,680px);display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,26,.35) 0%,rgba(10,14,26,.2) 40%,rgba(10,14,26,.92) 100%)}
+.hero .in{position:relative;z-index:2;max-width:1000px;margin:0 auto;width:100%;padding:0 22px 40px}
+.hero h1{font-size:clamp(34px,6.4vw,64px);line-height:1.02;margin:12px 0 8px}
+.hero h1 span{background:linear-gradient(100deg,var(--amber),var(--orange),var(--red));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{color:#EAD9C6;font-size:clamp(16px,2.4vw,20px);max-width:60ch}
+.hero .cap{margin-top:16px;font-family:var(--fm);font-size:11.5px;color:#d9c3ab;background:rgba(0,0,0,.35);border:1px solid rgba(255,138,61,.4);border-radius:999px;padding:6px 13px;display:inline-block}
+
+section{padding:46px 0}
+.lead{font-size:clamp(17px,2.4vw,21px);color:var(--ink);max-width:66ch}
+.sub{color:var(--muted);max-width:66ch}
+h2{font-size:clamp(26px,4.4vw,40px);margin:6px 0 14px;line-height:1.08}
+h3{font-size:19px}
+.divide{border:0;border-top:1px solid var(--line);margin:0}
+
+/* thesis cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:22px}
+.c{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line2);border-radius:15px;padding:18px 18px}
+.c b{color:var(--amber);font-family:var(--fd);font-size:16px;display:block;margin-bottom:6px}
+.c p{color:var(--muted);font-size:14px}
+
+/* version timeline */
+.tl{margin-top:26px;position:relative;padding-left:30px}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--red),var(--orange),var(--amber),transparent)}
+.ver{position:relative;margin-bottom:20px;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:15px;padding:18px 20px}
+.ver::before{content:"";position:absolute;left:-26px;top:22px;width:14px;height:14px;border-radius:50%;background:var(--orange);border:3px solid var(--void);box-shadow:0 0 12px rgba(255,138,61,.6)}
+.ver .vlabel{font-family:var(--fm);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);font-weight:600}
+.ver h3{margin:5px 0 8px;font-size:20px;color:var(--ink)}
+.ver p{color:var(--muted);font-size:14.5px}
+.ver .detail{margin-top:10px;border-top:1px dashed var(--line2);padding-top:10px;font-size:13.5px;color:#EAD9C6}
+.ver .detail b{color:var(--lime);font-family:var(--fm);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+
+/* asset stack */
+.stack{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:20px}
+.as{background:var(--deep);border:1px solid var(--line);border-radius:12px;padding:13px 15px;font-size:13.5px;color:var(--ink)}
+.as .t{font-weight:700;color:var(--amber);display:block;margin-bottom:2px}
+.as .d{color:var(--faint);font-size:12.5px}
+
+/* mechanics chips */
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.chip{font-family:var(--fm);font-size:12.5px;border:1px solid var(--line2);border-radius:999px;padding:8px 13px;color:var(--ink);background:var(--deep)}
+.chip b{color:var(--amber)}
+
+/* global */
+.globe{background:linear-gradient(180deg,var(--card),var(--deep));border:1px solid var(--line2);border-radius:18px;padding:24px;margin-top:22px}
+.mkts{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.mkt{font-size:13px;border:1px solid rgba(255,138,61,.35);border-radius:999px;padding:6px 12px;background:rgba(255,138,61,.06);color:#EAD9C6}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px}
+.three .t{background:var(--void);border:1px solid var(--line);border-radius:12px;padding:14px}
+.three .t .n{font-family:var(--fd);font-size:26px;color:var(--orange);font-weight:700}
+.three .t p{color:var(--muted);font-size:13.5px;margin-top:4px}
+
+/* pull quote */
+.pull{font-family:var(--fd);font-size:clamp(22px,3.6vw,34px);line-height:1.25;color:var(--ink);text-align:center;max-width:20ch;margin:10px auto;padding:8px 0}
+.pull span{background:linear-gradient(100deg,var(--amber),var(--orange));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* cta */
+.cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
+.cta a{font-family:var(--fb);font-weight:700;text-decoration:none;border-radius:12px;padding:14px 22px;font-size:15px}
+.cta .p{background:linear-gradient(180deg,var(--orange),var(--red));color:#0A0E1A}
+.cta .g{background:rgba(255,255,255,.05);color:var(--ink);border:1px solid var(--line2)}
+.disc{color:var(--faint);font-size:12px;line-height:1.7;border-top:1px solid var(--line);padding:20px 0 40px;max-width:none}
+
+.reveal{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:640px){.hero .in{padding-bottom:26px}section{padding:34px 0}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="logo">TEL<b>VERGENCE</b> · Case Studies</div>
+  <a href="https://telvergence.com/">← telvergence.com</a>
+</div>
+
+<header class="hero">
+  <img src="assets/fire-everglades.jpeg" alt="A wildfire burning along a South Florida highway treeline, June 2026 — west Miami-Dade.">
+  <div class="in">
+    <div class="k">Flagship Case Study · Restoration Royalties</div>
+    <h1>The Smoke &amp; Fire campaign.<br><span>Built in a plume week. Ready for every fire on earth.</span></h1>
+    <p class="sub">A single wildfire-smoke event became a documented, compliance-checked, resellable operating system — iterated across eight distinct versions, start to finish. This is what our level of detail actually looks like.</p>
+    <div class="cap">📍 Real field footage · June 2026 — Everglades / west Miami-Dade · smoke &amp; soot pushed across Broward and Miami-Dade</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="reveal">
+    <div class="k">The Trigger</div>
+    <h2>A plume is a signal — and the window closes in days, not months.</h2>
+    <p class="lead">In mid-June 2026, wildfires broke out in the Everglades / west Miami-Dade corridor and heavy smoke and soot drifted east across Miami-Dade and Broward. Smoke damage is a <b>spike event</b>: demand appears within hours of a plume, peaks for days, and fades. We treated the plume as a live signal to be captured that same week — anchored to a real, dated event, not stock footage.</p>
+  </section>
+
+  <hr class="divide">
+
+  <section class="reveal">
+    <div class="k">The Insight</div>
+    <h2>Smoke &amp; fire restoration is a speed-to-lead phone business.</h2>
+    <div class="cards">
+      <div class="c"><b>The first responder wins</b><p>When smoke hits, people call <i>now</i>, in a panic, and hire whoever answers first and sounds local and legitimate. Own the call at minute zero, own the job.</p></div>
+      <div class="c"><b>Local presence is the game</b><p>People answer local numbers and ignore unknown ones. Owning the right rate-center DIDs — Broward 954/754, Miami-Dade 305/786 — with branded caller ID is the difference between a booked inspection and a call marked &ldquo;Spam Likely.&rdquo;</p></div>
+      <div class="c"><b>Health &amp; insurance, not cleaning</b><p>Smoke leaves hidden damage in HVAC, contents, and indoor air with no visible flames. &ldquo;We protect your family&rsquo;s air and document your claim&rdquo; converts a free inspection into a restoration contract.</p></div>
+      <div class="c"><b>One plume, two revenue lines</b><p>A single calling motion feeds direct commercial remediation (one condo tower = many units + HVAC = a contract worth a hundred single-family jobs) and a restoration-partner referral network for overflow.</p></div>
+    </div>
+  </section>
+
+  <hr class="divide">
+
+  <section class="reveal">
+    <div class="k">The Campaign · Version by Version</div>
+    <h2>A one-page ad idea, iterated into an operating system.</h2>
+    <p class="sub">Eight distinct versions, in order. The &ldquo;attention to detail&rdquo; tells are almost all <b>defensive</b> — negatives, safety-first scripting, claim-hygiene, honesty guardrails, FAA compliance — which is exactly what makes it credible.</p>
+    <div class="tl">
+      <div class="ver reveal"><div class="vlabel">V1 · Exposure-zone ad concept</div><h3>Start with geography, not creative.</h3><p>Three tiers of smoke exposure — highest / moderate / lower — mapped to specific neighborhoods and turned into matching ad groups so the message matched local risk.</p><div class="detail"><b>Detail signal</b> — the very first move wasn&rsquo;t a headline, it was a map: a Weston homeowner and a Coral Springs homeowner see different urgency.</div></div>
+      <div class="ver reveal"><div class="vlabel">V2 · Full Google Ads package + intake spine</div><h3>Three themed campaigns, wired to a real queue.</h3><p>Smoke Emergency / Drift &amp; Haze / Roofing-Storm Bundle — full RSA headlines, descriptions, a keyword set, and a hand-built negative-keyword list (jobs, DIY, candle, cigarette, barbecue, incense, school project), wired into a white-label intake queue with SMS follow-up.</p><div class="detail"><b>Detail signal</b> — attention spent on <i>filtering out</i> wrong-intent clicks, and a live queue instead of a dead contact form.</div></div>
+      <div class="ver reveal"><div class="vlabel">V3 · The human call script</div><h3>The safety question before the sales question.</h3><p>A calm, structured inbound call and text script — greeting, location capture first, home-vs-business, symptom check (&ldquo;is anyone having breathing issues?&rdquo;), weather-aware expectation-setting, closer hand-off, voicemail and missed-call recovery.</p><div class="detail"><b>Detail signal</b> — built in both a &ldquo;calm insurance-style&rdquo; and a &ldquo;more aggressive&rdquo; variant.</div></div>
+      <div class="ver reveal"><div class="vlabel">V4 · Automated AI intake</div><h3>Answer → transcribe → extract → book, hands-off.</h3><p>Inbound call to a Vitelity DID → record → transcribe → an LLM extracts structured fields (address, urgency, service type, callback window) → CRM/LMS backfill → auto-appointment → SMS confirmation, with a defined event router, CRM field map, worker-queue schema, and database tables.</p><div class="detail"><b>Detail signal</b> — split into three services (telephony webhook, extraction worker, CRM sync) for retries and idempotency. Production thinking, not a demo.</div></div>
+      <div class="ver reveal"><div class="vlabel">V5 · Health / insurance creative refresh</div><h3>From &ldquo;soot cleanup&rdquo; to &ldquo;free home air check.&rdquo;</h3><p>A distinct creative version reframed the offer around air quality and family health: <i>&ldquo;Wildfire smoke can linger indoors long after the air clears — get a free home air check.&rdquo;</i></p><div class="detail"><b>Detail signal</b> — a compliance note in the same pass: swap &ldquo;certified&rdquo; for &ldquo;trained&rdquo; unless certification can be proven. The team self-policing claims mid-build.</div></div>
+      <div class="ver reveal"><div class="vlabel">V6 · WIN TV / video</div><h3>The campaign grew a media arm.</h3><p>WIN TV (Weather Intelligence Network) — a six-episode cinematic mini-documentary slate (hurricane, tornado, ice storm, flash flood, <i>&ldquo;Wildfire on the Wind,&rdquo;</i> and a nationwide-restoration finale), each ending in a real-time &ldquo;activate WIN during this episode&rdquo; deep-link that tracks which episode drove each lead.</p><div class="detail"><b>Detail signal</b> — an honesty guardrail written into the plan: weather data is real (NWS), no claim of specific rescues, and the &ldquo;WIN Safety Line&rdquo; is explicitly <i>not</i> an FCC Lifeline product.</div></div>
+      <div class="ver reveal"><div class="vlabel">V7 · Productization: Smart-DID + Workspace</div><h3>One client&rsquo;s campaign → a repeatable product.</h3><p>Every user gets their own Smart-DID, zero-touch provisioning, auto-activation on payment, real-time collaboration workspaces, and photo-to-estimate — built as a <i>parallel</i> line that explicitly does not disturb the live site or revenue.</p><div class="detail"><b>Detail signal</b> — tiered pricing, sandbox payment testing, and a &ldquo;free instant activation&rdquo; entry point so end users onboard and pay the same day.</div></div>
+      <div class="ver reveal"><div class="vlabel">V8 · Drone video-to-quote + FAA compliance</div><h3>A premium tier — shipped with its regulator attached.</h3><p>Upload drone footage → AI damage detection → an auto roof estimate in under 30 seconds → a 3D roof model. Wrapped in an FAA Part 107 compliance layer: pilot certification, LAANC airspace authorization, no-fly zones, insurance, privacy.</p><div class="detail"><b>Detail signal</b> — the team wouldn&rsquo;t ship the drone feature without the regulatory guide attached.</div></div>
+    </div>
+    <p class="sub" style="margin-top:8px">The through-line: a plume-week ad idea became a documented, compliance-checked, resellable operating system — and at every stage the detail tells are defensive. That is what makes it real.</p>
+  </section>
+
+  <hr class="divide">
+
+  <section class="reveal">
+    <div class="k">The Asset Stack Built</div>
+    <h2>Not a slide deck — a working campaign.</h2>
+    <div class="stack">
+      <div class="as"><span class="t">SoFla Fire landing page</span><span class="d">Free same-day smoke &amp; fire inspection · Miami-Dade / Broward / Palm Beach</span></div>
+      <div class="as"><span class="t">WIN × RR smoke-response page</span><span class="d">Live NWS Florida alert feed · plume exposure-zone map · lead form · live tracker</span></div>
+      <div class="as"><span class="t">Real Everglades fire footage</span><span class="d">Dated, captured field hero imagery — a real event, not stock</span></div>
+      <div class="as"><span class="t">WIN TV channel</span><span class="d">6-episode slate · hub · launch kit · trailer · poster · intro video</span></div>
+      <div class="as"><span class="t">WIN National Grid</span><span class="d">Territory / authorized-provider saturation map + two-way dialer marketplace</span></div>
+      <div class="as"><span class="t">Live storm dashboard</span><span class="d">Ops-facing analytics · visit &amp; lead watch surfaces</span></div>
+      <div class="as"><span class="t">Smart-DID line plan</span><span class="d">Rate-center DIDs (954/754, 305/786) · branded caller ID · warmed rotating pools</span></div>
+      <div class="as"><span class="t">AI call-intake pipeline</span><span class="d">DID answer → transcribe → CRM/LMS backfill → appointment → SMS</span></div>
+      <div class="as"><span class="t">Call &amp; SMS scripts</span><span class="d">Calm-insurance and aggressive variants · safety-first intake</span></div>
+      <div class="as"><span class="t">Onboarding + payment funnel</span><span class="d">Tiered pricing · same-day activation path</span></div>
+    </div>
+  </section>
+
+  <hr class="divide">
+
+  <section class="reveal">
+    <div class="k">The Mechanics · Level of Detail</div>
+    <h2>The craft touches that prove rigor.</h2>
+    <div class="chips">
+      <span class="chip"><b>Rate-center DID selection</b> — 954/754, 305/786 so calls read local</span>
+      <span class="chip"><b>Branded caller ID / STIR-SHAKEN CNAM</b> — never &ldquo;Spam Likely&rdquo;</span>
+      <span class="chip"><b>Warmed, rotating DID pools</b> — protect deliverability</span>
+      <span class="chip"><b>Commercial-first posture</b> — condos/HOAs, a TCPA decision</span>
+      <span class="chip"><b>Exposure-tier source tagging</b> — every lead by plume zone</span>
+      <span class="chip"><b>Safety-first intake</b> — the breathing question before the sale</span>
+      <span class="chip"><b>Insurance-claim path</b> — carrier-ready photo + report</span>
+      <span class="chip"><b>Claim hygiene</b> — &ldquo;trained&rdquo; not &ldquo;certified&rdquo; absent proof</span>
+      <span class="chip"><b>Bilingual routing</b> — Spanish-language intake ready</span>
+      <span class="chip"><b>FAA Part 107</b> — LAANC, no-fly zones, insurance on the drone tier</span>
+      <span class="chip"><b>Idempotent architecture</b> — split services for reliable retries</span>
+    </div>
+  </section>
+
+  <hr class="divide">
+
+  <section class="reveal">
+    <div class="k">National / Global Scale</div>
+    <h2>Not a South Florida story — a template with the geography swapped out.</h2>
+    <div class="globe">
+      <p class="lead" style="margin-bottom:4px">Wildfire smoke spikes happen on a predictable calendar somewhere on earth almost year-round. When one market&rsquo;s window closes, another opens.</p>
+      <div class="mkts">
+        <span class="mkt">🇺🇸 California &amp; U.S. West · summer–fall</span>
+        <span class="mkt">🇨🇦 Canada · smoke that reached the U.S. East Coast &amp; Europe</span>
+        <span class="mkt">🇦🇺 Australia · Southern-Hemisphere summer</span>
+        <span class="mkt">🇬🇷 Mediterranean · Greece, Spain, Portugal, Italy</span>
+        <span class="mkt">🌎 South America &amp; Siberia · increasingly</span>
+      </div>
+      <p class="sub">Only <b>three inputs</b> change per market. Everything else — scripts, AI intake, CRM schema, the insurance-documentation offer, WIN TV, drone-to-quote — is reused verbatim.</p>
+      <div class="three">
+        <div class="t"><div class="n">1</div><p>The <b>rate-center DIDs</b> for local presence in that market.</p></div>
+        <div class="t"><div class="n">2</div><p>The <b>exposure-zone tiers</b> from that market&rsquo;s live plume.</p></div>
+        <div class="t"><div class="n">3</div><p>The <b>language</b> — Spanish, French for Canada, Greek, Portuguese…</p></div>
+      </div>
+      <p class="sub" style="margin-top:14px">The infrastructure is already the &ldquo;duplicate for a new region&rdquo; model: the WIN National Grid assigns one authorized provider per territory, and the same live-alert ingestion that watched the Everglades plume works off any national weather service — point it at a new country and the dispatch logic lights up the local DIDs automatically.</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <p class="pull">&ldquo;Build the intake once, own the local numbers everywhere, and let the weather feed tell you which market to activate this week — <span>all the fires, globally,</span> run from one operating system.&rdquo;</p>
+  </section>
+
+  <hr class="divide">
+
+  <section class="reveal" style="text-align:center">
+    <div class="k" style="color:var(--amber)">The Ask</div>
+    <h2>Want this engine pointed at your market?</h2>
+    <p class="sub" style="margin:0 auto">This is the level of detail behind every Telvergence build — one industry, one market, one plume at a time. The same operating system runs the whole lead-engine network.</p>
+    <div class="cta">
+      <a class="p" href="tel:+16892421041">📞 Call to begin — (689) 242-1041</a>
+      <a class="g" href="https://restorationroyalties.com/roofing/">See the Roofing lead engine →</a>
+      <a class="g" href="https://telvergence.com/">telvergence.com →</a>
+    </div>
+  </section>
+
+  <div class="disc">
+    Prepared as a discussion case study from an internal Telvergence campaign build. Field imagery is real, dated footage from the June 2026 South Florida wildfire-smoke event. Figures such as acreage and exposure-zone neighborhood tiers originate in the campaign&rsquo;s own creative model and are illustrative, not official emergency data. Weather intelligence is credited to the National Weather Service; no claim is made of specific real-world rescues, and the &ldquo;WIN Safety Line&rdquo; is not an FCC Lifeline product. All solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch. Numbers referenced are examples pending assignment. Confidential — TELVERGENCE.
+  </div>
+</div>
+<script>
+(function(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(x){x.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  document.querySelectorAll('.reveal').forEach(function(x){io.observe(x);});
+})();
+</script>
+</body>
+</html>
