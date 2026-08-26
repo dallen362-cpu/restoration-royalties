@@ -111,6 +111,22 @@ Reflected now on `/softphone/` ("One Private Network" band).
   downloads a fresh ZIP manually (github.com → Code → Download ZIP) or adds the repo to this
   session's sources — otherwise the July snapshot stands.
 
+## 👑 MOST COMPLETE SOURCE = the Azure VICIdial MIRROR DRIVES (David, 2026-08-26)
+David has VICIdial backed up "over the years"; the **Azure instance is the most valuable and he HAS the
+mirror drives.** This is the full running filesystem (survived the ~March 2026 Azure subscription lapse
+via the mirror): the OS, `agi-DID_route.agi`, all `/etc/asterisk/*.conf` (trunk/dialplan), the VICIdial
+web config, AND the **MySQL campaign DB** (`/var/lib/mysql/` → `asterisk` + `vicidial` DBs = years of
+leads + call history). Beats every other source — it's the live system, not specs-to-rebuild.
+FORK to resolve: (A) physical mirror disks in hand → mount on Linux/WSL or a Windows ext4 reader
+(DiskInternals Linux Reader / Ext2Fsd), pull agi-bin/agi-DID_route.agi + /etc/asterisk/*.conf +
+/var/lib/mysql/ + VICIdial config; or (B) Azure managed disks still in the account → portal.azure.com →
+Disks (persist after VM delete) → reactivate subscription & attach to a new VM, or export/download the VHD.
+This, plus the Google Drive rebuild kit below, makes full recovery near-certain.
+NOTE (David): the recent ServerStadium VPS is Derek's NEW 'slim build' — unseasoned/minimally-tuned, NOT
+the crown jewel. Its only value is a few weeks of recent leads in its DB. So the wipe clock is LOW
+priority now — the seasoned production system is the Azure mirror, which is on no clock. Grab the
+ServerStadium DB only if reactivation is trivial; otherwise let it go.
+
 ## ✅✅ THE REBUILD KIT IS SAFE IN GOOGLE DRIVE (dallen362@gmail — verified 2026-08-26 via connector)
 The dialer + carrier rebuild knowledge was NEVER lost — it's all in dallen362@gmail Google Drive (mostly
 in folder `1i1-FPUXUz2tuGoz1XOobu_3TnASCEe9r` and shared drive `0AE8goLCgXBgDUk9PVA`). Confirmed present:
