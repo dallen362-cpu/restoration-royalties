@@ -111,6 +111,24 @@ Reflected now on `/softphone/` ("One Private Network" band).
   downloads a fresh ZIP manually (github.com → Code → Download ZIP) or adds the repo to this
   session's sources — otherwise the July snapshot stands.
 
+## ✅✅ THE REBUILD KIT IS SAFE IN GOOGLE DRIVE (dallen362@gmail — verified 2026-08-26 via connector)
+The dialer + carrier rebuild knowledge was NEVER lost — it's all in dallen362@gmail Google Drive (mostly
+in folder `1i1-FPUXUz2tuGoz1XOobu_3TnASCEe9r` and shared drive `0AE8goLCgXBgDUk9PVA`). Confirmed present:
+- **ViciBox OS image** — `ViciBox_v8_1.x86_64-8.1.2.iso` (640 MB, id `138q4tPqdg8UHUpYcWNlf8k59JDrhaj02`) + shortcuts.
+- **Project Phoenix Infrastructure Backup 2026-04-21** (the rebuild blueprint; .md/.docx/GDoc, many copies)
+  + **Project-Phoenix-Technical-Reference.md** + **PROJECT PHOENIX Master Context Brief** + **memory.md** files.
+- **Telvergence_Vitelity_Provisioning_Spec** (.md/.docx, several copies) + **VITELITY_API_REFERENCE.md** (Aug-09).
+- **VITELITY-SINCH Account Lockdown Playbook (PRIORITY #1)** + **Vitelity_Lockdown_Playbook.md** — the
+  carrier↔Sinch integration/lockdown docs.
+- **LOA_FAST-Adjusting_Vitelity.txt** + **LOA_Restoration-Royalty_Vitelity.txt** + folder `LOA_Vitelity_Campaign`.
+- **Phoenix_Credentials_TEMP_2026-04-19** (credentials — do NOT print) + **vicidial_extraction_prompt.md**.
+IMPLICATION: the dialer/carrier can be REBUILT from Drive alone. The VPS's unique value is now only the
+LIVE runtime state — the currently-deployed agi-DID_route.agi, live trunk config w/ current peering IPs,
+and the CAMPAIGN DATABASE (accumulated leads + call history). That's the only thing a rebuild can't
+regenerate — so VPS reactivation = recover the live data + save setup time, no longer do-or-die.
+NOTE: source code (.agi/.php/.conf as deployed) was not seen in Drive — Drive holds specs/blueprints/ISO,
+the VPS holds the running instance. Rebuild = ISO + Phoenix blueprint + Vitelity/Sinch specs → fresh install.
+
 ## ⭐ AUTHORITATIVE RECOVERY STATE (2026-08-26 — email evidence + 06_DIGITAL-IDENTITY notes converge)
 The dialer code is NOT in OneDrive — it's on a **Server Stadium VPS**, which is now CANCELLED and in the
 host's wipe window. This supersedes the OneDrive-focused notes below.
