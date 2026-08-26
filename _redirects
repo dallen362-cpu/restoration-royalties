@@ -19,4 +19,8 @@
 /spin.html                       /spin/          301
 /restoration-royalty-legacy.html /rr/            301
 /telvergence.html                /telvergence/   301
-/showroom.html                   /showroom/      301
+/showroom.html                   /telvergence/showroom/  301
+
+# --- Showroom re-homed under the flagship namespace (2026-08-26).
+/showroom                        /telvergence/showroom/  301
+/showroom/                       /telvergence/showroom/  301

@@ -14,9 +14,11 @@ main) is the SOURCE OF TRUTH for all telvergence.com HTML and the Cloudflare sit
 | **Stefano / business** | The "Telvergence business and Stefano funding" session | Investor outreach, funding narrative. | Rebuild the FAST demo (already live) or edit site HTML. |
 
 ## Registration rule (gigapress)
-Every new page/brand/demo gets registered in the master catalog at `showroom/index.html`
-(and, when public-facing, in the homepage's Industry Lead Engines directory). A page that
-isn't in the showroom doesn't exist.
+Every new page/brand/demo gets registered in the master catalog at
+`telvergence/showroom/index.html` — live at **restorationroyalties.com/telvergence/showroom/**
+(the old `/showroom/` 301-redirects there; per David 2026-08-26, the catalog lives under the
+flagship namespace). When public-facing, also register it in the homepage's Industry Lead
+Engines directory. A page that isn't in the showroom doesn't exist.
 
 ## Source-of-truth payloads (self-refreshing raw URLs — always latest main)
 - Homepage → `index.html`:
