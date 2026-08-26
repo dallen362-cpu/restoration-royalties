@@ -1,6 +1,6 @@
 # TELVERGENCE — SESSION LANES & SOURCE OF TRUTH (avoid overlap)
 
-_Last updated: 2026-08-26 by the restoration-royalties build session (session_019GkzLWbj84bpUVsQDfkcWB)._
+_Last updated: 2026-08-26 (evening) by the restoration-royalties build session (session_019GkzLWbj84bpUVsQDfkcWB)._
 
 Multiple Claude sessions work the Telvergence project. To avoid two sessions authoring the
 same files, follow these lanes. **When in doubt, this repo (`dallen362-cpu/restoration-royalties`
@@ -9,9 +9,14 @@ main) is the SOURCE OF TRUTH for all telvergence.com HTML and the Cloudflare sit
 ## Lanes
 | Lane | Owner | Scope | Do NOT |
 |---|---|---|---|
-| **Build shop / source of truth** | THIS repo session (restoration-royalties, cloud) | Authors all telvergence.com HTML (`handoff/telvergence-com-*.html`), the Cloudflare site (`restorationroyalties.com`: `fast/`, `functions/`, `members.html`, `telvergence/**`), the FAST investor demo (`fast/demo/`). | — |
-| **telvergence.com deploy** | The "Telvergence site features and deploy" session (owns `dallen362-cpu/telvergence`) | DEPLOYS the payloads below verbatim to telvergence.com. | Re-author the homepage/members HTML — deploy from the raw URLs instead, or we diverge. |
+| **Build shop / source of truth / deploy** | THIS repo session (restoration-royalties, cloud) | Authors AND deploys everything: all restorationroyalties.com content (`functions/`, all micro-sites, `showroom/`, `case-studies/`, `softphone/`, `choose-number/`, `fast/demo/`), all telvergence.com HTML (this session now has direct push access to `dallen362-cpu/telvergence` — the raw-URL relay is retired). **Exclusive write lane on both repos.** | — |
+| **Recovery & archive (cowork, David's machine)** | David's local cowork session | READ-ONLY on both repos. Mines David's local disk / Drive / archives for: Derek's ContactAM dialer blueprint, the 2022 Sinch+Acrobits+Vitelity integration code, the EZ VoIP / Reliant docs, the Vitelity wholesale agreement, `telvergence-master-max` archives. Reports findings to David → relayed here. | Push, merge, or use David's browser for any GitHub write. (2026-08-26: it nearly merged stale PR #49 — closed here as superseded; all its content was already live in main under `cowork-campaign/nx8k4q2m9v7r/`.) |
 | **Stefano / business** | The "Telvergence business and Stefano funding" session | Investor outreach, funding narrative. | Rebuild the FAST demo (already live) or edit site HTML. |
+
+## Registration rule (gigapress)
+Every new page/brand/demo gets registered in the master catalog at `showroom/index.html`
+(and, when public-facing, in the homepage's Industry Lead Engines directory). A page that
+isn't in the showroom doesn't exist.
 
 ## Source-of-truth payloads (self-refreshing raw URLs — always latest main)
 - Homepage → `index.html`:
