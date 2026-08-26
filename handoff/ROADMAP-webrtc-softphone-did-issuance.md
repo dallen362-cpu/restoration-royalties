@@ -111,6 +111,36 @@ Reflected now on `/softphone/` ("One Private Network" band).
   downloads a fresh ZIP manually (github.com → Code → Download ZIP) or adds the repo to this
   session's sources — otherwise the July snapshot stands.
 
+## ⭐ AUTHORITATIVE RECOVERY STATE (2026-08-26 — email evidence + 06_DIGITAL-IDENTITY notes converge)
+The dialer code is NOT in OneDrive — it's on a **Server Stadium VPS**, which is now CANCELLED and in the
+host's wipe window. This supersedes the OneDrive-focused notes below.
+
+- **THE LIVE DIALER = Server Stadium VPS "d1" #55065** (account **1674237827**, tech contact
+  **derek@bartoli.me**, paid via PayPal). Holds `agi-DID_route.agi`, the ViciBox image, trunk config,
+  and the campaign DB — the actual running VICIdial. **Timeline from dave@contactam.com email:** ordered
+  & active Jul 16 2026 → invoice **#5119443** (period 08/14–09/13) due Aug 14 → overdue notices Aug 15/16/18
+  → suspended Aug 18 → cancelled + powered off **Aug 24**. ⏰ TIME-CRITICAL: cancelled dedicated servers are
+  reformatted after a short reclaim window. **ACTION (David only): pay #5119443 in the Server Stadium
+  portal, reactivate #55065 with data intact, and ticket billing@serverstadium.com to image the disk
+  before any reformat.** This is the fastest path to delivering calls — recovers the whole system, not files.
+- **OneDrive cloud = CONFIRMED UNRECOVERABLE** (per David's own 2026-08-21 investigation, Path B & C run to
+  conclusion): `dave@contactam.com` is email-only (Exchange Online Essentials, no OneDrive/SharePoint);
+  personal site 404s; SharePoint deleted-sites recycle bin empty (93-day retention already passed); tenant
+  storage 52 MB. Re-licensing creates a NEW EMPTY drive — it will NOT restore data. Do not pursue.
+  Root cause = a lapsed Azure subscription ~March 2026 (not sabotage).
+- **OneDrive local cache = mostly dead:** `C:\Users\dalle\OneDrive - contactam.com` = ~43,002 placeholder
+  stubs / ~96.9 GB, almost all 0-byte online-only that can never hydrate now the cloud is gone; only ~290
+  files materialized on disk (worth one quick scan for real configs, then close). The 96.9 GB is
+  overstated (aggregates other backups: Google Takeout, old Lenovo backup, USB, Dropbox); ~20 GB unique.
+- **🟡 SkyKick Backup app in the tenant** — flagged as a possible independent OneDrive backup. SkyKick
+  backs up M365 outside Microsoft's retention, so it MAY still hold the 43k OneDrive files even though
+  Microsoft's own window passed. ACTION (David): check the SkyKick portal / who administers it.
+- **E: external drive** — a prior Claude backup session reportedly saved Microsoft/OneDrive data here;
+  cowork session is verifying (offline safety net for whatever was materialized).
+- **SECURITY:** Derek retains passwords to three Microsoft accounts (unchanged since Aug ~22) + shows in
+  the Server Stadium account's reset history. David rotated GoDaddy. Recommend rotating the 3 MS account
+  passwords + MFA and securing the Server Stadium portal once the data is safe.
+
 ## RECOVERY INVENTORY (cowork session, 2026-08-26 — structured findings)
 Staged under `C:\Users\dalle\AI-Master-Brain\Telvergence\RECOVERY\master-max\extracted\TELVERGENCE_MASTER_MAX\`.
 The July snapshot is **13 markdown docs + 4 spreadsheets — NO source code of any kind.**
