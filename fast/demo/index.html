@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#04070F">
+<title>FAST Adjusting × Telvergence — Live Switchboard Demo</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="A live, callable demonstration: FAST Adjusting Service running on the Telvergence switchboard — every storm claim answered, qualified, and booked, with a real claims command center.">
+<link rel="canonical" href="https://restorationroyalties.com/fast/demo/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2304070F'/%3E%3Ccircle cx='16' cy='16' r='4' fill='none' stroke='%2300FF88' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%232AD4F0' stroke-width='1.5' opacity='.6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#04070F;--panel:#0B111C;--panel2:#0F1726;--line:#1B2536;--line2:#26364B;
+  --ink:#EAF0F8;--muted:#9DB0C6;--faint:#647a94;
+  --accent:#FF9E5E;--lime:#00FF88;--cyan:#2AD4F0;--hot:#FF5A50;
+  --fd:'Sora',system-ui,sans-serif;--fb:'Hanken Grotesk',system-ui,sans-serif;--fm:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--fb);color:var(--ink);background:var(--void);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--cyan)}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:11px 18px;border-bottom:1px solid var(--line);font-family:var(--fm);font-size:11px;letter-spacing:.06em;color:var(--muted);position:sticky;top:0;background:rgba(4,7,15,.92);backdrop-filter:blur(8px);z-index:50}
+.bar b{color:var(--accent)}
+.bar .live{color:var(--lime)}
+.bar .live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--lime);margin-right:6px;vertical-align:middle;animation:pl 1.6s infinite}
+@keyframes pl{0%,100%{opacity:1}50%{opacity:.3}}
+.wrap{max-width:940px;margin:0 auto;padding:0 20px}
+header{padding:38px 0 8px;text-align:center}
+.eyebrow{font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--fd);font-weight:800;font-size:clamp(30px,6.4vw,52px);line-height:1.05;margin:14px 0 8px;letter-spacing:-.01em}
+h1 span{background:linear-gradient(100deg,var(--accent),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.dek{font-size:16px;color:var(--muted);max-width:60ch;margin:0 auto}
+/* callable hero */
+.callbox{max-width:560px;margin:22px auto 6px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid rgba(255,158,94,.4);border-radius:18px;box-shadow:0 20px 55px rgba(0,0,0,.5);padding:22px 20px;text-align:center}
+.callbox .picon{font-size:44px;line-height:1;filter:drop-shadow(0 8px 20px rgba(255,158,94,.35))}
+.callbox h2{font-family:var(--fd);font-weight:700;font-size:20px;margin:8px 0 3px}
+.callbox .csub{font-size:13.5px;color:var(--muted);margin-bottom:14px}
+.bignum{display:inline-flex;align-items:center;gap:9px;font-family:var(--fd);font-weight:800;font-size:clamp(24px,5vw,32px);color:var(--void);background:linear-gradient(120deg,var(--accent),#ffd08a);padding:12px 22px;border-radius:12px;text-decoration:none;letter-spacing:.01em}
+.callor{font-family:var(--fm);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:14px 0 10px}
+.cb-row{display:flex;gap:8px;max-width:420px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.cb-in{flex:1 1 190px;min-width:0;background:rgba(255,255,255,.06);border:1px solid var(--line2);border-radius:10px;color:var(--ink);padding:12px 13px;font-size:15px;font-family:var(--fb)}
+.cb-in::placeholder{color:var(--faint)}
+.cb-go{flex:none;border:0;border-radius:10px;cursor:pointer;font-family:var(--fb);font-weight:700;font-size:15px;padding:12px 20px;background:linear-gradient(120deg,var(--cyan),var(--lime));color:#04121a}
+.cb-go:disabled{opacity:.6;cursor:default}
+.cb-msg{font-family:var(--fm);font-size:12.5px;margin-top:11px;min-height:18px;color:var(--muted)}
+.cb-msg.ok{color:var(--lime)} .cb-msg.err{color:#ff9e9e} .cb-msg a{color:var(--accent)}
+section{padding:30px 0;border-top:1px solid var(--line);opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+section.in{opacity:1;transform:none}
+.k{font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);text-align:center}
+h2.t{font-family:var(--fd);font-weight:700;font-size:clamp(22px,4.4vw,32px);text-align:center;margin:8px 0 4px}
+.lead{font-size:15px;color:var(--muted);text-align:center;max-width:56ch;margin:0 auto}
+/* switchboard theater */
+.lci{display:grid;gap:14px;margin-top:22px}
+@media(min-width:860px){.lci{grid-template-columns:1.55fr 1fr}}
+.lci-board{display:flex;flex-direction:column;gap:10px}
+.lci-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:12px;padding:12px 14px;transition:border-color .4s}
+.lci-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(255,158,94,.16)}
+.lci-row.s0 .lci-dot{background:var(--hot);box-shadow:0 0 0 4px rgba(255,90,80,.2);animation:lciPulse 1s infinite}
+.lci-row.s3 .lci-dot{background:var(--lime);box-shadow:0 0 0 4px rgba(0,255,136,.22)}
+.lci-row.s3{border-color:rgba(0,255,136,.5)}
+@keyframes lciPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.35);opacity:.55}}
+.lci-who{min-width:0}
+.lci-name{font-family:var(--fd);font-weight:600;font-size:14.5px;color:var(--ink)}
+.lci-meta{font-family:var(--fm);font-size:11px;color:var(--faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lci-stat{font-family:var(--fm);font-size:11px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;padding:5px 10px;border-radius:999px;border:1px solid var(--line2);color:var(--muted)}
+.lci-row.s0 .lci-stat{color:var(--hot);border-color:rgba(255,90,80,.4)}
+.lci-row.s1 .lci-stat{color:var(--accent);border-color:rgba(255,158,94,.4)}
+.lci-row.s2 .lci-stat{color:var(--cyan);border-color:rgba(42,212,240,.4)}
+.lci-row.s3 .lci-stat{color:var(--void);background:linear-gradient(100deg,var(--lime),var(--cyan));border-color:transparent;font-weight:700}
+.lci-kpis{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
+.lci-kpi{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
+.lci-v{font-family:var(--fd);font-weight:700;font-size:30px;color:var(--lime);font-variant-numeric:tabular-nums}
+.lci-l{color:var(--muted);font-size:12px;margin-top:4px}
+.lci-live{font-family:var(--fm);font-size:10px;color:var(--hot);letter-spacing:.1em;text-transform:uppercase;vertical-align:middle}
+.simnote{text-align:center;font-size:11.5px;color:var(--faint);margin-top:14px}
+/* command center money */
+.cc{max-width:720px;margin:22px auto 0;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.cchead{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--line);font-family:var(--fm);font-size:11px;color:var(--muted)}
+.cchead .nm{color:var(--ink)} .cchead .il{color:var(--accent)}
+.cchero{text-align:center;padding:20px 16px;background:rgba(255,158,94,.05);border-bottom:1px solid var(--line)}
+.cchero .cl{font-family:var(--fm);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cchero .big{font-family:var(--fd);font-weight:800;font-size:clamp(30px,7vw,44px);color:var(--lime);font-variant-numeric:tabular-nums;margin-top:4px}
+.ccgrid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+@media(min-width:680px){.ccgrid{grid-template-columns:repeat(4,1fr)}}
+.ec{padding:15px 12px;text-align:center;border-right:1px solid var(--line);border-top:1px solid var(--line)}
+.ec .kk{font-family:var(--fd);font-weight:800;font-size:20px;font-variant-numeric:tabular-nums}
+.ec .kk.cy{color:var(--cyan)} .ec .kk.go{color:var(--accent)} .ec .kk.lm{color:var(--lime)}
+.ec .ll{font-family:var(--fm);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+/* money math */
+.math{max-width:640px;margin:20px auto 0;display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:640px){.math{grid-template-columns:repeat(3,1fr)}}
+.mc{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+.mc .mv{font-family:var(--fd);font-weight:800;font-size:26px;color:var(--accent);font-variant-numeric:tabular-nums}
+.mc .ml{font-size:12.5px;color:var(--muted);margin-top:6px}
+.mnote{text-align:center;font-size:11.5px;color:var(--faint);max-width:56ch;margin:14px auto 0}
+/* cta */
+.cta{max-width:560px;margin:22px auto 0;text-align:center;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid rgba(255,158,94,.4);border-radius:16px;padding:24px 20px}
+.cta h3{font-family:var(--fd);font-weight:700;font-size:22px;margin:0 0 6px}
+.cta p{color:var(--muted);font-size:14px;max-width:44ch;margin:0 auto 14px}
+.cta a.begin{display:inline-block;font-family:var(--fb);font-weight:700;font-size:16px;padding:13px 24px;border-radius:12px;background:linear-gradient(120deg,var(--accent),#ffd08a);color:var(--void);text-decoration:none}
+.foot{padding:26px 20px 40px;text-align:center;font-size:11px;color:var(--faint);max-width:760px;margin:0 auto;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div><b>FAST</b> ADJUSTING SERVICE × TELVERGENCE</div>
+  <span class="live">LIVE DEMO</span>
+</div>
+
+<header class="wrap">
+  <div class="eyebrow">A running switchboard · not a slideshow</div>
+  <h1>Every storm claim is a check.<br><span>Watch it answer itself.</span></h1>
+  <p class="dek">This is FAST Adjusting Service running on the Telvergence switchboard — every claim call answered in one ring, in the caller's language, qualified, and booked to a licensed public adjuster. Below is the floor running live. Pick up your phone and put it to the test.</p>
+
+  <div class="callbox">
+    <div class="picon" aria-hidden="true">📞</div>
+    <h2>Call the line. Or have it call you.</h2>
+    <div class="csub">FAST Adjusting's live claims line — Miami-Dade · Broward · Palm Beach.</div>
+    <a class="bignum" href="tel:+18552235878">📞 (855) 223-5878</a>
+    <div class="callor">— or leave your number, it rings you back —</div>
+    <div class="cb-row">
+      <input class="cb-in" id="cbPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Your mobile number" aria-label="Your mobile number">
+      <button class="cb-go" id="cbGo">Call me now</button>
+    </div>
+    <div class="cb-msg" id="cbMsg"></div>
+  </div>
+</header>
+
+<section>
+  <div class="k">Live · the claims floor</div>
+  <h2 class="t">Watch the phones get answered</h2>
+  <p class="lead">The front office running with no receptionist — every storm-damage caller met in seconds, in their language, qualified by claim type, and booked to an adjuster. <b>Live simulation of the running system.</b></p>
+  <div class="lci">
+    <div class="lci-board" id="lciBoard"></div>
+    <div class="lci-kpis">
+      <div class="lci-kpi"><div class="lci-v" id="lciAns">137</div><div class="lci-l">Claim calls answered today</div></div>
+      <div class="lci-kpi"><div class="lci-v" id="lciBk">9</div><div class="lci-l">Claims signed</div></div>
+      <div class="lci-kpi"><div class="lci-v">0:02</div><div class="lci-l">Avg pickup</div></div>
+      <div class="lci-kpi"><div class="lci-v"><span id="lciQ">2</span> <span class="lci-live">live</span></div><div class="lci-l">On the line now</div></div>
+    </div>
+  </div>
+  <p class="simnote">Illustrative call flow for a South-Florida public-adjusting campaign — the mechanics are real; the names and figures are demonstration data.</p>
+</section>
+
+<section>
+  <div class="k">The money · claims command center</div>
+  <h2 class="t">One screen. The whole business.</h2>
+  <p class="lead">Every call, text, signed claim, and ad dollar on one live board — so you see which dollar produced which claim.</p>
+  <div class="cc">
+    <div class="cchead"><span class="nm">◉ FAST Adjusting Service · Demo</span><span class="il">ILLUSTRATIVE</span></div>
+    <div class="cchero">
+      <div class="cl">Signed-claim value · today</div>
+      <div class="big">$214,800</div>
+    </div>
+    <div class="ccgrid">
+      <div class="ec"><div class="kk cy">9</div><div class="ll">Claims signed today</div></div>
+      <div class="ec"><div class="kk go">$21,480</div><div class="ll">Your est. fee (10%)</div></div>
+      <div class="ec"><div class="kk cy">137 · 12</div><div class="ll">Calls · appts booked</div></div>
+      <div class="ec"><div class="kk lm">7.6%</div><div class="ll">Cost of acquisition</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="k">Why a funder cares</div>
+  <h2 class="t">The unit economics of an answered phone</h2>
+  <p class="lead">A public adjuster earns a percentage of a $10,000–$150,000+ claim. The only question is who answers first. The switchboard makes sure it's always FAST.</p>
+  <div class="math">
+    <div class="mc"><div class="mv">$10K–$150K+</div><div class="ml">Typical claim size — the adjuster earns a percentage of every one</div></div>
+    <div class="mc"><div class="mv">1 ring</div><div class="ml">Answered 24/7 in the caller's language — the post-storm call is never voicemail</div></div>
+    <div class="mc"><div class="mv">10 lines</div><div class="ml">Source-tagged Smart-DIDs + an outbound dialer working storm-hit ZIPs</div></div>
+  </div>
+  <p class="mnote">Miss six post-storm calls a month at a $2,000 average fee and that's <b>$12,000/mo</b> walking to the adjuster up the street. The system's job is to make sure none of them do.</p>
+</section>
+
+<section>
+  <div class="k">The ask</div>
+  <h2 class="t">Stand it up for FAST — then scale it</h2>
+  <div class="cta">
+    <h3>See the phones ring first.</h3>
+    <p>A 20-minute call is all it takes to begin. We can have the grid live within 24 hours — you see booked business before you scale.</p>
+    <a class="begin" href="tel:+16892421041">📞 Begin — (689) 242-1041</a>
+  </div>
+</section>
+
+<div class="foot">
+  Prepared as a live demonstration of the Telvergence switchboard applied to FAST Adjusting Service (South Florida — Miami-Dade, Broward, Palm Beach). Public insurance adjusting is licensed and regulated; the state public-adjuster license number of record is displayed on all public-facing material, and all solicitation and claims comply with applicable state adjusting rules, TCPA, and Do-Not-Call requirements. Command-center and call-floor figures are illustrative demonstration data, not actual client results. Confidential — Telvergence, Inc.
+</div>
+
+<script>
+/* ---- switchboard theater (claims) ---- */
+(function(){
+  var board=document.getElementById('lciBoard');if(!board)return;
+  var reduce=false;try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+  var names=['M. Torres','J. Baptiste','R. Alvarez','D. Okafor','L. Nguyen','P. Silva','A. Jean-Louis','C. Reyes','K. Dupont','S. Mensah','G. Castillo','Y. Pierre'];
+  var langs=['English','Español','Kreyòl','Português'];
+  var matters=['Roof / wind claim','Water / flood claim','Fire &amp; smoke claim','Denied claim appeal','Hurricane damage','Condo / HOA claim'];
+  var areas=['305','786','954','561','754'];
+  var stages=['Incoming call','AI answering','Claim qualified','Adjuster booked ✓'];
+  var rows=[];var N=4;
+  function rnd(a){return a[Math.floor(Math.random()*a.length)];}
+  function newCall(){var n4=(1000+Math.floor(Math.random()*9000));return {name:rnd(names),meta:'('+rnd(areas)+') '+(200+Math.floor(Math.random()*799))+'-'+n4+' · '+rnd(langs)+' · '+rnd(matters),stage:0};}
+  for(var i=0;i<N;i++){var el=document.createElement('div');el.className='lci-row s0';el.innerHTML='<span class="lci-dot"></span><div class="lci-who"><div class="lci-name"></div><div class="lci-meta"></div></div><div class="lci-stat"></div>';board.appendChild(el);rows.push({el:el,call:newCall()});}
+  function paint(r){r.el.className='lci-row s'+r.call.stage;r.el.querySelector('.lci-name').textContent=r.call.name;r.el.querySelector('.lci-meta').innerHTML=r.call.meta;r.el.querySelector('.lci-stat').textContent=stages[r.call.stage];}
+  rows.forEach(function(r,i){r.call.stage=Math.min(i,3);paint(r);});
+  var ansEl=document.getElementById('lciAns'),bkEl=document.getElementById('lciBk'),qEl=document.getElementById('lciQ');
+  var ans=137,bk=9;
+  function tick(r){
+    if(r.call.stage<3){r.call.stage++;paint(r);
+      if(r.call.stage===1){ans++;ansEl.textContent=ans;}
+      setTimeout(function(){tick(r);}, r.call.stage===3?1700:1200+Math.random()*600);
+    } else {bk++;bkEl.textContent=bk;
+      setTimeout(function(){r.call=newCall();r.call.stage=0;paint(r);var q=1+Math.floor(Math.random()*3);qEl.textContent=q;setTimeout(function(){tick(r);},900+Math.random()*700);},1200);
+    }
+  }
+  if(!reduce){rows.forEach(function(r,i){setTimeout(function(){tick(r);},400+i*650);});}
+})();
+/* ---- click-to-call (instant callback) — same proxy as the main site ---- */
+(function(){
+  var go=document.getElementById('cbGo'), inp=document.getElementById('cbPhone'), msg=document.getElementById('cbMsg');
+  if(!go)return;
+  var CB_URL='/api/callback';
+  function fallback(){msg.className='cb-msg err';msg.innerHTML='Call us directly: <a href="tel:+18552235878">(855) 223-5878</a>';}
+  go.onclick=function(){
+    var v=(inp.value||'').replace(/[^\d]/g,'');
+    if(v.length<10){msg.className='cb-msg err';msg.textContent='Enter a valid mobile number.';return;}
+    go.disabled=true;msg.className='cb-msg';msg.textContent='Connecting…';
+    fetch(CB_URL,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({phone:inp.value,brand:'FAST Adjusting — investor demo'})})
+      .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j}},function(){return {ok:false,j:{}}})})
+      .then(function(res){if(res.ok&&res.j&&res.j.ok){msg.className='cb-msg ok';msg.textContent='✓ Calling you now — answer your phone.';}else{fallback();}go.disabled=false;})
+      .catch(function(){fallback();go.disabled=false;});
+  };
+  inp.addEventListener('keydown',function(e){if(e.key==='Enter')go.click();});
+})();
+/* reveal */
+(function(){
+  var reduce=false;try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+  if(reduce){document.querySelectorAll('section').forEach(function(s){s.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{rootMargin:'0px 0px -6% 0px',threshold:.06});
+  document.querySelectorAll('section').forEach(function(s){io.observe(s);});
+})();
+</script>
+</body>
+</html>
