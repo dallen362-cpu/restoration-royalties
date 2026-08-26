@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#04070F">
+<title>Embedded Softphone &amp; Inbound AI Voice Agent × Telvergence — Network Enhancement</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="A Telvergence network-enhancement showcase: an embedded WebRTC softphone whose inbound AI voice agent knows every caller from CNAM the moment the phone rings, converses from the brand's own website as its knowledge base, and extracts live call data into the CRM in real time.">
+<link rel="canonical" href="https://restorationroyalties.com/softphone/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Embedded Softphone &amp; Inbound AI Voice Agent × Telvergence">
+<meta property="og:url" content="https://restorationroyalties.com/softphone/">
+<meta property="og:description" content="Every DID answers itself. An inbound AI voice agent that knows the caller instantly, converses from the brand's own site, and fills the CRM live — over WebRTC, embeddable into every app.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2304070F'/%3E%3Cpath d='M9 7c-1 0-2 1-2 2 0 8 6 14 14 14 1 0 2-1 2-2v-3l-4-2-2 2c-2-1-4-3-5-5l2-2-2-4z' fill='none' stroke='%232AD4F0' stroke-width='1.7' stroke-linejoin='round'/%3E%3Cpath d='M24 9v6M27 11v2' stroke='%2300FF88' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../brand-kit/brand.css">
+<style>
+:root{--accent:#2AD4F0;}
+
+/* ===== console shell ===== */
+.console{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);
+  border-radius:20px;padding:16px;box-shadow:0 40px 90px -50px rgba(42,212,240,.5)}
+.console-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px;padding:2px 4px}
+.ch-title{font-family:var(--fm);font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.ch-title b{color:var(--accent)}
+.ch-live{margin-left:auto;font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--lime);display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(0,255,136,.32);
+  border-radius:999px;padding:5px 11px;background:rgba(0,255,136,.06)}
+.ch-live .d{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 9px var(--lime);animation:blink 1.8s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+.panels{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:920px){.panels{grid-template-columns:298px minmax(0,1fr) 292px}}
+.panel{background:var(--void);border:1px solid var(--line);border-radius:15px;display:flex;flex-direction:column;overflow:hidden}
+.panel-label{font-family:var(--fm);font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding:11px 14px 0}
+
+/* ===== softphone panel ===== */
+.softphone{padding:14px;flex:1;display:flex;flex-direction:column;gap:12px;position:relative;min-height:430px}
+.sp-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.sp-net{font-family:var(--fm);font-size:9.5px;font-weight:600;letter-spacing:.06em;color:var(--accent);
+  border:1px solid rgba(42,212,240,.4);border-radius:999px;padding:4px 9px;display:inline-flex;align-items:center;gap:6px;background:rgba(42,212,240,.06)}
+.sp-net .pdot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+.sp-state{font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.softphone[data-state="active"] .sp-state{color:var(--lime)}
+.softphone[data-state="ended"] .sp-state{color:var(--faint)}
+
+.sp-id{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding:6px 0 2px}
+.avatar{width:66px;height:66px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--fd);font-weight:800;font-size:22px;color:var(--void);
+  background:linear-gradient(150deg,var(--accent),var(--lime));position:relative;flex:none}
+.softphone[data-state="incoming"] .avatar::before,
+.softphone[data-state="incoming"] .avatar::after{content:"";position:absolute;inset:-4px;border-radius:50%;
+  border:2px solid var(--accent);opacity:0;animation:ripple 1.8s ease-out infinite}
+.softphone[data-state="incoming"] .avatar::after{animation-delay:.9s}
+@keyframes ripple{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.55);opacity:0}}
+
+.cnam{width:100%;border:1px solid var(--line);background:linear-gradient(180deg,var(--card2),var(--card));
+  border-radius:13px;padding:13px 14px;opacity:0;transform:translateY(8px) scale(.98);
+  transition:opacity .5s cubic-bezier(.2,.7,.2,1),transform .5s cubic-bezier(.2,.7,.2,1);text-align:left}
+.cnam.show{opacity:1;transform:none;border-color:rgba(42,212,240,.35)}
+.cn-name{font-family:var(--fd);font-weight:800;font-size:16px;color:var(--ink);letter-spacing:-.01em}
+.cn-sub{color:var(--muted);font-size:11.5px;margin-top:1px}
+.cn-num{font-family:var(--fm);color:var(--accent);font-weight:600;font-size:13px;margin-top:7px}
+.cn-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.cn-meta span{font-size:10.5px;font-weight:600;color:var(--muted);background:var(--void);
+  border:1px solid var(--line);border-radius:7px;padding:4px 8px}
+.cn-src{margin-top:10px;font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--lime);display:inline-flex;align-items:center;gap:5px}
+.cn-src::before{content:"◉";font-size:8px}
+
+.wave{display:flex;align-items:center;justify-content:center;gap:3px;height:40px;margin:2px 0}
+.wave i{width:3px;height:6px;border-radius:2px;background:var(--line2);transition:background .3s}
+.softphone[data-state="active"] .wave i{background:var(--accent);animation:wv 1s ease-in-out infinite}
+@keyframes wv{0%,100%{height:5px;opacity:.45}50%{height:30px;opacity:1}}
+
+.timer{font-family:var(--fm);font-weight:600;font-size:20px;color:var(--ink);text-align:center;letter-spacing:.06em;
+  opacity:0;transition:opacity .4s}
+.softphone[data-state="active"] .timer,.softphone[data-state="ended"] .timer{opacity:1}
+.softphone[data-state="ended"] .timer{color:var(--faint)}
+
+.sp-controls{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:auto}
+.spbtn{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:9px 4px;text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--muted);cursor:default;transition:border-color .16s}
+.spbtn .ic{font-size:16px;line-height:1}
+.spbtn .lb{font-size:8.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.spbtn.hang{background:linear-gradient(180deg,#ff6a4d,#e23b1f);border-color:transparent;color:#fff}
+.softphone[data-state="incoming"] .sp-controls.active-ctl,
+.softphone[data-state="active"] .sp-controls.incoming-ctl,
+.softphone[data-state="ended"] .sp-controls.incoming-ctl{display:none}
+.softphone[data-state="active"] .sp-controls.active-ctl,
+.softphone[data-state="ended"] .sp-controls.active-ctl{display:grid}
+.sp-controls.incoming-ctl{grid-template-columns:1fr 1fr}
+.spbtn.accept{background:linear-gradient(180deg,#2bff9e,#00c46a);border-color:transparent;color:#04140a;animation:pulseg 1.4s ease-in-out infinite}
+@keyframes pulseg{0%,100%{box-shadow:0 0 0 0 rgba(0,255,136,.5)}50%{box-shadow:0 0 0 7px rgba(0,255,136,0)}}
+
+.sp-badges{display:flex;flex-wrap:wrap;gap:6px}
+.embed-chip{font-size:10px;font-weight:600;color:var(--violet);border:1px solid rgba(138,123,255,.4);
+  background:rgba(138,123,255,.08);border-radius:8px;padding:6px 9px;display:inline-flex;align-items:center;gap:5px}
+
+/* ===== transcript panel ===== */
+.transcript{flex:1;display:flex;flex-direction:column;min-height:430px}
+.tscroll{flex:1;overflow-y:auto;padding:6px 13px 13px;display:flex;flex-direction:column;gap:9px;scroll-behavior:smooth}
+.tscroll::-webkit-scrollbar{width:6px}.tscroll::-webkit-scrollbar-thumb{background:var(--line2);border-radius:3px}
+.tstart{margin:auto;text-align:center;color:var(--faint);font-size:12px;padding:24px}
+.tstart .ph{font-size:26px;display:block;margin-bottom:6px}
+.bubble{max-width:86%;border-radius:14px;padding:9px 12px;font-size:13px;line-height:1.5;
+  animation:pop .34s cubic-bezier(.2,.8,.2,1)}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
+.bubble .spk{font-family:var(--fm);font-size:8.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  display:block;margin-bottom:3px;opacity:.85}
+.bubble.ai{align-self:flex-start;background:linear-gradient(180deg,rgba(42,212,240,.14),rgba(42,212,240,.06));
+  border:1px solid rgba(42,212,240,.3);color:var(--ink);border-bottom-left-radius:5px}
+.bubble.ai .spk{color:var(--accent)}
+.bubble.caller{align-self:flex-end;background:var(--card2);border:1px solid var(--line);color:var(--ink);border-bottom-right-radius:5px}
+.bubble.caller .spk{color:var(--muted)}
+.kbtag{margin-top:7px;font-size:9px;font-weight:600;letter-spacing:.03em;color:var(--lime);
+  border:1px solid rgba(0,255,136,.32);background:rgba(0,255,136,.07);border-radius:7px;padding:3px 7px;display:inline-flex;align-items:center;gap:4px}
+.typing{display:inline-flex;gap:4px;padding:3px 2px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.5;animation:tdot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tdot{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+
+/* ===== CRM panel ===== */
+.crm{flex:1;padding:8px 13px 13px;display:flex;flex-direction:column;gap:7px;min-height:430px}
+.cf{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;border-bottom:1px solid var(--line);
+  padding:8px 2px 7px;opacity:.55;transition:opacity .3s}
+.cf.filled{opacity:1}
+.cf-l{font-family:var(--fm);font-size:9.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);flex:none;padding-top:2px}
+.cf-v{text-align:right;font-size:12.5px;font-weight:600;color:var(--faint);min-height:16px;transition:color .3s}
+.cf.filled .cf-v{color:var(--ink)}
+.cf-v .empty{color:var(--line2);font-weight:500}
+.cf.pop .cf-v{animation:fieldpop .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes fieldpop{0%{transform:scale(.8);color:var(--lime)}60%{transform:scale(1.06)}100%{transform:none}}
+.src{display:inline-block;margin-left:6px;font-family:var(--fm);font-size:7.5px;font-weight:600;letter-spacing:.08em;
+  color:var(--accent);border:1px solid rgba(42,212,240,.4);border-radius:5px;padding:1px 5px;vertical-align:middle}
+.src.kb{color:var(--lime);border-color:rgba(0,255,136,.4)}
+
+.scorebox{margin-top:4px;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:11px 12px}
+.scorebox .st{display:flex;align-items:baseline;justify-content:space-between}
+.scorebox .sl{font-family:var(--fm);font-size:9.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.scorebox .sv{font-family:var(--fm);font-weight:600;font-size:17px;color:var(--lime)}
+.scorebox .sv small{font-size:9px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-left:4px}
+.sbar{height:6px;border-radius:3px;background:var(--void);border:1px solid var(--line);margin-top:8px;overflow:hidden}
+.sbar i{display:block;height:100%;width:0;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--lime));transition:width .8s cubic-bezier(.2,.7,.2,1)}
+.synced{margin-top:auto;text-align:center;font-family:var(--fm);font-size:11px;font-weight:600;letter-spacing:.08em;
+  color:var(--lime);border:1px solid rgba(0,255,136,.32);background:rgba(0,255,136,.07);border-radius:11px;padding:11px;
+  opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s}
+.synced.show{opacity:1;transform:none}
+
+.console-cap{color:var(--faint);font-size:11.5px;line-height:1.55;margin-top:13px;text-align:center;max-width:78ch;margin-inline:auto}
+.console-cap b{color:var(--muted);font-weight:600}
+
+/* how it works strip */
+.howrows{display:grid;gap:10px}@media(min-width:640px){.howrows{grid-template-columns:1fr 1fr}}
+.hr{display:flex;gap:13px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px;
+  opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s cubic-bezier(.2,.7,.2,1),border-color .16s}
+.hr.in{opacity:1;transform:none}.hr:hover{border-color:var(--line2)}
+.hr .ic{width:40px;height:40px;flex:none;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;
+  background:rgba(42,212,240,.1);border:1px solid rgba(42,212,240,.35)}
+.hr .n{font-family:var(--fd);font-weight:700;font-size:15px;color:var(--ink)}
+.hr .n b{color:var(--accent);font-weight:700}
+.hr p{color:var(--muted);font-size:13px;margin-top:4px}.hr p b{color:var(--ink);font-weight:600}
+
+/* why band */
+.whyband{background:linear-gradient(180deg,rgba(138,123,255,.09),rgba(42,212,240,.05));border:1px solid var(--line);
+  border-radius:16px;padding:22px}
+.whyband .wt{font-family:var(--fd);font-weight:800;font-size:clamp(19px,3.2vw,25px);letter-spacing:-.02em;color:var(--ink)}
+.whyband .wt span{background:linear-gradient(100deg,var(--accent),var(--lime));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.whygrid{display:grid;gap:12px;margin-top:16px}@media(min-width:720px){.whygrid{grid-template-columns:repeat(3,1fr)}}
+.wcell{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:15px}
+.wcell .h{font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:7px}
+.wcell p{color:var(--muted);font-size:13px}.wcell p b{color:var(--ink);font-weight:600}
+
+/* ===== SECTION A — lifecycle / SMS + provisioning ===== */
+.lifecycle{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:20px;
+  padding:16px;box-shadow:0 40px 90px -50px rgba(42,212,240,.5)}
+.lc-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px;padding:2px 4px}
+.lc-grid{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:820px){.lc-grid{grid-template-columns:322px minmax(0,1fr)}}
+
+/* phone device */
+.device{max-width:322px;width:100%;margin:0 auto;background:#05080f;border:1px solid var(--line2);border-radius:30px;
+  padding:11px 10px 14px;box-shadow:0 40px 80px -42px rgba(0,0,0,.85),inset 0 0 0 1px rgba(255,255,255,.02)}
+.dv-notch{width:96px;height:5px;border-radius:3px;background:#1b2740;margin:2px auto 10px}
+.dv-head{display:flex;align-items:center;gap:9px;padding:0 6px 11px;border-bottom:1px solid var(--line)}
+.dv-av{width:34px;height:34px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:15px;
+  background:linear-gradient(150deg,var(--accent),var(--lime));color:var(--void)}
+.dv-name{font-weight:700;font-size:13px;color:var(--ink);line-height:1.2}
+.dv-name small{display:block;font-family:var(--fm);font-weight:500;font-size:9.5px;color:var(--faint);letter-spacing:.04em}
+.dv-thread{height:378px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding:12px 6px 4px;scroll-behavior:smooth}
+.dv-thread::-webkit-scrollbar{width:5px}.dv-thread::-webkit-scrollbar-thumb{background:var(--line2);border-radius:3px}
+.sys-note{align-self:center;font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--faint);background:var(--void);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+.sms{max-width:84%;padding:9px 12px;border-radius:16px;font-size:12.5px;line-height:1.46;animation:pop .34s cubic-bezier(.2,.8,.2,1)}
+.sms.inbound{align-self:flex-start;background:#182032;border:1px solid var(--line);color:var(--ink);border-bottom-left-radius:5px}
+.sms.outbound{align-self:flex-end;background:linear-gradient(180deg,#2bff9e,#00c46a);color:#04140a;font-weight:600;border-bottom-right-radius:5px}
+.sms .fine{display:block;margin-top:5px;font-size:10px;opacity:.7}
+.sms-meta{align-self:flex-start;font-family:var(--fm);font-size:8.5px;letter-spacing:.06em;color:var(--faint);margin:-3px 2px 2px}
+.sms-meta.out{align-self:flex-end}
+.applink{align-self:flex-start;max-width:84%;background:#0a1120;border:1px solid rgba(42,212,240,.4);border-radius:14px;overflow:hidden;
+  animation:pop .34s cubic-bezier(.2,.8,.2,1)}
+.applink .al-top{padding:10px 12px;font-size:12.5px;color:var(--ink);line-height:1.45}
+.applink .al-cta{display:flex;align-items:center;gap:8px;padding:10px 12px;border-top:1px solid var(--line);background:rgba(42,212,240,.08)}
+.applink .al-ic{width:28px;height:28px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;font-size:15px;
+  background:linear-gradient(150deg,var(--accent),var(--violet));color:var(--void)}
+.applink .al-t{font-weight:700;font-size:12px;color:var(--accent)}
+.applink .al-t small{display:block;font-family:var(--fm);font-weight:500;font-size:9.5px;color:var(--faint)}
+.tapwrap{align-self:flex-end;position:relative;margin:2px 4px 2px}
+.tapbtn{background:linear-gradient(180deg,#2bff9e,#00c46a);color:#04140a;font-family:var(--fd);font-weight:800;font-size:14px;
+  border:none;border-radius:12px;padding:11px 26px;letter-spacing:.02em;animation:pulseg 1.35s ease-in-out infinite}
+.tapwrap.tapped .tapbtn{animation:none;filter:brightness(1.15);transform:scale(.94);transition:transform .12s}
+.tapwrap .finger{position:absolute;right:14px;bottom:-6px;font-size:20px;opacity:0;pointer-events:none}
+.tapwrap.tapped .finger{animation:tap .5s ease-out}
+@keyframes tap{0%{opacity:0;transform:translateY(10px) scale(.9)}40%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-4px) scale(1.05)}}
+.optchip{align-self:stretch;background:rgba(0,255,136,.07);border:1px solid rgba(0,255,136,.34);border-radius:12px;padding:11px 13px;
+  animation:pop .34s cubic-bezier(.2,.8,.2,1)}
+.optchip .oc-t{font-family:var(--fm);font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--lime);display:flex;align-items:center;gap:6px}
+.optchip .oc-s{font-size:10.5px;color:var(--muted);margin-top:5px;line-height:1.5}
+.optchip .oc-s b{color:var(--ink);font-weight:600}
+.dv-typing{align-self:flex-start;background:#182032;border:1px solid var(--line);border-radius:16px;border-bottom-left-radius:5px;padding:10px 13px}
+.dv-typing .typing i{background:var(--muted)}
+
+/* provisioning column */
+.prov{display:flex;flex-direction:column;gap:10px}
+.prov-title{font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:2px}
+.pstep{display:flex;align-items:center;gap:12px;background:var(--void);border:1px solid var(--line);border-radius:13px;padding:13px 15px;
+  opacity:.4;transition:opacity .4s,border-color .4s,background .4s}
+.pstep.active{opacity:1;border-color:rgba(42,212,240,.45);background:rgba(42,212,240,.05)}
+.pstep.done{opacity:1;border-color:rgba(0,255,136,.32)}
+.pi{width:26px;height:26px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  border:2px solid var(--line2);color:var(--faint);font-size:13px}
+.pstep.active .pi{border-color:var(--accent);border-top-color:transparent;color:var(--accent);animation:spin .8s linear infinite}
+.pstep.done .pi{border-color:var(--lime);background:var(--lime);color:var(--void);animation:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pstep .pt{font-weight:700;font-size:13.5px;color:var(--ink)}
+.pstep .pt small{display:block;font-family:var(--fm);font-weight:500;font-size:10px;color:var(--faint);letter-spacing:.03em;text-transform:none}
+.pstep.active .pt small{color:var(--accent)}.pstep.done .pt small{color:var(--lime)}
+.liveflash{margin-top:2px;text-align:center;border-radius:15px;padding:22px 16px;border:1px solid rgba(0,255,136,.3);
+  background:linear-gradient(180deg,rgba(0,255,136,.1),rgba(42,212,240,.05));opacity:0;transform:translateY(10px) scale(.98);
+  transition:opacity .5s cubic-bezier(.2,.7,.2,1),transform .5s cubic-bezier(.2,.7,.2,1)}
+.liveflash.show{opacity:1;transform:none;animation:flashpulse 1.8s ease-in-out infinite}
+@keyframes flashpulse{0%,100%{box-shadow:0 0 0 0 rgba(0,255,136,.25)}50%{box-shadow:0 0 34px -6px rgba(0,255,136,.45)}}
+.liveflash .lf-ic{font-size:30px}
+.liveflash .lf-t{font-family:var(--fd);font-weight:800;font-size:18px;color:var(--ink);letter-spacing:-.02em;margin-top:6px}
+.liveflash .lf-num{font-family:var(--fm);font-weight:600;font-size:15px;color:var(--lime);margin-top:5px}
+.liveflash .lf-badge{margin-top:11px;display:inline-flex;align-items:center;gap:7px;font-family:var(--fm);font-size:10px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(42,212,240,.4);border-radius:999px;padding:6px 12px;background:rgba(42,212,240,.06)}
+.liveflash .lf-badge .d{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 9px var(--lime)}
+
+/* ===== SECTION B — heritage stack ===== */
+.thesis{border-left:3px solid var(--violet);background:rgba(138,123,255,.09);border-radius:10px;padding:15px 17px;font-size:14.5px;color:var(--muted)}
+.thesis b{color:var(--ink);font-weight:600}
+.stackgrid{display:grid;gap:11px;margin-top:14px}@media(min-width:560px){.stackgrid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.stackgrid{grid-template-columns:repeat(4,1fr)}}
+.stackcard{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:14px;padding:16px;transition:border-color .16s,transform .16s}
+.stackcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.stackcard .sname{font-family:var(--fd);font-weight:800;font-size:16px;color:var(--ink);letter-spacing:-.01em}
+.stackcard .srole{font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:6px 0 9px}
+.stackcard p{color:var(--muted);font-size:12.5px;line-height:1.5}.stackcard p b{color:var(--ink);font-weight:600}
+.hook{margin-top:16px;text-align:center;font-family:var(--fd);font-weight:800;font-size:clamp(17px,2.9vw,23px);letter-spacing:-.02em;color:var(--ink);
+  background:linear-gradient(180deg,rgba(0,255,136,.08),rgba(42,212,240,.05));border:1px solid rgba(0,255,136,.28);border-radius:14px;padding:20px;line-height:1.34}
+.hook span{background:linear-gradient(100deg,var(--accent),var(--lime));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.heritage-note{color:var(--faint);font-size:11.5px;line-height:1.55;margin-top:12px;text-align:center;max-width:76ch;margin-inline:auto}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="logo"><b>TELVERGENCE</b> · SOFTPHONE <span class="sr">· Network Enhancement</span></div>
+  <a href="../showroom/">← Showroom</a>
+</div>
+
+<header class="wrap">
+  <div class="eyebrow">TELVERGENCE × Network Enhancement · Embedded Softphone · Inbound AI Voice Agent</div>
+  <h1>Every DID answers itself —<br><span>and every app can carry the phone.</span></h1>
+  <div class="tagline">Because we own the dial tone, an inbound call to a Smart-DID is answered by an <b>AI voice agent</b> that knows the caller the instant it rings, <b>converses from the brand's own website</b>, and <b>writes the lead into the CRM live</b> — all over WebRTC, in an embeddable softphone that drops into every app on the network.</div>
+  <div class="demo-note">Illustrative concept demo · scripted inbound call · WebRTC softphone · no live telephony on this page</div>
+</header>
+
+<div class="wrap">
+  <section>
+    <div class="big"><b>The concept:</b> the phone number is no longer a dumb pipe. The moment a call hits one of our Smart-DIDs, the network already knows who is calling — <b>CNAM, caller-ID, and prior-call history</b> — and hands an AI agent the brand's own site as a knowledge base. The agent talks, qualifies, and books in the caller's language while structured data streams into the CRM. Watch a single inbound call run end-to-end below.</div>
+  </section>
+
+  <!-- ===================== CENTERPIECE ===================== -->
+  <section>
+    <h2>Live call in progress — softphone · transcript · CRM, all in sync</h2>
+    <div class="console">
+      <div class="console-head">
+        <span class="ch-title"><b>TELVERGENCE</b> · Embedded Voice Console</span>
+        <span class="ch-live"><span class="d"></span>Live demo · looping</span>
+      </div>
+      <div class="panels">
+
+        <!-- PANEL 1 — SOFTPHONE -->
+        <div class="panel">
+          <div class="panel-label">① Softphone · WebRTC</div>
+          <div class="softphone" id="sp" data-state="incoming">
+            <div class="sp-top">
+              <span class="sp-net"><span class="pdot"></span>WebRTC · in-browser</span>
+              <span class="sp-state" id="spState">Incoming call…</span>
+            </div>
+            <div class="sp-id">
+              <div class="avatar" id="avatar">MD</div>
+              <div class="cnam" id="cnam">
+                <div class="cn-name">Maria Delgado</div>
+                <div class="cn-sub">Delgado Residence · Homeowner</div>
+                <div class="cn-num">(305) 555-0142</div>
+                <div class="cn-meta">
+                  <span>📍 Hialeah, FL</span>
+                  <span>↩ returning · 2 prior calls</span>
+                </div>
+                <div class="cn-src">via CNAM + caller-ID</div>
+              </div>
+            </div>
+            <div class="wave" id="wave" aria-hidden="true"></div>
+            <div class="timer" id="timer">00:00</div>
+            <div class="sp-controls incoming-ctl">
+              <div class="spbtn hang"><span class="ic">✕</span><span class="lb">Decline</span></div>
+              <div class="spbtn accept"><span class="ic">📞</span><span class="lb">Accept</span></div>
+            </div>
+            <div class="sp-controls active-ctl">
+              <div class="spbtn"><span class="ic">🎙️</span><span class="lb">Mute</span></div>
+              <div class="spbtn"><span class="ic">⌗</span><span class="lb">Keypad</span></div>
+              <div class="spbtn"><span class="ic">↪</span><span class="lb">Transfer</span></div>
+              <div class="spbtn hang"><span class="ic">✕</span><span class="lb">End</span></div>
+            </div>
+            <div class="sp-badges">
+              <span class="embed-chip">☎ Embed this in any app</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 2 — TRANSCRIPT -->
+        <div class="panel">
+          <div class="panel-label">② Live transcript · speaker-separated</div>
+          <div class="transcript">
+            <div class="tscroll" id="tscroll">
+              <div class="tstart" id="tstart"><span class="ph">📞</span>Waiting for the call to connect…</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 3 — CRM -->
+        <div class="panel">
+          <div class="panel-label">③ CRM · live extraction</div>
+          <div class="crm">
+            <div class="cf" data-f="name"><span class="cf-l">Name</span><span class="cf-v"><span class="empty">—</span></span></div>
+            <div class="cf" data-f="phone"><span class="cf-l">Phone</span><span class="cf-v"><span class="empty">—</span></span></div>
+            <div class="cf" data-f="city"><span class="cf-l">City</span><span class="cf-v"><span class="empty">—</span></span></div>
+            <div class="cf" data-f="lang"><span class="cf-l">Language</span><span class="cf-v"><span class="empty">—</span></span></div>
+            <div class="cf" data-f="intent"><span class="cf-l">Intent</span><span class="cf-v"><span class="empty">—</span></span></div>
+            <div class="cf" data-f="urgency"><span class="cf-l">Urgency</span><span class="cf-v"><span class="empty">—</span></span></div>
+            <div class="cf" data-f="appt"><span class="cf-l">Appointment</span><span class="cf-v"><span class="empty">—</span></span></div>
+            <div class="scorebox">
+              <div class="st"><span class="sl">Lead score</span><span class="sv" id="scoreVal">—</span></div>
+              <div class="sbar"><i id="scoreBar"></i></div>
+            </div>
+            <div class="synced" id="synced">✓ Synced to CRM</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <p class="console-cap"><b>Illustrative concept demo — scripted call flow.</b> In production the agent answers live over WebRTC using the brand's own site as its knowledge base. No real caller, no live telephony, and no personal data run on this page.</p>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <h2>How it works — ring, answer, extract, embed</h2>
+    <div class="howrows">
+      <div class="hr"><div class="ic">📇</div><div><div class="n"><b>Ring</b> → know the caller</div><p>The instant a Smart-DID rings, <b>CNAM + caller-ID</b> resolve the name, company, city, and prior-call history — real-time context pulled from the live network before the first hello.</p></div></div>
+      <div class="hr"><div class="ic">🧠</div><div><div class="n"><b>Answer</b> → converse from the site</div><p>The brand's <b>own website is the agent's knowledge base</b> — services, the offer, hours, pricing, promos. Retrieval-augmented answers, correct and on-brand, in <b>any language</b> the caller speaks.</p></div></div>
+      <div class="hr"><div class="ic">🗂️</div><div><div class="n"><b>Extract</b> → CRM in real time</div><p>Name, address, intent, urgency, and appointment populate as <b>structured fields</b> while the call happens, beside a speaker-separated transcript — the booking lands in your CRM before the caller hangs up.</p></div></div>
+      <div class="hr"><div class="ic">🧩</div><div><div class="n"><b>Embed</b> everywhere</div><p>The same softphone is a <b>drop-in WebRTC widget</b> for every app that carries the DIDs we issue — one component unifies inbound AI answer and outbound branded dialing across the whole network.</p></div></div>
+    </div>
+  </section>
+
+  <!-- WHY THIS IS THE NETWORK ENHANCEMENT -->
+  <section>
+    <h2>Why this is the network enhancement</h2>
+    <div class="whyband">
+      <div class="wt">We own the dial tone — so <span>every DID gets a smart agent for free</span>, and one softphone carries the whole network.</div>
+      <div class="whygrid">
+        <div class="wcell"><div class="h">Raw call data at the source</div><p>Because the calls ride <b>our own network</b>, we get CNAM, caller-ID, and history at the carrier level — the agent starts every call already knowing who it's talking to.</p></div>
+        <div class="wcell"><div class="h">The site is already the brain</div><p>Each brand's website <b>already exists</b>. We point the agent at it as a knowledge base, so <b>every number on the network</b> answers correctly with zero new content to write.</p></div>
+        <div class="wcell"><div class="h">One softphone, every app</div><p>A single embeddable WebRTC component unifies <b>inbound + outbound</b> across every app and brand we run — the UCCaaS layer that turns numbers into a live workforce.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION A — LIFECYCLE ===================== -->
+  <section>
+    <h2>After the call: opt-in → app → a live DID in their hand</h2>
+    <div class="lifecycle">
+      <div class="lc-head">
+        <span class="ch-title"><b>TELVERGENCE</b> · Post-Call Provisioning</span>
+        <span class="ch-live"><span class="d"></span>Live demo · looping</span>
+      </div>
+      <div class="lc-grid">
+
+        <!-- phone / SMS thread -->
+        <div>
+          <div class="device">
+            <div class="dv-notch"></div>
+            <div class="dv-head">
+              <div class="dv-av">☎</div>
+              <div class="dv-name">Restoration Royalties<small>(305) 555-0142 · your new line</small></div>
+            </div>
+            <div class="dv-thread" id="smsThread">
+              <div class="sys-note" id="smsSeed">Call ended · 2:58 · agent following up</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- provisioning column -->
+        <div class="prov">
+          <div class="prov-title">Provisioning · hot-flash to the app</div>
+          <div class="pstep" data-p="1"><div class="pi">1</div><div class="pt">DID reserved<small>(305) 555-0142 · held on our network</small></div></div>
+          <div class="pstep" data-p="2"><div class="pi">2</div><div class="pt">App keyed to Vitelity<small>carrier binding · SIP credentials issued</small></div></div>
+          <div class="pstep" data-p="3"><div class="pi">3</div><div class="pt">Softphone registering<small>Acrobits client · WebRTC handshake</small></div></div>
+          <div class="pstep" data-p="4"><div class="pi">4</div><div class="pt">Line active<small>registered · inbound + outbound ready</small></div></div>
+          <div class="liveflash" id="liveflash">
+            <div class="lf-ic">☎</div>
+            <div class="lf-t">Smart-DID hot-flashed — LIVE in their hand</div>
+            <div class="lf-num">(305) 555-0142</div>
+            <div class="lf-badge"><span class="d"></span>WebRTC · registered</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <p class="console-cap"><b>Illustrative concept</b> — compliant double opt-in, then the app is provisioned with an embedded, live ("hot-flashed") Smart-DID keyed to our carrier. Scripted animation; no messages are sent and no line is provisioned from this page.</p>
+  </section>
+
+  <!-- ===================== SECTION B — HERITAGE STACK ===================== -->
+  <section>
+    <h2>The proven stack · blueprinted in 2022</h2>
+    <div class="thesis">Not vaporware — Telvergence <b>blueprinted and ran this Acrobits + Sinch + Vitelity stack in 2022</b> (the EZ VoIP / Reliant Communications product). We're <b>re-lighting a proven pipeline, not inventing one.</b></div>
+    <div class="stackgrid">
+      <div class="stackcard"><div class="sname">Acrobits</div><div class="srole">Embeddable softphone client</div><p>The <b>white-label softphone</b> that drops into any app — the WebRTC voice UI our embedded phone is built on.</p></div>
+      <div class="stackcard"><div class="sname">Sinch</div><div class="srole">CPaaS · voice &amp; messaging</div><p>The programmable platform for <b>real-time DID issuance &amp; activation</b>, voice, and the opt-in SMS flow.</p></div>
+      <div class="stackcard"><div class="sname">Vitelity</div><div class="srole">Carrier · DID layer</div><p>Our <b>carrier and number layer</b> — the DIDs we own and control, keyed straight into the app on provisioning.</p></div>
+      <div class="stackcard"><div class="sname">EZ VoIP · Reliant</div><div class="srole">Live 2022 proof-of-run</div><p>The <b>live marketing contract</b> that demonstrated real-time DID issuance on this exact stack — proof it ran.</p></div>
+    </div>
+    <div class="hook">Watch your number go live and hear it answer — <span>in minutes.</span><br>That's the reason a business pays $5K down without blinking.</div>
+    <p class="heritage-note">Stack names denote the architecture and heritage Telvergence has built and operated. This page is an illustrative concept demonstration; the pipeline is not represented as fully live on this page today.</p>
+  </section>
+
+  <section>
+    <div class="k" style="color:var(--accent)">Grow the Network · Recruit an Agent With a DID</div>
+    <h2>The same engine recruits your salesforce.</h2>
+    <p class="sub">Issuing a Smart-DID isn&rsquo;t just how a business gets a line — it&rsquo;s how the network grows itself. The <b style="color:var(--ink)">digital business card + new DID combo</b> means every subscriber is <b style="color:var(--ink)">intrinsically a reseller, a referral agent, and a potential franchisee</b> — no separate program to join. Hand your card, and the next business texts to light up their own line and app, source-tagged back to you. The agent-building network is baked in.</p>
+    <div class="recruit">
+      <div class="rc"><div class="ri">📲</div><b>Recruit with a number</b><p>Issue an agent their own embedded-softphone DID in minutes — their line, their leads, tracked and paid on overrides.</p></div>
+      <div class="rc"><div class="ri">🔗</div><b>Refer in a text</b><p>Every DID can be handed to a peer; they text to activate their own, and the referrer collects a bonus + overrides.</p></div>
+      <div class="rc"><div class="ri">👑</div><b>Own a white-label — $25K</b><p>Graduate to your own white-labeled brand on the network for a one-time <b>$25K</b> — a turnkey brand on a pipeline that&rsquo;s already running.</p></div>
+    </div>
+    <div class="ladder2"><span>Free agent</span><span class="ar">→</span><span>Distributor · overrides</span><span class="ar">→</span><span class="gold">Own white-label · $25K</span></div>
+  </section>
+  <style>
+  .recruit{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:20px}
+  .rc{background:linear-gradient(180deg,var(--card2,#111d34),var(--card,#0c1526));border:1px solid var(--line2,#2a3f66);border-radius:14px;padding:16px 17px}
+  .rc .ri{font-size:22px;margin-bottom:6px}
+  .rc b{font-family:var(--fd);font-size:16px;color:var(--ink);display:block;margin-bottom:5px}
+  .rc p{font-size:13.5px;color:var(--muted)}
+  .ladder2{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin-top:20px;font-family:var(--fm);font-size:13px;color:var(--muted)}
+  .ladder2 span{border:1px solid var(--line2,#2a3f66);border-radius:999px;padding:8px 14px;background:var(--deep,#070e1c)}
+  .ladder2 .ar{border:0;background:none;color:var(--accent)}
+  .ladder2 .gold{color:#0B0F16;background:linear-gradient(120deg,var(--accent),var(--lime,#00ff88));border-color:transparent;font-weight:700}
+  </style>
+
+  <!-- CLOSE -->
+  <section class="last">
+    <h2>The ask</h2>
+    <p class="lead">Let's turn one of your Smart-DIDs into a self-answering line — an AI voice agent that knows every caller, speaks from your own site, and books the appointment straight into your CRM. <b>A 20-minute call is all it takes to see it live on your numbers.</b></p>
+    <p class="trust">Give me <span>1% of your trust</span> — I'll earn the other 99.</p>
+    <div class="cta">
+      <a class="call" href="tel:+16892421041">📞 Call to begin — (689) 242-1041</a>
+      <a class="book" href="mailto:contact@telvergence.com?subject=Embedded%20Softphone%20%2B%20AI%20Voice%20Agent%20Demo">✉️ contact@telvergence.com</a>
+    </div>
+    <p class="decide">You decide. <span>What's it going to be?</span></p>
+    <div class="sig">Looking forward to building this with you,<br><b>David Drew Allen</b> · President, Telvergence, Inc. · 689-242-1041 · contact@telvergence.com</div>
+  </section>
+
+  <div class="disclaimer">Concept demonstration only. The three-panel call console is an <b>illustrative, scripted animation</b> — the caller is a fictional example, the dialog is pre-written, and <b>no live telephony, WebRTC session, or real call data runs on this page</b>. It depicts the intended behavior of a Telvergence embedded softphone and inbound AI voice agent. No personal data, secrets, or payment details are shown. Only public contact details — (689) 242-1041 / contact@telvergence.com — are real. Confidential — TELVERGENCE.</div>
+</div>
+
+<script>
+/* ===== reveal-on-scroll (house convention) ===== */
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(reduce){document.querySelectorAll('section,.hr').forEach(function(x){x.classList.add('in');});}
+  else{
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},
+      {rootMargin:'0px 0px -6% 0px',threshold:.06});
+    document.querySelectorAll('section,.hr').forEach(function(x){io.observe(x);});
+  }
+})();
+
+/* ===== the scripted call console ===== */
+(function(){
+  var sp=document.getElementById('sp'), spState=document.getElementById('spState'),
+      cnam=document.getElementById('cnam'), wave=document.getElementById('wave'),
+      timer=document.getElementById('timer'), tscroll=document.getElementById('tscroll'),
+      tstart=document.getElementById('tstart'), synced=document.getElementById('synced'),
+      scoreVal=document.getElementById('scoreVal'), scoreBar=document.getElementById('scoreBar');
+
+  /* build waveform bars */
+  for(var b=0;b<26;b++){var i=document.createElement('i');i.style.animationDelay=(-(b*70)%1000)+'ms';wave.appendChild(i);}
+
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var timers=[], tint=null;
+
+  /* --- the script --- */
+  var turns=[
+    {who:'ai',   text:"Thank you for calling Restoration Royalties — this is Ava. I see you've reached us before, welcome back. How can I help today?"},
+    {who:'caller',text:"Hi — water's been coming through my kitchen ceiling since this morning. Do you handle that?"},
+    {who:'ai',   text:"We do — ceiling leaks and water damage are one of our core services, and we run 24/7 emergency response. I can get a certified crew out to Hialeah today.", kb:true,
+      crm:[{f:'intent',v:'Water damage · ceiling leak'},{f:'urgency',v:'Emergency · same-day'}], score:60},
+    {who:'caller',text:"Gracias. ¿Cuánto cuesta la inspección?"},
+    {who:'ai',   text:"Con gusto, Maria. La inspección y la evaluación de daños son totalmente gratuitas — solo paga si avanzamos con la restauración.", kb:true,
+      crm:[{f:'lang',v:'Spanish (bilingual)'}], score:74},
+    {who:'caller',text:"Perfect — can someone come this afternoon?"},
+    {who:'ai',   text:"Yes — I have a certified crew open at 3:00 PM today, and I'll apply our current $250-off water-mitigation offer to your job. Want me to lock it in?", kb:true,
+      crm:[{f:'appt',v:'Today · 3:00 PM'}], score:88},
+    {who:'caller',text:"Yes, please — let's do it."},
+    {who:'ai',   text:"Done — you're booked for 3:00 PM today in Hialeah, and you'll get a text confirmation shortly. We'll take great care of you, Maria.", score:94, hot:true}
+  ];
+
+  function sched(d,fn){timers.push(setTimeout(fn,d));}
+  function setState(s){sp.setAttribute('data-state',s);}
+
+  function fillField(f,v,src){
+    var row=document.querySelector('.cf[data-f="'+f+'"]'); if(!row)return;
+    var val=row.querySelector('.cf-v');
+    val.innerHTML=v+(src?'<span class="src '+(src.k?'kb':'')+'">'+src.t+'</span>':'');
+    row.classList.add('filled');
+    row.classList.remove('pop'); void row.offsetWidth; row.classList.add('pop');
+  }
+  function setScore(n,hot){
+    scoreVal.innerHTML=n+(hot?' <small>Hot</small>':'');
+    scoreBar.style.width=n+'%';
+  }
+
+  function addBubble(t){
+    var d=document.createElement('div');
+    d.className='bubble '+(t.who==='ai'?'ai':'caller');
+    var spk=t.who==='ai'?'AI Agent · Ava':'Caller · Maria';
+    d.innerHTML='<span class="spk">'+spk+'</span>'+t.text+(t.kb?'<div class="kbtag">📚 from site knowledge base</div>':'');
+    tscroll.appendChild(d); tscroll.scrollTop=tscroll.scrollHeight;
+  }
+  function addTyping(who){
+    var d=document.createElement('div'); d.className='bubble '+(who==='ai'?'ai':'caller'); d.dataset.typing='1';
+    d.innerHTML='<span class="typing"><i></i><i></i><i></i></span>';
+    tscroll.appendChild(d); tscroll.scrollTop=tscroll.scrollHeight; return d;
+  }
+
+  var startMs=0;
+  function startTimer(){
+    startMs=Date.now();
+    tint=setInterval(function(){
+      var s=Math.floor((Date.now()-startMs)/1000);
+      timer.textContent=('0'+Math.floor(s/60)).slice(-2)+':'+('0'+(s%60)).slice(-2);
+    },250);
+  }
+
+  function reset(){
+    timers.forEach(clearTimeout); timers=[]; if(tint){clearInterval(tint);tint=null;}
+    setState('incoming'); spState.textContent='Incoming call…';
+    cnam.classList.remove('show'); synced.classList.remove('show');
+    timer.textContent='00:00';
+    tscroll.innerHTML=''; tscroll.appendChild(tstart);
+    document.querySelectorAll('.cf').forEach(function(r){
+      r.classList.remove('filled','pop'); r.querySelector('.cf-v').innerHTML='<span class="empty">—</span>';
+    });
+    scoreVal.textContent='—'; scoreBar.style.width='0';
+  }
+
+  function renderFinal(){
+    /* reduced-motion: show the completed end state, no animation */
+    setState('ended'); spState.textContent='Call completed'; cnam.classList.add('show');
+    timer.textContent='02:58';
+    tstart.remove(); tscroll.innerHTML='';
+    turns.forEach(addBubble);
+    fillField('name','Maria Delgado',{t:'CNAM'});
+    fillField('phone','(305) 555-0142',{t:'CID'});
+    fillField('city','Hialeah, FL',{t:'CNAM'});
+    fillField('lang','Spanish (bilingual)',{t:'AI',k:true});
+    fillField('intent','Water damage · ceiling leak',{t:'AI',k:true});
+    fillField('urgency','Emergency · same-day',{t:'AI',k:true});
+    fillField('appt','Today · 3:00 PM',{t:'AI',k:true});
+    setScore(94,true); synced.classList.add('show');
+  }
+
+  function run(){
+    reset();
+    /* ring → CNAM resolves instantly + populates identity fields */
+    sched(400,function(){ cnam.classList.add('show');
+      fillField('name','Maria Delgado',{t:'CNAM'});
+    });
+    sched(900,function(){ fillField('phone','(305) 555-0142',{t:'CID'}); });
+    sched(1400,function(){ fillField('city','Hialeah, FL',{t:'CNAM'}); });
+    /* answer */
+    sched(2800,function(){ setState('active'); spState.textContent='In call'; startTimer();
+      tstart.remove(); });
+
+    /* turns */
+    var clock=3400;
+    turns.forEach(function(t){
+      var start=clock;
+      sched(start,function(){ var bub=addTyping(t.who);
+        var swap=setTimeout(function(){
+          bub.remove(); addBubble(t);
+          if(t.crm){t.crm.forEach(function(a){ fillField(a.f,a.v,{t:'AI',k:true}); });}
+          if(t.score!=null){setScore(t.score,!!t.hot);}
+        },720);
+        timers.push(swap);
+      });
+      var dwell=Math.min(4200,Math.max(2500,900+t.text.length*20))+720;
+      clock=start+dwell;
+    });
+
+    /* end */
+    sched(clock,function(){ setState('ended'); spState.textContent='Call completed';
+      if(tint){clearInterval(tint);tint=null;} synced.classList.add('show'); });
+    /* loop */
+    sched(clock+5200,run);
+  }
+
+  if(reduce){ renderFinal(); }
+  else { run(); }
+})();
+
+/* ===== SECTION A — post-call opt-in + provisioning sequence ===== */
+(function(){
+  var thread=document.getElementById('smsThread'), seed=document.getElementById('smsSeed'),
+      liveflash=document.getElementById('liveflash'),
+      steps=[].slice.call(document.querySelectorAll('.pstep'));
+  if(!thread)return;
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var timers=[];
+  function sched(d,fn){timers.push(setTimeout(fn,d));}
+  function scroll(){thread.scrollTop=thread.scrollHeight;}
+
+  var authText='Restoration Royalties: You spoke with our team and asked us to follow up. Reply YES to authorize contact by call/text until you reply STOP. Msg&amp;data rates may apply.';
+
+  function inbound(html,meta){
+    var d=document.createElement('div'); d.className='sms inbound'; d.innerHTML=html;
+    thread.appendChild(d);
+    if(meta){var m=document.createElement('div');m.className='sms-meta';m.textContent=meta;thread.appendChild(m);}
+    scroll();
+  }
+  function outbound(html,meta){
+    var d=document.createElement('div'); d.className='sms outbound'; d.innerHTML=html;
+    thread.appendChild(d);
+    if(meta){var m=document.createElement('div');m.className='sms-meta out';m.textContent=meta;thread.appendChild(m);}
+    scroll();
+  }
+  function typing(){var d=document.createElement('div');d.className='dv-typing';d.dataset.typ='1';
+    d.innerHTML='<span class="typing"><i></i><i></i><i></i></span>';thread.appendChild(d);scroll();return d;}
+  function optchip(){
+    var d=document.createElement('div');d.className='optchip';
+    d.innerHTML='<div class="oc-t">✓ Opt-in captured</div><div class="oc-s">Consent <b>recorded</b> · Aug 26, 2026 · 3:01 PM ET · IP + timestamp logged. Reply <b>STOP</b> to unsubscribe anytime.</div>';
+    thread.appendChild(d);scroll();
+  }
+  function tapbtn(onTap){
+    var w=document.createElement('div');w.className='tapwrap';
+    w.innerHTML='<button class="tapbtn" type="button">YES</button><span class="finger">👆</span>';
+    thread.appendChild(w);scroll();
+    var done=false;
+    function fire(){ if(done)return; done=true; w.classList.add('tapped');
+      timers.push(setTimeout(function(){ w.remove(); onTap(); },480)); }
+    w.querySelector('.tapbtn').addEventListener('click',fire);
+    return fire;
+  }
+  function applink(){
+    var d=document.createElement('div');d.className='applink';
+    d.innerHTML='<div class="al-top">Your Telvergence app is ready. Your new business line <b>(305) 555-0142</b> is loading…</div>'+
+      '<div class="al-cta"><span class="al-ic">☎</span><span class="al-t">Tap to install →<small>softphone.telvergence.app</small></span></div>';
+    thread.appendChild(d);scroll();
+  }
+  function setStep(n,cls){var s=steps[n];if(!s)return;s.classList.remove('active','done');if(cls)s.classList.add(cls);
+    if(cls==='done')s.querySelector('.pi').textContent='✓';else s.querySelector('.pi').textContent=(n+1);}
+
+  function reset(){
+    timers.forEach(clearTimeout);timers=[];
+    thread.innerHTML='';thread.appendChild(seed);
+    steps.forEach(function(s,i){s.classList.remove('active','done');s.querySelector('.pi').textContent=(i+1);});
+    liveflash.classList.remove('show');
+  }
+
+  function renderFinal(){
+    thread.innerHTML='';thread.appendChild(seed);
+    inbound(authText,'From (305) 555-0142 · 3:00 PM');
+    outbound('YES','Delivered · 3:01 PM');
+    optchip();
+    applink();
+    steps.forEach(function(s,i){setStep(i,'done');});
+    liveflash.classList.add('show');
+  }
+
+  function run(){
+    reset();
+    /* 1 — compliant auth text from the same DID */
+    sched(700,function(){var t=typing();sched(900,function(){t.remove();
+      inbound(authText,'From (305) 555-0142 · 3:00 PM');});});
+    /* 2 — prospect taps YES */
+    var autoTap;
+    sched(3200,function(){ autoTap=tapbtn(function(){
+      outbound('YES','Delivered · 3:01 PM');
+      /* 3 — opt-in captured */
+      sched(700,optchip);
+      /* 4 — app link with embedded DID */
+      sched(1900,function(){var t=typing();sched(850,function(){t.remove();applink();
+        /* 5 — provisioning column */
+        sched(500,function(){setStep(0,'done');});
+        sched(1300,function(){setStep(1,'active');});
+        sched(2300,function(){setStep(1,'done');setStep(2,'active');});
+        sched(3500,function(){setStep(2,'done');setStep(3,'active');});
+        sched(4600,function(){setStep(3,'done');liveflash.classList.add('show');});
+        /* loop */
+        sched(9200,run);
+      });});
+    }); });
+    /* auto-fire the tap if the viewer doesn't */
+    sched(4400,function(){ if(autoTap)autoTap(); });
+  }
+
+  if(reduce){ renderFinal(); }
+  else { run(); }
+})();
+</script>
+</body>
+</html>

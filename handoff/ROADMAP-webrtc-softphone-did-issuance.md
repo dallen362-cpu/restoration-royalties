@@ -1,5 +1,30 @@
 # Telvergence — Network Enhancement Roadmap & Blueprint (durable memory)
 
+## ⭐ TOP OPERATIONAL PRIORITY — DELIVER CALLS NOW (revenue + referral flywheel)
+David needs to **begin delivering calls ASAP** to the Restoration Royalties client's remote
+call-forward number(s) he is **already paying ~$229/mo** for. Delivering the promised calls keeps him
+happy → he **refers more businesses**, which is Telvergence's **#1, most reliable source of new
+clients**. This is the flywheel: deliver → referral → deliver. Protect it.
+
+**Fastest path to deliver calls this week (no heavy build):**
+1. **Provision a Smart-DID** in the local rate center (Vitelity portal — David). Restoration Royalties'
+   config is already perfected as the template.
+2. **Forward that DID to the client's number** (straight call-forward in Vitelity is the instant win;
+   AI-answer-then-forward is the upgrade). Calls delivered the moment the number goes live.
+3. **Put the DID on the client's marketing** — Google Business Profile, ads, and the campaign pages we
+   already built (`/case-studies/` smoke-fire, the RR pages). Traffic → the DID → forwarded → delivered.
+4. **Activate the click-to-call proxy** (`functions/api/callback.js`) by setting the Cloudflare secrets
+   (VITELITY_LOGIN/PASS, CALLBACK_FROM, CALLBACK_ALERT_TO) — David. Site visitors → instant callback → delivered lead.
+5. **Proactive outbound (phase 2):** recover **Derek's ContactAM dialing-campaign blueprint** (below) to
+   actively generate calls, not just wait for inbound.
+
+**Blockers are David-side credentials, not code:** Vitelity DID provisioning + forwarding, and the
+Cloudflare callback secrets. The marketing engine (campaign pages, concept micro-sites, click-to-call
+widget) is already built and live. Once the DID forwards and the secrets are set, calls flow.
+
+---
+
+
 _Captured 2026-08-26 from David Drew Allen's direction. This is the FUTURE build-out spec —
 store-in-memory per David ("the rest store in memory for future info for later build outs when
 time permits"). The front-end concept demo of this lives at `/softphone/` (the "easiest, fastest
@@ -29,6 +54,15 @@ business pays **$5K down without blinking."
 6. **App provisioning with an embedded, live DID.** On opt-in, the system auto-sends the app link with
    **their DID embedded**. The app's softphone is **API-keyed to our Vitelity** carrier, so the number
    is **"hot-flashed" live** into their hand — a working business line in minutes.
+
+## David's favorite reference model — the ORIGINAL fastadjustingservice.com site
+David's favorite site layout & offerings is the **original fastadjustingservice.com** — because it had
+the **agent-building network intrinsically baked in**: every subscriber is *also* naturally a
+**reseller, referral agent, and/or business franchisee**, made possible by the **digital business card
++ new DID combo**. Hand your card → the next business texts to activate their own line + app,
+source-tagged to you. Use this original FAST site as the template for how the DID-issuance + recruitment
+offer should look and read. (Reflected now in `/softphone/`'s "Grow the Network" band and the concept
+pages' refer-&-earn ladder: Free agent → Distributor · overrides → Own white-label · $25K.)
 
 ## The proven stack — blueprinted & run in 2022 (NOT vaporware)
 - **Acrobits** — embeddable white-label softphone client/SDK (drops into any app).
