@@ -205,6 +205,27 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
 .buymarq .bm-p b{color:var(--ink)}
 .buymarq .bm-go{flex:none;border-radius:11px;font-family:var(--fb);font-weight:700;font-size:15px;padding:13px 22px;background:linear-gradient(120deg,var(--cyan),var(--lime));color:#0B0F16;text-decoration:none;white-space:nowrap}
 @media(max-width:640px){.buymarq{flex-direction:column;align-items:flex-start}.buymarq .bm-go{width:100%;text-align:center}}
+/* ---- restored v2 feature sections (Talking-Edition styling) ---- */
+.costfig{display:inline-block;margin-top:9px;font-family:var(--fm);font-size:11px;letter-spacing:.03em;color:var(--lime);border:1px solid var(--line2);border-radius:999px;padding:3px 10px}
+.stepn{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;font-family:var(--fd);font-weight:800;font-size:15px;color:#0B0F16;background:linear-gradient(120deg,var(--cyan),var(--lime));margin-bottom:9px}
+.sc h4{font-family:var(--fd);font-size:15px;color:var(--ink);margin:2px 0 6px}
+.achv{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:840px;margin:20px auto 0}
+.achv .ac{flex:1 1 132px;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+.achv .ac .v{font-family:var(--fd);font-weight:800;font-size:22px;line-height:1;background:linear-gradient(100deg,var(--lime),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.achv .ac .l{font-size:11px;color:var(--muted);margin-top:6px}
+.ba{display:grid;gap:12px;grid-template-columns:1fr 1fr;max-width:720px;margin:18px auto 0}
+.ba .bax{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:12px;padding:16px}
+.ba .bax h4{font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 9px}
+.ba .bax.b h4{color:#E8A0A0} .ba .bax.a h4{color:var(--lime)}
+.ba .bax ul{margin:0;padding-left:16px;font-size:12.5px;color:var(--muted);line-height:1.8}
+.faq{max-width:760px;margin:14px auto 0;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,var(--card2),var(--card));overflow:hidden;text-align:left}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--fd);font-weight:600;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;gap:14px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--cyan);font-weight:400;font-size:22px;line-height:1;flex:none}
+.faq details[open] summary::after{content:"\2013"}
+.faq .fa{padding:0 18px 16px;font-size:13.5px;color:var(--muted);line-height:1.7}
 </style></head><body>
 
 <div class="ticker"><span>⚡ BULLETIN — TELVERGENCE · THE TALKING EDITION · This page speaks its own briefing and answers your questions out loud · A running network you can tap · Businesses onboarded in minutes, answering themselves in one ring · Tap ▶ to hear it, tap 🎙 to talk to it ⚡</span></div>
@@ -329,6 +350,84 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
     <div class="nc"><span class="e">💦</span><h3>Coastal Crown</h3><p>Pressure washing, repeat-revenue plans</p><span class="go">Open →</span><a href="https://restorationroyalties.com/pressure/live/" target="_blank" rel="noopener">CC</a></div>
     <div class="nc"><span class="e">⚡</span><h3>YES Electrical</h3><p>Storm-ready dispatch, memorable lines</p><span class="go">Open →</span><a href="https://restorationroyalties.com/yes/live/" target="_blank" rel="noopener">YE</a></div>
     <div class="nc"><span class="e">⚖️</span><h3>Branson Ainsworth</h3><p>Turnkey law-firm build — intake, booking, case dashboard</p><span class="go">Open →</span><a href="https://restorationroyalties.com/telvergence/branson/" target="_blank" rel="noopener">BA</a></div>
+  </div>
+</section>
+
+<section class="wrap" id="cost">
+  <div class="k">The Cost of the Old Way</div>
+  <h2 data-say="Your communication stack is costing you more than you think. Five tools that don't talk to each other, missed calls that walk to your competitor, calls flagged as spam likely, marketing you can't measure, and downtime that stops the business. It adds up fast.">Your stack is costing you more than you think.</h2>
+  <p class="sub">Disconnected tools and an outdated phone system quietly bleed revenue. Here&rsquo;s what it&rsquo;s actually costing:</p>
+  <div class="sci">
+    <div class="sc"><b>5 Tools That Don&rsquo;t Talk</b><p>Phone here, texting there, a CRM, call tracking, an AI tool on top — none share data. Five bills for one-fifth the insight.</p><span class="costfig">$2K–$10K/mo redundant tools</span></div>
+    <div class="sc"><b>Missed Calls = Missed Revenue</b><p>A lead calls, nobody answers, no AI to catch them — that customer is gone. Your competitor answers on the first ring.</p><span class="costfig">$250–$1,200 lost per missed call</span></div>
+    <div class="sc"><b>Showing Up as &ldquo;Spam Likely&rdquo;</b><p>A random number — or worse, &ldquo;Spam Likely.&rdquo; Customers don&rsquo;t answer calls they don&rsquo;t trust. Outreach that never connects.</p><span class="costfig">60% of calls go unanswered</span></div>
+    <div class="sc"><b>Optimizing Blind</b><p>Thousands on ads, SEO, mailers — but you can&rsquo;t tell which campaign drove which call. Budget wasted on what doesn&rsquo;t convert.</p><span class="costfig">40% of ad spend wasted</span></div>
+    <div class="sc"><b>Downtime Stops Everything</b><p>No calls in, no calls out, no revenue. Every minute of downtime sends customers to a competitor who won&rsquo;t send them back.</p><span class="costfig">$5,600/min avg. downtime</span></div>
+  </div>
+</section>
+
+<section class="wrap" id="solution">
+  <div class="k">The Solution · One Platform</div>
+  <h2 data-say="Everything your business needs to communicate, automate, and grow. Six capabilities, one platform — capture every lead, cut costs, and scale, without hiring an I T department.">One platform. Every tool. No IT department.</h2>
+  <div class="sci">
+    <div class="sc"><b>Never Miss a Customer</b><p>AI answers when you can&rsquo;t — transcribed, captured, followed up. The 11pm Saturday call? Handled. Your business runs 24/7 even when you don&rsquo;t.</p></div>
+    <div class="sc"><b>One Bill. One Login.</b><p>Replace your phone system, texting, fax, call tracking, and CRM integration with one platform. Most businesses save 30%+ and get better tools.</p></div>
+    <div class="sc"><b>Your Brand on Every Call</b><p>Your company name on every outbound call. STIR/SHAKEN verification means your calls get answered, not flagged. Answer rates jump 40%+.</p></div>
+    <div class="sc"><b>Know What&rsquo;s Working</b><p>See exactly which ads, campaigns, and keywords drive calls. Real-time dashboards show where every marketing dollar goes — double down on winners.</p></div>
+    <div class="sc"><b>Security by Design</b><p>Encrypted calls and messages, STIR/SHAKEN-verified identity, compliance-first architecture — disclosures, consent capture, and auditable records built in.</p></div>
+    <div class="sc"><b>Scale Without Breaking</b><p>One location or one hundred, the platform grows with you. Add lines, team members, and locations in minutes — no new contracts, no IT projects.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="moat">
+  <div class="k">The Moat · What No One Else Can Do</div>
+  <h2 data-say="What no other platform can do. There are plenty of phone systems. Here is why businesses that switch to Telvergence don't switch back: you own your infrastructure, the A I actually works, it's emergency-ready, it's future-proof on compliance, and you can white-label it as your own.">Why businesses that switch don&rsquo;t switch back.</h2>
+  <div class="sci">
+    <div class="sc"><b>You Own Your Infrastructure</b><p>Most providers rent you their system — leave and you start over. We build <strong>yours</strong>: the data, the numbers, the brand identity. If you ever leave, everything goes with you. No rental can match that.</p></div>
+    <div class="sc"><b>AI That Actually Works</b><p>Not chatbot fluff — a true speech-to-speech engine. Answers in under a second in 25 languages; interrupt it and it adjusts. It books the job, looks up answers live, and files a speaker-separated transcript to your CRM — all on your own numbers.</p></div>
+    <div class="sc"><b>Emergency-Ready, Always On</b><p>Fully E911 compliant. Hurricane, outage, office fire — calls reroute automatically to mobile, home, or AI. No downtime, ever. Your customers never know anything happened.</p></div>
+    <div class="sc"><b>Future-Proof Compliance</b><p>STIR/SHAKEN verification, recording disclosures and consent capture in the call flow, carrier-grade call-detail records that stand up as an audit trail. While competitors scramble to adapt, you&rsquo;re already ready.</p></div>
+    <div class="sc"><b>White-Label Your Own Platform</b><p>Offer communication services to your clients on your own branded version of the platform. You become the provider — your logo, your pricing — a new revenue stream at zero engineering cost.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="industries">
+  <div class="k">Built for Businesses Like Yours</div>
+  <h2 data-say="Built for businesses like yours. Every industry has unique communication challenges — contractors and home services, healthcare, financial services, real estate, professional services, and multi-location franchises. Not generic features: workflows designed around how your industry actually operates.">Workflows for your industry — not generic features.</h2>
+  <div class="net">
+    <div class="nc"><span class="e">🔨</span><h3>Contractors &amp; Home Services</h3><p>Storm dispatch, job tracking, follow-up, review generation. When a storm hits, AI handles every call and routes crews.</p><span class="go">See it live →</span><a href="https://restorationroyalties.com/" target="_blank" rel="noopener">RR</a></div>
+    <div class="nc"><span class="e">🏥</span><h3>Healthcare &amp; Wellness</h3><p>HIPAA-ready from day one. Reminders that cut no-shows 40%, secure provider messaging, patient follow-up — all encrypted.</p></div>
+    <div class="nc"><span class="e">🏦</span><h3>Financial Services</h3><p>Compliance-grade recording with disclosure + consent in the call flow. Every interaction an auditable trail — answers ready for regulators.</p></div>
+    <div class="nc"><span class="e">🏠</span><h3>Real Estate</h3><p>Lead routing by listing, automated follow-up, a virtual number per property, call tracking per campaign. Know which ad drove which buyer.</p></div>
+    <div class="nc"><span class="e">⚖️</span><h3>Professional Services</h3><p>Law, accounting, consulting. Client-intake automation that qualifies leads, billable call tracking, secure privileged document exchange.</p></div>
+    <div class="nc"><span class="e">🏪</span><h3>Franchise &amp; Multi-Location</h3><p>Centralized management, location-specific routing, unified reporting, one consistent brand experience across every site. Scale without chaos.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="onboard">
+  <div class="k">Up and Running in 48 Hours</div>
+  <h2 data-say="Up and running in forty-eight hours. No six-month implementation, no I T project. Three steps: we design your blueprint, we build and migrate everything, and then you run your business while we run your phones.">No six-month rollout. Three steps.</h2>
+  <div class="sci">
+    <div class="sc"><span class="stepn">1</span><h4>We design your blueprint</h4><p>We audit your setup, find what you&rsquo;re overpaying for, and design a system around how your business actually works. No cookie-cutter — yours is as unique as your business.</p></div>
+    <div class="sc"><span class="stepn">2</span><h4>We build and migrate everything</h4><p>We port your numbers, configure your AI, connect your CRM, and set up call tracking. You don&rsquo;t touch a thing — your customers won&rsquo;t even notice the switch, except service gets better.</p></div>
+    <div class="sc"><span class="stepn">3</span><h4>You run your business, we run your phones</h4><p>Monitor everything from one dashboard. Our team handles the infrastructure, updates, and security. You focus on serving customers and growing revenue.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="achievements">
+  <div class="k">What Businesses Are Achieving</div>
+  <h2 data-say="What businesses are achieving. Every call answered, twenty-four seven, in the caller's language. Pickup in one ring by design. Live branded properties on the network, rate-center local numbers, and a hundred percent of calls recorded, logged, and C R M tracked.">Proof, in numbers.</h2>
+  <div class="achv">
+    <div class="ac"><div class="v">24/7</div><div class="l">Every call answered, in the caller&rsquo;s language</div></div>
+    <div class="ac"><div class="v">1 ring</div><div class="l">Pickup by design — no hold, no voicemail</div></div>
+    <div class="ac"><div class="v">6</div><div class="l">Live branded properties on the network</div></div>
+    <div class="ac"><div class="v">Local</div><div class="l">Rate-center numbers in your own market</div></div>
+    <div class="ac"><div class="v">100%</div><div class="l">Of calls recorded, logged &amp; CRM-tracked</div></div>
+  </div>
+  <p class="sub" style="margin-top:22px"><strong style="color:var(--ink)">Case study — Restoration Royalties:</strong> the storm-dispatch command of the Weather Intelligence Network, live today. Rate-center-local lines across Miami-Dade (786-807-MOLD), 24/7 AI intake in the caller&rsquo;s language, and a referred network of branded partners feeding each other work.</p>
+  <div class="ba">
+    <div class="bax b"><h4>Before</h4><ul><li>Voicemail after hours</li><li>One number, one trade</li><li>Out-of-area caller-ID</li><li>Leads walk to the next firm</li></ul></div>
+    <div class="bax a"><h4>After</h4><ul><li>24/7 AI storm dispatch</li><li>Rate-center local lines</li><li>Weather intelligence (WIN)</li><li>Partner-network referrals</li></ul></div>
   </div>
 </section>
 
@@ -544,6 +643,19 @@ h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;text-align:center;margin-bot
     <div class="sc"><b>The Talking Edition · Flagship</b><p>The site you&rsquo;re on — <strong>editorial, serif, gold</strong>: your business as the front page of its industry. Bulletin ticker, spoken briefing, Command Deck. Built for brands that sell <strong>authority</strong> — law, adjusting, restoration, legacy trades.</p></div>
     <div class="sc"><b>The Signal Edition · <a href="https://telvergence.com/v2/" style="color:var(--cyan)">see it live →</a></b><p>The modern product look — <strong>electric, app-like, cyan on black</strong>. Same voice, same booking, same dashboard, different energy. Built for brands that sell <strong>momentum</strong> — tech-forward services, startups, franchises. It&rsquo;s running right now at <strong>/v2/</strong> — tap it, it answers.</p></div>
     <div class="sc"><b>Included at every tier · Bespoke $2,499 one-time</b><p><strong>Both editions come with every plan</strong> — the look is yours to choose, never an upcharge, because the engine is the product. Want an identity designed from scratch, like our private law-firm build? <strong>Bespoke Edition — one-time $2,499</strong>, yours forever.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="faq">
+  <div class="k">Questions Business Owners Ask</div>
+  <h2 data-say="Questions business owners ask. How long does setup take? Can I keep my numbers? What if I already have a phone system? Is it secure enough for healthcare and finance? What makes it different from RingCentral or Vonage? Do I need technical staff? Here are the straight answers.">Straight answers.</h2>
+  <div class="faq">
+    <details><summary>How long does setup take?</summary><div class="fa">48 hours for most businesses — we&rsquo;ve migrated companies with hundreds of lines in under a week. Your existing numbers, call flows, and contacts transfer seamlessly. Most of your team won&rsquo;t notice anything changed, except that everything works better.</div></details>
+    <details><summary>Can I keep my existing phone numbers?</summary><div class="fa">Yes — every single one. We port all your numbers with zero downtime; your customers keep calling the same numbers. We handle all the paperwork and coordination with your current providers. You don&rsquo;t make a single call to your old company.</div></details>
+    <details><summary>What if I already have a phone system?</summary><div class="fa">We replace it completely — numbers, routing, voicemail, contacts all migrate — and we add AI, analytics, and automation on top. Most businesses see an immediate cost reduction from eliminating multiple tools. We show you the exact savings during your free consultation.</div></details>
+    <details><summary>Is this secure enough for healthcare and finance?</summary><div class="fa">Yes. Encrypted calls and messaging, STIR/SHAKEN-verified caller identity, and carrier-grade call-detail records that create an auditable trail of every interaction. The platform is compliance-first for regulated industries — with recording disclosures and consent capture built into the call flow itself.</div></details>
+    <details><summary>How is this different from RingCentral, Grasshopper, or Vonage?</summary><div class="fa">Three fundamentals. First, you own your infrastructure — they rent you theirs. Second, AI is built into the core, not a limited $50/month add-on. Third, we offer white-label capability and network-level caller verification they can&rsquo;t. They sell you phones; we build you a platform that becomes a competitive advantage.</div></details>
+    <details><summary>Do I need technical staff to manage this?</summary><div class="fa">No — that&rsquo;s the whole point. We manage the infrastructure, updates, security patches, and compliance monitoring. You use a simple dashboard designed for business people, not engineers. If you can use a smartphone, you can use Telvergence — and our team is a call away.</div></details>
   </div>
 </section>
 
