@@ -96,6 +96,21 @@ Reflected now on `/softphone/` ("One Private Network" band).
   issuance on this exact Acrobits + Sinch stack. Still referenced as active by David.
 - **Telvergence blueprints (2022)** — internal design docs for this unification.
 
+## RECOVERY LANE FINDINGS (cowork session, 2026-08-26 evening — update as reports arrive)
+- **`telvergence-portals` is EMPTY** (bare "create your first file" repo). Confirmed dead end — stop
+  hunting it; the master export's note that it was created empty is accurate.
+- **`TELVERGENCE_MASTER_MAX_LATEST.zip` found locally** in `C:\Users\dalle\Downloads` (several copies,
+  plus 2026-08-09 master code exports). Unzipped to
+  `C:\Users\dalle\AI-Master-Brain\Telvergence\RECOVERY\master-max\extracted\` — 20 files:
+  **Project_Phoenix, Carriers_and_APIs, white-label agreements, sales scripts, call lists.**
+  Mining in progress for the Sinch/Vitelity integration + Derek/ContactAM material.
+- **Currency gap:** the local zip is the **2026-07-17 snapshot**; the live private repo
+  `telvergence-master-max` has a couple of August 2026 commits on top. Neither session can pull the
+  live repo right now (private, out of both sessions' scope; browser downloads don't land in
+  Downloads from the automation profile). If mining surfaces references to newer material, David
+  downloads a fresh ZIP manually (github.com → Code → Download ZIP) or adds the repo to this
+  session's sources — otherwise the July snapshot stands.
+
 ## Recoverable assets to pull in when building this (do NOT rebuild from scratch)
 - **The 2022 Sinch API integration code** that unified **Sinch + Acrobits with Vitelity** — David has
   this "API code line." Likely lives in the private repos **`dallen362-cpu/telvergence-master-max`**
