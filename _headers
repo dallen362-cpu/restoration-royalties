@@ -5,8 +5,17 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(self)
   X-Robots-Tag: noindex, nofollow
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
 
 # Lock the proprietary vault hard (Cloudflare Access enforces auth in front of this)
 /cowork-campaign/vault-7kq9x2m4/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-store
+
+# Gated showcase pages — never cached or archived (Cloudflare Access is the real lock, see ops runbook)
+/realm.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-store
+/members.html
   X-Robots-Tag: noindex, nofollow, noarchive
   Cache-Control: no-store
