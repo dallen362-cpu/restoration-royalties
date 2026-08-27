@@ -4,24 +4,47 @@
     "auto_verify": true,
     "verify_method": "search-console-instant",
     "status": "required",
-    "blocked_on": "Reserve proposed DID 786-927-4000 (WASH) in the Vitelity portal, then create the GBP (Google's verify-call needs a working line).",
+    "blocked_on": "Reserve OUR vanity Smart-DID 786-WASHPRO (786-927-4776) in Vitelity, then create the GBP (Google verify-call needs a working line).",
     "profile_url": "",
     "review_link": "",
     "go_live": "",
     "listing": {
       "name": "Coastal Crown Pressure Washing",
       "primary_category": "Pressure washing service",
-      "secondary_categories": [],
+      "secondary_categories": [
+        "Cleaning service",
+        "Building restoration service"
+      ],
       "phone": "",
+      "phone_vanity": "786-WASHPRO (786-927-4776) — OUR Smart-DID, spells WASHPRO · pending Vitelity reservation",
+      "phone_tollfree_option": "1-800-WASHPRO",
       "website": "https://restorationroyalties.com/pressure/",
       "model": "service-area (hide address)",
-      "service_areas": ["Miami-Dade County", "Broward County"],
-      "phone_proposed": "786-927-4000 (WASH) — local Miami-Dade · pending Vitelity reservation",
-      "phone_tollfree_option": "1-800-WASH",
-      "description": "Pressure washing — house washing, driveways and sidewalks, roof washing, pool decks and fences across South Florida. Residential & commercial. Free estimates.",
-      "claim_first": "Search Google Maps first; claim an existing listing rather than create a duplicate."
+      "service_areas": [
+        "Miami-Dade County",
+        "Broward County"
+      ],
+      "services": [
+        "House washing",
+        "Driveways & sidewalks",
+        "Roof soft-wash",
+        "Pool decks & fences",
+        "Commercial & HOA"
+      ],
+      "seo_keywords": [
+        "pressure washing",
+        "power washing",
+        "soft wash",
+        "roof cleaning",
+        "driveway cleaning",
+        "house washing",
+        "Miami-Dade pressure washing"
+      ],
+      "description": "Professional pressure washing and roof soft-wash across Miami-Dade and Broward — house washing, driveways, pool decks, and fences. Residential, commercial & HOA. Free estimates.",
+      "claim_first": "Search Google Maps first; claim an existing OUR-brand listing rather than create a duplicate."
     },
-    "_flip": "Assign a branded DID first; then create GBP, set status 'pending'/'verified', fill phone + profile_url + review_link + go_live."
+    "_note": "OUR gigapress brand — our name, our URL, our Smart-DID.",
+    "_flip": "Reserve the vanity DID first; then create GBP, set status 'pending'/'verified', fill phone + profile_url + review_link + go_live."
   },
   "brandName": "Coastal Crown Pressure Washing",
   "brandShortBold": "COASTAL",
