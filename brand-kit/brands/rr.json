@@ -10,15 +10,43 @@
     "listing": {
       "name": "Restoration Royalties",
       "primary_category": "Water damage restoration service",
-      "secondary_categories": ["Fire damage restoration service", "Waterproofing company"],
-      "phone": "(786) 340-5777",
+      "secondary_categories": [
+        "Fire damage restoration service",
+        "Mold remediation service",
+        "Waterproofing company",
+        "Roofing contractor"
+      ],
+      "phone": "",
+      "phone_vanity": "786-RESTORE (786-737-8673) — OUR Smart-DID, spells RESTORE · reserve via Vitelity",
+      "phone_interim": "786-400-1145 (our existing grid Smart-DID — verifiable now while the vanity provisions)",
       "website": "https://restorationroyalties.com/rr/",
       "model": "service-area (hide address)",
-      "service_areas": ["Miami-Dade County", "Broward County", "Palm Beach County"],
-      "description": "Water damage, mold, and roofing restoration across South Florida. 24/7 response.",
-      "claim_first": "Search Google Maps first; claim an existing listing rather than create a duplicate."
+      "service_areas": [
+        "Miami-Dade County",
+        "Broward County",
+        "Palm Beach County"
+      ],
+      "services": [
+        "Water & flood damage",
+        "Mold removal & remediation",
+        "Fire & smoke damage",
+        "Roof leak & storm damage",
+        "Full restoration & rebuild"
+      ],
+      "seo_keywords": [
+        "water damage restoration",
+        "mold removal",
+        "flood cleanup",
+        "fire & smoke damage",
+        "roof leak repair",
+        "storm damage",
+        "Miami-Dade water damage"
+      ],
+      "description": "24/7 water damage restoration, mold removal, and fire & storm damage repair across Miami-Dade, Broward, and Palm Beach. Fast dry-out, licensed crews, full insurance-claim support.",
+      "claim_first": "Search Google Maps first; claim an existing OUR-brand listing rather than create a duplicate."
     },
-    "_flip": "On creation: set status 'pending' (or 'verified'), fill profile_url + review_link + go_live."
+    "_note": "OUR gigapress brand — our name, our URL, our Smart-DID. Old-site data used only as SEO knowledge input.",
+    "_flip": "On creation: set status 'pending'/'verified', fill phone (our DID) + profile_url + review_link + go_live."
   },
   "brandName": "Restoration Royalties",
   "brandShortBold": "RESTORATION",

@@ -46,6 +46,22 @@ fastest self-verifying path** and never default to the slow postcard:
 - **Fallback:** if instant isn't offered, trigger the fastest available (email/phone), never leave it
   unverified. Record `verify_method` + `go_live` in the brand's `gbp` block.
 
+### OUR material only (regeneration rule)
+Every gigapress listing is for **our regenerated brand**, built on material **we** created — never the
+prospect's legacy identity. Ingest their old site as **SEO knowledge only** (services, keywords, service
+area); the listing itself is ours:
+- **Name** = our gigapress brand name (`brands/<slug>.json`), never the client's legal/DBA name.
+- **Website** = our created page (`https://restorationroyalties.com/<slug>/`).
+- **Phone** = our created **keyword vanity Smart-DID** — never the client's legacy number.
+This is the ownership/rental model: our brand, our number, our page — we direct the leads.
+
+### The keyword vanity Smart-DID — our SEO differentiator
+The listing's number is a **vanity Smart-DID that spells the industry's top keyword** (786-RESTORE,
+786-CLAIMS, 786-WASHPRO, 786-ELECTRIC). It's a ranking signal competitors can't buy, it's memorable, and
+it's the exact edge we replicate for every client and their end-users/subscribers. Keywords go into the
+**category, description, services, and the DID** — NEVER the business name (name = clean brand name, or
+Google suspends it). Reserve the DID via Vitelity and record it as `gbp.listing.phone_vanity`.
+
 ## Loop cadence
 - **Launch:** steps 1–6 same-day; Tier-1 within 48h.
 - **Monthly:** verify NAP still identical everywhere; post fresh Google Posts; request new reviews.

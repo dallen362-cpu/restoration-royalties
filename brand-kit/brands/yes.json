@@ -4,24 +4,47 @@
     "auto_verify": true,
     "verify_method": "search-console-instant",
     "status": "required",
-    "blocked_on": "Reserve proposed DID 786-769-3766 (POWERON) in the Vitelity portal, then create the GBP (Google's verify-call needs a working line).",
+    "blocked_on": "Reserve OUR vanity Smart-DID 786-ELECTRIC (786-353-2874) in Vitelity, then create the GBP (Google verify-call needs a working line).",
     "profile_url": "",
     "review_link": "",
     "go_live": "",
     "listing": {
-      "name": "YES \u2014 Your Electrical Solutions",
+      "name": "YES — Your Electrical Solutions",
       "primary_category": "Electrician",
-      "secondary_categories": [],
+      "secondary_categories": [
+        "Electrical installation service",
+        "Generator shop"
+      ],
       "phone": "",
+      "phone_vanity": "786-ELECTRIC (786-353-2874) — OUR Smart-DID, literally spells ELECTRIC · pending Vitelity reservation",
+      "phone_tollfree_option": "1-800-ELECTRIC",
       "website": "https://restorationroyalties.com/yes/",
       "model": "service-area (hide address)",
-      "service_areas": ["Miami-Dade County", "Broward County"],
-      "phone_proposed": "786-769-3766 (POWERON) — local Miami-Dade · pending Vitelity reservation",
-      "phone_tollfree_option": "1-800-POWER-ON",
-      "description": "Licensed Miami electrical contractor: panel upgrades, generators, EV chargers, storm power restoration, 24/7 emergency service.",
-      "claim_first": "Search Google Maps first; claim an existing listing rather than create a duplicate."
+      "service_areas": [
+        "Miami-Dade County",
+        "Broward County"
+      ],
+      "services": [
+        "Panel upgrades",
+        "Generators",
+        "EV chargers",
+        "Storm power restoration",
+        "24/7 emergency service"
+      ],
+      "seo_keywords": [
+        "electrician",
+        "panel upgrade",
+        "generator installation",
+        "EV charger installation",
+        "storm power restoration",
+        "emergency electrician",
+        "Miami-Dade electrician"
+      ],
+      "description": "Licensed Miami electrical contractor — panel upgrades, generator and EV-charger installation, storm power restoration, and 24/7 emergency service across Miami-Dade and Broward.",
+      "claim_first": "Search Google Maps first; claim an existing OUR-brand listing rather than create a duplicate."
     },
-    "_flip": "Assign a branded DID first; then create GBP, set status 'pending'/'verified', fill phone + profile_url + review_link + go_live."
+    "_note": "OUR gigapress brand — our name, our URL, our Smart-DID.",
+    "_flip": "Reserve the vanity DID first; then create GBP, set status 'pending'/'verified', fill phone + profile_url + review_link + go_live."
   },
   "brandName": "YES \u2014 Your Electrical Solutions",
   "brandShortBold": "YES",
