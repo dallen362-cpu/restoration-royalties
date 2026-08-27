@@ -108,6 +108,12 @@ Every brand build should offer these, themed to its industry (regenerate labels 
     data"; live lead-flow/storm feeds arm only when data credentials are provisioned (dormant slot —
     the build never fakes live pulls). Baked into `build.py` (`territory_analysis()`); suppress with
     `_noTerritory`.
+19. **Read-aloud icon (Voice Standard module 1 — template-enforced)** — every gigapress page ships a
+    floating 🔊 button that reads the page aloud section-by-section (best-voice picker: Google US
+    English / Natural / Neural / Enhanced, en-US first; tap toggles play/stop). Baked into `build.py`
+    (`read_aloud()`); suppress with `_noReadAloud`. The realm/inventory page carries the same icon.
+    Module 2 of the Voice Standard (the two-way Line Concierge) remains the follow-on for template
+    pages — reference implementations on the master site, Branson, and the /live/ four.
 
 ## House rules for applying it
 - **OUR material:** brand name, URL (`telvergence.com/<slug>` or the brand's own domain we control), and the
