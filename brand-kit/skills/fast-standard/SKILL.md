@@ -90,6 +90,14 @@ Every brand build should offer these, themed to its industry (regenerate labels 
     `_noAutoVanity`. Upgrade slot: when Vitelity API creds exist (env/secrets, never in repo),
     the same hook can verify true availability live before display. This is the 3T/3E in action —
     teach them to fish the numbering plan itself.
+17. **WIN Official Essential Service Provider Partner seal** — every brand carries the WEATHER
+    INTELLIGENCE NETWORK official-partner designation, "engineered for its NPA·NXX grid": the seal
+    band names the brand, its NPA, and its territory, tying together the Smart-DID grid, the live
+    Doppler telemetry (module 13), and cross-network storm dispatch. Wording discipline: it is a
+    **Telvergence network credential, not a government license**; storm response = dispatch
+    coordination, "in an emergency call 911"; never put the designation in a GBP business NAME
+    (description/services only). Baked into `build.py` (`win_seal()`); suppress with `_noWinSeal`.
+    Master site carries the network-wide version (#winseal band + concierge entry).
 
 ## House rules for applying it
 - **OUR material:** brand name, URL (`telvergence.com/<slug>` or the brand's own domain we control), and the
