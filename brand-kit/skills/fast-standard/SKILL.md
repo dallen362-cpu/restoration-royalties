@@ -108,12 +108,16 @@ Every brand build should offer these, themed to its industry (regenerate labels 
     data"; live lead-flow/storm feeds arm only when data credentials are provisioned (dormant slot —
     the build never fakes live pulls). Baked into `build.py` (`territory_analysis()`); suppress with
     `_noTerritory`.
-19. **Read-aloud icon (Voice Standard module 1 — template-enforced)** — every gigapress page ships a
-    floating 🔊 button that reads the page aloud section-by-section (best-voice picker: Google US
-    English / Natural / Neural / Enhanced, en-US first; tap toggles play/stop). Baked into `build.py`
-    (`read_aloud()`); suppress with `_noReadAloud`. The realm/inventory page carries the same icon.
-    Module 2 of the Voice Standard (the two-way Line Concierge) remains the follow-on for template
-    pages — reference implementations on the master site, Branson, and the /live/ four.
+19. **BOTH Voice Standard modules — template-enforced.** Every gigapress page ships (a) the floating
+    🔊 **read-aloud** button (best-voice picker: Google US English / Natural / Neural / Enhanced,
+    en-US first; reads section-by-section, tap toggles; `read_aloud()`, `_noReadAloud`) AND (b) the
+    🎙 **two-way Line Concierge** — a talking chat panel whose knowledge base is **auto-cloned from the
+    brand's own JSON at press time** (`concierge_kb()` builds ~12 entries from brandName, insight, the
+    DID grid, tiers, offer, flywheel, issuance, territory/NPA, WIN seal, BOSS, courtesy, contact):
+    speak or type, it answers out loud (mic via SpeechRecognition where supported), honestly labeled
+    "live demo assistant"; `concierge()`, `_noConcierge`. This is the productized "Second Brain cloned
+    from your site." Reference implementations: master site, Branson, the /live/ four; the realm page
+    carries the read icon.
 
 ## House rules for applying it
 - **OUR material:** brand name, URL (`telvergence.com/<slug>` or the brand's own domain we control), and the
