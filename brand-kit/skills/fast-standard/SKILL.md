@@ -11,6 +11,23 @@ external brand site, and the telvergence.com master must reach FAST's feature se
 **baked into the assembly line** so new brands inherit them automatically. Harvest the *features and
 concepts* (below) — regenerate them on OUR brand, our URL, our issued Smart-DID (never a client's legacy identity).
 
+## ★★ THE CENTRAL THEME (the purpose of every site — highest priority)
+**Every subscriber is also a reseller, and every subscription is a business-in-a-box.** This is the core
+purpose on EVERY site — the master, every internal brand, every external brand — not a side feature:
+- **Subscribe → you're instantly in business.** The software + the issued Smart-DID + the digital business
+  card make anyone an operating business in their industry the same day. Canonical example: **the drone app —
+  any drone owner subscribes to our software (~$349/mo) and is instantly in the roofing-inspection business.**
+  Swap the industry, same framework: instant entry, any vertical.
+- **Every subscriber is naturally a reseller.** They already use it, believe in it, need it, and were trained
+  on it — so they can speak about it intelligently, use it, and show others. So every subscriber is *endowed*
+  with the ability to resell it and earn through their own issued DID.
+- **The symbiotic, ubiquitous flywheel.** Each new subscriber becomes a new seller who signs up the next —
+  a self-distributing network that compounds. Growth of the individual = growth of the network, and vice versa.
+- **Frame the sale as an opportunity, not just a service:** the pitch is "subscribe, be in business today, and
+  build income reselling the exact tool you now depend on." Every brand page carries this flywheel prominently.
+- COMPLIANCE: reseller/referral earnings vary, are not guaranteed, and are subject to program terms + FTC/state
+  rules; regulated verticals (adjusting, contracting) add the per-state licensing disclaimer.
+
 ## ★ The two signature concepts (never ship a brand without them)
 
 ### 1. Smart-DID issuance = the subscriber's Agent-ID + Royalty Account
