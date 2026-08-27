@@ -1,5 +1,6 @@
 {
   "slug": "win",
+  "vanity": {"npa": "786", "words": ["STORM", "WEATHER", "RADAR", "ALERT", "WINDS", "SHELTER"]},
   "brandName": "WIN \u2014 Weather Intelligence Network",
   "brandShortBold": "WIN",
   "brandShortRest": " \u2014 WEATHER INTELLIGENCE",

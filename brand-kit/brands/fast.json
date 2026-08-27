@@ -1,5 +1,6 @@
 {
   "slug": "fast",
+  "vanity": {"npa": "786", "words": ["CLAIM", "CLAIMS", "ADJUST", "PAYOUT", "SETTLE", "INSURED", "ADJUSTER", "CLAIMPRO"]},
   "gbp": {
     "auto_verify": true,
     "verify_method": "search-console-instant",

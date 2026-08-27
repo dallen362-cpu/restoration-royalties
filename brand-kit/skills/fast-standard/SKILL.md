@@ -81,6 +81,15 @@ Every brand build should offer these, themed to its industry (regenerate labels 
     name the dialer software on a page). Data model of record: `backend/BOSS-CRM-LMS-SCHEMA.md`; live
     demo in the members showcase (cowork back office). Baked into `build.py` (`backoffice()`);
     suppress with `_noBackoffice`.
+16. **Auto-vanity rate-center inventory** — at press time the gigapress AUTO-RUNS the vanity-DID
+    generator and shows the best vanity Smart-DIDs in the brand's OWN NPA (area code/exchange),
+    each labeled **"viable · not yet purchased"** — the live-inventory feel, honestly labeled
+    (examples pending carrier reservation, not owned numbers). Config per brand:
+    `"vanity": {"npa":"786","industry":"<BANKS key>"}` or `{"words":[…]}`. Baked into `build.py`
+    (`auto_vanity()` importing `vanity-did-generator/scripts/vanity.py`); suppress with
+    `_noAutoVanity`. Upgrade slot: when Vitelity API creds exist (env/secrets, never in repo),
+    the same hook can verify true availability live before display. This is the 3T/3E in action —
+    teach them to fish the numbering plan itself.
 
 ## House rules for applying it
 - **OUR material:** brand name, URL (`telvergence.com/<slug>` or the brand's own domain we control), and the

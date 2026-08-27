@@ -1,5 +1,6 @@
 {
   "slug": "telverge",
+  "vanity": {"npa": "786", "words": ["TALK", "ANSWER", "RING", "VOICE", "CONNECT", "DIALTONE"]},
   "brandName": "TELVERGE",
   "brandShortBold": "TEL",
   "brandShortRest": "VERGE",

@@ -1,5 +1,6 @@
 {
   "slug": "pressure",
+  "vanity": {"npa": "786", "words": ["WASH", "CLEAN", "SHINE", "WASHPRO", "SOFTWASH", "PRESSURE", "ROOFWASH", "POWERWASH"]},
   "gbp": {
     "auto_verify": true,
     "verify_method": "search-console-instant",
