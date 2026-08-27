@@ -406,8 +406,56 @@ def render(b):
 '''
 
 
+# ------------------------------------------------- listing-foundation gate
+# Every brand must have a Google Business Profile recorded — with auto-verification
+# ON — BEFORE it publishes. This is the mechanical enforcement of the
+# listing-foundation skill; the brand's `gbp` block in brands/<slug>.json is the
+# record of done. See .claude/skills/listing-foundation/SKILL.md.
+def listing_status(b):
+    """Return (ok, level, message) for the brand's Google Business Profile gate.
+
+    ok=False means NOT publish-ready (the deploy must be blocked).
+    Levels: VERIFIED / PENDING (ok) · CONCEPT (ok, deferred) · REQUIRED / ERROR (blocked).
+    """
+    slug = b.get('slug', '?')
+    g = b.get('gbp') or {}
+    status = str(g.get('status', 'required')).lower()
+
+    # Google auto-verification must be ON for every brand (standing rule).
+    if g.get('auto_verify') is not True:
+        return (False, 'ERROR',
+                f'{slug}: gbp.auto_verify must be true — Google auto-verification stays ON for every brand')
+
+    # Internal concept mock (not a real client yet): GBP deferred, not blocked.
+    if status == 'concept':
+        return (True, 'CONCEPT', f'{slug}: concept mock — GBP deferred until it becomes a real client')
+
+    # Real brand: GBP created/claimed (verification may still be auto-processing) → publishable.
+    if status in ('verified', 'pending'):
+        tail = f' → {g["profile_url"]}' if g.get('profile_url') else ''
+        return (True, status.upper(), f'{slug}: GBP {status} (auto-verify on){tail}')
+
+    # required / missing / unknown → not publish-ready.
+    return (False, 'REQUIRED',
+            f'{slug}: NO Google Business Profile on file — run the listing-foundation skill '
+            f'(create/claim GBP, auto-verification ON, record profile_url) before publishing')
+
+
+def load_brand(f, defaults):
+    slug = f[:-5]
+    with open(os.path.join(BRANDS, f), encoding='utf-8') as fh:
+        b = json.load(fh)
+    merged = json.loads(json.dumps(defaults))
+    merged.update(b)
+    merged.setdefault('slug', slug)
+    return merged
+
+
 def main():
-    want = sys.argv[1:]
+    args = sys.argv[1:]
+    report_only = '--listings' in args
+    want = [a for a in args if not a.startswith('--')]
+
     dpath = os.path.join(BRANDS, '_defaults.json')
     defaults = {}
     if os.path.exists(dpath):
@@ -415,25 +463,55 @@ def main():
             defaults = json.load(fh)
     files = sorted(f for f in os.listdir(BRANDS)
                    if f.endswith('.json') and not f.startswith('_'))
+
+    # ---- listings report mode: print the GBP status table and exit ----
+    if report_only:
+        print('Google Business Profile — listing-foundation gate (auto-verify ON is required):')
+        blocked = []
+        for f in files:
+            b = load_brand(f, defaults)
+            if want and b['slug'] not in want:
+                continue
+            ok, level, msg = listing_status(b)
+            print(f'  [{"OK " if ok else "!! "}{level:<8}] {msg}')
+            if not ok:
+                blocked.append(b['slug'])
+        if blocked:
+            print(f'\n{len(blocked)} brand(s) NOT publish-ready — run listing-foundation for: {", ".join(blocked)}')
+            sys.exit(1)
+        print('\nAll brands are listing-complete. ✅')
+        return
+
+    # ---- normal build: render HTML, then enforce the listing gate ----
     built = 0
+    blocked = []
     for f in files:
-        slug = f[:-5]
-        if want and slug not in want:
+        b = load_brand(f, defaults)
+        if want and b['slug'] not in want:
             continue
-        with open(os.path.join(BRANDS, f), encoding='utf-8') as fh:
-            b = json.load(fh)
-        merged = json.loads(json.dumps(defaults))
-        merged.update(b)
-        b = merged
-        b.setdefault('slug', slug)
         outdir = os.path.join(ROOT, b['slug'])
         os.makedirs(outdir, exist_ok=True)
         out = os.path.join(outdir, 'index.html')
         with open(out, 'w', encoding='utf-8') as fh:
             fh.write(render(b))
-        print(f'  built {b["slug"]:<12} {b["lineCount"]:>3} lines  → {b["slug"]}/index.html')
+        ok, level, msg = listing_status(b)
+        flag = '' if ok else '   ⛔ NOT PUBLISH-READY (GBP)'
+        print(f'  built {b["slug"]:<12} {b["lineCount"]:>3} lines  → {b["slug"]}/index.html{flag}')
+        if not ok:
+            blocked.append((b['slug'], msg))
         built += 1
-    print(f'done — {built} brand site(s)')
+    print(f'done — {built} brand site(s) built')
+
+    # The listing-foundation gate: no brand publishes without its GBP (auto-verify ON).
+    if blocked:
+        print('\n⛔ LISTING-FOUNDATION GATE — these brands are built but must NOT be published/merged until')
+        print('   their Google Business Profile is recorded (auto-verification ON) in brands/<slug>.json:')
+        for slug, msg in blocked:
+            print(f'   - {msg}')
+        print('\n   Fix: run the listing-foundation skill per brand, then set its "gbp" block')
+        print('   ({"status":"verified"|"pending","auto_verify":true,"profile_url":"…","review_link":"…"}).')
+        print('   Re-run `python3 brand-kit/build.py --listings` to confirm the gate is green.')
+        sys.exit(1)
 
 
 if __name__ == '__main__':

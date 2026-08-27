@@ -1,5 +1,13 @@
 {
   "robots": "noindex, nofollow",
+  "gbp": {
+    "auto_verify": true,
+    "verify_method": "search-console-instant",
+    "status": "required",
+    "profile_url": "",
+    "review_link": "",
+    "go_live": ""
+  },
   "ctaPhone": "(689) 242-1041",
   "ctaPhoneHref": "+16892421041",
   "ctaEmail": "contact@telvergence.com",
