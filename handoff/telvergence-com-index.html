@@ -315,6 +315,18 @@ window.googleTranslateElementInit=function(){
   </div>
 </nav>
 
+<!-- Red Phone — always-visible click-to-call -->
+<style>
+#redphone{position:fixed;left:18px;bottom:20px;z-index:60;text-decoration:none;display:flex;align-items:center}
+#redphone .rp-btn{width:62px;height:62px;border-radius:50%;background:linear-gradient(145deg,#ff3b30,#c81e14);display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 8px 26px rgba(200,20,14,.5);animation:rpPulse 2.2s infinite}
+#redphone .rp-lab{position:absolute;left:74px;white-space:nowrap;background:#c81e14;color:#fff;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;padding:7px 12px;border-radius:9px;opacity:0;transform:translateX(-8px);transition:.18s;pointer-events:none}
+#redphone:hover .rp-lab,#redphone:focus .rp-lab{opacity:1;transform:translateX(0)}
+@keyframes rpPulse{0%,100%{box-shadow:0 8px 26px rgba(200,20,14,.5),0 0 0 0 rgba(255,59,48,.45)}50%{box-shadow:0 8px 26px rgba(200,20,14,.5),0 0 0 14px rgba(255,59,48,0)}}
+@media(prefers-reduced-motion:reduce){#redphone .rp-btn{animation:none}}
+@media(max-width:520px){#redphone .rp-btn{width:54px;height:54px;font-size:24px}}
+</style>
+<a id="redphone" href="#callme" aria-label="Have us call you now"><span class="rp-lab">📞 Have us call you — now</span><span class="rp-btn">📞</span></a>
+
 <header class="wrap">
   <span class="kick">BULLETIN · TELVERGENCE · THE TALKING EDITION</span>
   <h1>The website is <span>over</span>.<br>This is a colleague.</h1>
@@ -936,6 +948,7 @@ window.googleTranslateElementInit=function(){
   </div>
   <div style="text-align:center;margin-top:18px"><a class="btn g" href="tel:+16892421041">📞 Call to activate free — (689) 242-1041</a></div>
   <p class="sub" style="margin-top:10px;font-size:13px">$0 out of pocket · no card · no SSN · no commitment · $22.95/line invoiced later · cancel anytime. <span style="color:var(--faint)">Illustrative activation figures; program terms apply.</span></p>
+  <div style="text-align:center;margin-top:16px"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAEiCAIAAADS3EjhAAAFH0lEQVR4nO3dy21dRxBAQdNwMI5FaTgKBuM0nAFz0J6JOIOBhNZRz32s2gp6/4NZsNHz9vnx/gdQ+nP7BcDrkxnkZAY5mUFOZpCTGeRkBjmZQU5mkJMZ5GQGOZlBTmaQkxnkZAY5mUFOZpCTGeRkBrm/Jv/572///qrXcYnv//1z+Nfu/d75vBNf7bdx5jSDnMwgJzPIyQxyMoOczCAnM8jJDHIyg9xoCuSsmzCYmEwnTGY1tj6NO7+FO19VN7niNIOczCAnM8jJDHIyg5zMICczyMkMcjKDXDgFcma/xe955Cd64m/jzGkGOZlBTmaQkxnkZAY5mUFOZpCTGeRkBrm1KZAnmuwC2dpB0j0vP85pBjmZQU5mkJMZ5GQGOZlBTmaQkxnkZAY5UyBfmjmP38NpBjmZQU5mkJMZ5GQGOZlBTmaQkxnkZAa5tSmQJ84f3LnPY/LIZ5PnnXjib+PMaQY5mUFOZpCTGeRkBjmZQU5mkJMZ5GQGuXAKZDJ/8ESTaYxukuNOr/eOzpxmkJMZ5GQGOZlBTmaQkxnkZAY5mUFOZpAbTYG83s6Gs633+8TP+YmvueM0g5zMICczyMkMcjKDnMwgJzPIyQxyMoPcaAqk22/RzRBs3erSbfuYfFZbOzm6b//O36TTDHIyg5zMICczyMkMcjKDnMwgJzPIyQxy4Y0wE91URDdfsnWry513zXy193vmNIOczCAnM8jJDHIyg5zMICczyMkMcjKD3NqNMHdOJ2xt7NjaBbL1yGeTT+POGRGnGeRkBjmZQU5mkJMZ5GQGOZlBTmaQkxnk3j4/3leeuPuL+xNvSJm48/1u3Z6zNbly5jSDnMwgJzPIyQxyMoOczCAnM8jJDHIyg9xoF8idkxxnW/s87pzVmNj6NLZ+G5PndZpBTmaQkxnkZAY5mUFOZpCTGeRkBjmZQS68EWbrVpezO+98uXODRWfr09iap3GaQU5mkJMZ5GQGOZlBTmaQkxnkZAY5mUHu0l0gT5zGuHPOY2vu4c5Jjq25JacZ5GQGOZlBTmaQkxnkZAY5mUFOZpCTGeTePj/et1/DY9x558vWdpOJJ94lNOE0g5zMICczyMkMcjKDnMwgJzPIyQxyMoPcaApk62/5T3zeO6cTtjaFTDxxX4vTDHIyg5zMICczyMkMcjKDnMwgJzPIyQxyoxthtiYb7pyouPPOl+5Vvd6mkO6TdJpBTmaQkxnkZAY5mUFOZpCTGeRkBjmZQW40BfLETRJnW3smJv938pq73Sdbsyl3cppBTmaQkxnkZAY5mUFOZpCTGeRkBjmZQW40BXJ251/6u1tdzo+8NRWxNanzet/+hNMMcjKDnMwgJzPIyQxyMoOczCAnM8jJDHLhFMjZ1q0fW7qtG5NNId22jzt1n8aZ0wxyMoOczCAnM8jJDHIyg5zMICczyMkMcmtTIF9Nd19Mt2Wku8XmbGs2pZsfcppBTmaQkxnkZAY5mUFOZpCTGeRkBjmZQc4UyE/oJjm2vN6cx53zNE4zyMkMcjKDnMwgJzPIyQxyMoOczCAnM8itTYHceW/L2Z23q9w5ydF9v912k47TDHIyg5zMICczyMkMcjKDnMwgJzPIyQxy4RTIndsvJrp31G2wuNOd0yd2gcCDyQxyMoOczCAnM8jJDHIyg5zMICczyL19frxvvwZ4cU4zyMkMcjKDnMwgJzPIyQxyMoOczCAnM8jJDHIyg5zMICczyMkMcjKDnMwgJzPIyQxyMoPc/08cdi+96QipAAAAAElFTkSuQmCC" alt="Scan to open telvergence.com" width="106" height="106" style="border-radius:10px"><div style="font-family:var(--fm);font-size:11px;color:var(--faint);margin-top:5px">📱 Scan to open telvergence.com on your phone</div></div>
 </section>
 
 <section class="wrap" id="plans">
@@ -1014,10 +1027,16 @@ window.googleTranslateElementInit=function(){
     speechSynthesis.cancel=function(){if(window.__nvAudio){try{window.__nvAudio.pause()}catch(e){}}_nvCancel();};}
   /* neural-first: try the /tts proxy (Claude-quality voice); fall back to the browser voice until the key is live */
   var TTS_URL='https://restorationroyalties.com/tts', ttsDead=false;
+  /* audio robustness: unlock speech on the first gesture; probe the neural endpoint once so the fallback voice fires instantly and consistently */
+  (function(){var unlocked=false;
+    function unlock(){if(unlocked)return;unlocked=true;try{speechSynthesis.resume();var u=new SpeechSynthesisUtterance(' ');u.volume=0;speechSynthesis.speak(u);}catch(e){}}
+    ['pointerdown','keydown','touchstart'].forEach(function(ev){document.addEventListener(ev,unlock,{once:true,passive:true});});
+    try{fetch(TTS_URL,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({text:'.'})}).then(function(r){if(!r.ok)ttsDead=true;}).catch(function(){ttsDead=true;});}catch(e){ttsDead=true;}
+  })();
   function pickBestLangVoice(code){if(!code)return null;var vs=speechSynthesis.getVoices()||[],base=String(code).split('-')[0].toLowerCase();
     var ex=vs.filter(function(v){return (v.lang||'').toLowerCase()===String(code).toLowerCase()});if(ex.length)return ex[0];
     var lo=vs.filter(function(v){return (v.lang||'').toLowerCase().indexOf(base)===0});return lo.length?lo[0]:null;}
-  function speakLocal(t,done){try{var u=new SpeechSynthesisUtterance(t);
+  function speakLocal(t,done){try{try{speechSynthesis.resume()}catch(_e){}if(!bestVoice){try{pickVoice()}catch(_e){}}var u=new SpeechSynthesisUtterance(t);
     var L=window.__tvLang;
     if(L&&L!=='en'){u.lang=window.__tvVoiceLang||'en-US';var lv=pickBestLangVoice(u.lang);if(lv)u.voice=lv;}
     else if(bestVoice)u.voice=bestVoice;
