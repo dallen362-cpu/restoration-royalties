@@ -20,6 +20,14 @@ Every new page/brand/demo gets registered in the master catalog at
 flagship namespace). When public-facing, also register it in the homepage's Industry Lead
 Engines directory. A page that isn't in the showroom doesn't exist.
 
+## Listing rule (gigapress) — GBP before publish (David 2026-08-27)
+Every client brand also requires a **Google Business Profile with auto-verification ON**, recorded in its
+`brand-kit/brands/<slug>.json` `gbp` block, BEFORE it publishes. This is enforced by the automaton:
+`python3 brand-kit/build.py` exits non-zero and blocks the merge until the `gbp` block is complete
+(`--listings` prints the per-brand status). Run the `listing-foundation` skill for each brand. No GBP
+entry, no publish. (Internal concept mocks are marked `gbp.status:"concept"` and deferred until they
+become a real client.)
+
 ## Source-of-truth payloads (self-refreshing raw URLs — always latest main)
 - Homepage → `index.html`:
   `https://raw.githubusercontent.com/dallen362-cpu/restoration-royalties/main/handoff/telvergence-com-index.html`

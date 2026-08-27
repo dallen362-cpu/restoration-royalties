@@ -44,9 +44,15 @@ alongside the display name.
    brand; for an intentional update, republish that exact path only.
 4. **Register in the master index** `telvergence/index.html` — add one card linking to the brand
    (name, one-line, `→ telvergence/<slug>/`). The index IS the catalog; every deploy updates it.
-5. **Ship via the normal flow:** feature branch → PR → merge to `main` (Cloudflare Pages auto-deploys).
+5. **LISTING FOUNDATION (mandatory — no brand publishes without it).** Run the `listing-foundation`
+   skill: create/claim the brand's **Google Business Profile with auto-verification ON** (GSC instant
+   verify; bulk/chain verify at scale), wire the review link, and record it in the brand's `gbp` block
+   in `brands/<slug>.json` (`auto_verify:true`, `status`, `profile_url`, `review_link`, `go_live`).
+   The automaton enforces this: `python3 brand-kit/build.py` exits non-zero and blocks the merge until
+   the `gbp` block is complete. Confirm green with `python3 brand-kit/build.py --listings`.
+6. **Ship via the normal flow:** feature branch → PR → merge to `main` (Cloudflare Pages auto-deploys).
    Do not push straight to main.
-6. **VERIFY before handing over the link:**
+7. **VERIFY before handing over the link:**
    - `curl -sI https://<domain>/telvergence/<slug>/` → expect `200` and **no auth redirect** (this is
      the stranger/incognito check — a prospect must reach it logged-out).
    - `X-Robots-Tag: noindex` present.
@@ -80,6 +86,9 @@ Bring them in WITHOUT deleting anything:
 - [ ] Path is `telvergence/<slug>/` and did not exist before (or is a deliberate update of that path).
 - [ ] Standalone doc: doctype/head/body, real title + description, self-contained (no broken embeds).
 - [ ] Registered in `telvergence/index.html`.
+- [ ] **Google Business Profile created/claimed, auto-verification ON, recorded in the brand's `gbp`
+  block — `python3 brand-kit/build.py --listings` is green for this slug** (run the `listing-foundation`
+  skill; the build gate blocks the merge until this passes). No brand's link is shared without its GBP.
 - [ ] `curl -I` → 200, no login redirect (public-by-link), `X-Robots-Tag: noindex` present.
 - [ ] `tools/linkcheck.py` clean.
 - [ ] No card numbers, no personal cell, disclaimers intact (for client-demo sites).
