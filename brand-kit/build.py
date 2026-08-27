@@ -203,6 +203,49 @@ def did_issuance(b):
   </section>'''
 
 
+def weather_radar(b):
+    """Live Doppler/satellite radar over the brand's territory (WIN tie-in). Free
+    Windy embed, no key; centered on the brand's geo block (default: Miami)."""
+    if b.get('_noWeather'):
+        return ''
+    g = b.get('geo') or {}
+    lat, lon, zoom = g.get('lat', 25.77), g.get('lon', -80.19), g.get('zoom', 8)
+    src = (f'https://embed.windy.com/embed2.html?lat={lat}&amp;lon={lon}'
+           f'&amp;detailLat={lat}&amp;detailLon={lon}&amp;zoom={zoom}'
+           f'&amp;overlay=radar&amp;level=surface&amp;menu=&amp;message=true&amp;marker=true'
+           f'&amp;calendar=now&amp;type=map&amp;metricWind=mph&amp;metricTemp=%C2%B0F')
+    return f'''
+  <section>
+    <h2>Live weather over your territory — the network watches the sky</h2>
+    <div class="mapwrap">
+      <div class="mapfallback">🛰️ Live Doppler radar — {e(g.get("label","your service area"))}</div>
+      <iframe title="Live weather radar — {e(g.get("label","service area"))}" loading="lazy" src="{src}"></iframe>
+    </div>
+    <p class="mapnote">Live satellite + Doppler radar over the brand's rate-center territory. Storms are demand — the WEATHER INTELLIGENCE NETWORK reads the sky your phones answer to, in real time.</p>
+  </section>'''
+
+
+def local_courtesy(b):
+    """Courtesy touch: directions to the closest Starbucks in the brand's rate
+    center (same NPA-NXX locality) — a local-presence proof + hospitality nod."""
+    if b.get('_noCourtesy'):
+        return ''
+    g = b.get('geo') or {}
+    loc = g.get('rateCenterLocale', 'Miami, FL')
+    from urllib.parse import quote
+    q = quote(f'Starbucks near {loc}')
+    return f'''
+  <section>
+    <h2>Meet us over coffee <span class="soft">— the closest Starbucks in your rate center</span></h2>
+    <div class="mapwrap">
+      <div class="mapfallback">☕ Closest Starbucks — {e(loc)}</div>
+      <iframe title="Closest Starbucks near {e(loc)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q={q}&amp;z=13&amp;output=embed"></iframe>
+    </div>
+    <p class="mapnote">A small courtesy: your consult can happen anywhere — here's the nearest Starbucks in the same rate center as your Smart-DID ({e(loc)}), with <a href="https://www.google.com/maps/dir/?api=1&amp;destination={q}" target="_blank" rel="noopener">one-tap directions</a>. We're local because your number is.</p>
+    <p class="fineprint left">Starbucks is a trademark of its owner; shown as a convenience locator only — no affiliation or endorsement.</p>
+  </section>'''
+
+
 def service_map(b):
     m = b.get('map')
     if not m:
@@ -357,6 +400,8 @@ def render(b):
   </section>
 {command_center(b)}
 {service_map(b)}
+{weather_radar(b)}
+{local_courtesy(b)}
   <section>
     <h2>The {e(b["platformName"])} Platform — our UCCPXaaS + automation core</h2>
     <div class="plat"><b>UCCPXaaS</b> = Unified Communications + Contact-Center + Communications-Platform + Everything-as-a-Service — the proprietary infrastructure that turns {ln} phone numbers into an autonomous revenue engine, owned end-to-end, not rented from a third party.</div>

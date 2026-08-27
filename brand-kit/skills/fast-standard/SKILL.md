@@ -64,6 +64,15 @@ Every brand build should offer these, themed to its industry (regenerate labels 
 10. **Reviews → auto-post to Google** — star rating + review form + "⭐ Log & Post to Google".
 11. **Direct-line rack** — "Call the right specialist — 10 dedicated lines," one per intent (maps to the 10-line Smart-DID grid).
 12. **Careers / Now Hiring** + **Franchise/White-Label request forms** ($25K tiers).
+13. **Live weather satellite/Doppler radar** — embedded over the brand's rate-center territory (Windy
+    embed, free, no key; per-brand `geo` block: lat/lon/zoom/label). The WIN tie-in: storms are demand;
+    the network watches the sky the phones answer to. Baked into `build.py` (`weather_radar()`);
+    suppress per-brand with `_noWeather`.
+14. **Closest-Starbucks courtesy map** — a directions map to the nearest Starbucks in the SAME rate
+    center (NPA-NXX locality) as the client's Smart-DID (`geo.rateCenterLocale`, e.g. "Perrine, FL").
+    Local-presence proof + hospitality nod: "we're local because your number is," one-tap directions.
+    Baked into `build.py` (`local_courtesy()`); suppress with `_noCourtesy`. Always carries the
+    trademark/no-affiliation fineprint.
 
 ## House rules for applying it
 - **OUR material:** brand name, URL (`telvergence.com/<slug>` or the brand's own domain we control), and the
