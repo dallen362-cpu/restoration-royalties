@@ -392,6 +392,78 @@
     try{speechSynthesis.cancel()}catch(e){}next();});
 })();
 </script>
+
+<style>
+#lcFab{position:fixed;right:18px;bottom:86px;z-index:61;width:56px;height:56px;border-radius:50%;border:none;cursor:pointer;font-size:24px;background:linear-gradient(120deg,var(--cyan,#2AD4F0),var(--accent,#2AD4F0));color:#04070F;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+#lcPanel{position:fixed;right:16px;bottom:150px;z-index:62;width:min(360px,92vw);max-height:min(480px,70vh);display:flex;flex-direction:column;background:linear-gradient(180deg,var(--card2,#1A2331),var(--card,#141B27));border:1px solid var(--line2,#37475c);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.55);overflow:hidden}
+#lcPanel.lc-hide{display:none}
+.lc-head{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid var(--line,#25303F);font-size:12.5px;color:var(--muted,#A9B2C0)}
+.lc-head b{color:var(--ink,#F2EDE2)}
+.lc-head .sp{flex:1}
+.lc-head button{background:none;border:none;color:var(--muted,#A9B2C0);cursor:pointer;font-size:15px}
+.lc-head button.off{opacity:.4}
+#lcLog{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.lc-m{max-width:88%;padding:8px 11px;border-radius:11px;font-size:13.5px;line-height:1.45}
+.lc-m.bot{background:var(--card2,#1A2331);border:1px solid var(--line,#25303F);color:var(--ink,#F2EDE2);align-self:flex-start}
+.lc-m.you{background:var(--accent,#2AD4F0);color:#04070F;align-self:flex-end}
+.lc-in{display:flex;gap:6px;padding:10px;border-top:1px solid var(--line,#25303F)}
+.lc-in input{flex:1;background:var(--void,#0B0F16);border:1px solid var(--line2,#37475c);border-radius:9px;color:var(--ink,#F2EDE2);font-size:13.5px;padding:9px 11px}
+.lc-in button{border:none;border-radius:9px;cursor:pointer;font-size:15px;padding:0 12px;background:var(--card2,#1A2331);color:var(--ink,#F2EDE2);border:1px solid var(--line2,#37475c)}
+.lc-in #lcSend{background:var(--accent,#2AD4F0);color:#04070F;border:none;font-weight:700}
+.lc-in #lcMic.rec{background:#c81e14;color:#fff}
+.lc-note{font-size:10px;color:var(--faint,#6E7A8B);padding:0 12px 9px;text-align:center}
+</style>
+<button id="lcFab" title="Talk to Restoration Royalties" aria-label="Talk to Restoration Royalties">🎙</button>
+<div id="lcPanel" class="lc-hide" role="dialog" aria-label="Restoration Royalties concierge">
+  <div class="lc-head">🎙 <b>Talk to Restoration Royalties</b><span class="sp"></span>
+    <button id="lcMute" title="Mute voice">🔈</button><button id="lcX" title="Close">✕</button></div>
+  <div id="lcLog"></div>
+  <div class="lc-in"><input id="lcIn" placeholder="Ask anything — speak or type" aria-label="Your question">
+    <button id="lcMic" title="Speak">🎤</button><button id="lcSend" title="Send">➤</button></div>
+  <div class="lc-note">Live demo assistant · drawing from this brand's knowledge file · answers out loud</div>
+</div>
+<script>
+(function(){
+  var KB=[[["what", "about", "who", "platform", "tell me", "explain"], "Restoration Royalties runs on the Telvergence platform: a 10-line Smart-DID grid that answers every call 24/7 in the caller's language, books the job, and logs everything to the CRM. The insight: a restoration job runs $3,000–$40,000 — and the homeowner calls while water is still running across the floor, day or night, in English or Spanish. Whoever answers first, arrives fastest, and documents best wins the job and the insurance file. A phone number that just rings can't"], [["line", "lines", "number", "numbers", "did", "grid", "vanity"], "The 10-line Smart-DID grid, each line tracked and routed: Flagship / 24-7 Water & Flood Emergency: (786) 400-1145; Spanish / Bilingüe: (786) 400-1146; Mold remediation / black mold: (786) 400-1147; Water extraction / structural dry-out: (786) 400-1148; Roof leak / storm tarp: (786) 400-1149; Commercial / condo & HOA: (786) 400-1150. Every number is source-tagged, recorded, and mapped - and the page also shows the best vanity numbers still available in NPA 786, viable but not yet purchased."], [["price", "pricing", "cost", "how much", "plan", "plans", "tier", "month"], "Engagement tiers (proposed and adjustable): Foundation $1,500 / mo · Growth $3,500 / mo · Performance split share of new business booked · Multi-market add-on ~$1,500 / market / mo. Lines run $22.95 per line per month - you own your numbers and can port them anytime."], [["offer", "free", "start", "trial", "pilot", "risk", "begin", "sign"], "The offer: We stand up all ten numbers, the AI answer, the Spanish route, and a starter outbound campaign across your target ZIPs. For 30 days every inbound emergency is answered and dispatched while the dialer works storm-hit neighborhoods. All it takes to start is a signed LOA and a card on file. Call (689) 242-1041 to begin."], [["reseller", "resell", "flywheel", "own business", "earn", "349", "drone", "distributor", "opportunity"], "Every subscriber is also a reseller. The app, your issued Smart-DID, and your digital business card are a business-in-a-box - subscribe and you're operating the same day, like a drone operator at $349 a month instantly running roofing inspections. Because you use it and believe in it, you sign up the next operator and earn through your own DID. Earnings vary and are subject to program terms."], [["issue", "issued", "issuance", "royalty", "agent id", "business card", "refer", "credited"], "Join and a real, verified company line is provisioned automatically in under a second - branded caller ID on a digital business card we provide and pay for. That number is your agent ID and royalty account: any job referred through it is credited to you automatically. Illustrative concept - referral programs on regulated work are governed per state."], [["territory", "rate center", "secret", "sauce", "why local", "area code", "npa", "exchange", "lead", "leads"], "The secret sauce: a call from a local number in the caller's own rate center gets answered - out-of-area caller ID gets ignored. This grid was engineered for NPA 786 serving South Florida: CNAM-branded caller ID, 411 registries, virgin exchanges, and vanity spellings. Numbers engineered into markets, not bought."], [["weather", "radar", "storm", "doppler", "win", "seal", "partner", "designation"], "Restoration Royalties is a WEATHER INTELLIGENCE NETWORK official essential service provider partner, engineered for the NPA 786 grid - live Doppler radar watches the territory the phones answer to, and storm dispatch turns weather into demand. A Telvergence network credential; in an emergency call 911."], [["boss", "crm", "lms", "back office", "training", "dialer", "outbound", "data"], "Every line lands in BOSS - Back Office Sales Support, our own CRM and LMS core running since 2013, dialer-integrated since 2019. Accounts are keyed to the Smart-DID, never an SSN; the LMS trains and certifies every subscriber; our own dialer core works consent-based outbound on the same numbers."], [["starbucks", "coffee", "meet", "directions", "consult", "in person"], "A courtesy on the page: a directions map to the closest Starbucks in the same rate center as the brand's Smart-DID (Miami, FL) - your consult can happen over coffee. We're local because the number is."], [["contact", "call", "phone", "email", "human", "person", "speak", "talk to"], "Call or text (689) 242-1041, or email contact@restorationroyalties.com. A specialist picks it up from there - and this same platform answers those lines 24/7."], [["real", "demo", "actually", "fake", "true", "live"], "I'm the live demo assistant for Restoration Royalties, drawing from this brand's knowledge file - a preview of the production concierge that ships with every Telvergence build. The floor figures on the page are illustrative and labeled as such; the platform capabilities are the product."]];
+  var GREET="Welcome to Restoration Royalties - I'm the live demo assistant, cloned from this brand's knowledge file. Ask me about the lines, the pricing, the offer, the territory, or how any of it works. Speak or type - I answer out loud.";
+  var fab=document.getElementById('lcFab'),panel=document.getElementById('lcPanel'),log=document.getElementById('lcLog'),
+      inp=document.getElementById('lcIn'),send=document.getElementById('lcSend'),mic=document.getElementById('lcMic'),
+      mute=document.getElementById('lcMute'),x=document.getElementById('lcX');
+  if(!fab)return;
+  var speakOn=true,greeted=false,best=null;
+  function pick(){if(!('speechSynthesis' in window))return;var vs=speechSynthesis.getVoices()||[],bs=-1;
+    vs.forEach(function(v){var s=0,n=v.name||'';
+      if(/Online/i.test(n)&&/Natural/i.test(n))s+=12;if(/Google US English/i.test(n))s+=8;if(/natural|neural/i.test(n))s+=7;
+      if(/enhanced|premium/i.test(n))s+=6;if(/^en(-|_)US/i.test(v.lang))s+=3;else if(/^en/i.test(v.lang))s+=1;
+      if(s>bs){bs=s;best=v}});}
+  if('speechSynthesis' in window){pick();speechSynthesis.onvoiceschanged=pick;}
+  function say(t){if(!speakOn||!('speechSynthesis' in window))return;
+    try{speechSynthesis.cancel();speechSynthesis.resume();
+      var u=new SpeechSynthesisUtterance(t);if(best)u.voice=best;u.rate=1.03;speechSynthesis.speak(u);}catch(e){}}
+  function add(who,t){var d=document.createElement('div');d.className='lc-m '+who;d.textContent=t;
+    log.appendChild(d);log.scrollTop=log.scrollHeight;}
+  function reply(q){var ql=String(q).toLowerCase(),bestE=null,bs=0;
+    KB.forEach(function(e){var s=0;e[0].forEach(function(k){if(ql.indexOf(k)>-1)s++});if(s>bs){bs=s;bestE=e}});
+    var a=bestE?bestE[1]:("Great question - the fastest answer is a call: "+"(689) 242-1041"+". Or ask me about the lines, pricing, the offer, or how the platform works.");
+    add('bot',a);say(a);}
+  function ask(){var q=(inp.value||'').trim();if(!q)return;inp.value='';add('you',q);setTimeout(function(){reply(q)},250);}
+  fab.onclick=function(){
+    if(panel.classList.contains('lc-hide')){panel.classList.remove('lc-hide');
+      if(!greeted){greeted=true;add('bot',GREET);say(GREET);}inp.focus();}
+    else{panel.classList.add('lc-hide');try{speechSynthesis.cancel()}catch(e){}}};
+  x.onclick=function(){panel.classList.add('lc-hide');try{speechSynthesis.cancel()}catch(e){}};
+  mute.onclick=function(){speakOn=!speakOn;mute.classList.toggle('off',!speakOn);mute.textContent=speakOn?'🔈':'🔇';
+    if(!speakOn)try{speechSynthesis.cancel()}catch(e){}};
+  send.onclick=ask;inp.addEventListener('keydown',function(e){if(e.key==='Enter')ask();});
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(SR){var rec=new SR(),recOn=false;rec.lang='en-US';rec.interimResults=false;
+    rec.onresult=function(ev){var t=ev.results[0][0].transcript;inp.value=t;ask();};
+    rec.onend=function(){recOn=false;mic.classList.remove('rec');};
+    mic.onclick=function(){if(recOn){rec.stop();return}try{speechSynthesis.cancel()}catch(e){}
+      recOn=true;mic.classList.add('rec');try{rec.start()}catch(e){recOn=false;mic.classList.remove('rec')}};}
+  else{mic.style.display='none';}
+})();
+</script>
 <script>
 (function(){
   if(matchMedia('(prefers-reduced-motion:reduce)').matches){
