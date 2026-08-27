@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Telvergence — The Realm</title>
+<meta name="description" content="The Telvergence members vault — the full arsenal behind the public site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--void:#0B0F16;--deep:#0F141E;--card:#141B27;--card2:#1A2331;--line:#25303F;--line2:#37475c;
+  --ink:#F2EDE2;--muted:#A9B2C0;--faint:#6E7A8B;--gold-lt:#E3C579;--gold:#C9A24B;--green:#6FE0A6;
+  --fd:'Fraunces',Georgia,serif;--fb:'Hanken Grotesk',-apple-system,Arial,sans-serif;--fm:'IBM Plex Mono',ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--void);color:var(--ink);font-family:var(--fb);line-height:1.55;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1000px 520px at 50% -12%,rgba(201,162,75,.10),transparent 62%);background-attachment:fixed}
+a{color:var(--gold-lt);text-decoration:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.k{font-family:var(--fm);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-lt)}
+
+/* gate */
+#gate{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.gatebox{max-width:440px;width:100%;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;padding:34px 28px;text-align:center}
+.seal{font-size:40px}
+.gatebox h1{font-family:var(--fd);font-weight:700;font-size:30px;letter-spacing:-.02em;margin:10px 0 6px}
+.gatebox p{color:var(--muted);font-size:14px;margin-bottom:18px}
+.gatebox input{width:100%;font-family:var(--fm);font-size:15px;text-align:center;letter-spacing:.08em;padding:13px 14px;border-radius:11px;border:1px solid var(--line2);background:var(--deep);color:var(--ink);margin-bottom:10px}
+.gatebox input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
+.gatebox button{width:100%;font-family:var(--fb);font-weight:700;font-size:15px;padding:13px;border:none;border-radius:11px;cursor:pointer;background:linear-gradient(120deg,var(--gold-lt),var(--gold));color:#0B0F16}
+.gatebox button:hover{filter:brightness(1.06)}
+.err{color:#ff8a7a;font-size:12.5px;min-height:16px;margin-top:8px;font-family:var(--fm)}
+.shake{animation:sh .4s}
+@keyframes sh{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.gatenote{margin-top:16px;font-size:11.5px;color:var(--faint)}
+
+/* vault */
+#vault{display:none;padding:38px 0 80px}
+.top{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:6px}
+.top a.back{font-family:var(--fm);font-size:12px;color:var(--muted)}
+h1.title{font-family:var(--fd);font-weight:700;font-size:clamp(30px,6vw,48px);letter-spacing:-.02em;margin:8px 0 6px}
+h1.title span{background:linear-gradient(100deg,var(--gold-lt),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lede{color:var(--muted);font-size:16px;max-width:64ch}
+.stat{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
+.stat span{font-family:var(--fm);font-size:11px;color:var(--muted);border:1px solid var(--line2);border-radius:999px;padding:5px 11px}
+h2.sec{font-family:var(--fd);font-weight:600;font-size:20px;margin:34px 0 4px}
+.secsub{color:var(--faint);font-size:13px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:680px){.grid{grid-template-columns:1fr 1fr}}
+.card{display:block;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:14px;padding:16px 18px;color:var(--ink)}
+a.card:hover{border-color:var(--gold);transform:translateY(-1px);transition:.14s}
+.card .e{font-size:22px}
+.card h3{font-family:var(--fd);font-weight:600;font-size:16.5px;margin:6px 0 4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card p{color:var(--muted);font-size:13.5px}
+.pill{font-family:var(--fm);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;border-radius:999px;padding:3px 8px}
+.pill.live{color:var(--green);border:1px solid var(--green)}
+.pill.concept{color:var(--gold-lt);border:1px solid var(--gold-lt)}
+.card .go{font-family:var(--fm);font-size:12px;color:var(--gold-lt);margin-top:8px;display:inline-block}
+.disc{font-size:11.5px;color:var(--faint);margin-top:7px;border-top:1px solid var(--line);padding-top:7px}
+.foot{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--faint)}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="gatebox" id="gbox">
+    <div class="seal">🔮</div>
+    <h1>The Realm</h1>
+    <p>Members vault. Enter your access code to continue.</p>
+    <input id="code" type="password" inputmode="text" autocomplete="off" placeholder="access code" aria-label="access code">
+    <button id="enter">Enter →</button>
+    <div class="err" id="err"></div>
+    <div class="gatenote">Showcase area — private by convention, not a security boundary.</div>
+  </div>
+</div>
+
+<div id="vault">
+  <div class="wrap">
+    <div class="top">
+      <span class="k">Telvergence · Members Vault</span>
+      <a class="back" href="https://telvergence.com/">← back to telvergence.com</a>
+    </div>
+    <h1 class="title">The <span>Realm</span></h1>
+    <p class="lede">Everything we've built beyond the public site — modules you can open right now, and the framings and economics behind the network. Pull a piece forward whenever the moment calls for it.</p>
+    <div class="stat"><span>8 live modules</span><span>5 framings</span><span>$229.50 unit · owns the numbers</span><span>10-line grid</span></div>
+
+    <h2 class="sec">Live modules</h2>
+    <div class="secsub">Built and running — tap to open in a new tab.</div>
+    <div class="grid">
+      <a class="card" target="_blank" rel="noopener" href="https://restorationroyalties.com/cowork-campaign/nx8k4q2m9v7r/studio">
+        <div class="e">🧬</div><h3>White-Label Studio <span class="pill live">live</span></h3>
+        <p>Drop in any URL → we breed it with Telvergence into a branded site with all 10 Smart-DIDs embedded and a cloned AI Second Brain. Yours to own the moment the 10-pack activates.</p><span class="go">Open studio →</span></a>
+      <a class="card" target="_blank" rel="noopener" href="https://restorationroyalties.com/cowork-campaign/nx8k4q2m9v7r/vault-7kq9x2m4/partner">
+        <div class="e">🤝</div><h3>Agent Partner Portal <span class="pill concept">concept</span></h3>
+        <p>Every subscriber is an agent-partner: connect storm damage to trusted providers and earn 10% of the gross; recruit new providers and keep earning. Franchise/territory tier: $100 per referred line · $25K territory license.</p>
+        <div class="disc">⚠️ Illustrative — the 10% consumer commission and referral fees on restoration / insurance-claim work are regulated per state (anti-inducement, public-adjusting, contractor-referral rules). Verify licensing and legality before launch.</div><span class="go">Open portal →</span></a>
+      <a class="card" target="_blank" rel="noopener" href="https://restorationroyalties.com/cowork-campaign/nx8k4q2m9v7r/vault-7kq9x2m4/win-tv">
+        <div class="e">📺</div><h3>WIN TV <span class="pill live">live</span></h3>
+        <p>The Weather Intelligence Network channel — real fire footage, documentary-style episodes matched to a viewer's live local weather. Content as a lead engine.</p><span class="go">Open WIN TV →</span></a>
+      <a class="card" target="_blank" rel="noopener" href="https://restorationroyalties.com/cowork-campaign/nx8k4q2m9v7r/platform">
+        <div class="e">🧠</div><h3>The Platform (back end) <span class="pill live">live</span></h3>
+        <p>The Second Brain, cloned from your URL and mashed with Telvergence: answers, qualifies, and books every call into your Google Calendar. Front end free; back end $499/mo + $1,499 setup.</p><span class="go">Open platform →</span></a>
+      <a class="card" target="_blank" rel="noopener" href="https://restorationroyalties.com/cowork-campaign/nx8k4q2m9v7r/activate">
+        <div class="e">⚡</div><h3>Pitch &amp; Catch — Activate <span class="pill live">live</span></h3>
+        <p>The full free-activation funnel: pick your area code, verify with a DOB PIN (no SSN), 10 local lines forward to your cell. Keep 100%, pay $22.95/line later.</p><span class="go">Open activation →</span></a>
+      <a class="card" target="_blank" rel="noopener" href="https://restorationroyalties.com/cowork-campaign/nx8k4q2m9v7r/telvergence-3d">
+        <div class="e">🌐</div><h3>3D Talking Flagship <span class="pill live">live</span></h3>
+        <p>The immersive 3D talking presentation of the flagship — the network rendered as a living, spoken experience.</p><span class="go">Open 3D →</span></a>
+      <a class="card" target="_blank" rel="noopener" href="https://restorationroyalties.com/cowork-campaign/nx8k4q2m9v7r/vault-7kq9x2m4/grid">
+        <div class="e">🗺️</div><h3>Storm Dispatch · National Grid <span class="pill live">live</span></h3>
+        <p>The territory-saturation map — one Authorized Dedicated Provider per territory, storm dispatch routing, the coverage grid.</p><span class="go">Open grid →</span></a>
+      <a class="card" target="_blank" rel="noopener" href="https://restorationroyalties.com/cowork-campaign/nx8k4q2m9v7r/nav-map">
+        <div class="e">🧭</div><h3>Talking Nav-Map <span class="pill live">live</span></h3>
+        <p>The spoken site map — navigate the whole Telvergence world by voice.</p><span class="go">Open nav-map →</span></a>
+    </div>
+
+    <h2 class="sec">Framings &amp; economics</h2>
+    <div class="secsub">The strategic angles in the deck — pull forward as we grow.</div>
+    <div class="grid">
+      <div class="card"><div class="e">🔁</div><h3>Self-distributing flywheel <span class="pill concept">framing</span></h3><p>Every subscriber is also a retail / wholesale / white-label distributor — the network sells itself as it grows.</p></div>
+      <div class="card"><div class="e">📈</div><h3>Investor economics &amp; moat <span class="pill concept">framing</span></h3><p>$229.50 MRC unit, zero-employee front office, near-zero marginal cost per line. We <strong style="color:var(--ink)">own the DIDs and the source code</strong> — scale pays the platform, it doesn't cost it.</p></div>
+      <div class="card"><div class="e">💵</div><h3>Referral &amp; franchise layer <span class="pill concept">concept</span></h3><p>$100 per referred line · $25K territory / franchise license — the wholesale expansion layer.<span class="disc">⚠️ Concept-stage; commission/referral structures are state-regulated — verify before launch.</span></p></div>
+      <div class="card"><div class="e">💰</div><h3>"One saved call = $7,500 · 32× ROI" <span class="pill concept">framing</span></h3><p>The ROI benchmark: every caught call is a job worth ~$7,500; the platform pays for itself many times over on a single save.</p></div>
+      <div class="card"><div class="e">🔥</div><h3>SW-Florida fire urgency case <span class="pill concept">framing</span></h3><p>The smoke &amp; fire micro case study — real footage, real urgency, lead tracking behind it.</p></div>
+    </div>
+
+    <div class="foot">Telvergence, Inc. · The Realm — members vault. Showcase area, private by convention, not a security boundary. Figures on concept modules are illustrative; regulated programs require per-state verification before launch. Back to <a href="https://telvergence.com/">telvergence.com</a>.</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var CODE="TELVERGENCE-2026"; // cosmetic gate — visible in source by design
+  var KEY="tv-realm-unlocked";
+  var gate=document.getElementById('gate'),vault=document.getElementById('vault'),
+      inp=document.getElementById('code'),btn=document.getElementById('enter'),
+      err=document.getElementById('err'),box=document.getElementById('gbox');
+  function open(){ gate.style.display='none'; vault.style.display='block'; }
+  try{ if(sessionStorage.getItem(KEY)==='1'){ open(); } }catch(e){}
+  function tryCode(){
+    var v=(inp.value||'').trim().toUpperCase();
+    if(v===CODE){ try{sessionStorage.setItem(KEY,'1');}catch(e){} open(); }
+    else{ err.textContent='That code isn’t right. Ask David for access.'; box.classList.remove('shake'); void box.offsetWidth; box.classList.add('shake'); inp.select(); }
+  }
+  btn.addEventListener('click',tryCode);
+  inp.addEventListener('keydown',function(e){ if(e.key==='Enter') tryCode(); });
+  inp.focus();
+})();
+</script>
+</body>
+</html>
