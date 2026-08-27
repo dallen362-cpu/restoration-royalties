@@ -73,6 +73,14 @@ Every brand build should offer these, themed to its industry (regenerate labels 
     Local-presence proof + hospitality nod: "we're local because your number is," one-tap directions.
     Baked into `build.py` (`local_courtesy()`); suppress with `_noCourtesy`. Always carries the
     trademark/no-affiliation fineprint.
+15. **BOSS CRM + LMS back office (UCCPXaaS back end)** — every brand states and runs on the platform's
+    own back end: **BOSS** (Back Office Sales Support, 2013→present, dialer-integrated 2019) — accounts
+    keyed to the Smart-DID (never SSN), leads/pipeline/dispositions/call-log auto-captured; the **LMS**
+    that trains and certifies every subscriber (the literal mechanism of the flywheel — "trained on it"
+    → confident reseller); and **our own predictive-dialer core** (provider-agnostic wording — NEVER
+    name the dialer software on a page). Data model of record: `backend/BOSS-CRM-LMS-SCHEMA.md`; live
+    demo in the members showcase (cowork back office). Baked into `build.py` (`backoffice()`);
+    suppress with `_noBackoffice`.
 
 ## House rules for applying it
 - **OUR material:** brand name, URL (`telvergence.com/<slug>` or the brand's own domain we control), and the

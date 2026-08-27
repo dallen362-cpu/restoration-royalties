@@ -203,6 +203,25 @@ def did_issuance(b):
   </section>'''
 
 
+def backoffice(b):
+    """The UCCPXaaS back end every brand runs on: BOSS CRM + the LMS that trains
+    subscriber-resellers + our own dialer core. Public wording is provider-agnostic
+    (never name the dialer software). Suppress with _noBackoffice."""
+    if b.get('_noBackoffice'):
+        return ''
+    return f'''
+  <section>
+    <h2>The back office is already built — BOSS CRM + LMS, running since 2013</h2>
+    <p class="lead">Every {e(b["brandName"])} line lands in <b>BOSS</b> — Back Office Sales Support, our own CRM/LMS core operated and hardened since 2013, dialer-integrated since 2019. Not rented software: <b>the platform's own back end</b>, wired to your Smart-DIDs from day one.</p>
+    <div class="pillars">
+      <div class="p"><div class="n">📇 BOSS CRM — every call is a record</div><p>Accounts keyed to the <b>Smart-DID, never an SSN</b>. Leads, pipeline stages, dispositions, recordings, and the full call log — captured automatically from every ring, text, and booking. You own the data.</p></div>
+      <div class="p"><div class="n">🎓 The LMS — training built in</div><p>The learning-management system certifies every subscriber on the platform they run — modules, quizzes, certification. It's how a subscriber becomes a confident <b>reseller</b>: trained on it, using it, credentialed to show it.</p></div>
+      <div class="p"><div class="n">📞 Our own dialer core</div><p>The CRM is fused to our <b>own predictive-dialer core</b> — consent-based outbound on your CNAM-branded numbers, every disposition logged back to the same client file. One owned number, inbound and outbound, one record.</p></div>
+    </div>
+    <p class="fineprint left">BOSS lineage: Back Office Sales Support, 2013 &rarr; present. Demo back office available in the members showcase. Outbound is consent-based (TCPA discipline).</p>
+  </section>'''
+
+
 def weather_radar(b):
     """Live Doppler/satellite radar over the brand's territory (WIN tie-in). Free
     Windy embed, no key; centered on the brand's geo block (default: Miami)."""
@@ -410,7 +429,7 @@ def render(b):
     </div>
     <p class="fineprint left">Proprietary platform architecture. Carrier &amp; infrastructure layer powered by Telvergence.</p>
   </section>
-
+{backoffice(b)}
   <section>
     <h2>The 90-second walkthrough</h2>
     <div class="video">
