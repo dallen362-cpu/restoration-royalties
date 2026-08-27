@@ -1,5 +1,25 @@
 {
   "slug": "rr",
+  "gbp": {
+    "auto_verify": true,
+    "verify_method": "search-console-instant",
+    "status": "required",
+    "profile_url": "",
+    "review_link": "",
+    "go_live": "",
+    "listing": {
+      "name": "Restoration Royalties",
+      "primary_category": "Water damage restoration service",
+      "secondary_categories": ["Fire damage restoration service", "Waterproofing company"],
+      "phone": "(786) 340-5777",
+      "website": "https://restorationroyalties.com/rr/",
+      "model": "service-area (hide address)",
+      "service_areas": ["Miami-Dade County", "Broward County", "Palm Beach County"],
+      "description": "Water damage, mold, and roofing restoration across South Florida. 24/7 response.",
+      "claim_first": "Search Google Maps first; claim an existing listing rather than create a duplicate."
+    },
+    "_flip": "On creation: set status 'pending' (or 'verified'), fill profile_url + review_link + go_live."
+  },
   "brandName": "Restoration Royalties",
   "brandShortBold": "RESTORATION",
   "brandShortRest": " ROYALTIES",
