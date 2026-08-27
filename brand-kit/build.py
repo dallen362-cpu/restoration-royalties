@@ -203,6 +203,28 @@ def did_issuance(b):
   </section>'''
 
 
+def win_seal(b):
+    """The WEATHER INTELLIGENCE NETWORK official-partner designation every brand
+    carries: an essential-service-provider seal tied to the brand's NPA·NXX grid.
+    Suppress with _noWinSeal."""
+    if b.get('_noWinSeal'):
+        return ''
+    v = b.get('vanity') or {}
+    npa = str(v.get('npa') or '786')
+    g = b.get('geo') or {}
+    label = g.get('label', 'its market')
+    return f'''
+  <section>
+    <h2>Official designation <span class="soft">— the seal behind the grid</span></h2>
+    <div class="offer" style="text-align:center">
+      <div style="font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px">🛰️ THE WEATHER INTELLIGENCE NETWORK</div>
+      <b>{e(b["brandName"])} — Official Essential Service Provider Partner</b><br>
+      Engineered for the <b>NPA {e(npa)} grid</b> serving {e(label)}: rate-center Smart-DIDs scored into the local numbering plan, storm telemetry watching the sky those lines answer to, and cross-network dispatch when weather turns demand on. <b>Essential service, engineered into the grid itself</b> — we teach every partner to fish the numbering plan, and the network feeds them for life.
+    </div>
+    <p class="fineprint left">WIN partner designation is a Telvergence network credential (not a government license). Storm response is dispatch coordination, not emergency services — in an emergency call 911.</p>
+  </section>'''
+
+
 def auto_vanity(b):
     """Auto-run the vanity Smart-DID generator at press time: the 10 best vanity
     numbers in the brand's own NPA (rate center), shown as VIABLE · NOT YET
@@ -530,6 +552,7 @@ def render(b):
   </section>
 </div>
 {compare(b)}
+<div class="wrap">{win_seal(b)}</div>
 {winnet(b)}
 <div class="wrap">
   {legal}<div class="disclaimer">{b["disclaimer"]} Confidential — TELVERGENCE.</div>
