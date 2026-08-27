@@ -1,5 +1,6 @@
 {
   "slug": "rr",
+  "vanity": {"npa": "786", "industry": "restoration"},
   "gbp": {
     "auto_verify": true,
     "verify_method": "search-console-instant",

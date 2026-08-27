@@ -1,5 +1,6 @@
 {
   "slug": "yes",
+  "vanity": {"npa": "786", "industry": "electrical"},
   "gbp": {
     "auto_verify": true,
     "verify_method": "search-console-instant",

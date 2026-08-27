@@ -1,5 +1,6 @@
 {
   "slug": "realty",
+  "vanity": {"npa": "786", "industry": "realestate"},
   "brandName": "Miami Realty Group",
   "brandShortBold": "MIAMI",
   "brandShortRest": " REALTY GROUP",
