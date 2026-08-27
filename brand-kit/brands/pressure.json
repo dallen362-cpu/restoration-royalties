@@ -1,5 +1,26 @@
 {
   "slug": "pressure",
+  "gbp": {
+    "auto_verify": true,
+    "verify_method": "search-console-instant",
+    "status": "required",
+    "blocked_on": "Branded DID assignment (Vitelity provisioning) — Google's verify-call needs a working phone.",
+    "profile_url": "",
+    "review_link": "",
+    "go_live": "",
+    "listing": {
+      "name": "Coastal Crown Pressure Washing",
+      "primary_category": "Pressure washing service",
+      "secondary_categories": [],
+      "phone": "",
+      "website": "https://restorationroyalties.com/pressure/",
+      "model": "service-area (hide address)",
+      "service_areas": ["Miami-Dade County", "Broward County"],
+      "description": "Pressure washing — house washing, driveways and sidewalks, roof washing, pool decks and fences across South Florida. Residential & commercial. Free estimates.",
+      "claim_first": "Search Google Maps first; claim an existing listing rather than create a duplicate."
+    },
+    "_flip": "Assign a branded DID first; then create GBP, set status 'pending'/'verified', fill phone + profile_url + review_link + go_live."
+  },
   "brandName": "Coastal Crown Pressure Washing",
   "brandShortBold": "COASTAL",
   "brandShortRest": " CROWN",

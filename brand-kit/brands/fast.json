@@ -1,5 +1,26 @@
 {
   "slug": "fast",
+  "gbp": {
+    "auto_verify": true,
+    "verify_method": "search-console-instant",
+    "status": "required",
+    "profile_url": "",
+    "review_link": "",
+    "go_live": "",
+    "listing": {
+      "name": "FAST Adjusting Service",
+      "primary_category": "Public adjuster",
+      "secondary_categories": ["Insurance agency"],
+      "phone": "(855) 223-5878",
+      "website": "https://restorationroyalties.com/fast/",
+      "model": "service-area (hide address)",
+      "service_areas": ["Miami-Dade County", "Broward County", "Palm Beach County"],
+      "description": "Licensed public adjusters maximizing insurance claim payouts for South Florida property owners.",
+      "claim_first": "Search Google Maps first; claim an existing listing rather than create a duplicate.",
+      "note": "855 is toll-free; a local Miami DID is preferable for GBP but the toll-free number works."
+    },
+    "_flip": "On creation: set status 'pending' (or 'verified'), fill profile_url + review_link + go_live."
+  },
   "brandName": "FAST Adjusting Service",
   "brandShortBold": "FAST",
   "brandShortRest": " ADJUSTING SERVICE",
