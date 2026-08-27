@@ -171,6 +171,38 @@ def refer_earn(b):
   </section>'''
 
 
+def flywheel(b):
+    if b.get('_noFlywheel'):
+        return ''
+    return f'''
+  <section>
+    <h2>Subscribe, and you're in business. You're also the reseller.</h2>
+    <p class="lead">This is the heart of the platform: <b>every subscriber is also a reseller.</b> The app + your issued Smart-DID + your digital business card are a <b>business-in-a-box</b> — subscribe and you're operating in your industry the same day; and because you already use it and believe in it, you're the natural person to sign up the next operator and earn.</p>
+    <div class="pillars">
+      <div class="p"><div class="n">🚀 Instantly in business</div><p>The software + issued Smart-DID + digital card put you in business the same day — like a drone operator subscribing at $349/mo and instantly running roofing inspections; any industry, same framework.</p></div>
+      <div class="p"><div class="n">💳 Naturally a reseller</div><p>Trained on it, using it, believing in it — every subscriber is endowed with the ability to resell and earn through their own DID.</p></div>
+      <div class="p"><div class="n">♾️ The symbiotic flywheel</div><p>Each subscriber becomes a seller who signs the next; a self-distributing network that compounds.</p></div>
+    </div>
+    <p class="fineprint">Reseller/referral earnings vary and are not guaranteed; program subject to its terms and applicable FTC/state rules.</p>
+  </section>'''
+
+
+def did_issuance(b):
+    if b.get('_noIssuance'):
+        return ''
+    return f'''
+  <section>
+    <h2>Your number is issued on the spot — and it pays you.</h2>
+    <p class="lead">Join and a real, verified company line is <b>provisioned automatically in under a second</b> — STIR/SHAKEN-branded caller ID, living on a digital business card we provide and pay for. That number is your <b>agent ID and royalty account</b>: any job referred through it is credited to you automatically — no codes, no paperwork.</p>
+    <div class="econ">
+      <div class="ec"><div class="k">&lt;1s</div><div class="l">a verified company DID, issued automatically</div></div>
+      <div class="ec"><div class="k">100%</div><div class="l">private — your personal cell never shows</div></div>
+      <div class="ec"><div class="k">10%*</div><div class="l">royalty on jobs referred through your line</div></div>
+    </div>
+    <p class="fineprint">*Illustrative referral-royalty concept — commission/referral programs on regulated work (adjusting, contracting) are governed per state; terms provided at sign-up and subject to licensing/legality verification. Earnings vary and are not guaranteed.</p>
+  </section>'''
+
+
 def service_map(b):
     m = b.get('map')
     if not m:
@@ -370,7 +402,9 @@ def render(b):
 {tiers(b["tiers"])}
     </table>
   </section>
+{flywheel(b)}
 {refer_earn(b)}
+{did_issuance(b)}
   <section class="last">
     <h2>The ask</h2>
     <p class="lead">Let's stand up your {ln}-line Smart-DID grid and the 30-day pilot — a 20-minute call is all we need to begin. <b>I can have your phones ringing within 24 hours.</b></p>
