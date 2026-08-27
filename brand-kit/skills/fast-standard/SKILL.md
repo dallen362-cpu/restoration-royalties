@@ -98,6 +98,16 @@ Every brand build should offer these, themed to its industry (regenerate labels 
     coordination, "in an emergency call 911"; never put the designation in a GBP business NAME
     (description/services only). Baked into `build.py` (`win_seal()`); suppress with `_noWinSeal`.
     Master site carries the network-wide version (#winseal band + concierge entry).
+18. **Auto territory / opportunity analysis (the biz-plan band)** — at press time the gigapress renders
+    the brand's **territory read**: the lead pool in its NPA·NXX (the network's own telemetry framing),
+    the **industry opportunity evaluation** (job-value range × 24/7 demand driver × opportunity math /
+    critical-mass thesis), and the **rate-center secret-sauce explanation** (local-number answer rates,
+    CNAM, 411/e-411, virgin exchanges, keyword vanity — "numbers engineered into markets, not bought").
+    Config: `"opportunity": {"jobLow","jobHigh","driver"}` (sane defaults); NPA/label pulled from
+    `vanity`/`geo`. Honesty rails: labeled "illustrative planning analysis, not third-party market
+    data"; live lead-flow/storm feeds arm only when data credentials are provisioned (dormant slot —
+    the build never fakes live pulls). Baked into `build.py` (`territory_analysis()`); suppress with
+    `_noTerritory`.
 
 ## House rules for applying it
 - **OUR material:** brand name, URL (`telvergence.com/<slug>` or the brand's own domain we control), and the
