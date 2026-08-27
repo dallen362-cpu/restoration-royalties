@@ -4,7 +4,7 @@
     "auto_verify": true,
     "verify_method": "search-console-instant",
     "status": "required",
-    "blocked_on": "Branded DID assignment (Vitelity provisioning) \u2014 Google's verify-call needs a working phone.",
+    "blocked_on": "Reserve proposed DID 786-769-3766 (POWERON) in the Vitelity portal, then create the GBP (Google's verify-call needs a working line).",
     "profile_url": "",
     "review_link": "",
     "go_live": "",
@@ -16,6 +16,8 @@
       "website": "https://restorationroyalties.com/yes/",
       "model": "service-area (hide address)",
       "service_areas": ["Miami-Dade County", "Broward County"],
+      "phone_proposed": "786-769-3766 (POWERON) — local Miami-Dade · pending Vitelity reservation",
+      "phone_tollfree_option": "1-800-POWER-ON",
       "description": "Licensed Miami electrical contractor: panel upgrades, generators, EV chargers, storm power restoration, 24/7 emergency service.",
       "claim_first": "Search Google Maps first; claim an existing listing rather than create a duplicate."
     },
