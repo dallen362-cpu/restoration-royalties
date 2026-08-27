@@ -1,5 +1,12 @@
 {
   "robots": "noindex, nofollow",
+  "geo": {
+    "lat": 25.77,
+    "lon": -80.19,
+    "zoom": 8,
+    "label": "South Florida",
+    "rateCenterLocale": "Miami, FL"
+  },
   "gbp": {
     "auto_verify": true,
     "verify_method": "search-console-instant",
