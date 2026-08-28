@@ -12,11 +12,18 @@
 4. **Don't let the 5-hour limit run out.** Run independent lanes in parallel, ship in deployed stages
    (commit → merge → verify live per stage), and never leave finished work uncommitted.
 
+## ★ BRAND HIERARCHY (David's standing correction — do not misread)
+- **telvergence.com is the MASTER / flagship brand** — the gigapress AI-mashup studio itself, the parent
+  of the whole universe. **restorationroyalties.com is a SUB-BRAND OUTPUT** of the studio, not the master.
+- Do NOT let the build topology confuse the hierarchy: this `restoration-royalties` repo happens to be the
+  **build shop** (where code lives, and what Cloudflare Pages serves) — that is a deployment fact, NOT a
+  ranking. The master site is telvergence.com; restorationroyalties.com and every `<slug>` brand are its children.
+
 ## Project map (the essentials)
-- **This repo = source of truth + build shop.** Cloudflare Pages serves it at restorationroyalties.com
-  (auto-deploys on merge to `main`). telvergence.com is a SEPARATE repo (`dallen362-cpu/telvergence`,
-  GitHub Pages): deploy = copy `handoff/telvergence-com-index.html` → its `index.html` (+ realm/members)
-  verbatim, commit, push.
+- **Build topology (not hierarchy):** this repo is the source-of-truth build shop; Cloudflare Pages serves
+  it at restorationroyalties.com (auto-deploys on merge to `main`). The MASTER site telvergence.com is a
+  SEPARATE repo (`dallen362-cpu/telvergence`, GitHub Pages): deploy = copy `handoff/telvergence-com-index.html`
+  → its `index.html` (+ realm/members/robots.txt) verbatim, commit, push. (Session has direct push access.)
 - **Homepage source of truth:** `handoff/telvergence-com-index.html` (never hand-edit the telvergence
   repo directly). Current build: "The Talking Edition · V4 Kitchen Sink". V3 frozen forever at
   `telvergence/v3/`; /v2/ and /original/ preserved. Nothing is ever overwritten.
