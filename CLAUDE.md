@@ -33,6 +33,15 @@
   rate-center inventory, WIN partner seal, territory analysis, read-aloud 🔊 + two-way concierge 🎙.
   Build exits 1 until each brand's GBP gate clears (`gbp` block; `--listings` for status) — that exit
   is EXPECTED and the HTML still writes.
+- **GOLD TIER (David 2026-08-28):** the gold-standard shell (modeled on the finished
+  **fastadjustingservice.com** — the 12-part FAST conversion anatomy + the 14-language whole-site
+  **translator** + installable **PWA** + voice concierge, everything re-skinned per industry) is baked
+  into the press as an ADDITIVE tier. A brand JSON with `"tier":"gold"` renders via `render_gold(b)` from
+  `brand-kit/gold-template.html` (tokenized with `@@key@@`; six repeating blocks are data-driven) and also
+  emits `<slug>/manifest.webmanifest` + `sw.js`; brands WITHOUT `tier` use the untouched legacy `render()`
+  and stay byte-identical. **First gold output = Coastal Crown Pressure Washing** (`brands/coastalcrown.json`
+  → `coastalcrown/index.html`, live at coastalcrownpressurewashing.pages.dev). Set `tier:"gold"` on any new
+  brand to auto-stamp it at the gold standard; migrate legacy brands one at a time (prove-then-propagate).
 - **Key skills:** `brand-kit/skills/fast-standard/` (the kitchen-sink standard), `telvergence-brand-deploy/`
   (deploy law + QA gates), `vanity-did-generator/`, `.claude/skills/listing-foundation/` (GBP, auto-verify),
   `.claude/skills/prospect-turnkey/`. Governance: `handoff/SYNC-LANES.md`.

@@ -1,7 +1,7 @@
 /* Coastal Crown Pressure Washing — service worker (PWA shell cache).
-   Mirrors the blueprint approach: cache the shell on install, serve
-   cache-first with a network fallback, and clean up old caches. */
-const CACHE = 'coastal-crown-v1';
+   Cache the shell on install, serve cache-first with a network fallback,
+   and clean up old caches. */
+const CACHE = 'coastalcrown-v1';
 const SHELL = [
   './',
   './index.html',
@@ -26,8 +26,6 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   const req = event.request;
-  // Only handle same-origin GET navigations/assets; let cross-origin (TTS, callback,
-  // translate, CDN) pass straight through to the network.
   if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) return;
   event.respondWith(
     caches.match(req).then((hit) =>

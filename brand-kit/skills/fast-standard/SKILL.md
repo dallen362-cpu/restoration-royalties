@@ -5,6 +5,15 @@ description: The FAST Standard — the "kitchen-sink" feature set every gigapres
 
 # The FAST Standard — kitchen-sink feature parity for every gigapress brand
 
+> **★ NOW TEMPLATE-ENFORCED (gold tier, David 2026-08-28).** The full FAST gold shell is no longer a manual
+> checklist — it is baked into the press. `brand-kit/gold-template.html` is the tokenized fastadjustingservice.com
+> build (12-part conversion anatomy + 14-language translator + installable PWA + voice concierge). A brand
+> JSON with `"tier":"gold"` renders through `render_gold(b)` in `build.py` (data-driven phones/services/faq/
+> reviews/process/KB) and emits `manifest.webmanifest` + `sw.js`; legacy brands (no `tier`) use the untouched
+> `render()` and stay byte-identical. **Reference gold brand: `brands/coastalcrown.json` → coastalcrownpressurewashing.pages.dev.**
+> To make a new brand gold, write its JSON with `tier:"gold"` + the gold fields (see coastalcrown.json); to
+> lift a legacy brand, add the gold fields + `tier:"gold"` and rebuild (prove-then-propagate, one at a time).
+
 **Origin:** `fastadjustingservice.com` is the reference implementation — it carries features none of our
 other material had. David's rule (2026-08-27): **every internal brand site (telvergence.com/<slug>), every
 external brand site, and the telvergence.com master must reach FAST's feature set**, and these features are
