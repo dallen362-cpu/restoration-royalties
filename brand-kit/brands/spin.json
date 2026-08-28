@@ -1,6 +1,7 @@
 {
   "slug": "spin",
   "vanity": {"npa": "305", "industry": "fitness"},
+  "gbp": {"auto_verify": true, "status": "concept", "client": false, "note": "Internal concept mockup \u2014 not a real client business. Exempt from the GBP publish gate until assigned to a real client; creating a Google Business Profile for a non-existent business violates Google policy and risks network-wide suspension."},
   "brandName": "Spin Machine",
   "brandShortBold": "SPIN",
   "brandShortRest": " MACHINE",
