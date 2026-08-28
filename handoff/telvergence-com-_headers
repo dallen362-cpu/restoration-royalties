@@ -1,0 +1,21 @@
+# Cloudflare Pages headers for telvergence.com (the MASTER site).
+# Deploy target: dallen362-cpu/telvergence repo ROOT, once that repo is connected to a
+# Cloudflare Pages project. INERT on GitHub Pages (ignored) — activates on Cloudflare.
+# CRITICAL: NO global X-Robots-Tag noindex here. telvergence.com is the PUBLIC flagship and
+# MUST stay indexable. (restoration-royalties is a build/preview host and IS globally noindexed —
+# do not copy that line onto the master.)
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(self)
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+# Gated showcase pages — never indexed, cached, or archived (real HTTP headers, not just meta).
+# Cloudflare Access is the real lock in front of these — see handoff/CLOUDFLARE-ACCESS-RUNBOOK.md.
+/realm.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-store
+/members.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-store
