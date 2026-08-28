@@ -1,6 +1,662 @@
 {
   "slug": "rr",
-  "vanity": {"npa": "786", "industry": "restoration"},
+  "tier": "gold",
+  "lineCount": 10,
+  "brandName": "Restoration Royalties",
+  "brandShort": "Restoration Royalties",
+  "platformProduct": "Restoration Command",
+  "conciergeName": "Sofia",
+  "markLetter": "R",
+  "region": "South Florida",
+  "county1": "Miami-Dade",
+  "county2": "Broward",
+  "accent": "#2AD4F0",
+  "h1a": "Water. Mold. Fire.",
+  "h1b": "Restored — 24/7.",
+  "flagship": "786-400-1145",
+  "flagshipHref": "+17864001145",
+  "flagshipLast": "786-400-1154",
+  "flagshipNbsp": "786&#8209;400&#8209;1145",
+  "didRange": "786-400-1145 → 1154",
+  "hosts": {
+    "canonical": "restorationroyalties.com",
+    "showroom": "restorationroyalties.telvergence.com",
+    "domain": "restorationroyalties.com",
+    "email": "contact@restorationroyalties.com",
+    "brandNamePlus": "Restoration+Royalties"
+  },
+  "seo": {
+    "title": "Restoration Royalties | 24/7 Water Damage, Mold Remediation & Fire Restoration · Miami-Dade & Broward, South Florida",
+    "description": "24/7 emergency water damage restoration, mold remediation, and fire & smoke repair across Miami-Dade and Broward. Fast dry-out, roof leak & storm tarp, structural drying, and full insurance-claim support. Restoration Royalties, serving South Florida.",
+    "keywords": "water damage restoration, mold remediation, mold removal, flood cleanup, fire and smoke damage, roof leak repair, storm tarp, structural drying, water extraction, emergency restoration, Miami-Dade water damage, Broward mold remediation, insurance claim restoration, commercial water loss, HOA restoration, South Florida restoration, 24/7 emergency",
+    "ogTitle": "Restoration Royalties — Water, Mold & Fire Damage Restored Fast. South Florida, 24/7.",
+    "ogDescription": "Emergency water extraction, mold remediation, fire &amp; smoke cleanup, and roof leak tarp across Miami-Dade &amp; Broward. Licensed crews, full insurance-claim support. Free assessment in under two minutes."
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": [
+      "LocalBusiness",
+      "HomeAndConstructionBusiness"
+    ],
+    "name": "Restoration Royalties",
+    "alternateName": "Restoration Royalties Water, Mold & Fire Restoration",
+    "slogan": "Water, mold, and fire damage restored fast. 24/7 across South Florida.",
+    "url": "https://restorationroyalties.com/",
+    "priceRange": "$$",
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Miami-Dade County"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Broward County"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Palm Beach County"
+      },
+      {
+        "@type": "City",
+        "name": "Miami"
+      },
+      {
+        "@type": "City",
+        "name": "Fort Lauderdale"
+      }
+    ],
+    "knowsAbout": [
+      "water damage restoration",
+      "mold remediation",
+      "fire and smoke restoration",
+      "flood cleanup",
+      "structural drying",
+      "water extraction",
+      "roof leak repair",
+      "storm damage restoration",
+      "commercial water loss"
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Water & Flood Damage Restoration"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mold Remediation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Fire & Smoke Restoration"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Roof Leak & Storm Tarp"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Structural Dry-Out"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Commercial & HOA Restoration"
+        }
+      }
+    ]
+  },
+  "didFootnote": "These are <b>10 dedicated Miami-Dade Smart Numbers</b> — <b>786-400-1145 → 786-400-1154</b>, Restoration Royalties' own assigned local block (CNAM 'RESTORATION ROYALTY'), one line per damage type so every emergency call is answered, recorded, and routed to the right crew. Local 786 presence builds trust with South Florida callers and keeps every lead source measurable. (24/7 AI answering and two-way SMS are being provisioned; the numbers are owned and live.)",
+  "phones": [
+    {
+      "dept": "Flagship · 24/7 Water & Flood Emergency",
+      "vn": "786-400-1145",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "The number on the truck — priority ring, never voicemail. Someone answers the 2am flood call, right now.",
+      "icon": "⭐"
+    },
+    {
+      "dept": "Español · Bilingüe",
+      "vn": "786-400-1146",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "A dedicated bilingual line — the South Florida edge most restoration crews never run.",
+      "icon": "🗣️"
+    },
+    {
+      "dept": "Mold Remediation · Black Mold",
+      "vn": "786-400-1147",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "The health-driven call, separated and prioritized on its own tracked line.",
+      "icon": "🦠"
+    },
+    {
+      "dept": "Water Extraction & Structural Dry-Out",
+      "vn": "786-400-1148",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "Fast-response line routed straight to the on-call extraction crew.",
+      "icon": "💧"
+    },
+    {
+      "dept": "Fire & Smoke Damage",
+      "vn": "786-400-1149",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "Soot, smoke, and deodorizing jobs on their own priority source.",
+      "icon": "🔥"
+    },
+    {
+      "dept": "Roof Leak & Storm Tarp",
+      "vn": "786-400-1150",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "Surges on storm alerts — emergency tarp and dry-in, capacity scales with the weather.",
+      "icon": "🌀"
+    },
+    {
+      "dept": "Commercial · Condo · HOA",
+      "vn": "786-400-1151",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "Property managers and boards straight to the commercial large-loss desk.",
+      "icon": "🏢"
+    },
+    {
+      "dept": "Google · Paid-Ads Tracking",
+      "vn": "786-400-1152",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "Proves ad ROI to the dollar — swap the number, keep the data.",
+      "icon": "🔎"
+    },
+    {
+      "dept": "Direct-Mail · Storm-ZIP Campaigns",
+      "vn": "786-400-1153",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "Attributes offline storm-ZIP mailers and door-hangers so you stop guessing.",
+      "icon": "✉️"
+    },
+    {
+      "dept": "Outbound Branded Caller-ID · Overflow",
+      "vn": "786-400-1154",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "The branded, compliant, recorded outbound face — and it catches overflow.",
+      "icon": "📣"
+    }
+  ],
+  "services": [
+    {
+      "ic": "💧",
+      "title": "Water &amp; Flood Damage",
+      "desc": "24/7 emergency water extraction and flood cleanup — standing water removed, then structural drying that stops secondary damage before it starts."
+    },
+    {
+      "ic": "🦠",
+      "title": "Mold Remediation",
+      "desc": "Containment, HEPA filtration, and safe removal of mold and black mold — the health-driven job handled to IICRC-grade standards, with clearance."
+    },
+    {
+      "ic": "🔥",
+      "title": "Fire &amp; Smoke Restoration",
+      "desc": "Soot and smoke removal, odor neutralization, and cleanup after a fire — contents and structure restored, not just wiped down."
+    },
+    {
+      "ic": "🌀",
+      "title": "Roof Leak &amp; Storm Tarp",
+      "desc": "Emergency tarp and dry-in on storm-damaged roofs, then leak repair — capacity that surges with South Florida weather."
+    },
+    {
+      "ic": "🏚️",
+      "title": "Structural Dry-Out",
+      "desc": "Air movers, LGR dehumidifiers, and daily moisture monitoring that dry walls, floors, and framing to target — documented for your claim."
+    },
+    {
+      "ic": "🏢",
+      "title": "Commercial &amp; HOA",
+      "desc": "Condos, plazas, offices, and community common areas on their own priority line and callback SLA — large-loss crews for tri-county properties."
+    },
+    {
+      "ic": "📋",
+      "title": "Insurance Claim Support",
+      "desc": "Moisture logs, photos, and line-item scope documented from day one, so your carrier sees exactly what happened and what it takes to restore it."
+    },
+    {
+      "ic": "🛠️",
+      "title": "Reconstruction &amp; Rebuild",
+      "desc": "Once it's dry, we rebuild — drywall, flooring, paint, and finish work — so the property goes from damaged back to whole under one roof."
+    }
+  ],
+  "faq": [
+    {
+      "open": true,
+      "q": "How much does water or mold damage restoration cost?",
+      "a": "Most Restoration Royalties jobs run between <b>$250 and $40,000+</b>, depending on the type of loss, the square footage affected, and how far the water, mold, or smoke has spread. A mold inspection is at the low end; a full commercial or condo water loss with rebuild is at the high end. Every assessment is free and the scope is documented in writing — and most of the cost is typically covered by your insurance claim, which we help you document from day one."
+    },
+    {
+      "open": false,
+      "q": "Are you available 24/7 for emergencies?",
+      "a": "Yes. Water and storm damage don't wait for business hours, so neither do we — our flagship line rings <b>24/7</b>, and the emergency call is never left to voicemail. Call the moment you see standing water, a roof leak, or smoke damage; the faster we extract and dry, the less secondary damage and mold you face."
+    },
+    {
+      "open": false,
+      "q": "Do you help with insurance claims?",
+      "a": "Absolutely. From the first visit we document the loss with photos, moisture readings, and a line-item scope so your carrier sees exactly what happened and what restoration requires. We work directly with adjusters throughout the file. (We help you document and present your claim; the coverage decision is always your insurer's.)"
+    },
+    {
+      "open": false,
+      "q": "What areas do you serve?",
+      "a": "We serve all of <b>Miami-Dade and Broward counties</b>, and much of Palm Beach — from Miami, Coral Gables, and Pinecrest up through Fort Lauderdale, Pembroke Pines, and Weston. Every call is geo-tagged by ZIP and routed to the nearest available crew for the fastest possible response."
+    },
+    {
+      "open": false,
+      "q": "Are you licensed and insured?",
+      "a": "Yes. Restoration Royalties is a licensed and insured South Florida restoration company, and our crews work to <b>IICRC-grade standards</b>. The Florida license and IICRC certification numbers of record are displayed on our public-facing material."
+    },
+    {
+      "open": false,
+      "q": "Do you have a Spanish line?",
+      "a": "Sí. We're a bilingual crew and run a dedicated Spanish route — <b>se habla español</b>. Pick your language at the top of this page and both the site and our concierge respond in it."
+    },
+    {
+      "open": false,
+      "q": "Do you handle commercial, condo, and HOA properties?",
+      "a": "Yes. Condos, plazas, offices, and full HOA communities get their own priority line and callback SLA, with large-loss crews for tri-county properties. We coordinate with property managers and boards and can work around your tenants and residents."
+    },
+    {
+      "open": false,
+      "q": "How fast can you get here after a storm?",
+      "a": "Roof leaks and storm damage surge our crews automatically on weather alerts. When a South Florida storm passes, emergency tarp and dry-in leads route straight to the nearest crew — often same-day — so a temporary leak doesn't become a moldy ceiling."
+    }
+  ],
+  "process": [
+    {
+      "n": "1",
+      "h": "Free Assessment",
+      "p": "Call or text 24/7. We respond fast, inspect the damage on-site, and document the loss with photos and moisture readings — no cost, no pressure."
+    },
+    {
+      "n": "2",
+      "h": "Mitigate & Extract",
+      "p": "We stop the source, extract standing water, and set containment — the fast moves that prevent mold and secondary damage."
+    },
+    {
+      "n": "3",
+      "h": "Dry & Restore",
+      "p": "Air movers and dehumidifiers dry to target with daily monitoring; mold, soot, and damage are removed to IICRC-grade standards."
+    },
+    {
+      "n": "4",
+      "h": "Rebuild & Claim",
+      "p": "We rebuild what was damaged and hand your insurer a fully documented file — property restored, paperwork done."
+    }
+  ],
+  "surfaces": [
+    {
+      "name": "Mold Inspection & Test",
+      "range": "$250 – $800",
+      "method": "Assessment + air sample",
+      "turn": "1–2 days",
+      "icon": "🧪"
+    },
+    {
+      "name": "Water Extraction",
+      "range": "$1,500 – $6,000",
+      "method": "Extraction + air movers",
+      "turn": "3–5 days",
+      "icon": "💧"
+    },
+    {
+      "name": "Structural Dry-Out",
+      "range": "$1,500 – $8,000",
+      "method": "LGR dehumidification",
+      "turn": "3–7 days",
+      "icon": "🏚️"
+    },
+    {
+      "name": "Mold Remediation",
+      "range": "$2,000 – $10,000",
+      "method": "Containment + HEPA",
+      "turn": "2–5 days",
+      "icon": "🦠"
+    },
+    {
+      "name": "Roof Leak & Storm Tarp",
+      "range": "$500 – $4,000",
+      "method": "Emergency tarp + dry-in",
+      "turn": "Same day",
+      "icon": "🌀"
+    },
+    {
+      "name": "Fire & Smoke Cleanup",
+      "range": "$3,000 – $25,000",
+      "method": "Soot removal + deodorize",
+      "turn": "1–3 wks",
+      "icon": "🔥"
+    },
+    {
+      "name": "Flood Damage Restoration",
+      "range": "$4,000 – $30,000",
+      "method": "Extract + dry + rebuild",
+      "turn": "1–4 wks",
+      "icon": "🌊"
+    },
+    {
+      "name": "Sewage / Cat-3 Cleanup",
+      "range": "$2,500 – $12,000",
+      "method": "Biohazard protocol",
+      "turn": "3–7 days",
+      "icon": "☣️"
+    },
+    {
+      "name": "Ceiling & Drywall Repair",
+      "range": "$800 – $5,000",
+      "method": "Demo + rebuild",
+      "turn": "2–6 days",
+      "icon": "🧱"
+    },
+    {
+      "name": "Contents Pack-Out & Restore",
+      "range": "$1,000 – $9,000",
+      "method": "Inventory + clean",
+      "turn": "1–3 wks",
+      "icon": "📦"
+    },
+    {
+      "name": "Dehumidification",
+      "range": "$600 – $3,500",
+      "method": "LGR dehumidifiers",
+      "turn": "2–5 days",
+      "icon": "🌬️"
+    },
+    {
+      "name": "Commercial / Condo Water Loss",
+      "range": "$5,000 – $40,000+",
+      "method": "Large-loss crew",
+      "turn": "1–6 wks",
+      "icon": "🏢"
+    }
+  ],
+  "reviews": [
+    {
+      "n": "Maria R., Kendall",
+      "v": 5,
+      "t": "A pipe burst overnight and they had crews extracting water within the hour. Dried the whole house and walked our insurance paperwork through start to finish."
+    },
+    {
+      "n": "James A., Fort Lauderdale",
+      "v": 5,
+      "t": "Black mold behind the bathroom wall — contained, removed, and cleared. They explained every step and the air test came back clean."
+    },
+    {
+      "n": "Denise K., Pinecrest",
+      "v": 5,
+      "t": "Kitchen fire left smoke through the whole condo. The soot and odor are completely gone and it doesn't even smell like it happened. Bilingual and professional."
+    },
+    {
+      "n": "Carlos M., Doral",
+      "v": 5,
+      "t": "Storm tore part of the roof and it was pouring inside. They tarped it same-day, dried the ceilings, and handled the claim. Fast and fair."
+    },
+    {
+      "n": "The Ortiz Family, Weston",
+      "v": 5,
+      "t": "Flooded first floor after the tropical storm. Same-week response, daily moisture updates, and they rebuilt the drywall and flooring too. One company for all of it."
+    },
+    {
+      "n": "Priya S., Brickell",
+      "v": 5,
+      "t": "Handled a water loss across two units in our building on a priority line. Great communication with the board and worked around our residents."
+    }
+  ],
+  "kb": [
+    [
+      [
+        "price",
+        "cost",
+        "how much",
+        "estimate",
+        "quote",
+        "expensive",
+        "charge",
+        "rate",
+        "pricing",
+        "dollar"
+      ],
+      "Most Restoration Royalties jobs run between 250 and 40,000 dollars or more, depending on the type of loss, the square footage affected, and how far the water, mold, or smoke has spread. A mold inspection is at the low end, and a full commercial or condo water loss with rebuild is at the high end. Every assessment is free, and most of the cost is typically covered by your insurance claim, which we help you document from day one."
+    ],
+    [
+      [
+        "emergency",
+        "24",
+        "7",
+        "24/7",
+        "now",
+        "tonight",
+        "after hours",
+        "urgent",
+        "flood",
+        "flooding",
+        "standing water"
+      ],
+      "Yes, we are available 24 by 7 for emergencies. Water and storm damage do not wait for business hours, so neither do we. Our flagship line rings 24 by 7 and the emergency call is never left to voicemail. Call the moment you see standing water, a roof leak, or smoke damage, because the faster we extract and dry, the less secondary damage and mold you face."
+    ],
+    [
+      [
+        "insurance",
+        "claim",
+        "adjuster",
+        "carrier",
+        "covered",
+        "coverage",
+        "policy",
+        "deductible"
+      ],
+      "We help with your insurance claim. From the first visit we document the loss with photos, moisture readings, and a line item scope so your carrier sees exactly what happened and what restoration requires. We work directly with adjusters throughout the file. We help you document and present your claim, and the coverage decision is always your insurer's."
+    ],
+    [
+      [
+        "area",
+        "serve",
+        "where",
+        "location",
+        "miami",
+        "dade",
+        "broward",
+        "palm beach",
+        "zip",
+        "county",
+        "near"
+      ],
+      "We serve all of Miami-Dade and Broward counties, and much of Palm Beach, from Miami and Coral Gables up through Fort Lauderdale, Pembroke Pines, and Weston. Every call is tagged by zip code and routed to the nearest available crew for the fastest response."
+    ],
+    [
+      [
+        "water",
+        "extraction",
+        "dry",
+        "dry out",
+        "drying",
+        "dehumidifier",
+        "moisture",
+        "wet"
+      ],
+      "For water damage we stop the source, extract the standing water, and set up air movers and dehumidifiers to dry the structure to target, with daily moisture monitoring. Fast drying is what prevents mold and secondary damage."
+    ],
+    [
+      [
+        "mold",
+        "black mold",
+        "mildew",
+        "remediation",
+        "spores",
+        "musty"
+      ],
+      "Mold remediation is a health driven job we handle to I I C R C grade standards, with containment, HEPA filtration, and safe removal, followed by clearance testing. If you can see or smell mold, get it assessed before it spreads."
+    ],
+    [
+      [
+        "fire",
+        "smoke",
+        "soot",
+        "odor",
+        "burn",
+        "burned"
+      ],
+      "After a fire we handle soot and smoke removal, odor neutralization, and cleanup of both contents and structure, restoring the property rather than just wiping it down."
+    ],
+    [
+      [
+        "roof",
+        "leak",
+        "storm",
+        "tarp",
+        "hurricane",
+        "wind",
+        "shingle",
+        "dry in"
+      ],
+      "For roof leaks and storm damage we provide emergency tarp and dry in, often same day, then repair the leak. Our crews surge automatically on weather alerts so a temporary leak does not become a moldy ceiling."
+    ],
+    [
+      [
+        "commercial",
+        "condo",
+        "hoa",
+        "business",
+        "property manager",
+        "plaza",
+        "office",
+        "board",
+        "large loss"
+      ],
+      "Absolutely. Condos, plazas, offices, and full H O A communities get their own priority line and callback commitment, with large loss crews for tri county properties. We coordinate with property managers and boards and can work around your tenants and residents."
+    ],
+    [
+      [
+        "licensed",
+        "insured",
+        "insurance company",
+        "certified",
+        "iicrc",
+        "credentials",
+        "trust",
+        "reliable"
+      ],
+      "Restoration Royalties is a licensed and insured South Florida restoration company, and our crews work to I I C R C grade standards. Our Florida license and certification numbers of record are displayed on our public facing material."
+    ],
+    [
+      [
+        "spanish",
+        "espanol",
+        "bilingual",
+        "language",
+        "translate",
+        "idioma"
+      ],
+      "Si. We are a bilingual crew and run a dedicated Spanish route. Se habla espanol. Pick your language at the top of the page and I answer in it."
+    ],
+    [
+      [
+        "reconstruction",
+        "rebuild",
+        "repair",
+        "drywall",
+        "flooring",
+        "restore",
+        "put back"
+      ],
+      "Once everything is dry we rebuild what was damaged, including drywall, flooring, paint, and finish work, so the property goes from damaged back to whole under one company."
+    ],
+    [
+      [
+        "number",
+        "line",
+        "lines",
+        "ten",
+        "10",
+        "smart",
+        "telephone",
+        "phone"
+      ],
+      "Restoration Royalties runs a ten line dedicated Miami-Dade smart number grid so every call is tracked and routed to the right crew. You can reach the flagship 24 by 7 line at 786, 400, 1145. Full A I answering is being provisioned."
+    ],
+    [
+      [
+        "book",
+        "schedule",
+        "appointment",
+        "when",
+        "time",
+        "assessment",
+        "inspection"
+      ],
+      "You can request a free assessment right on this page, or call the 24 by 7 flagship line for an emergency. For emergencies we dispatch the nearest crew fast, and for non urgent jobs we schedule an on site inspection."
+    ],
+    [
+      [
+        "owner",
+        "who",
+        "about",
+        "company",
+        "local"
+      ],
+      "Restoration Royalties is a South Florida restoration company serving Miami-Dade, Broward, and Palm Beach, handling water, mold, fire, and storm damage for residential, commercial, and H O A properties."
+    ],
+    [
+      [
+        "photo",
+        "picture",
+        "send",
+        "text a photo",
+        "image"
+      ],
+      "You can text or upload a photo of the damage and I will give you an instant illustrative range up front. We confirm the exact scope with a free on site assessment."
+    ]
+  ],
   "gbp": {
     "auto_verify": true,
     "verify_method": "search-console-instant",
@@ -17,10 +673,10 @@
         "Waterproofing company",
         "Roofing contractor"
       ],
-      "phone": "",
+      "phone": "786-400-1145",
       "phone_vanity": "786-RESTORE (786-737-8673) — OUR Smart-DID, spells RESTORE · reserve via Vitelity",
-      "phone_interim": "786-400-1145 (our existing grid Smart-DID — verifiable now while the vanity provisions)",
-      "website": "https://restorationroyalties.com/rr/",
+      "phone_interim": "786-400-1145 (our existing grid Smart-DID — live and verifiable now while the vanity provisions)",
+      "website": "https://restorationroyalties.com/",
       "model": "service-area (hide address)",
       "service_areas": [
         "Miami-Dade County",
@@ -28,10 +684,11 @@
         "Palm Beach County"
       ],
       "services": [
-        "Water & flood damage",
+        "Water & flood damage restoration",
         "Mold removal & remediation",
-        "Fire & smoke damage",
+        "Fire & smoke damage restoration",
         "Roof leak & storm damage",
+        "Structural dry-out",
         "Full restoration & rebuild"
       ],
       "seo_keywords": [
@@ -43,212 +700,178 @@
         "storm damage",
         "Miami-Dade water damage"
       ],
-      "description": "24/7 water damage restoration, mold removal, and fire & storm damage repair across Miami-Dade, Broward, and Palm Beach. Fast dry-out, licensed crews, full insurance-claim support.",
+      "description": "24/7 water damage restoration, mold remediation, and fire & storm damage repair across Miami-Dade, Broward, and Palm Beach. Fast dry-out, licensed crews, full insurance-claim support.",
       "claim_first": "Search Google Maps first; claim an existing OUR-brand listing rather than create a duplicate."
     },
-    "_note": "OUR gigapress brand — our name, our URL, our Smart-DID. Old-site data used only as SEO knowledge input.",
-    "_flip": "On creation: set status 'pending'/'verified', fill phone (our DID) + profile_url + review_link + go_live."
+    "_note": "OUR gigapress GOLD brand — our name, our root URL restorationroyalties.com, our owned Smart-DID block 786-400-1145 → 1154 (live). GBP status 'required': real client, profile not yet created — run listing-foundation before publish.",
+    "_flip": "On creation: set status 'pending'/'verified', fill profile_url + review_link + go_live.",
+    "_license": "IICRC certification / Florida license # of record — display on all public-facing material once provided (value pending from client).",
+    "_disclaimer": "Restoration work is licensed and regulated; the license and certification numbers of record are displayed on all public-facing material. Insurance-claim support means documenting/presenting the claim — the coverage decision is the insurer's. All solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch."
   },
-  "brandName": "Restoration Royalties",
-  "brandShortBold": "RESTORATION",
-  "brandShortRest": " ROYALTIES",
-  "accent": "#2AD4F0",
-  "lineCount": 10,
-  "eyebrow": "TELVERGENCE \u00d7 Restoration Royalties \u00b7 Miami-Dade \u00b7 Broward \u00b7 Palm Beach",
-  "h1a": "Every leak is a lead.",
-  "h1b": "We make it ring to you.",
-  "tagline": "A water or mold emergency is a <b>$3,000\u2013$40,000</b> decision made in a panic, at 2am, in whatever language the homeowner speaks. We turn Restoration Royalties into a <b>10-line Smart-DID grid</b> across South Florida where every emergency call is answered first, routed by damage type, and dispatched to a crew \u2014 never letting a five-figure job slip to voicemail.",
-  "demoNote": "South Florida restoration campaign \u00b7 mold \u00b7 water \u00b7 roofing \u00b7 10-line pack \u00b7 Smart-DIDs assigned (786-400 block)",
-  "insight": "a restoration job runs <b>$3,000\u2013$40,000</b> \u2014 and the homeowner calls while water is still running across the floor, day or night, in English or Spanish. Whoever answers first, arrives fastest, and documents best wins the job <b>and</b> the insurance file. A phone number that just rings can't do that. A <b>Smart DID</b> can.",
-  "benchNowTitle": "The typical mold & water company \u2014 today",
-  "benchNow": [
-    "One number, <b>untracked</b> \u2014 no idea what drives a call",
-    "No <b>email or SMS</b> capture \u2014 leads die after hours",
-    "Voicemail on the 2am flood call \u2014 the homeowner calls the next company",
-    "No <b>IICRC credentials</b> or guarantee shown up top",
-    "No Spanish line in a Spanish-speaking market",
-    "Inbound only \u2014 you wait for the storm"
-  ],
-  "benchNextTitle": "The Restoration Royalties offspring",
-  "benchNext": [
-    "<b>10 Smart DIDs</b>, every call source-tagged, recorded, mapped",
-    "Email + <b>SMS capture</b> and missed-call auto-callback",
-    "<b>24/7 AI answer</b> \u2014 the emergency call is never voicemail",
-    "<b>Credentials + guarantee</b> shown up top",
-    "Dedicated <b>Spanish line</b> with bilingual routing",
-    "<b>Outbound dialer</b> works storm-hit ZIPs before the competition wakes up"
-  ],
-  "gridSub": "mold \u00b7 water \u00b7 roofing \u00b7 commercial",
-  "dids": [
+  "photoServices": [
     {
-      "h": "Flagship / 24-7 Water & Flood Emergency",
-      "vn": "(786) 400-1145",
-      "p": "Priority ring, never voicemail \u2014 the line that owns your #1 promise: someone answers, right now.",
-      "pending": false
+      "name": "Water & Flood Damage",
+      "range": "$1,500 – $6,000",
+      "scope": [
+        "Emergency water extraction",
+        "Air movers & dehumidifiers set",
+        "Daily moisture monitoring",
+        "Dry to target + document"
+      ]
     },
     {
-      "h": "Spanish / Biling\u00fce",
-      "vn": "(786) 400-1146",
-      "p": "Routes Spanish callers to a bilingual path \u2014 a South Florida edge nobody else runs.",
-      "pending": false
+      "name": "Mold Remediation",
+      "range": "$2,000 – $10,000",
+      "scope": [
+        "Containment & HEPA setup",
+        "Safe mold removal",
+        "Antimicrobial treatment",
+        "Clearance testing"
+      ]
     },
     {
-      "h": "Mold remediation / black mold",
-      "vn": "(786) 400-1147",
-      "p": "The health-driven call, separated and prioritized.",
-      "pending": false
+      "name": "Fire & Smoke Damage",
+      "range": "$3,000 – $25,000",
+      "scope": [
+        "Soot & smoke removal",
+        "Odor neutralization",
+        "Contents cleaning",
+        "Structure restore"
+      ]
     },
     {
-      "h": "Water extraction / structural dry-out",
-      "vn": "(786) 400-1148",
-      "p": "Fast-response line routed straight to the on-call crew.",
-      "pending": false
+      "name": "Roof Leak & Storm Tarp",
+      "range": "$500 – $4,000",
+      "scope": [
+        "Emergency tarp & dry-in",
+        "Leak source repair",
+        "Interior dry-out",
+        "Damage documented"
+      ]
     },
     {
-      "h": "Roof leak / storm tarp",
-      "vn": "(786) 400-1149",
-      "p": "Surges on storm alerts \u2014 capacity scales with the weather.",
-      "pending": false
+      "name": "Structural Dry-Out",
+      "range": "$1,500 – $8,000",
+      "scope": [
+        "Moisture mapping",
+        "LGR dehumidification",
+        "Daily monitoring",
+        "Dry to target"
+      ]
     },
     {
-      "h": "Commercial / condo & HOA",
-      "vn": "(786) 400-1150",
-      "p": "Property managers and boards straight to the commercial desk.",
-      "pending": false
-    },
-    {
-      "h": "Google / paid-ads DID",
-      "vn": "(786) 400-1151",
-      "p": "Proves ad ROI to the dollar \u2014 swap the number, keep the data.",
-      "pending": false
-    },
-    {
-      "h": "Truck-wrap / fleet DID",
-      "vn": "(786) 400-1152",
-      "p": "The number on the truck, measured like any other channel.",
-      "pending": false
-    },
-    {
-      "h": "Direct-mail / door-hanger DID",
-      "vn": "(786) 400-1153",
-      "p": "Attributes offline storm-ZIP campaigns so you stop guessing.",
-      "pending": false
-    },
-    {
-      "h": "Outbound branded caller-ID",
-      "vn": "(786) 400-1154",
-      "p": "The dialer's outbound face \u2014 branded, compliant, recorded.",
-      "pending": false
+      "name": "Other",
+      "range": "$250 – $40,000+",
+      "scope": [
+        "On-site assessment",
+        "Scope the loss",
+        "Document for claim",
+        "Restore & rebuild"
+      ]
     }
   ],
-  "didFootnote": "This block is <b>assigned and live</b> \u2014 (786) 400-1145 through 1154, CNAM \"RESTORATION ROYALTY\", forwarding to (786) 340-5777. Line roles above are the routing map of record; confirm against the showroom sheet before launch.",
-  "pillars": [
-    {
-      "n": "Outbound",
-      "p": "A compliant dialer works storm-hit South Florida ZIPs for <b>fresh water and mold damage</b> \u2014 branded caller-ID, compliant scripting, recordings, callbacks."
-    },
-    {
-      "n": "Inbound",
-      "p": "10 tracked lines + 24/7 AI answer + SMS. Every source measured, every emergency prioritized, every missed call auto-called-back."
-    },
-    {
-      "n": "Command center",
-      "p": "Calls, texts, booked jobs, ad spend and source \u2014 one live dashboard. You finally see which dollar produced which job."
-    }
+  "trackStages": [
+    "Reported",
+    "Assessment Confirmed",
+    "Scheduled",
+    "Crew On the Way",
+    "Mitigation & Dry-Out",
+    "Restore & Inspect",
+    "Complete"
   ],
-  "complianceChips": [
-    "TCPA",
-    "Do-Not-Call scrubbed",
-    "IICRC-grade standards",
-    "Recorded with disclosure"
+  "trackFeed": [
+    "Crew assigned to your job",
+    "Assessment confirmed on-site",
+    "Job added to the schedule",
+    "Crew en route — geo-tracked",
+    "Mitigation & extraction started",
+    "Structural drying in progress",
+    "Daily moisture readings logged",
+    "Restoration & rebuild underway",
+    "Before & after photos logged"
   ],
-  "license": {
-    "label": "IICRC certification / Florida license # of record",
-    "value": ""
-  },
-  "commandCenter": {
-    "h2": "Your live command center \u2014 the whole operation on one screen",
-    "heroLabel": "Booked job value \u00b7 today",
-    "heroValue": "$47,300.00",
-    "vertical": "restoration",
-    "tiles": [
-      {
-        "k": "5",
-        "l": "Jobs booked today",
-        "c": "cy"
-      },
-      {
-        "k": "$9,460",
-        "l": "Avg. job value",
-        "c": "go"
-      },
-      {
-        "k": "87 \u00b7 5",
-        "l": "Calls \u00b7 jobs booked",
-        "c": "cy"
-      },
-      {
-        "k": "5.2%",
-        "l": "Cost of acquisition",
-        "c": "lm"
-      }
-    ],
-    "controls": [
-      "\u23f8 Stop",
-      "\u25b6 Start",
-      "\u23ec Slow",
-      "\u23eb Speed up",
-      "\ud83d\udd00 Change leads",
-      "\ud83d\udcdd Change script",
-      "\ud83c\udf81 Change offer",
-      "\ud83d\udccd Change territory",
-      "\ud83d\udce1 Change channel"
-    ],
-    "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, territory, or channel instantly and watch your P&amp;L move. <b>You dry the house \u2014 we make the phone ring.</b>"
-  },
-  "map": {
-    "h2": "Your South Florida service area \u2014 live & geo-routed",
-    "fallback": "South Florida Service Area<br>Miami-Dade \u00b7 Broward \u00b7 Palm Beach",
-    "title": "South Florida service area",
-    "q": "Fort+Lauderdale,+FL",
-    "z": 8,
-    "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest available crew across the tri-county \u2014 and outbound storm campaigns target the exact neighborhoods the weather just hit."
-  },
-  "videoSub": "A typical restoration site vs. the offspring \u00b7 the 10-line grid \u00b7 a flood call booked in 90 seconds.",
-  "offerLead": "We stand up all ten numbers, the AI answer, the Spanish route, and a starter outbound campaign across your target ZIPs. For 30 days every inbound emergency is answered and dispatched while the dialer works storm-hit neighborhoods.",
-  "focusVerb": "drying houses and closing files",
-  "referEarn": {
-    "unit": "jobs",
-    "peer": "contractor"
-  },
-  "alternative": "pass, and the next 2am flood call goes to the restoration company up the street \u2014 who corners your ZIPs, then resells you the overflow at half price. Territories are exclusive and claimed once.",
-  "ctaEmail": "contact@restorationroyalties.com",
-  "seo": {
-    "title": "Restoration Royalties \u00d7 Telvergence \u2014 10-Line Smart-DID Proposal",
-    "description": "Telvergence proposal: a 10-line Smart-DID grid for Restoration Royalties \u2014 24/7 AI answer, bilingual routing, damage-type priority lines, and a live command center.",
-    "canonical": "https://restorationroyalties.com/rr/"
-  },
-  "jsonLd": {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Restoration Royalties",
-    "telephone": "+1-786-340-5777",
-    "email": "contact@restorationroyalties.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "13727 SW 152 St, Suite 288",
-      "addressLocality": "Miami",
-      "addressRegion": "FL",
-      "postalCode": "33177",
-      "addressCountry": "US"
-    },
-    "areaServed": [
-      "Miami-Dade County",
-      "Broward County",
-      "Palm Beach County"
-    ],
-    "description": "Water damage, mold, and roofing restoration across South Florida.",
-    "priceRange": "$$"
-  },
-  "disclaimer": "Prepared for Restoration Royalty LLC (South Florida \u2014 Miami-Dade, Broward, Palm Beach) as a discussion proposal. Restoration work is licensed and regulated; the license and certification numbers of record are displayed on all public-facing material. All solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch."
+  "footerServices": [
+    "Water &amp; Flood Damage",
+    "Mold Remediation",
+    "Fire &amp; Smoke Restoration",
+    "Roof Leak &amp; Storm Tarp",
+    "Structural Dry-Out",
+    "Commercial &amp; HOA",
+    "Insurance Claim Support"
+  ],
+  "copy": {
+    "brandTagline": "Restoration",
+    "crewLabel": "Restoration Crew",
+    "heroLede": "Restoration Royalties gets South Florida homes and businesses back to normal — water &amp; flood damage, mold remediation, fire &amp; smoke, roof leaks and storm damage across Miami-Dade and Broward. And now every emergency call rings to the right crew, answered instantly, in the caller's language. <b>Free assessments. 24/7. Residential, commercial &amp; HOA.</b>",
+    "valuesRow": "<span>Fast</span><i>·</i><span>24/7</span><i>·</i><span>Licensed</span><i>·</i><span>Bilingual</span><i>·</i><span>Insured</span><i>·</i><span>IICRC</span>",
+    "statJobsNum": "$250+",
+    "statJobsLbl": "Jobs From — to $40,000+",
+    "safetyBadge": "Licensed &amp; IICRC-Certified",
+    "conciergeIntro": "Hi, I'm Sofia — your Restoration Royalties concierge for water, mold, fire, roof and storm damage. Tap the 🔊 to hear me, pick your language above, or choose a button to begin.",
+    "miniQuoteSay": "Snap a photo of the damage and I'll give you an instant illustrative estimate.",
+    "askPlaceholder": "Ask me — pricing, areas, insurance…",
+    "promiseSafeTitle": "24/7 Emergency",
+    "promiseSafeSub": "Water, mold &amp; fire response",
+    "miamiBandHead": "🌴 Serving South Florida — Miami-Dade &amp; Broward, Fast Emergency Response 🌆",
+    "miamiBandSub": "From Brickell high-rises to Weston estates, South Florida's storms, humidity, and floods leave water, mold, and smoke damage in their wake. When your home or business needs to recover fast, the region trusts <b>Restoration Royalties</b> — bilingual, licensed, insured, Miami-Dade &amp; Broward proud.",
+    "ecoSub": "Every touchpoint — call, text, photo, estimate, and job update — runs through a single intelligent system. That's how Restoration Royalties answers faster, documents cleaner, and keeps you posted from first ring to fully restored.",
+    "ecoTrackSmall": "Watch it go from reported to restored",
+    "pmRow1": "Maria R. — water extraction booked · <b>+$62</b>",
+    "pmRow2": "J. Alvarez — mold estimate sent",
+    "referExample": "Send us a water, mold, fire, roof or storm-damage job.",
+    "stormLede": "South Florida storms leave homes with roof leaks, flooding, and water intrusion that breed mold fast. Restoration Royalties is an enrolled vendor on the WIN network, so <b>post-storm restoration leads move across all three brands</b> and land with the nearest crew — instead of dying in a voicemail box.",
+    "stormStep1": "The WIN Storm Intelligence Network tracks incoming weather across South Florida and flags neighborhoods that will need emergency restoration once it clears.",
+    "stormStep2": "Residents text a photo of the storm damage — a roof leak, flooded floor, or soaked ceiling — timestamped and geo-tagged to the address.",
+    "servicesEyebrow": "Every Loss · One Crew",
+    "servicesH2Lead": "We Restore",
+    "servicesSub": "From an overnight pipe burst to a storm-torn roof, Restoration Royalties matches the right crew and equipment to every loss — emergency extraction, structural drying, mold, fire, and rebuild. Residential, commercial &amp; HOA across Miami-Dade and Broward.",
+    "quoteEyebrow": "Instant Estimate · Damage Selector",
+    "quoteH2": "Snap the Damage. Pick the Service.",
+    "quoteSub": "Point our damage selector at your loss — water, mold, fire, roof leak, storm damage, or a commercial job — and it returns an illustrative estimate range and timeline in seconds. Then book your free on-site assessment in one tap.",
+    "quoteStatus": "Select or search the type of loss you need restored for an instant estimate…",
+    "quotePlaceholder": "🔎 Search a loss — water, mold, roof leak…",
+    "invHeadLabel": "🛠️ Losses We Restore",
+    "invNote": "Estimate ranges are illustrative — your free on-site assessment confirms the exact scope. Most jobs run $250–$40,000+ depending on the loss, and most is typically covered by insurance.",
+    "funnelQ1": "What do you need restored?",
+    "funnelPrompt1": "First — what do you need restored?",
+    "why1Body": "The right crew and equipment for every loss — extraction and LGR drying for water, containment and HEPA for mold, soot and odor for fire — so it's restored right, not just wiped down.",
+    "why2Body": "We assess before we start — on-site and documented for your claim. No surprises, no games. Jobs run $250 to $40,000+ by loss, most covered by insurance.",
+    "why5Body": "From a single flooded room to a full HOA community or plaza, on their own priority lines and callback SLA.",
+    "compareThemHead": "Other Companies",
+    "compareSafeCap": "IICRC-grade methods",
+    "compareSafeThem": "One-size crews",
+    "compareSafeUs": "Method matched to the loss",
+    "standardSub": "Others send a number and disappear. We answer 24/7, route to the nearest crew, match the method to the loss, work to IICRC-grade standards, and document every step for your claim.",
+    "std1Body": "On-site assessments documented for your carrier, usually same day — because water damage shouldn't wait on a callback that never comes.",
+    "stdSafeTitle": "IICRC-Grade Methods",
+    "stdSafeBody": "Containment and HEPA for mold, LGR drying for water, soot and odor control for fire — the right method for every loss, documented to industry standards.",
+    "stdDetergentTitle": "Commercial-Grade Equipment",
+    "stdDetergentBody": "Truck-mounted extractors, air movers, LGR dehumidifiers, and HEPA scrubbers that dry and clean to target — not a shop vac and a box fan.",
+    "std6Body": "If something isn't right, we come back and make it right — accountability most fly-by-night restoration outfits won't put on paper.",
+    "sbSafeB": "IICRC",
+    "sbSafeSpan": "Industry-grade methods",
+    "processH2": "From Damage to Restored in 4 Simple Steps",
+    "photoH2Lead": "Snap the Damage. Upload It.",
+    "photoSub": "Upload photos of the damage — the app returns an illustrative preliminary estimate in seconds, then hands you a job number you can track to completion. Backed by our Satisfaction Commitment. This is an illustrative demo; your free on-site assessment confirms the scope.",
+    "trackH2Lead": "Track Your Job Live —",
+    "trackH2Hl": "From Reported to Restored",
+    "franchiseSub": "Launch a turnkey restoration business powered by the Restoration Command™ platform — Smart Numbers, real-time job tracking, the instant-estimate damage selector, and full onboarding. Run it under your own white-labeled brand, or under our proven franchise license.",
+    "adjBadge": "🎯 For Independent Restoration Crews",
+    "adjSub": "We market aggressively — Google, social &amp; beyond — and generate a steady stream of qualified South Florida jobs. If you're an independent restoration crew without your own branding, get instantly branded under Restoration Royalties, fulfill our leads with our complete tech stack, and keep <b>50% of every gross sale</b>.",
+    "hireRole2": "Restoration Technicians",
+    "finalLede": "From Brickell high-rises to Weston estates, Miami-Dade &amp; Broward count on us for water, mold, fire, roof and storm-damage restoration — answered 24/7, in your language, routed to the nearest crew. Free assessments. Residential, commercial &amp; HOA.",
+    "footerTagline": "🌴 South Florida's restoration crew. Water &amp; flood, mold, fire &amp; smoke, roof leaks and storm damage across Miami-Dade &amp; Broward — residential, commercial &amp; HOA.",
+    "conciergeFallback": "Great question. The fastest answer is a quick call or text to 786, 400, 1145. Or ask me about pricing, the areas we serve, water damage, mold remediation, fire and smoke, roof leaks and storm damage, insurance claims, or booking a free assessment.",
+    "conciergeGreet": "Hi, I'm Sofia, your Restoration Royalties concierge. Tap a button and I'll help you get a free assessment for water, mold, fire, roof, or storm damage.",
+    "quoteSearchHint": "Type a loss (e.g. \"water damage\") or tap Estimate on a card below.",
+    "stormSimAlert": "Storm just cleared Kendall. Homes flagged for water and roof-leak response across your area.",
+    "stormSimOut1": "Roof leak — storm damage",
+    "stormSimEmoji1": "💧",
+    "stormSimReply": "🚚 A Restoration Royalties crew is about 6 minutes away. Free assessment on arrival — want the soaked ceiling and flooring checked too?",
+    "stormSimOut2": "Flooded floor",
+    "stormSimEmoji2": "🌊",
+    "trackPayoutHTML": "✨ Job Complete<b>Fully Restored</b><span style=\"color:var(--muted);font-size:13px\">Your walkthrough is done — the property is back to normal.</span>",
+    "trackCompleteFeed": "🎉 Job complete — property fully restored",
+    "trackCompleteSay": "Great news. Your job is complete and your property is fully restored."
+  }
 }

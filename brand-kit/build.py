@@ -880,6 +880,55 @@ def gold_process_html(b):
         % (s['n'], s['h'], s['p']) for s in b['process'])
 
 
+def gold_surface_opts(b):
+    """Instant-quote surface-selector options (@@surfaceOptsHTML@@) — one per
+    surfaces[] entry. data-val MUST equal the surface name so the quote JS matches."""
+    return '\n'.join(
+        '              <div class="opt" data-field="damage" data-val="%s">'
+        '<span class="e">%s</span> %s</div>'
+        % (s['name'], s.get('icon', '🔹'), s['name']) for s in b['surfaces'])
+
+
+def gold_photo_select_opts(b):
+    """<option> list for the photo-estimate service <select> (@@photoSelectOpts@@)."""
+    return '\n'.join('              <option>%s</option>' % p['name']
+                     for p in b['photoServices'])
+
+
+def gold_photo_services_js(b):
+    """SERVICES map name -> recommended scope steps (@@photoServicesJS@@)."""
+    return ',\n'.join(
+        '    %s:[%s]' % (_js(p['name']), ','.join(_js(x) for x in p['scope']))
+        for p in b['photoServices'])
+
+
+def gold_photo_ranges_js(b):
+    """RANGES map name -> illustrative estimate range (@@photoRangesJS@@)."""
+    return ',\n'.join('    %s:%s' % (_js(p['name']), _js(p['range']))
+                      for p in b['photoServices'])
+
+
+def gold_track_stages_js(b):
+    """Real-time job-tracker STAGES (@@trackStagesJS@@)."""
+    return ',\n'.join('    {k:%s}' % _js(x) for x in b['trackStages'])
+
+
+def gold_track_feed_js(b):
+    """Real-time job-tracker live FEED lines (@@trackFeedJS@@)."""
+    return ',\n'.join('    %s' % _js(x) for x in b['trackFeed'])
+
+
+def gold_footer_services(b):
+    """Footer 'Services' column links (@@footerServicesHTML@@)."""
+    return '\n'.join('        <a href="#services">%s</a>' % n
+                     for n in b['footerServices'])
+
+
+def gold_sitemap_services(b):
+    """Sitemap service links (@@sitemapServicesHTML@@) — same list, compact."""
+    return ''.join('<a href="#services">%s</a>' % n for n in b['footerServices'])
+
+
 def render_gold(b):
     """Render a gold-tier brand from gold-template.html. All substitution is
     str.replace on @@token@@ placeholders (never .format) so the template's CSS
@@ -899,12 +948,21 @@ def render_gold(b):
         'servicesHTML': gold_services_html(b),
         'faqHTML': gold_faq_html(b),
         'processHTML': gold_process_html(b),
+        'surfaceOptsHTML': gold_surface_opts(b),
+        'photoSelectOpts': gold_photo_select_opts(b),
+        'photoServicesJS': gold_photo_services_js(b),
+        'photoRangesJS': gold_photo_ranges_js(b),
+        'trackStagesJS': gold_track_stages_js(b),
+        'trackFeedJS': gold_track_feed_js(b),
+        'footerServicesHTML': gold_footer_services(b),
+        'sitemapServicesHTML': gold_sitemap_services(b),
         'jsonLdBlock': jsonld,
         # brand scalars (injected verbatim — the JSON already holds the exact copy)
         'brandName': b['brandName'],
         'brandShort': b.get('brandShort', b['brandName']),
         'platformProduct': b.get('platformProduct', 'Coastal Connect'),
         'conciergeName': b.get('conciergeName', 'Marina'),
+        'conciergeUpper': b.get('conciergeName', 'Marina').upper(),
         'markLetter': b.get('markLetter', b['brandName'][:1]),
         'region': b.get('region', 'South Florida'),
         'county1': b.get('county1', 'Miami-Dade'),
@@ -930,6 +988,9 @@ def render_gold(b):
         'ogTitle': seo.get('ogTitle', ''),
         'ogDescription': seo.get('ogDescription', ''),
     }
+    # Industry-specific shell prose lives in the brand JSON's "copy" object so the
+    # template stays fully industry-agnostic. Merged last; values are literal text.
+    reps.update(b.get('copy', {}))
     for k, v in reps.items():
         tpl = tpl.replace('@@%s@@' % k, str(v))
     return tpl

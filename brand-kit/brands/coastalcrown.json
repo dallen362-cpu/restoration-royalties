@@ -34,105 +34,590 @@
   },
   "jsonLd": {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+    "@type": [
+      "LocalBusiness",
+      "HomeAndConstructionBusiness"
+    ],
     "name": "Coastal Crown Pressure Washing",
     "alternateName": "Coastal Crown",
     "slogan": "Cleaner surfaces. Better impressions. Free estimates across South Florida.",
     "url": "https://coastalcrownpressurewashing.pages.dev/",
     "priceRange": "$$",
     "areaServed": [
-      {"@type": "AdministrativeArea", "name": "Miami-Dade County"},
-      {"@type": "AdministrativeArea", "name": "Broward County"},
-      {"@type": "City", "name": "Miami"},
-      {"@type": "City", "name": "Fort Lauderdale"}
+      {
+        "@type": "AdministrativeArea",
+        "name": "Miami-Dade County"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Broward County"
+      },
+      {
+        "@type": "City",
+        "name": "Miami"
+      },
+      {
+        "@type": "City",
+        "name": "Fort Lauderdale"
+      }
     ],
-    "knowsAbout": ["pressure washing", "power washing", "soft washing", "roof cleaning", "house washing", "driveway cleaning", "pool deck cleaning", "commercial exterior cleaning"],
-    "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59"},
+    "knowsAbout": [
+      "pressure washing",
+      "power washing",
+      "soft washing",
+      "roof cleaning",
+      "house washing",
+      "driveway cleaning",
+      "pool deck cleaning",
+      "commercial exterior cleaning"
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
     "makesOffer": [
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "House Washing"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Driveways & Sidewalks"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Roof Soft-Wash"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pool Decks & Fences"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial & HOA Pressure Washing"}}
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "House Washing"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Driveways & Sidewalks"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Roof Soft-Wash"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Pool Decks & Fences"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Commercial & HOA Pressure Washing"
+        }
+      }
     ]
   },
   "didFootnote": "These are <b>10 dedicated Miami-Dade Smart Numbers</b> — <b>786-484-7053 → 786-484-7062</b>, Coastal Crown's own assigned local block, one line per job type so every call can be answered, recorded, and routed to the right crew. Local 786 presence builds trust with Miami-Dade callers and keeps every lead source measurable. (AI answering and two-way SMS are being provisioned; the numbers are owned and live.)",
   "phones": [
-    {"dept": "Flagship · Free Estimate 24/7", "vn": "786-484-7053", "terr": "Miami-Dade · 786", "pending": false, "sms": true, "desc": "The number on the card — a free estimate today, answered fast.", "icon": "⭐"},
-    {"dept": "Español · Bilingüe", "vn": "786-484-7054", "terr": "Miami-Dade · 786", "pending": false, "sms": true, "desc": "A dedicated bilingual line — the Miami-Dade edge most crews never run.", "icon": "🗣️"},
-    {"dept": "House Washing", "vn": "786-484-7055", "terr": "Miami-Dade · 786", "pending": false, "sms": true, "desc": "The #1 residential service, tracked on its own line.", "icon": "🏠"},
-    {"dept": "Driveway & Sidewalk", "vn": "786-484-7056", "terr": "Miami-Dade · 786", "pending": false, "sms": true, "desc": "The volume workhorse — fast quote, fast schedule.", "icon": "🛣️"},
-    {"dept": "Roof Washing (Soft-Wash)", "vn": "786-484-7057", "terr": "Miami-Dade · 786", "pending": false, "sms": true, "desc": "Safe low-pressure roof cleaning — the highest-ticket residential job.", "icon": "🧼"},
-    {"dept": "Pool Deck Cleaning", "vn": "786-484-7058", "terr": "Miami-Dade · 786", "pending": false, "sms": true, "desc": "A high-frequency South Florida job on its own tracked source.", "icon": "🏊"},
-    {"dept": "Fence Cleaning", "vn": "786-484-7059", "terr": "Miami-Dade · 786", "pending": false, "sms": true, "desc": "The natural add-on — captured instead of referred away.", "icon": "🪵"},
-    {"dept": "Post-Storm Exterior Cleanup", "vn": "786-484-7060", "terr": "Miami-Dade · 786", "pending": false, "sms": true, "desc": "Storm-driven demand, handed over in real time from the WIN network.", "icon": "🌀"},
-    {"dept": "Commercial · HOA · Property Mgmt", "vn": "786-484-7061", "terr": "Miami-Dade · 786", "pending": false, "sms": true, "desc": "Contract-sized work and community boards on their own priority line.", "icon": "🏢"},
-    {"dept": "Campaign Tracking / Overflow", "vn": "786-484-7062", "terr": "Miami-Dade · 786", "pending": false, "sms": true, "desc": "Attributes each flyer, sign, and ad to the dollar — and catches overflow.", "icon": "🔎"}
+    {
+      "dept": "Flagship · Free Estimate 24/7",
+      "vn": "786-484-7053",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "The number on the card — a free estimate today, answered fast.",
+      "icon": "⭐"
+    },
+    {
+      "dept": "Español · Bilingüe",
+      "vn": "786-484-7054",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "A dedicated bilingual line — the Miami-Dade edge most crews never run.",
+      "icon": "🗣️"
+    },
+    {
+      "dept": "House Washing",
+      "vn": "786-484-7055",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "The #1 residential service, tracked on its own line.",
+      "icon": "🏠"
+    },
+    {
+      "dept": "Driveway & Sidewalk",
+      "vn": "786-484-7056",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "The volume workhorse — fast quote, fast schedule.",
+      "icon": "🛣️"
+    },
+    {
+      "dept": "Roof Washing (Soft-Wash)",
+      "vn": "786-484-7057",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "Safe low-pressure roof cleaning — the highest-ticket residential job.",
+      "icon": "🧼"
+    },
+    {
+      "dept": "Pool Deck Cleaning",
+      "vn": "786-484-7058",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "A high-frequency South Florida job on its own tracked source.",
+      "icon": "🏊"
+    },
+    {
+      "dept": "Fence Cleaning",
+      "vn": "786-484-7059",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "The natural add-on — captured instead of referred away.",
+      "icon": "🪵"
+    },
+    {
+      "dept": "Post-Storm Exterior Cleanup",
+      "vn": "786-484-7060",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "Storm-driven demand, handed over in real time from the WIN network.",
+      "icon": "🌀"
+    },
+    {
+      "dept": "Commercial · HOA · Property Mgmt",
+      "vn": "786-484-7061",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "Contract-sized work and community boards on their own priority line.",
+      "icon": "🏢"
+    },
+    {
+      "dept": "Campaign Tracking / Overflow",
+      "vn": "786-484-7062",
+      "terr": "Miami-Dade · 786",
+      "pending": false,
+      "sms": true,
+      "desc": "Attributes each flyer, sign, and ad to the dollar — and catches overflow.",
+      "icon": "🔎"
+    }
   ],
   "services": [
-    {"ic": "🏠", "title": "House Washing", "desc": "Soft-wash cleaning that lifts mold, mildew, and algae off stucco, siding, and painted surfaces — safely, without blasting your finish."},
-    {"ic": "🛣️", "title": "Driveways &amp; Sidewalks", "desc": "Surface-cleaner passes that strip years of dirt, oil, rust, and tire marks off concrete and pavers — bright, even, streak-free."},
-    {"ic": "🧼", "title": "Roof Soft-Wash", "desc": "Low-pressure roof cleaning that kills the black algae streaks and biological growth without damaging shingles or tile."},
-    {"ic": "🏊", "title": "Pool Decks", "desc": "Slip-safe deck cleaning for pavers, travertine, and concrete around the pool — brightened and sanitized for South Florida summers."},
-    {"ic": "🪵", "title": "Fences &amp; Screens", "desc": "Vinyl, wood, and aluminum fencing plus screen enclosures washed back to clean — the natural add-on to any house wash."},
-    {"ic": "🌀", "title": "Post-Storm Cleanup", "desc": "Debris, mud, and algae blasted off driveways, roofs, and decks after South Florida storms — dispatched through the WIN network."},
-    {"ic": "🏢", "title": "Commercial &amp; HOA", "desc": "Storefronts, plazas, dumpster pads, garages, and community common areas on their own priority lines and callback SLA."},
-    {"ic": "✨", "title": "Rust &amp; Stain Removal", "desc": "Targeted treatment for irrigation rust, battery acid, and organic staining on concrete, pavers, and stone."}
+    {
+      "ic": "🏠",
+      "title": "House Washing",
+      "desc": "Soft-wash cleaning that lifts mold, mildew, and algae off stucco, siding, and painted surfaces — safely, without blasting your finish."
+    },
+    {
+      "ic": "🛣️",
+      "title": "Driveways &amp; Sidewalks",
+      "desc": "Surface-cleaner passes that strip years of dirt, oil, rust, and tire marks off concrete and pavers — bright, even, streak-free."
+    },
+    {
+      "ic": "🧼",
+      "title": "Roof Soft-Wash",
+      "desc": "Low-pressure roof cleaning that kills the black algae streaks and biological growth without damaging shingles or tile."
+    },
+    {
+      "ic": "🏊",
+      "title": "Pool Decks",
+      "desc": "Slip-safe deck cleaning for pavers, travertine, and concrete around the pool — brightened and sanitized for South Florida summers."
+    },
+    {
+      "ic": "🪵",
+      "title": "Fences &amp; Screens",
+      "desc": "Vinyl, wood, and aluminum fencing plus screen enclosures washed back to clean — the natural add-on to any house wash."
+    },
+    {
+      "ic": "🌀",
+      "title": "Post-Storm Cleanup",
+      "desc": "Debris, mud, and algae blasted off driveways, roofs, and decks after South Florida storms — dispatched through the WIN network."
+    },
+    {
+      "ic": "🏢",
+      "title": "Commercial &amp; HOA",
+      "desc": "Storefronts, plazas, dumpster pads, garages, and community common areas on their own priority lines and callback SLA."
+    },
+    {
+      "ic": "✨",
+      "title": "Rust &amp; Stain Removal",
+      "desc": "Targeted treatment for irrigation rust, battery acid, and organic staining on concrete, pavers, and stone."
+    }
   ],
   "faq": [
-    {"open": true, "q": "How much does pressure washing cost?", "a": "Most Coastal Crown jobs run between <b>$250 and $8,000+</b>, depending on the surface, the square footage, and how heavy the buildup is. A single driveway is at the low end; a full commercial lot or multi-building HOA is at the high end. Every quote is free and given in writing before we start — no surprises."},
-    {"open": false, "q": "What areas do you serve?", "a": "We serve all of <b>Miami-Dade and Broward counties</b> — from Brickell, Coral Gables, and Pinecrest up through Fort Lauderdale, Pembroke Pines, and Weston. Every call is geo-tagged by ZIP and routed to the nearest available crew."},
-    {"open": false, "q": "Are estimates really free?", "a": "Yes. Estimates are always free and there's no obligation. Call, text, or snap a photo of the surface and we'll give you an illustrative range up front, then confirm the exact price with a free on-site visit."},
-    {"open": false, "q": "What's the difference between soft-wash and pressure washing?", "a": "Pressure washing uses high water pressure to blast dirt off hard surfaces like concrete driveways and sidewalks. <b>Soft-washing</b> uses low pressure plus surface-safe cleaning solutions to kill algae and mildew on delicate surfaces — roofs, painted siding, screens, and stucco — without damaging them. We match the method to the surface every time."},
-    {"open": false, "q": "Do you have a Spanish line?", "a": "Sí. We're a bilingual crew and run a dedicated Spanish route — <b>se habla español</b>. Pick your language at the top of this page and the site and our concierge respond in it."},
-    {"open": false, "q": "Do you handle commercial and HOA properties?", "a": "Absolutely. Storefronts, plazas, restaurants, parking garages, and full HOA communities get their own priority lines and callback SLA. We schedule off-hours where needed so we're never in your customers' way."},
-    {"open": false, "q": "Can you clean up after a storm?", "a": "Yes — post-storm exterior cleanup is one of our specialties, and Coastal Crown is an enrolled vendor on the WIN storm-dispatch network. When a South Florida storm passes, cleanup leads route straight to the nearest crew for a fast quote and same-week service."}
+    {
+      "open": true,
+      "q": "How much does pressure washing cost?",
+      "a": "Most Coastal Crown jobs run between <b>$250 and $8,000+</b>, depending on the surface, the square footage, and how heavy the buildup is. A single driveway is at the low end; a full commercial lot or multi-building HOA is at the high end. Every quote is free and given in writing before we start — no surprises."
+    },
+    {
+      "open": false,
+      "q": "What areas do you serve?",
+      "a": "We serve all of <b>Miami-Dade and Broward counties</b> — from Brickell, Coral Gables, and Pinecrest up through Fort Lauderdale, Pembroke Pines, and Weston. Every call is geo-tagged by ZIP and routed to the nearest available crew."
+    },
+    {
+      "open": false,
+      "q": "Are estimates really free?",
+      "a": "Yes. Estimates are always free and there's no obligation. Call, text, or snap a photo of the surface and we'll give you an illustrative range up front, then confirm the exact price with a free on-site visit."
+    },
+    {
+      "open": false,
+      "q": "What's the difference between soft-wash and pressure washing?",
+      "a": "Pressure washing uses high water pressure to blast dirt off hard surfaces like concrete driveways and sidewalks. <b>Soft-washing</b> uses low pressure plus surface-safe cleaning solutions to kill algae and mildew on delicate surfaces — roofs, painted siding, screens, and stucco — without damaging them. We match the method to the surface every time."
+    },
+    {
+      "open": false,
+      "q": "Do you have a Spanish line?",
+      "a": "Sí. We're a bilingual crew and run a dedicated Spanish route — <b>se habla español</b>. Pick your language at the top of this page and the site and our concierge respond in it."
+    },
+    {
+      "open": false,
+      "q": "Do you handle commercial and HOA properties?",
+      "a": "Absolutely. Storefronts, plazas, restaurants, parking garages, and full HOA communities get their own priority lines and callback SLA. We schedule off-hours where needed so we're never in your customers' way."
+    },
+    {
+      "open": false,
+      "q": "Can you clean up after a storm?",
+      "a": "Yes — post-storm exterior cleanup is one of our specialties, and Coastal Crown is an enrolled vendor on the WIN storm-dispatch network. When a South Florida storm passes, cleanup leads route straight to the nearest crew for a fast quote and same-week service."
+    }
   ],
   "process": [
-    {"n": "1", "h": "Free Estimate", "p": "Call, text, or snap a photo. We quote the job on-site and in writing — no cost, no pressure."},
-    {"n": "2", "h": "We Schedule", "p": "Pick a time that works. The nearest crew is dispatched with the right equipment for your surfaces."},
-    {"n": "3", "h": "We Wash", "p": "Soft-wash or pressure, matched to each surface — mold, algae, dirt, and stains lifted away, safely."},
-    {"n": "4", "h": "You Shine", "p": "Before-and-after photos logged, walkthrough done, satisfaction guaranteed. Your place looks brand-new."}
+    {
+      "n": "1",
+      "h": "Free Estimate",
+      "p": "Call, text, or snap a photo. We quote the job on-site and in writing — no cost, no pressure."
+    },
+    {
+      "n": "2",
+      "h": "We Schedule",
+      "p": "Pick a time that works. The nearest crew is dispatched with the right equipment for your surfaces."
+    },
+    {
+      "n": "3",
+      "h": "We Wash",
+      "p": "Soft-wash or pressure, matched to each surface — mold, algae, dirt, and stains lifted away, safely."
+    },
+    {
+      "n": "4",
+      "h": "You Shine",
+      "p": "Before-and-after photos logged, walkthrough done, satisfaction guaranteed. Your place looks brand-new."
+    }
   ],
   "surfaces": [
-    {"name": "House Washing", "range": "$250 – $600", "method": "Soft-wash", "turn": "2–4 hrs"},
-    {"name": "Driveway & Sidewalk", "range": "$150 – $450", "method": "Surface cleaner", "turn": "1–3 hrs"},
-    {"name": "Roof Soft-Wash", "range": "$400 – $1,200", "method": "Low-pressure soft-wash", "turn": "3–5 hrs"},
-    {"name": "Pool Deck", "range": "$200 – $550", "method": "Surface + detergent", "turn": "2–3 hrs"},
-    {"name": "Fence & Screen", "range": "$120 – $400", "method": "Soft-wash", "turn": "1–3 hrs"},
-    {"name": "Patio & Lanai", "range": "$150 – $450", "method": "Soft-wash", "turn": "1–3 hrs"},
-    {"name": "Paver Deep-Clean", "range": "$300 – $900", "method": "Deep clean", "turn": "Half day"},
-    {"name": "Rust & Stain Removal", "range": "$150 – $600", "method": "Targeted treatment", "turn": "1–3 hrs"},
-    {"name": "Commercial Storefront", "range": "$500 – $3,000", "method": "Mixed method", "turn": "Half–full day"},
-    {"name": "Restaurant / Dumpster Pad", "range": "$250 – $800", "method": "Hot-water degrease", "turn": "2–4 hrs"},
-    {"name": "Parking Garage", "range": "$1,000 – $5,000", "method": "Fleet crew", "turn": "Overnight"},
-    {"name": "HOA / Community", "range": "$1,500 – $8,000+", "method": "Fleet crew", "turn": "Multi-day"}
+    {
+      "name": "House Washing",
+      "range": "$250 – $600",
+      "method": "Soft-wash",
+      "turn": "2–4 hrs",
+      "icon": "🏠"
+    },
+    {
+      "name": "Driveway & Sidewalk",
+      "range": "$150 – $450",
+      "method": "Surface cleaner",
+      "turn": "1–3 hrs",
+      "icon": "🛣️"
+    },
+    {
+      "name": "Roof Soft-Wash",
+      "range": "$400 – $1,200",
+      "method": "Low-pressure soft-wash",
+      "turn": "3–5 hrs",
+      "icon": "🧼"
+    },
+    {
+      "name": "Pool Deck",
+      "range": "$200 – $550",
+      "method": "Surface + detergent",
+      "turn": "2–3 hrs",
+      "icon": "🏊"
+    },
+    {
+      "name": "Fence & Screen",
+      "range": "$120 – $400",
+      "method": "Soft-wash",
+      "turn": "1–3 hrs",
+      "icon": "🪵"
+    },
+    {
+      "name": "Patio & Lanai",
+      "range": "$150 – $450",
+      "method": "Soft-wash",
+      "turn": "1–3 hrs",
+      "icon": "🌿"
+    },
+    {
+      "name": "Paver Deep-Clean",
+      "range": "$300 – $900",
+      "method": "Deep clean",
+      "turn": "Half day",
+      "icon": "🧱"
+    },
+    {
+      "name": "Rust & Stain Removal",
+      "range": "$150 – $600",
+      "method": "Targeted treatment",
+      "turn": "1–3 hrs",
+      "icon": "✨"
+    },
+    {
+      "name": "Commercial Storefront",
+      "range": "$500 – $3,000",
+      "method": "Mixed method",
+      "turn": "Half–full day",
+      "icon": "🏢"
+    },
+    {
+      "name": "Restaurant / Dumpster Pad",
+      "range": "$250 – $800",
+      "method": "Hot-water degrease",
+      "turn": "2–4 hrs",
+      "icon": "🍔"
+    },
+    {
+      "name": "Parking Garage",
+      "range": "$1,000 – $5,000",
+      "method": "Fleet crew",
+      "turn": "Overnight",
+      "icon": "🅿️"
+    },
+    {
+      "name": "HOA / Community",
+      "range": "$1,500 – $8,000+",
+      "method": "Fleet crew",
+      "turn": "Multi-day",
+      "icon": "🏘️"
+    }
   ],
   "reviews": [
-    {"n": "Maria R., Kendall", "v": 5, "t": "Our driveway and pavers looked brand new. Booking was easy and the crew showed up right on time. Highly recommend for South Florida homes."},
-    {"n": "James A., Fort Lauderdale", "v": 5, "t": "Roof soft-wash took all the black streaks off without any damage. They explained the difference between soft-wash and pressure and picked the right one."},
-    {"n": "Denise K., Pinecrest", "v": 5, "t": "House wash lifted years of mildew off the stucco. Bilingual, professional, and a fair free estimate up front."},
-    {"n": "Carlos M., Doral", "v": 5, "t": "Pool deck and screen enclosure came out spotless before a family party. Fast quote, fast schedule."},
-    {"n": "The Ortiz Family, Weston", "v": 5, "t": "Post-storm cleanup on the driveway and lanai — booked and done the same week. Great communication the whole way."},
-    {"n": "Priya S., Brickell", "v": 5, "t": "Handled our HOA common areas on a priority line. Clean job, off-hours scheduling, easy to work with."}
+    {
+      "n": "Maria R., Kendall",
+      "v": 5,
+      "t": "Our driveway and pavers looked brand new. Booking was easy and the crew showed up right on time. Highly recommend for South Florida homes."
+    },
+    {
+      "n": "James A., Fort Lauderdale",
+      "v": 5,
+      "t": "Roof soft-wash took all the black streaks off without any damage. They explained the difference between soft-wash and pressure and picked the right one."
+    },
+    {
+      "n": "Denise K., Pinecrest",
+      "v": 5,
+      "t": "House wash lifted years of mildew off the stucco. Bilingual, professional, and a fair free estimate up front."
+    },
+    {
+      "n": "Carlos M., Doral",
+      "v": 5,
+      "t": "Pool deck and screen enclosure came out spotless before a family party. Fast quote, fast schedule."
+    },
+    {
+      "n": "The Ortiz Family, Weston",
+      "v": 5,
+      "t": "Post-storm cleanup on the driveway and lanai — booked and done the same week. Great communication the whole way."
+    },
+    {
+      "n": "Priya S., Brickell",
+      "v": 5,
+      "t": "Handled our HOA common areas on a priority line. Clean job, off-hours scheduling, easy to work with."
+    }
   ],
   "kb": [
-    [["price", "cost", "how much", "estimate", "quote", "expensive", "charge", "rate", "pricing", "dollar"], "Most Coastal Crown jobs run between 250 and 8,000 dollars or more, depending on the surface, the square footage, and how heavy the buildup is. A single driveway is at the low end, and a full commercial lot or H O A is at the high end. Every quote is free and given in writing before we start."],
-    [["area", "serve", "where", "location", "miami", "dade", "broward", "zip", "county", "near"], "We serve all of Miami-Dade and Broward counties, from Brickell and Coral Gables up through Fort Lauderdale, Pembroke Pines, and Weston. Every call is tagged by zip code and routed to the nearest available crew."],
-    [["free", "obligation", "no cost"], "Yes. Estimates are always free and there is no obligation. Call, text, or snap a photo of the surface and I will give you an illustrative range up front, then we confirm the exact price on a free on-site visit."],
-    [["soft", "soft-wash", "softwash", "pressure", "difference", "method", "damage", "safe"], "Pressure washing uses high water pressure to clean hard surfaces like concrete driveways and sidewalks. Soft washing uses low pressure plus surface safe cleaners to kill algae and mildew on delicate surfaces like roofs, painted siding, and screens, without damaging them. We match the method to the surface every time."],
-    [["house", "home", "siding", "stucco", "exterior wall"], "House washing is a gentle soft wash that lifts mold, mildew, and algae off stucco, siding, and painted surfaces safely, without blasting your finish."],
-    [["driveway", "sidewalk", "concrete", "paver", "walkway", "patio"], "For driveways and sidewalks we run a surface cleaner that strips years of dirt, oil, rust, and tire marks off concrete and pavers, leaving them bright, even, and streak free."],
-    [["roof", "shingle", "tile", "algae streak", "black streak"], "Roof cleaning is a low pressure soft wash that kills the black algae streaks and biological growth without damaging your shingles or tile."],
-    [["pool", "deck", "travertine"], "We clean pool decks, pavers, travertine, and concrete around the pool, brightened and slip safe for South Florida summers."],
-    [["fence", "screen", "enclosure", "gate"], "We wash vinyl, wood, and aluminum fencing plus screen enclosures back to clean. It is the natural add on to a house wash."],
-    [["commercial", "hoa", "condo", "community", "plaza", "storefront", "business", "property manager", "restaurant", "garage", "fleet"], "Absolutely. Storefronts, plazas, restaurants, parking garages, and full H O A communities get their own priority lines and a callback commitment. We can schedule off hours so we are never in your customers way."],
-    [["spanish", "espanol", "bilingual", "language", "translate", "idioma"], "Si. We are a bilingual crew and run a dedicated Spanish route. Se habla espanol. Pick your language at the top of the page and I answer in it."],
-    [["storm", "hurricane", "post-storm", "cleanup", "debris", "after the storm", "win"], "Post storm exterior cleanup is one of our specialties, and Coastal Crown is an enrolled vendor on the win storm dispatch network. When a South Florida storm passes, cleanup leads route straight to the nearest crew for a fast quote and same week service."],
-    [["number", "line", "lines", "twenty", "20", "smart", "telephone", "phone"], "Coastal Crown runs a ten line dedicated Miami-Dade smart number grid so every call is tracked and routed to the right crew. You can reach the flagship line at 786, 484, 7053. Full 24 by 7 A I answering is being provisioned."],
-    [["book", "schedule", "appointment", "when", "time", "calendar"], "You can book a free estimate right on this page. Scroll to the schedule section, pick a time, and it drops onto our calendar with an instant confirmation."],
-    [["owner", "who", "about", "company", "local"], "Coastal Crown Pressure Washing is a South Florida owned crew, serving Miami-Dade and Broward. Residential, commercial, and H O A."],
-    [["insured", "insurance", "licensed", "trust", "reliable"], "Coastal Crown is an insured South Florida business, and we treat your property with care and back the work with our satisfaction commitment."]
+    [
+      [
+        "price",
+        "cost",
+        "how much",
+        "estimate",
+        "quote",
+        "expensive",
+        "charge",
+        "rate",
+        "pricing",
+        "dollar"
+      ],
+      "Most Coastal Crown jobs run between 250 and 8,000 dollars or more, depending on the surface, the square footage, and how heavy the buildup is. A single driveway is at the low end, and a full commercial lot or H O A is at the high end. Every quote is free and given in writing before we start."
+    ],
+    [
+      [
+        "area",
+        "serve",
+        "where",
+        "location",
+        "miami",
+        "dade",
+        "broward",
+        "zip",
+        "county",
+        "near"
+      ],
+      "We serve all of Miami-Dade and Broward counties, from Brickell and Coral Gables up through Fort Lauderdale, Pembroke Pines, and Weston. Every call is tagged by zip code and routed to the nearest available crew."
+    ],
+    [
+      [
+        "free",
+        "obligation",
+        "no cost"
+      ],
+      "Yes. Estimates are always free and there is no obligation. Call, text, or snap a photo of the surface and I will give you an illustrative range up front, then we confirm the exact price on a free on-site visit."
+    ],
+    [
+      [
+        "soft",
+        "soft-wash",
+        "softwash",
+        "pressure",
+        "difference",
+        "method",
+        "damage",
+        "safe"
+      ],
+      "Pressure washing uses high water pressure to clean hard surfaces like concrete driveways and sidewalks. Soft washing uses low pressure plus surface safe cleaners to kill algae and mildew on delicate surfaces like roofs, painted siding, and screens, without damaging them. We match the method to the surface every time."
+    ],
+    [
+      [
+        "house",
+        "home",
+        "siding",
+        "stucco",
+        "exterior wall"
+      ],
+      "House washing is a gentle soft wash that lifts mold, mildew, and algae off stucco, siding, and painted surfaces safely, without blasting your finish."
+    ],
+    [
+      [
+        "driveway",
+        "sidewalk",
+        "concrete",
+        "paver",
+        "walkway",
+        "patio"
+      ],
+      "For driveways and sidewalks we run a surface cleaner that strips years of dirt, oil, rust, and tire marks off concrete and pavers, leaving them bright, even, and streak free."
+    ],
+    [
+      [
+        "roof",
+        "shingle",
+        "tile",
+        "algae streak",
+        "black streak"
+      ],
+      "Roof cleaning is a low pressure soft wash that kills the black algae streaks and biological growth without damaging your shingles or tile."
+    ],
+    [
+      [
+        "pool",
+        "deck",
+        "travertine"
+      ],
+      "We clean pool decks, pavers, travertine, and concrete around the pool, brightened and slip safe for South Florida summers."
+    ],
+    [
+      [
+        "fence",
+        "screen",
+        "enclosure",
+        "gate"
+      ],
+      "We wash vinyl, wood, and aluminum fencing plus screen enclosures back to clean. It is the natural add on to a house wash."
+    ],
+    [
+      [
+        "commercial",
+        "hoa",
+        "condo",
+        "community",
+        "plaza",
+        "storefront",
+        "business",
+        "property manager",
+        "restaurant",
+        "garage",
+        "fleet"
+      ],
+      "Absolutely. Storefronts, plazas, restaurants, parking garages, and full H O A communities get their own priority lines and a callback commitment. We can schedule off hours so we are never in your customers way."
+    ],
+    [
+      [
+        "spanish",
+        "espanol",
+        "bilingual",
+        "language",
+        "translate",
+        "idioma"
+      ],
+      "Si. We are a bilingual crew and run a dedicated Spanish route. Se habla espanol. Pick your language at the top of the page and I answer in it."
+    ],
+    [
+      [
+        "storm",
+        "hurricane",
+        "post-storm",
+        "cleanup",
+        "debris",
+        "after the storm",
+        "win"
+      ],
+      "Post storm exterior cleanup is one of our specialties, and Coastal Crown is an enrolled vendor on the win storm dispatch network. When a South Florida storm passes, cleanup leads route straight to the nearest crew for a fast quote and same week service."
+    ],
+    [
+      [
+        "number",
+        "line",
+        "lines",
+        "twenty",
+        "20",
+        "smart",
+        "telephone",
+        "phone"
+      ],
+      "Coastal Crown runs a ten line dedicated Miami-Dade smart number grid so every call is tracked and routed to the right crew. You can reach the flagship line at 786, 484, 7053. Full 24 by 7 A I answering is being provisioned."
+    ],
+    [
+      [
+        "book",
+        "schedule",
+        "appointment",
+        "when",
+        "time",
+        "calendar"
+      ],
+      "You can book a free estimate right on this page. Scroll to the schedule section, pick a time, and it drops onto our calendar with an instant confirmation."
+    ],
+    [
+      [
+        "owner",
+        "who",
+        "about",
+        "company",
+        "local"
+      ],
+      "Coastal Crown Pressure Washing is a South Florida owned crew, serving Miami-Dade and Broward. Residential, commercial, and H O A."
+    ],
+    [
+      [
+        "insured",
+        "insurance",
+        "licensed",
+        "trust",
+        "reliable"
+      ],
+      "Coastal Crown is an insured South Florida business, and we treat your property with care and back the work with our satisfaction commitment."
+    ]
   ],
   "gbp": {
     "auto_verify": true,
@@ -144,14 +629,192 @@
     "listing": {
       "name": "Coastal Crown Pressure Washing",
       "primary_category": "Pressure washing service",
-      "secondary_categories": ["Cleaning service", "Building restoration service"],
+      "secondary_categories": [
+        "Cleaning service",
+        "Building restoration service"
+      ],
       "phone": "786-484-7053",
       "website": "https://coastalcrownpressurewashing.pages.dev/",
       "model": "service-area (hide address)",
-      "service_areas": ["Miami-Dade County", "Broward County"],
-      "services": ["House washing", "Driveways & sidewalks", "Roof soft-wash", "Pool decks & fences", "Commercial & HOA"],
+      "service_areas": [
+        "Miami-Dade County",
+        "Broward County"
+      ],
+      "services": [
+        "House washing",
+        "Driveways & sidewalks",
+        "Roof soft-wash",
+        "Pool decks & fences",
+        "Commercial & HOA"
+      ],
       "description": "Professional pressure washing and roof soft-wash across Miami-Dade and Broward — house washing, driveways, pool decks, and fences. Residential, commercial & HOA. Free estimates."
     },
     "_note": "OUR gigapress GOLD brand — our name, our URL, our owned Smart-DID block 786-484-7053 → 7062 (live). GBP set to pending: numbers are live, profile verification in progress."
+  },
+  "photoServices": [
+    {
+      "name": "House Washing",
+      "range": "$250 – $600",
+      "scope": [
+        "Pre-rinse & prep",
+        "Soft-wash detergent application",
+        "Mold & algae dwell + rinse",
+        "Final walkthrough"
+      ]
+    },
+    {
+      "name": "Driveway / Sidewalk",
+      "range": "$150 – $450",
+      "scope": [
+        "Sweep & pre-treat",
+        "Surface-cleaner pass",
+        "Oil & rust spot treatment",
+        "Post-rinse"
+      ]
+    },
+    {
+      "name": "Roof Soft-Wash",
+      "range": "$400 – $1,200",
+      "scope": [
+        "Low-pressure application",
+        "Algae & biological kill",
+        "Gentle rinse",
+        "Streak-free finish"
+      ]
+    },
+    {
+      "name": "Pool Deck / Fence",
+      "range": "$150 – $550",
+      "scope": [
+        "Pre-rinse & prep",
+        "Surface-safe clean",
+        "Detail edges & corners",
+        "Slip-safe rinse"
+      ]
+    },
+    {
+      "name": "Commercial / HOA",
+      "range": "$500 – $8,000+",
+      "scope": [
+        "Site walk & scope",
+        "Zoned surface cleaning",
+        "Off-hours scheduling",
+        "Manager sign-off"
+      ]
+    },
+    {
+      "name": "Other",
+      "range": "$150 – $8,000+",
+      "scope": [
+        "On-site look",
+        "Surface assessment",
+        "Scope & estimate",
+        "Clean & rinse"
+      ]
+    }
+  ],
+  "trackStages": [
+    "Booked",
+    "Estimate Confirmed",
+    "Scheduled",
+    "Crew On the Way",
+    "Washing",
+    "Rinse & Inspect",
+    "Complete"
+  ],
+  "trackFeed": [
+    "Crew assigned to your job",
+    "Estimate confirmed on-site",
+    "Job added to the schedule",
+    "Crew en route — geo-tracked",
+    "Pre-rinse & prep started",
+    "Soft-wash detergent applied",
+    "Surface cleaning in progress",
+    "Final rinse underway",
+    "Before & after photos logged"
+  ],
+  "footerServices": [
+    "House Washing",
+    "Driveways &amp; Sidewalks",
+    "Roof Soft-Wash",
+    "Pool Decks &amp; Fences",
+    "Commercial &amp; HOA",
+    "Post-Storm Cleanup",
+    "Rust &amp; Stain Removal"
+  ],
+  "copy": {
+    "brandTagline": "Pressure Washing",
+    "crewLabel": "Exterior-Cleaning Crew",
+    "heroLede": "Coastal Crown makes South Florida homes and businesses look brand-new — house washing, driveways, roof soft-wash, pool decks and fences across Miami-Dade and Broward. And now every call rings to the right crew, answered instantly, in the caller's language. <b>Free estimates. Bilingual. Residential, commercial &amp; HOA.</b>",
+    "valuesRow": "<span>Clean</span><i>·</i><span>Fast</span><i>·</i><span>Careful</span><i>·</i><span>Bilingual</span><i>·</i><span>Insured</span><i>·</i><span>Coastal</span>",
+    "statJobsNum": "$250+",
+    "statJobsLbl": "Jobs From — to $8,000+",
+    "safetyBadge": "Soft-Wash Safe · Roof-Friendly",
+    "conciergeIntro": "Hi, I'm Marina — your Coastal Crown concierge for house washing, driveways, roofs, pool decks &amp; fences. Tap the 🔊 to hear me, pick your language above, or choose a button to begin.",
+    "miniQuoteSay": "Snap a photo of the surface you want cleaned and I'll give you an instant illustrative estimate.",
+    "askPlaceholder": "Ask me — pricing, areas, soft-wash…",
+    "promiseSafeTitle": "Soft-Wash Safe",
+    "promiseSafeSub": "Roof &amp; delicate surfaces protected",
+    "miamiBandHead": "🌴 Serving South Florida — Miami-Dade &amp; Broward, Crew-to-Curb Clean 🌆",
+    "miamiBandSub": "From Brickell high-rises to Weston estates, South Florida's sun, salt air, and summer storms grow mold, mildew, and algae on every surface. When your home or business needs to shine, the region trusts <b>Coastal Crown Pressure Washing</b> — bilingual, insured, Miami-Dade &amp; Broward proud.",
+    "ecoSub": "Every touchpoint — call, text, photo, quote, and job update — runs through a single intelligent system. That's how Coastal Crown answers faster, quotes cleaner, and keeps you posted from first ring to sparkling finish.",
+    "ecoTrackSmall": "Watch it go from booked to sparkling",
+    "pmRow1": "Maria R. — house wash booked · <b>+$62</b>",
+    "pmRow2": "J. Alvarez — driveway quote sent",
+    "referExample": "Send us a house wash, driveway, roof, pool deck or fence job.",
+    "stormLede": "South Florida storms leave driveways, roofs, and pool decks caked in debris, mud, and algae. Coastal Crown is an enrolled vendor on the WIN network, so <b>post-storm exterior-cleanup leads move across all three brands</b> and land with the nearest crew — instead of dying in a voicemail box.",
+    "stormStep1": "The WIN Storm Intelligence Network tracks incoming weather across South Florida and flags neighborhoods that will need exterior cleanup once it clears.",
+    "stormStep2": "Residents text a photo of the storm debris on the driveway, roof, or pool deck — timestamped and geo-tagged to the address.",
+    "servicesEyebrow": "Every Surface · One Crew",
+    "servicesH2Lead": "We Wash",
+    "servicesSub": "From delicate roof shingles to concrete driveways, Coastal Crown matches the right method to every surface — gentle soft-wash where it counts, high-pressure where it's earned. Residential, commercial &amp; HOA across Miami-Dade and Broward.",
+    "quoteEyebrow": "Instant Quote · Surface Selector",
+    "quoteH2": "Snap the Surface. Pick the Service.",
+    "quoteSub": "Point our surface selector at what you want cleaned — house, driveway, roof, pool deck, fence, or commercial lot — and it returns an illustrative estimate range and turnaround in seconds. Then book your free on-site confirmation in one tap.",
+    "quoteStatus": "Select or search the surface you want cleaned for an instant estimate…",
+    "quotePlaceholder": "🔎 Search a surface — driveway, roof, pool deck…",
+    "invHeadLabel": "🧼 Surfaces We Clean",
+    "invNote": "Estimate ranges are illustrative — your free on-site visit confirms the exact price. Most jobs run $250–$8,000+ depending on size and surface.",
+    "funnelQ1": "What do you need cleaned?",
+    "funnelPrompt1": "First — what do you need cleaned?",
+    "why1Body": "Gentle soft-wash on roofs and painted siding, higher pressure on concrete — so surfaces get clean without getting damaged.",
+    "why2Body": "We quote before we start — on-site and in writing. No surprises, no upsell games. Jobs run $250 to $8,000+ by size.",
+    "why5Body": "From a single driveway to a full HOA community or plaza, on their own priority lines and callback SLA.",
+    "compareThemHead": "Other Washers",
+    "compareSafeCap": "Soft-wash safe on roofs",
+    "compareSafeThem": "Blasts everything",
+    "compareSafeUs": "Method matched to surface",
+    "standardSub": "Others send a number and disappear. We answer 24/7, route to the nearest crew, match the method to the surface, clean with commercial-grade equipment, and back the work in writing.",
+    "std1Body": "On-site quotes in writing, usually same or next day — because a clean surface shouldn't wait on a callback that never comes.",
+    "stdSafeTitle": "Soft-Wash Safe Methods",
+    "stdSafeBody": "Low-pressure soft-wash on roofs, screens, and painted siding; higher pressure only where the surface can take it — clean without damage.",
+    "stdDetergentTitle": "Commercial-Grade Detergents",
+    "stdDetergentBody": "Professional, surface-appropriate cleaners that kill algae and mildew at the root — not a garden hose and a quick blast.",
+    "std6Body": "If a spot isn't right, we come back and make it right — accountability most \"chuck-in-a-truck\" washers won't put on paper.",
+    "sbSafeB": "Soft-Wash",
+    "sbSafeSpan": "Roof-safe method",
+    "processH2": "From Grime to Shine in 4 Simple Steps",
+    "photoH2Lead": "Snap the Stain. Upload It.",
+    "photoSub": "Upload photos of the surface you want cleaned — the app returns an illustrative preliminary estimate in seconds, then hands you a job number you can track to completion. Backed by our Satisfaction Commitment. This is an illustrative demo; your free on-site visit confirms the price.",
+    "trackH2Lead": "Track Your Job Live —",
+    "trackH2Hl": "From Booked to Sparkling",
+    "franchiseSub": "Launch a turnkey pressure-washing business powered by the Coastal Connect™ platform — Smart Numbers, real-time job tracking, the instant-quote surface selector, and full onboarding. Run it under your own white-labeled brand, or under our proven franchise license.",
+    "adjBadge": "🎯 For Independent Pressure-Washing Crews",
+    "adjSub": "We market aggressively — Google, social &amp; beyond — and generate a steady stream of qualified South Florida jobs. If you're an independent pressure-washing crew without your own branding, get instantly branded under Coastal Crown, fulfill our leads with our complete tech stack, and keep <b>50% of every gross sale</b>.",
+    "hireRole2": "Wash Technicians",
+    "finalLede": "From Brickell high-rises to Weston estates, Miami-Dade &amp; Broward count on us for house washing, driveways, roof soft-wash, pool decks &amp; fences — answered 24/7, in your language, routed to the nearest crew. Free estimates. Residential, commercial &amp; HOA.",
+    "footerTagline": "🌴 South Florida's exterior-cleaning crew. House washing, driveways, roof soft-wash, pool decks &amp; fences across Miami-Dade &amp; Broward — residential, commercial &amp; HOA.",
+    "conciergeFallback": "Great question. The fastest answer is a quick call or text to 786, 484, 7053. Or ask me about pricing, the areas we serve, soft wash versus pressure washing, house washing, roofs, pool decks, fences, or booking a free estimate.",
+    "conciergeGreet": "Hi, I'm Marina, your Coastal Crown concierge. Tap a button and I'll help you get a free estimate for house washing, driveways, roofs, pool decks, or fences.",
+    "quoteSearchHint": "Type a surface (e.g. \"driveway\") or tap Estimate on a card below.",
+    "stormSimAlert": "Storm just cleared Kendall. Exterior surfaces flagged for cleanup across your area.",
+    "stormSimOut1": "Driveway — storm debris",
+    "stormSimEmoji1": "🍂",
+    "stormSimReply": "🚚 A Coastal Crown crew is about 6 minutes away. Free quote on arrival — want the pool deck and lanai done too?",
+    "stormSimOut2": "Pool deck",
+    "stormSimEmoji2": "🌊",
+    "trackPayoutHTML": "✨ Job Complete<b>Sparkling Clean</b><span style=\"color:var(--muted);font-size:13px\">Your walkthrough is done — surfaces look brand-new.</span>",
+    "trackCompleteFeed": "🎉 Job complete — surfaces sparkling clean",
+    "trackCompleteSay": "Great news. Your job is complete and your surfaces look brand new."
   }
 }
