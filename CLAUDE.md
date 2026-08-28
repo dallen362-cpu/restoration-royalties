@@ -42,3 +42,9 @@
   per-state disclaimers; no invented stats.
 - **Git flow:** work on `claude/github-telvergence-consolidate-x00shp` → merge-commit to `main` via git
   (bypasses GitHub REST rate limits) → verify LIVE with curl markers after every deploy stage.
+- **Master brain = GOOGLE DRIVE only (David 2026-08-27):** the unified, indexed memory + backup target
+  for ALL LLM sessions is the Google Drive folder `TELVERGENCE-MASTER-BRAIN`
+  (id `1-hKkLBbjFVk_WeOXO9l2pNcqGNNKOsOT`, account dallen362@gmail.com). NEVER back up to Microsoft
+  OneDrive/SharePoint. The Zapier connection is RETIRED — do not retry or reconnect it; use the Drive
+  MCP directly (binaries go up via the proven single-line ~1,900-char base64 part pipeline, each part
+  fileSize-gated on arrival; reassembly READMEs accompany every part-set).
