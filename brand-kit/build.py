@@ -803,6 +803,220 @@ def render(b):
 '''
 
 
+# =================================================================== GOLD tier
+# The gold standard: brands with "tier":"gold" render from the proven
+# gold-template.html (the templatized Coastal Crown site) instead of the legacy
+# render(). ADDITIVE ONLY — nothing above this line is touched. render_gold fills
+# @@token@@ placeholders (str.replace, never .format, so CSS/JS braces are safe)
+# and generates the repeating blocks (phones, services, faq, reviews, process,
+# concierge KB) from the brand JSON. Gold brands also get a PWA manifest + sw.js.
+import base64 as _b64
+
+GOLD_TEMPLATE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             'gold-template.html')
+
+
+def _js(s):
+    """A JSON/JS-safe double-quoted string literal (escapes quotes, backslashes)."""
+    return json.dumps('' if s is None else str(s), ensure_ascii=False)
+
+
+def gold_phones_js(b):
+    """CONFIG.PHONES entries — the dedicated Smart-Number grid (@@phonesJS@@)."""
+    out = []
+    for p in b['phones']:
+        out.append(
+            '    { dept:%s, vn:%s, terr:%s, pending:%s, sms:%s, desc:%s, icon:%s }' % (
+                _js(p['dept']), _js(p['vn']), _js(p['terr']),
+                'true' if p.get('pending') else 'false',
+                'true' if p.get('sms', True) else 'false',
+                _js(p['desc']), _js(p['icon'])))
+    return ',\n'.join(out)
+
+
+def gold_surfaces_js(b):
+    """SURFACES entries — the instant-quote surface selector (@@surfacesJS@@)."""
+    return ',\n'.join(
+        '    {name:%s, range:%s, method:%s, turn:%s}' % (
+            _js(s['name']), _js(s['range']), _js(s['method']), _js(s['turn']))
+        for s in b['surfaces'])
+
+
+def gold_reviews_js(b):
+    """SEED entries — illustrative sample reviews (@@reviewsJS@@)."""
+    return ',\n'.join(
+        '    {n:%s, v:%d, t:%s}' % (_js(r['n']), int(r['v']), _js(r['t']))
+        for r in b['reviews'])
+
+
+def gold_kb_js(b):
+    """Concierge knowledge base entries [[keywords], answer] (@@kbJS@@)."""
+    return ',\n'.join(
+        '    [%s,\n     %s]' % (json.dumps(kw, ensure_ascii=False), _js(ans))
+        for kw, ans in b['kb'])
+
+
+def gold_services_html(b):
+    """The 'We Wash It All' service cards (@@servicesHTML@@)."""
+    return '\n'.join(
+        '      <div class="svc reveal"><div class="ic">%s</div><h3>%s</h3><p>%s</p></div>'
+        % (s['ic'], s['title'], s['desc']) for s in b['services'])
+
+
+def gold_faq_html(b):
+    """The FAQ accordion (@@faqHTML@@); first item stays open."""
+    out = []
+    for f in b['faq']:
+        op = ' open' if f.get('open') else ''
+        out.append('      <details class="qa"%s><summary>%s</summary><p>%s</p></details>'
+                   % (op, f['q'], f['a']))
+    return '\n'.join(out)
+
+
+def gold_process_html(b):
+    """The 4-step process band (@@processHTML@@)."""
+    return '\n'.join(
+        '      <div class="step reveal"><div class="n">%s</div><h4>%s</h4><p>%s</p></div>'
+        % (s['n'], s['h'], s['p']) for s in b['process'])
+
+
+def render_gold(b):
+    """Render a gold-tier brand from gold-template.html. All substitution is
+    str.replace on @@token@@ placeholders (never .format) so the template's CSS
+    and JS braces pass through untouched."""
+    tpl = open(GOLD_TEMPLATE, encoding='utf-8').read()
+    h = b.get('hosts', {})
+    seo = b.get('seo', {})
+    acc = b.get('accent', '#E8A93C')
+    jsonld = json.dumps(b['jsonLd'], indent=2, ensure_ascii=False)
+
+    reps = {
+        # repeating blocks
+        'phonesJS': gold_phones_js(b),
+        'surfacesJS': gold_surfaces_js(b),
+        'reviewsJS': gold_reviews_js(b),
+        'kbJS': gold_kb_js(b),
+        'servicesHTML': gold_services_html(b),
+        'faqHTML': gold_faq_html(b),
+        'processHTML': gold_process_html(b),
+        'jsonLdBlock': jsonld,
+        # brand scalars (injected verbatim — the JSON already holds the exact copy)
+        'brandName': b['brandName'],
+        'brandShort': b.get('brandShort', b['brandName']),
+        'platformProduct': b.get('platformProduct', 'Coastal Connect'),
+        'conciergeName': b.get('conciergeName', 'Marina'),
+        'markLetter': b.get('markLetter', b['brandName'][:1]),
+        'region': b.get('region', 'South Florida'),
+        'county1': b.get('county1', 'Miami-Dade'),
+        'county2': b.get('county2', 'Broward'),
+        'h1a': b.get('h1a', ''),
+        'h1b': b.get('h1b', ''),
+        'accent': acc,
+        'accentHex': acc.lstrip('#'),
+        'flagship': b['flagship'],
+        'flagshipHref': b['flagshipHref'],
+        'flagshipLast': b.get('flagshipLast', ''),
+        'flagshipNbsp': b.get('flagshipNbsp', b['flagship']),
+        'didRange': b.get('didRange', ''),
+        'didFootnote': b.get('didFootnote', ''),
+        'canonicalHost': h.get('canonical', ''),
+        'showroomHost': h.get('showroom', ''),
+        'brandDomain': h.get('domain', ''),
+        'brandEmail': h.get('email', ''),
+        'brandNamePlus': h.get('brandNamePlus', b['brandName'].replace(' ', '+')),
+        'seoTitle': seo.get('title', ''),
+        'seoDescription': seo.get('description', ''),
+        'seoKeywords': seo.get('keywords', ''),
+        'ogTitle': seo.get('ogTitle', ''),
+        'ogDescription': seo.get('ogDescription', ''),
+    }
+    for k, v in reps.items():
+        tpl = tpl.replace('@@%s@@' % k, str(v))
+    return tpl
+
+
+def gold_manifest(b):
+    """PWA manifest for a gold brand — mirrors coastalcrown/manifest.webmanifest,
+    with a brand-colored letter icon generated from markLetter + accent."""
+    letter = e(b.get('markLetter', b['brandName'][:1]))
+    acc = b.get('accent', '#E8A93C')
+    svg = ('<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512">'
+           '<rect width="512" height="512" rx="104" fill="#04070f"/>'
+           '<circle cx="256" cy="256" r="196" fill="none" stroke="%s" '
+           'stroke-width="10" opacity="0.5"/>'
+           '<text x="50%%" y="52%%" dy="0.34em" text-anchor="middle" '
+           'font-family="Inter,Segoe UI,sans-serif" font-size="300" '
+           'font-weight="900" fill="%s">%s</text></svg>' % (acc, acc, letter))
+    uri = 'data:image/svg+xml;base64,' + \
+        _b64.b64encode(svg.encode('utf-8')).decode('ascii')
+    desc = (b.get('gbp', {}).get('listing', {}).get('description')
+            or b.get('seo', {}).get('description', b['brandName']))
+    man = {
+        "name": b['brandName'],
+        "short_name": b.get('brandShort', b['brandName']),
+        "description": desc,
+        "start_url": "/", "scope": "/", "display": "standalone",
+        "orientation": "portrait", "background_color": "#04070f",
+        "theme_color": "#04070f", "lang": "en-US",
+        "categories": ["business", "utilities", "lifestyle"],
+        "icons": [
+            {"src": uri, "sizes": "192x192", "type": "image/svg+xml", "purpose": "any"},
+            {"src": uri, "sizes": "512x512", "type": "image/svg+xml", "purpose": "any"},
+            {"src": uri, "sizes": "512x512", "type": "image/svg+xml", "purpose": "maskable"},
+        ],
+    }
+    return json.dumps(man, indent=2, ensure_ascii=False)
+
+
+def gold_sw(b):
+    """Service worker for a gold brand — mirrors coastalcrown/sw.js (shell cache,
+    cache-first with network fallback), cache keyed to the brand slug."""
+    cache = '%s-v1' % b['slug']
+    return '''/* %s — service worker (PWA shell cache).
+   Cache the shell on install, serve cache-first with a network fallback,
+   and clean up old caches. */
+const CACHE = '%s';
+const SHELL = [
+  './',
+  './index.html',
+  './manifest.webmanifest'
+];
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE).then((c) => c.addAll(SHELL)).catch(() => {})
+  );
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))
+    )
+  );
+  self.clients.claim();
+});
+
+self.addEventListener('fetch', (event) => {
+  const req = event.request;
+  if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) return;
+  event.respondWith(
+    caches.match(req).then((hit) =>
+      hit ||
+      fetch(req)
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put(req, copy)).catch(() => {});
+          return res;
+        })
+        .catch(() => caches.match('./index.html'))
+    )
+  );
+});
+''' % (b['brandName'], cache)
+
+
 # ------------------------------------------------- listing-foundation gate
 # Every brand must have a Google Business Profile recorded — with auto-verification
 # ON — BEFORE it publishes. This is the mechanical enforcement of the
@@ -890,7 +1104,12 @@ def main():
         os.makedirs(outdir, exist_ok=True)
         out = os.path.join(outdir, 'index.html')
         with open(out, 'w', encoding='utf-8') as fh:
-            fh.write(render(b))
+            fh.write(render_gold(b) if b.get('tier') == 'gold' else render(b))
+        if b.get('tier') == 'gold':
+            with open(os.path.join(outdir, 'manifest.webmanifest'), 'w', encoding='utf-8') as fh:
+                fh.write(gold_manifest(b))
+            with open(os.path.join(outdir, 'sw.js'), 'w', encoding='utf-8') as fh:
+                fh.write(gold_sw(b))
         ok, level, msg = listing_status(b)
         flag = '' if ok else '   ⛔ NOT PUBLISH-READY (GBP)'
         print(f'  built {b["slug"]:<12} {b["lineCount"]:>3} lines  → {b["slug"]}/index.html{flag}')
