@@ -170,7 +170,7 @@ header.nav{
   min-height:64px;background:var(--card);border:1px solid var(--line);border-radius:16px;
   padding:14px 16px;font-size:15px;color:var(--ink);margin-bottom:16px;position:relative;
 }
-.speech::before{content:'MARINA · AI CONCIERGE';position:absolute;top:-9px;left:14px;
+.speech::before{content:'@@conciergeUpper@@ · AI CONCIERGE';position:absolute;top:-9px;left:14px;
   font-size:9.5px;letter-spacing:2px;color:var(--gold);background:var(--navy-900);
   padding:2px 8px;border-radius:6px;font-weight:800}
 .concierge-actions{display:flex;gap:10px;flex-wrap:wrap}
@@ -931,7 +931,7 @@ window.googleTranslateElementInit=function(){
   <div class="container nav-inner">
     <a class="brand" href="#top">
       <span class="mark">@@markLetter@@</span>
-      <span>@@brandShort@@<small>Pressure Washing</small></span>
+      <span>@@brandShort@@<small>@@brandTagline@@</small></span>
     </a>
     <nav class="nav-links">
       <a href="#storm">🌀 Storm Cleanup</a>
@@ -950,15 +950,15 @@ window.googleTranslateElementInit=function(){
 <section class="hero" id="top">
   <div class="container hero-grid">
     <div>
-      <div class="badge"><span class="dot"></span> 🌴 @@region@@'s Exterior-Cleaning Crew · @@county1@@ &amp; @@county2@@</div>
+      <div class="badge"><span class="dot"></span> 🌴 @@region@@'s @@crewLabel@@ · @@county1@@ &amp; @@county2@@</div>
       <h1>@@h1a@@<br><span class="hl">@@h1b@@</span></h1>
-      <p class="lede">@@brandName@@ makes @@region@@ homes and businesses look brand-new — house washing, driveways, roof soft-wash, pool decks and fences across @@county1@@ and @@county2@@. And now every call rings to the right crew, answered instantly, in the caller's language. <b>Free estimates. Bilingual. Residential, commercial &amp; HOA.</b></p>
+      <p class="lede">@@heroLede@@</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#start">⚡ Get My Free Estimate</a>
         <a class="btn btn-ghost" href="#inventory">📸 Snap the Surface · Instant Quote</a>
       </div>
       <div class="values" aria-label="Our values">
-        <span>Clean</span><i>·</i><span>Fast</span><i>·</i><span>Careful</span><i>·</i><span>Bilingual</span><i>·</i><span>Insured</span><i>·</i><span>Coastal</span>
+        @@valuesRow@@
       </div>
       <div class="hero-phone">
         <span class="hp-lbl">📞 Call or 💬 Text our Smart Number</span>
@@ -969,7 +969,7 @@ window.googleTranslateElementInit=function(){
         <span>⚡ <b>Fast, Free</b> Estimates</span>
         <span>🏠 <b>Residential &amp; Commercial</b></span>
         <span>🇪🇸 <b>Se Habla Español</b></span>
-        <span>✅ <b>Soft-Wash Safe · Roof-Friendly</b></span>
+        <span>✅ <b>@@safetyBadge@@</b></span>
       </div>
     </div>
 
@@ -978,14 +978,14 @@ window.googleTranslateElementInit=function(){
       <button class="mute-btn" id="muteBtn" title="Toggle voice">🔊</button>
       <canvas id="orbCanvas"></canvas>
       <div class="concierge-body">
-        <div class="speech" id="speechBox">Hi, I'm @@conciergeName@@ — your @@brandShort@@ concierge for house washing, driveways, roofs, pool decks &amp; fences. Tap the 🔊 to hear me, pick your language above, or choose a button to begin.</div>
+        <div class="speech" id="speechBox">@@conciergeIntro@@</div>
         <div class="concierge-actions">
           <div class="mini" data-say="Let's get your free estimate. It only takes about two minutes." onclick="document.getElementById('start').scrollIntoView({behavior:'smooth'})">⚡ Free Estimate</div>
-          <div class="mini" data-say="Snap a photo of the surface you want cleaned and I'll give you an instant illustrative estimate." onclick="document.getElementById('inventory').scrollIntoView({behavior:'smooth'})">📸 Instant Quote</div>
+          <div class="mini" data-say="@@miniQuoteSay@@" onclick="document.getElementById('inventory').scrollIntoView({behavior:'smooth'})">📸 Instant Quote</div>
           <div class="mini" data-say="Here are our direct lines. Pick the one that fits the job you need." onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">📞 Call a Crew</div>
         </div>
         <div class="ask-row">
-          <input id="askIn" placeholder="Ask me — pricing, areas, soft-wash…" aria-label="Ask the concierge">
+          <input id="askIn" placeholder="@@askPlaceholder@@" aria-label="Ask the concierge">
           <button class="ask-mic" id="askMic" title="Speak your question" aria-label="Speak">🎙</button>
           <button class="ask-send" id="askSend">Ask →</button>
         </div>
@@ -996,14 +996,14 @@ window.googleTranslateElementInit=function(){
 
   <div class="container">
     <div class="stats reveal">
-      <div class="stat"><div class="num">$250+</div><div class="lbl">Jobs From — to $8,000+</div></div>
+      <div class="stat"><div class="num">@@statJobsNum@@</div><div class="lbl">@@statJobsLbl@@</div></div>
       <div class="stat"><div class="num">Free</div><div class="lbl">On-Site Estimates</div></div>
       <div class="stat"><div class="num" data-count="24">24/7</div><div class="lbl">AI Answer &amp; Booking</div></div>
       <div class="stat"><div class="num" data-count="2">2</div><div class="lbl">Counties · @@county1@@ &amp; @@county2@@</div></div>
     </div>
 
     <div class="promise reveal">
-      <div class="promise-item"><span class="pi-ic">💧</span><div><b>Soft-Wash Safe</b><span>Roof &amp; delicate surfaces protected</span></div></div>
+      <div class="promise-item"><span class="pi-ic">💧</span><div><b>@@promiseSafeTitle@@</b><span>@@promiseSafeSub@@</span></div></div>
       <div class="promise-item"><span class="pi-ic">⚡</span><div><b>Fast Turnaround</b><span>Quick quote, quick schedule</span></div></div>
       <div class="promise-item"><span class="pi-ic">🇪🇸</span><div><b>Bilingual Crew</b><span>Se habla español</span></div></div>
       <div class="promise-item"><span class="pi-ic">🏢</span><div><b>Commercial &amp; HOA</b><span>Priority scheduling for accounts</span></div></div>
@@ -1014,14 +1014,14 @@ window.googleTranslateElementInit=function(){
 <!-- ===================== MIAMI NEIGHBORHOODS BAND ===================== -->
 <section class="miami-band">
   <div class="container">
-    <div class="mb-head">🌴 Serving @@region@@ — @@county1@@ &amp; @@county2@@, Crew-to-Curb Clean 🌆</div>
+    <div class="mb-head">@@miamiBandHead@@</div>
     <div class="mb-chips">
       <span>Brickell</span><span>Coral Gables</span><span>Coconut Grove</span><span>Key Biscayne</span>
       <span>Miami Beach</span><span>Aventura</span><span>Pinecrest</span><span>Palmetto Bay</span>
       <span>Doral</span><span>Kendall</span><span>Cutler Bay</span><span>Homestead</span>
       <span>Fort Lauderdale</span><span>Pembroke Pines</span><span>Weston</span><span>Hollywood</span>
     </div>
-    <p class="mb-sub">From Brickell high-rises to Weston estates, @@region@@'s sun, salt air, and summer storms grow mold, mildew, and algae on every surface. When your home or business needs to shine, the region trusts <b>@@brandName@@</b> — bilingual, insured, @@county1@@ &amp; @@county2@@ proud.</p>
+    <p class="mb-sub">@@miamiBandSub@@</p>
   </div>
 </section>
 
@@ -1055,7 +1055,7 @@ window.googleTranslateElementInit=function(){
     <div class="center" style="max-width:760px">
       <div class="eyebrow">The @@brandShort@@ AI System</div>
       <h2 class="h2">One Fully Automated, AI-Driven, <span class="hl">Communications-Centric</span> System</h2>
-      <p class="sub center">Every touchpoint — call, text, photo, quote, and job update — runs through a single intelligent system. That's how @@brandShort@@ answers faster, quotes cleaner, and keeps you posted from first ring to sparkling finish.</p>
+      <p class="sub center">@@ecoSub@@</p>
     </div>
 
     <div class="eco reveal">
@@ -1069,7 +1069,7 @@ window.googleTranslateElementInit=function(){
         <a class="eco-node" href="#contact"><span class="en-ic">📞</span><b>Smart Number · 2-Way SMS</b><small>Text with us until your job is booked</small></a>
         <a class="eco-node" href="#storm"><span class="en-ic">🌀</span><b>WIN Storm Intelligence</b><small>Post-storm cleanup leads across the network</small></a>
         <a class="eco-node" href="#profile"><span class="en-ic">📸</span><b>AI Photo Estimate</b><small>Instant illustrative quote from your photos</small></a>
-        <a class="eco-node" href="#track"><span class="en-ic">📡</span><b>Real-Time Job Tracking</b><small>Watch it go from booked to sparkling</small></a>
+        <a class="eco-node" href="#track"><span class="en-ic">📡</span><b>Real-Time Job Tracking</b><small>@@ecoTrackSmall@@</small></a>
         <a class="eco-node" href="#coverage"><span class="en-ic">🛰️</span><b>Nearest-Crew Routing</b><small>Calls geo-tagged and routed by ZIP</small></a>
         <a class="eco-node" href="#inventory"><span class="en-ic">🧼</span><b>Instant Surface Selector</b><small>Snap the surface, get an estimate</small></a>
         <a class="eco-node" href="#reviews"><span class="en-ic">⭐</span><b>Automated Review Capture</b><small>Log &amp; post to Google in one tap</small></a>
@@ -1113,8 +1113,8 @@ window.googleTranslateElementInit=function(){
             <div class="pm-stat"><b>$1,480</b><span>Royalties</span></div>
             <div class="pm-stat"><b>3</b><span>Pending</span></div>
           </div>
-          <div class="pm-row"><span class="pm-dot g"></span> Maria R. — house wash booked · <b>+$62</b></div>
-          <div class="pm-row"><span class="pm-dot y"></span> J. Alvarez — driveway quote sent</div>
+          <div class="pm-row"><span class="pm-dot g"></span> @@pmRow1@@</div>
+          <div class="pm-row"><span class="pm-dot y"></span> @@pmRow2@@</div>
           <div class="pm-row"><span class="pm-dot b"></span> Live thread: Crew + Owner + Customer</div>
           <div class="pm-cta">📲 Share My Number</div>
         </div>
@@ -1125,7 +1125,7 @@ window.googleTranslateElementInit=function(){
         <div class="pf reveal"><div class="pf-ic">⚙️</div><div><h4>Smart Number — Issued On the Fly</h4><p>The moment you join, the @@platformProduct@@™ engine programmatically provisions and assigns a real company telephone number in real time — sub-second, fully automated, with a branded caller ID so it never gets flagged as spam.</p></div></div>
         <div class="pf reveal"><div class="pf-ic">📇</div><div><h4>Your Digital Business Card — Private by Design</h4><p>Your Smart Number lives on a shareable digital business card that @@brandShort@@ provides and pays for. Make and take referral calls and texts from it while your personal cell stays 100% private — with AI answering and routing built in.</p></div></div>
         <div class="pf reveal"><div class="pf-ic">🆔</div><div><h4>Your Number = Your Royalty Account</h4><p>That same number is your partner ID and royalty account. Every lead, call, or job tied to it is automatically credited to you — no codes to remember, no paperwork.</p></div></div>
-        <div class="pf reveal"><div class="pf-ic">💸</div><div><h4>Refer a Job, Earn Royalties</h4><p>Send us a house wash, driveway, roof, pool deck or fence job. When the work is booked and completed, you earn a royalty — tracked and paid out through the app, tied to your number.</p></div></div>
+        <div class="pf reveal"><div class="pf-ic">💸</div><div><h4>Refer a Job, Earn Royalties</h4><p>@@referExample@@ When the work is booked and completed, you earn a royalty — tracked and paid out through the app, tied to your number.</p></div></div>
         <div class="pf reveal"><div class="pf-ic">⚡</div><div><h4>Real-Time Unified Collaboration</h4><p>You, the customer, the owner, and the crew share one live thread — messages, before/after photos, quotes, and job status in a single place, updated as it happens.</p></div></div>
         <div class="pf reveal"><div class="pf-ic">📊</div><div><h4>See Every Dollar</h4><p>A live dashboard shows your referrals, their job stage, and exactly what you've earned and what's pending — full transparency, always on.</p></div></div>
       </div>
@@ -1223,7 +1223,7 @@ window.googleTranslateElementInit=function(){
     <div class="center" style="max-width:760px">
       <div class="eyebrow">🌀 WIN Storm Intelligence Network</div>
       <h2 class="h2">When a Storm Passes Through, <span class="hl">We're First on the Cleanup.</span></h2>
-      <p class="sub center">@@region@@ storms leave driveways, roofs, and pool decks caked in debris, mud, and algae. @@brandShort@@ is an enrolled vendor on the WIN network, so <b>post-storm exterior-cleanup leads move across all three brands</b> and land with the nearest crew — instead of dying in a voicemail box.</p>
+      <p class="sub center">@@stormLede@@</p>
     </div>
 
     <div class="storm-grid">
@@ -1238,8 +1238,8 @@ window.googleTranslateElementInit=function(){
 
       <!-- STEPS + QR TECH -->
       <div class="storm-steps">
-        <div class="ss reveal"><div class="ss-n">📡</div><div><h4>1 · The Network Detects the Storm</h4><p>The WIN Storm Intelligence Network tracks incoming weather across @@region@@ and flags neighborhoods that will need exterior cleanup once it clears.</p></div></div>
-        <div class="ss reveal"><div class="ss-n">📸</div><div><h4>2 · Homeowners Snap the Mess</h4><p>Residents text a photo of the storm debris on the driveway, roof, or pool deck — timestamped and geo-tagged to the address.</p></div></div>
+        <div class="ss reveal"><div class="ss-n">📡</div><div><h4>1 · The Network Detects the Storm</h4><p>@@stormStep1@@</p></div></div>
+        <div class="ss reveal"><div class="ss-n">📸</div><div><h4>2 · Homeowners Snap the Mess</h4><p>@@stormStep2@@</p></div></div>
         <div class="ss reveal"><div class="ss-n">🚚</div><div><h4>3 · Nearest Crew Dispatched</h4><p>The lead routes straight to the closest @@brandShort@@ truck for a fast quote and same-week cleanup. Shared across the network so no lead is lost.</p></div></div>
         <div class="storm-qr reveal">
           <div class="sq-badge">🔳 QR Job-Tag Technology</div>
@@ -1261,9 +1261,9 @@ window.googleTranslateElementInit=function(){
 <section id="services">
   <div class="container">
     <div class="center" style="max-width:680px">
-      <div class="eyebrow">Every Surface · One Crew</div>
-      <h2 class="h2">We Wash <span class="hl">It All</span></h2>
-      <p class="sub center">From delicate roof shingles to concrete driveways, @@brandShort@@ matches the right method to every surface — gentle soft-wash where it counts, high-pressure where it's earned. Residential, commercial &amp; HOA across @@county1@@ and @@county2@@.</p>
+      <div class="eyebrow">@@servicesEyebrow@@</div>
+      <h2 class="h2">@@servicesH2Lead@@ <span class="hl">It All</span></h2>
+      <p class="sub center">@@servicesSub@@</p>
     </div>
     <div class="svc-grid">
 @@servicesHTML@@
@@ -1275,28 +1275,28 @@ window.googleTranslateElementInit=function(){
 <section id="inventory">
   <div class="container">
     <div class="center" style="max-width:760px">
-      <div class="eyebrow">Instant Quote · Surface Selector</div>
-      <h2 class="h2">Snap the Surface. Pick the Service. <span class="hl">Get an Instant Estimate.</span></h2>
-      <p class="sub center">Point our surface selector at what you want cleaned — house, driveway, roof, pool deck, fence, or commercial lot — and it returns an illustrative estimate range and turnaround in seconds. Then book your free on-site confirmation in one tap.</p>
+      <div class="eyebrow">@@quoteEyebrow@@</div>
+      <h2 class="h2">@@quoteH2@@ <span class="hl">Get an Instant Estimate.</span></h2>
+      <p class="sub center">@@quoteSub@@</p>
     </div>
 
     <!-- SCANNER -->
     <div class="scanner reveal">
       <div class="scan-window">
         <div class="scan-reticle"><span></span><span></span><span></span><span></span><div class="scan-beam"></div></div>
-        <div class="scan-status" id="scanStatus">Select or search the surface you want cleaned for an instant estimate…</div>
+        <div class="scan-status" id="scanStatus">@@quoteStatus@@</div>
       </div>
       <div class="scan-controls">
-        <input type="text" id="insurerSearch" placeholder="🔎 Search a surface — driveway, roof, pool deck…" autocomplete="off">
+        <input type="text" id="insurerSearch" placeholder="@@quotePlaceholder@@" autocomplete="off">
         <button class="btn btn-primary" id="scanBtn">⚡ Instant Estimate</button>
       </div>
       <div class="scan-result" id="scanResult" hidden></div>
     </div>
 
     <!-- SURFACE INVENTORY GRID -->
-    <div class="inv-head"><span>🧼 Surfaces We Clean</span><span class="inv-count" id="invCount"></span></div>
+    <div class="inv-head"><span>@@invHeadLabel@@</span><span class="inv-count" id="invCount"></span></div>
     <div class="inv-grid" id="invGrid"><!-- injected --></div>
-    <p class="center" style="margin-top:18px;color:var(--muted-2);font-size:13px">Estimate ranges are illustrative — your free on-site visit confirms the exact price. Most jobs run $250–$8,000+ depending on size and surface.</p>
+    <p class="center" style="margin-top:18px;color:var(--muted-2);font-size:13px">@@invNote@@</p>
   </div>
 </section>
 
@@ -1309,20 +1309,20 @@ window.googleTranslateElementInit=function(){
       <p class="sub center">Anyone can rent a machine. We bring the right method, the right crew, and a phone that actually gets answered.</p>
     </div>
     <div class="why-grid">
-      <div class="why reveal"><div class="num">1</div><div><h4>The Right Method for Every Surface</h4><p>Gentle soft-wash on roofs and painted siding, higher pressure on concrete — so surfaces get clean without getting damaged.</p></div></div>
-      <div class="why reveal"><div class="num">2</div><div><h4>Free, No-Pressure Estimates</h4><p>We quote before we start — on-site and in writing. No surprises, no upsell games. Jobs run $250 to $8,000+ by size.</p></div></div>
+      <div class="why reveal"><div class="num">1</div><div><h4>The Right Method for Every Surface</h4><p>@@why1Body@@</p></div></div>
+      <div class="why reveal"><div class="num">2</div><div><h4>Free, No-Pressure Estimates</h4><p>@@why2Body@@</p></div></div>
       <div class="why reveal"><div class="num">3</div><div><h4>Local, Fast, Bilingual</h4><p>Built for @@region@@ sun and storms. We answer 24/7 with AI, route to the nearest crew, and speak your language — literally.</p></div></div>
       <div class="why reveal"><div class="num">4</div><div><h4>Before &amp; After Proof</h4><p>Every job documented with real before-and-after photos, logged to your file — the difference you can actually see.</p></div></div>
-      <div class="why reveal"><div class="num">5</div><div><h4>Residential, Commercial &amp; HOA</h4><p>From a single driveway to a full HOA community or plaza, on their own priority lines and callback SLA.</p></div></div>
+      <div class="why reveal"><div class="num">5</div><div><h4>Residential, Commercial &amp; HOA</h4><p>@@why5Body@@</p></div></div>
       <div class="why reveal"><div class="num">6</div><div><h4>Insured &amp; Accountable</h4><p>A real, accountable @@region@@ business standing behind every job — licensed and insured, not a fly-by-night truck.</p></div></div>
     </div>
 
     <!-- COMPARISON -->
     <div class="compare reveal">
-      <div class="compare-row head"><div>Capability</div><div>Other Washers</div><div>@@brandShort@@ + @@platformProduct@@™</div></div>
+      <div class="compare-row head"><div>Capability</div><div>@@compareThemHead@@</div><div>@@brandShort@@ + @@platformProduct@@™</div></div>
       <div class="compare-row"><div>Answers every call 24/7</div><div class="them"><span class="no">✕</span> Voicemail</div><div class="us"><span class="yes">✓</span> AI answer, any hour</div></div>
       <div class="compare-row"><div>Bilingual / Spanish line</div><div class="them"><span class="no">✕</span> Rarely</div><div class="us"><span class="yes">✓</span> Dedicated route</div></div>
-      <div class="compare-row"><div>Soft-wash safe on roofs</div><div class="them"><span class="no">✕</span> Blasts everything</div><div class="us"><span class="yes">✓</span> Method matched to surface</div></div>
+      <div class="compare-row"><div>@@compareSafeCap@@</div><div class="them"><span class="no">✕</span> @@compareSafeThem@@</div><div class="us"><span class="yes">✓</span> @@compareSafeUs@@</div></div>
       <div class="compare-row"><div>Real-time crew + customer chat</div><div class="them"><span class="no">✕</span> Phone tag</div><div class="us"><span class="yes">✓</span> One live thread</div></div>
       <div class="compare-row"><div>Free written estimate</div><div class="them"><span class="no">✕</span> Sometimes</div><div class="us"><span class="yes">✓</span> Always, on-site</div></div>
       <div class="compare-row"><div>Commercial &amp; HOA priority</div><div class="them"><span class="no">✕</span> Same queue</div><div class="us"><span class="yes">✓</span> Own lines &amp; SLA</div></div>
@@ -1336,21 +1336,21 @@ window.googleTranslateElementInit=function(){
     <div class="center" style="max-width:720px">
       <div class="eyebrow">Unique Offerings · Why We're Different</div>
       <h2 class="h2">The @@brandShort@@ Standard</h2>
-      <p class="sub center">Others send a number and disappear. We answer 24/7, route to the nearest crew, match the method to the surface, clean with commercial-grade equipment, and back the work in writing.</p>
+      <p class="sub center">@@standardSub@@</p>
     </div>
     <div class="std-grid">
-      <div class="std reveal"><div class="std-ic">⚡</div><h3>Fast, Free Estimates</h3><p>On-site quotes in writing, usually same or next day — because a clean surface shouldn't wait on a callback that never comes.</p></div>
+      <div class="std reveal"><div class="std-ic">⚡</div><h3>Fast, Free Estimates</h3><p>@@std1Body@@</p></div>
       <div class="std reveal"><div class="std-ic">🛰️</div><h3>Nearest-Crew Routing</h3><p>Every call geo-tagged by ZIP and routed to the closest available truck across @@county1@@ and @@county2@@. No hold music, no "we'll call you back."</p></div>
-      <div class="std reveal"><div class="std-ic">💧</div><h3>Soft-Wash Safe Methods</h3><p>Low-pressure soft-wash on roofs, screens, and painted siding; higher pressure only where the surface can take it — clean without damage.</p></div>
-      <div class="std reveal"><div class="std-ic">🧴</div><h3>Commercial-Grade Detergents</h3><p>Professional, surface-appropriate cleaners that kill algae and mildew at the root — not a garden hose and a quick blast.</p></div>
+      <div class="std reveal"><div class="std-ic">💧</div><h3>@@stdSafeTitle@@</h3><p>@@stdSafeBody@@</p></div>
+      <div class="std reveal"><div class="std-ic">🧴</div><h3>@@stdDetergentTitle@@</h3><p>@@stdDetergentBody@@</p></div>
       <div class="std reveal"><div class="std-ic">📲</div><h3>One Live Thread, One Company Number</h3><p>You, the owner, and your crew collaborate in real time inside @@platformProduct@@™ — with your own number and full job visibility, start to finish.</p></div>
-      <div class="std reveal"><div class="std-ic">🛡️</div><h3>Satisfaction Commitment</h3><p>If a spot isn't right, we come back and make it right — accountability most "chuck-in-a-truck" washers won't put on paper.</p></div>
+      <div class="std reveal"><div class="std-ic">🛡️</div><h3>Satisfaction Commitment</h3><p>@@std6Body@@</p></div>
     </div>
 
     <div class="std-banner reveal">
       <div class="sb-item"><b>24/7</b><span>AI answer</span></div>
       <div class="sb-item"><b>Bilingual</b><span>English &amp; Spanish</span></div>
-      <div class="sb-item"><b>Soft-Wash</b><span>Roof-safe method</span></div>
+      <div class="sb-item"><b>@@sbSafeB@@</b><span>@@sbSafeSpan@@</span></div>
       <div class="sb-item"><b>Free</b><span>On-site estimates</span></div>
     </div>
   </div>
@@ -1399,7 +1399,7 @@ window.googleTranslateElementInit=function(){
   <div class="container">
     <div class="center" style="max-width:680px">
       <div class="eyebrow">How It Works</div>
-      <h2 class="h2">From Grime to Shine in 4 Simple Steps</h2>
+      <h2 class="h2">@@processH2@@</h2>
     </div>
     <div class="steps">
 @@processHTML@@
@@ -1429,15 +1429,10 @@ window.googleTranslateElementInit=function(){
 
           <!-- STEP 1 -->
           <div class="qstep active" data-step="1">
-            <div class="q">What do you need cleaned?</div>
+            <div class="q">@@funnelQ1@@</div>
             <div class="qs">Select the option that best fits the job.</div>
             <div class="opts">
-              <div class="opt" data-field="damage" data-val="House Washing"><span class="e">🏠</span> House Washing</div>
-              <div class="opt" data-field="damage" data-val="Driveway / Sidewalk"><span class="e">🛣️</span> Driveway / Sidewalk</div>
-              <div class="opt" data-field="damage" data-val="Roof Soft-Wash"><span class="e">🧼</span> Roof Soft-Wash</div>
-              <div class="opt" data-field="damage" data-val="Pool Deck / Fence"><span class="e">🏊</span> Pool Deck / Fence</div>
-              <div class="opt" data-field="damage" data-val="Commercial / HOA"><span class="e">🏢</span> Commercial / HOA</div>
-              <div class="opt" data-field="damage" data-val="Post-Storm Cleanup"><span class="e">🌀</span> Post-Storm Cleanup</div>
+@@surfaceOptsHTML@@
             </div>
           </div>
 
@@ -1515,8 +1510,8 @@ window.googleTranslateElementInit=function(){
   <div class="container">
     <div class="center" style="max-width:720px">
       <div class="eyebrow">Instant Photo Estimate · Illustrative Demo</div>
-      <h2 class="h2">Snap the Stain. Upload It. <span class="hl">Get an Instant Estimate.</span></h2>
-      <p class="sub center">Upload photos of the surface you want cleaned — the app returns an illustrative preliminary estimate in seconds, then hands you a job number you can track to completion. Backed by our Satisfaction Commitment. This is an illustrative demo; your free on-site visit confirms the price.</p>
+      <h2 class="h2">@@photoH2Lead@@ <span class="hl">Get an Instant Estimate.</span></h2>
+      <p class="sub center">@@photoSub@@</p>
     </div>
 
     <div class="pf-wrap reveal">
@@ -1537,8 +1532,7 @@ window.googleTranslateElementInit=function(){
         <div class="two">
           <div class="field"><label>Service</label>
             <select id="pf-damage">
-              <option>House Washing</option><option>Driveway / Sidewalk</option><option>Roof Soft-Wash</option>
-              <option>Pool Deck / Fence</option><option>Commercial / HOA</option><option>Other</option>
+@@photoSelectOpts@@
             </select>
           </div>
           <div class="field"><label>Property ZIP</label><input id="pf-zip" type="text" placeholder="33157"></div>
@@ -1562,7 +1556,7 @@ window.googleTranslateElementInit=function(){
   <div class="container">
     <div class="center" style="max-width:720px">
       <div class="eyebrow">@@platformProduct@@™ App · Real-Time Job Tracking · Illustrative Demo</div>
-      <h2 class="h2">Track Your Job Live — <span class="hl">From Booked to Sparkling</span></h2>
+      <h2 class="h2">@@trackH2Lead@@ <span class="hl">@@trackH2Hl@@</span></h2>
       <p class="sub center">No more calling for updates. Watch every stage of your job advance in real time, right up to the final walkthrough — and add the app to your phone to get notified at each step. Illustrative demo.</p>
     </div>
 
@@ -1653,7 +1647,7 @@ window.googleTranslateElementInit=function(){
     <div class="center" style="max-width:720px">
       <div class="eyebrow">Own a @@brandShort@@ Business</div>
       <h2 class="h2">Franchise &amp; White-Label — <span class="hl">From $25,000</span></h2>
-      <p class="sub center">Launch a turnkey pressure-washing business powered by the @@platformProduct@@™ platform — Smart Numbers, real-time job tracking, the instant-quote surface selector, and full onboarding. Run it under your own white-labeled brand, or under our proven franchise license.</p>
+      <p class="sub center">@@franchiseSub@@</p>
     </div>
 
     <div class="fr-grid">
@@ -1730,9 +1724,9 @@ window.googleTranslateElementInit=function(){
 <section id="adjusters">
   <div class="container">
     <div class="adj-card reveal">
-      <div class="adj-badge">🎯 For Independent Pressure-Washing Crews</div>
+      <div class="adj-badge">@@adjBadge@@</div>
       <h2 class="h2">No Brand? No Problem.<br><span class="hl">Fulfill Our Leads. Keep 50%.</span></h2>
-      <p class="sub center" style="margin:0 auto">We market aggressively — Google, social &amp; beyond — and generate a steady stream of qualified @@region@@ jobs. If you're an independent pressure-washing crew without your own branding, get instantly branded under @@brandShort@@, fulfill our leads with our complete tech stack, and keep <b>50% of every gross sale</b>.</p>
+      <p class="sub center" style="margin:0 auto">@@adjSub@@</p>
       <div class="adj-grid">
         <div class="adj-item"><span>🎯</span><b>Qualified, exclusive leads</b><small>Delivered straight to your app</small></div>
         <div class="adj-item"><span>🏷️</span><b>Instant @@brandShort@@ branding</b><small>Smart Number + digital business card</small></div>
@@ -1753,7 +1747,7 @@ window.googleTranslateElementInit=function(){
       <p class="sub center" style="margin:0 auto 8px">@@brandShort@@ is a <b>@@region@@-owned</b> crew, and we're thriving across @@county1@@ &amp; @@county2@@. We're now hiring the next members of our team — we'd love to add you to our ever-expanding family &amp; friends.</p>
       <div class="hire-roles">
         <div class="hire-role"><span>🧭</span><b>Crew Leads</b><small>Run &amp; grow a @@region@@ route</small></div>
-        <div class="hire-role"><span>🚗</span><b>Wash Technicians</b><small>Valid driver's license required</small></div>
+        <div class="hire-role"><span>🚗</span><b>@@hireRole2@@</b><small>Valid driver's license required</small></div>
       </div>
       <button class="btn btn-primary hire-apply" id="hireApply">📲 Apply in the @@brandShort@@ App Today →</button>
       <div class="hire-eoe"><span>🇪🇸 We Speak Spanish · Se Habla Español</span><span>🤝 Equal Opportunity Employer</span></div>
@@ -1767,7 +1761,7 @@ window.googleTranslateElementInit=function(){
   <div class="container">
     <div class="final reveal">
       <h2>@@region@@ Shines with @@brandShort@@. 🌴</h2>
-      <p>From Brickell high-rises to Weston estates, @@county1@@ &amp; @@county2@@ count on us for house washing, driveways, roof soft-wash, pool decks &amp; fences — answered 24/7, in your language, routed to the nearest crew. Free estimates. Residential, commercial &amp; HOA.</p>
+      <p>@@finalLede@@</p>
       <div class="hero-cta" style="justify-content:center">
         <a class="btn btn-primary" href="#start">⚡ Get My Free Estimate</a>
         <a class="btn btn-ghost" href="#inventory">📸 Snap the Surface · Instant Quote</a>
@@ -1781,21 +1775,15 @@ window.googleTranslateElementInit=function(){
   <div class="container">
     <div class="foot-grid">
       <div>
-        <a class="brand" href="#top" style="margin-bottom:16px"><span class="mark">@@markLetter@@</span><span>@@brandShort@@<small>Pressure Washing</small></span></a>
-        <p>🌴 @@region@@'s exterior-cleaning crew. House washing, driveways, roof soft-wash, pool decks &amp; fences across @@county1@@ &amp; @@county2@@ — residential, commercial &amp; HOA.</p>
+        <a class="brand" href="#top" style="margin-bottom:16px"><span class="mark">@@markLetter@@</span><span>@@brandShort@@<small>@@brandTagline@@</small></span></a>
+        <p>@@footerTagline@@</p>
         <p id="footAddr">Service-Area Business<br>Serving @@county1@@ &amp; @@county2@@, FL</p>
         <p><a href="tel:@@flagshipHref@@" style="color:var(--gold);font-weight:900;font-size:18px">📞 Call · 💬 SMS·TXT<br>@@flagship@@</a><br>@@brandShort@@'s flagship @@county1@@ Smart Number — one of 10 direct lines.</p>
         <p><a href="mailto:@@brandEmail@@" style="color:var(--gold);font-weight:800">✉️ @@brandEmail@@</a></p>
       </div>
       <div>
         <h5>Services</h5>
-        <a href="#services">House Washing</a>
-        <a href="#services">Driveways &amp; Sidewalks</a>
-        <a href="#services">Roof Soft-Wash</a>
-        <a href="#services">Pool Decks &amp; Fences</a>
-        <a href="#services">Commercial &amp; HOA</a>
-        <a href="#services">Post-Storm Cleanup</a>
-        <a href="#services">Rust &amp; Stain Removal</a>
+@@footerServicesHTML@@
       </div>
       <div>
         <h5>Platform</h5>
@@ -1823,9 +1811,7 @@ window.googleTranslateElementInit=function(){
       <div class="sitemap-links">
         <a href="#top">Home</a><a href="#ecosystem">@@brandShort@@ AI System</a><a href="#platform">@@platformProduct@@™ Platform</a><a href="#platform">Smart Number Engine</a>
         <a href="#refer">Refer &amp; Earn Royalties</a><a href="#coverage">Nearest-Crew Coverage</a><a href="#storm">WIN Storm Intelligence</a>
-        <a href="#services">House Washing</a><a href="#services">Driveways &amp; Sidewalks</a><a href="#services">Roof Soft-Wash</a>
-        <a href="#services">Pool Decks &amp; Fences</a><a href="#services">Post-Storm Cleanup</a><a href="#services">Rust &amp; Stain Removal</a>
-        <a href="#services">Commercial &amp; HOA</a><a href="#inventory">Instant-Quote Surface Selector</a>
+@@sitemapServicesHTML@@<a href="#inventory">Instant-Quote Surface Selector</a>
         <a href="#standard">The @@brandShort@@ Standard</a><a href="#reviews">Reviews</a>
         <a href="#process">Our Process</a><a href="#start">Free Estimate</a><a href="#profile">Snap the Stain · Instant Estimate</a><a href="#track">Track Your Job</a>
         <a href="#book">Book an Estimate</a><a href="#franchise">Franchise Opportunities</a><a href="#adjusters">Independent Crews · Fulfill Leads</a><a href="#careers">Careers · Now Hiring</a><a href="#contact">Phone Lines</a>
@@ -2107,15 +2093,15 @@ document.querySelectorAll('[data-say]').forEach(b=>{
   b.addEventListener('click',()=>speak(b.getAttribute('data-say')));
 });
 
-/* ---------- TWO-WAY CONCIERGE (pressure-washing Q&A, language-aware) ---------- */
+/* ---------- TWO-WAY CONCIERGE (brand Q&A, language-aware) ---------- */
 (function(){
   const inp=document.getElementById('askIn'), send=document.getElementById('askSend'), mic=document.getElementById('askMic');
   if(!inp||!send) return;
-  // Plain-ASCII spoken answers built from brand-kit/brands/pressure.json.
+  // Plain-ASCII spoken answers built from the brand JSON knowledge base.
   const KB=[
 @@kbJS@@
   ];
-  const FALLBACK="Great question. The fastest answer is a quick call or text to 786, 484, 7053. Or ask me about pricing, the areas we serve, soft wash versus pressure washing, house washing, roofs, pool decks, fences, or booking a free estimate.";
+  const FALLBACK="@@conciergeFallback@@";
   function matchAndReply(qEn){
     const ql=String(qEn).toLowerCase(); let best=null,bs=0;
     KB.forEach(e=>{ let s=0; e[0].forEach(k=>{ if(ql.indexOf(k)>-1) s++; }); if(s>bs){ bs=s; best=e; } });
@@ -2149,7 +2135,7 @@ document.querySelectorAll('[data-say]').forEach(b=>{
 
 // Greeting only fires when the user turns voice ON (never auto-plays).
 function greet(){
-  speak("Hi, I'm @@conciergeName@@, your @@brandShort@@ concierge. Tap a button and I'll help you get a free estimate for house washing, driveways, roofs, pool decks, or fences.");
+  speak("@@conciergeGreet@@");
 }
 // Stop any speech if the tab is hidden (prevents background loops).
 document.addEventListener('visibilitychange',()=>{ if(document.hidden) stopSpeaking(); });
@@ -2254,7 +2240,7 @@ let orbSpeaking=false;
   const foot=document.getElementById('funnelFoot');
 
   const stepPrompts={
-    1:"First — what do you need cleaned?",
+    1:"@@funnelPrompt1@@",
     2:"Got it. How soon do you need it done?",
     3:"Thanks. What type of property is it?",
     4:"Almost there — where should we send your free estimate?",
@@ -2484,7 +2470,7 @@ function provisionDID(consoleEl, done){
     const hit = INV.find(c=>c.name.toLowerCase()===q)
             || INV.find(c=>c.name.toLowerCase().includes(q)&&q)
             || null;
-    if(!hit){ status.textContent='Type a surface (e.g. "driveway") or tap Estimate on a card below.'; return; }
+    if(!hit){ status.textContent='@@quoteSearchHint@@'; return; }
     lock(hit);
   });
   grid.addEventListener('click',e=>{
@@ -2611,11 +2597,11 @@ function provisionDID(consoleEl, done){
   const chat=document.getElementById('stormChat');
   const cid='CCPW-2026-'+String(1000+Math.floor(Math.random()*8999)).slice(-4);
   const SEQ=[
-    {c:'alert', h:'🌀 <b>STORM DISPATCH ALERT</b> — WIN Network<br>Storm just cleared Kendall. Exterior surfaces flagged for cleanup across your area.'},
-    {c:'out',  h:'📷 Driveway — storm debris<ph>🍂</ph><stamp>Sent 8:04 AM · geo-tagged ✓</stamp>'},
+    {c:'alert', h:'🌀 <b>STORM DISPATCH ALERT</b> — WIN Network<br>@@stormSimAlert@@'},
+    {c:'out',  h:'📷 @@stormSimOut1@@<ph>@@stormSimEmoji1@@</ph><stamp>Sent 8:04 AM · geo-tagged ✓</stamp>'},
     {c:'sys',  h:'✅ Address matched · routed to the nearest crew'},
-    {c:'in',   h:'🚚 A @@brandShort@@ crew is about 6 minutes away. Free quote on arrival — want the pool deck and lanai done too?'},
-    {c:'out',  h:'📷 Pool deck<ph>🌊</ph><stamp>Sent 8:05 AM · geo-tagged ✓</stamp>'},
+    {c:'in',   h:'@@stormSimReply@@'},
+    {c:'out',  h:'📷 @@stormSimOut2@@<ph>@@stormSimEmoji2@@</ph><stamp>Sent 8:05 AM · geo-tagged ✓</stamp>'},
     {c:'sys',  h:`✅ Job scoped · same-week cleanup scheduled`},
     {c:'sys',  h:`🎉 Job <b>${cid}</b> booked &amp; shared across the network`}
   ];
@@ -2670,17 +2656,11 @@ let LAST_CLAIM_ID = null;
     return 'CCPW-2026-'+String(1000+n).slice(-4);
   }
   const SERVICES={
-    'House Washing':['Pre-rinse & prep','Soft-wash detergent application','Mold & algae dwell + rinse','Final walkthrough'],
-    'Driveway / Sidewalk':['Sweep & pre-treat','Surface-cleaner pass','Oil & rust spot treatment','Post-rinse'],
-    'Roof Soft-Wash':['Low-pressure application','Algae & biological kill','Gentle rinse','Streak-free finish'],
-    'Pool Deck / Fence':['Pre-rinse & prep','Surface-safe clean','Detail edges & corners','Slip-safe rinse'],
-    'Commercial / HOA':['Site walk & scope','Zoned surface cleaning','Off-hours scheduling','Manager sign-off'],
-    'Other':['On-site look','Surface assessment','Scope & estimate','Clean & rinse']
+@@photoServicesJS@@
   };
   // illustrative estimate range by service
   const RANGES={
-    'House Washing':'$250 – $600','Driveway / Sidewalk':'$150 – $450','Roof Soft-Wash':'$400 – $1,200',
-    'Pool Deck / Fence':'$150 – $550','Commercial / HOA':'$500 – $8,000+','Other':'$150 – $8,000+'
+@@photoRangesJS@@
   };
 
   document.getElementById('pf-generate').addEventListener('click',()=>{
@@ -2732,12 +2712,11 @@ let LAST_CLAIM_ID = null;
 (function(){
   const trackBtn=document.getElementById('trackBtn'); if(!trackBtn) return;
   const STAGES=[
-    {k:'Booked'},{k:'Estimate Confirmed'},{k:'Scheduled'},
-    {k:'Crew On the Way'},{k:'Washing'},{k:'Rinse & Inspect'},{k:'Complete'}
+@@trackStagesJS@@
   ];
-  const FEED=['Crew assigned to your job','Estimate confirmed on-site','Job added to the schedule',
-    'Crew en route — geo-tracked','Pre-rinse & prep started','Soft-wash detergent applied',
-    'Surface cleaning in progress','Final rinse underway','Before & after photos logged'];
+  const FEED=[
+@@trackFeedJS@@
+  ];
   const body=document.getElementById('trackBody'), empty=document.getElementById('trackEmpty');
   let timer=null, idx=4;
   const hash=s=>{let h=0;for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return h;};
@@ -2755,7 +2734,7 @@ let LAST_CLAIM_ID = null;
     document.getElementById('tmPct').textContent=pct+'%';
     document.getElementById('ttStatus').textContent=STAGES[idx].k;
     const payout=document.getElementById('trackPayout');
-    if(idx>=STAGES.length-1){ payout.hidden=false; payout.innerHTML='✨ Job Complete<b>Sparkling Clean</b><span style="color:var(--muted);font-size:13px">Your walkthrough is done — surfaces look brand-new.</span>'; }
+    if(idx>=STAGES.length-1){ payout.hidden=false; payout.innerHTML='@@trackPayoutHTML@@'; }
     else payout.hidden=true;
   }
   function addFeed(msg){
@@ -2776,8 +2755,8 @@ let LAST_CLAIM_ID = null;
       addFeed(FEED[Math.floor(Math.random()*FEED.length)]);
       if(Math.random()<0.5 && idx<STAGES.length-1){
         idx++; render();
-        if(idx>=STAGES.length-1){ addFeed('🎉 Job complete — surfaces sparkling clean'); clearInterval(timer);
-          if(voiceOn) speak('Great news. Your job is complete and your surfaces look brand new.'); }
+        if(idx>=STAGES.length-1){ addFeed('@@trackCompleteFeed@@'); clearInterval(timer);
+          if(voiceOn) speak('@@trackCompleteSay@@'); }
       }
     },5000);
   }

@@ -1042,7 +1042,7 @@ window.googleTranslateElementInit=function(){
     <div>
       <div class="badge"><span class="dot"></span> 🌴 South Florida's Exterior-Cleaning Crew · Miami-Dade &amp; Broward</div>
       <h1>Cleaner surfaces.<br><span class="hl">Better impressions.</span></h1>
-      <p class="lede">Coastal Crown Pressure Washing makes South Florida homes and businesses look brand-new — house washing, driveways, roof soft-wash, pool decks and fences across Miami-Dade and Broward. And now every call rings to the right crew, answered instantly, in the caller's language. <b>Free estimates. Bilingual. Residential, commercial &amp; HOA.</b></p>
+      <p class="lede">Coastal Crown makes South Florida homes and businesses look brand-new — house washing, driveways, roof soft-wash, pool decks and fences across Miami-Dade and Broward. And now every call rings to the right crew, answered instantly, in the caller's language. <b>Free estimates. Bilingual. Residential, commercial &amp; HOA.</b></p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#start">⚡ Get My Free Estimate</a>
         <a class="btn btn-ghost" href="#inventory">📸 Snap the Surface · Instant Quote</a>
@@ -1533,11 +1533,17 @@ window.googleTranslateElementInit=function(){
             <div class="qs">Select the option that best fits the job.</div>
             <div class="opts">
               <div class="opt" data-field="damage" data-val="House Washing"><span class="e">🏠</span> House Washing</div>
-              <div class="opt" data-field="damage" data-val="Driveway / Sidewalk"><span class="e">🛣️</span> Driveway / Sidewalk</div>
+              <div class="opt" data-field="damage" data-val="Driveway & Sidewalk"><span class="e">🛣️</span> Driveway & Sidewalk</div>
               <div class="opt" data-field="damage" data-val="Roof Soft-Wash"><span class="e">🧼</span> Roof Soft-Wash</div>
-              <div class="opt" data-field="damage" data-val="Pool Deck / Fence"><span class="e">🏊</span> Pool Deck / Fence</div>
-              <div class="opt" data-field="damage" data-val="Commercial / HOA"><span class="e">🏢</span> Commercial / HOA</div>
-              <div class="opt" data-field="damage" data-val="Post-Storm Cleanup"><span class="e">🌀</span> Post-Storm Cleanup</div>
+              <div class="opt" data-field="damage" data-val="Pool Deck"><span class="e">🏊</span> Pool Deck</div>
+              <div class="opt" data-field="damage" data-val="Fence & Screen"><span class="e">🪵</span> Fence & Screen</div>
+              <div class="opt" data-field="damage" data-val="Patio & Lanai"><span class="e">🌿</span> Patio & Lanai</div>
+              <div class="opt" data-field="damage" data-val="Paver Deep-Clean"><span class="e">🧱</span> Paver Deep-Clean</div>
+              <div class="opt" data-field="damage" data-val="Rust & Stain Removal"><span class="e">✨</span> Rust & Stain Removal</div>
+              <div class="opt" data-field="damage" data-val="Commercial Storefront"><span class="e">🏢</span> Commercial Storefront</div>
+              <div class="opt" data-field="damage" data-val="Restaurant / Dumpster Pad"><span class="e">🍔</span> Restaurant / Dumpster Pad</div>
+              <div class="opt" data-field="damage" data-val="Parking Garage"><span class="e">🅿️</span> Parking Garage</div>
+              <div class="opt" data-field="damage" data-val="HOA / Community"><span class="e">🏘️</span> HOA / Community</div>
             </div>
           </div>
 
@@ -1637,8 +1643,12 @@ window.googleTranslateElementInit=function(){
         <div class="two">
           <div class="field"><label>Service</label>
             <select id="pf-damage">
-              <option>House Washing</option><option>Driveway / Sidewalk</option><option>Roof Soft-Wash</option>
-              <option>Pool Deck / Fence</option><option>Commercial / HOA</option><option>Other</option>
+              <option>House Washing</option>
+              <option>Driveway / Sidewalk</option>
+              <option>Roof Soft-Wash</option>
+              <option>Pool Deck / Fence</option>
+              <option>Commercial / HOA</option>
+              <option>Other</option>
             </select>
           </div>
           <div class="field"><label>Property ZIP</label><input id="pf-zip" type="text" placeholder="33157"></div>
@@ -1929,9 +1939,7 @@ window.googleTranslateElementInit=function(){
       <div class="sitemap-links">
         <a href="#top">Home</a><a href="#ecosystem">Coastal Crown AI System</a><a href="#platform">Coastal Connect™ Platform</a><a href="#platform">Smart Number Engine</a>
         <a href="#refer">Refer &amp; Earn Royalties</a><a href="#coverage">Nearest-Crew Coverage</a><a href="#storm">WIN Storm Intelligence</a>
-        <a href="#services">House Washing</a><a href="#services">Driveways &amp; Sidewalks</a><a href="#services">Roof Soft-Wash</a>
-        <a href="#services">Pool Decks &amp; Fences</a><a href="#services">Post-Storm Cleanup</a><a href="#services">Rust &amp; Stain Removal</a>
-        <a href="#services">Commercial &amp; HOA</a><a href="#inventory">Instant-Quote Surface Selector</a>
+<a href="#services">House Washing</a><a href="#services">Driveways &amp; Sidewalks</a><a href="#services">Roof Soft-Wash</a><a href="#services">Pool Decks &amp; Fences</a><a href="#services">Commercial &amp; HOA</a><a href="#services">Post-Storm Cleanup</a><a href="#services">Rust &amp; Stain Removal</a><a href="#inventory">Instant-Quote Surface Selector</a>
         <a href="#standard">The Coastal Crown Standard</a><a href="#reviews">Reviews</a>
         <a href="#process">Our Process</a><a href="#start">Free Estimate</a><a href="#profile">Snap the Stain · Instant Estimate</a><a href="#track">Track Your Job</a>
         <a href="#book">Book an Estimate</a><a href="#franchise">Franchise Opportunities</a><a href="#adjusters">Independent Crews · Fulfill Leads</a><a href="#careers">Careers · Now Hiring</a><a href="#contact">Phone Lines</a>
@@ -2222,11 +2230,11 @@ document.querySelectorAll('[data-say]').forEach(b=>{
   b.addEventListener('click',()=>speak(b.getAttribute('data-say')));
 });
 
-/* ---------- TWO-WAY CONCIERGE (pressure-washing Q&A, language-aware) ---------- */
+/* ---------- TWO-WAY CONCIERGE (brand Q&A, language-aware) ---------- */
 (function(){
   const inp=document.getElementById('askIn'), send=document.getElementById('askSend'), mic=document.getElementById('askMic');
   if(!inp||!send) return;
-  // Plain-ASCII spoken answers built from brand-kit/brands/pressure.json.
+  // Plain-ASCII spoken answers built from the brand JSON knowledge base.
   const KB=[
     [["price", "cost", "how much", "estimate", "quote", "expensive", "charge", "rate", "pricing", "dollar"],
      "Most Coastal Crown jobs run between 250 and 8,000 dollars or more, depending on the surface, the square footage, and how heavy the buildup is. A single driveway is at the low end, and a full commercial lot or H O A is at the high end. Every quote is free and given in writing before we start."],
@@ -2832,17 +2840,21 @@ let LAST_CLAIM_ID = null;
     return 'CCPW-2026-'+String(1000+n).slice(-4);
   }
   const SERVICES={
-    'House Washing':['Pre-rinse & prep','Soft-wash detergent application','Mold & algae dwell + rinse','Final walkthrough'],
-    'Driveway / Sidewalk':['Sweep & pre-treat','Surface-cleaner pass','Oil & rust spot treatment','Post-rinse'],
-    'Roof Soft-Wash':['Low-pressure application','Algae & biological kill','Gentle rinse','Streak-free finish'],
-    'Pool Deck / Fence':['Pre-rinse & prep','Surface-safe clean','Detail edges & corners','Slip-safe rinse'],
-    'Commercial / HOA':['Site walk & scope','Zoned surface cleaning','Off-hours scheduling','Manager sign-off'],
-    'Other':['On-site look','Surface assessment','Scope & estimate','Clean & rinse']
+    "House Washing":["Pre-rinse & prep","Soft-wash detergent application","Mold & algae dwell + rinse","Final walkthrough"],
+    "Driveway / Sidewalk":["Sweep & pre-treat","Surface-cleaner pass","Oil & rust spot treatment","Post-rinse"],
+    "Roof Soft-Wash":["Low-pressure application","Algae & biological kill","Gentle rinse","Streak-free finish"],
+    "Pool Deck / Fence":["Pre-rinse & prep","Surface-safe clean","Detail edges & corners","Slip-safe rinse"],
+    "Commercial / HOA":["Site walk & scope","Zoned surface cleaning","Off-hours scheduling","Manager sign-off"],
+    "Other":["On-site look","Surface assessment","Scope & estimate","Clean & rinse"]
   };
   // illustrative estimate range by service
   const RANGES={
-    'House Washing':'$250 – $600','Driveway / Sidewalk':'$150 – $450','Roof Soft-Wash':'$400 – $1,200',
-    'Pool Deck / Fence':'$150 – $550','Commercial / HOA':'$500 – $8,000+','Other':'$150 – $8,000+'
+    "House Washing":"$250 – $600",
+    "Driveway / Sidewalk":"$150 – $450",
+    "Roof Soft-Wash":"$400 – $1,200",
+    "Pool Deck / Fence":"$150 – $550",
+    "Commercial / HOA":"$500 – $8,000+",
+    "Other":"$150 – $8,000+"
   };
 
   document.getElementById('pf-generate').addEventListener('click',()=>{
@@ -2894,12 +2906,25 @@ let LAST_CLAIM_ID = null;
 (function(){
   const trackBtn=document.getElementById('trackBtn'); if(!trackBtn) return;
   const STAGES=[
-    {k:'Booked'},{k:'Estimate Confirmed'},{k:'Scheduled'},
-    {k:'Crew On the Way'},{k:'Washing'},{k:'Rinse & Inspect'},{k:'Complete'}
+    {k:"Booked"},
+    {k:"Estimate Confirmed"},
+    {k:"Scheduled"},
+    {k:"Crew On the Way"},
+    {k:"Washing"},
+    {k:"Rinse & Inspect"},
+    {k:"Complete"}
   ];
-  const FEED=['Crew assigned to your job','Estimate confirmed on-site','Job added to the schedule',
-    'Crew en route — geo-tracked','Pre-rinse & prep started','Soft-wash detergent applied',
-    'Surface cleaning in progress','Final rinse underway','Before & after photos logged'];
+  const FEED=[
+    "Crew assigned to your job",
+    "Estimate confirmed on-site",
+    "Job added to the schedule",
+    "Crew en route — geo-tracked",
+    "Pre-rinse & prep started",
+    "Soft-wash detergent applied",
+    "Surface cleaning in progress",
+    "Final rinse underway",
+    "Before & after photos logged"
+  ];
   const body=document.getElementById('trackBody'), empty=document.getElementById('trackEmpty');
   let timer=null, idx=4;
   const hash=s=>{let h=0;for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return h;};
