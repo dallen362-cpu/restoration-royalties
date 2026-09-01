@@ -64,3 +64,16 @@
   OneDrive/SharePoint. The Zapier connection is RETIRED — do not retry or reconnect it; use the Drive
   MCP directly (binaries go up via the proven single-line ~1,900-char base64 part pipeline, each part
   fileSize-gated on arrival; reassembly READMEs accompany every part-set).
+- **★ MAIN BRAIN topology (David 2026-09-01, standing directive):** THIS Claude Code session is the
+  designated **MASTER MAIN BRAIN** for ALL Telvergence data consolidation and for every money-making /
+  business project — the working source of truth for all things business. Master data flows in ONE
+  direction through three tiers:
+  **(1) Claude Code master-main-brain** (this session + this repo) → **(2) the Google Drive
+  `TELVERGENCE-MASTER-BRAIN` folder** (dallen362@gmail.com — the unified, indexed backup defined in the
+  rule above) → **(3) the external removable hard drive attached to the Lenovo "Excaliber" computer**
+  (David's local cold copy). Tier 3 is PHYSICAL and David-side: a cloud session CANNOT reach the external
+  drive, so the Drive→external-HDD copy is always David's step at the home studio (Claude provides the
+  exact procedure, never the copy itself).
+  **HARD EXCLUSION (reinforces the Kenneth/PHI rule):** ALL Kenneth Allen legal/medical/PHI matters are
+  OUT of this money/business brain entirely — never ingested, consolidated, copied to any tier, or
+  published. They live only in their own separate master space, never here.
