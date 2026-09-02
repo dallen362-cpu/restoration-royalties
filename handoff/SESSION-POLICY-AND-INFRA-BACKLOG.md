@@ -36,7 +36,7 @@ the professional standard and I recommend we hold to it.
    project, `contact@`, and a real Smart-DID block. Until then it stays the concept at `/halfacow/`.
    **4b. telvergence.com/halfacow/ (David's preferred URL, 2026-09-02):** cross-repo additive copy — staged in
    `handoff/HALFACOW-TELVERGENCE-COM-DEPLOY.md`; run only in an infra session. Meanwhile live at
-   restorationroyalties.com/halfacow/ (tags `pre-halfacow-2026-09-02` = foundation, `halfacow-nfl-evolution-v1` = build).
+   restorationroyalties.com/halfacow/ (GitHub branches `restore/pre-halfacow-2026-09-02` = foundation, `release/halfacow-nfl-evolution-v1` = build; tags don't survive the proxy).
 5. **Private store for proprietary docs** — a PRIVATE repo / Drive index for the BOSS / MyFiPro / Genesis
    license agreements + Genesis Capital material (referenced by name; never in the public repo).
 6. **Kenneth data-boundary remediation** — history scrub of the two legacy commits that reference the name,

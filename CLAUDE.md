@@ -100,7 +100,9 @@
   food trucks, etc.). The food-truck fit (game-day/event demand + mobile fleet ops) is the exemplar.
 - **★ HALF A COW v1 LOCKED (2026-09-02):** the complete NFL build (gold master · hub · 30-market inventory ·
   5 city storefronts · Cow Connect · Platinum white-label) is live-noindexed at restorationroyalties.com/halfacow/
-  and tagged `halfacow-nfl-evolution-v1`; the pre-Half-a-Cow foundation is tagged `pre-halfacow-2026-09-02`.
+  and pinned on GitHub as branch `release/halfacow-nfl-evolution-v1`; the pre-Half-a-Cow foundation is pinned as
+  branch `restore/pre-halfacow-2026-09-02` (main `8f31b6b`). **Restore points = branches, not tags:** the git proxy
+  silently drops tag pushes (GitHub holds 0 tags), so never rely on a tag as a remote restore point.
   David's target public URL is `telvergence.com/halfacow/` — a cross-repo infra step, STAGED (not run) in
   `handoff/HALFACOW-TELVERGENCE-COM-DEPLOY.md`. Do not disturb the foundation to get there.
 - **★ SEQUENCE (David 2026-09-02):** (1) finish TODAY'S Half a Cow **GOLD** demo build (NFL-city model,
