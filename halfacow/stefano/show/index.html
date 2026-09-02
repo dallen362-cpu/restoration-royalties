@@ -11,8 +11,9 @@
 <style>
   :root{--bg:#0b0b0d;--panel:#15151a;--panel2:#1d1d24;--ink:#f7f1e6;--muted:#b8b1a4;--red:#e23744;--gold:#f2b632;--green:#3ddc84;--line:#2b2b34}
   *{box-sizing:border-box}
-  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font:20px/1.4 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;overflow:hidden}
-  body{display:flex;flex-direction:column;min-height:100dvh}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font:20px/1.4 "Segoe UI",system-ui,-apple-system,Arial,sans-serif}
+  html{scroll-behavior:smooth}
+  #showwrap{display:flex;flex-direction:column;height:100dvh;overflow:hidden}
   /* top bar */
   #top{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line);background:#0e0e11;flex:0 0 auto}
   #top .brand{font-weight:900;letter-spacing:2px;text-transform:uppercase;font-size:15px;color:var(--gold);white-space:nowrap}
@@ -79,11 +80,27 @@
   #go{background:var(--red);color:#fff;border:none;border-radius:999px;padding:20px 40px;font-size:clamp(22px,3vw,34px);font-weight:900;cursor:pointer;box-shadow:0 0 50px rgba(226,55,68,.45)}
   #start small{display:block;color:#7d776c;margin-top:18px;font-size:14px}
   @media (max-width:760px){.g5,.g6{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(2,1fr)} .money{grid-template-columns:1fr} .stack .card b{min-width:120px} #top .kick{display:none}}
+
+  /* site map */
+  #sitemap{max-width:1180px;margin:0 auto;padding:48px 24px 80px}
+  #sitemap h2{font-size:clamp(30px,4.6vw,56px);margin:0 0 6px}
+  #sitemap .lead{color:var(--muted);font-size:clamp(16px,1.8vw,21px);margin-bottom:22px}
+  #sitemap h3{font-size:clamp(18px,2vw,24px);color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin:34px 0 10px;border-left:8px solid var(--red);padding-left:12px}
+  .sm{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+  .sm a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;color:var(--ink);text-decoration:none;transition:border-color .2s,transform .2s}
+  .sm a:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .sm a b{display:block;font-size:clamp(17px,1.9vw,22px);margin-bottom:4px}
+  .sm a span{display:block;color:var(--muted);font-size:clamp(13px,1.4vw,16px)}
+  .sm a i{display:block;font-style:normal;color:#ffd9a3;font-family:Consolas,Menlo,monospace;font-size:13px;margin-top:8px;word-break:break-all}
+  .sm a.lock{border-color:#3a2a10}
+  .sm a .ok{display:inline-block;margin-top:6px;font-size:12px;color:var(--green);font-weight:800;letter-spacing:1px}
+  #sitemap .foot2{margin-top:30px;color:#7d776c;font-size:13px;border-top:1px solid var(--line);padding-top:12px}
+  .topbtn{background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap}
 </style>
 </head>
-<body>
-
-<div id="start">
+<body id="top">
+<div id="root">
+<div id="showwrap"><div id="start">
   <div class="big">🐄</div>
   <div class="k">The Sports Chef presents</div>
   <h1>HALF A <em>COW</em></h1>
@@ -96,6 +113,7 @@
   <div class="brand">🐄 Half a Cow <span>· The Sports Chef Edition</span></div>
   <div class="kick" id="kick"></div>
   <div class="cnt" id="cnt">0 / 0</div>
+  <a class="topbtn" href="#sitemap">📚 Site map</a>
 </div>
 <div id="bar"><i id="fill"></i></div>
 <div id="stage"></div>
@@ -108,19 +126,10 @@
   <select id="voice" title="Voice"></select>
   <button id="mute" title="Silent mode: captions only, timed">🔊 Voice on</button>
   <button id="fs" title="Full screen">⛶</button>
+  <button id="tosm" title="Everything, one page">📚 Site map</button>
 </div>
-<div id="foot">Illustrative concept · Not affiliated with, endorsed by, or sponsored by the National Football League or any club · Phone numbers shown are examples, not provisioned · Not a franchise offer; no securities offered · Powered by the Telvergence platform</div>
-
-<script>
-(function(){
-'use strict';
-var HUB='https://halfacow.pages.dev/stefano/hub/', DALLAS='https://halfacow.pages.dev/stefano/dallas/', PLAT='https://halfacow.pages.dev/stefano/platinum/', SHOW3='https://halfacow.pages.dev/stefano/presentation/', SELF='https://halfacow.pages.dev/stefano/show/';
-var QR='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges"><rect width="33" height="33" fill="#fff"/><path d="M2 2h7v1h-7zM10 2h1v1h-1zM12 2h2v1h-2zM16 2h5v1h-5zM22 2h1v1h-1zM24 2h7v1h-7zM2 3h1v1h-1zM8 3h1v1h-1zM11 3h1v1h-1zM13 3h4v1h-4zM18 3h2v1h-2zM21 3h1v1h-1zM24 3h1v1h-1zM30 3h1v1h-1zM2 4h1v1h-1zM4 4h3v1h-3zM8 4h1v1h-1zM11 4h1v1h-1zM13 4h1v1h-1zM18 4h2v1h-2zM21 4h1v1h-1zM24 4h1v1h-1zM26 4h3v1h-3zM30 4h1v1h-1zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM10 5h2v1h-2zM14 5h4v1h-4zM20 5h1v1h-1zM22 5h1v1h-1zM24 5h1v1h-1zM26 5h3v1h-3zM30 5h1v1h-1zM2 6h1v1h-1zM4 6h3v1h-3zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h3v1h-3zM20 6h1v1h-1zM24 6h1v1h-1zM26 6h3v1h-3zM30 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM10 7h3v1h-3zM18 7h1v1h-1zM21 7h1v1h-1zM24 7h1v1h-1zM30 7h1v1h-1zM2 8h7v1h-7zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h7v1h-7zM10 9h1v1h-1zM12 9h1v1h-1zM16 9h1v1h-1zM19 9h1v1h-1zM22 9h1v1h-1zM2 10h1v1h-1zM6 10h1v1h-1zM8 10h4v1h-4zM13 10h1v1h-1zM17 10h1v1h-1zM19 10h1v1h-1zM21 10h7v1h-7zM30 10h1v1h-1zM3 11h4v1h-4zM10 11h1v1h-1zM15 11h1v1h-1zM17 11h1v1h-1zM20 11h1v1h-1zM24 11h7v1h-7zM6 12h5v1h-5zM12 12h6v1h-6zM19 12h2v1h-2zM22 12h5v1h-5zM30 12h1v1h-1zM10 13h4v1h-4zM16 13h1v1h-1zM19 13h4v1h-4zM24 13h1v1h-1zM27 13h1v1h-1zM29 13h2v1h-2zM3 14h2v1h-2zM6 14h1v1h-1zM8 14h1v1h-1zM12 14h3v1h-3zM16 14h2v1h-2zM19 14h1v1h-1zM21 14h3v1h-3zM29 14h1v1h-1zM2 15h3v1h-3zM6 15h2v1h-2zM9 15h1v1h-1zM14 15h1v1h-1zM16 15h3v1h-3zM24 15h7v1h-7zM2 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM12 16h2v1h-2zM15 16h4v1h-4zM20 16h1v1h-1zM22 16h4v1h-4zM27 16h2v1h-2zM30 16h1v1h-1zM2 17h1v1h-1zM5 17h3v1h-3zM9 17h2v1h-2zM12 17h1v1h-1zM14 17h1v1h-1zM16 17h1v1h-1zM19 17h1v1h-1zM26 17h1v1h-1zM29 17h2v1h-2zM2 18h2v1h-2zM6 18h1v1h-1zM8 18h1v1h-1zM13 18h5v1h-5zM19 18h5v1h-5zM29 18h1v1h-1zM2 19h1v1h-1zM6 19h2v1h-2zM9 19h1v1h-1zM11 19h2v1h-2zM14 19h1v1h-1zM16 19h5v1h-5zM24 19h4v1h-4zM29 19h2v1h-2zM4 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM11 20h2v1h-2zM14 20h4v1h-4zM20 20h1v1h-1zM28 20h1v1h-1zM30 20h1v1h-1zM6 21h1v1h-1zM9 21h2v1h-2zM13 21h3v1h-3zM17 21h4v1h-4zM25 21h1v1h-1zM29 21h2v1h-2zM2 22h3v1h-3zM8 22h1v1h-1zM15 22h1v1h-1zM19 22h1v1h-1zM21 22h7v1h-7zM30 22h1v1h-1zM10 23h3v1h-3zM14 23h5v1h-5zM22 23h1v1h-1zM26 23h1v1h-1zM30 23h1v1h-1zM2 24h7v1h-7zM10 24h2v1h-2zM17 24h2v1h-2zM21 24h2v1h-2zM24 24h1v1h-1zM26 24h3v1h-3zM30 24h1v1h-1zM2 25h1v1h-1zM8 25h1v1h-1zM11 25h1v1h-1zM13 25h1v1h-1zM16 25h1v1h-1zM19 25h4v1h-4zM26 25h1v1h-1zM29 25h2v1h-2zM2 26h1v1h-1zM4 26h3v1h-3zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h3v1h-3zM19 26h1v1h-1zM21 26h7v1h-7zM30 26h1v1h-1zM2 27h1v1h-1zM4 27h3v1h-3zM8 27h1v1h-1zM12 27h1v1h-1zM15 27h1v1h-1zM17 27h2v1h-2zM21 27h1v1h-1zM23 27h1v1h-1zM30 27h1v1h-1zM2 28h1v1h-1zM4 28h3v1h-3zM8 28h1v1h-1zM14 28h1v1h-1zM17 28h1v1h-1zM19 28h4v1h-4zM27 28h4v1h-4zM2 29h1v1h-1zM8 29h1v1h-1zM13 29h2v1h-2zM16 29h2v1h-2zM19 29h1v1h-1zM22 29h1v1h-1zM24 29h2v1h-2zM27 29h1v1h-1zM29 29h2v1h-2zM2 30h7v1h-7zM10 30h1v1h-1zM12 30h1v1h-1zM14 30h2v1h-2zM19 30h1v1h-1zM21 30h4v1h-4zM27 30h1v1h-1zM29 30h1v1h-1z" fill="#111"/></svg>';
-var CITIES=['Dallas','Philadelphia','Kansas City','Miami','Nashville','Arizona','Atlanta','Baltimore','Buffalo','Carolina','Chicago','Cincinnati','Cleveland','Denver','Detroit','Green Bay','Houston','Indianapolis','Jacksonville','Las Vegas','Los Angeles','Minnesota','New England','New Orleans','New York','Pittsburgh','San Francisco','Seattle','Tampa Bay','Washington'];
-function chips(arr,cls){return '<div class="chips stagger">'+arr.map(function(c,i){return '<span class="chip'+(cls?' '+cls:'')+'" style="animation-delay:'+(i*60)+'ms">'+c+'</span>';}).join('')+'</div>';}
-function trucks(n){var s='';for(var i=0;i<n;i++)s+='<span style="animation-delay:'+(i*70)+'ms">🚚</span>';return '<div class="trucks">'+s+'</div>';}
-
-var S=[
+<div id="foot">Illustrative concept · Not affiliated with, endorsed by, or sponsored by the National Football League or any club · Phone numbers shown are examples, not provisioned · Not a franchise offer; no securities offered · Powered by the Telvergence platform</div></div>
+<script type="text/plain" id="scenes">[
 {k:'The Sports Chef presents',
  v:'<div class="big">🐄</div><h1>HALF A <em>COW</em></h1><div class="sub">Chef Stefano, this is your brand.</div>',
  n:'Chef Stefano, this is your brand. Sit back. This show plays itself, and it talks. Here is Half a Cow, in about nine minutes.'},
@@ -196,8 +205,66 @@ var S=[
 {k:'18 · The close',
  v:'<h1 style="font-size:clamp(30px,5vw,68px)">It is your brand.<br><em>City number one is open.</em><br>Tampa Bay, Miami, or Jacksonville?</h1><div class="closegrid"><img class="qr" alt="QR code · this show" src="data:image/svg+xml;utf8,'+encodeURIComponent(QR)+'"><div style="text-align:left"><div class="sub">Next: a founding-partner conversation, face to face. Terms on paper, by counsel.</div><div style="margin-top:12px"><button class="cta" id="again">↺ Play it again</button><a class="cta alt" href="'+HUB+'" target="_blank" rel="noopener">Network hub ↗</a><a class="cta alt" href="'+SHOW3+'" target="_blank" rel="noopener">3-Minute Show ↗</a></div><div class="fine" style="margin-top:14px">David Allen · dallen362@gmail.com · Scan to keep this show on your phone</div></div></div>',
  n:'Chef, it is your brand. City number one is open. Tampa Bay, Miami, or Jacksonville? The next step is a conversation, face to face, about what a founding partner looks like. The terms go on paper, by counsel. Scan the code to keep this on your phone. Thank you.'}
-];
+]</script>
+<section id="sitemap">
+<div class="k">Table of contents · everything, one page</div>
+<h2>All the collateral. <em style="color:var(--red);font-style:normal">Digitally.</em></h2>
+<div class="lead">Every piece of Half a Cow built for the Chef Stefano edition, plus the brand pages behind it. Tap anything. Everything talks. Everything is illustrative until the first city launches.</div>
+<h3>Chef Stefano edition · your pages</h3><div class="sm">
+<a href="https://halfacow.pages.dev/stefano/show/" target="_blank" rel="noopener"><b>▶ The Full Auto Show</b><span>This show. 19 narrated scenes, about nine minutes, plays itself from one tap.</span><i>halfacow.pages.dev/stefano/show/</i><em class="ok">✔ TESTED 2026-09-02</em></a>
+<a href="https://halfacow.pages.dev/stefano/presentation/" target="_blank" rel="noopener"><b>🎬 The 3-Minute Show · Chef Stefano Edition</b><span>Twelve packets. Packet one: the face of the brand, Chef Stefano Tedeschi.</span><i>halfacow.pages.dev/stefano/presentation/</i><em class="ok">✔ TESTED 2026-09-02</em></a>
+<a href="https://halfacow.pages.dev/stefano/hub/" target="_blank" rel="noopener"><b>🧭 Network Command Hub</b><span>Thirty NFL-market cards, each anchored to its stadium. Tap Dallas to open a live storefront.</span><i>halfacow.pages.dev/stefano/hub/</i><em class="ok">✔ TESTED 2026-09-02</em></a>
+<a href="https://halfacow.pages.dev/stefano/inventory/" target="_blank" rel="noopener"><b>📊 Franchise Territory Inventory</b><span>Vanity numbers by city — the NPA-NXX grid every city owner holds. 800-CHEF-STEF leads.</span><i>halfacow.pages.dev/stefano/inventory/</i><em class="ok">✔ TESTED 2026-09-02</em></a>
+<a href="https://halfacow.pages.dev/stefano/platinum/" target="_blank" rel="noopener"><b>🎙️ The Talking Edition · Platinum · Chuck</b><span>Tap 🎙 and ask Chuck anything — menu, catering, cities, Smart Numbers. He answers out loud.</span><i>halfacow.pages.dev/stefano/platinum/</i><em class="ok">✔ TESTED 2026-09-02</em></a>
+<a href="https://halfacow.pages.dev/stefano/connect/" target="_blank" rel="noopener"><b>⚙️ Cow Connect</b><span>The operations platform behind every truck: dispatch, booking, tracking, the six pillars.</span><i>halfacow.pages.dev/stefano/connect/</i><em class="ok">✔ TESTED 2026-09-02</em></a>
+<a href="https://halfacow.pages.dev/stefano/" target="_blank" rel="noopener"><b>🏠 The Sports Chef presents · Half a Cow</b><span>The master brand page, Stefano edition.</span><i>halfacow.pages.dev/stefano/</i></a>
+</div>
+<h3>Five concept city storefronts · Stefano edition</h3><div class="sm">
+<a href="https://halfacow.pages.dev/stefano/dallas/" target="_blank" rel="noopener"><b>🏟️ Dallas</b><span>Premium beef. Cowboys country. NPA 817.</span><i>halfacow.pages.dev/stefano/dallas/</i><em class="ok">✔ TESTED 2026-09-02</em></a>
+<a href="https://halfacow.pages.dev/stefano/philadelphia/" target="_blank" rel="noopener"><b>🏟️ Philadelphia</b><span>Concept storefront.</span><i>halfacow.pages.dev/stefano/philadelphia/</i></a>
+<a href="https://halfacow.pages.dev/stefano/kansascity/" target="_blank" rel="noopener"><b>🏟️ Kansas City</b><span>Concept storefront. NPA 816.</span><i>halfacow.pages.dev/stefano/kansascity/</i></a>
+<a href="https://halfacow.pages.dev/stefano/miami/" target="_blank" rel="noopener"><b>🏟️ Miami</b><span>Concept storefront. NPA 305 — 305-HALF-COW, for example.</span><i>halfacow.pages.dev/stefano/miami/</i></a>
+<a href="https://halfacow.pages.dev/stefano/nashville/" target="_blank" rel="noopener"><b>🏟️ Nashville</b><span>Concept storefront. NPA 615.</span><i>halfacow.pages.dev/stefano/nashville/</i></a>
+</div>
+<h3>Bells and whistles · the brand platform</h3><div class="sm">
+<a href="https://halfacow.pages.dev/pitch/" target="_blank" rel="noopener"><b>🎚️ The Talking Pitch · learning-level slider</b><span>17 slides. Simple · Plain · Pro, in English or Español. Narrated, with the money-model calculator.</span><i>halfacow.pages.dev/pitch/</i><em class="ok">✔ TESTED 2026-09-02</em></a>
+<a href="https://halfacow.pages.dev/presentation/" target="_blank" rel="noopener"><b>🎬 The 3-Minute Show</b><span>The brand edition of the show.</span><i>halfacow.pages.dev/presentation/</i><em class="ok">✔ TESTED 2026-09-02</em></a>
+<a href="https://telvergence.com/halfacow/" target="_blank" rel="noopener"><b>🐄 Half a Cow · brand home</b><span>The canonical brand page on telvergence.com.</span><i>telvergence.com/halfacow/</i><em class="ok">✔ TESTED 2026-09-02</em></a>
+<a href="https://telvergence.com/halfacow/hub/" target="_blank" rel="noopener"><b>🧭 Network hub · brand edition</b><span>Thirty markets, brand edition.</span><i>telvergence.com/halfacow/hub/</i></a>
+<a href="https://telvergence.com/showroom/" target="_blank" rel="noopener"><b>🏛️ Telvergence Model Showroom</b><span>Where Half a Cow sits beside the other Telvergence builds.</span><i>telvergence.com/showroom/</i><em class="ok">✔ TESTED 2026-09-02</em></a>
+<a href="https://telvergence.com/halfacow/stefano/hub/" target="_blank" rel="noopener"><b>🌐 Mirror · telvergence.com/halfacow/stefano/</b><span>The same Stefano pages on the canonical domain.</span><i>telvergence.com/halfacow/stefano/hub/</i></a>
+</div>
+<h3>The boneyard · every host, every page we built for this brand</h3><div class="sm">
+<a href="https://telvergence.com/halfacow/" target="_blank" rel="noopener"><b>🌐 telvergence.com/halfacow/</b><span>Canonical host. Master, hub, inventory, connect, platinum, pitch, presentation, five storefronts, the Stefano tree, and the private gate.</span><i>telvergence.com/halfacow/</i><em class="ok">✔ TESTED 2026-09-02</em></a>
+<a href="https://halfacow.pages.dev/" target="_blank" rel="noopener"><b>🌐 halfacow.pages.dev</b><span>Direct Cloudflare Pages host. Same tree, plus every Stefano edition page listed above.</span><i>halfacow.pages.dev/</i></a>
+<a href="https://restorationroyalties.com/halfacow/" target="_blank" rel="noopener"><b>🌐 restorationroyalties.com/halfacow/</b><span>Third mirror, served from the build shop.</span><i>restorationroyalties.com/halfacow/</i></a>
+<a href="https://telvergence.com/halfacow/pitch/" target="_blank" rel="noopener"><b>🎚️ Talking Pitch · canonical</b><span>Learning-level slider, brand edition, on the canonical domain.</span><i>telvergence.com/halfacow/pitch/</i></a>
+<a href="https://telvergence.com/halfacow/presentation/" target="_blank" rel="noopener"><b>🎬 3-Minute Show · canonical</b><span>Brand edition on the canonical domain.</span><i>telvergence.com/halfacow/presentation/</i></a>
+<a href="https://telvergence.com/halfacow/dallas/" target="_blank" rel="noopener"><b>🏟️ Brand storefronts</b><span>Dallas · Philadelphia · Kansas City · Miami · Nashville, brand edition, e.g. telvergence.com/halfacow/dallas/</span><i>telvergence.com/halfacow/dallas/</i></a>
+<a href="https://telvergence.com/halfacow/inventory/" target="_blank" rel="noopener"><b>📊 Territory inventory · brand edition</b><span>Vanity numbers by city, brand edition.</span><i>telvergence.com/halfacow/inventory/</i></a>
+<a href="https://telvergence.com/halfacow/connect/" target="_blank" rel="noopener"><b>⚙️ Cow Connect · brand edition</b><span>The operations platform, brand edition.</span><i>telvergence.com/halfacow/connect/</i></a>
+<a href="https://halfacow.pages.dev/stefano/show/" target="_blank" rel="noopener"><b>📱 Add to home screen</b><span>Every page carries a web-app manifest and works offline after the first visit — the show keeps talking with no signal.</span><i>halfacow.pages.dev/stefano/show/</i></a>
+</div>
+<h3>The front gate · private</h3><div class="sm">
+<a href="https://telvergence.com/halfacow/private/stefano/" target="_blank" rel="noopener" class="lock"><b>🔐 Private edition · Chef Stefano</b><span>This lead show plus this directory, behind the 4-digit passcode. Passcode is shared in person.</span><i>telvergence.com/halfacow/private/stefano/</i></a>
+<a href="https://telvergence.com/halfacow/private/" target="_blank" rel="noopener" class="lock"><b>🔐 The Talking Pitch · private preview</b><span>The 18-slide founding-partner edition. Same passcode. Not for distribution.</span><i>telvergence.com/halfacow/private/</i><em class="ok">✔ TESTED 2026-09-02</em></a>
+</div>
+<div class="foot2">David Allen · dallen362@gmail.com · Half a Cow is a Telvergence brand concept · Illustrative only · not a franchise offer · no securities offered · not affiliated with, endorsed by, or sponsored by the National Football League or any club · phone numbers shown are examples, not provisioned · ✔ TESTED = opened and checked live on 2026-09-02. <a href="#top" style="color:var(--gold)">⬆ Back to the show</a></div>
+</section>
+</div>
+<script>
 
+window.__bootShow=function(){
+'use strict';
+if(window.__showBooted) return; window.__showBooted=true;
+var HUB='https://halfacow.pages.dev/stefano/hub/', DALLAS='https://halfacow.pages.dev/stefano/dallas/', PLAT='https://halfacow.pages.dev/stefano/platinum/', SHOW3='https://halfacow.pages.dev/stefano/presentation/', SELF='https://halfacow.pages.dev/stefano/show/';
+var QR='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges"><rect width="33" height="33" fill="#fff"/><path d="M2 2h7v1h-7zM10 2h1v1h-1zM12 2h2v1h-2zM16 2h5v1h-5zM22 2h1v1h-1zM24 2h7v1h-7zM2 3h1v1h-1zM8 3h1v1h-1zM11 3h1v1h-1zM13 3h4v1h-4zM18 3h2v1h-2zM21 3h1v1h-1zM24 3h1v1h-1zM30 3h1v1h-1zM2 4h1v1h-1zM4 4h3v1h-3zM8 4h1v1h-1zM11 4h1v1h-1zM13 4h1v1h-1zM18 4h2v1h-2zM21 4h1v1h-1zM24 4h1v1h-1zM26 4h3v1h-3zM30 4h1v1h-1zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM10 5h2v1h-2zM14 5h4v1h-4zM20 5h1v1h-1zM22 5h1v1h-1zM24 5h1v1h-1zM26 5h3v1h-3zM30 5h1v1h-1zM2 6h1v1h-1zM4 6h3v1h-3zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h3v1h-3zM20 6h1v1h-1zM24 6h1v1h-1zM26 6h3v1h-3zM30 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM10 7h3v1h-3zM18 7h1v1h-1zM21 7h1v1h-1zM24 7h1v1h-1zM30 7h1v1h-1zM2 8h7v1h-7zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h7v1h-7zM10 9h1v1h-1zM12 9h1v1h-1zM16 9h1v1h-1zM19 9h1v1h-1zM22 9h1v1h-1zM2 10h1v1h-1zM6 10h1v1h-1zM8 10h4v1h-4zM13 10h1v1h-1zM17 10h1v1h-1zM19 10h1v1h-1zM21 10h7v1h-7zM30 10h1v1h-1zM3 11h4v1h-4zM10 11h1v1h-1zM15 11h1v1h-1zM17 11h1v1h-1zM20 11h1v1h-1zM24 11h7v1h-7zM6 12h5v1h-5zM12 12h6v1h-6zM19 12h2v1h-2zM22 12h5v1h-5zM30 12h1v1h-1zM10 13h4v1h-4zM16 13h1v1h-1zM19 13h4v1h-4zM24 13h1v1h-1zM27 13h1v1h-1zM29 13h2v1h-2zM3 14h2v1h-2zM6 14h1v1h-1zM8 14h1v1h-1zM12 14h3v1h-3zM16 14h2v1h-2zM19 14h1v1h-1zM21 14h3v1h-3zM29 14h1v1h-1zM2 15h3v1h-3zM6 15h2v1h-2zM9 15h1v1h-1zM14 15h1v1h-1zM16 15h3v1h-3zM24 15h7v1h-7zM2 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM12 16h2v1h-2zM15 16h4v1h-4zM20 16h1v1h-1zM22 16h4v1h-4zM27 16h2v1h-2zM30 16h1v1h-1zM2 17h1v1h-1zM5 17h3v1h-3zM9 17h2v1h-2zM12 17h1v1h-1zM14 17h1v1h-1zM16 17h1v1h-1zM19 17h1v1h-1zM26 17h1v1h-1zM29 17h2v1h-2zM2 18h2v1h-2zM6 18h1v1h-1zM8 18h1v1h-1zM13 18h5v1h-5zM19 18h5v1h-5zM29 18h1v1h-1zM2 19h1v1h-1zM6 19h2v1h-2zM9 19h1v1h-1zM11 19h2v1h-2zM14 19h1v1h-1zM16 19h5v1h-5zM24 19h4v1h-4zM29 19h2v1h-2zM4 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM11 20h2v1h-2zM14 20h4v1h-4zM20 20h1v1h-1zM28 20h1v1h-1zM30 20h1v1h-1zM6 21h1v1h-1zM9 21h2v1h-2zM13 21h3v1h-3zM17 21h4v1h-4zM25 21h1v1h-1zM29 21h2v1h-2zM2 22h3v1h-3zM8 22h1v1h-1zM15 22h1v1h-1zM19 22h1v1h-1zM21 22h7v1h-7zM30 22h1v1h-1zM10 23h3v1h-3zM14 23h5v1h-5zM22 23h1v1h-1zM26 23h1v1h-1zM30 23h1v1h-1zM2 24h7v1h-7zM10 24h2v1h-2zM17 24h2v1h-2zM21 24h2v1h-2zM24 24h1v1h-1zM26 24h3v1h-3zM30 24h1v1h-1zM2 25h1v1h-1zM8 25h1v1h-1zM11 25h1v1h-1zM13 25h1v1h-1zM16 25h1v1h-1zM19 25h4v1h-4zM26 25h1v1h-1zM29 25h2v1h-2zM2 26h1v1h-1zM4 26h3v1h-3zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h3v1h-3zM19 26h1v1h-1zM21 26h7v1h-7zM30 26h1v1h-1zM2 27h1v1h-1zM4 27h3v1h-3zM8 27h1v1h-1zM12 27h1v1h-1zM15 27h1v1h-1zM17 27h2v1h-2zM21 27h1v1h-1zM23 27h1v1h-1zM30 27h1v1h-1zM2 28h1v1h-1zM4 28h3v1h-3zM8 28h1v1h-1zM14 28h1v1h-1zM17 28h1v1h-1zM19 28h4v1h-4zM27 28h4v1h-4zM2 29h1v1h-1zM8 29h1v1h-1zM13 29h2v1h-2zM16 29h2v1h-2zM19 29h1v1h-1zM22 29h1v1h-1zM24 29h2v1h-2zM27 29h1v1h-1zM29 29h2v1h-2zM2 30h7v1h-7zM10 30h1v1h-1zM12 30h1v1h-1zM14 30h2v1h-2zM19 30h1v1h-1zM21 30h4v1h-4zM27 30h1v1h-1zM29 30h1v1h-1z" fill="#111"/></svg>';
+var CITIES=['Dallas','Philadelphia','Kansas City','Miami','Nashville','Arizona','Atlanta','Baltimore','Buffalo','Carolina','Chicago','Cincinnati','Cleveland','Denver','Detroit','Green Bay','Houston','Indianapolis','Jacksonville','Las Vegas','Los Angeles','Minnesota','New England','New Orleans','New York','Pittsburgh','San Francisco','Seattle','Tampa Bay','Washington'];
+function chips(arr,cls){return '<div class="chips stagger">'+arr.map(function(c,i){return '<span class="chip'+(cls?' '+cls:'')+'" style="animation-delay:'+(i*60)+'ms">'+c+'</span>';}).join('')+'</div>';}
+function trucks(n){var s='';for(var i=0;i<n;i++)s+='<span style="animation-delay:'+(i*70)+'ms">🚚</span>';return '<div class="trucks">'+s+'</div>';}
+
+
+var S=new Function('CITIES','chips','trucks','HUB','DALLAS','PLAT','SHOW3','SELF','QR','return '+document.getElementById('scenes').textContent)(CITIES,chips,trucks,HUB,DALLAS,PLAT,SHOW3,SELF,QR);
 var stage=document.getElementById('stage'), rail=document.getElementById('rail'), kick=document.getElementById('kick'), cnt=document.getElementById('cnt'), fill=document.getElementById('fill');
 var els=S.map(function(s){var d=document.createElement('div');d.className='scene';d.innerHTML=s.v;stage.appendChild(d);return d;});
 var i=0, playing=false, token=0, muted=false, synth=window.speechSynthesis, VOICE=null, wake=null;
@@ -245,7 +312,7 @@ function run(){
     show(i);
     speak(S[i].n).then(function(){
       if(my!==token) return;
-      setTimeout(function(){ if(my!==token) return; if(i<S.length-1){i++;loop();} else {playing=false;setPP();} }, 900);
+      setTimeout(function(){ if(my!==token) return; if(i<S.length-1){i++;loop();} else {playing=false;setPP(); setTimeout(function(){ if(my!==token) return; var sm=document.getElementById('sitemap'); if(sm) sm.scrollIntoView({behavior:'smooth'}); }, 2500);} }, 900);
     });
   })();
 }
@@ -265,6 +332,7 @@ document.getElementById('prev').onclick=function(){ goto(i-1); };
 document.getElementById('next').onclick=function(){ goto(i+1); };
 document.getElementById('replay').onclick=function(){ goto(0); if(!playing) run(); };
 document.getElementById('mute').onclick=function(){ muted=!muted; this.textContent=muted?'🔇 Silent (timed)':'🔊 Voice on'; if(playing){ var n=i; token++; stopSpeech(); i=n; run(); } };
+document.getElementById('tosm').onclick=function(){ var sm=document.getElementById('sitemap'); if(sm) sm.scrollIntoView({behavior:'smooth'}); };
 document.getElementById('fs').onclick=function(){ var d=document.documentElement; if(!document.fullscreenElement){ (d.requestFullscreen||d.webkitRequestFullscreen||function(){}).call(d); } else { (document.exitFullscreen||function(){}).call(document); } };
 document.getElementById('voice').onchange=function(){ try{localStorage.setItem('hc_voice',this.value);}catch(e){} VOICE=pickVoice(); if(playing){ var n=i; token++; stopSpeech(); i=n; run(); } };
 stage.addEventListener('click',function(e){ if(e.target.id==='again'){ goto(0); if(!playing) run(); } });
@@ -272,7 +340,8 @@ document.addEventListener('keydown',function(e){ if(document.getElementById('sta
 if(synth){ synth.onvoiceschanged=fillVoices; fillVoices(); }
 document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='visible'&&wake===null){ try{ if(navigator.wakeLock){ navigator.wakeLock.request('screen').then(function(w){wake=w;}).catch(function(){}); } }catch(e){} } });
 show(0);
-})();
+};
 </script>
+<script>window.__bootShow();</script>
 </body>
 </html>
