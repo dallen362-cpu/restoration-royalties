@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Half a Cow · Dallas — Premium Beef on Wheels</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@1,9..144,400..600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#04070f; --navy-900:#070c1a; --navy-800:#0c1428; --navy-700:#111c38;
+    --beef:#D0313B; --gold:#d98b1f; --ink:#eef3ff; --muted:#9fb0cf;
+    --line:rgba(255,255,255,.08); --card:rgba(255,255,255,.04);
+    --maxw:1160px;
+    --sans:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    --display:'Anton','Inter',system-ui,sans-serif;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--navy-950); color:var(--ink);
+    font-family:var(--sans); font-size:16px; line-height:1.6;
+    background-image:
+      radial-gradient(1100px 620px at 82% -8%, rgba(208,49,59,.16), transparent 60%),
+      radial-gradient(900px 560px at 8% 4%, rgba(217,139,31,.10), transparent 58%);
+    background-attachment:fixed;
+    overflow-x:hidden;
+  }
+  a{color:inherit; text-decoration:none}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  section{padding:70px 0; border-bottom:1px solid var(--line)}
+  .eyebrow{
+    display:inline-block; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--gold); font-weight:700; margin:0 0 14px; padding:6px 12px;
+    border:1px solid var(--line); border-radius:999px; background:var(--card);
+  }
+  h1,h2,h3{font-family:var(--display); font-weight:400; letter-spacing:.01em; line-height:1.02; text-transform:uppercase}
+  h1{font-size:clamp(2.6rem,8vw,5.6rem); margin:.1em 0 .28em}
+  h2{font-size:clamp(1.9rem,4.2vw,3rem); margin:0 0 .5em}
+  h3{font-size:1.15rem; margin:0}
+  p{margin:0 0 1em; color:var(--muted)}
+  p.lead{color:var(--ink); font-size:clamp(1.05rem,2vw,1.3rem); max-width:60ch}
+  strong{color:var(--ink)}
+  .accent{color:var(--beef)}
+  .gold{color:var(--gold)}
+  .mono{font-family:ui-monospace,'SF Mono',Consolas,monospace}
+
+  /* Top bar */
+  .topbar{
+    position:sticky; top:0; z-index:50; backdrop-filter:blur(12px);
+    background:linear-gradient(180deg,rgba(4,7,15,.9),rgba(4,7,15,.45));
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-in{max-width:var(--maxw); margin:0 auto; padding:12px 22px; display:flex; align-items:center; justify-content:space-between; gap:14px}
+  .logo{display:flex; align-items:center; gap:11px; font-weight:800}
+  .logo .mk{width:38px; height:38px; border-radius:10px; flex:0 0 auto; display:grid; place-items:center;
+    font-family:var(--display); font-size:20px; color:#160406; background:linear-gradient(135deg,var(--beef),var(--gold))}
+  .logo small{display:block; font-family:var(--sans); font-weight:700; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted)}
+  .topnav{display:flex; gap:20px; align-items:center}
+  .topnav a{font-size:13.5px; color:var(--muted); font-weight:600; transition:color .15s}
+  .topnav a:hover{color:var(--ink)}
+  @media (max-width:820px){.topnav{display:none}}
+
+  .cta{
+    display:inline-flex; align-items:center; gap:.55em; margin-top:26px;
+    background:var(--beef); color:#fff; font-weight:700;
+    padding:15px 26px; border-radius:12px; letter-spacing:.02em;
+    box-shadow:0 12px 30px -12px rgba(208,49,59,.7); transition:transform .15s ease, background .15s ease;
+  }
+  .cta:hover{transform:translateY(-2px); background:#e0434d}
+  .cta.secondary{background:transparent; color:var(--ink); border:1px solid var(--line); box-shadow:none}
+  .cta.secondary:hover{background:var(--card)}
+  .cta.compact{margin-top:0; padding:11px 18px; font-size:.92rem}
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+
+  /* Hero */
+  .hero{padding:82px 0 72px; position:relative}
+  .hero .cityline{font-family:var(--display); color:var(--gold); font-size:clamp(1rem,2.6vw,1.6rem); letter-spacing:.06em; text-transform:uppercase}
+  .hero h1 span{color:var(--beef)}
+  .herometa{display:flex; flex-wrap:wrap; gap:10px; margin-top:26px}
+  .herometa span{background:var(--card); border:1px solid var(--line); border-radius:999px; padding:9px 16px; font-size:.86rem; font-weight:700; color:var(--ink)}
+
+  /* Stadium territory block */
+  .stadwrap{display:grid; grid-template-columns:1.05fr .95fr; gap:26px; align-items:stretch; margin-top:26px}
+  @media (max-width:860px){.stadwrap{grid-template-columns:1fr}}
+  .stadcard{
+    background:linear-gradient(180deg,var(--navy-700),var(--navy-800));
+    border:1px solid rgba(208,49,59,.4); border-radius:18px; padding:26px;
+  }
+  .stadcard .anchor{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px}
+  .stadcard .anchor b{font-family:var(--display); font-size:clamp(2rem,6vw,3rem); color:var(--ink); line-height:1}
+  .stadcard .anchor small{font-family:var(--sans); font-weight:800; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold)}
+  .nxxgrid{display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 4px}
+  .nxx{
+    font-family:ui-monospace,'SF Mono',Consolas,monospace; font-weight:700; font-size:1rem;
+    background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 14px; color:var(--ink);
+  }
+  .nxx b{color:var(--beef)}
+  .stadnote{font-size:.82rem; color:var(--muted); margin-top:10px}
+  .stadside{
+    background:linear-gradient(180deg,var(--navy-800),var(--navy-900));
+    border:1px solid var(--line); border-radius:18px; padding:26px; display:flex; flex-direction:column; gap:14px;
+  }
+  .stadside h3{font-family:var(--sans); text-transform:none; letter-spacing:0; font-size:1.1rem; font-weight:800; color:var(--ink)}
+  .stadside ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px}
+  .stadside li{display:flex; gap:12px; font-size:.95rem; color:var(--ink)}
+  .stadside li span{flex:0 0 auto; width:30px; height:30px; border-radius:8px; display:grid; place-items:center; font-size:15px; background:var(--card); border:1px solid var(--line)}
+
+  /* disclaimer */
+  .disclaimer{
+    background:rgba(217,139,31,.08); border:1px solid rgba(217,139,31,.35); border-radius:14px;
+    padding:16px 18px; margin:0 0 26px; font-size:.92rem; color:#e8d4b0;
+  }
+  .disclaimer strong{color:var(--gold)}
+
+  /* vanity grid */
+  .keypad{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 20px}
+  .key{font-size:.78rem; color:var(--muted); border:1px solid var(--line); background:var(--card); border-radius:8px; padding:6px 10px; font-variant-numeric:tabular-nums}
+  .key b{color:var(--gold)}
+  .vcard{
+    background:linear-gradient(180deg,var(--navy-800),var(--navy-900));
+    border:1px solid var(--line); border-radius:16px; padding:20px; max-width:560px;
+  }
+  .vcard__head{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px}
+  .vcard__name{font-family:var(--display); text-transform:uppercase; font-size:1.4rem; color:var(--ink)}
+  .npa{
+    font-family:var(--sans); font-weight:800; font-size:.72rem; letter-spacing:.08em;
+    color:var(--gold); border:1px solid rgba(217,139,31,.45); background:rgba(217,139,31,.08);
+    padding:5px 10px; border-radius:999px; white-space:nowrap;
+  }
+  .vlist{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px}
+  .vrow{
+    display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+    padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:var(--card);
+  }
+  .vanity{font-family:var(--display); letter-spacing:.02em; font-size:1.08rem; color:var(--ink); white-space:nowrap}
+  .vanity::first-letter{color:var(--beef)}
+  .dial{font-variant-numeric:tabular-nums; font-size:.84rem; color:var(--muted); white-space:nowrap}
+
+  /* territory read */
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:26px}
+  .panel{background:var(--navy-700); border:1px solid var(--line); border-radius:16px; padding:22px 20px}
+  .panel h3{font-family:var(--sans); font-weight:800; text-transform:none; letter-spacing:0; font-size:1.05rem; margin-bottom:.4em; color:var(--ink)}
+  .panel p{margin:0; font-size:.95rem}
+  .kicker{font-family:var(--display); color:var(--gold); font-size:1.5rem; display:block; margin-bottom:.2em}
+  @media (max-width:820px){.grid3{grid-template-columns:1fr}}
+
+  .pull{
+    font-family:var(--serif); font-style:italic; font-size:clamp(1.25rem,3vw,1.8rem);
+    color:var(--ink); border-left:3px solid var(--beef); padding:6px 0 6px 22px; margin:26px 0; max-width:52ch;
+  }
+
+  /* menu */
+  .menugrid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:26px}
+  @media (max-width:820px){.menugrid{grid-template-columns:1fr}}
+  .menu{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px; transition:transform .15s ease, border-color .15s ease}
+  .menu:hover{transform:translateY(-4px); border-color:rgba(217,139,31,.5)}
+  .menu .mi{font-size:30px; margin-bottom:12px}
+  .menu h3{font-family:var(--sans); text-transform:none; letter-spacing:0; font-size:1.1rem; font-weight:800; color:var(--ink); margin-bottom:6px}
+  .menu p{margin:0; font-size:.92rem}
+  .book{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:26px}
+  @media (max-width:620px){.book{grid-template-columns:1fr}}
+  .bookcard{
+    background:linear-gradient(135deg,rgba(208,49,59,.12),rgba(217,139,31,.10));
+    border:1px solid var(--line); border-radius:16px; padding:24px;
+  }
+  .bookcard h3{font-family:var(--sans); text-transform:none; letter-spacing:0; font-size:1.15rem; font-weight:800; color:var(--ink); margin-bottom:6px}
+  .bookcard p{margin:0 0 4px; font-size:.95rem}
+
+  /* storefront note */
+  .sfnote{
+    margin-top:26px; background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:18px 20px; font-size:.95rem; color:var(--ink);
+  }
+  .sfnote .mono{color:var(--gold); font-weight:700}
+
+  /* final */
+  .final{text-align:center; border-bottom:none}
+  .final h2{margin-bottom:.3em}
+  .final p{margin-left:auto;margin-right:auto}
+  .backlinks{display:flex; flex-wrap:wrap; justify-content:center; gap:14px; margin-top:8px}
+
+  footer{padding:40px 0 90px; color:var(--muted); font-size:.82rem}
+  footer p{max-width:none; font-size:.82rem}
+  .footline{border-top:1px solid var(--line); padding-top:22px; display:flex; flex-direction:column; gap:12px}
+  .footlinks{display:flex; flex-wrap:wrap; gap:8px 20px; margin-bottom:6px}
+  .footlinks a{color:var(--muted); font-weight:600}
+  .footlinks a:hover{color:var(--gold)}
+  .platform{color:var(--ink); font-weight:600}
+
+  /* read-aloud button */
+  #tvRead{
+    position:fixed; right:18px; bottom:18px; z-index:60;
+    width:56px; height:56px; border-radius:50%; border:1px solid var(--line);
+    background:var(--beef); color:#fff; font-size:1.4rem; cursor:pointer;
+    box-shadow:0 12px 30px -10px rgba(0,0,0,.7); display:flex; align-items:center; justify-content:center;
+    transition:transform .15s ease, background .15s ease;
+  }
+  #tvRead:hover{transform:translateY(-2px)}
+  #tvRead[aria-pressed="true"]{background:var(--gold); color:#1a1204}
+  #tvRead:focus-visible{outline:2px solid var(--gold); outline-offset:3px}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important; transition:none !important; scroll-behavior:auto !important}
+    body{background-attachment:scroll}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="logo" href="/halfacow/">
+      <span class="mk">H</span>
+      <span>Half a Cow<small>Dallas · Cowboys Country</small></span>
+    </a>
+    <nav class="topnav">
+      <a href="#stadium">Stadium Territory</a>
+      <a href="#numbers">Smart Numbers</a>
+      <a href="#territory">Territory Read</a>
+      <a href="#menu">Menu &amp; Booking</a>
+      <a href="/halfacow/hub/">Network Hub</a>
+    </nav>
+    <a class="cta compact" href="#book">Book the truck →</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Private-label city storefront · Illustrative</span>
+    <div class="cityline">Half a Cow · Dallas</div>
+    <h1>Premium Beef.<br><span>Cowboys Country.</span></h1>
+    <p class="lead">The Half a Cow truck rolls into the Metroplex — chef-driven, whole-animal beef built for
+      the crowd around <strong>AT&amp;T Stadium</strong>. Smash burgers, ribeye melts, and brisket for
+      tailgates, watch parties, and every game-day lot in Arlington. This is the Dallas franchise's own
+      private-label storefront, anchored on its stadium rate center.</p>
+    <div class="cta-row">
+      <a class="cta" href="#book">Book the truck →</a>
+      <a class="cta secondary" href="#numbers">See the Dallas numbers</a>
+    </div>
+    <div class="herometa">
+      <span>🏈 Cowboys market</span>
+      <span>🏟 AT&amp;T Stadium · Arlington, TX</span>
+      <span>☎ NPA 817 anchor</span>
+      <span>🐄 Whole-animal beef</span>
+    </div>
+  </div>
+</header>
+
+<!-- STADIUM TERRITORY -->
+<section id="stadium">
+  <div class="wrap">
+    <span class="eyebrow">Your stadium territory</span>
+    <h2>The AT&amp;T Stadium grid</h2>
+    <p class="lead">Dallas is a tier-one NFL market, and the franchise territory is the rate-center grid
+      <strong>fanning out from AT&amp;T Stadium</strong>. The anchor area code is <strong>817</strong> — the
+      Arlington / mid-Cities rate center at the heart of the tailgate — with the wider Metroplex (214 / 972 /
+      469) radiating outward.</p>
+
+    <div class="stadwrap">
+      <div class="stadcard">
+        <div class="anchor"><b>817</b><small>Anchor area code · AT&amp;T Stadium rate center</small></div>
+        <p style="font-size:.95rem">Illustrative 817 exchanges radiating from AT&amp;T Stadium — the
+          stadium-area grid a franchisee would build around game day:</p>
+        <div class="nxxgrid">
+          <span class="nxx">817&#8209;<b>2xx</b></span>
+          <span class="nxx">817&#8209;<b>4xx</b></span>
+          <span class="nxx">817&#8209;<b>5xx</b></span>
+          <span class="nxx">817&#8209;<b>6xx</b></span>
+          <span class="nxx">817&#8209;<b>7xx</b></span>
+        </div>
+        <p class="stadnote"><strong style="color:var(--gold)">Illustrative stadium-area exchanges</strong> —
+          these NXX blocks are examples of the fan-out around the stadium, <strong>not verified rate-center
+          assignments</strong>. Actual exchanges are confirmed only at activation.</p>
+      </div>
+      <aside class="stadside">
+        <h3>Why the stadium grid is the prize</h3>
+        <ul>
+          <li><span>🎟</span><div>Game-day and tailgate crowds concentrate demand into a few lots on a
+            predictable calendar.</div></li>
+          <li><span>📣</span><div>A local 817 number reads as a neighbor to everyone in the stadium's own
+            rate center — the difference between "who's this?" and "that's the local truck."</div></li>
+          <li><span>🗓</span><div>Home games, concerts, and events give the territory a built-in schedule of
+            high-volume days to own.</div></li>
+        </ul>
+        <p class="stadnote">We show the <strong>value and the logic</strong> — local presence around the
+          venue. The provisioning behind it stays with the platform; the territory is what you own.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- SMART NUMBERS -->
+<section id="numbers">
+  <div class="wrap">
+    <span class="eyebrow">The Dallas Smart-Number territory · Illustrative</span>
+    <h2>Dallas Smart Numbers</h2>
+    <p class="lead">Five memorable beef-brand vanity numbers on the <strong>817</strong> anchor — the kind a
+      Dallas franchisee would provision in the stadium's rate center so the truck answers like a local.</p>
+
+    <div class="disclaimer">
+      <strong>Illustrative examples only.</strong> These five numbers are examples of the beef-brand vanity
+      lines a Dallas franchisee <em>could</em> reserve and provision in their rate center on activation. They
+      are <strong>not owned, not reserved, and not yet provisioned</strong>. Availability of any specific
+      number is confirmed at activation.
+    </div>
+
+    <div class="keypad" aria-label="Phone keypad letter-to-digit legend">
+      <span class="key"><b>2</b> ABC</span>
+      <span class="key"><b>3</b> DEF</span>
+      <span class="key"><b>4</b> GHI</span>
+      <span class="key"><b>5</b> JKL</span>
+      <span class="key"><b>6</b> MNO</span>
+      <span class="key"><b>7</b> PQRS</span>
+      <span class="key"><b>8</b> TUV</span>
+      <span class="key"><b>9</b> WXYZ</span>
+    </div>
+
+    <article class="vcard">
+      <header class="vcard__head">
+        <span class="vcard__name">Dallas</span>
+        <span class="npa" aria-label="Area code 817">NPA 817</span>
+      </header>
+      <ul class="vlist">
+        <li class="vrow"><span class="vanity">817-HALF-COW</span><span class="dial">(817) 425-3269</span></li>
+        <li class="vrow"><span class="vanity">817-BIG-BEEF</span><span class="dial">(817) 244-2333</span></li>
+        <li class="vrow"><span class="vanity">817-GO-ANGUS</span><span class="dial">(817) 462-6487</span></li>
+        <li class="vrow"><span class="vanity">817-RIB-EYES</span><span class="dial">(817) 742-3937</span></li>
+        <li class="vrow"><span class="vanity">817-BRIS-KET</span><span class="dial">(817) 274-7538</span></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- TERRITORY READ -->
+<section id="territory">
+  <div class="wrap">
+    <span class="eyebrow">Framework, not figures</span>
+    <h2>The Dallas territory read</h2>
+    <p class="lead">Before a franchisee claims the market, the territory read is assembled against a
+      repeatable framework — a lens on the Dallas opportunity, never a set of invented numbers.</p>
+    <div class="grid3">
+      <div class="panel">
+        <span class="kicker">Demand</span>
+        <h3>What drives orders here</h3>
+        <p>Home-game weekends and the tailgate lots, concerts and events at the stadium, plus corporate and
+          catering clusters across the Metroplex — the game-day demand the territory is built around.</p>
+      </div>
+      <div class="panel">
+        <span class="kicker">Supply</span>
+        <h3>Saturation &amp; capacity</h3>
+        <p>How much comparable mobile-food supply already works the stadium district, and where fulfillment
+          capacity thins out on the biggest days — the gaps a branded local operator can fill.</p>
+      </div>
+      <div class="panel">
+        <span class="kicker">Competition</span>
+        <h3>Whitespace around the venue</h3>
+        <p>Where established players are strong, and the competitive whitespace inside the 817 stadium
+          footprint where a local number and site can win first.</p>
+      </div>
+    </div>
+    <p class="pull">Own the lot on game day, and you own the market the other six days too.</p>
+    <p style="font-size:.9rem">Each lens is filled in for Dallas specifically when a franchisee engages —
+      this page presents the <strong>framework</strong>, not market data. No demand, volume, or share figures
+      are represented here.</p>
+  </div>
+</section>
+
+<!-- MENU & BOOKING -->
+<section id="menu">
+  <div class="wrap">
+    <span class="eyebrow">The truck</span>
+    <h2>Menu &amp; booking</h2>
+    <p class="lead">Chef-driven, whole-animal beef, smashed to order — the same gold-standard menu, cooked on
+      the Dallas truck.</p>
+    <div class="menugrid">
+      <div class="menu">
+        <div class="mi">🍔</div>
+        <h3>Smash Burgers</h3>
+        <p>Whole-animal beef smashed thin on the flat-top, crispy lace edges, melted cheese, house sauce on a
+          toasted bun.</p>
+      </div>
+      <div class="menu">
+        <div class="mi">🥩</div>
+        <h3>Ribeye Melts</h3>
+        <p>Sliced ribeye, caramelized onions, and cheese griddled into a melt — the premium cut, made for the
+          street.</p>
+      </div>
+      <div class="menu">
+        <div class="mi">🔥</div>
+        <h3>Brisket &amp; Burnt Ends</h3>
+        <p>Low-and-slow brisket and burnt ends, beef-fat fries on the side — Texas built, tailgate ready.</p>
+      </div>
+    </div>
+
+    <div class="book" id="book">
+      <div class="bookcard">
+        <h3>Book the truck</h3>
+        <p>Tailgates, watch parties, birthdays, block parties — bring Half a Cow to your lot or driveway.</p>
+        <a class="cta compact" style="margin-top:14px" href="mailto:?subject=Half%20a%20Cow%20Dallas%20—%20Book%20the%20truck&amp;body=Date%3A%20%0ALocation%3A%20%0AHeadcount%3A%20%0ANotes%3A%20">Request a date →</a>
+      </div>
+      <div class="bookcard">
+        <h3>Catering &amp; events</h3>
+        <p>Corporate lunches, weddings, and large-scale event vending across the Metroplex and the stadium
+          district.</p>
+        <a class="cta compact secondary" style="margin-top:14px" href="mailto:?subject=Half%20a%20Cow%20Dallas%20—%20Catering%20inquiry&amp;body=Event%3A%20%0ADate%3A%20%0AHeadcount%3A%20%0ANotes%3A%20">Plan an event →</a>
+      </div>
+    </div>
+
+    <div class="sfnote">
+      This is the private-label storefront a Half a Cow city franchisee operates — your URL will be
+      <span class="mono">halfacow.com/dallas/</span>. Shown here under
+      <span class="mono">restorationroyalties.com/halfacow/dallas/</span> until the domain goes live; it maps
+      1:1 when it does.
+    </div>
+  </div>
+</section>
+
+<!-- FINAL / BACK LINKS -->
+<section class="final">
+  <div class="wrap">
+    <span class="eyebrow">Explore the network</span>
+    <h2>One truck in a national brand</h2>
+    <p class="lead">Dallas is one city on the Half a Cow network — a master brand of stadium-anchored
+      franchises. Explore the rest of the map.</p>
+    <div class="backlinks">
+      <a class="cta compact" href="/halfacow/">← Master brand</a>
+      <a class="cta compact secondary" href="/halfacow/hub/">Network hub</a>
+      <a class="cta compact secondary" href="/halfacow/inventory/">Full city inventory</a>
+      <a class="cta compact secondary" href="/halfacow/philadelphia/">Philadelphia storefront</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap footline">
+    <div class="footlinks">
+      <a href="/halfacow/">Master brand</a>
+      <a href="/halfacow/hub/">Network hub</a>
+      <a href="/halfacow/dallas/">Dallas storefront</a>
+      <a href="/halfacow/philadelphia/">Philadelphia storefront</a>
+      <a href="/halfacow/inventory/">City inventory</a>
+    </div>
+    <p><strong>Illustrative concept — not an offer.</strong> The vanity numbers and stadium-area exchanges on
+      this page are illustrative examples a franchisee could reserve/provision in their rate center on
+      activation; they are <strong>not owned, not reserved, and not yet provisioned</strong>, and the NXX
+      blocks shown are illustrative, not verified rate-center assignments. Any franchise structure discussed
+      across this network (including a $25,000 figure) is an <strong>illustrative concept, not an offer</strong>;
+      a franchise can be offered only via a registered <strong>Franchise Disclosure Document (FDD)</strong>,
+      and <strong>no revenue, income, or profit is represented or implied</strong> (FTC Item 19). Team, city,
+      and stadium names are used for reference only — no NFL logos or trademarks appear here, and this concept
+      is not affiliated with, endorsed by, or sponsored by the NFL or any club. No statistics on this page are
+      actual market data. Number availability is confirmed only at activation.</p>
+    <p class="platform">Powered by the Telvergence platform — licensed, proven infrastructure.</p>
+  </div>
+</footer>
+
+<button id="tvRead" aria-pressed="false" aria-label="Read this page aloud" title="Read aloud">🔊</button>
+
+<script>
+(function(){
+  var btn = document.getElementById('tvRead');
+  if(!btn || !('speechSynthesis' in window)){ if(btn) btn.style.display='none'; return; }
+  var synth = window.speechSynthesis;
+  var reading = false;
+  var voices = [];
+
+  function loadVoices(){ voices = synth.getVoices() || []; }
+  loadVoices();
+  if(typeof synth.onvoiceschanged !== 'undefined'){ synth.onvoiceschanged = loadVoices; }
+
+  function pickVoice(){
+    if(!voices.length) loadVoices();
+    var en = voices.filter(function(v){ return /^en(-|_|$)/i.test(v.lang); });
+    var pool = en.length ? en : voices;
+    var pref = ['Google US English','Samantha','Microsoft Aria','Microsoft Jenny','Microsoft Zira','Daniel','Alex'];
+    for(var i=0;i<pref.length;i++){
+      for(var j=0;j<pool.length;j++){ if(pool[j].name.indexOf(pref[i])!==-1) return pool[j]; }
+    }
+    return pool[0] || null;
+  }
+
+  function buildScript(){
+    var out = [];
+    document.querySelectorAll('section, header.hero').forEach(function(sec){
+      var h = sec.querySelector('h1, h2');
+      var p = sec.querySelector('p');
+      if(h) out.push(h.textContent.trim());
+      if(p) out.push(p.textContent.trim());
+    });
+    return out.join('. ');
+  }
+
+  function stop(){
+    reading = false;
+    btn.setAttribute('aria-pressed','false');
+    btn.textContent = '🔊';
+    try{ synth.cancel(); }catch(e){}
+  }
+
+  function start(){
+    var text = buildScript();
+    if(!text) return;
+    try{ synth.cancel(); }catch(e){}
+    var u = new SpeechSynthesisUtterance(text);
+    var v = pickVoice();
+    if(v) u.voice = v;
+    u.rate = 1.0; u.pitch = 1.0;
+    u.onend = stop;
+    u.onerror = stop;
+    reading = true;
+    btn.setAttribute('aria-pressed','true');
+    btn.textContent = '⏹';
+    synth.speak(u);
+  }
+
+  btn.addEventListener('click', function(){ reading ? stop() : start(); });
+  window.addEventListener('beforeunload', function(){ try{ synth.cancel(); }catch(e){} });
+})();
+</script>
+
+</body>
+</html>
