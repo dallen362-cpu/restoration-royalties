@@ -84,6 +84,11 @@
   relevant SKILL.md) and flows its evolution into the **inventory · boneyard · showroom**. The set-in-stone
   mechanisms stay untouched; only additions accrue. Prove-then-propagate; harden the magic (sell the value,
   never expose the mechanism).
+- **★ ADDITIVE VERSIONING RULE (David 2026-09-02 — permanent; skill: `.claude/skills/additive-versioning/`):** never
+  overwrite or replace a DELIVERED edition of anything — every change is a NEW edition at a NEW path (`<path>/<audience>/`,
+  `<path>/v<N>/`), the prior edition stays byte-identical and live, and every rendition is registered for the boneyard /
+  inventory / showroom. Exemplar: `halfacow/presentation/` (generic) + `halfacow/presentation/stefano/` (Chef Stefano
+  edition). Only honesty/legal corrections may touch a live page in place.
 - **★ CLIENT-ROUTE PROCESS — exemplar = Half a Cow (David 2026-09-02):** a client is routed
   **Silver → (elected) → Gold → (optional) Platinum**: (1) stand up / pick the SILVER concept model in the
   showroom; (2) on election, run the **GOLD** gigapress output — own URL + `contact@` + Smart-DID; (3)
