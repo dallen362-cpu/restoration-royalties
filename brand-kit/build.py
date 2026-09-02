@@ -987,6 +987,13 @@ def render_gold(b):
         'seoKeywords': seo.get('keywords', ''),
         'ogTitle': seo.get('ogTitle', ''),
         'ogDescription': seo.get('ogDescription', ''),
+        # nav/CTA labels — defaults preserve the service-business wording; a brand
+        # can override any of these in its copy{} (e.g. food-truck brands).
+        'navStormLabel': '🌀 Storm Cleanup',
+        'navQuoteLabel': 'Instant Quote',
+        'navTrackLabel': 'Track Job',
+        'heroQuoteCta': '📸 Snap the Surface · Instant Quote',
+        'stormSimBtn': '▶ Simulate a Storm Cleanup Lead',
     }
     # Industry-specific shell prose lives in the brand JSON's "copy" object so the
     # template stays fully industry-agnostic. Merged last; values are literal text.
