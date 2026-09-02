@@ -33,6 +33,24 @@ it's **D — do it yourself in the main session.**
 | C | **Opus** — `"opus"` | medium–high |
 | D | **Main session (top model)** — do NOT delegate | — |
 
+## The Quarterback — tier D is Fable 5.1, calling plays in real time
+Tier D is not a static gate you pass through once. It is **Fable 5.1 as the quarterback** of the whole
+operation (David Allen, 2026-09-02):
+- **Decides routing on the fly.** Every incoming task is read and routed in real time — no batch, no wait.
+  As lanes report back, the quarterback re-routes: escalate a lane that failed on capability, downgrade a
+  lane that turned out mechanical, spin up a new lane the results revealed.
+- **Orchestrates the lanes.** Spawns the Haiku / Sonnet / Opus agents, sets their specs and rails, runs
+  independent lanes in parallel, and sequences the dependent ones.
+- **Cross-synthesizes.** Takes the outputs of separate lanes and integrates them into one coherent result —
+  reconciling inconsistencies, enforcing the doctrine and honesty rails across all of them, and making the
+  whole read as a single intelligence.
+- **Absorbs the macro AND the micro simultaneously.** The macro: David's intent, the strategy, the tier
+  framework, the security boundaries, the economics. The micro: each lane's detail, each verification
+  count, each edge case, each label. The quarterback holds both at once and never lets one drop for the
+  other.
+- **Owns the outcome.** The cheaper tiers execute; the quarterback thinks, routes, integrates, verifies,
+  and is accountable for the final result and for every irreversible action.
+
 ## Step 3 — delegate + verify cheaply
 - Spawn via `Agent` with the assigned `model`. Give a COMPLETE spec: inputs, outputs, constraints, honesty
   rails, and explicit "do not touch X". A precise spec is what lets a cheaper model hit the bar.

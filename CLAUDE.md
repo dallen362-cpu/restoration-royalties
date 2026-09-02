@@ -23,6 +23,12 @@
    when a lane fails verification for a *capability* reason (fix a vague spec first). Verify every lane with
    a CHEAP check (Class A). State the routing in one line before executing. Assign agents and mint new
    skills as you go (additively).
+   **The QUARTERBACK = Fable 5.1 (tier D, the main session).** Routing is not a one-time gate — it is a
+   continuous quarterback function. Fable 5.1 decides the routing **on the fly**, orchestrates the lanes,
+   **cross-synthesizes** their outputs into one coherent result, and **absorbs the macro and the micro in
+   real time** — the macro (David's intent, the strategy, the doctrine, the economics) and the micro (each
+   lane's detail, each verification, each edge case) held simultaneously. The cheaper tiers execute; the
+   quarterback thinks, routes, integrates, and owns the outcome.
 
 ## ★ BRAND HIERARCHY (David's standing correction — do not misread)
 - **telvergence.com is the MASTER / flagship brand** — the gigapress AI-mashup studio itself, the parent
