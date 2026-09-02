@@ -1,0 +1,826 @@
+{
+  "slug": "halfacow/stefano",
+  "tier": "gold",
+  "lineCount": 10,
+  "brandName": "Half a Cow by Chef Stefano",
+  "brandShort": "Half a Cow",
+  "platformProduct": "Cow Connect",
+  "conciergeName": "Chuck",
+  "markLetter": "H",
+  "region": "Nationwide",
+  "county1": "Miami",
+  "county2": "Fort Lauderdale",
+  "accent": "#D0313B",
+  "h1a": "Premium beef.",
+  "h1b": "On wheels.",
+  "flagship": "833-425-3269",
+  "flagshipHref": "+18334253269",
+  "flagshipLast": "833-425-3278",
+  "flagshipNbsp": "833&#8209;425&#8209;3269",
+  "didRange": "833-425-3269 → 3278",
+  "hosts": {
+    "canonical": "telvergence.com/halfacow/stefano",
+    "showroom": "halfacow.telvergence.com",
+    "domain": "halfacow.com",
+    "email": "hello@halfacow.com",
+    "brandNamePlus": "Half+a+Cow"
+  },
+  "seo": {
+    "title": "Half a Cow by Chef Stefano — The Sports Chef presents the NFL-city food-truck brand",
+    "description": "The Sports Chef, Chef Stefano Tedeschi, presents Half a Cow: premium beef food trucks at every NFL stadium, one owner per city, one easy number per city. Custom-branded edition (illustrative concept).",
+    "keywords": "food truck franchise, premium beef food truck, smash burger truck, catering food truck, festival food truck, corporate lunch catering, food truck franchise opportunity, protected territory franchise, mobile food business, brisket burnt ends, ribeye melt, whole-animal beef, food truck concept, franchise disclosure document, food truck booking",
+    "ogTitle": "Half a Cow — Premium Beef, On Wheels · National Food-Truck Franchise Concept",
+    "ogDescription": "Chef-driven premium beef, farm-to-truck. Book the truck for parties, corporate lunches, festivals &amp; weddings — or bring the franchise to your city. Concept powered by the Telvergence flywheel."
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": [
+      "FoodEstablishment",
+      "Organization"
+    ],
+    "name": "Half a Cow by Chef Stefano — The Sports Chef",
+    "alternateName": "Half a Cow Food Trucks",
+    "slogan": "America's premium beef, on wheels. A national food-truck franchise concept.",
+    "url": "https://telvergence.com/halfacow/stefano/",
+    "priceRange": "$$",
+    "servesCuisine": "American / Beef",
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "United States"
+      },
+      {
+        "@type": "City",
+        "name": "Miami"
+      },
+      {
+        "@type": "City",
+        "name": "Fort Lauderdale"
+      }
+    ],
+    "knowsAbout": [
+      "smash burgers",
+      "premium beef",
+      "food truck catering",
+      "festival food vending",
+      "whole-animal sourcing",
+      "brisket and burnt ends",
+      "ribeye melts",
+      "mobile food franchise"
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Private Party Catering"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Corporate Lunch"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Festival & Event Vending"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Wedding Catering"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Large-Scale Catering"
+        }
+      }
+    ]
+  },
+  "didFootnote": "These are <b>10 illustrative concept Smart Numbers</b> — <b>833-425-3269 → 833-425-3278</b>, a vanity grid that spells <b>833-HALF-COW</b>, one line per department so every catering call, festival lead, and franchise inquiry could be answered, recorded, and routed to the nearest truck. <b>This grid is a CONCEPT design only — it is NOT yet provisioned, owned, or live.</b> The toll-free numbers shown are illustrative and have not been acquired; live answering and two-way SMS activate only once the underlying accounts and credentials are provisioned.",
+  "phones": [
+    {
+      "dept": "Flagship · Book the Truck 24/7",
+      "vn": "833-425-3269",
+      "terr": "Toll-Free · 833-HALF-COW",
+      "pending": true,
+      "sms": true,
+      "desc": "The number on the card — book the truck or get a catering quote, answered fast. Concept line, not yet live.",
+      "icon": "⭐"
+    },
+    {
+      "dept": "Español · Bilingüe",
+      "vn": "833-425-3270",
+      "terr": "Toll-Free · 833",
+      "pending": true,
+      "sms": true,
+      "desc": "A dedicated bilingual line so every market can book in the caller's language. Concept line, not yet live.",
+      "icon": "🗣️"
+    },
+    {
+      "dept": "Catering",
+      "vn": "833-425-3271",
+      "terr": "Toll-Free · 833",
+      "pending": true,
+      "sms": true,
+      "desc": "Full-service catering bookings on their own tracked line. Concept line, not yet live.",
+      "icon": "🍽️"
+    },
+    {
+      "dept": "Festivals & Events",
+      "vn": "833-425-3272",
+      "terr": "Toll-Free · 833",
+      "pending": true,
+      "sms": true,
+      "desc": "Festival slots and fair dispatch routed to the nearest available truck. Concept line, not yet live.",
+      "icon": "🎪"
+    },
+    {
+      "dept": "Private Events",
+      "vn": "833-425-3273",
+      "terr": "Toll-Free · 833",
+      "pending": true,
+      "sms": true,
+      "desc": "Backyard BBQs, birthdays, and neighborhood pop-ups on their own line. Concept line, not yet live.",
+      "icon": "🎉"
+    },
+    {
+      "dept": "Corporate",
+      "vn": "833-425-3274",
+      "terr": "Toll-Free · 833",
+      "pending": true,
+      "sms": true,
+      "desc": "Office lunches, corporate drops, and recurring accounts on a priority line. Concept line, not yet live.",
+      "icon": "🏢"
+    },
+    {
+      "dept": "Franchise Ownership",
+      "vn": "833-425-3275",
+      "terr": "Toll-Free · 833",
+      "pending": true,
+      "sms": true,
+      "desc": "For chefs and operators who want to run a Half a Cow truck. Concept line, not yet live.",
+      "icon": "🚚"
+    },
+    {
+      "dept": "Area Developer",
+      "vn": "833-425-3276",
+      "terr": "Toll-Free · 833",
+      "pending": true,
+      "sms": true,
+      "desc": "Develop a whole region — recruit and support operators. Concept line, not yet live.",
+      "icon": "🗺️"
+    },
+    {
+      "dept": "Media · Press",
+      "vn": "833-425-3277",
+      "terr": "Toll-Free · 833",
+      "pending": true,
+      "sms": true,
+      "desc": "Press, partnerships, and brand inquiries on their own line. Concept line, not yet live.",
+      "icon": "📰"
+    },
+    {
+      "dept": "Campaign Tracking / Overflow",
+      "vn": "833-425-3278",
+      "terr": "Toll-Free · 833",
+      "pending": true,
+      "sms": true,
+      "desc": "Attributes each flyer, sign, and ad to the source — and catches overflow. Concept line, not yet live.",
+      "icon": "🔎"
+    }
+  ],
+  "services": [
+    {
+      "ic": "🍔",
+      "title": "The Half-Pound Smash",
+      "desc": "Two thin-smashed premium-beef patties, house cheese, griddled onion, and Half a Cow sauce on a potato bun — the signature, live-smashed to order."
+    },
+    {
+      "ic": "🥩",
+      "title": "The Ribeye Melt",
+      "desc": "Seared ribeye, caramelized onion, aged cheddar, and garlic aioli on a griddled roll — a chef-level steak sandwich off the flat-top."
+    },
+    {
+      "ic": "🔥",
+      "title": "Brisket &amp; Burnt Ends",
+      "desc": "Slow-smoked burnt-end bowls with beef-fat fries or rice, pickles, and house BBQ — deep, craveable, whole-animal flavor."
+    },
+    {
+      "ic": "🌭",
+      "title": "The Butcher's Dog",
+      "desc": "All-beef with a snap casing, chili-braised short rib, and crispy onion — the street classic, done right."
+    },
+    {
+      "ic": "🍟",
+      "title": "Beef-Fat Fries",
+      "desc": "Twice-cooked in rendered beef fat, sea salt, and a side of house sauce — the side that sells itself."
+    },
+    {
+      "ic": "🍽️",
+      "title": "Catering",
+      "desc": "The full truck on-site for your event — private parties, corporate lunches, and weddings, cooked fresh in front of your guests."
+    },
+    {
+      "ic": "🎪",
+      "title": "Festivals &amp; Events",
+      "desc": "Fairs, festivals, breweries, and sporting events — the network routes demand rushes to the nearest available truck."
+    },
+    {
+      "ic": "🐄",
+      "title": "Whole-Animal Sourcing",
+      "desc": "Buy better by buying the whole animal — smash blend from the chuck, steaks off the loin, brisket from the plate. Less waste, deeper flavor."
+    }
+  ],
+  "faq": [
+    {
+      "open": true,
+      "q": "How much does it cost to book the truck?",
+      "a": "Illustrative catering ranges run roughly <b>$18–$28 per head</b> for drop-offs and private parties, with festival, wedding, and large-scale bookings quoted as a <b>flat fee plus per-head</b>. A backyard BBQ is at the low end; a full wedding or festival activation is at the high end. Every range here is an illustrative estimate — your written quote confirms the exact price. <b>Half a Cow is a concept, so no live pricing is being sold today.</b>"
+    },
+    {
+      "open": false,
+      "q": "Where does Half a Cow operate?",
+      "a": "Half a Cow is a <b>national food-truck franchise concept</b> designed to roll out city by city — <b>Miami first, America next</b>. Each market is a protected territory served by a local operator. As a concept, no trucks are on the road yet; founding-market conversations are how it starts."
+    },
+    {
+      "open": false,
+      "q": "Is this a real business I can order from today?",
+      "a": "Not yet — <b>Half a Cow is an illustrative concept</b> built on the Telvergence gigapress to show what a premium-beef food-truck franchise could look like. The menu, prices, territories, and Smart Numbers shown are conceptual and subject to change. Nothing here is an offer to sell food or a franchise."
+    },
+    {
+      "open": false,
+      "q": "What's on the menu?",
+      "a": "A tight, high-craft lineup that runs fast off a flat-top: <b>the Half-Pound Smash</b>, the <b>Ribeye Melt</b>, <b>brisket &amp; burnt ends</b>, <b>the Butcher's Dog</b>, and <b>beef-fat fries</b>. Everything is premium, whole-animal beef. Final menu and pricing are set by the culinary team per market."
+    },
+    {
+      "open": false,
+      "q": "How do I own a Half a Cow truck?",
+      "a": "The concept lays out a three-rung ladder: <b>Owner-Operator</b> (one truck, one territory), <b>Fleet Operator</b> (multiple trucks across a metro), and <b>Area Developer</b> (develop a whole region). A franchise can be offered only through a registered <b>Franchise Disclosure Document (FDD)</b> — the structure shown is conceptual, and no franchise is being offered or sold on this page."
+    },
+    {
+      "open": false,
+      "q": "What does it take to invest?",
+      "a": "Because Half a Cow is a concept, there are <b>no investment figures, fees, or earnings to quote</b> — and no revenue, income, or profit is claimed or implied anywhere on this page. Any real franchise terms would be defined and disclosed only through a formal FDD. Founding-market talks start with your city and your kitchen background, not a number."
+    },
+    {
+      "open": false,
+      "q": "How does the Smart Number work?",
+      "a": "The concept gives each market a single memorable <b>Smart Number</b> — answered 24/7, in the caller's language — that books catering, events, and truck stops without the owner glued to a phone. The grid shown (<b>833-HALF-COW</b>) is an <b>illustrative concept, not yet provisioned or live</b>."
+    },
+    {
+      "open": false,
+      "q": "Can you do festivals and big events?",
+      "a": "Yes — that's core to the model. Fairs, festivals, breweries, and sporting events create demand rushes, and the network routes those catering and festival leads to the <b>nearest available truck</b> instead of letting them die in a voicemail box. As a concept, dispatch is a designed capability, not a live service yet."
+    }
+  ],
+  "process": [
+    {
+      "n": "1",
+      "h": "Find the Truck",
+      "p": "Book the truck or a catering package right here, or catch it at a festival, brewery, or neighborhood pop-up. Pick your event type and get an illustrative estimate."
+    },
+    {
+      "n": "2",
+      "h": "The Truck Rolls Up",
+      "p": "The nearest available truck is dispatched to your event — festival slot, corporate lot, or backyard — with the flat-top fired and ready."
+    },
+    {
+      "n": "3",
+      "h": "Smashed to Order",
+      "p": "Premium, whole-animal beef live-smashed on the griddle in front of your guests — the signature smash, ribeye melts, brisket, and beef-fat fries."
+    },
+    {
+      "n": "4",
+      "h": "You Eat",
+      "p": "Fresh, chef-level beef handed over hot. Craving to cooked, done. This is an illustrative concept flow."
+    }
+  ],
+  "surfaces": [
+    {
+      "name": "Private Party",
+      "range": "$18 – $26 / head",
+      "method": "Per head",
+      "turn": "48 hr notice",
+      "icon": "🎉"
+    },
+    {
+      "name": "Corporate Lunch",
+      "range": "$16 – $24 / head",
+      "method": "Per head",
+      "turn": "48 hr notice",
+      "icon": "🏢"
+    },
+    {
+      "name": "Festival / Fair",
+      "range": "$800 – $3,500",
+      "method": "Flat + per head",
+      "turn": "2 wk notice",
+      "icon": "🎪"
+    },
+    {
+      "name": "Wedding",
+      "range": "$1,500 – $6,000+",
+      "method": "Flat + per head",
+      "turn": "3 wk notice",
+      "icon": "💍"
+    },
+    {
+      "name": "Backyard BBQ",
+      "range": "$450 – $1,200",
+      "method": "Flat + per head",
+      "turn": "72 hr notice",
+      "icon": "🔥"
+    },
+    {
+      "name": "Office Drop-Off",
+      "range": "$14 – $20 / head",
+      "method": "Per head",
+      "turn": "24 hr notice",
+      "icon": "🥡"
+    },
+    {
+      "name": "Sporting Event",
+      "range": "$700 – $3,000",
+      "method": "Flat + per head",
+      "turn": "1 wk notice",
+      "icon": "🏟️"
+    },
+    {
+      "name": "Brewery / Bar",
+      "range": "$500 – $1,800",
+      "method": "Flat + revenue share",
+      "turn": "1 wk notice",
+      "icon": "🍺"
+    },
+    {
+      "name": "Neighborhood Pop-Up",
+      "range": "$400 – $1,200",
+      "method": "Flat",
+      "turn": "72 hr notice",
+      "icon": "📍"
+    },
+    {
+      "name": "School / Team",
+      "range": "$12 – $18 / head",
+      "method": "Per head",
+      "turn": "1 wk notice",
+      "icon": "🎒"
+    },
+    {
+      "name": "Film / Production",
+      "range": "$1,200 – $4,500",
+      "method": "Flat + per head",
+      "turn": "48 hr notice",
+      "icon": "🎬"
+    },
+    {
+      "name": "Large Catering",
+      "range": "$3,000 – $12,000+",
+      "method": "Flat + per head",
+      "turn": "3 wk notice",
+      "icon": "🍽️"
+    }
+  ],
+  "reviews": [
+    {
+      "n": "Marcus T., Austin",
+      "v": 5,
+      "t": "Booked the truck for our office lunch and the smash burgers had the whole floor lined up. Premium beef, cooked fresh right out front — best food-truck concept I've seen."
+    },
+    {
+      "n": "Priya D., Miami",
+      "v": 5,
+      "t": "The ribeye melt is unreal. Caught the truck at a brewery pop-up and came back twice. You can taste that it's real, whole-animal beef."
+    },
+    {
+      "n": "The Alvarez Family, Fort Lauderdale",
+      "v": 5,
+      "t": "Had them cater a backyard party — brisket burnt-end bowls and beef-fat fries were the talk of the night. Easy to book, showed up on time, cooked to order."
+    },
+    {
+      "n": "Danielle R., Denver",
+      "v": 5,
+      "t": "We booked Half a Cow for our wedding and the guests are still talking about the Butcher's Dog. A food truck that actually feels chef-driven."
+    },
+    {
+      "n": "Kevin O., Nashville",
+      "v": 5,
+      "t": "Found the truck at a festival and the line was worth it. The Half-Pound Smash is the best truck burger I've had, hands down."
+    },
+    {
+      "n": "Sofia M., Chicago",
+      "v": 5,
+      "t": "Corporate lunch drop-off for 60 people — every single person raved. Bilingual booking made it painless. Bring this truck to every city."
+    }
+  ],
+  "kb": [
+    [
+      [
+        "what",
+        "half a cow",
+        "concept",
+        "who",
+        "about",
+        "brand"
+      ],
+      "Half a Cow is a national premium beef food truck franchise concept. Chef driven, farm to truck, whole animal sourcing on wheels. It is an illustrative concept built on the Telvergence gigapress to show what the franchise could look like, rolling out city by city, Miami first and America next."
+    ],
+    [
+      [
+        "menu",
+        "food",
+        "eat",
+        "burger",
+        "smash",
+        "ribeye",
+        "brisket",
+        "dog",
+        "fries",
+        "board"
+      ],
+      "The board is a tight, high craft lineup that runs fast off a flat top. The Half Pound Smash, the Ribeye Melt, brisket and burnt ends, the Butcher's Dog, and beef fat fries. Everything is premium whole animal beef, smashed and seared to order. Final menu and pricing are set by the culinary team per market."
+    ],
+    [
+      [
+        "catering",
+        "cater",
+        "book",
+        "event",
+        "party",
+        "wedding",
+        "corporate",
+        "lunch"
+      ],
+      "You can book the truck for private parties, corporate lunches, festivals, weddings, backyard barbecues, office drop offs, sporting events, breweries, pop ups, and large catering. Illustrative ranges run about 18 to 28 dollars per head for drop offs and private parties, with festivals and weddings quoted as a flat fee plus per head. Every price is an illustrative estimate."
+    ],
+    [
+      [
+        "franchise",
+        "own",
+        "owner",
+        "operator",
+        "operate",
+        "run a truck",
+        "opportunity"
+      ],
+      "The concept lays out a three rung ladder. Owner Operator is one truck and one protected territory. Fleet Operator runs multiple trucks across a metro. Area Developer develops a whole region and supports operators. A franchise can be offered only through a registered Franchise Disclosure Document, so the structure shown is conceptual and nothing here is an offer to sell a franchise."
+    ],
+    [
+      [
+        "invest",
+        "investment",
+        "cost to own",
+        "fee",
+        "fees",
+        "how much to start",
+        "earn",
+        "income",
+        "profit",
+        "make money"
+      ],
+      "Because Half a Cow is a concept, there are no investment figures, fees, or earnings to quote, and no revenue, income, or profit is claimed or implied. Any real franchise terms would be defined and disclosed only through a formal Franchise Disclosure Document. Founding market talks start with your city and your kitchen background, not a number."
+    ],
+    [
+      [
+        "territory",
+        "protected",
+        "market",
+        "region",
+        "area",
+        "exclusive"
+      ],
+      "Each operator owns a defined metro or market, engineered from real demand and event density rather than drawn on a napkin, so no operator cannibalizes a neighbor. Territory design shown is conceptual and would be defined in a formal disclosure document."
+    ],
+    [
+      [
+        "smart number",
+        "phone",
+        "number",
+        "call",
+        "line",
+        "833",
+        "half cow"
+      ],
+      "The concept gives each market one memorable Smart Number, answered 24 by 7 in the caller's language, that books catering, events, and truck stops without the owner glued to a phone. The grid shown spells 833 HALF COW and is an illustrative concept only. It is not yet provisioned, owned, or live."
+    ],
+    [
+      [
+        "festival",
+        "fair",
+        "event dispatch",
+        "brewery",
+        "sporting",
+        "rush",
+        "dispatch"
+      ],
+      "Big events and festivals create demand rushes. The network is designed to route catering and festival leads to the nearest available truck instead of letting them die in a voicemail box. As a concept, dispatch is a designed capability, not a live service yet."
+    ],
+    [
+      [
+        "area developer",
+        "developer",
+        "region",
+        "expand",
+        "recruit"
+      ],
+      "An Area Developer develops a whole region, recruiting and supporting operators and earning on the network they build. It is the top rung of the concept ladder and the Telvergence referral flywheel at scale. Actual terms would be disclosed only through a Franchise Disclosure Document."
+    ],
+    [
+      [
+        "is this real",
+        "concept",
+        "demo",
+        "illustrative",
+        "order today",
+        "buy now"
+      ],
+      "Half a Cow is an illustrative concept, not a live business you can order from today. The menu, prices, territories, and Smart Numbers shown are conceptual and subject to change. Nothing here is an offer to sell food or a franchise."
+    ],
+    [
+      [
+        "start",
+        "conversation",
+        "contact",
+        "talk",
+        "founding",
+        "get started",
+        "bring to my city"
+      ],
+      "Founding market conversations are how this starts. Tell us your city and your kitchen background and we build the territory read together. Start the conversation from the button on this page. Because it is a concept, this begins a discussion, not a purchase."
+    ],
+    [
+      [
+        "spanish",
+        "espanol",
+        "bilingual",
+        "language",
+        "idioma",
+        "translate"
+      ],
+      "Si. The concept runs a dedicated bilingual line so every market can book in the caller's language. Pick your language at the top of the page and I answer in it. Se habla espanol."
+    ],
+    [
+      [
+        "sourcing",
+        "whole animal",
+        "beef",
+        "quality",
+        "farm",
+        "premium",
+        "where does the beef come from"
+      ],
+      "Half a Cow is built on whole animal sourcing. Buy better by buying the whole animal. The smash blend comes from the chuck, steak sandwiches off the loin, and brisket bowls from the plate. Less waste, deeper flavor, and premium quality city to city."
+    ],
+    [
+      [
+        "truck",
+        "the truck",
+        "mobile",
+        "where is the truck",
+        "flat top",
+        "kitchen"
+      ],
+      "The truck is a full flat top kitchen on wheels, built to run a tight, high craft menu fast. Premium beef is smashed and seared to order right in front of your guests. As a concept, no trucks are on the road yet, so this describes the designed operation."
+    ],
+    [
+      [
+        "hours",
+        "when open",
+        "schedule",
+        "available",
+        "time"
+      ],
+      "In the concept, the Smart Number answers around the clock so bookings and questions are never missed, and each truck's live schedule of festivals, pop ups, and catering fills the calendar. Live scheduling activates only once the market's accounts are provisioned."
+    ],
+    [
+      [
+        "help",
+        "other",
+        "question",
+        "fallback",
+        "something else"
+      ],
+      "Great question. The fastest path is to start the conversation from this page or ask me about the menu, catering and booking, the franchise ladder, protected territory, festivals and events, or whether this is a concept. Remember, Half a Cow is an illustrative concept, so nothing here is an offer to sell food or a franchise."
+    ]
+  ],
+  "gbp": {
+    "auto_verify": true,
+    "client": false,
+    "verify_method": "search-console-instant",
+    "status": "concept",
+    "profile_url": "",
+    "review_link": "",
+    "go_live": "",
+    "listing": {
+      "name": "Half a Cow",
+      "primary_category": "Food truck",
+      "secondary_categories": [
+        "Caterer",
+        "Hamburger restaurant"
+      ],
+      "phone": "833-425-3269",
+      "website": "https://restorationroyalties.com/halfacow/",
+      "model": "service-area (mobile / no storefront)",
+      "service_areas": [
+        "United States (concept, rolling out city by city)",
+        "Miami",
+        "Fort Lauderdale"
+      ],
+      "services": [
+        "Smash burgers",
+        "Ribeye melts",
+        "Brisket & burnt ends",
+        "Catering",
+        "Festivals & events"
+      ],
+      "description": "Half a Cow — premium beef food truck concept. Chef-driven, farm-to-truck smash burgers, ribeye melts, brisket & burnt ends, and beef-fat fries. Catering, festivals & private events. A national franchise concept, rolling out city by city."
+    },
+    "_note": "CONCEPT brand — not a live business and not a client. Half a Cow is an illustrative food-truck franchise concept built on the gigapress. The GBP listing here is conceptual only: no real Google Business Profile is provisioned, no address or storefront exists, and the toll-free Smart Number 833-HALF-COW is an illustrative concept, not yet owned or live. status set to concept (NOT pending/required). No franchise is offered; any real offering requires a registered FDD. No earnings claimed or implied."
+  },
+  "photoServices": [
+    {
+      "name": "Private Party",
+      "range": "$18 – $26 / head",
+      "scope": [
+        "Guest count & menu picks",
+        "Truck arrival & setup",
+        "Live-smashed to order",
+        "Clean break-down"
+      ]
+    },
+    {
+      "name": "Corporate",
+      "range": "$14 – $24 / head",
+      "scope": [
+        "Headcount & timing window",
+        "On-site or drop-off",
+        "Fast line service",
+        "Invoice & recurring option"
+      ]
+    },
+    {
+      "name": "Festival",
+      "range": "$800 – $3,500",
+      "scope": [
+        "Slot & load-in confirmed",
+        "High-volume prep",
+        "Rush-hour flat-top service",
+        "Post-event settle"
+      ]
+    },
+    {
+      "name": "Wedding",
+      "range": "$1,500 – $6,000+",
+      "scope": [
+        "Tasting & menu design",
+        "Timeline with planner",
+        "On-site fresh service",
+        "Late-night snack option"
+      ]
+    },
+    {
+      "name": "Other",
+      "range": "$400 – $12,000+",
+      "scope": [
+        "Tell us the event",
+        "Estimate the covers",
+        "Scope & written quote",
+        "Truck dispatched"
+      ]
+    }
+  ],
+  "trackStages": [
+    "Booked",
+    "Confirmed",
+    "Prepping",
+    "Truck En Route",
+    "On-Site",
+    "Serving",
+    "Wrapped"
+  ],
+  "trackFeed": [
+    "Booking received for your event",
+    "Date & headcount confirmed",
+    "Truck assigned to your booking",
+    "Whole-animal prep started",
+    "Truck loaded & en route — geo-tracked",
+    "Arrived & flat-top fired up",
+    "Serving your guests — smashed to order",
+    "Last covers going out",
+    "Event wrapped & cleaned up"
+  ],
+  "footerServices": [
+    "The Half-Pound Smash",
+    "The Ribeye Melt",
+    "Brisket &amp; Burnt Ends",
+    "The Butcher's Dog",
+    "Beef-Fat Fries",
+    "Catering",
+    "Festivals &amp; Events"
+  ],
+  "copy": {
+    "brandTagline": "The Sports Chef presents Half a Cow",
+    "crewLabel": "Grill Team",
+    "heroLede": "Half a Cow brings America's premium beef to the street — chef-driven, farm-to-truck smash burgers, ribeye melts, brisket &amp; burnt ends, and beef-fat fries, smashed to order. A national food-truck franchise concept: book the truck for parties, corporate lunches, festivals &amp; weddings — or bring the franchise to your city. <b>Whole-animal beef. Protected territory. One Smart Number per market.</b> <i>This is an illustrative concept, not a live business.</i>",
+    "valuesRow": "<span>Premium</span><i>·</i><span>Chef-Driven</span><i>·</i><span>Whole-Animal</span><i>·</i><span>Bilingual</span><i>·</i><span>Nationwide</span><i>·</i><span>Concept</span>",
+    "statJobsNum": "$14+",
+    "statJobsLbl": "Per Head — to $12,000+ (illustrative)",
+    "safetyBadge": "Whole-Animal Sourced · Chef-Driven",
+    "conciergeIntro": "Hi, I'm Chuck — your Chef Stefano's Half a Cow concierge for the menu, catering, festivals &amp; the franchise. Tap the 🔊 to hear me, pick your language above, or choose a button to begin. Heads up: Half a Cow is an illustrative concept.",
+    "miniQuoteSay": "Tell me your event type and headcount and I'll give you an instant illustrative estimate.",
+    "askPlaceholder": "Ask me — menu, catering, franchise…",
+    "promiseSafeTitle": "Whole-Animal Sourced",
+    "promiseSafeSub": "Premium beef, chef-driven &amp; systemized",
+    "miamiBandHead": "🐄 Rolling Out Nationwide — Miami First, America Next 🇺🇸",
+    "miamiBandSub": "Half a Cow is a national food-truck franchise concept designed to roll out city by city — protected territories, one Smart Number per market, and a branded truck in every metro. It starts in <b>Miami and Fort Lauderdale</b> and grows across America, one operator at a time. <b>This is an illustrative concept — no trucks are on the road yet.</b>",
+    "ecoSub": "Every touchpoint — booking, text, catering quote, festival slot, and truck update — is designed to run through a single intelligent system. That's how the concept answers faster, quotes cleaner, and keeps you posted from first ring to last cover served.",
+    "ecoTrackSmall": "Watch it go from booked to served",
+    "pmRow1": "Marcus T. — office lunch booked · <b>+62 covers</b>",
+    "pmRow2": "P. Alvarez — backyard BBQ quote sent",
+    "referExample": "Send us a catering, festival, corporate lunch, or private-event booking.",
+    "stormLede": "Big events and festivals create demand rushes — a fair announces, a stadium fills, a brewery drops a weekend lineup. In the concept, the network flags those surges and <b>routes catering and festival leads to the nearest available truck</b> — instead of letting them die in a voicemail box. <i>Event dispatch is a designed capability; as a concept it is not a live service yet.</i>",
+    "stormStep1": "The Event &amp; Festival Dispatch layer watches for fairs, festivals, stadium dates, and brewery lineups across a market and flags the demand rushes they'll create.",
+    "stormStep2": "An organizer or fan texts the event, date, and headcount — timestamped and geo-tagged — and the system reads the nearest available truck.",
+    "servicesEyebrow": "Whole Animal · One Board",
+    "servicesH2Lead": "We Grill",
+    "servicesSub": "From the signature Half-Pound Smash to brisket burnt ends and beef-fat fries, Half a Cow runs a tight, chef-driven board of premium whole-animal beef off a single flat-top — simple enough to run from a truck, good enough to line up for. Final menu and pricing set per market. Illustrative concept.",
+    "quoteEyebrow": "Book the Truck · Event Selector",
+    "quoteH2": "Pick the Event. Get the Estimate.",
+    "quoteSub": "Point our event selector at what you're planning — private party, corporate lunch, festival, wedding, or backyard BBQ — and it returns an illustrative estimate range and lead time in seconds. Then start your booking in one tap. All ranges are illustrative concept estimates.",
+    "quoteStatus": "Select or search the event you want to book for an instant estimate…",
+    "quotePlaceholder": "🔎 Search an event — wedding, festival, corporate lunch…",
+    "invHeadLabel": "🍽️ Events We Cater",
+    "invNote": "Estimate ranges are illustrative — your written quote confirms the exact price. Most bookings run $14/head to $12,000+ depending on event size and type. Half a Cow is a concept; no live pricing is being sold.",
+    "funnelQ1": "What are you planning?",
+    "funnelPrompt1": "First — what kind of event are you planning?",
+    "why1Body": "Premium, whole-animal beef smashed and seared to order — chef-level flavor that a basic burger truck can't touch, systemized so it's consistent city to city.",
+    "why2Body": "We quote before we cook — clear illustrative ranges, no surprises. Bookings run $14/head to $12,000+ by event size. Every figure here is an illustrative concept estimate.",
+    "why5Body": "From a single backyard BBQ to a full festival activation or wedding, each event type on its own line with a clear lead time.",
+    "compareThemHead": "Other Trucks",
+    "compareSafeCap": "Whole-animal premium beef",
+    "compareSafeThem": "Frozen commodity patties",
+    "compareSafeUs": "Chef-driven, sourced whole-animal",
+    "standardSub": "Other trucks stall at one truck because the owner IS the business. Half a Cow is a concept built to plug into a platform — Smart Number bookings, event dispatch, a branded site per operator, one playbook, and a referral flywheel — so a great cook can run a great business.",
+    "std1Body": "Booking and quotes designed to land same or next day — because a hungry event shouldn't wait on a callback that never comes.",
+    "stdSafeTitle": "Whole-Animal Sourcing",
+    "stdSafeBody": "Buy the whole animal — smash blend from the chuck, steaks off the loin, brisket from the plate. Less waste, deeper flavor, better beef than a commodity patty.",
+    "stdDetergentTitle": "Chef-Driven Playbook",
+    "stdDetergentBody": "Recipes, prep, and plating standardized into a playbook — the reason it can be a franchise, not a one-off. Consistency truck to truck, city to city.",
+    "std6Body": "If an event isn't right, the concept is built on accountability and a satisfaction commitment — put on paper, not left to a shrug.",
+    "sbSafeB": "Whole-Animal",
+    "sbSafeSpan": "Premium beef sourcing",
+    "processH2": "From Craving to Cooked in 4 Steps",
+    "photoH2Lead": "Pick the Event. Get a Quote.",
+    "photoSub": "Tell us the event and headcount — the app returns an illustrative preliminary estimate in seconds, then hands you a booking number you can track to service. Backed by our Satisfaction Commitment. This is an illustrative concept demo; your written quote confirms the price.",
+    "trackH2Lead": "Track Your Booking Live —",
+    "trackH2Hl": "From Booked to Served",
+    "franchiseSub": "Bring a turnkey premium-beef food truck to your city, powered by the Cow Connect™ platform — Smart Numbers, real-time booking tracking, the instant-quote event selector, festival &amp; catering dispatch, a branded site per operator, and full onboarding. Run it under the proven Half a Cow brand and referral flywheel. <b>A franchise can be offered only through a registered Franchise Disclosure Document (FDD); terms shown are conceptual, and nothing here is an offer to sell a franchise.</b>",
+    "adjBadge": "🎯 For Chefs &amp; Food Entrepreneurs",
+    "adjSub": "Run a Half a Cow truck under the brand and the Cow Connect™ platform. You run the flat-top; the platform runs the phone, the site, the bookings, and the festival &amp; catering dispatch — with whole-animal sourcing, a chef-driven playbook, and full onboarding behind you. <b>This describes the operating model only — no revenue, income, or profit is represented or implied.</b> Any actual franchise can be offered only through a registered Franchise Disclosure Document (FDD), and all terms are conceptual.",
+    "hireRole2": "Truck Cooks",
+    "finalLede": "From Miami to every metro, Half a Cow is built to bring America's premium beef to the street — smash burgers, ribeye melts, brisket &amp; burnt ends, and beef-fat fries, answered 24/7, in your language, dispatched to the nearest truck. Book the truck, or bring the franchise to your city. An illustrative national franchise concept.",
+    "footerTagline": "🐄 America's premium beef, on wheels. Chef-driven smash burgers, ribeye melts, brisket &amp; burnt ends across every metro — catering, festivals &amp; private events. A national food-truck franchise concept.",
+    "conciergeFallback": "Great question. The fastest path is to start the conversation right on this page. Or ask me about the menu, catering and booking, the franchise ladder, protected territory, festivals and events, or whether this is a concept. Remember, Half a Cow is an illustrative concept, so nothing here is an offer to sell food or a franchise.",
+    "conciergeGreet": "Hi, I'm Chuck, your Half a Cow concierge. Tap a button and I'll help you explore the menu, book the truck for catering, or learn how the franchise concept works.",
+    "quoteSearchHint": "Type an event (e.g. \"wedding\") or tap Estimate on a card below.",
+    "stormSimAlert": "Riverside Music Festival just announced — 12,000 expected. Food vendors flagged across your market.",
+    "stormSimOut1": "Festival — 3-day slot",
+    "stormSimEmoji1": "🎪",
+    "stormSimReply": "🚚 A Half a Cow truck is available and about 8 minutes from load-in. Illustrative concept — want the corporate lunch drop the same week too?",
+    "stormSimOut2": "Corporate lunch",
+    "stormSimEmoji2": "🏢",
+    "trackPayoutHTML": "✨ Event Wrapped<b>Served &amp; Satisfied</b><span style=\"color:var(--muted);font-size:13px\">Your guests are fed — the truck is packed up and gone.</span>",
+    "trackCompleteFeed": "🎉 Event wrapped — guests served, truck packed up",
+    "trackCompleteSay": "Great news. Your event is wrapped, your guests are fed, and the truck is packed up and on its way.",
+    "navStormLabel": "🎪 Events &amp; Festivals",
+    "navQuoteLabel": "Book the Truck",
+    "navTrackLabel": "Track Booking",
+    "heroQuoteCta": "📸 Plan Your Event · Instant Quote",
+    "stormSimBtn": "▶ Simulate an Event Dispatch",
+    "cityInvNav": "\n      <a href=\"./inventory/\">📍 City Inventory</a>"
+  }
+}
