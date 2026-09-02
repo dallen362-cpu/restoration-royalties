@@ -994,6 +994,7 @@ def render_gold(b):
         'navTrackLabel': 'Track Job',
         'heroQuoteCta': '📸 Snap the Surface · Instant Quote',
         'stormSimBtn': '▶ Simulate a Storm Cleanup Lead',
+        'cityInvNav': '',  # optional extra nav link (e.g. a city vanity-grid inventory page)
     }
     # Industry-specific shell prose lives in the brand JSON's "copy" object so the
     # template stays fully industry-agnostic. Merged last; values are literal text.

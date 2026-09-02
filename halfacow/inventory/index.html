@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Half a Cow — Franchise Territory Inventory · Vanity Numbers by City</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@1,9..144,400..600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#04070f; --navy-900:#070c1a; --navy-800:#0c1428; --navy-700:#111c38;
+    --beef:#D0313B; --gold:#d98b1f; --ink:#eef3ff; --muted:#9fb0cf;
+    --line:rgba(255,255,255,.08); --card:rgba(255,255,255,.04);
+    --maxw:1200px;
+    --sans:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    --display:'Anton','Inter',system-ui,sans-serif;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--navy-950); color:var(--ink);
+    font-family:var(--sans); font-size:16px; line-height:1.6;
+    background-image:
+      radial-gradient(1100px 620px at 82% -8%, rgba(208,49,59,.16), transparent 60%),
+      radial-gradient(900px 560px at 8% 4%, rgba(217,139,31,.10), transparent 58%);
+    background-attachment:fixed;
+  }
+  a{color:inherit}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  section{padding:72px 0; border-bottom:1px solid var(--line)}
+  .eyebrow{
+    display:inline-block; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--gold); font-weight:700; margin:0 0 14px; padding:6px 12px;
+    border:1px solid var(--line); border-radius:999px; background:var(--card);
+  }
+  h1,h2,h3{font-family:var(--display); font-weight:400; letter-spacing:.01em; line-height:1.02; text-transform:uppercase}
+  h1{font-size:clamp(2.6rem,7vw,5.4rem); margin:.1em 0 .28em}
+  h2{font-size:clamp(1.9rem,4.2vw,3rem); margin:0 0 .5em}
+  h3{font-size:1.15rem; margin:0}
+  p{margin:0 0 1em; color:var(--muted)}
+  p.lead{color:var(--ink); font-size:clamp(1.05rem,2vw,1.3rem); max-width:60ch}
+  strong{color:var(--ink)}
+  .accent{color:var(--beef)}
+  .gold{color:var(--gold)}
+
+  /* Hero */
+  .hero{padding:96px 0 84px; border-bottom:1px solid var(--line); position:relative}
+  .hero h1 span{color:var(--beef)}
+  .cta{
+    display:inline-flex; align-items:center; gap:.55em; margin-top:26px;
+    background:var(--beef); color:#fff; text-decoration:none; font-weight:700;
+    padding:15px 26px; border-radius:12px; letter-spacing:.02em;
+    box-shadow:0 12px 30px -12px rgba(208,49,59,.7); transition:transform .15s ease, background .15s ease;
+  }
+  .cta:hover{transform:translateY(-2px); background:#e0434d}
+  .cta.secondary{background:transparent; color:var(--ink); border:1px solid var(--line); box-shadow:none}
+  .cta.secondary:hover{background:var(--card)}
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+
+  /* generic feature grid */
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:30px}
+  .panel{
+    background:var(--navy-700); border:1px solid var(--line); border-radius:16px; padding:22px 20px;
+  }
+  .panel h3{font-family:var(--sans); font-weight:800; text-transform:none; letter-spacing:0; font-size:1.05rem; margin-bottom:.4em; color:var(--ink)}
+  .panel p{margin:0; font-size:.95rem}
+  .kicker{font-family:var(--display); color:var(--gold); font-size:1.6rem; display:block; margin-bottom:.2em}
+
+  .pull{
+    font-family:var(--serif); font-style:italic; font-size:clamp(1.3rem,3vw,1.9rem);
+    color:var(--ink); border-left:3px solid var(--beef); padding:6px 0 6px 22px; margin:26px 0; max-width:52ch;
+  }
+
+  /* Inventory disclaimer bar */
+  .disclaimer{
+    background:rgba(217,139,31,.08); border:1px solid rgba(217,139,31,.35); border-radius:14px;
+    padding:16px 18px; margin:0 0 30px; font-size:.92rem; color:#e8d4b0;
+  }
+  .disclaimer strong{color:var(--gold)}
+
+  /* City grid */
+  .citygrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:18px}
+  .citycard{
+    background:linear-gradient(180deg,var(--navy-800),var(--navy-900));
+    border:1px solid var(--line); border-radius:16px; padding:18px 18px 20px;
+    display:flex; flex-direction:column;
+  }
+  .citycard__head{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px}
+  .citycard__name{font-family:var(--display); text-transform:uppercase; font-size:1.35rem; color:var(--ink)}
+  .npa{
+    font-family:var(--sans); font-weight:800; font-size:.72rem; letter-spacing:.08em;
+    color:var(--gold); border:1px solid rgba(217,139,31,.45); background:rgba(217,139,31,.08);
+    padding:5px 10px; border-radius:999px; white-space:nowrap;
+  }
+  .ratenote{font-size:.82rem; color:var(--muted); margin:0 0 14px; min-height:2.4em; line-height:1.4}
+  .vlist{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px}
+  .vrow{
+    display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+    padding:9px 12px; border:1px solid var(--line); border-radius:10px; background:var(--card);
+  }
+  .vanity{font-family:var(--display); letter-spacing:.02em; font-size:1.02rem; color:var(--ink); white-space:nowrap}
+  .vanity::first-letter{color:var(--beef)}
+  .dial{font-variant-numeric:tabular-nums; font-size:.82rem; color:var(--muted); white-space:nowrap}
+
+  /* keypad legend */
+  .keypad{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px}
+  .key{font-size:.78rem; color:var(--muted); border:1px solid var(--line); background:var(--card); border-radius:8px; padding:6px 10px; font-variant-numeric:tabular-nums}
+  .key b{color:var(--gold)}
+
+  /* franchise box */
+  .franchise{display:grid; grid-template-columns:1.1fr .9fr; gap:26px; align-items:start}
+  .pricebox{
+    background:linear-gradient(180deg,var(--navy-700),var(--navy-800));
+    border:1px solid rgba(208,49,59,.4); border-radius:18px; padding:28px 26px;
+  }
+  .price{font-family:var(--display); font-size:clamp(2.6rem,6vw,3.6rem); color:var(--ink); line-height:1}
+  .price small{display:block; font-family:var(--sans); font-weight:700; font-size:.8rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); margin-bottom:.4em}
+  .incl{list-style:none; margin:18px 0 0; padding:0; display:flex; flex-direction:column; gap:10px}
+  .incl li{position:relative; padding-left:26px; font-size:.95rem; color:var(--ink)}
+  .incl li::before{content:"✓"; position:absolute; left:0; top:0; color:var(--beef); font-weight:800}
+
+  .fdd{
+    margin-top:22px; font-size:.85rem; color:var(--muted);
+    background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px;
+  }
+  .fdd strong{color:var(--ink)}
+
+  /* final CTA */
+  .final{text-align:center; border-bottom:none}
+  .final h2{margin-bottom:.3em}
+  .final p{margin-left:auto;margin-right:auto}
+
+  footer{padding:40px 0 90px; color:var(--muted); font-size:.82rem}
+  footer p{max-width:none; font-size:.82rem}
+  .footline{border-top:1px solid var(--line); padding-top:22px; display:flex; flex-direction:column; gap:12px}
+  .platform{color:var(--ink); font-weight:600}
+
+  /* read-aloud button */
+  #tvRead{
+    position:fixed; right:18px; bottom:18px; z-index:60;
+    width:56px; height:56px; border-radius:50%; border:1px solid var(--line);
+    background:var(--beef); color:#fff; font-size:1.4rem; cursor:pointer;
+    box-shadow:0 12px 30px -10px rgba(0,0,0,.7); display:flex; align-items:center; justify-content:center;
+    transition:transform .15s ease, background .15s ease;
+  }
+  #tvRead:hover{transform:translateY(-2px)}
+  #tvRead[aria-pressed="true"]{background:var(--gold); color:#1a1204}
+  #tvRead:focus-visible{outline:2px solid var(--gold); outline-offset:3px}
+
+  @media (max-width:820px){
+    .grid3{grid-template-columns:1fr}
+    .franchise{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important; transition:none !important; scroll-behavior:auto !important}
+    body{background-attachment:scroll}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Franchise Territory Inventory · Illustrative</span>
+    <h1>Your City. Your Numbers.<br><span>Your Territory.</span></h1>
+    <p class="lead">Every Half a Cow franchise city comes with its own grid of local, memorable
+      beef-brand vanity numbers — provisioned in <strong>your market's own rate center</strong> so your
+      brand answers like a neighbor, not an out-of-town call center.</p>
+    <div class="cta-row">
+      <a class="cta" href="#claim">Claim your city →</a>
+      <a class="cta secondary" href="#inventory">See the inventory</a>
+    </div>
+  </div>
+</header>
+
+<!-- 2. RATE-CENTER LOGIC -->
+<section id="logic">
+  <div class="wrap">
+    <span class="eyebrow">The mechanism</span>
+    <h2>The rate-center logic (NPA·NXX)</h2>
+    <p class="lead">A phone number is not just a phone number. The <strong>NPA</strong> (area code) and
+      <strong>NXX</strong> (the next three digits) together map to a <strong>rate center</strong> — a real
+      geographic zone the carrier world recognizes as "local" to your city.</p>
+    <p>When your Half a Cow number lives in the <em>caller's own</em> rate center, three things compound in
+      your favor:</p>
+    <div class="grid3">
+      <div class="panel">
+        <span class="kicker">Trust</span>
+        <h3>A local number reads as a neighbor</h3>
+        <p>People answer and call back a number that shares their own area code and prefix far more readily
+          than an unfamiliar or toll-free string. Local presence signals a real business down the road.</p>
+      </div>
+      <div class="panel">
+        <span class="kicker">Answer rates</span>
+        <h3>Local caller-ID lifts pick-up</h3>
+        <p>Outbound follow-up from an in-market rate-center line looks native on the recipient's screen —
+          the difference between "who is this?" and "oh, that's the local guys."</p>
+      </div>
+      <div class="panel">
+        <span class="kicker">Relevance</span>
+        <h3>Regional signal for local search</h3>
+        <p>A consistent local number tied to your city reinforces the geographic signals that map platforms
+          and AI answer engines use to decide who is genuinely "near me."</p>
+      </div>
+    </div>
+    <p class="pull">The magic is <em>where</em> the number lives — a real seat in your city's rate center,
+      not a random line forwarded from anywhere.</p>
+    <p style="font-size:.86rem">We show you the <strong>benefit and the logic</strong> — the local-presence
+      advantage a rate-center number earns. The provisioning system behind it stays proprietary to the
+      platform; the value is what you own.</p>
+  </div>
+</section>
+
+<!-- 3. LOCAL + AI SEO -->
+<section id="seo">
+  <div class="wrap">
+    <span class="eyebrow">Compounding visibility</span>
+    <h2>Local + AI SEO domination by region</h2>
+    <p class="lead">A real local rate-center number is the anchor of a consistent identity. Point every
+      signal at the same city and the effects stack.</p>
+    <div class="grid3">
+      <div class="panel">
+        <h3>Consistent NAP</h3>
+        <p>One Name, Address, and local Phone repeated identically across your site, business profile, and
+          directory citations is the bedrock of local-pack ranking. The rate-center number is the "P."</p>
+      </div>
+      <div class="panel">
+        <h3>The branded gold site</h3>
+        <p>Your city's Half a Cow site carries the local number, city-specific copy, and structured
+          signals — the destination the local pack and AI answers point people toward.</p>
+      </div>
+      <div class="panel">
+        <h3>AI-answer visibility</h3>
+        <p>Answer engines increasingly surface a single trusted local option for a query. A coherent
+          local-number-plus-site identity is exactly the kind of signal they reward in your grid zone.</p>
+      </div>
+    </div>
+    <p style="margin-top:24px">The number, the NAP, and the site are not three tactics — they are one
+      compounding identity aimed at a single city grid. That is how a new franchise shows up as the
+      obvious local answer.</p>
+  </div>
+</section>
+
+<!-- 4. TERRITORY READ -->
+<section id="territory">
+  <div class="wrap">
+    <span class="eyebrow">Framework, not figures</span>
+    <h2>Territory read — supply, demand &amp; competition</h2>
+    <p class="lead">Before you claim a city, your territory read is generated <strong>per market</strong>
+      against a repeatable framework. It is a lens, not a set of invented numbers.</p>
+    <div class="grid3">
+      <div class="panel">
+        <span class="kicker">Demand</span>
+        <h3>What drives orders here</h3>
+        <p>Events and festivals, stadium and nightlife density, office and catering clusters, seasonal
+          tourism — the local demand drivers your city actually has.</p>
+      </div>
+      <div class="panel">
+        <span class="kicker">Supply</span>
+        <h3>Saturation &amp; capacity</h3>
+        <p>How much comparable supply already serves the grid, and where fulfillment capacity is thin —
+          the gaps a well-branded local operator can fill.</p>
+      </div>
+      <div class="panel">
+        <span class="kicker">Competition</span>
+        <h3>Whitespace in the NXX zone</h3>
+        <p>Where established players are strong, and the competitive whitespace inside your rate-center
+          footprint where a local number and site can win first.</p>
+      </div>
+    </div>
+    <p style="margin-top:24px; font-size:.9rem">Each of the three lenses is filled in for your specific
+      city when you engage — this page presents the <strong>framework</strong>, not market data. No demand,
+      volume, or share figures are represented here.</p>
+  </div>
+</section>
+
+<!-- 5. THE CITY INVENTORY GRID -->
+<section id="inventory">
+  <div class="wrap">
+    <span class="eyebrow">The inventory · 20 cities × 5 numbers</span>
+    <h2>The city inventory grid</h2>
+    <p class="lead">One hundred example vanity numbers — five per city — each keyed to the city's real
+      primary area code and its own rate center.</p>
+
+    <div class="disclaimer">
+      <strong>Illustrative examples only.</strong> The 100 numbers below are examples of the kind of
+      beef-brand vanity numbers a franchisee <em>could</em> reserve and provision in their city's rate
+      center on activation. They are <strong>not owned, not reserved, and not yet provisioned</strong>.
+      Availability of any specific number is confirmed at activation.
+    </div>
+
+    <div class="keypad" aria-label="Phone keypad letter-to-digit legend">
+      <span class="key"><b>2</b> ABC</span>
+      <span class="key"><b>3</b> DEF</span>
+      <span class="key"><b>4</b> GHI</span>
+      <span class="key"><b>5</b> JKL</span>
+      <span class="key"><b>6</b> MNO</span>
+      <span class="key"><b>7</b> PQRS</span>
+      <span class="key"><b>8</b> TUV</span>
+      <span class="key"><b>9</b> WXYZ</span>
+    </div>
+
+    <div class="citygrid" style="margin-top:24px">
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Miami</h3>
+          <span class="npa" aria-label="Area code 305">NPA 305</span>
+        </header>
+        <p class="ratenote">Downtown / Brickell rate center — dense urban NXX blocks; local answer-rate premium.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">305-HALF-COW</span>
+            <span class="dial">(305) 425-3269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">305-BIG-BEEF</span>
+            <span class="dial">(305) 244-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">305-GO-ANGUS</span>
+            <span class="dial">(305) 462-6487</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">305-EAT-BEEF</span>
+            <span class="dial">(305) 328-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">305-BEEF-BUS</span>
+            <span class="dial">(305) 233-3287</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Fort Lauderdale</h3>
+          <span class="npa" aria-label="Area code 954">NPA 954</span>
+        </header>
+        <p class="ratenote">Broward coastal rate center — beach-to-Sawgrass corridor; strong local recall.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">954-GET-MEAT</span>
+            <span class="dial">(954) 438-6328</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">954-USDA-COW</span>
+            <span class="dial">(954) 873-2269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">954-RIB-EYES</span>
+            <span class="dial">(954) 742-3937</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">954-BRIS-KET</span>
+            <span class="dial">(954) 274-7538</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">954-BURG-ERS</span>
+            <span class="dial">(954) 287-4377</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Orlando</h3>
+          <span class="npa" aria-label="Area code 407">NPA 407</span>
+        </header>
+        <p class="ratenote">Central-FL tourism rate center — event-driven demand across the I-4 spine.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">407-SMASH-ED</span>
+            <span class="dial">(407) 762-7433</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">407-COW-BOYS</span>
+            <span class="dial">(407) 269-2697</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">407-GRILL-ED</span>
+            <span class="dial">(407) 474-5533</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">407-SMASH-IT</span>
+            <span class="dial">(407) 762-7448</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">407-PRIME-BF</span>
+            <span class="dial">(407) 774-6323</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Tampa</h3>
+          <span class="npa" aria-label="Area code 813">NPA 813</span>
+        </header>
+        <p class="ratenote">Tampa Bay rate center — port + downtown NXX; regional search overlap with St. Pete.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">813-MOO-FOOD</span>
+            <span class="dial">(813) 666-3663</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">813-HALF-COW</span>
+            <span class="dial">(813) 425-3269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">813-BIG-BEEF</span>
+            <span class="dial">(813) 244-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">813-GO-ANGUS</span>
+            <span class="dial">(813) 462-6487</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">813-EAT-BEEF</span>
+            <span class="dial">(813) 328-2333</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Jacksonville</h3>
+          <span class="npa" aria-label="Area code 904">NPA 904</span>
+        </header>
+        <p class="ratenote">First-Coast rate center — large single-NPA footprint; wide territory per number.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">904-BEEF-BUS</span>
+            <span class="dial">(904) 233-3287</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">904-GET-MEAT</span>
+            <span class="dial">(904) 438-6328</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">904-USDA-COW</span>
+            <span class="dial">(904) 873-2269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">904-RIB-EYES</span>
+            <span class="dial">(904) 742-3937</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">904-BRIS-KET</span>
+            <span class="dial">(904) 274-7538</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Atlanta</h3>
+          <span class="npa" aria-label="Area code 404">NPA 404</span>
+        </header>
+        <p class="ratenote">Intown 404 rate center — the legacy prestige NXX blocks inside the Perimeter.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">404-BURG-ERS</span>
+            <span class="dial">(404) 287-4377</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">404-SMASH-ED</span>
+            <span class="dial">(404) 762-7433</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">404-COW-BOYS</span>
+            <span class="dial">(404) 269-2697</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">404-GRILL-ED</span>
+            <span class="dial">(404) 474-5533</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">404-SMASH-IT</span>
+            <span class="dial">(404) 762-7448</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Nashville</h3>
+          <span class="npa" aria-label="Area code 615">NPA 615</span>
+        </header>
+        <p class="ratenote">Davidson-County rate center — Music-City core; nightlife + tourism demand.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">615-PRIME-BF</span>
+            <span class="dial">(615) 774-6323</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">615-MOO-FOOD</span>
+            <span class="dial">(615) 666-3663</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">615-HALF-COW</span>
+            <span class="dial">(615) 425-3269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">615-BIG-BEEF</span>
+            <span class="dial">(615) 244-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">615-GO-ANGUS</span>
+            <span class="dial">(615) 462-6487</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Charlotte</h3>
+          <span class="npa" aria-label="Area code 704">NPA 704</span>
+        </header>
+        <p class="ratenote">Mecklenburg rate center — Uptown banking core; premium metro NXX.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">704-EAT-BEEF</span>
+            <span class="dial">(704) 328-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">704-BEEF-BUS</span>
+            <span class="dial">(704) 233-3287</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">704-GET-MEAT</span>
+            <span class="dial">(704) 438-6328</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">704-USDA-COW</span>
+            <span class="dial">(704) 873-2269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">704-RIB-EYES</span>
+            <span class="dial">(704) 742-3937</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Austin</h3>
+          <span class="npa" aria-label="Area code 512">NPA 512</span>
+        </header>
+        <p class="ratenote">Travis-County rate center — the coveted original Austin NXX inventory.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">512-BRIS-KET</span>
+            <span class="dial">(512) 274-7538</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">512-BURG-ERS</span>
+            <span class="dial">(512) 287-4377</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">512-SMASH-ED</span>
+            <span class="dial">(512) 762-7433</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">512-COW-BOYS</span>
+            <span class="dial">(512) 269-2697</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">512-GRILL-ED</span>
+            <span class="dial">(512) 474-5533</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Dallas</h3>
+          <span class="npa" aria-label="Area code 214">NPA 214</span>
+        </header>
+        <p class="ratenote">Dallas core rate center — the historic 214 prestige blocks downtown.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">214-SMASH-IT</span>
+            <span class="dial">(214) 762-7448</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">214-PRIME-BF</span>
+            <span class="dial">(214) 774-6323</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">214-MOO-FOOD</span>
+            <span class="dial">(214) 666-3663</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">214-HALF-COW</span>
+            <span class="dial">(214) 425-3269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">214-BIG-BEEF</span>
+            <span class="dial">(214) 244-2333</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Houston</h3>
+          <span class="npa" aria-label="Area code 713">NPA 713</span>
+        </header>
+        <p class="ratenote">Inner-loop 713 rate center — original Houston prestige NXX inside the 610.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">713-GO-ANGUS</span>
+            <span class="dial">(713) 462-6487</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">713-EAT-BEEF</span>
+            <span class="dial">(713) 328-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">713-BEEF-BUS</span>
+            <span class="dial">(713) 233-3287</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">713-GET-MEAT</span>
+            <span class="dial">(713) 438-6328</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">713-USDA-COW</span>
+            <span class="dial">(713) 873-2269</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">San Antonio</h3>
+          <span class="npa" aria-label="Area code 210">NPA 210</span>
+        </header>
+        <p class="ratenote">Bexar-County rate center — River-Walk core; single-NPA metro coverage.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">210-RIB-EYES</span>
+            <span class="dial">(210) 742-3937</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">210-BRIS-KET</span>
+            <span class="dial">(210) 274-7538</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">210-BURG-ERS</span>
+            <span class="dial">(210) 287-4377</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">210-SMASH-ED</span>
+            <span class="dial">(210) 762-7433</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">210-COW-BOYS</span>
+            <span class="dial">(210) 269-2697</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Phoenix</h3>
+          <span class="npa" aria-label="Area code 602">NPA 602</span>
+        </header>
+        <p class="ratenote">Central-Phoenix 602 rate center — the original valley prestige blocks.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">602-GRILL-ED</span>
+            <span class="dial">(602) 474-5533</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">602-SMASH-IT</span>
+            <span class="dial">(602) 762-7448</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">602-PRIME-BF</span>
+            <span class="dial">(602) 774-6323</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">602-MOO-FOOD</span>
+            <span class="dial">(602) 666-3663</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">602-HALF-COW</span>
+            <span class="dial">(602) 425-3269</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Las Vegas</h3>
+          <span class="npa" aria-label="Area code 702">NPA 702</span>
+        </header>
+        <p class="ratenote">Clark-County rate center — Strip + downtown; heavy visitor call volume.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">702-BIG-BEEF</span>
+            <span class="dial">(702) 244-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">702-GO-ANGUS</span>
+            <span class="dial">(702) 462-6487</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">702-EAT-BEEF</span>
+            <span class="dial">(702) 328-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">702-BEEF-BUS</span>
+            <span class="dial">(702) 233-3287</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">702-GET-MEAT</span>
+            <span class="dial">(702) 438-6328</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Denver</h3>
+          <span class="npa" aria-label="Area code 303">NPA 303</span>
+        </header>
+        <p class="ratenote">Denver core rate center — the original 303 prestige NXX along the Front Range.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">303-USDA-COW</span>
+            <span class="dial">(303) 873-2269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">303-RIB-EYES</span>
+            <span class="dial">(303) 742-3937</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">303-BRIS-KET</span>
+            <span class="dial">(303) 274-7538</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">303-BURG-ERS</span>
+            <span class="dial">(303) 287-4377</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">303-SMASH-ED</span>
+            <span class="dial">(303) 762-7433</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Kansas City</h3>
+          <span class="npa" aria-label="Area code 816">NPA 816</span>
+        </header>
+        <p class="ratenote">Missouri-side rate center — downtown KC core; bi-state search overlap.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">816-COW-BOYS</span>
+            <span class="dial">(816) 269-2697</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">816-GRILL-ED</span>
+            <span class="dial">(816) 474-5533</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">816-SMASH-IT</span>
+            <span class="dial">(816) 762-7448</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">816-PRIME-BF</span>
+            <span class="dial">(816) 774-6323</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">816-MOO-FOOD</span>
+            <span class="dial">(816) 666-3663</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Chicago</h3>
+          <span class="npa" aria-label="Area code 312">NPA 312</span>
+        </header>
+        <p class="ratenote">Loop 312 rate center — the downtown prestige NXX inside the city core.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">312-HALF-COW</span>
+            <span class="dial">(312) 425-3269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">312-BIG-BEEF</span>
+            <span class="dial">(312) 244-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">312-GO-ANGUS</span>
+            <span class="dial">(312) 462-6487</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">312-EAT-BEEF</span>
+            <span class="dial">(312) 328-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">312-BEEF-BUS</span>
+            <span class="dial">(312) 233-3287</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Memphis</h3>
+          <span class="npa" aria-label="Area code 901">NPA 901</span>
+        </header>
+        <p class="ratenote">Shelby-County rate center — single-NPA metro; BBQ + tourism demand.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">901-GET-MEAT</span>
+            <span class="dial">(901) 438-6328</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">901-USDA-COW</span>
+            <span class="dial">(901) 873-2269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">901-RIB-EYES</span>
+            <span class="dial">(901) 742-3937</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">901-BRIS-KET</span>
+            <span class="dial">(901) 274-7538</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">901-BURG-ERS</span>
+            <span class="dial">(901) 287-4377</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">New Orleans</h3>
+          <span class="npa" aria-label="Area code 504">NPA 504</span>
+        </header>
+        <p class="ratenote">Orleans-Parish rate center — French-Quarter core; festival-driven demand.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">504-SMASH-ED</span>
+            <span class="dial">(504) 762-7433</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">504-COW-BOYS</span>
+            <span class="dial">(504) 269-2697</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">504-GRILL-ED</span>
+            <span class="dial">(504) 474-5533</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">504-SMASH-IT</span>
+            <span class="dial">(504) 762-7448</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">504-PRIME-BF</span>
+            <span class="dial">(504) 774-6323</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Los Angeles</h3>
+          <span class="npa" aria-label="Area code 213">NPA 213</span>
+        </header>
+        <p class="ratenote">Downtown-LA 213 rate center — the original prestige core NXX blocks.</p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">213-MOO-FOOD</span>
+            <span class="dial">(213) 666-3663</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">213-HALF-COW</span>
+            <span class="dial">(213) 425-3269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">213-BIG-BEEF</span>
+            <span class="dial">(213) 244-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">213-GO-ANGUS</span>
+            <span class="dial">(213) 462-6487</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">213-EAT-BEEF</span>
+            <span class="dial">(213) 328-2333</span>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 6. FRANCHISE STRUCTURE -->
+<section id="franchise">
+  <div class="wrap">
+    <span class="eyebrow">The structure · Illustrative concept</span>
+    <h2>The franchise structure</h2>
+    <div class="franchise">
+      <div>
+        <p class="lead">A Half a Cow city franchise is designed to hand you a turnkey local presence — the
+          numbers, the site, and the platform — under one illustrative structure.</p>
+        <p>The concept bundles your city's Smart-Number territory with a gold-standard branded site and the
+          operating platform, so a new franchisee launches as a credible local brand from day one rather
+          than assembling the pieces alone.</p>
+        <p class="pull">One structure: your city's numbers, your city's site, and the platform that runs
+          behind them.</p>
+      </div>
+      <aside class="pricebox">
+        <div class="price"><small>Illustrative franchise structure</small>$25,000 <span style="font-size:1rem;color:var(--muted)">down</span></div>
+        <ul class="incl">
+          <li>Your city's Smart-Number rate-center territory</li>
+          <li>The gold-standard branded Half a Cow city site</li>
+          <li>The operating platform &amp; concierge tooling</li>
+          <li>City-specific territory read (the framework above)</li>
+        </ul>
+        <div class="fdd">
+          <strong>This is a concept, not an offer.</strong> The $25,000 figure is an
+          <strong>illustrative franchise structure</strong> for discussion only. A franchise can be
+          offered or sold only through a registered <strong>Franchise Disclosure Document (FDD)</strong>.
+          <strong>No revenue, income, or profit is represented or implied</strong> (FTC Franchise Rule,
+          Item 19). Any figures shown are illustrative and do not constitute a financial performance
+          representation.
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 7. FINAL CTA -->
+<section id="claim" class="final">
+  <div class="wrap">
+    <span class="eyebrow">Register interest</span>
+    <h2>Reserve your city grid</h2>
+    <p class="lead">Tell us your city. We'll assemble your illustrative territory read and the vanity-number
+      inventory for your rate center — so you can see exactly what claiming your market would look like.</p>
+    <div class="cta-row" style="justify-content:center; margin-top:8px">
+      <a class="cta" href="mailto:?subject=Half%20a%20Cow%20—%20Reserve%20my%20city%20grid&amp;body=City%3A%20%0AName%3A%20%0ANotes%3A%20">Reserve your city grid →</a>
+      <a class="cta secondary" href="#inventory">Back to the inventory</a>
+    </div>
+    <p style="margin-top:22px; font-size:.82rem">Registering interest in this concept creates no
+      obligation and is not a franchise purchase. Nothing on this page is an offer to sell a franchise.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap footline">
+    <p><strong>Illustrative concept — not an offer.</strong> The 100 vanity numbers on this page are
+      illustrative examples of numbers a franchisee could reserve/provision in their city's rate center on
+      activation; they are <strong>not owned, not reserved, and not yet provisioned</strong>. The $25,000
+      figure is an illustrative franchise structure for discussion only, <strong>not an offer</strong>. A
+      franchise can be offered only via a registered <strong>Franchise Disclosure Document (FDD)</strong>.
+      <strong>No revenue, income, or profit is represented or implied</strong> (FTC Item 19). No statistics
+      on this page are actual market data. Number availability is confirmed only at activation.</p>
+    <p class="platform">Powered by the Telvergence platform — licensed, proven infrastructure.</p>
+  </div>
+</footer>
+
+<button id="tvRead" aria-pressed="false" aria-label="Read this page aloud" title="Read aloud">🔊</button>
+
+<script>
+(function(){
+  var btn = document.getElementById('tvRead');
+  if(!btn || !('speechSynthesis' in window)){ if(btn) btn.style.display='none'; return; }
+  var synth = window.speechSynthesis;
+  var reading = false;
+  var voices = [];
+
+  function loadVoices(){ voices = synth.getVoices() || []; }
+  loadVoices();
+  if(typeof synth.onvoiceschanged !== 'undefined'){ synth.onvoiceschanged = loadVoices; }
+
+  function pickVoice(){
+    if(!voices.length) loadVoices();
+    var en = voices.filter(function(v){ return /^en(-|_|$)/i.test(v.lang); });
+    var pool = en.length ? en : voices;
+    var pref = ['Google US English','Samantha','Microsoft Aria','Microsoft Jenny','Microsoft Zira','Daniel','Alex'];
+    for(var i=0;i<pref.length;i++){
+      for(var j=0;j<pool.length;j++){ if(pool[j].name.indexOf(pref[i])!==-1) return pool[j]; }
+    }
+    return pool[0] || null;
+  }
+
+  function buildScript(){
+    var out = [];
+    document.querySelectorAll('section, header.hero').forEach(function(sec){
+      var h = sec.querySelector('h1, h2');
+      var p = sec.querySelector('p');
+      if(h) out.push(h.textContent.trim());
+      if(p) out.push(p.textContent.trim());
+    });
+    return out.join('. ');
+  }
+
+  function stop(){
+    reading = false;
+    btn.setAttribute('aria-pressed','false');
+    btn.textContent = '🔊';
+    try{ synth.cancel(); }catch(e){}
+  }
+
+  function start(){
+    var text = buildScript();
+    if(!text) return;
+    try{ synth.cancel(); }catch(e){}
+    var u = new SpeechSynthesisUtterance(text);
+    var v = pickVoice();
+    if(v) u.voice = v;
+    u.rate = 1.0; u.pitch = 1.0;
+    u.onend = stop;
+    u.onerror = stop;
+    reading = true;
+    btn.setAttribute('aria-pressed','true');
+    btn.textContent = '⏹';
+    synth.speak(u);
+  }
+
+  btn.addEventListener('click', function(){ reading ? stop() : start(); });
+  window.addEventListener('beforeunload', function(){ try{ synth.cancel(); }catch(e){} });
+})();
+</script>
+
+</body>
+</html>
