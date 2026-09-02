@@ -99,12 +99,16 @@
   systems. Reusable for ANY field-service / work-truck industry (restoration, HVAC, pressure washing,
   food trucks, etc.). The food-truck fit (game-day/event demand + mobile fleet ops) is the exemplar.
 - **★ HALF A COW v1 LOCKED (2026-09-02):** the complete NFL build (gold master · hub · 30-market inventory ·
-  5 city storefronts · Cow Connect · Platinum white-label) is live-noindexed at restorationroyalties.com/halfacow/
-  and pinned on GitHub as branch `release/halfacow-nfl-evolution-v1`; the pre-Half-a-Cow foundation is pinned as
+  5 city storefronts · Cow Connect · Platinum white-label) is LIVE on 3 hosts — **telvergence.com/halfacow/ (canonical, public URL)**, halfacow.pages.dev, and the
+  build shop restorationroyalties.com/halfacow/ — plus `/halfacow/presentation/` (the narrated 12-packet "3-Minute Show"
+  for first-time prospects). Pinned on GitHub as branch `release/halfacow-nfl-evolution-v1`; the pre-Half-a-Cow foundation is pinned as
   branch `restore/pre-halfacow-2026-09-02` (main `8f31b6b`). **Restore points = branches, not tags:** the git proxy
   silently drops tag pushes (GitHub holds 0 tags), so never rely on a tag as a remote restore point.
   David's target public URL is `telvergence.com/halfacow/` — a cross-repo infra step, STAGED (not run) in
-  `handoff/HALFACOW-TELVERGENCE-COM-DEPLOY.md`. Do not disturb the foundation to get there.
+  `handoff/HALFACOW-TELVERGENCE-COM-DEPLOY.md` — EXECUTED 2026-09-02 by David's Cowork session (telvergence repo: restore
+  branch `restore/pre-halfacow-2026-09-02`, `halfacow/` added, showroom card, canonical re-pointed). That session's
+  output is David's — never modify it from here without his consent; new Half a Cow pages reach telvergence.com only
+  via a Cowork copy of `halfacow/` from this repo (source of truth). Do not disturb the foundation.
 - **★ SEQUENCE (David 2026-09-02):** (1) finish TODAY'S Half a Cow **GOLD** demo build (NFL-city model,
   live-noindexed for the 3:30 client meeting); (2) THEN build the Half a Cow **PLATINUM** = the
   telvergence.com white-label rebrand ($250K offering). Platinum comes AFTER the demo.
