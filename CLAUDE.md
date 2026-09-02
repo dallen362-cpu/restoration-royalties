@@ -73,6 +73,16 @@
   the **territory / vanity-grid inventory by city** (NPA·NXX rate-center → local + AI SEO domination →
   supply/demand/competition read); (6) record every new pattern back into the rules + skills. Half a Cow
   (`/halfacow/`) is the live reference run of this route.
+- **★ PRICING + FIELD-OPS MODULE (David 2026-09-02):** GOLD city-franchise SLA = **$25K down** per
+  NFL-city stadium territory (the Half a Cow model); **PLATINUM = the telvergence.com white-label rebrand
+  = $250K** product offering. The food-truck-franchise build is really the **FIELD WORK-TRUCK OPERATIONS
+  MANAGEMENT module**: in-the-field work-truck / fleet command — call command center, storm & event
+  dispatch, WIN weather-intelligence network — delivered via the app + SIP / web / phone + automated
+  systems. Reusable for ANY field-service / work-truck industry (restoration, HVAC, pressure washing,
+  food trucks, etc.). The food-truck fit (game-day/event demand + mobile fleet ops) is the exemplar.
+- **★ SEQUENCE (David 2026-09-02):** (1) finish TODAY'S Half a Cow **GOLD** demo build (NFL-city model,
+  live-noindexed for the 3:30 client meeting); (2) THEN build the Half a Cow **PLATINUM** = the
+  telvergence.com white-label rebrand ($250K offering). Platinum comes AFTER the demo.
 - **Key skills:** `brand-kit/skills/fast-standard/` (the kitchen-sink standard), `telvergence-brand-deploy/`
   (deploy law + QA gates), `vanity-did-generator/`, `.claude/skills/listing-foundation/` (GBP, auto-verify),
   `.claude/skills/prospect-turnkey/`. Governance: `handoff/SYNC-LANES.md`.
