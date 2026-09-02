@@ -42,6 +42,22 @@
   and stay byte-identical. **First gold output = Coastal Crown Pressure Washing** (`brands/coastalcrown.json`
   → `coastalcrown/index.html`, live at coastalcrownpressurewashing.pages.dev). Set `tier:"gold"` on any new
   brand to auto-stamp it at the gold standard; migrate legacy brands one at a time (prove-then-propagate).
+- **★ TIER FRAMEWORK (David 2026-09-02) — SILVER → GOLD → PLATINUM:**
+  - **SILVER** = the standardized CONCEPT MODELS in the showroom inventory — every industry built to one
+    methodology, the **three T's (Tools · Techniques · Technologies)** — served at
+    `restorationroyalties.com/<slug>/`. The ready-to-elect general models.
+  - **GOLD** = when a prospect ELECTS a model, run the gigapress AI-mashup "gold" output: go to press,
+    published with its **own URL + `contact@<domain>` email + Smart-DID (telephone-number) assignment &
+    programming** (the Coastal Crown level — real client, own domain, own numbers).
+  - **PLATINUM** = when a client wants the **telvergence.com rebrand / white-label** (the full master
+    rebrand; the solar-industry template in the showroom is an example).
+- **★ MASTER-SLA-HOLDER EMPIRE (David 2026-09-02):** the empire sits under a **master SLA holder** (Jimmy
+  is the example — restorationroyalties.com is his master), and every sub-brand/module lives under HIS url:
+  `restorationroyalties.com/hvac/`, `/<industry>/`, etc. A full flagship build = an **exact infrastructure
+  replica** of restorationroyalties.com (master home + sub-brand network + showroom + franchise/territory +
+  industry research + knowledge base), re-skinned to the industry. **HALF A COW** (`/halfacow/`, gold, live)
+  is being built as exactly this — a complete restorationroyalties.com infra emulation with food-truck-
+  franchise content, collateral, research, and KB — an ongoing working asset + case study.
 - **Key skills:** `brand-kit/skills/fast-standard/` (the kitchen-sink standard), `telvergence-brand-deploy/`
   (deploy law + QA gates), `vanity-did-generator/`, `.claude/skills/listing-foundation/` (GBP, auto-verify),
   `.claude/skills/prospect-turnkey/`. Governance: `handoff/SYNC-LANES.md`.
