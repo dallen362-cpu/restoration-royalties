@@ -58,6 +58,21 @@
   industry research + knowledge base), re-skinned to the industry. **HALF A COW** (`/halfacow/`, gold, live)
   is being built as exactly this — a complete restorationroyalties.com infra emulation with food-truck-
   franchise content, collateral, research, and KB — an ongoing working asset + case study.
+- **★ ADDITIVE / IMMUTABLE / REDUNDANT LAW (David 2026-09-02 — permanent):** every build is **additive
+  and non-destructive**. NEVER overwrite or delete a solidified, saved mechanism, rule, or output —
+  instead **create a new copy** (new slug / section / version) and keep **redundant backups** (git history
+  + the Google Drive master brain; superseded versions retire to the **boneyard**, never deleted). Each
+  completed build **permanently enriches our rules + skills** (record the new pattern in CLAUDE.md / the
+  relevant SKILL.md) and flows its evolution into the **inventory · boneyard · showroom**. The set-in-stone
+  mechanisms stay untouched; only additions accrue. Prove-then-propagate; harden the magic (sell the value,
+  never expose the mechanism).
+- **★ CLIENT-ROUTE PROCESS — exemplar = Half a Cow (David 2026-09-02):** a client is routed
+  **Silver → (elected) → Gold → (optional) Platinum**: (1) stand up / pick the SILVER concept model in the
+  showroom; (2) on election, run the **GOLD** gigapress output — own URL + `contact@` + Smart-DID; (3)
+  register in showroom + inventory; (4) build the **research + knowledge-base** working asset; (5) generate
+  the **territory / vanity-grid inventory by city** (NPA·NXX rate-center → local + AI SEO domination →
+  supply/demand/competition read); (6) record every new pattern back into the rules + skills. Half a Cow
+  (`/halfacow/`) is the live reference run of this route.
 - **Key skills:** `brand-kit/skills/fast-standard/` (the kitchen-sink standard), `telvergence-brand-deploy/`
   (deploy law + QA gates), `vanity-did-generator/`, `.claude/skills/listing-foundation/` (GBP, auto-verify),
   `.claude/skills/prospect-turnkey/`. Governance: `handoff/SYNC-LANES.md`.
