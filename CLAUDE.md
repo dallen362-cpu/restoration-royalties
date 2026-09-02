@@ -98,6 +98,11 @@
   dispatch, WIN weather-intelligence network — delivered via the app + SIP / web / phone + automated
   systems. Reusable for ANY field-service / work-truck industry (restoration, HVAC, pressure washing,
   food trucks, etc.). The food-truck fit (game-day/event demand + mobile fleet ops) is the exemplar.
+- **★ HALF A COW v1 LOCKED (2026-09-02):** the complete NFL build (gold master · hub · 30-market inventory ·
+  5 city storefronts · Cow Connect · Platinum white-label) is live-noindexed at restorationroyalties.com/halfacow/
+  and tagged `halfacow-nfl-evolution-v1`; the pre-Half-a-Cow foundation is tagged `pre-halfacow-2026-09-02`.
+  David's target public URL is `telvergence.com/halfacow/` — a cross-repo infra step, STAGED (not run) in
+  `handoff/HALFACOW-TELVERGENCE-COM-DEPLOY.md`. Do not disturb the foundation to get there.
 - **★ SEQUENCE (David 2026-09-02):** (1) finish TODAY'S Half a Cow **GOLD** demo build (NFL-city model,
   live-noindexed for the 3:30 client meeting); (2) THEN build the Half a Cow **PLATINUM** = the
   telvergence.com white-label rebrand ($250K offering). Platinum comes AFTER the demo.
