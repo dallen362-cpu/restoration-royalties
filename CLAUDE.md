@@ -11,6 +11,18 @@
    independent tool calls; verify with cheap greps, not full re-reads.
 4. **Don't let the 5-hour limit run out.** Run independent lanes in parallel, ship in deployed stages
    (commit → merge → verify live per stage), and never leave finished work uncommitted.
+5. **★ MODEL-ROUTING LAW (David 2026-09-02 — permanent; skill: `.claude/skills/model-routing/`).**
+   BEFORE executing anything, run the routing evaluation and assign the task to the **LOWEST-COST Claude
+   model that solves it to standard** — an automated, intelligent, pre-execution decision matching task →
+   ability → economics precisely, every time. Tiers: **A Mechanical → Haiku 4.5** (greps, moves, formatting,
+   verification, deterministic transforms) · **B Specified implementation → Sonnet 5** (code/content to a
+   clear spec or template, JSON from a schema, page clones, instructed research) · **C Judgment/design →
+   Opus** (ambiguity, architecture, honesty/compliance-sensitive output, audits) · **D Orchestration/
+   critical → main session, never delegated** (strategy, user intent, deploys/unpublishes/sends, security
+   boundaries, secrets/PHI/legal). Never spend Opus on Sonnet work or Sonnet on Haiku work; escalate only
+   when a lane fails verification for a *capability* reason (fix a vague spec first). Verify every lane with
+   a CHEAP check (Class A). State the routing in one line before executing. Assign agents and mint new
+   skills as you go (additively).
 
 ## ★ BRAND HIERARCHY (David's standing correction — do not misread)
 - **telvergence.com is the MASTER / flagship brand** — the gigapress AI-mashup studio itself, the parent
