@@ -1,0 +1,1384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Half a Cow — Franchise Territory Inventory · Vanity Numbers by City</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@1,9..144,400..600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#04070f; --navy-900:#070c1a; --navy-800:#0c1428; --navy-700:#111c38;
+    --beef:#D0313B; --gold:#d98b1f; --ink:#eef3ff; --muted:#9fb0cf;
+    --line:rgba(255,255,255,.08); --card:rgba(255,255,255,.04);
+    --maxw:1200px;
+    --sans:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    --display:'Anton','Inter',system-ui,sans-serif;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--navy-950); color:var(--ink);
+    font-family:var(--sans); font-size:16px; line-height:1.6;
+    background-image:
+      radial-gradient(1100px 620px at 82% -8%, rgba(208,49,59,.16), transparent 60%),
+      radial-gradient(900px 560px at 8% 4%, rgba(217,139,31,.10), transparent 58%);
+    background-attachment:fixed;
+  }
+  a{color:inherit}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  section{padding:72px 0; border-bottom:1px solid var(--line)}
+  .eyebrow{
+    display:inline-block; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--gold); font-weight:700; margin:0 0 14px; padding:6px 12px;
+    border:1px solid var(--line); border-radius:999px; background:var(--card);
+  }
+  h1,h2,h3{font-family:var(--display); font-weight:400; letter-spacing:.01em; line-height:1.02; text-transform:uppercase}
+  h1{font-size:clamp(2.6rem,7vw,5.4rem); margin:.1em 0 .28em}
+  h2{font-size:clamp(1.9rem,4.2vw,3rem); margin:0 0 .5em}
+  h3{font-size:1.15rem; margin:0}
+  p{margin:0 0 1em; color:var(--muted)}
+  p.lead{color:var(--ink); font-size:clamp(1.05rem,2vw,1.3rem); max-width:60ch}
+  strong{color:var(--ink)}
+  .accent{color:var(--beef)}
+  .gold{color:var(--gold)}
+
+  /* Hero */
+  .hero{padding:96px 0 84px; border-bottom:1px solid var(--line); position:relative}
+  .hero h1 span{color:var(--beef)}
+  .cta{
+    display:inline-flex; align-items:center; gap:.55em; margin-top:26px;
+    background:var(--beef); color:#fff; text-decoration:none; font-weight:700;
+    padding:15px 26px; border-radius:12px; letter-spacing:.02em;
+    box-shadow:0 12px 30px -12px rgba(208,49,59,.7); transition:transform .15s ease, background .15s ease;
+  }
+  .cta:hover{transform:translateY(-2px); background:#e0434d}
+  .cta.secondary{background:transparent; color:var(--ink); border:1px solid var(--line); box-shadow:none}
+  .cta.secondary:hover{background:var(--card)}
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+
+  /* generic feature grid */
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:30px}
+  .panel{
+    background:var(--navy-700); border:1px solid var(--line); border-radius:16px; padding:22px 20px;
+  }
+  .panel h3{font-family:var(--sans); font-weight:800; text-transform:none; letter-spacing:0; font-size:1.05rem; margin-bottom:.4em; color:var(--ink)}
+  .panel p{margin:0; font-size:.95rem}
+  .kicker{font-family:var(--display); color:var(--gold); font-size:1.6rem; display:block; margin-bottom:.2em}
+
+  .pull{
+    font-family:var(--serif); font-style:italic; font-size:clamp(1.3rem,3vw,1.9rem);
+    color:var(--ink); border-left:3px solid var(--beef); padding:6px 0 6px 22px; margin:26px 0; max-width:52ch;
+  }
+
+  /* Inventory disclaimer bar */
+  .disclaimer{
+    background:rgba(217,139,31,.08); border:1px solid rgba(217,139,31,.35); border-radius:14px;
+    padding:16px 18px; margin:0 0 30px; font-size:.92rem; color:#e8d4b0;
+  }
+  .disclaimer strong{color:var(--gold)}
+
+  /* City grid */
+  .citygrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:18px}
+  .citycard{
+    background:linear-gradient(180deg,var(--navy-800),var(--navy-900));
+    border:1px solid var(--line); border-radius:16px; padding:18px 18px 20px;
+    display:flex; flex-direction:column;
+  }
+  .citycard__head{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px}
+  .citycard__name{font-family:var(--display); text-transform:uppercase; font-size:1.35rem; color:var(--ink)}
+  .npa{
+    font-family:var(--sans); font-weight:800; font-size:.72rem; letter-spacing:.08em;
+    color:var(--gold); border:1px solid rgba(217,139,31,.45); background:rgba(217,139,31,.08);
+    padding:5px 10px; border-radius:999px; white-space:nowrap;
+  }
+  .stadium{font-family:var(--serif); font-style:italic; font-size:.92rem; color:var(--ink); margin:0 0 8px; line-height:1.35}
+  .ratenote{font-size:.82rem; color:var(--muted); margin:0 0 10px; min-height:2.4em; line-height:1.4}
+  .exch{font-size:.76rem; color:var(--muted); margin:0 0 14px; line-height:1.45; border-top:1px dashed var(--line); padding-top:10px}
+  .exch em{display:block; font-style:italic; color:#8394b3; font-size:.72rem; margin-top:3px}
+  .vlist{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px}
+  .vrow{
+    display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+    padding:9px 12px; border:1px solid var(--line); border-radius:10px; background:var(--card);
+  }
+  .vanity{font-family:var(--display); letter-spacing:.02em; font-size:1.02rem; color:var(--ink); white-space:nowrap}
+  .vanity::first-letter{color:var(--beef)}
+  .dial{font-variant-numeric:tabular-nums; font-size:.82rem; color:var(--muted); white-space:nowrap}
+
+  /* keypad legend */
+  .keypad{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px}
+  .key{font-size:.78rem; color:var(--muted); border:1px solid var(--line); background:var(--card); border-radius:8px; padding:6px 10px; font-variant-numeric:tabular-nums}
+  .key b{color:var(--gold)}
+
+  /* franchise box */
+  .franchise{display:grid; grid-template-columns:1.1fr .9fr; gap:26px; align-items:start}
+  .pricebox{
+    background:linear-gradient(180deg,var(--navy-700),var(--navy-800));
+    border:1px solid rgba(208,49,59,.4); border-radius:18px; padding:28px 26px;
+  }
+  .price{font-family:var(--display); font-size:clamp(2.6rem,6vw,3.6rem); color:var(--ink); line-height:1}
+  .price small{display:block; font-family:var(--sans); font-weight:700; font-size:.8rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); margin-bottom:.4em}
+  .incl{list-style:none; margin:18px 0 0; padding:0; display:flex; flex-direction:column; gap:10px}
+  .incl li{position:relative; padding-left:26px; font-size:.95rem; color:var(--ink)}
+  .incl li::before{content:"✓"; position:absolute; left:0; top:0; color:var(--beef); font-weight:800}
+
+  .fdd{
+    margin-top:22px; font-size:.85rem; color:var(--muted);
+    background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px;
+  }
+  .fdd strong{color:var(--ink)}
+
+  /* final CTA */
+  .final{text-align:center; border-bottom:none}
+  .final h2{margin-bottom:.3em}
+  .final p{margin-left:auto;margin-right:auto}
+
+  footer{padding:40px 0 90px; color:var(--muted); font-size:.82rem}
+  footer p{max-width:none; font-size:.82rem}
+  .footline{border-top:1px solid var(--line); padding-top:22px; display:flex; flex-direction:column; gap:12px}
+  .platform{color:var(--ink); font-weight:600}
+
+  /* read-aloud button */
+  #tvRead{
+    position:fixed; right:18px; bottom:18px; z-index:60;
+    width:56px; height:56px; border-radius:50%; border:1px solid var(--line);
+    background:var(--beef); color:#fff; font-size:1.4rem; cursor:pointer;
+    box-shadow:0 12px 30px -10px rgba(0,0,0,.7); display:flex; align-items:center; justify-content:center;
+    transition:transform .15s ease, background .15s ease;
+  }
+  #tvRead:hover{transform:translateY(-2px)}
+  #tvRead[aria-pressed="true"]{background:var(--gold); color:#1a1204}
+  #tvRead:focus-visible{outline:2px solid var(--gold); outline-offset:3px}
+
+  @media (max-width:820px){
+    .grid3{grid-template-columns:1fr}
+    .franchise{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important; transition:none !important; scroll-behavior:auto !important}
+    body{background-attachment:scroll}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Franchise Territory Inventory · Illustrative</span>
+    <h1>Your Team's City.<br>Your Numbers. <span>Your Territory.</span></h1>
+    <p class="lead">Territories = Tier-One NFL cities. Each Half a Cow franchise owns the
+      <strong>NPA·NXX rate-center grid fanning out from that team's stadium</strong> — the game-day,
+      tailgate, and year-round event demand engine — with local, memorable beef-brand vanity numbers
+      that answer like a neighbor, not an out-of-town call center.</p>
+    <div class="cta-row">
+      <a class="cta" href="#claim">Claim your city →</a>
+      <a class="cta secondary" href="#inventory">See the inventory</a>
+    </div>
+  </div>
+</header>
+
+<!-- 2. RATE-CENTER LOGIC -->
+<section id="logic">
+  <div class="wrap">
+    <span class="eyebrow">The mechanism</span>
+    <h2>The rate-center logic (NPA·NXX)</h2>
+    <p class="lead">A phone number is not just a phone number. The <strong>NPA</strong> (area code) and
+      <strong>NXX</strong> (the next three digits) together map to a <strong>rate center</strong> — a real
+      geographic zone the carrier world recognizes as "local" to your city.</p>
+    <p>When your Half a Cow number lives in the <em>caller's own</em> rate center, three things compound in
+      your favor:</p>
+    <div class="grid3">
+      <div class="panel">
+        <span class="kicker">Trust</span>
+        <h3>A local number reads as a neighbor</h3>
+        <p>People answer and call back a number that shares their own area code and prefix far more readily
+          than an unfamiliar or toll-free string. Local presence signals a real business down the road.</p>
+      </div>
+      <div class="panel">
+        <span class="kicker">Answer rates</span>
+        <h3>Local caller-ID lifts pick-up</h3>
+        <p>Outbound follow-up from an in-market rate-center line looks native on the recipient's screen —
+          the difference between "who is this?" and "oh, that's the local guys."</p>
+      </div>
+      <div class="panel">
+        <span class="kicker">Relevance</span>
+        <h3>Regional signal for local search</h3>
+        <p>A consistent local number tied to your city reinforces the geographic signals that map platforms
+          and AI answer engines use to decide who is genuinely "near me."</p>
+      </div>
+    </div>
+    <p class="pull">The magic is <em>where</em> the number lives — a real seat in your city's rate center,
+      not a random line forwarded from anywhere.</p>
+    <p style="font-size:.86rem">We show you the <strong>benefit and the logic</strong> — the local-presence
+      advantage a rate-center number earns. The provisioning system behind it stays proprietary to the
+      platform; the value is what you own.</p>
+  </div>
+</section>
+
+<!-- 3. LOCAL + AI SEO -->
+<section id="seo">
+  <div class="wrap">
+    <span class="eyebrow">Compounding visibility</span>
+    <h2>Local + AI SEO domination by region</h2>
+    <p class="lead">A real local rate-center number is the anchor of a consistent identity. Point every
+      signal at the same city and the effects stack.</p>
+    <div class="grid3">
+      <div class="panel">
+        <h3>Consistent NAP</h3>
+        <p>One Name, Address, and local Phone repeated identically across your site, business profile, and
+          directory citations is the bedrock of local-pack ranking. The rate-center number is the "P."</p>
+      </div>
+      <div class="panel">
+        <h3>The branded gold site</h3>
+        <p>Your city's Half a Cow site carries the local number, city-specific copy, and structured
+          signals — the destination the local pack and AI answers point people toward.</p>
+      </div>
+      <div class="panel">
+        <h3>AI-answer visibility</h3>
+        <p>Answer engines increasingly surface a single trusted local option for a query. A coherent
+          local-number-plus-site identity is exactly the kind of signal they reward in your grid zone.</p>
+      </div>
+    </div>
+    <p style="margin-top:24px">The number, the NAP, and the site are not three tactics — they are one
+      compounding identity aimed at a single city grid. That is how a new franchise shows up as the
+      obvious local answer.</p>
+  </div>
+</section>
+
+<!-- 4. TERRITORY READ -->
+<section id="territory">
+  <div class="wrap">
+    <span class="eyebrow">Framework, not figures</span>
+    <h2>Territory read — supply, demand &amp; competition</h2>
+    <p class="lead">Before you claim a city, your territory read is generated <strong>per market</strong>
+      against a repeatable framework. It is a lens, not a set of invented numbers.</p>
+    <div class="grid3">
+      <div class="panel">
+        <span class="kicker">Demand</span>
+        <h3>What drives orders here</h3>
+        <p>Events and festivals, stadium and nightlife density, office and catering clusters, seasonal
+          tourism — the local demand drivers your city actually has.</p>
+      </div>
+      <div class="panel">
+        <span class="kicker">Supply</span>
+        <h3>Saturation &amp; capacity</h3>
+        <p>How much comparable supply already serves the grid, and where fulfillment capacity is thin —
+          the gaps a well-branded local operator can fill.</p>
+      </div>
+      <div class="panel">
+        <span class="kicker">Competition</span>
+        <h3>Whitespace in the NXX zone</h3>
+        <p>Where established players are strong, and the competitive whitespace inside your rate-center
+          footprint where a local number and site can win first.</p>
+      </div>
+    </div>
+    <p style="margin-top:24px; font-size:.9rem">Each of the three lenses is filled in for your specific
+      city when you engage — this page presents the <strong>framework</strong>, not market data. No demand,
+      volume, or share figures are represented here.</p>
+  </div>
+</section>
+
+<!-- 5. THE CITY INVENTORY GRID -->
+<section id="inventory">
+  <div class="wrap">
+    <span class="eyebrow">The inventory · 30 NFL markets × 5 numbers</span>
+    <h2>The stadium territory grid</h2>
+    <p class="lead">One hundred fifty example vanity numbers — five per NFL market — each keyed to the
+      area code of the team's home city and the rate-center grid fanning out from its stadium.</p>
+
+    <div class="disclaimer">
+      <strong>Illustrative examples only.</strong> The 150 numbers below are examples of the kind of
+      beef-brand vanity numbers a franchisee <em>could</em> reserve and provision in their market's
+      stadium-area rate center on activation. They are <strong>not owned, not reserved, and not yet
+      provisioned</strong>. The stadium-area exchanges shown are <strong>illustrative, not verified
+      rate-center assignments</strong>. Availability of any specific number is confirmed at activation.
+      Team and stadium names are used descriptively for geographic reference only —
+      <strong>not affiliated with, endorsed by, or sponsored by the NFL or any club</strong>.
+    </div>
+
+    <div class="keypad" aria-label="Phone keypad letter-to-digit legend">
+      <span class="key"><b>2</b> ABC</span>
+      <span class="key"><b>3</b> DEF</span>
+      <span class="key"><b>4</b> GHI</span>
+      <span class="key"><b>5</b> JKL</span>
+      <span class="key"><b>6</b> MNO</span>
+      <span class="key"><b>7</b> PQRS</span>
+      <span class="key"><b>8</b> TUV</span>
+      <span class="key"><b>9</b> WXYZ</span>
+    </div>
+
+    <div class="citygrid" style="margin-top:24px">
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Cardinals</h3>
+          <span class="npa" aria-label="Area code 623">NPA 623</span>
+        </header>
+        <p class="stadium">State Farm Stadium</p>
+        <p class="ratenote">West-Valley rate center — Glendale stadium district; game-day + year-round event demand.</p>
+        <p class="exch">623 exchanges fanning from State Farm Stadium — 623-2xx · 623-4xx · 623-5xx · 623-6xx · 623-7xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">623-HALF-COW</span>
+            <span class="dial">(623) 425-3269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">623-BIG-BEEF</span>
+            <span class="dial">(623) 244-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">623-GO-ANGUS</span>
+            <span class="dial">(623) 462-6487</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">623-EAT-BEEF</span>
+            <span class="dial">(623) 328-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">623-BEEF-BUS</span>
+            <span class="dial">(623) 233-3287</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Falcons</h3>
+          <span class="npa" aria-label="Area code 404">NPA 404</span>
+        </header>
+        <p class="stadium">Mercedes-Benz Stadium</p>
+        <p class="ratenote">Intown 404 rate center — downtown stadium core inside the Perimeter.</p>
+        <p class="exch">404 exchanges fanning from Mercedes-Benz Stadium — 404-2xx · 404-3xx · 404-5xx · 404-7xx · 404-8xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">404-GET-MEAT</span>
+            <span class="dial">(404) 438-6328</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">404-USDA-COW</span>
+            <span class="dial">(404) 873-2269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">404-RIB-EYES</span>
+            <span class="dial">(404) 742-3937</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">404-BRIS-KET</span>
+            <span class="dial">(404) 274-7538</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">404-BURG-ERS</span>
+            <span class="dial">(404) 287-4377</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Ravens</h3>
+          <span class="npa" aria-label="Area code 410">NPA 410</span>
+        </header>
+        <p class="stadium">M&amp;T Bank Stadium</p>
+        <p class="ratenote">Baltimore rate center — Inner-Harbor stadium district demand.</p>
+        <p class="exch">410 exchanges fanning from M&amp;T Bank Stadium — 410-2xx · 410-3xx · 410-4xx · 410-6xx · 410-9xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">410-SMASH-ED</span>
+            <span class="dial">(410) 762-7433</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">410-COW-BOYS</span>
+            <span class="dial">(410) 269-2697</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">410-GRILL-ED</span>
+            <span class="dial">(410) 474-5533</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">410-SMASH-IT</span>
+            <span class="dial">(410) 762-7448</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">410-PRIME-BF</span>
+            <span class="dial">(410) 774-6323</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Bills</h3>
+          <span class="npa" aria-label="Area code 716">NPA 716</span>
+        </header>
+        <p class="stadium">Highmark Stadium</p>
+        <p class="ratenote">Erie-County rate center — Orchard Park tailgate belt.</p>
+        <p class="exch">716 exchanges fanning from Highmark Stadium — 716-3xx · 716-4xx · 716-5xx · 716-6xx · 716-8xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">716-MOO-FOOD</span>
+            <span class="dial">(716) 666-3663</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">716-HALF-COW</span>
+            <span class="dial">(716) 425-3269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">716-BIG-BEEF</span>
+            <span class="dial">(716) 244-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">716-GO-ANGUS</span>
+            <span class="dial">(716) 462-6487</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">716-EAT-BEEF</span>
+            <span class="dial">(716) 328-2333</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Panthers</h3>
+          <span class="npa" aria-label="Area code 704">NPA 704</span>
+        </header>
+        <p class="stadium">Bank of America Stadium</p>
+        <p class="ratenote">Mecklenburg rate center — Uptown stadium core.</p>
+        <p class="exch">704 exchanges fanning from Bank of America Stadium — 704-2xx · 704-4xx · 704-6xx · 704-7xx · 704-9xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">704-BEEF-BUS</span>
+            <span class="dial">(704) 233-3287</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">704-GET-MEAT</span>
+            <span class="dial">(704) 438-6328</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">704-USDA-COW</span>
+            <span class="dial">(704) 873-2269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">704-RIB-EYES</span>
+            <span class="dial">(704) 742-3937</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">704-BRIS-KET</span>
+            <span class="dial">(704) 274-7538</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Bears</h3>
+          <span class="npa" aria-label="Area code 312">NPA 312</span>
+        </header>
+        <p class="stadium">Soldier Field</p>
+        <p class="ratenote">Loop 312 rate center — lakefront stadium district downtown.</p>
+        <p class="exch">312 exchanges fanning from Soldier Field — 312-2xx · 312-4xx · 312-5xx · 312-6xx · 312-7xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">312-BURG-ERS</span>
+            <span class="dial">(312) 287-4377</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">312-SMASH-ED</span>
+            <span class="dial">(312) 762-7433</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">312-COW-BOYS</span>
+            <span class="dial">(312) 269-2697</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">312-GRILL-ED</span>
+            <span class="dial">(312) 474-5533</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">312-SMASH-IT</span>
+            <span class="dial">(312) 762-7448</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Bengals</h3>
+          <span class="npa" aria-label="Area code 513">NPA 513</span>
+        </header>
+        <p class="stadium">Paycor Stadium</p>
+        <p class="ratenote">Cincinnati rate center — riverfront stadium core.</p>
+        <p class="exch">513 exchanges fanning from Paycor Stadium — 513-2xx · 513-3xx · 513-5xx · 513-7xx · 513-8xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">513-PRIME-BF</span>
+            <span class="dial">(513) 774-6323</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">513-MOO-FOOD</span>
+            <span class="dial">(513) 666-3663</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">513-HALF-COW</span>
+            <span class="dial">(513) 425-3269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">513-BIG-BEEF</span>
+            <span class="dial">(513) 244-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">513-GO-ANGUS</span>
+            <span class="dial">(513) 462-6487</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Browns</h3>
+          <span class="npa" aria-label="Area code 216">NPA 216</span>
+        </header>
+        <p class="stadium">Huntington Bank Field</p>
+        <p class="ratenote">Cuyahoga rate center — lakefront downtown stadium district.</p>
+        <p class="exch">216 exchanges fanning from Huntington Bank Field — 216-2xx · 216-3xx · 216-4xx · 216-6xx · 216-9xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">216-EAT-BEEF</span>
+            <span class="dial">(216) 328-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">216-BEEF-BUS</span>
+            <span class="dial">(216) 233-3287</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">216-GET-MEAT</span>
+            <span class="dial">(216) 438-6328</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">216-USDA-COW</span>
+            <span class="dial">(216) 873-2269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">216-RIB-EYES</span>
+            <span class="dial">(216) 742-3937</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Cowboys</h3>
+          <span class="npa" aria-label="Area code 817">NPA 817</span>
+        </header>
+        <p class="stadium">AT&amp;T Stadium</p>
+        <p class="ratenote">Tarrant-County rate center — Arlington stadium + entertainment district.</p>
+        <p class="exch">817 exchanges fanning from AT&amp;T Stadium — 817-3xx · 817-4xx · 817-5xx · 817-6xx · 817-8xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">817-BRIS-KET</span>
+            <span class="dial">(817) 274-7538</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">817-BURG-ERS</span>
+            <span class="dial">(817) 287-4377</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">817-SMASH-ED</span>
+            <span class="dial">(817) 762-7433</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">817-COW-BOYS</span>
+            <span class="dial">(817) 269-2697</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">817-GRILL-ED</span>
+            <span class="dial">(817) 474-5533</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Broncos</h3>
+          <span class="npa" aria-label="Area code 303">NPA 303</span>
+        </header>
+        <p class="stadium">Empower Field at Mile High</p>
+        <p class="ratenote">Denver core rate center — the original 303 stadium-district blocks.</p>
+        <p class="exch">303 exchanges fanning from Empower Field at Mile High — 303-2xx · 303-4xx · 303-6xx · 303-7xx · 303-9xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">303-SMASH-IT</span>
+            <span class="dial">(303) 762-7448</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">303-PRIME-BF</span>
+            <span class="dial">(303) 774-6323</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">303-MOO-FOOD</span>
+            <span class="dial">(303) 666-3663</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">303-HALF-COW</span>
+            <span class="dial">(303) 425-3269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">303-BIG-BEEF</span>
+            <span class="dial">(303) 244-2333</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Lions</h3>
+          <span class="npa" aria-label="Area code 313">NPA 313</span>
+        </header>
+        <p class="stadium">Ford Field</p>
+        <p class="ratenote">Detroit rate center — downtown stadium + entertainment core.</p>
+        <p class="exch">313 exchanges fanning from Ford Field — 313-2xx · 313-4xx · 313-5xx · 313-6xx · 313-7xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">313-GO-ANGUS</span>
+            <span class="dial">(313) 462-6487</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">313-EAT-BEEF</span>
+            <span class="dial">(313) 328-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">313-BEEF-BUS</span>
+            <span class="dial">(313) 233-3287</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">313-GET-MEAT</span>
+            <span class="dial">(313) 438-6328</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">313-USDA-COW</span>
+            <span class="dial">(313) 873-2269</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Packers</h3>
+          <span class="npa" aria-label="Area code 920">NPA 920</span>
+        </header>
+        <p class="stadium">Lambeau Field</p>
+        <p class="ratenote">Northeast-Wisconsin rate center — Lambeau tailgate belt.</p>
+        <p class="exch">920 exchanges fanning from Lambeau Field — 920-2xx · 920-3xx · 920-5xx · 920-7xx · 920-8xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">920-RIB-EYES</span>
+            <span class="dial">(920) 742-3937</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">920-BRIS-KET</span>
+            <span class="dial">(920) 274-7538</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">920-BURG-ERS</span>
+            <span class="dial">(920) 287-4377</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">920-SMASH-ED</span>
+            <span class="dial">(920) 762-7433</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">920-COW-BOYS</span>
+            <span class="dial">(920) 269-2697</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Texans</h3>
+          <span class="npa" aria-label="Area code 713">NPA 713</span>
+        </header>
+        <p class="stadium">NRG Stadium</p>
+        <p class="ratenote">Inner-loop 713 rate center — NRG stadium district demand.</p>
+        <p class="exch">713 exchanges fanning from NRG Stadium — 713-2xx · 713-3xx · 713-4xx · 713-6xx · 713-9xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">713-GRILL-ED</span>
+            <span class="dial">(713) 474-5533</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">713-SMASH-IT</span>
+            <span class="dial">(713) 762-7448</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">713-PRIME-BF</span>
+            <span class="dial">(713) 774-6323</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">713-MOO-FOOD</span>
+            <span class="dial">(713) 666-3663</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">713-HALF-COW</span>
+            <span class="dial">(713) 425-3269</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Colts</h3>
+          <span class="npa" aria-label="Area code 317">NPA 317</span>
+        </header>
+        <p class="stadium">Lucas Oil Stadium</p>
+        <p class="ratenote">Marion-County rate center — downtown Indy stadium core.</p>
+        <p class="exch">317 exchanges fanning from Lucas Oil Stadium — 317-3xx · 317-4xx · 317-5xx · 317-6xx · 317-8xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">317-BIG-BEEF</span>
+            <span class="dial">(317) 244-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">317-GO-ANGUS</span>
+            <span class="dial">(317) 462-6487</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">317-EAT-BEEF</span>
+            <span class="dial">(317) 328-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">317-BEEF-BUS</span>
+            <span class="dial">(317) 233-3287</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">317-GET-MEAT</span>
+            <span class="dial">(317) 438-6328</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Jaguars</h3>
+          <span class="npa" aria-label="Area code 904">NPA 904</span>
+        </header>
+        <p class="stadium">EverBank Stadium</p>
+        <p class="ratenote">First-Coast rate center — downtown Jacksonville stadium district.</p>
+        <p class="exch">904 exchanges fanning from EverBank Stadium — 904-2xx · 904-4xx · 904-6xx · 904-7xx · 904-9xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">904-USDA-COW</span>
+            <span class="dial">(904) 873-2269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">904-RIB-EYES</span>
+            <span class="dial">(904) 742-3937</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">904-BRIS-KET</span>
+            <span class="dial">(904) 274-7538</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">904-BURG-ERS</span>
+            <span class="dial">(904) 287-4377</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">904-SMASH-ED</span>
+            <span class="dial">(904) 762-7433</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Chiefs</h3>
+          <span class="npa" aria-label="Area code 816">NPA 816</span>
+        </header>
+        <p class="stadium">Arrowhead Stadium</p>
+        <p class="ratenote">Jackson-County rate center — Truman Sports Complex tailgate belt.</p>
+        <p class="exch">816 exchanges fanning from Arrowhead Stadium — 816-2xx · 816-4xx · 816-5xx · 816-6xx · 816-7xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">816-COW-BOYS</span>
+            <span class="dial">(816) 269-2697</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">816-GRILL-ED</span>
+            <span class="dial">(816) 474-5533</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">816-SMASH-IT</span>
+            <span class="dial">(816) 762-7448</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">816-PRIME-BF</span>
+            <span class="dial">(816) 774-6323</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">816-MOO-FOOD</span>
+            <span class="dial">(816) 666-3663</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Raiders</h3>
+          <span class="npa" aria-label="Area code 702">NPA 702</span>
+        </header>
+        <p class="stadium">Allegiant Stadium</p>
+        <p class="ratenote">Clark-County rate center — Strip-adjacent stadium district.</p>
+        <p class="exch">702 exchanges fanning from Allegiant Stadium — 702-2xx · 702-3xx · 702-5xx · 702-7xx · 702-8xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">702-HALF-COW</span>
+            <span class="dial">(702) 425-3269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">702-BIG-BEEF</span>
+            <span class="dial">(702) 244-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">702-GO-ANGUS</span>
+            <span class="dial">(702) 462-6487</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">702-EAT-BEEF</span>
+            <span class="dial">(702) 328-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">702-BEEF-BUS</span>
+            <span class="dial">(702) 233-3287</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Rams / Chargers</h3>
+          <span class="npa" aria-label="Area code 310">NPA 310</span>
+        </header>
+        <p class="stadium">SoFi Stadium</p>
+        <p class="ratenote">Inglewood rate center — SoFi stadium + entertainment district.</p>
+        <p class="exch">310 exchanges fanning from SoFi Stadium — 310-2xx · 310-3xx · 310-4xx · 310-6xx · 310-9xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">310-GET-MEAT</span>
+            <span class="dial">(310) 438-6328</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">310-USDA-COW</span>
+            <span class="dial">(310) 873-2269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">310-RIB-EYES</span>
+            <span class="dial">(310) 742-3937</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">310-BRIS-KET</span>
+            <span class="dial">(310) 274-7538</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">310-BURG-ERS</span>
+            <span class="dial">(310) 287-4377</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Dolphins</h3>
+          <span class="npa" aria-label="Area code 305">NPA 305</span>
+        </header>
+        <p class="stadium">Hard Rock Stadium</p>
+        <p class="ratenote">Miami-Dade rate center — Hard Rock stadium district demand.</p>
+        <p class="exch">305 exchanges fanning from Hard Rock Stadium — 305-3xx · 305-4xx · 305-5xx · 305-6xx · 305-8xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">305-SMASH-ED</span>
+            <span class="dial">(305) 762-7433</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">305-COW-BOYS</span>
+            <span class="dial">(305) 269-2697</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">305-GRILL-ED</span>
+            <span class="dial">(305) 474-5533</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">305-SMASH-IT</span>
+            <span class="dial">(305) 762-7448</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">305-PRIME-BF</span>
+            <span class="dial">(305) 774-6323</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Vikings</h3>
+          <span class="npa" aria-label="Area code 612">NPA 612</span>
+        </header>
+        <p class="stadium">U.S. Bank Stadium</p>
+        <p class="ratenote">Minneapolis core rate center — downtown stadium district.</p>
+        <p class="exch">612 exchanges fanning from U.S. Bank Stadium — 612-2xx · 612-4xx · 612-6xx · 612-7xx · 612-9xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">612-MOO-FOOD</span>
+            <span class="dial">(612) 666-3663</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">612-HALF-COW</span>
+            <span class="dial">(612) 425-3269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">612-BIG-BEEF</span>
+            <span class="dial">(612) 244-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">612-GO-ANGUS</span>
+            <span class="dial">(612) 462-6487</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">612-EAT-BEEF</span>
+            <span class="dial">(612) 328-2333</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Patriots</h3>
+          <span class="npa" aria-label="Area code 508">NPA 508</span>
+        </header>
+        <p class="stadium">Gillette Stadium</p>
+        <p class="ratenote">Foxborough rate center — Patriot Place stadium belt.</p>
+        <p class="exch">508 exchanges fanning from Gillette Stadium — 508-2xx · 508-4xx · 508-5xx · 508-6xx · 508-7xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">508-BEEF-BUS</span>
+            <span class="dial">(508) 233-3287</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">508-GET-MEAT</span>
+            <span class="dial">(508) 438-6328</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">508-USDA-COW</span>
+            <span class="dial">(508) 873-2269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">508-RIB-EYES</span>
+            <span class="dial">(508) 742-3937</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">508-BRIS-KET</span>
+            <span class="dial">(508) 274-7538</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Saints</h3>
+          <span class="npa" aria-label="Area code 504">NPA 504</span>
+        </header>
+        <p class="stadium">Caesars Superdome</p>
+        <p class="ratenote">Orleans-Parish rate center — Superdome + French-Quarter core.</p>
+        <p class="exch">504 exchanges fanning from Caesars Superdome — 504-2xx · 504-3xx · 504-5xx · 504-7xx · 504-8xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">504-BURG-ERS</span>
+            <span class="dial">(504) 287-4377</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">504-SMASH-ED</span>
+            <span class="dial">(504) 762-7433</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">504-COW-BOYS</span>
+            <span class="dial">(504) 269-2697</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">504-GRILL-ED</span>
+            <span class="dial">(504) 474-5533</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">504-SMASH-IT</span>
+            <span class="dial">(504) 762-7448</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Giants / Jets</h3>
+          <span class="npa" aria-label="Area code 201">NPA 201</span>
+        </header>
+        <p class="stadium">MetLife Stadium</p>
+        <p class="ratenote">Bergen-County rate center — Meadowlands stadium complex.</p>
+        <p class="exch">201 exchanges fanning from MetLife Stadium — 201-2xx · 201-3xx · 201-4xx · 201-6xx · 201-9xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">201-PRIME-BF</span>
+            <span class="dial">(201) 774-6323</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">201-MOO-FOOD</span>
+            <span class="dial">(201) 666-3663</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">201-HALF-COW</span>
+            <span class="dial">(201) 425-3269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">201-BIG-BEEF</span>
+            <span class="dial">(201) 244-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">201-GO-ANGUS</span>
+            <span class="dial">(201) 462-6487</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Eagles</h3>
+          <span class="npa" aria-label="Area code 215">NPA 215</span>
+        </header>
+        <p class="stadium">Lincoln Financial Field</p>
+        <p class="ratenote">Philadelphia rate center — South-Philly stadium district.</p>
+        <p class="exch">215 exchanges fanning from Lincoln Financial Field — 215-3xx · 215-4xx · 215-5xx · 215-6xx · 215-8xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">215-EAT-BEEF</span>
+            <span class="dial">(215) 328-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">215-BEEF-BUS</span>
+            <span class="dial">(215) 233-3287</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">215-GET-MEAT</span>
+            <span class="dial">(215) 438-6328</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">215-USDA-COW</span>
+            <span class="dial">(215) 873-2269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">215-RIB-EYES</span>
+            <span class="dial">(215) 742-3937</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Steelers</h3>
+          <span class="npa" aria-label="Area code 412">NPA 412</span>
+        </header>
+        <p class="stadium">Acrisure Stadium</p>
+        <p class="ratenote">Allegheny rate center — North-Shore stadium district.</p>
+        <p class="exch">412 exchanges fanning from Acrisure Stadium — 412-2xx · 412-4xx · 412-6xx · 412-7xx · 412-9xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">412-BRIS-KET</span>
+            <span class="dial">(412) 274-7538</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">412-BURG-ERS</span>
+            <span class="dial">(412) 287-4377</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">412-SMASH-ED</span>
+            <span class="dial">(412) 762-7433</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">412-COW-BOYS</span>
+            <span class="dial">(412) 269-2697</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">412-GRILL-ED</span>
+            <span class="dial">(412) 474-5533</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">49ers</h3>
+          <span class="npa" aria-label="Area code 408">NPA 408</span>
+        </header>
+        <p class="stadium">Levi's Stadium</p>
+        <p class="ratenote">Santa-Clara rate center — Silicon-Valley stadium district.</p>
+        <p class="exch">408 exchanges fanning from Levi's Stadium — 408-2xx · 408-4xx · 408-5xx · 408-6xx · 408-7xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">408-SMASH-IT</span>
+            <span class="dial">(408) 762-7448</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">408-PRIME-BF</span>
+            <span class="dial">(408) 774-6323</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">408-MOO-FOOD</span>
+            <span class="dial">(408) 666-3663</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">408-HALF-COW</span>
+            <span class="dial">(408) 425-3269</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">408-BIG-BEEF</span>
+            <span class="dial">(408) 244-2333</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Seahawks</h3>
+          <span class="npa" aria-label="Area code 206">NPA 206</span>
+        </header>
+        <p class="stadium">Lumen Field</p>
+        <p class="ratenote">Seattle core rate center — SoDo stadium district.</p>
+        <p class="exch">206 exchanges fanning from Lumen Field — 206-2xx · 206-3xx · 206-5xx · 206-7xx · 206-8xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">206-GO-ANGUS</span>
+            <span class="dial">(206) 462-6487</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">206-EAT-BEEF</span>
+            <span class="dial">(206) 328-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">206-BEEF-BUS</span>
+            <span class="dial">(206) 233-3287</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">206-GET-MEAT</span>
+            <span class="dial">(206) 438-6328</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">206-USDA-COW</span>
+            <span class="dial">(206) 873-2269</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Buccaneers</h3>
+          <span class="npa" aria-label="Area code 813">NPA 813</span>
+        </header>
+        <p class="stadium">Raymond James Stadium</p>
+        <p class="ratenote">Tampa-Bay rate center — stadium + Westshore district.</p>
+        <p class="exch">813 exchanges fanning from Raymond James Stadium — 813-2xx · 813-3xx · 813-4xx · 813-6xx · 813-9xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">813-RIB-EYES</span>
+            <span class="dial">(813) 742-3937</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">813-BRIS-KET</span>
+            <span class="dial">(813) 274-7538</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">813-BURG-ERS</span>
+            <span class="dial">(813) 287-4377</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">813-SMASH-ED</span>
+            <span class="dial">(813) 762-7433</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">813-COW-BOYS</span>
+            <span class="dial">(813) 269-2697</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Titans</h3>
+          <span class="npa" aria-label="Area code 615">NPA 615</span>
+        </header>
+        <p class="stadium">Nissan Stadium</p>
+        <p class="ratenote">Davidson-County rate center — East-Bank stadium district.</p>
+        <p class="exch">615 exchanges fanning from Nissan Stadium — 615-3xx · 615-4xx · 615-5xx · 615-6xx · 615-8xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">615-GRILL-ED</span>
+            <span class="dial">(615) 474-5533</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">615-SMASH-IT</span>
+            <span class="dial">(615) 762-7448</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">615-PRIME-BF</span>
+            <span class="dial">(615) 774-6323</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">615-MOO-FOOD</span>
+            <span class="dial">(615) 666-3663</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">615-HALF-COW</span>
+            <span class="dial">(615) 425-3269</span>
+          </li>
+        </ul>
+      </article>
+      <article class="citycard">
+        <header class="citycard__head">
+          <h3 class="citycard__name">Commanders</h3>
+          <span class="npa" aria-label="Area code 301">NPA 301</span>
+        </header>
+        <p class="stadium">Northwest Stadium</p>
+        <p class="ratenote">Prince-George's rate center — Landover stadium district.</p>
+        <p class="exch">301 exchanges fanning from Northwest Stadium — 301-2xx · 301-4xx · 301-6xx · 301-7xx · 301-9xx<em>illustrative stadium-area exchanges, not verified rate-center assignments</em></p>
+        <ul class="vlist">
+          <li class="vrow">
+            <span class="vanity">301-BIG-BEEF</span>
+            <span class="dial">(301) 244-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">301-GO-ANGUS</span>
+            <span class="dial">(301) 462-6487</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">301-EAT-BEEF</span>
+            <span class="dial">(301) 328-2333</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">301-BEEF-BUS</span>
+            <span class="dial">(301) 233-3287</span>
+          </li>
+          <li class="vrow">
+            <span class="vanity">301-GET-MEAT</span>
+            <span class="dial">(301) 438-6328</span>
+          </li>
+        </ul>
+      </article>
+        </div>
+  </div>
+</section>
+
+<!-- 6. FRANCHISE STRUCTURE -->
+<section id="franchise">
+  <div class="wrap">
+    <span class="eyebrow">The structure · Illustrative concept</span>
+    <h2>The franchise structure</h2>
+    <div class="franchise">
+      <div>
+        <p class="lead">A Half a Cow city franchise is designed to hand you a turnkey local presence — the
+          numbers, the site, and the platform — under one illustrative structure.</p>
+        <p>The concept bundles your city's Smart-Number territory with a gold-standard branded site and the
+          operating platform, so a new franchisee launches as a credible local brand from day one rather
+          than assembling the pieces alone.</p>
+        <p class="pull">One structure: your city's numbers, your city's site, and the platform that runs
+          behind them.</p>
+      </div>
+      <aside class="pricebox">
+        <div class="price"><small>Illustrative franchise structure</small>$25,000 <span style="font-size:1rem;color:var(--muted)">down</span></div>
+        <ul class="incl">
+          <li>Your city's Smart-Number rate-center territory</li>
+          <li>The gold-standard branded Half a Cow city site</li>
+          <li>The operating platform &amp; concierge tooling</li>
+          <li>City-specific territory read (the framework above)</li>
+        </ul>
+        <div class="fdd">
+          <strong>This is a concept, not an offer.</strong> The $25,000 figure is an
+          <strong>illustrative franchise structure</strong> for discussion only. A franchise can be
+          offered or sold only through a registered <strong>Franchise Disclosure Document (FDD)</strong>.
+          <strong>No revenue, income, or profit is represented or implied</strong> (FTC Franchise Rule,
+          Item 19). Any figures shown are illustrative and do not constitute a financial performance
+          representation.
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 7. FINAL CTA -->
+<section id="claim" class="final">
+  <div class="wrap">
+    <span class="eyebrow">Register interest</span>
+    <h2>Reserve your city grid</h2>
+    <p class="lead">Tell us your city. We'll assemble your illustrative territory read and the vanity-number
+      inventory for your rate center — so you can see exactly what claiming your market would look like.</p>
+    <div class="cta-row" style="justify-content:center; margin-top:8px">
+      <a class="cta" href="mailto:?subject=Half%20a%20Cow%20—%20Reserve%20my%20city%20grid&amp;body=City%3A%20%0AName%3A%20%0ANotes%3A%20">Reserve your city grid →</a>
+      <a class="cta secondary" href="#inventory">Back to the inventory</a>
+    </div>
+    <p style="margin-top:22px; font-size:.82rem">Registering interest in this concept creates no
+      obligation and is not a franchise purchase. Nothing on this page is an offer to sell a franchise.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap footline">
+    <p><strong>Illustrative concept — not an offer.</strong> The 150 vanity numbers on this page are
+      illustrative examples of numbers a franchisee could reserve/provision in their market's stadium-area
+      rate center on activation; they are <strong>not owned, not reserved, and not yet provisioned</strong>,
+      and the stadium-area exchanges shown are illustrative, not verified rate-center assignments. The
+      $25,000 figure is an illustrative franchise structure for discussion only, <strong>not an offer</strong>.
+      A franchise can be offered only via a registered <strong>Franchise Disclosure Document (FDD)</strong>.
+      <strong>No revenue, income, or profit is represented or implied</strong> (FTC Item 19). No statistics
+      on this page are actual market data. Number availability is confirmed only at activation.</p>
+    <p><strong>Not affiliated with, endorsed by, or sponsored by the NFL or any club.</strong> Team and
+      stadium names are referenced descriptively, in text only, to identify a geographic market — no NFL
+      or club logos, marks, or trade dress are used or implied.</p>
+    <p class="platform">Powered by the Telvergence platform — licensed, proven infrastructure.</p>
+  </div>
+</footer>
+
+<button id="tvRead" aria-pressed="false" aria-label="Read this page aloud" title="Read aloud">🔊</button>
+
+<script>
+(function(){
+  var btn = document.getElementById('tvRead');
+  if(!btn || !('speechSynthesis' in window)){ if(btn) btn.style.display='none'; return; }
+  var synth = window.speechSynthesis;
+  var reading = false;
+  var voices = [];
+
+  function loadVoices(){ voices = synth.getVoices() || []; }
+  loadVoices();
+  if(typeof synth.onvoiceschanged !== 'undefined'){ synth.onvoiceschanged = loadVoices; }
+
+  function pickVoice(){
+    if(!voices.length) loadVoices();
+    var en = voices.filter(function(v){ return /^en(-|_|$)/i.test(v.lang); });
+    var pool = en.length ? en : voices;
+    var pref = ['Google US English','Samantha','Microsoft Aria','Microsoft Jenny','Microsoft Zira','Daniel','Alex'];
+    for(var i=0;i<pref.length;i++){
+      for(var j=0;j<pool.length;j++){ if(pool[j].name.indexOf(pref[i])!==-1) return pool[j]; }
+    }
+    return pool[0] || null;
+  }
+
+  function buildScript(){
+    var out = [];
+    document.querySelectorAll('section, header.hero').forEach(function(sec){
+      var h = sec.querySelector('h1, h2');
+      var p = sec.querySelector('p');
+      if(h) out.push(h.textContent.trim());
+      if(p) out.push(p.textContent.trim());
+    });
+    return out.join('. ');
+  }
+
+  function stop(){
+    reading = false;
+    btn.setAttribute('aria-pressed','false');
+    btn.textContent = '🔊';
+    try{ synth.cancel(); }catch(e){}
+  }
+
+  function start(){
+    var text = buildScript();
+    if(!text) return;
+    try{ synth.cancel(); }catch(e){}
+    var u = new SpeechSynthesisUtterance(text);
+    var v = pickVoice();
+    if(v) u.voice = v;
+    u.rate = 1.0; u.pitch = 1.0;
+    u.onend = stop;
+    u.onerror = stop;
+    reading = true;
+    btn.setAttribute('aria-pressed','true');
+    btn.textContent = '⏹';
+    synth.speak(u);
+  }
+
+  btn.addEventListener('click', function(){ reading ? stop() : start(); });
+  window.addEventListener('beforeunload', function(){ try{ synth.cancel(); }catch(e){} });
+})();
+</script>
+
+</body>
+</html>
