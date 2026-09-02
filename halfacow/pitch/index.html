@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en">
+<head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <title>Half a Cow Pitch</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
 <style>
@@ -202,6 +203,8 @@ h1 .r{color:var(--red2)}
 @media (prefers-reduced-motion:reduce){.slide,#prog i,#caption .s{transition:none}}
 </style>
 
+</head>
+<body>
 <div id="app">
   <main id="stage" aria-live="polite">
 
@@ -394,7 +397,7 @@ h1 .r{color:var(--red2)}
           <span class="tag">13 / 18 · The flywheel</span>
           <h1>Every rep is a seed.<br><span class="r">Every seed gets a number.</span></h1>
           <div class="chips"><span class="chip"><b>📇</b> Digital business card — tap to share</span><span class="chip"><b>📱</b> Smart DID assigned the moment you join</span><span class="chip"><b>🌱</b> Agents add agents — each gets a card + number</span><span class="chip"><b>🎯</b> Every lead attributed &amp; routed</span></div>
-          <p class="note">Proven first on the FAST Adjusting Service build — that's why it's the core</p>
+          <p class="note">Every sub food-truck licensee is a contributing member of the flywheel · proven first on the FAST Adjusting Service build</p>
         </div>
         <div class="vis wheel">
           <div class="node"><b>1</b><span>Digital business card</span><i>shared with a tap</i></div>
@@ -447,37 +450,36 @@ h1 .r{color:var(--red2)}
       </div>
     </section>
 
-    <!-- 14 · money model -->
+    <!-- 16 · money model (two licenses) -->
     <section class="slide" data-n="16">
       <div class="wrap">
         <div>
           <span class="tag">16 / 18 · The money model · illustrative</span>
-          <h1>Move the sliders.<br><span class="r">Watch the math.</span></h1>
+          <h1>Two licenses.<br><span class="r">One flywheel.</span></h1>
           <div class="calc-in">
             <label><span>Cities <output id="c_cities_o">5</output></span><input type="range" id="c_cities" min="1" max="30" value="5"></label>
             <label><span>Trucks per city <output id="c_trucks_o">2</output></span><input type="range" id="c_trucks" min="1" max="6" value="2"></label>
             <div class="grid2">
-              <label>Franchise fee per city ($)<input type="number" id="c_fee" value="250000" step="5000" min="0"></label>
-              <label>Up-front per truck ($)<input type="number" id="c_truck" value="25000" step="1000" min="0"></label>
-              <label>Smart lines per truck<input type="number" id="c_lines" value="10" min="0" max="50"></label>
+              <label>Exclusive city brand license ($)<input type="number" id="c_fee" value="250000" step="5000" min="0"></label>
+              <label>Sub food-truck license ($, resold by the city owner)<input type="number" id="c_truck" value="25000" step="1000" min="0"></label>
+              <label>Smart Number lines per truck<input type="number" id="c_lines" value="10" min="0" max="50"></label>
               <label>$ per line per month<input type="number" id="c_rate" value="24.95" step="0.05" min="0"></label>
             </div>
           </div>
-          <p class="fine">Hypothetical model from the inputs above — gross, before costs, taxes or timing. Not a forecast, not a promise, not a financial performance representation. Ongoing SLA royalties are not modeled here — they are set in the FDD. Any franchise offer requires an FDD; no securities are offered.</p>
+          <p class="fine">Hypothetical model from the inputs above — gross, before costs, taxes or timing. Not a forecast, not a promise, not a financial performance representation. Royalties — HQ's under the FDD, and the city owner's across their own branded network — are not modeled here. Any franchise or business-opportunity offer requires the required disclosure documents; no securities are offered.</p>
         </div>
         <div class="vis calc-out">
           <div class="kpi"><small>Trucks in the network</small><b id="o_trucks">10</b></div>
-          <div class="kpi"><small>Up-front · city fees + truck investment</small><b id="o_upfront">$1,500,000</b><i id="o_upfront_d">5 × $250,000 + 10 × $25,000</i></div>
-          <div class="kpi"><small>Recurring platform revenue · per year</small><b id="o_year">$29,940</b><i id="o_year_d">10 trucks × 10 lines × $24.95 × 12</i></div>
-          <div class="kpi big"><small>3-year illustrative total · up-front + 3 years recurring</small><b id="o_3yr">$1,589,820</b></div>
-          <div class="kpi"><small>Full build · all 30 cities at these inputs</small><b id="o_full">$9,000,000 up-front · $179,640 / yr</b></div>
+          <div class="kpi"><small>To Half a Cow HQ · up-front · exclusive city licenses</small><b id="o_hq">$1,250,000</b><i id="o_hq_d">5 cities × $250,000</i></div>
+          <div class="kpi"><small>To each city owner · up-front · sub-licenses resold</small><b id="o_owner">$50,000</b><i id="o_owner_d">2 trucks × $25,000 · all cities together: $250,000</i></div>
+          <div class="kpi"><small>Platform recurring · per year · Telvergence Smart Numbers</small><b id="o_year">$29,940</b><i id="o_year_d">10 trucks × 10 lines × $24.95 × 12</i></div>
+          <div class="kpi big"><small>3-year illustrative · HQ up-front + 3 years recurring</small><b id="o_3yr">$1,339,820</b></div>
+          <div class="kpi"><small>Full build · all 30 cities at these inputs</small><b id="o_full">$7,500,000 HQ up-front · $179,640 / yr recurring</b></div>
         </div>
       </div>
     </section>
 
-    <!-- 15 · the ask -->
-
-    <!-- 16 · close -->
+    <!-- 18 · close -->
     <section class="slide" data-n="18">
       <div class="wrap">
         <div>
@@ -512,7 +514,7 @@ h1 .r{color:var(--red2)}
   <div class="in">
     <div class="brand"><span class="mark">H</span> Half a Cow</div>
     <h1>The Talking Pitch<br><span class="r">It runs itself. It speaks.</span></h1>
-    <p class="lede" id="ovlede">About nine minutes. Eighteen short lessons — the big picture first, then exactly how it works. Pick a language and how simple you want the explanation, then press start. You can change either at any time.</p>
+    <p class="lede" id="ovlede">About nine minutes. Seventeen short lessons — the big picture first, then exactly how it works. Pick a language and how simple you want the explanation, then press start. You can change either at any time.</p>
     <div class="settings">
       <div class="ctl"><label for="lang">Language</label><select id="lang"></select></div>
       <div class="ctl"><label for="level">Level</label><input type="range" id="level" min="1" max="3" step="1" value="1"><output id="levelout">Simple</output></div>
@@ -525,245 +527,243 @@ h1 .r{color:var(--red2)}
 
 <script type="application/json" id="narr">
 {
- "en": {
-  "name": "English",
-  "voicePrefs": [
-   "en-US",
-   "en-GB",
-   "en-AU",
-   "en"
-  ],
-  "levels": [
-   "Simple",
-   "Plain",
-   "Pro"
-  ],
-  "levelDesc": [
-   "Simple — grade-5 words. Nothing assumed.",
-   "Plain — everyday adult explanation.",
-   "Pro — operator and investor detail."
-  ],
-  "ui": {
-   "start": "▶ Start the show",
-   "pause": "Pause",
-   "play": "Play",
-   "voiceOn": "🔊 Voice on",
-   "voiceOff": "🔇 Voice off",
-   "replay": "↺ Play it again",
-   "lang": "Language",
-   "level": "Level",
-   "voice": "Voice",
-   "ask": "Include the ask (slide 17)",
-   "lede": "About nine minutes. Eighteen short lessons — the big picture first, then exactly how it works. Pick a language and how simple you want the explanation, then press start. You can change either at any time."
-  },
-  "slides": [
-   [
-    "Welcome! This is Half a Cow. It is a food truck that sells America's best beef, cooked fresh right in front of you. Here is the big idea: one brand, with a truck in every NFL city. In the next few minutes I will show you the whole thing. The big picture first, then how it works underneath. Plain words only. Let's go.",
-    "Welcome. Half a Cow is a premium-beef food-truck brand, built to run as one national name with a local truck in every NFL city. Over the next few minutes you will see the big picture first, then exactly how a booking, a phone call, and a city storefront work underneath. Everything you will see is already built and clickable. Let's begin.",
-    "Welcome. Half a Cow is a premium-beef, whole-animal food-truck franchise concept, designed as a master brand with a private-label operator storefront in each of the thirty NFL markets. It runs on Cow Connect, the Telvergence platform layer: Smart Number telephony, event dispatch, per-city web properties, and booking tracking. This walkthrough covers the macro thesis, then the micro mechanics. It is the same system that already powers the Restoration Royalties sites. Let's begin."
-   ],
-   [
-    "Most food trucks are one person with one truck. Half a Cow is different. It is one big name, like a famous sports team, with a local truck in every pro-football city. Same name. Same look. Same great beef. Whether you are in Dallas or Philadelphia, you know exactly what you are getting.",
-    "A single food truck is a job. Thirty trucks under one name is a brand. Half a Cow is built to be the brand: one identity, one menu, one standard, and a locally owned truck in every pro-football market. A customer in Dallas and a customer in Philadelphia get the same name, the same look, and the same quality of beef.",
-    "The thesis is scale through standardization. An independent truck caps out at its owner's hours. Half a Cow is a master brand: one identity, one playbook, one supply standard, replicated by local operators across thirty NFL markets. The brand carries recognition and trust across markets; the operator carries local execution. That separation is what turns a good truck into a repeatable, multi-market business."
-   ],
-   [
-    "Why football cities? Because every NFL city already has a giant crowd that shows up hungry. Game days. Tailgates. Concerts and festivals at the same stadium. Half a Cow does not have to go find customers. It parks where the crowd already is. There are thirty of these markets across America, and every one is already mapped out.",
-    "Every NFL market comes with built-in demand: a stadium that fills for game days, tailgates, concerts, and festivals, plus the neighborhoods around it. Instead of hunting for customers, a Half a Cow truck sets up where the crowd already gathers. All thirty markets are mapped on the network hub, each anchored to its team's stadium. Team and city names are used for reference only. There is no NFL affiliation.",
-    "Territory design is anchored on demand density. Each of the thirty markets is defined by its stadium and the rate-center grid fanning out from it, so game-day, tailgate, concert, and festival demand sits inside the operator's protected territory by design. Each market carries an anchor area code, the NPA, for its Smart Number. The map is illustrative: team and stadium names are referenced, no marks are used, and there is no NFL affiliation or endorsement."
-   ],
-   [
-    "Here is how it grows. Think of a sports league. The league owns the name, the rules, and the playbook. Each city has its own team and home stadium. Half a Cow works the same way. The brand owns the name, the look, and the recipes. A local owner runs the truck in their own city. That is called a franchise. It is how one good idea shows up in thirty places at once.",
-    "Growth works like a league. The league owns the name, the rules, and the playbook; each city fields its own team. Half a Cow owns the brand, the look, the recipes, and the operating playbook. A local operator owns and runs the truck in their market, under the brand. That is the franchise model. It is how one proven idea appears in thirty cities without one company trying to run thirty kitchens.",
-    "This is a franchise architecture: the franchisor holds the brand, trade dress, recipes, sourcing standards, and the operating playbook; a franchisee holds a protected territory and runs the unit. The master-plus-sub-brand pattern, one identity on top and a private-label storefront per operator, is the same structure already live in production on restorationroyalties.com. Legally, any actual franchise offer requires a registered Franchise Disclosure Document. That document is a next step, not something being offered today."
-   ],
-   [
-    "The menu is small on purpose. Five things, done right. The Half-Pound Smash burger. The Ribeye Melt. Brisket and burnt ends. The Butcher's Dog. And fries cooked in beef fat. Here is the trick in the name: Half a Cow buys the whole animal. Burgers from one part, steaks from another, brisket from another. Better beef, less waste, and a short menu means a fast line.",
-    "The board is deliberately short: the Half-Pound Smash, the Ribeye Melt, brisket and burnt ends, the Butcher's Dog, and beef-fat fries. The name explains the sourcing. Half a Cow buys whole animals: the smash blend comes from the chuck, steak sandwiches from the loin, brisket from the plate. That means better beef, less waste, and a menu that runs fast off one flat-top.",
-    "Menu engineering favors throughput: five SKUs off a single flat-top, all premium beef. Sourcing is whole-animal. Chuck into the smash blend, loin into the ribeye melt, plate into brisket and burnt ends. That improves margin on the carcass, reduces waste, and keeps quality consistent across markets. Final menu and pricing are set per market by the culinary team; every figure shown in the concept is illustrative."
-   ],
-   [
-    "Now the secret weapon. Most truck owners fail because they are the cook, the phone operator, the bookkeeper, and the website person, all at once. Half a Cow splits that. The truck is the hands. It cooks and serves. The platform is the brain. It is called Cow Connect, and it is powered by Telvergence. The brain answers every call, day or night. It books the events. It sends the nearest truck. It runs each city's website. The same brain already runs the Restoration Royalties websites today. So a great cook can run a great business.",
-    "Here is what makes it work. Independent trucks stall because the owner is also the phone, the bookings, and the website. Half a Cow separates the hands from the brain. The truck cooks and serves. Cow Connect, the platform powered by Telvergence, answers every call twenty-four seven, books catering and events, dispatches the nearest truck, runs each city's website, and texts customers their updates. It already runs the Restoration Royalties family of sites, so the operator runs the flat-top, not the switchboard.",
-    "Cow Connect is the platform layer, built on Telvergence's programmable telecom stack. Per operator it provides Smart Number telephony with twenty-four seven answering, recording, and routing; the instant-quote event selector; catering and festival dispatch to the nearest available unit; a branded per-city web property; booking-status tracking; and a referral flywheel. The identical master-plus-sub-brand system is in production today for Restoration Royalties. Operators execute; the platform handles demand capture and coordination."
-   ],
-   [
-    "Every city gets one easy phone number. The design is 833-HALF-COW. Behind that one number are ten lines, one for each kind of call. Catering. Festivals. Private parties. Corporate lunches. Even a Spanish line. Every call is answered, recorded, and sent to the right person. To be clear: this number is the design. It is not turned on yet. Turning it on is one of the next steps.",
-    "Each market gets one memorable Smart Number; the design spells 833-HALF-COW. Behind it sit ten lines, one per department: booking, Spanish, catering, festivals, private events, corporate, franchise, area developer, press, and campaign tracking. Every call is answered, recorded, and routed, so nothing dies in voicemail. To be clear, this grid is a design. The numbers are not provisioned or live yet; activating them is a next step.",
-    "Telephony is a ten-line Smart Number grid per market, anchored on the market's NPA and designed as a vanity toll-free block, 833-HALF-COW. Each line is department-scoped: bookings, bilingual, catering, festivals, private events, corporate, franchise, area developer, press, and campaign attribution with overflow, with answering, recording, routing, and two-way SMS. Status: concept. The toll-free block is not acquired or provisioned. Live answering activates once carrier accounts and credentials are in place."
-   ],
-   [
-    "Every owner gets their own front door on the web. Half a cow dot com, slash Dallas. Slash Philadelphia. Slash your city. Same brand on top, your own page underneath. Dallas and Philadelphia are already built as live examples. Today the whole thing runs at telvergence dot com slash halfacow. When the halfacow dot com name is bought, every page moves over one to one.",
-    "Every operator gets a clean branded address: halfacow.com slash their city. The master brand holds the identity; each city page is that operator's own storefront. Dallas and Philadelphia are already built as live example storefronts. Right now the whole property is served at telvergence.com slash halfacow. When the halfacow.com domain is purchased and pointed, every page maps over one to one, unchanged.",
-    "URL architecture is master plus per-city: halfacow.com slash city, each a private-label storefront inheriting the master's identity and tooling. Dallas and Philadelphia are live reference builds; the remaining twenty-eight are mapped as open territories. The tree is root-agnostic, so it currently serves at telvergence.com slash halfacow, with mirrors on halfacow.pages.dev and restorationroyalties.com, and canonical set to telvergence.com. Acquiring halfacow.com is a one-to-one cutover with no rebuild."
-   ],
-   [
-    "Here is one booking, start to finish. Someone texts: wedding, one hundred fifty people, October twelfth. The brain answers with an estimate in seconds. They say yes. The booking is confirmed. The nearest truck is assigned. The customer can watch it: booked, confirmed, prepping, truck on the way, on site, serving, wrapped. Just like tracking a package. Nobody waits on a callback that never comes.",
-    "Walk through one booking. A customer texts: wedding, one hundred fifty guests, October twelfth. The event selector returns an estimate range and lead time in seconds. They confirm. The platform assigns the nearest available truck, and the customer tracks the job live through seven stages: booked, confirmed, prepping, truck en route, on-site, serving, wrapped. The way you would track a package. Same-day quotes, no missed callbacks.",
-    "The booking flow: an inbound text or call is captured on the department line, timestamped and geo-tagged. The instant-quote engine returns an illustrative range and lead time by event type. On confirmation the job enters the tracker with seven states, booked, confirmed, prepping, truck en route, on-site, serving, wrapped, and dispatch assigns the nearest available unit. Event and festival dispatch also watches for demand surges and routes leads before they hit voicemail. As a concept, dispatch is a designed capability, not yet a live service."
-   ],
-   [
-    "This is not a drawing. It is built, and it is live. The website talks. There is a concierge named Chuck. Tap the speaker and he explains the menu, catering, or how to own a truck, in English or Spanish. Point your phone at this code, or press the button, and try it yourself. This is the Talking Edition, Platinum.",
-    "This is the part you can click right now. The site is live, and it talks: a concierge named Chuck reads the menu, explains catering and booking, or walks through the franchise ladder, in English or Spanish, with a tap on the speaker. Scan the code with your phone or press the button and try it. This is the Talking Edition, Platinum build.",
-    "The Talking Edition is the production build: a voice concierge, Chuck, driven by a scoped knowledge base covering menu, catering, franchise ladder, territory, Smart Numbers, dispatch, and concept status, with language selection and text-to-speech. It is live at telvergence.com slash halfacow. Scan the code or open the site and exercise the concierge, the event selector, and the tracker yourself."
-   ],
-   [
-    "There are three ways to be part of it. An owner-operator runs one truck in one city. A fleet operator runs several trucks across a metro. An area developer builds a whole region and helps new owners get started. One honest note: in America, a real franchise can only be sold with an official document called an FDD. That document is a next step. So today, this is the plan, not a sale.",
-    "Three ways in. Owner-operator: one truck, one protected territory. Fleet operator: several trucks across a metro. Area developer: a whole region, recruiting and supporting operators. One honest note: a real franchise can only be offered through a registered Franchise Disclosure Document, an FDD. That paperwork is a next step, so nothing here is an offer to sell a franchise. It is the plan.",
-    "The operator ladder has three rungs: owner-operator, one unit in one protected territory; fleet operator, multiple units across a metro; area developer, a regional master who recruits and supports operators and earns on the network they build, the referral flywheel at scale. Compliance note: any franchise offer requires a registered FDD. No investment figures, fees, or earnings are represented, and nothing in this concept constitutes an offer to sell a franchise."
-   ],
-   [
-    "Let's be straight about where this stands. The blueprint is built, and you can click it today. The brand. The thirty-market hub. Two city storefronts. The talking concierge. The web addresses. What is next takes money and time: the first real truck and kitchen, permits, turning on the real phone numbers, and the legal franchise paperwork. Today it is a working blueprint. The trucks are next.",
-    "Straight talk on status. Built and live today: the brand and identity, the thirty-market hub, the Dallas and Philadelphia storefronts, the talking concierge, the brand kit and web addresses, and the designed booking flow. Not yet: a real truck and commissary kitchen, permits and food safety, live phone numbers, the FDD, and a first-city launch. Those take capital and time. Today it is a working blueprint; the first truck is the next milestone.",
-    "Status, precisely. Complete: brand system and kit, thirty-market hub, two reference storefronts, voice concierge, canonical hosting on telvergence.com with mirrors, and the designed Cow Connect flows. Outstanding, and capital and time dependent: unit build-out and commissary, health permits and licensing, toll-free provisioning and carrier credentials, FDD preparation with franchise counsel, and a founding-market launch. No trucks are on the road; no revenue exists or is implied."
-   ],
-   [
-    "Now the flywheel. A flywheel is a wheel that keeps spinning once you get it going. Here is how ours spins. Every rep, agent, or truck owner gets a digital business card on their phone. Tap it and share it. The moment they join, the system gives them their own smart phone number, so every call and lead they bring in is tracked to them. Then they can add new reps, who get their own cards and numbers. Each person brings the next person. That is how the network grows on its own. This loop was built first for FAST Adjusting Service, and it worked so well that it became the core of every Telvergence brand.",
-    "The flywheel. Every rep, agent, or operator receives a digital business card, shareable with a tap. On joining, the platform assigns them a Smart DID, their own tracked number, so every call, text, and lead is attributed to them automatically. Agents can add agents: each recruit gets their own card and number, under the same brand. Self-replicating reps, attributed leads, no extra staff. This loop was proven first on the FAST Adjusting Service build; that is why it became the core of every Telvergence brand, including Half a Cow.",
-    "The referral flywheel is the growth engine. Each participant, rep, agent, or operator, is issued a digital business card and, on activation, a Smart DID drawn from the market's NPA-NXX inventory, giving per-person call, SMS, and lead attribution without manual setup. Agents can provision downstream agents; every new node receives its own card and DID under the master brand, so recruitment compounds without a sales-ops layer. Attribution flows into routing and payout logic. The pattern was validated first on the FAST Adjusting Service build, which is why it is the template core reused across Telvergence verticals, here as Cow Connect."
-   ],
-   [
-    "Why can't someone just copy this? Because the engine underneath is ours. Telvergence built its own phone-and-website brain on top of big wholesale phone networks. It hands out smart numbers, answers calls, sends texts, books events, and keeps score of who brought in each customer. On top of that sit the brand websites and the Google listings for every city. And here is the key: we do not sell the engine. We license it. Every brand that runs on it pays a monthly fee and an ongoing royalty under our service agreement, for as long as it runs. Build the engine once. Rent it out for as long as it runs.",
-    "The competitive advantage is the stack. At the bottom, wholesale carrier infrastructure. On top of it, the Telvergence platform, a programmable telecom layer that provisions Smart DIDs from area-code inventory, routes and records calls, handles SMS, and attributes every lead. Above that, the AI automation: answering, instant quotes, dispatch, attribution. At the top, the brand storefronts and the listing strategy, Google Business Profiles and structured data for every city. It is proprietary architecture, and it is licensed, not sold: each brand on the platform pays monthly recurring platform fees plus ongoing royalties under the Telvergence SLA, for the life of the agreement. Build once, license everywhere.",
-    "The moat is architectural. Layer one, wholesale carrier interconnects. Layer two, Telvergence UCCPXaaS, a programmable telecom control plane: NPA-NXX inventory management, Smart DID provisioning, routing, recording, two-way SMS, and per-DID attribution. Layer three, the automation layer: AI answering, instant quoting, dispatch, and referral accounting. Layer four, the presentation layer: master-plus-city storefronts, Google Business Profile listing strategy, and structured data. The stack is proprietary and is monetized as a digital license under the Telvergence SLA: monthly recurring platform fees per line and per brand, plus ongoing royalties for the term of the agreement. The economics are build-once, license-many; each new vertical, Half a Cow included, inherits the whole stack at near-zero marginal engineering cost."
-   ],
-   [
-    "Here is a fair question: what would it cost to have someone build all of this for you? Everything you just saw, thirty city websites, the talking concierge, the booking system, the phone design, and the brand kit, is already built. If you paid a top web and software agency to build it from scratch, our rough estimate is about two hundred thousand to five hundred sixty thousand dollars, and the biggest enterprise vendors usually charge two to three times that. For scale: earlier AI estimates for just one single-vertical build came back at thirty-eight thousand and about seventy-eight thousand dollars, and this is thirty markets plus voice, booking, and phones. Those are estimates, not quotes. The point is simple: the expensive part is done.",
-    "A fair question: what would this cost to build from scratch? Our rough estimate at typical U.S. agency rates: the thirty-market web architecture, sixty to one hundred fifty thousand; the voice concierge and Talking Edition, forty to one hundred twenty thousand; booking, quoting, tracking and dispatch flows, fifty to one hundred fifty thousand; the telephony design, thirty to one hundred thousand; brand kit and listing strategy, fifteen to forty thousand. Call it two hundred to five hundred sixty thousand dollars, and enterprise vendors typically run two to three times that. Two reference points: earlier AI-generated estimates David received for single-vertical builds came in at thirty-eight thousand for one roofing customization and about seventy-eight thousand for one blueprint. Half a Cow is thirty markets plus voice, booking, and telephony. These are estimates, not vendor quotes or an appraisal. The build is already done.",
-    "Replacement-cost framing. At typical U.S. agency rates, rebuilding this stack from zero would run approximately: master-plus-city web architecture across thirty markets, sixty to one hundred fifty thousand; the voice concierge with multilingual text-to-speech, forty to one hundred twenty thousand; instant-quote, booking, seven-state tracking and dispatch flows, fifty to one hundred fifty thousand; ten-line Smart Number routing, recording and SMS design per market, thirty to one hundred thousand; brand system, structured data and listing strategy, fifteen to forty thousand. Roughly one hundred ninety-five to five hundred sixty thousand dollars; enterprise consultancies commonly quote two to three times agency rates. Reference points: AI-generated estimates David received earlier priced one single-vertical roofing customization at thirty-eight thousand and one blueprint at about seventy-eight thousand. This is an illustrative replacement-cost estimate, not an appraisal, valuation, or vendor quote. The asset exists today on the Telvergence platform, at near-zero marginal cost per additional market."
-   ],
-   [
-    "Now the money model. Here is the simple math. To open a city, a franchise partner pays a two hundred fifty thousand dollar city fee. Each truck costs twenty-five thousand up front. And every truck runs on ten Telvergence smart phone lines, about twenty-five dollars a line each month. Move the sliders and watch the numbers change. Five cities with two trucks each is one and a half million dollars up front, plus phone-line income every month. Thirty cities is the big picture. These are what-if numbers you can play with. Not a promise, and not a forecast.",
-    "The money model, as arithmetic you can change. Inputs: a two hundred fifty thousand dollar franchise fee per city; a twenty-five thousand dollar up-front investment per truck; ten Smart Number lines per truck at about twenty-five dollars per line per month, billed through Telvergence. Move the sliders and the page multiplies it out: up-front fees, recurring platform revenue per year, and a three-year illustrative total. Every figure here is a hypothetical model built from those inputs. It is not a forecast, not a promise, and not a financial performance representation. A real franchise offer requires an FDD.",
-    "Unit model, illustrative. Revenue to the franchisor and platform comes from three lines: a two hundred fifty thousand dollar per-city franchise fee, a twenty-five thousand dollar per-truck up-front investment, and recurring platform revenue from the ten-line Smart Number grid per truck, modeled at twenty-four ninety-five per line per month, which is Telvergence's existing per-line price point on comparable products. The calculator multiplies cities, trucks per city, and those inputs into up-front proceeds, annual recurring platform revenue, and a three-year cumulative figure, gross, before costs, taxes, or timing. It is a hypothetical model for discussion, not a projection of actual results, and not a financial performance representation. Any franchise offer and any Item 19 claim would be made only through a registered FDD. No securities are being offered."
-   ],
-   [
-    "That is Half a Cow. One brand. Every NFL city. A brain that never misses a call, and a truck that cooks the best beef in town. The blueprint is built. The first truck is next. Thank you for watching. Let's build it.",
-    "That is Half a Cow: one brand, every NFL city, a platform that never misses a call, and a truck that serves the best beef in town. The blueprint is built and live; the first truck is the next milestone. Thank you. Let's build it.",
-    "In summary: a standardized, whole-animal premium-beef concept, replicated across thirty NFL markets by local operators, coordinated by a production-proven platform layer. Blueprint complete; unit economics and launch are the next phase and depend on capital. Thank you. Let's build the first truck."
-   ]
-  ]
- },
- "es": {
-  "name": "Español",
-  "voicePrefs": [
-   "es-US",
-   "es-MX",
-   "es-419",
-   "es-ES",
-   "es"
-  ],
-  "levels": [
-   "Sencillo",
-   "Claro",
-   "Pro"
-  ],
-  "levelDesc": [
-   "Sencillo — palabras de quinto grado. Nada se da por sabido.",
-   "Claro — explicación cotidiana para adultos.",
-   "Pro — detalle para operadores e inversionistas."
-  ],
-  "ui": {
-   "start": "▶ Iniciar la presentación",
-   "pause": "Pausa",
-   "play": "Reproducir",
-   "voiceOn": "🔊 Voz activada",
-   "voiceOff": "🔇 Voz apagada",
-   "replay": "↺ Verla de nuevo",
-   "lang": "Idioma",
-   "level": "Nivel",
-   "voice": "Voz",
-   "ask": "Incluir la solicitud (lámina 17)",
-   "lede": "Unos nueve minutos. Dieciocho lecciones cortas: primero la idea general y luego exactamente cómo funciona. Elige el idioma y qué tan sencilla quieres la explicación, y presiona iniciar. Puedes cambiar cualquiera de los dos en cualquier momento."
-  },
-  "slides": [
-   [
-    "¡Bienvenido! Esto es Half a Cow. Es un camión de comida que vende la mejor carne de res de Estados Unidos, cocinada al momento frente a ti. La gran idea es simple: una sola marca, con un camión en cada ciudad de la NFL. En los próximos minutos te muestro todo. Primero la idea grande, y luego cómo funciona por dentro. Con palabras sencillas. ¡Vamos!",
-    "Bienvenido. Half a Cow es una marca de camiones de comida de carne premium, diseñada para funcionar como un solo nombre nacional con un camión local en cada ciudad de la NFL. En los próximos minutos verás primero la idea general y luego exactamente cómo funcionan una reserva, una llamada y la página de cada ciudad. Todo lo que verás ya está construido y se puede usar. Empecemos.",
-    "Bienvenido. Half a Cow es un concepto de franquicia de camiones de comida de carne premium, con aprovechamiento del animal entero, diseñado como una marca maestra con una tienda de marca privada por operador en cada uno de los treinta mercados de la NFL. Funciona sobre Cow Connect, la capa de plataforma de Telvergence: telefonía con Smart Numbers, despacho de eventos, propiedades web por ciudad y seguimiento de reservas. Este recorrido cubre la tesis macro y luego la mecánica micro. Es el mismo sistema que ya opera los sitios de Restoration Royalties. Empecemos."
-   ],
-   [
-    "La mayoría de los camiones de comida son una persona con un camión. Half a Cow es diferente. Es un nombre grande, como un equipo famoso, con un camión local en cada ciudad de fútbol americano. El mismo nombre. El mismo estilo. La misma carne deliciosa. Estés en Dallas o en Filadelfia, sabes exactamente lo que vas a recibir.",
-    "Un solo camión es un trabajo. Treinta camiones bajo un mismo nombre son una marca. Half a Cow está diseñado para ser la marca: una identidad, un menú, un estándar y un camión de dueño local en cada mercado de fútbol profesional. Un cliente en Dallas y uno en Filadelfia reciben el mismo nombre, la misma imagen y la misma calidad de carne.",
-    "La tesis es escalar mediante estandarización. Un camión independiente se limita a las horas de su dueño. Half a Cow es una marca maestra: una identidad, un manual de operación y un estándar de suministro, replicados por operadores locales en treinta mercados de la NFL. La marca aporta reconocimiento y confianza entre mercados; el operador aporta la ejecución local. Esa separación convierte un buen camión en un negocio repetible y multimercado."
-   ],
-   [
-    "¿Por qué ciudades de fútbol americano? Porque cada ciudad de la NFL ya tiene una multitud enorme que llega con hambre. Días de partido. Fiestas en el estacionamiento. Conciertos y festivales en el mismo estadio. Half a Cow no tiene que buscar clientes. Se estaciona donde ya está la gente. Hay treinta de estos mercados en Estados Unidos, y todos ya están en el mapa.",
-    "Cada mercado de la NFL trae demanda incorporada: un estadio que se llena en días de partido, tailgates, conciertos y festivales, más los barrios alrededor. En lugar de buscar clientes, un camión Half a Cow se instala donde la multitud ya se reúne. Los treinta mercados están mapeados en el centro de la red, cada uno anclado al estadio de su equipo. Los nombres de equipos y ciudades son solo de referencia. No hay afiliación con la NFL.",
-    "El diseño de territorios se ancla en la densidad de demanda. Cada uno de los treinta mercados se define por su estadio y la cuadrícula de centros de tarificación que se extiende desde él, de modo que la demanda de partidos, tailgates, conciertos y festivales queda dentro del territorio protegido del operador. Cada mercado tiene un código de área ancla, el NPA, para su Smart Number. El mapa es ilustrativo: se mencionan equipos y estadios como referencia, sin usar marcas, y no existe afiliación ni respaldo de la NFL."
-   ],
-   [
-    "Así es como crece. Piensa en una liga deportiva. La liga es dueña del nombre, de las reglas y del manual de juego. Cada ciudad tiene su propio equipo y su estadio. Half a Cow funciona igual. La marca es dueña del nombre, de la imagen y de las recetas. Un dueño local maneja el camión en su ciudad. A eso se le llama franquicia. Así una buena idea aparece en treinta lugares a la vez.",
-    "El crecimiento funciona como una liga. La liga es dueña del nombre, las reglas y el manual; cada ciudad pone su equipo. Half a Cow es dueña de la marca, la imagen, las recetas y el manual de operación. Un operador local es dueño del camión y lo maneja en su mercado, bajo la marca. Ese es el modelo de franquicia. Así una idea probada aparece en treinta ciudades sin que una sola empresa intente manejar treinta cocinas.",
-    "Es una arquitectura de franquicia: el franquiciante conserva la marca, la imagen comercial, las recetas, los estándares de suministro y el manual operativo; el franquiciado tiene un territorio protegido y opera la unidad. El patrón de marca maestra más submarcas, una identidad arriba y una tienda de marca privada por operador, es la misma estructura que ya está en producción en restorationroyalties.com. Legalmente, cualquier oferta real de franquicia requiere un Documento de Divulgación de Franquicia registrado. Ese documento es un paso siguiente, no algo que se ofrezca hoy."
-   ],
-   [
-    "El menú es corto a propósito. Cinco cosas, bien hechas. La hamburguesa Half-Pound Smash. El Ribeye Melt. Brisket y puntas quemadas. El Butcher's Dog. Y papas fritas cocinadas en grasa de res. Aquí está el truco del nombre: Half a Cow compra el animal completo. Hamburguesas de una parte, bistec de otra, brisket de otra. Mejor carne, menos desperdicio, y un menú corto significa una fila rápida.",
-    "La carta es corta a propósito: la Half-Pound Smash, el Ribeye Melt, brisket y puntas quemadas, el Butcher's Dog y papas en grasa de res. El nombre explica el abastecimiento. Half a Cow compra animales enteros: la mezcla para hamburguesa sale del chuck, los sándwiches de bistec del lomo, el brisket del pecho. Eso significa mejor carne, menos desperdicio y un menú que sale rápido de una sola plancha.",
-    "La ingeniería del menú prioriza el rendimiento: cinco productos desde una sola plancha, todos de carne premium. El abastecimiento es del animal entero: chuck para la mezcla smash, lomo para el ribeye melt, pecho para brisket y puntas quemadas. Eso mejora el margen por canal, reduce el desperdicio y mantiene la calidad constante entre mercados. El menú final y los precios los define por mercado el equipo culinario; toda cifra del concepto es ilustrativa."
-   ],
-   [
-    "Ahora el arma secreta. Muchos dueños de camiones fracasan porque son el cocinero, el que contesta el teléfono, el contador y el de la página web, todo al mismo tiempo. Half a Cow lo separa. El camión son las manos. Cocina y sirve. La plataforma es el cerebro. Se llama Cow Connect y funciona con Telvergence. El cerebro contesta cada llamada, de día o de noche. Reserva los eventos. Envía el camión más cercano. Maneja la página de cada ciudad. Ese mismo cerebro ya maneja hoy las páginas de Restoration Royalties. Así un gran cocinero puede tener un gran negocio.",
-    "Esto es lo que lo hace funcionar. Los camiones independientes se estancan porque el dueño también es el teléfono, las reservas y la página web. Half a Cow separa las manos del cerebro. El camión cocina y sirve. Cow Connect, la plataforma impulsada por Telvergence, contesta cada llamada las veinticuatro horas, reserva catering y eventos, despacha el camión más cercano, maneja la página de cada ciudad y envía actualizaciones por mensaje. Ya opera la familia de sitios de Restoration Royalties, así que el operador maneja la plancha, no la centralita.",
-    "Cow Connect es la capa de plataforma, construida sobre la pila de telecomunicaciones programables de Telvergence. Por operador ofrece telefonía Smart Number con atención las veinticuatro horas, grabación y enrutamiento; el selector de eventos con cotización instantánea; despacho de catering y festivales a la unidad disponible más cercana; una propiedad web de marca por ciudad; seguimiento del estado de reservas; y un volante de referidos. El mismo sistema de marca maestra más submarcas está hoy en producción para Restoration Royalties. Los operadores ejecutan; la plataforma captura y coordina la demanda."
-   ],
-   [
-    "Cada ciudad recibe un número de teléfono fácil. El diseño es 833-HALF-COW. Detrás de ese número hay diez líneas, una para cada tipo de llamada. Catering. Festivales. Fiestas privadas. Almuerzos de empresa. Hasta una línea en español. Cada llamada se contesta, se graba y se envía a la persona correcta. Para ser claros: este número es el diseño. Todavía no está encendido. Encenderlo es uno de los siguientes pasos.",
-    "Cada mercado recibe un Smart Number fácil de recordar; el diseño forma 833-HALF-COW. Detrás hay diez líneas, una por departamento: reservas, español, catering, festivales, eventos privados, corporativo, franquicia, desarrollador de área, prensa y seguimiento de campañas. Cada llamada se contesta, se graba y se enruta, así nada muere en el buzón de voz. Para ser claros, esta cuadrícula es un diseño. Los números aún no están activos; activarlos es un paso siguiente.",
-    "La telefonía es una cuadrícula de diez líneas Smart Number por mercado, anclada al NPA del mercado y diseñada como bloque gratuito de vanidad, 833-HALF-COW. Cada línea tiene alcance por departamento: reservas, bilingüe, catering, festivales, eventos privados, corporativo, franquicia, desarrollador de área, prensa y atribución de campañas con desborde, con atención, grabación, enrutamiento y SMS bidireccional. Estado: concepto. El bloque gratuito no está adquirido ni aprovisionado. La atención en vivo se activa cuando existan cuentas y credenciales de operador."
-   ],
-   [
-    "Cada dueño recibe su propia puerta de entrada en internet. Half a cow punto com, barra Dallas. Barra Filadelfia. Barra tu ciudad. La misma marca arriba, tu propia página abajo. Dallas y Filadelfia ya están construidas como ejemplos en vivo. Hoy todo funciona en telvergence punto com barra halfacow. Cuando se compre el nombre halfacow punto com, cada página pasa uno a uno.",
-    "Cada operador recibe una dirección de marca limpia: halfacow.com barra su ciudad. La marca maestra tiene la identidad; cada página de ciudad es la tienda propia de ese operador. Dallas y Filadelfia ya están construidas como tiendas de ejemplo en vivo. Ahora mismo toda la propiedad se sirve en telvergence.com barra halfacow. Cuando se compre y apunte el dominio halfacow.com, cada página pasa uno a uno, sin cambios.",
-    "La arquitectura de URL es maestra más ciudad: halfacow.com barra ciudad, cada una una tienda de marca privada que hereda la identidad y las herramientas de la maestra. Dallas y Filadelfia son construcciones de referencia en vivo; los otros veintiocho mercados están mapeados como territorios abiertos. El árbol es independiente de la raíz, por lo que hoy se sirve en telvergence.com barra halfacow, con espejos en halfacow.pages.dev y restorationroyalties.com, y canónico fijado en telvergence.com. Adquirir halfacow.com es un traspaso uno a uno sin reconstrucción."
-   ],
-   [
-    "Aquí va una reserva, de principio a fin. Alguien escribe: boda, ciento cincuenta personas, doce de octubre. El cerebro responde con un presupuesto en segundos. Dicen que sí. La reserva queda confirmada. Se asigna el camión más cercano. El cliente puede seguirlo: reservado, confirmado, preparando, camión en camino, en el lugar, sirviendo, terminado. Igual que rastrear un paquete. Nadie espera una llamada que nunca llega.",
-    "Sigamos una reserva. Un cliente escribe: boda, ciento cincuenta invitados, doce de octubre. El selector de eventos devuelve un rango de presupuesto y tiempo de anticipación en segundos. Confirman. La plataforma asigna el camión disponible más cercano, y el cliente sigue el trabajo en vivo por siete etapas: reservado, confirmado, preparando, camión en camino, en el lugar, sirviendo, terminado. Como quien rastrea un paquete. Cotización el mismo día, sin llamadas perdidas.",
-    "El flujo de reserva: el mensaje o llamada entrante se captura en la línea del departamento, con marca de tiempo y geolocalización. El motor de cotización instantánea devuelve un rango ilustrativo y tiempo de anticipación por tipo de evento. Al confirmar, el trabajo entra al rastreador con siete estados, reservado, confirmado, preparando, camión en camino, en el lugar, sirviendo y terminado, y el despacho asigna la unidad disponible más cercana. El despacho de eventos y festivales también vigila picos de demanda y enruta los prospectos antes de que caigan al buzón. Como concepto, el despacho es una capacidad diseñada, aún no un servicio en vivo."
-   ],
-   [
-    "Esto no es un dibujo. Está construido y está en vivo. La página habla. Hay un conserje llamado Chuck. Toca el altavoz y él explica el menú, el catering o cómo tener un camión, en inglés o en español. Apunta tu teléfono a este código, o presiona el botón, y pruébalo tú mismo. Esta es la Talking Edition, Platinum.",
-    "Esta es la parte que puedes usar ahora mismo. El sitio está en vivo y habla: un conserje llamado Chuck lee el menú, explica catering y reservas, o recorre la escalera de franquicia, en inglés o español, con un toque en el altavoz. Escanea el código con tu teléfono o presiona el botón y pruébalo. Esta es la Talking Edition, versión Platinum.",
-    "La Talking Edition es la versión de producción: un conserje de voz, Chuck, impulsado por una base de conocimiento acotada que cubre menú, catering, escalera de franquicia, territorio, Smart Numbers, despacho y estado del concepto, con selección de idioma y texto a voz. Está en vivo en telvergence.com barra halfacow. Escanea el código o abre el sitio y prueba tú mismo el conserje, el selector de eventos y el rastreador."
-   ],
-   [
-    "Hay tres formas de participar. Un dueño-operador maneja un camión en una ciudad. Un operador de flota maneja varios camiones en una zona metropolitana. Un desarrollador de área construye toda una región y ayuda a los nuevos dueños a empezar. Una nota honesta: en Estados Unidos, una franquicia real solo se puede vender con un documento oficial llamado FDD. Ese documento es un paso siguiente. Así que hoy, esto es el plan, no una venta.",
-    "Tres formas de entrar. Dueño-operador: un camión, un territorio protegido. Operador de flota: varios camiones en una zona metropolitana. Desarrollador de área: toda una región, reclutando y apoyando operadores. Una nota honesta: una franquicia real solo puede ofrecerse mediante un Documento de Divulgación de Franquicia registrado, el FDD. Ese trámite es un paso siguiente, así que nada aquí es una oferta de venta de franquicia. Es el plan.",
-    "La escalera de operadores tiene tres peldaños: dueño-operador, una unidad en un territorio protegido; operador de flota, varias unidades en una zona metropolitana; desarrollador de área, un maestro regional que recluta y apoya operadores y gana sobre la red que construye, el volante de referidos a escala. Nota de cumplimiento: toda oferta de franquicia requiere un FDD registrado. No se representan cifras de inversión, cuotas ni ganancias, y nada en este concepto constituye una oferta de venta de franquicia."
-   ],
-   [
-    "Hablemos claro de dónde estamos. El plano está construido y lo puedes usar hoy. La marca. El centro de treinta mercados. Dos tiendas de ciudad. El conserje que habla. Las direcciones web. Lo que sigue necesita dinero y tiempo: el primer camión real y la cocina, los permisos, encender los números de teléfono reales y el papeleo legal de la franquicia. Hoy es un plano que funciona. Los camiones son lo que sigue.",
-    "Hablemos claro del estado. Construido y en vivo hoy: la marca y la identidad, el centro de treinta mercados, las tiendas de Dallas y Filadelfia, el conserje que habla, el kit de marca y las direcciones web, y el flujo de reservas diseñado. Todavía no: un camión real y cocina comisaria, permisos y seguridad alimentaria, números de teléfono activos, el FDD y el lanzamiento en una primera ciudad. Eso requiere capital y tiempo. Hoy es un plano que funciona; el primer camión es el siguiente hito.",
-    "Estado, con precisión. Completo: sistema y kit de marca, centro de treinta mercados, dos tiendas de referencia, conserje de voz, alojamiento canónico en telvergence.com con espejos, y los flujos diseñados de Cow Connect. Pendiente, y dependiente de capital y tiempo: construcción de la unidad y cocina comisaria, permisos sanitarios y licencias, aprovisionamiento de números gratuitos y credenciales de operador, preparación del FDD con abogados de franquicia, y lanzamiento en un mercado fundador. No hay camiones en la calle; no existen ingresos ni se implican."
-   ],
-   [
-    "Ahora el volante. Un volante es una rueda que sigue girando una vez que la pones en marcha. Así gira el nuestro. Cada representante, agente o dueño de camión recibe una tarjeta de presentación digital en su teléfono. La tocas y la compartes. En el momento en que se une, el sistema le da su propio número inteligente, así cada llamada y cada cliente que trae queda registrado a su nombre. Luego puede agregar nuevos representantes, que reciben sus propias tarjetas y números. Cada persona trae a la siguiente. Así la red crece sola. Este ciclo se construyó primero para FAST Adjusting Service, y funcionó tan bien que se convirtió en el núcleo de cada marca de Telvergence.",
-    "El volante. Cada representante, agente u operador recibe una tarjeta de presentación digital, que se comparte con un toque. Al unirse, la plataforma le asigna un Smart DID, su propio número rastreado, así cada llamada, mensaje y prospecto se le atribuye automáticamente. Los agentes pueden agregar agentes: cada recluta recibe su propia tarjeta y número, bajo la misma marca. Representantes que se replican solos, prospectos atribuidos, sin personal extra. Este ciclo se probó primero en la construcción de FAST Adjusting Service; por eso se convirtió en el núcleo de cada marca de Telvergence, incluida Half a Cow.",
-    "El volante de referidos es el motor de crecimiento. Cada participante, representante, agente u operador, recibe una tarjeta de presentación digital y, al activarse, un Smart DID tomado del inventario NPA-NXX del mercado, lo que da atribución de llamadas, SMS y prospectos por persona sin configuración manual. Los agentes pueden aprovisionar agentes descendentes; cada nuevo nodo recibe su propia tarjeta y DID bajo la marca maestra, así el reclutamiento se compone sin una capa de operaciones de ventas. La atribución alimenta la lógica de enrutamiento y de pagos. El patrón se validó primero en la construcción de FAST Adjusting Service, por eso es el núcleo plantilla reutilizado en los verticales de Telvergence, aquí como Cow Connect."
-   ],
-   [
-    "¿Por qué nadie puede simplemente copiar esto? Porque el motor de abajo es nuestro. Telvergence construyó su propio cerebro de teléfono y sitios web sobre grandes redes telefónicas mayoristas. Reparte números inteligentes, contesta llamadas, envía mensajes, reserva eventos y lleva la cuenta de quién trajo a cada cliente. Encima van los sitios de marca y los listados de Google de cada ciudad. Y aquí está la clave: no vendemos el motor. Lo licenciamos. Cada marca que funciona sobre él paga una cuota mensual y una regalía continua bajo nuestro acuerdo de servicio, mientras funcione. Se construye una vez. Se alquila mientras funcione.",
-    "La ventaja competitiva es la pila tecnológica. Abajo, infraestructura de operadores mayoristas. Encima, la plataforma Telvergence, una capa de telecomunicaciones programable que asigna Smart DIDs desde el inventario de códigos de área, enruta y graba llamadas, maneja SMS y atribuye cada prospecto. Arriba, la automatización con inteligencia artificial: atención, cotizaciones instantáneas, despacho, atribución. En la cima, las tiendas de marca y la estrategia de listados, Perfiles de Negocio de Google y datos estructurados para cada ciudad. Es arquitectura propietaria y se licencia, no se vende: cada marca en la plataforma paga cuotas mensuales recurrentes de plataforma más regalías continuas bajo el SLA de Telvergence, durante la vida del acuerdo. Construir una vez, licenciar en todas partes.",
-    "El foso es arquitectónico. Capa uno, interconexiones con operadores mayoristas. Capa dos, Telvergence UCCPXaaS, un plano de control de telecomunicaciones programable: gestión de inventario NPA-NXX, aprovisionamiento de Smart DIDs, enrutamiento, grabación, SMS bidireccional y atribución por DID. Capa tres, la capa de automatización: atención con inteligencia artificial, cotización instantánea, despacho y contabilidad de referidos. Capa cuatro, la capa de presentación: tiendas maestra más ciudad, estrategia de listados en Perfil de Negocio de Google y datos estructurados. La pila es propietaria y se monetiza como licencia digital bajo el SLA de Telvergence: cuotas mensuales recurrentes de plataforma por línea y por marca, más regalías continuas durante el plazo del acuerdo. La economía es construir una vez, licenciar muchas; cada nuevo vertical, incluida Half a Cow, hereda toda la pila con un costo de ingeniería marginal casi nulo."
-   ],
-   [
-    "Una pregunta justa: ¿cuánto costaría que alguien construyera todo esto para ti? Todo lo que acabas de ver, treinta páginas de ciudad, el conserje que habla, el sistema de reservas, el diseño telefónico y el kit de marca, ya está construido. Si le pagaras a una agencia de primer nivel para hacerlo desde cero, nuestro cálculo aproximado es de unos doscientos mil a quinientos sesenta mil dólares, y los grandes proveedores empresariales suelen cobrar dos o tres veces más. Para comparar: estimaciones anteriores de inteligencia artificial para una sola construcción de un solo rubro dieron treinta y ocho mil y unos setenta y ocho mil dólares, y esto son treinta mercados más voz, reservas y teléfonos. Son estimaciones, no cotizaciones. El punto es simple: la parte cara ya está hecha.",
-    "Una pregunta justa: ¿cuánto costaría construir esto desde cero? Nuestro cálculo aproximado a tarifas típicas de agencias en Estados Unidos: la arquitectura web de treinta mercados, de sesenta a ciento cincuenta mil; el conserje de voz y la Talking Edition, de cuarenta a ciento veinte mil; los flujos de reserva, cotización, seguimiento y despacho, de cincuenta a ciento cincuenta mil; el diseño telefónico, de treinta a cien mil; el kit de marca y la estrategia de listados, de quince a cuarenta mil. En total, de doscientos a quinientos sesenta mil dólares, y los proveedores empresariales suelen cobrar dos o tres veces eso. Dos puntos de referencia: estimaciones generadas por inteligencia artificial que David recibió antes para construcciones de un solo rubro dieron treinta y ocho mil por una personalización de techos y unos setenta y ocho mil por un plano. Half a Cow son treinta mercados más voz, reservas y telefonía. Son estimaciones, no cotizaciones ni una tasación. La construcción ya está hecha.",
-    "Enfoque de costo de reemplazo. A tarifas típicas de agencias en Estados Unidos, reconstruir esta pila desde cero costaría aproximadamente: arquitectura web maestra más ciudad en treinta mercados, de sesenta a ciento cincuenta mil; el conserje de voz con texto a voz multilingüe, de cuarenta a ciento veinte mil; cotización instantánea, reservas, seguimiento de siete estados y despacho, de cincuenta a ciento cincuenta mil; diseño de enrutamiento, grabación y SMS de diez líneas Smart Number por mercado, de treinta a cien mil; sistema de marca, datos estructurados y estrategia de listados, de quince a cuarenta mil. Unos ciento noventa y cinco a quinientos sesenta mil dólares; las consultoras empresariales suelen cotizar dos o tres veces las tarifas de agencia. Puntos de referencia: estimaciones generadas por inteligencia artificial que David recibió antes valoraron una personalización de techos de un solo rubro en treinta y ocho mil y un plano en unos setenta y ocho mil. Es una estimación ilustrativa de costo de reemplazo, no una tasación, valoración ni cotización de proveedor. El activo existe hoy sobre la plataforma Telvergence, con un costo marginal casi nulo por mercado adicional."
-   ],
-   [
-    "Ahora el modelo de dinero. Aquí está la matemática simple. Para abrir una ciudad, un socio de franquicia paga una cuota de ciudad de doscientos cincuenta mil dólares. Cada camión cuesta veinticinco mil por adelantado. Y cada camión funciona con diez líneas telefónicas inteligentes de Telvergence, unos veinticinco dólares por línea al mes. Mueve los controles y mira cómo cambian los números. Cinco ciudades con dos camiones cada una son un millón y medio de dólares por adelantado, más ingresos por líneas telefónicas cada mes. Treinta ciudades es la imagen completa. Son números hipotéticos para jugar. No es una promesa ni un pronóstico.",
-    "El modelo de dinero, como aritmética que puedes cambiar. Entradas: una cuota de franquicia de doscientos cincuenta mil dólares por ciudad; una inversión inicial de veinticinco mil dólares por camión; diez líneas Smart Number por camión a unos veinticinco dólares por línea al mes, facturadas a través de Telvergence. Mueve los controles y la página lo multiplica: cuotas iniciales, ingresos recurrentes de plataforma por año y un total ilustrativo a tres años. Cada cifra es un modelo hipotético construido con esas entradas. No es un pronóstico, ni una promesa, ni una representación de desempeño financiero. Una oferta real de franquicia requiere un FDD.",
-    "Modelo unitario, ilustrativo. Los ingresos del franquiciante y la plataforma provienen de tres líneas: una cuota de franquicia de doscientos cincuenta mil dólares por ciudad, una inversión inicial de veinticinco mil dólares por camión, e ingresos recurrentes de plataforma por la cuadrícula de diez líneas Smart Number por camión, modelados a veinticuatro noventa y cinco por línea al mes, que es el precio por línea que Telvergence ya aplica en productos comparables. La calculadora multiplica ciudades, camiones por ciudad y esas entradas en ingresos iniciales, ingresos recurrentes anuales de plataforma y un acumulado a tres años, en bruto, antes de costos, impuestos o calendario. Es un modelo hipotético para discusión, no una proyección de resultados reales ni una representación de desempeño financiero. Cualquier oferta de franquicia y cualquier declaración del Punto 19 se haría solo mediante un FDD registrado. No se ofrecen valores."
-   ],
-   [
-    "Eso es Half a Cow. Una marca. Cada ciudad de la NFL. Un cerebro que nunca pierde una llamada, y un camión que cocina la mejor carne de la ciudad. El plano está construido. El primer camión es lo que sigue. Gracias por ver esto. Vamos a construirlo.",
-    "Eso es Half a Cow: una marca, cada ciudad de la NFL, una plataforma que nunca pierde una llamada y un camión que sirve la mejor carne de la ciudad. El plano está construido y en vivo; el primer camión es el siguiente hito. Gracias. Vamos a construirlo.",
-    "En resumen: un concepto estandarizado de carne premium de animal entero, replicado en treinta mercados de la NFL por operadores locales y coordinado por una capa de plataforma probada en producción. Plano completo; la economía por unidad y el lanzamiento son la siguiente fase y dependen de capital. Gracias. Construyamos el primer camión."
-   ]
-  ]
- }
+"en": {
+"name": "English",
+"voicePrefs": [
+"en-US",
+"en-GB",
+"en-AU",
+"en"
+],
+"levels": [
+"Simple",
+"Plain",
+"Pro"
+],
+"levelDesc": [
+"Simple — grade-5 words. Nothing assumed.",
+"Plain — everyday adult explanation.",
+"Pro — operator and investor detail."
+],
+"ui": {
+"start": "▶ Start the show",
+"pause": "Pause",
+"play": "Play",
+"voiceOn": "🔊 Voice on",
+"voiceOff": "🔇 Voice off",
+"replay": "↺ Play it again",
+"lang": "Language",
+"level": "Level",
+"voice": "Voice",
+"lede": "About nine minutes. Seventeen short lessons — the big picture first, then exactly how it works. Pick a language and how simple you want the explanation, then press start. You can change either at any time."
+},
+"slides": [
+[
+"Welcome! This is Half a Cow. It is a food truck that sells America's best beef, cooked fresh right in front of you. Here is the big idea: one brand, with a truck in every NFL city. In the next few minutes I will show you the whole thing. The big picture first, then how it works underneath. Plain words only. Let's go.",
+"Welcome. Half a Cow is a premium-beef food-truck brand, built to run as one national name with a local truck in every NFL city. Over the next few minutes you will see the big picture first, then exactly how a booking, a phone call, and a city storefront work underneath. Everything you will see is already built and clickable. Let's begin.",
+"Welcome. Half a Cow is a premium-beef, whole-animal food-truck franchise concept, designed as a master brand with a private-label operator storefront in each of the thirty NFL markets. It runs on Cow Connect, the Telvergence platform layer: Smart Number telephony, event dispatch, per-city web properties, and booking tracking. This walkthrough covers the macro thesis, then the micro mechanics. It is the same system that already powers the Restoration Royalties sites. Let's begin."
+],
+[
+"Most food trucks are one person with one truck. Half a Cow is different. It is one big name, like a famous sports team, with a local truck in every pro-football city. Same name. Same look. Same great beef. Whether you are in Dallas or Philadelphia, you know exactly what you are getting.",
+"A single food truck is a job. Thirty trucks under one name is a brand. Half a Cow is built to be the brand: one identity, one menu, one standard, and a locally owned truck in every pro-football market. A customer in Dallas and a customer in Philadelphia get the same name, the same look, and the same quality of beef.",
+"The thesis is scale through standardization. An independent truck caps out at its owner's hours. Half a Cow is a master brand: one identity, one playbook, one supply standard, replicated by local operators across thirty NFL markets. The brand carries recognition and trust across markets; the operator carries local execution. That separation is what turns a good truck into a repeatable, multi-market business."
+],
+[
+"Why football cities? Because every NFL city already has a giant crowd that shows up hungry. Game days. Tailgates. Concerts and festivals at the same stadium. Half a Cow does not have to go find customers. It parks where the crowd already is. There are thirty of these markets across America, and every one is already mapped out.",
+"Every NFL market comes with built-in demand: a stadium that fills for game days, tailgates, concerts, and festivals, plus the neighborhoods around it. Instead of hunting for customers, a Half a Cow truck sets up where the crowd already gathers. All thirty markets are mapped on the network hub, each anchored to its team's stadium. Team and city names are used for reference only. There is no NFL affiliation.",
+"Territory design is anchored on demand density. Each of the thirty markets is defined by its stadium and the rate-center grid fanning out from it, so game-day, tailgate, concert, and festival demand sits inside the operator's protected territory by design. Each market carries an anchor area code, the NPA, for its Smart Number. The map is illustrative: team and stadium names are referenced, no marks are used, and there is no NFL affiliation or endorsement."
+],
+[
+"Here is how it grows. Think of a sports league. The league owns the name, the rules, and the playbook. Each city has its own team and home stadium. Half a Cow works the same way. The brand owns the name, the look, and the recipes. A local owner runs the truck in their own city. That is called a franchise. It is how one good idea shows up in thirty places at once.",
+"Growth works like a league. The league owns the name, the rules, and the playbook; each city fields its own team. Half a Cow owns the brand, the look, the recipes, and the operating playbook. A local operator owns and runs the truck in their market, under the brand. That is the franchise model. It is how one proven idea appears in thirty cities without one company trying to run thirty kitchens.",
+"This is a franchise architecture: the franchisor holds the brand, trade dress, recipes, sourcing standards, and the operating playbook; a franchisee holds a protected territory and runs the unit. The master-plus-sub-brand pattern, one identity on top and a private-label storefront per operator, is the same structure already live in production on restorationroyalties.com. Legally, any actual franchise offer requires a registered Franchise Disclosure Document. That document is a next step, not something being offered today."
+],
+[
+"The menu is small on purpose. Five things, done right. The Half-Pound Smash burger. The Ribeye Melt. Brisket and burnt ends. The Butcher's Dog. And fries cooked in beef fat. Here is the trick in the name: Half a Cow buys the whole animal. Burgers from one part, steaks from another, brisket from another. Better beef, less waste, and a short menu means a fast line.",
+"The board is deliberately short: the Half-Pound Smash, the Ribeye Melt, brisket and burnt ends, the Butcher's Dog, and beef-fat fries. The name explains the sourcing. Half a Cow buys whole animals: the smash blend comes from the chuck, steak sandwiches from the loin, brisket from the plate. That means better beef, less waste, and a menu that runs fast off one flat-top.",
+"Menu engineering favors throughput: five SKUs off a single flat-top, all premium beef. Sourcing is whole-animal. Chuck into the smash blend, loin into the ribeye melt, plate into brisket and burnt ends. That improves margin on the carcass, reduces waste, and keeps quality consistent across markets. Final menu and pricing are set per market by the culinary team; every figure shown in the concept is illustrative."
+],
+[
+"Now the secret weapon. Most truck owners fail because they are the cook, the phone operator, the bookkeeper, and the website person, all at once. Half a Cow splits that. The truck is the hands. It cooks and serves. The platform is the brain. It is called Cow Connect, and it is powered by Telvergence. The brain answers every call, day or night. It books the events. It sends the nearest truck. It runs each city's website. The same brain already runs the Restoration Royalties websites today. So a great cook can run a great business.",
+"Here is what makes it work. Independent trucks stall because the owner is also the phone, the bookings, and the website. Half a Cow separates the hands from the brain. The truck cooks and serves. Cow Connect, the platform powered by Telvergence, answers every call twenty-four seven, books catering and events, dispatches the nearest truck, runs each city's website, and texts customers their updates. It already runs the Restoration Royalties family of sites, so the operator runs the flat-top, not the switchboard.",
+"Cow Connect is the platform layer, built on Telvergence's programmable telecom stack. Per operator it provides Smart Number telephony with twenty-four seven answering, recording, and routing; the instant-quote event selector; catering and festival dispatch to the nearest available unit; a branded per-city web property; booking-status tracking; and a referral flywheel. The identical master-plus-sub-brand system is in production today for Restoration Royalties. Operators execute; the platform handles demand capture and coordination."
+],
+[
+"Every city gets one easy phone number. The design is 833-HALF-COW. Behind that one number are ten lines, one for each kind of call. Catering. Festivals. Private parties. Corporate lunches. Even a Spanish line. Every call is answered, recorded, and sent to the right person. To be clear: this number is the design. It is not turned on yet. Turning it on is one of the next steps.",
+"Each market gets one memorable Smart Number; the design spells 833-HALF-COW. Behind it sit ten lines, one per department: booking, Spanish, catering, festivals, private events, corporate, franchise, area developer, press, and campaign tracking. Every call is answered, recorded, and routed, so nothing dies in voicemail. To be clear, this grid is a design. The numbers are not provisioned or live yet; activating them is a next step.",
+"Telephony is a ten-line Smart Number grid per market, anchored on the market's NPA and designed as a vanity toll-free block, 833-HALF-COW. Each line is department-scoped: bookings, bilingual, catering, festivals, private events, corporate, franchise, area developer, press, and campaign attribution with overflow, with answering, recording, routing, and two-way SMS. Status: concept. The toll-free block is not acquired or provisioned. Live answering activates once carrier accounts and credentials are in place."
+],
+[
+"Every owner gets their own front door on the web. Half a cow dot com, slash Dallas. Slash Philadelphia. Slash your city. Same brand on top, your own page underneath. Dallas and Philadelphia are already built as live examples. Today the whole thing runs at telvergence dot com slash halfacow. When the halfacow dot com name is bought, every page moves over one to one.",
+"Every operator gets a clean branded address: halfacow.com slash their city. The master brand holds the identity; each city page is that operator's own storefront. Dallas and Philadelphia are already built as live example storefronts. Right now the whole property is served at telvergence.com slash halfacow. When the halfacow.com domain is purchased and pointed, every page maps over one to one, unchanged.",
+"URL architecture is master plus per-city: halfacow.com slash city, each a private-label storefront inheriting the master's identity and tooling. Dallas and Philadelphia are live reference builds; the remaining twenty-eight are mapped as open territories. The tree is root-agnostic, so it currently serves at telvergence.com slash halfacow, with mirrors on halfacow.pages.dev and restorationroyalties.com, and canonical set to telvergence.com. Acquiring halfacow.com is a one-to-one cutover with no rebuild."
+],
+[
+"Here is one booking, start to finish. Someone texts: wedding, one hundred fifty people, October twelfth. The brain answers with an estimate in seconds. They say yes. The booking is confirmed. The nearest truck is assigned. The customer can watch it: booked, confirmed, prepping, truck on the way, on site, serving, wrapped. Just like tracking a package. Nobody waits on a callback that never comes.",
+"Walk through one booking. A customer texts: wedding, one hundred fifty guests, October twelfth. The event selector returns an estimate range and lead time in seconds. They confirm. The platform assigns the nearest available truck, and the customer tracks the job live through seven stages: booked, confirmed, prepping, truck en route, on-site, serving, wrapped. The way you would track a package. Same-day quotes, no missed callbacks.",
+"The booking flow: an inbound text or call is captured on the department line, timestamped and geo-tagged. The instant-quote engine returns an illustrative range and lead time by event type. On confirmation the job enters the tracker with seven states, booked, confirmed, prepping, truck en route, on-site, serving, wrapped, and dispatch assigns the nearest available unit. Event and festival dispatch also watches for demand surges and routes leads before they hit voicemail. As a concept, dispatch is a designed capability, not yet a live service."
+],
+[
+"This is not a drawing. It is built, and it is live. The website talks. There is a concierge named Chuck. Tap the speaker and he explains the menu, catering, or how to own a truck, in English or Spanish. Point your phone at this code, or press the button, and try it yourself. This is the Talking Edition, Platinum.",
+"This is the part you can click right now. The site is live, and it talks: a concierge named Chuck reads the menu, explains catering and booking, or walks through the franchise ladder, in English or Spanish, with a tap on the speaker. Scan the code with your phone or press the button and try it. This is the Talking Edition, Platinum build.",
+"The Talking Edition is the production build: a voice concierge, Chuck, driven by a scoped knowledge base covering menu, catering, franchise ladder, territory, Smart Numbers, dispatch, and concept status, with language selection and text-to-speech. It is live at telvergence.com slash halfacow. Scan the code or open the site and exercise the concierge, the event selector, and the tracker yourself."
+],
+[
+"There are three ways to be part of it. An owner-operator runs one truck in one city. A fleet operator runs several trucks across a metro. An area developer builds a whole region and helps new owners get started. One honest note: in America, a real franchise can only be sold with an official document called an FDD. That document is a next step. So today, this is the plan, not a sale.",
+"Three ways in. Owner-operator: one truck, one protected territory. Fleet operator: several trucks across a metro. Area developer: a whole region, recruiting and supporting operators. One honest note: a real franchise can only be offered through a registered Franchise Disclosure Document, an FDD. That paperwork is a next step, so nothing here is an offer to sell a franchise. It is the plan.",
+"The operator ladder has three rungs: owner-operator, one unit in one protected territory; fleet operator, multiple units across a metro; area developer, a regional master who recruits and supports operators and earns on the network they build, the referral flywheel at scale. Compliance note: any franchise offer requires a registered FDD. No investment figures, fees, or earnings are represented, and nothing in this concept constitutes an offer to sell a franchise."
+],
+[
+"Let's be straight about where this stands. The blueprint is built, and you can click it today. The brand. The thirty-market hub. Two city storefronts. The talking concierge. The web addresses. What is next takes money and time: the first real truck and kitchen, permits, turning on the real phone numbers, and the legal franchise paperwork. Today it is a working blueprint. The trucks are next.",
+"Straight talk on status. Built and live today: the brand and identity, the thirty-market hub, the Dallas and Philadelphia storefronts, the talking concierge, the brand kit and web addresses, and the designed booking flow. Not yet: a real truck and commissary kitchen, permits and food safety, live phone numbers, the FDD, and a first-city launch. Those take capital and time. Today it is a working blueprint; the first truck is the next milestone.",
+"Status, precisely. Complete: brand system and kit, thirty-market hub, two reference storefronts, voice concierge, canonical hosting on telvergence.com with mirrors, and the designed Cow Connect flows. Outstanding, and capital and time dependent: unit build-out and commissary, health permits and licensing, toll-free provisioning and carrier credentials, FDD preparation with franchise counsel, and a founding-market launch. No trucks are on the road; no revenue exists or is implied."
+],
+[
+"Now the flywheel. A flywheel is a wheel that keeps spinning once you get it going. Here is how ours spins. Every rep, agent, or truck owner gets a digital business card on their phone. Tap it and share it. The moment they join, the system gives them their own smart phone number, so every call and lead they bring in is tracked to them. Then they can add new reps, who get their own cards and numbers. Each person brings the next person. That is how the network grows on its own. This loop was built first for FAST Adjusting Service, and it worked so well that it became the core of every Telvergence brand.",
+"The flywheel. Every rep, agent, or operator receives a digital business card, shareable with a tap. On joining, the platform assigns them a Smart DID, their own tracked number, so every call, text, and lead is attributed to them automatically. Agents can add agents: each recruit gets their own card and number, under the same brand. Self-replicating reps, attributed leads, no extra staff. This loop was proven first on the FAST Adjusting Service build; that is why it became the core of every Telvergence brand, including Half a Cow.",
+"The referral flywheel is the growth engine. Each participant, rep, agent, or operator, is issued a digital business card and, on activation, a Smart DID drawn from the market's NPA-NXX inventory, giving per-person call, SMS, and lead attribution without manual setup. Agents can provision downstream agents; every new node receives its own card and DID under the master brand, so recruitment compounds without a sales-ops layer. Attribution flows into routing and payout logic. The pattern was validated first on the FAST Adjusting Service build, which is why it is the template core reused across Telvergence verticals, here as Cow Connect."
+],
+[
+"Why can't someone just copy this? Because the engine underneath is ours. Telvergence built its own phone-and-website brain on top of big wholesale phone networks. It hands out smart numbers, answers calls, sends texts, books events, and keeps score of who brought in each customer. On top of that sit the brand websites and the Google listings for every city. And here is the key: we do not sell the engine. We license it. Every brand that runs on it pays a monthly fee and an ongoing royalty under our service agreement, for as long as it runs. Build the engine once. Rent it out for as long as it runs.",
+"The competitive advantage is the stack. At the bottom, wholesale carrier infrastructure. On top of it, the Telvergence platform, a programmable telecom layer that provisions Smart DIDs from area-code inventory, routes and records calls, handles SMS, and attributes every lead. Above that, the AI automation: answering, instant quotes, dispatch, attribution. At the top, the brand storefronts and the listing strategy, Google Business Profiles and structured data for every city. It is proprietary architecture, and it is licensed, not sold: each brand on the platform pays monthly recurring platform fees plus ongoing royalties under the Telvergence SLA, for the life of the agreement. Build once, license everywhere.",
+"The moat is architectural. Layer one, wholesale carrier interconnects. Layer two, Telvergence UCCPXaaS, a programmable telecom control plane: NPA-NXX inventory management, Smart DID provisioning, routing, recording, two-way SMS, and per-DID attribution. Layer three, the automation layer: AI answering, instant quoting, dispatch, and referral accounting. Layer four, the presentation layer: master-plus-city storefronts, Google Business Profile listing strategy, and structured data. The stack is proprietary and is monetized as a digital license under the Telvergence SLA: monthly recurring platform fees per line and per brand, plus ongoing royalties for the term of the agreement. The economics are build-once, license-many; each new vertical, Half a Cow included, inherits the whole stack at near-zero marginal engineering cost."
+],
+[
+"Here is a fair question: what would it cost to have someone build all of this for you? Everything you just saw, thirty city websites, the talking concierge, the booking system, the phone design, and the brand kit, is already built. If you paid a top web and software agency to build it from scratch, our rough estimate is about two hundred thousand to five hundred sixty thousand dollars, and the biggest enterprise vendors usually charge two to three times that. For scale: earlier AI estimates for just one single-vertical build came back at thirty-eight thousand and about seventy-eight thousand dollars, and this is thirty markets plus voice, booking, and phones. Those are estimates, not quotes. The point is simple: the expensive part is done.",
+"A fair question: what would this cost to build from scratch? Our rough estimate at typical U.S. agency rates: the thirty-market web architecture, sixty to one hundred fifty thousand; the voice concierge and Talking Edition, forty to one hundred twenty thousand; booking, quoting, tracking and dispatch flows, fifty to one hundred fifty thousand; the telephony design, thirty to one hundred thousand; brand kit and listing strategy, fifteen to forty thousand. Call it two hundred to five hundred sixty thousand dollars, and enterprise vendors typically run two to three times that. Two reference points: earlier AI-generated estimates David received for single-vertical builds came in at thirty-eight thousand for one roofing customization and about seventy-eight thousand for one blueprint. Half a Cow is thirty markets plus voice, booking, and telephony. These are estimates, not vendor quotes or an appraisal. The build is already done.",
+"Replacement-cost framing. At typical U.S. agency rates, rebuilding this stack from zero would run approximately: master-plus-city web architecture across thirty markets, sixty to one hundred fifty thousand; the voice concierge with multilingual text-to-speech, forty to one hundred twenty thousand; instant-quote, booking, seven-state tracking and dispatch flows, fifty to one hundred fifty thousand; ten-line Smart Number routing, recording and SMS design per market, thirty to one hundred thousand; brand system, structured data and listing strategy, fifteen to forty thousand. Roughly one hundred ninety-five to five hundred sixty thousand dollars; enterprise consultancies commonly quote two to three times agency rates. Reference points: AI-generated estimates David received earlier priced one single-vertical roofing customization at thirty-eight thousand and one blueprint at about seventy-eight thousand. This is an illustrative replacement-cost estimate, not an appraisal, valuation, or vendor quote. The asset exists today on the Telvergence platform, at near-zero marginal cost per additional market."
+],
+[
+"Now the money model, with two kinds of licenses. The first is the city license. For two hundred fifty thousand dollars, one owner gets the whole NFL city: the Platinum brand, the network, every vanity phone number in that territory, and the right to earn royalties from everyone who joins under them. The second is the truck license. The city owner sells each one for twenty-five thousand dollars to a local person who wants to run a truck, and every one of those people becomes part of the flywheel. Each truck also runs on ten Telvergence smart phone lines, about twenty-five dollars a line each month. Move the sliders. The page shows what goes to Half a Cow headquarters, what a city owner can bring in from truck licenses, and the phone-line income. These are what-if numbers. Not a promise, and not a forecast.",
+"The money model has two licenses. The exclusive city brand license, two hundred fifty thousand dollars, gives one owner the entire NFL-city territory: the Platinum private-label brand and network, configured from the showroom and inventory, every NPA-NXX vanity-number combination in the territory, and royalty rights across their own branded network. The sub food-truck distribution license, twenty-five thousand dollars each, is what the city owner resells to local operators; every one of them joins the flywheel. Each truck runs ten Smart Number lines at about twenty-five dollars per line per month through Telvergence. The sliders multiply it out: headquarters up-front, the city owner's sub-license proceeds, and recurring platform revenue. Every figure is a hypothetical model from these inputs. Not a forecast, not a promise, not a financial performance representation. Royalties are set in the FDD.",
+"Two-tier license model, illustrative. Tier one, the exclusive city brand license at two hundred fifty thousand dollars: one owner per NFL market receives the Platinum private-label brand and network for the whole territory, provisioned from the showroom and inventory, the full NPA-NXX vanity-number inventory for that territory, and royalty rights across the owner's private branded network. Tier two, the sub food-truck distribution license at twenty-five thousand dollars, which the city owner resells to local operators; each licensee is a node in the referral flywheel. Platform recurring revenue is the ten-line Smart Number grid per truck at twenty-four ninety-five per line per month, Telvergence's existing per-line price point. The calculator separates headquarters proceeds, city-owner sub-license proceeds, and recurring platform revenue, gross, before costs, taxes or timing. Royalty flows are defined in the FDD and are not modeled. Hypothetical for discussion; not a forecast, not an offer, not a financial performance representation."
+],
+[
+"That is Half a Cow. One brand. Every NFL city. A brain that never misses a call, and a truck that cooks the best beef in town. The blueprint is built. The first truck is next. Thank you for watching. Let's build it.",
+"That is Half a Cow: one brand, every NFL city, a platform that never misses a call, and a truck that serves the best beef in town. The blueprint is built and live; the first truck is the next milestone. Thank you. Let's build it.",
+"In summary: a standardized, whole-animal premium-beef concept, replicated across thirty NFL markets by local operators, coordinated by a production-proven platform layer. Blueprint complete; unit economics and launch are the next phase and depend on capital. Thank you. Let's build the first truck."
+]
+]
+},
+"es": {
+"name": "Español",
+"voicePrefs": [
+"es-US",
+"es-MX",
+"es-419",
+"es-ES",
+"es"
+],
+"levels": [
+"Sencillo",
+"Claro",
+"Pro"
+],
+"levelDesc": [
+"Sencillo — palabras de quinto grado. Nada se da por sabido.",
+"Claro — explicación cotidiana para adultos.",
+"Pro — detalle para operadores e inversionistas."
+],
+"ui": {
+"start": "▶ Iniciar la presentación",
+"pause": "Pausa",
+"play": "Reproducir",
+"voiceOn": "🔊 Voz activada",
+"voiceOff": "🔇 Voz apagada",
+"replay": "↺ Verla de nuevo",
+"lang": "Idioma",
+"level": "Nivel",
+"voice": "Voz",
+"lede": "Unos nueve minutos. Diecisiete lecciones cortas: primero la idea general y luego exactamente cómo funciona. Elige el idioma y qué tan sencilla quieres la explicación, y presiona iniciar. Puedes cambiar cualquiera de los dos en cualquier momento."
+},
+"slides": [
+[
+"¡Bienvenido! Esto es Half a Cow. Es un camión de comida que vende la mejor carne de res de Estados Unidos, cocinada al momento frente a ti. La gran idea es simple: una sola marca, con un camión en cada ciudad de la NFL. En los próximos minutos te muestro todo. Primero la idea grande, y luego cómo funciona por dentro. Con palabras sencillas. ¡Vamos!",
+"Bienvenido. Half a Cow es una marca de camiones de comida de carne premium, diseñada para funcionar como un solo nombre nacional con un camión local en cada ciudad de la NFL. En los próximos minutos verás primero la idea general y luego exactamente cómo funcionan una reserva, una llamada y la página de cada ciudad. Todo lo que verás ya está construido y se puede usar. Empecemos.",
+"Bienvenido. Half a Cow es un concepto de franquicia de camiones de comida de carne premium, con aprovechamiento del animal entero, diseñado como una marca maestra con una tienda de marca privada por operador en cada uno de los treinta mercados de la NFL. Funciona sobre Cow Connect, la capa de plataforma de Telvergence: telefonía con Smart Numbers, despacho de eventos, propiedades web por ciudad y seguimiento de reservas. Este recorrido cubre la tesis macro y luego la mecánica micro. Es el mismo sistema que ya opera los sitios de Restoration Royalties. Empecemos."
+],
+[
+"La mayoría de los camiones de comida son una persona con un camión. Half a Cow es diferente. Es un nombre grande, como un equipo famoso, con un camión local en cada ciudad de fútbol americano. El mismo nombre. El mismo estilo. La misma carne deliciosa. Estés en Dallas o en Filadelfia, sabes exactamente lo que vas a recibir.",
+"Un solo camión es un trabajo. Treinta camiones bajo un mismo nombre son una marca. Half a Cow está diseñado para ser la marca: una identidad, un menú, un estándar y un camión de dueño local en cada mercado de fútbol profesional. Un cliente en Dallas y uno en Filadelfia reciben el mismo nombre, la misma imagen y la misma calidad de carne.",
+"La tesis es escalar mediante estandarización. Un camión independiente se limita a las horas de su dueño. Half a Cow es una marca maestra: una identidad, un manual de operación y un estándar de suministro, replicados por operadores locales en treinta mercados de la NFL. La marca aporta reconocimiento y confianza entre mercados; el operador aporta la ejecución local. Esa separación convierte un buen camión en un negocio repetible y multimercado."
+],
+[
+"¿Por qué ciudades de fútbol americano? Porque cada ciudad de la NFL ya tiene una multitud enorme que llega con hambre. Días de partido. Fiestas en el estacionamiento. Conciertos y festivales en el mismo estadio. Half a Cow no tiene que buscar clientes. Se estaciona donde ya está la gente. Hay treinta de estos mercados en Estados Unidos, y todos ya están en el mapa.",
+"Cada mercado de la NFL trae demanda incorporada: un estadio que se llena en días de partido, tailgates, conciertos y festivales, más los barrios alrededor. En lugar de buscar clientes, un camión Half a Cow se instala donde la multitud ya se reúne. Los treinta mercados están mapeados en el centro de la red, cada uno anclado al estadio de su equipo. Los nombres de equipos y ciudades son solo de referencia. No hay afiliación con la NFL.",
+"El diseño de territorios se ancla en la densidad de demanda. Cada uno de los treinta mercados se define por su estadio y la cuadrícula de centros de tarificación que se extiende desde él, de modo que la demanda de partidos, tailgates, conciertos y festivales queda dentro del territorio protegido del operador. Cada mercado tiene un código de área ancla, el NPA, para su Smart Number. El mapa es ilustrativo: se mencionan equipos y estadios como referencia, sin usar marcas, y no existe afiliación ni respaldo de la NFL."
+],
+[
+"Así es como crece. Piensa en una liga deportiva. La liga es dueña del nombre, de las reglas y del manual de juego. Cada ciudad tiene su propio equipo y su estadio. Half a Cow funciona igual. La marca es dueña del nombre, de la imagen y de las recetas. Un dueño local maneja el camión en su ciudad. A eso se le llama franquicia. Así una buena idea aparece en treinta lugares a la vez.",
+"El crecimiento funciona como una liga. La liga es dueña del nombre, las reglas y el manual; cada ciudad pone su equipo. Half a Cow es dueña de la marca, la imagen, las recetas y el manual de operación. Un operador local es dueño del camión y lo maneja en su mercado, bajo la marca. Ese es el modelo de franquicia. Así una idea probada aparece en treinta ciudades sin que una sola empresa intente manejar treinta cocinas.",
+"Es una arquitectura de franquicia: el franquiciante conserva la marca, la imagen comercial, las recetas, los estándares de suministro y el manual operativo; el franquiciado tiene un territorio protegido y opera la unidad. El patrón de marca maestra más submarcas, una identidad arriba y una tienda de marca privada por operador, es la misma estructura que ya está en producción en restorationroyalties.com. Legalmente, cualquier oferta real de franquicia requiere un Documento de Divulgación de Franquicia registrado. Ese documento es un paso siguiente, no algo que se ofrezca hoy."
+],
+[
+"El menú es corto a propósito. Cinco cosas, bien hechas. La hamburguesa Half-Pound Smash. El Ribeye Melt. Brisket y puntas quemadas. El Butcher's Dog. Y papas fritas cocinadas en grasa de res. Aquí está el truco del nombre: Half a Cow compra el animal completo. Hamburguesas de una parte, bistec de otra, brisket de otra. Mejor carne, menos desperdicio, y un menú corto significa una fila rápida.",
+"La carta es corta a propósito: la Half-Pound Smash, el Ribeye Melt, brisket y puntas quemadas, el Butcher's Dog y papas en grasa de res. El nombre explica el abastecimiento. Half a Cow compra animales enteros: la mezcla para hamburguesa sale del chuck, los sándwiches de bistec del lomo, el brisket del pecho. Eso significa mejor carne, menos desperdicio y un menú que sale rápido de una sola plancha.",
+"La ingeniería del menú prioriza el rendimiento: cinco productos desde una sola plancha, todos de carne premium. El abastecimiento es del animal entero: chuck para la mezcla smash, lomo para el ribeye melt, pecho para brisket y puntas quemadas. Eso mejora el margen por canal, reduce el desperdicio y mantiene la calidad constante entre mercados. El menú final y los precios los define por mercado el equipo culinario; toda cifra del concepto es ilustrativa."
+],
+[
+"Ahora el arma secreta. Muchos dueños de camiones fracasan porque son el cocinero, el que contesta el teléfono, el contador y el de la página web, todo al mismo tiempo. Half a Cow lo separa. El camión son las manos. Cocina y sirve. La plataforma es el cerebro. Se llama Cow Connect y funciona con Telvergence. El cerebro contesta cada llamada, de día o de noche. Reserva los eventos. Envía el camión más cercano. Maneja la página de cada ciudad. Ese mismo cerebro ya maneja hoy las páginas de Restoration Royalties. Así un gran cocinero puede tener un gran negocio.",
+"Esto es lo que lo hace funcionar. Los camiones independientes se estancan porque el dueño también es el teléfono, las reservas y la página web. Half a Cow separa las manos del cerebro. El camión cocina y sirve. Cow Connect, la plataforma impulsada por Telvergence, contesta cada llamada las veinticuatro horas, reserva catering y eventos, despacha el camión más cercano, maneja la página de cada ciudad y envía actualizaciones por mensaje. Ya opera la familia de sitios de Restoration Royalties, así que el operador maneja la plancha, no la centralita.",
+"Cow Connect es la capa de plataforma, construida sobre la pila de telecomunicaciones programables de Telvergence. Por operador ofrece telefonía Smart Number con atención las veinticuatro horas, grabación y enrutamiento; el selector de eventos con cotización instantánea; despacho de catering y festivales a la unidad disponible más cercana; una propiedad web de marca por ciudad; seguimiento del estado de reservas; y un volante de referidos. El mismo sistema de marca maestra más submarcas está hoy en producción para Restoration Royalties. Los operadores ejecutan; la plataforma captura y coordina la demanda."
+],
+[
+"Cada ciudad recibe un número de teléfono fácil. El diseño es 833-HALF-COW. Detrás de ese número hay diez líneas, una para cada tipo de llamada. Catering. Festivales. Fiestas privadas. Almuerzos de empresa. Hasta una línea en español. Cada llamada se contesta, se graba y se envía a la persona correcta. Para ser claros: este número es el diseño. Todavía no está encendido. Encenderlo es uno de los siguientes pasos.",
+"Cada mercado recibe un Smart Number fácil de recordar; el diseño forma 833-HALF-COW. Detrás hay diez líneas, una por departamento: reservas, español, catering, festivales, eventos privados, corporativo, franquicia, desarrollador de área, prensa y seguimiento de campañas. Cada llamada se contesta, se graba y se enruta, así nada muere en el buzón de voz. Para ser claros, esta cuadrícula es un diseño. Los números aún no están activos; activarlos es un paso siguiente.",
+"La telefonía es una cuadrícula de diez líneas Smart Number por mercado, anclada al NPA del mercado y diseñada como bloque gratuito de vanidad, 833-HALF-COW. Cada línea tiene alcance por departamento: reservas, bilingüe, catering, festivales, eventos privados, corporativo, franquicia, desarrollador de área, prensa y atribución de campañas con desborde, con atención, grabación, enrutamiento y SMS bidireccional. Estado: concepto. El bloque gratuito no está adquirido ni aprovisionado. La atención en vivo se activa cuando existan cuentas y credenciales de operador."
+],
+[
+"Cada dueño recibe su propia puerta de entrada en internet. Half a cow punto com, barra Dallas. Barra Filadelfia. Barra tu ciudad. La misma marca arriba, tu propia página abajo. Dallas y Filadelfia ya están construidas como ejemplos en vivo. Hoy todo funciona en telvergence punto com barra halfacow. Cuando se compre el nombre halfacow punto com, cada página pasa uno a uno.",
+"Cada operador recibe una dirección de marca limpia: halfacow.com barra su ciudad. La marca maestra tiene la identidad; cada página de ciudad es la tienda propia de ese operador. Dallas y Filadelfia ya están construidas como tiendas de ejemplo en vivo. Ahora mismo toda la propiedad se sirve en telvergence.com barra halfacow. Cuando se compre y apunte el dominio halfacow.com, cada página pasa uno a uno, sin cambios.",
+"La arquitectura de URL es maestra más ciudad: halfacow.com barra ciudad, cada una una tienda de marca privada que hereda la identidad y las herramientas de la maestra. Dallas y Filadelfia son construcciones de referencia en vivo; los otros veintiocho mercados están mapeados como territorios abiertos. El árbol es independiente de la raíz, por lo que hoy se sirve en telvergence.com barra halfacow, con espejos en halfacow.pages.dev y restorationroyalties.com, y canónico fijado en telvergence.com. Adquirir halfacow.com es un traspaso uno a uno sin reconstrucción."
+],
+[
+"Aquí va una reserva, de principio a fin. Alguien escribe: boda, ciento cincuenta personas, doce de octubre. El cerebro responde con un presupuesto en segundos. Dicen que sí. La reserva queda confirmada. Se asigna el camión más cercano. El cliente puede seguirlo: reservado, confirmado, preparando, camión en camino, en el lugar, sirviendo, terminado. Igual que rastrear un paquete. Nadie espera una llamada que nunca llega.",
+"Sigamos una reserva. Un cliente escribe: boda, ciento cincuenta invitados, doce de octubre. El selector de eventos devuelve un rango de presupuesto y tiempo de anticipación en segundos. Confirman. La plataforma asigna el camión disponible más cercano, y el cliente sigue el trabajo en vivo por siete etapas: reservado, confirmado, preparando, camión en camino, en el lugar, sirviendo, terminado. Como quien rastrea un paquete. Cotización el mismo día, sin llamadas perdidas.",
+"El flujo de reserva: el mensaje o llamada entrante se captura en la línea del departamento, con marca de tiempo y geolocalización. El motor de cotización instantánea devuelve un rango ilustrativo y tiempo de anticipación por tipo de evento. Al confirmar, el trabajo entra al rastreador con siete estados, reservado, confirmado, preparando, camión en camino, en el lugar, sirviendo y terminado, y el despacho asigna la unidad disponible más cercana. El despacho de eventos y festivales también vigila picos de demanda y enruta los prospectos antes de que caigan al buzón. Como concepto, el despacho es una capacidad diseñada, aún no un servicio en vivo."
+],
+[
+"Esto no es un dibujo. Está construido y está en vivo. La página habla. Hay un conserje llamado Chuck. Toca el altavoz y él explica el menú, el catering o cómo tener un camión, en inglés o en español. Apunta tu teléfono a este código, o presiona el botón, y pruébalo tú mismo. Esta es la Talking Edition, Platinum.",
+"Esta es la parte que puedes usar ahora mismo. El sitio está en vivo y habla: un conserje llamado Chuck lee el menú, explica catering y reservas, o recorre la escalera de franquicia, en inglés o español, con un toque en el altavoz. Escanea el código con tu teléfono o presiona el botón y pruébalo. Esta es la Talking Edition, versión Platinum.",
+"La Talking Edition es la versión de producción: un conserje de voz, Chuck, impulsado por una base de conocimiento acotada que cubre menú, catering, escalera de franquicia, territorio, Smart Numbers, despacho y estado del concepto, con selección de idioma y texto a voz. Está en vivo en telvergence.com barra halfacow. Escanea el código o abre el sitio y prueba tú mismo el conserje, el selector de eventos y el rastreador."
+],
+[
+"Hay tres formas de participar. Un dueño-operador maneja un camión en una ciudad. Un operador de flota maneja varios camiones en una zona metropolitana. Un desarrollador de área construye toda una región y ayuda a los nuevos dueños a empezar. Una nota honesta: en Estados Unidos, una franquicia real solo se puede vender con un documento oficial llamado FDD. Ese documento es un paso siguiente. Así que hoy, esto es el plan, no una venta.",
+"Tres formas de entrar. Dueño-operador: un camión, un territorio protegido. Operador de flota: varios camiones en una zona metropolitana. Desarrollador de área: toda una región, reclutando y apoyando operadores. Una nota honesta: una franquicia real solo puede ofrecerse mediante un Documento de Divulgación de Franquicia registrado, el FDD. Ese trámite es un paso siguiente, así que nada aquí es una oferta de venta de franquicia. Es el plan.",
+"La escalera de operadores tiene tres peldaños: dueño-operador, una unidad en un territorio protegido; operador de flota, varias unidades en una zona metropolitana; desarrollador de área, un maestro regional que recluta y apoya operadores y gana sobre la red que construye, el volante de referidos a escala. Nota de cumplimiento: toda oferta de franquicia requiere un FDD registrado. No se representan cifras de inversión, cuotas ni ganancias, y nada en este concepto constituye una oferta de venta de franquicia."
+],
+[
+"Hablemos claro de dónde estamos. El plano está construido y lo puedes usar hoy. La marca. El centro de treinta mercados. Dos tiendas de ciudad. El conserje que habla. Las direcciones web. Lo que sigue necesita dinero y tiempo: el primer camión real y la cocina, los permisos, encender los números de teléfono reales y el papeleo legal de la franquicia. Hoy es un plano que funciona. Los camiones son lo que sigue.",
+"Hablemos claro del estado. Construido y en vivo hoy: la marca y la identidad, el centro de treinta mercados, las tiendas de Dallas y Filadelfia, el conserje que habla, el kit de marca y las direcciones web, y el flujo de reservas diseñado. Todavía no: un camión real y cocina comisaria, permisos y seguridad alimentaria, números de teléfono activos, el FDD y el lanzamiento en una primera ciudad. Eso requiere capital y tiempo. Hoy es un plano que funciona; el primer camión es el siguiente hito.",
+"Estado, con precisión. Completo: sistema y kit de marca, centro de treinta mercados, dos tiendas de referencia, conserje de voz, alojamiento canónico en telvergence.com con espejos, y los flujos diseñados de Cow Connect. Pendiente, y dependiente de capital y tiempo: construcción de la unidad y cocina comisaria, permisos sanitarios y licencias, aprovisionamiento de números gratuitos y credenciales de operador, preparación del FDD con abogados de franquicia, y lanzamiento en un mercado fundador. No hay camiones en la calle; no existen ingresos ni se implican."
+],
+[
+"Ahora el volante. Un volante es una rueda que sigue girando una vez que la pones en marcha. Así gira el nuestro. Cada representante, agente o dueño de camión recibe una tarjeta de presentación digital en su teléfono. La tocas y la compartes. En el momento en que se une, el sistema le da su propio número inteligente, así cada llamada y cada cliente que trae queda registrado a su nombre. Luego puede agregar nuevos representantes, que reciben sus propias tarjetas y números. Cada persona trae a la siguiente. Así la red crece sola. Este ciclo se construyó primero para FAST Adjusting Service, y funcionó tan bien que se convirtió en el núcleo de cada marca de Telvergence.",
+"El volante. Cada representante, agente u operador recibe una tarjeta de presentación digital, que se comparte con un toque. Al unirse, la plataforma le asigna un Smart DID, su propio número rastreado, así cada llamada, mensaje y prospecto se le atribuye automáticamente. Los agentes pueden agregar agentes: cada recluta recibe su propia tarjeta y número, bajo la misma marca. Representantes que se replican solos, prospectos atribuidos, sin personal extra. Este ciclo se probó primero en la construcción de FAST Adjusting Service; por eso se convirtió en el núcleo de cada marca de Telvergence, incluida Half a Cow.",
+"El volante de referidos es el motor de crecimiento. Cada participante, representante, agente u operador, recibe una tarjeta de presentación digital y, al activarse, un Smart DID tomado del inventario NPA-NXX del mercado, lo que da atribución de llamadas, SMS y prospectos por persona sin configuración manual. Los agentes pueden aprovisionar agentes descendentes; cada nuevo nodo recibe su propia tarjeta y DID bajo la marca maestra, así el reclutamiento se compone sin una capa de operaciones de ventas. La atribución alimenta la lógica de enrutamiento y de pagos. El patrón se validó primero en la construcción de FAST Adjusting Service, por eso es el núcleo plantilla reutilizado en los verticales de Telvergence, aquí como Cow Connect."
+],
+[
+"¿Por qué nadie puede simplemente copiar esto? Porque el motor de abajo es nuestro. Telvergence construyó su propio cerebro de teléfono y sitios web sobre grandes redes telefónicas mayoristas. Reparte números inteligentes, contesta llamadas, envía mensajes, reserva eventos y lleva la cuenta de quién trajo a cada cliente. Encima van los sitios de marca y los listados de Google de cada ciudad. Y aquí está la clave: no vendemos el motor. Lo licenciamos. Cada marca que funciona sobre él paga una cuota mensual y una regalía continua bajo nuestro acuerdo de servicio, mientras funcione. Se construye una vez. Se alquila mientras funcione.",
+"La ventaja competitiva es la pila tecnológica. Abajo, infraestructura de operadores mayoristas. Encima, la plataforma Telvergence, una capa de telecomunicaciones programable que asigna Smart DIDs desde el inventario de códigos de área, enruta y graba llamadas, maneja SMS y atribuye cada prospecto. Arriba, la automatización con inteligencia artificial: atención, cotizaciones instantáneas, despacho, atribución. En la cima, las tiendas de marca y la estrategia de listados, Perfiles de Negocio de Google y datos estructurados para cada ciudad. Es arquitectura propietaria y se licencia, no se vende: cada marca en la plataforma paga cuotas mensuales recurrentes de plataforma más regalías continuas bajo el SLA de Telvergence, durante la vida del acuerdo. Construir una vez, licenciar en todas partes.",
+"El foso es arquitectónico. Capa uno, interconexiones con operadores mayoristas. Capa dos, Telvergence UCCPXaaS, un plano de control de telecomunicaciones programable: gestión de inventario NPA-NXX, aprovisionamiento de Smart DIDs, enrutamiento, grabación, SMS bidireccional y atribución por DID. Capa tres, la capa de automatización: atención con inteligencia artificial, cotización instantánea, despacho y contabilidad de referidos. Capa cuatro, la capa de presentación: tiendas maestra más ciudad, estrategia de listados en Perfil de Negocio de Google y datos estructurados. La pila es propietaria y se monetiza como licencia digital bajo el SLA de Telvergence: cuotas mensuales recurrentes de plataforma por línea y por marca, más regalías continuas durante el plazo del acuerdo. La economía es construir una vez, licenciar muchas; cada nuevo vertical, incluida Half a Cow, hereda toda la pila con un costo de ingeniería marginal casi nulo."
+],
+[
+"Una pregunta justa: ¿cuánto costaría que alguien construyera todo esto para ti? Todo lo que acabas de ver, treinta páginas de ciudad, el conserje que habla, el sistema de reservas, el diseño telefónico y el kit de marca, ya está construido. Si le pagaras a una agencia de primer nivel para hacerlo desde cero, nuestro cálculo aproximado es de unos doscientos mil a quinientos sesenta mil dólares, y los grandes proveedores empresariales suelen cobrar dos o tres veces más. Para comparar: estimaciones anteriores de inteligencia artificial para una sola construcción de un solo rubro dieron treinta y ocho mil y unos setenta y ocho mil dólares, y esto son treinta mercados más voz, reservas y teléfonos. Son estimaciones, no cotizaciones. El punto es simple: la parte cara ya está hecha.",
+"Una pregunta justa: ¿cuánto costaría construir esto desde cero? Nuestro cálculo aproximado a tarifas típicas de agencias en Estados Unidos: la arquitectura web de treinta mercados, de sesenta a ciento cincuenta mil; el conserje de voz y la Talking Edition, de cuarenta a ciento veinte mil; los flujos de reserva, cotización, seguimiento y despacho, de cincuenta a ciento cincuenta mil; el diseño telefónico, de treinta a cien mil; el kit de marca y la estrategia de listados, de quince a cuarenta mil. En total, de doscientos a quinientos sesenta mil dólares, y los proveedores empresariales suelen cobrar dos o tres veces eso. Dos puntos de referencia: estimaciones generadas por inteligencia artificial que David recibió antes para construcciones de un solo rubro dieron treinta y ocho mil por una personalización de techos y unos setenta y ocho mil por un plano. Half a Cow son treinta mercados más voz, reservas y telefonía. Son estimaciones, no cotizaciones ni una tasación. La construcción ya está hecha.",
+"Enfoque de costo de reemplazo. A tarifas típicas de agencias en Estados Unidos, reconstruir esta pila desde cero costaría aproximadamente: arquitectura web maestra más ciudad en treinta mercados, de sesenta a ciento cincuenta mil; el conserje de voz con texto a voz multilingüe, de cuarenta a ciento veinte mil; cotización instantánea, reservas, seguimiento de siete estados y despacho, de cincuenta a ciento cincuenta mil; diseño de enrutamiento, grabación y SMS de diez líneas Smart Number por mercado, de treinta a cien mil; sistema de marca, datos estructurados y estrategia de listados, de quince a cuarenta mil. Unos ciento noventa y cinco a quinientos sesenta mil dólares; las consultoras empresariales suelen cotizar dos o tres veces las tarifas de agencia. Puntos de referencia: estimaciones generadas por inteligencia artificial que David recibió antes valoraron una personalización de techos de un solo rubro en treinta y ocho mil y un plano en unos setenta y ocho mil. Es una estimación ilustrativa de costo de reemplazo, no una tasación, valoración ni cotización de proveedor. El activo existe hoy sobre la plataforma Telvergence, con un costo marginal casi nulo por mercado adicional."
+],
+[
+"Ahora el modelo de dinero, con dos tipos de licencia. La primera es la licencia de ciudad. Por doscientos cincuenta mil dólares, un dueño recibe toda la ciudad de la NFL: la marca Platinum, la red, cada número de teléfono de vanidad de ese territorio y el derecho a ganar regalías de todos los que se unan bajo él. La segunda es la licencia de camión. El dueño de la ciudad vende cada una por veinticinco mil dólares a una persona local que quiere manejar un camión, y cada una de esas personas pasa a formar parte del volante. Cada camión también funciona con diez líneas telefónicas inteligentes de Telvergence, unos veinticinco dólares por línea al mes. Mueve los controles. La página muestra lo que va a la sede de Half a Cow, lo que un dueño de ciudad puede recibir por licencias de camión y el ingreso por líneas telefónicas. Son números hipotéticos. No es una promesa ni un pronóstico.",
+"El modelo de dinero tiene dos licencias. La licencia exclusiva de marca de ciudad, doscientos cincuenta mil dólares, da a un dueño todo el territorio de la ciudad de la NFL: la marca privada Platinum y la red, configuradas desde el showroom y el inventario, cada combinación de número de vanidad NPA-NXX del territorio y derechos de regalías sobre su propia red de marca. La sublicencia de distribución de camión de comida, veinticinco mil dólares cada una, es la que el dueño de la ciudad revende a operadores locales; cada uno de ellos se une al volante. Cada camión funciona con diez líneas Smart Number a unos veinticinco dólares por línea al mes a través de Telvergence. Los controles lo multiplican: el ingreso inicial de la sede, los ingresos del dueño de la ciudad por sublicencias y el ingreso recurrente de plataforma. Cada cifra es un modelo hipotético construido con estas entradas. No es un pronóstico, ni una promesa, ni una representación de desempeño financiero. Las regalías se definen en el FDD.",
+"Modelo de licencia de dos niveles, ilustrativo. Nivel uno, la licencia exclusiva de marca de ciudad a doscientos cincuenta mil dólares: un dueño por mercado de la NFL recibe la marca privada Platinum y la red para todo el territorio, aprovisionadas desde el showroom y el inventario, el inventario completo de números de vanidad NPA-NXX de ese territorio y derechos de regalías sobre la red de marca privada del dueño. Nivel dos, la sublicencia de distribución de camión de comida a veinticinco mil dólares, que el dueño de la ciudad revende a operadores locales; cada licenciatario es un nodo del volante de referidos. El ingreso recurrente de plataforma es la cuadrícula de diez líneas Smart Number por camión a veinticuatro noventa y cinco por línea al mes, el precio por línea que Telvergence ya aplica. La calculadora separa los ingresos de la sede, los ingresos del dueño de la ciudad por sublicencias y el ingreso recurrente de plataforma, en bruto, antes de costos, impuestos o calendario. Los flujos de regalías se definen en el FDD y no se modelan. Hipotético para discusión; no es un pronóstico, ni una oferta, ni una representación de desempeño financiero."
+],
+[
+"Eso es Half a Cow. Una marca. Cada ciudad de la NFL. Un cerebro que nunca pierde una llamada, y un camión que cocina la mejor carne de la ciudad. El plano está construido. El primer camión es lo que sigue. Gracias por ver esto. Vamos a construirlo.",
+"Eso es Half a Cow: una marca, cada ciudad de la NFL, una plataforma que nunca pierde una llamada y un camión que sirve la mejor carne de la ciudad. El plano está construido y en vivo; el primer camión es el siguiente hito. Gracias. Vamos a construirlo.",
+"En resumen: un concepto estandarizado de carne premium de animal entero, replicado en treinta mercados de la NFL por operadores locales y coordinado por una capa de plataforma probada en producción. Plano completo; la economía por unidad y el lanzamiento son la siguiente fase y dependen de capital. Gracias. Construyamos el primer camión."
+]
+]
+}
 }
 </script>
 
@@ -798,7 +798,7 @@ h1 .r{color:var(--red2)}
     $('start').textContent = ui.start; $('ovlede').textContent = ui.lede;
     playBtn.textContent = playing ? ui.pause : ui.play;
     muteBtn.textContent = muted ? ui.voiceOff : ui.voiceOn;
-    $('replay').textContent = ui.replay; 
+    $('replay').textContent = ui.replay;
     document.querySelectorAll('label[for="lang"],label[for="lang2"]').forEach(function(l){ l.textContent = ui.lang; });
     document.querySelectorAll('label[for="level"],label[for="level2"]').forEach(function(l){ l.textContent = ui.level; });
     document.querySelector('label[for="voice"]').textContent = ui.voice;
@@ -872,16 +872,17 @@ h1 .r{color:var(--red2)}
   window.addEventListener('beforeunload', cancelSpeech);
 
 
-  // ---- money model calculator (illustrative)
+  // ---- money model calculator (illustrative, two licenses)
   function initCalc(){
     var ids=['c_cities','c_trucks','c_fee','c_truck','c_lines','c_rate']; var els=ids.map(function(id){return $(id);}); if(els.some(function(e){return !e;})) return;
     var fmt=function(n){ return '$'+Math.round(n).toLocaleString('en-US'); };
     function calc(){ var cities=+$('c_cities').value, tpc=+$('c_trucks').value, fee=+$('c_fee').value||0, truck=+$('c_truck').value||0, lines=+$('c_lines').value||0, rate=+$('c_rate').value||0;
-      var trucks=cities*tpc, up=cities*fee+trucks*truck, yr=trucks*lines*rate*12, t3=up+yr*3, ftr=30*tpc, fup=30*fee+ftr*truck, fyr=ftr*lines*rate*12;
+      var trucks=cities*tpc, hq=cities*fee, owner=tpc*truck, ownersAll=trucks*truck, yr=trucks*lines*rate*12, t3=hq+yr*3, ftr=30*tpc, fhq=30*fee, fyr=ftr*lines*rate*12;
       $('c_cities_o').textContent=cities; $('c_trucks_o').textContent=tpc; $('o_trucks').textContent=trucks;
-      $('o_upfront').textContent=fmt(up); $('o_upfront_d').textContent=cities+' × '+fmt(fee)+' + '+trucks+' × '+fmt(truck);
+      $('o_hq').textContent=fmt(hq); $('o_hq_d').textContent=cities+' cities × '+fmt(fee);
+      $('o_owner').textContent=fmt(owner); $('o_owner_d').textContent=tpc+' trucks × '+fmt(truck)+' · all cities together: '+fmt(ownersAll);
       $('o_year').textContent=fmt(yr); $('o_year_d').textContent=trucks+' trucks × '+lines+' lines × $'+rate.toFixed(2)+' × 12';
-      $('o_3yr').textContent=fmt(t3); $('o_full').textContent=fmt(fup)+' up-front · '+fmt(fyr)+' / yr'; }
+      $('o_3yr').textContent=fmt(t3); $('o_full').textContent=fmt(fhq)+' HQ up-front · '+fmt(fyr)+' / yr recurring'; }
     els.forEach(function(e){ e.addEventListener('input',calc); }); calc();
   }
   // ---- QR codes (optional; degrade to the printed URL)
@@ -893,4 +894,5 @@ h1 .r{color:var(--red2)}
 })();
 </script>
 
+</body>
 </html>
