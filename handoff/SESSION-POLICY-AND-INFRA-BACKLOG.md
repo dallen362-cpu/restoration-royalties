@@ -44,6 +44,10 @@ the professional standard and I recommend we hold to it.
 7. **Durable gold-template re-skins** — tokenize the WIN-module / ownership-status labels + add the
    Starbucks-courtesy module (a template session; additive, with defaults so existing brands don't change).
 8. **Cloudflare header / security hardening** on any new project created above.
+9. **Cloudflare Access in front of `telvergence.com/halfacow/private/`** (true lock atop the passcode gate) — Class B, David present.
+10. **Decide: gate all of `/halfacow/` or keep the brand site public** (current: public, noindexed).
+11. **Stage 3 cold backup** — David names the external drive letter (F: iXpand has the most room); target folder
+    `<drive>:\AI-Master-Brain\Telvergence\<date>\` + the two GitHub restore-point zips. Cowork runs it; QB provides the procedure.
 
 ## Right now (this output session)
 Continue ONLY: the **Half a Cow** client output to the max on the existing gigapress, plus the specified

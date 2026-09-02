@@ -91,8 +91,16 @@
   the **territory / vanity-grid inventory by city** (NPA·NXX rate-center → local + AI SEO domination →
   supply/demand/competition read); (6) record every new pattern back into the rules + skills. Half a Cow
   (`/halfacow/`) is the live reference run of this route.
-- **★ PRICING + FIELD-OPS MODULE (David 2026-09-02):** GOLD city-franchise SLA = **$25K down** per
-  NFL-city stadium territory (the Half a Cow model); **PLATINUM = the telvergence.com white-label rebrand
+- **★ PRICING + FIELD-OPS MODULE (David 2026-09-02, REVISED same day — Cowork deck is canonical):** Half a Cow
+  **$250K = the EXCLUSIVE CITY BRAND (Platinum)**: the owner's own private-label brand + network for the whole NFL-city
+  territory, configured to their choice from the showroom + inventory, INCLUDING every NPA·NXX vanity-number combination in
+  the territory and ROYALTY RIGHTS across the entire private branded network. **$25K = each SUB FOOD-TRUCK DISTRIBUTION
+  license** the city owner RESELLS to local biz-op seekers (paid to them / us) — a new business opportunity + one more
+  contributing member of the wealth-generation FLYWHEEL. 10 Smart Number lines per truck at $24.95/line/mo; royalties in
+  the FDD; every figure illustrative / not an offer / no FPR. **KEY THEME everywhere: the flywheel + vanity-number examples**
+  — vanity-number dial control = root-access asset, proprietary, proven, explainable via NPA·NXX analysis on file, baked into
+  the gigapress assembly line (sell the value, never expose the mechanism; provider-agnostic on public pages).
+  (Supersedes the earlier "$25K down per city" wording — all halfacow/ pages re-worded 2026-09-02.) **PLATINUM = the telvergence.com white-label rebrand
   = $250K** product offering. The food-truck-franchise build is really the **FIELD WORK-TRUCK OPERATIONS
   MANAGEMENT module**: in-the-field work-truck / fleet command — call command center, storm & event
   dispatch, WIN weather-intelligence network — delivered via the app + SIP / web / phone + automated
@@ -109,6 +117,12 @@
   branch `restore/pre-halfacow-2026-09-02`, `halfacow/` added, showroom card, canonical re-pointed). That session's
   output is David's — never modify it from here without his consent; new Half a Cow pages reach telvergence.com only
   via a Cowork copy of `halfacow/` from this repo (source of truth). Do not disturb the foundation.
+- **★ TWO-SESSION LAW (David 2026-09-02):** only the **Cowork (Excaliber) session writes the `telvergence` repo**; the
+  QB (this session) never modifies Cowork output. The build shop's `halfacow/` is authoritative for everything EXCEPT
+  `halfacow/private/` (Cowork-only gated deck on telvergence.com; never linked, copied, or recreated here). Cowork
+  re-syncs `halfacow/` from this repo with `/XD private`. **When the two sessions differ, Cowork's direction takes
+  priority.** telvergence.com returns a 200 homepage fallback for unknown paths — verify by CONTENT, never status code.
+  Cross-session ledgers live in `handoff/HANDOFF_*.md` (summary block: Project/Status/Open Questions/Next Actions/Evidence).
 - **★ SEQUENCE (David 2026-09-02):** (1) finish TODAY'S Half a Cow **GOLD** demo build (NFL-city model,
   live-noindexed for the 3:30 client meeting); (2) THEN build the Half a Cow **PLATINUM** = the
   telvergence.com white-label rebrand ($250K offering). Platinum comes AFTER the demo.
@@ -138,9 +152,11 @@
   designated **MASTER MAIN BRAIN** for ALL Telvergence data consolidation and for every money-making /
   business project — the working source of truth for all things business. Master data flows in ONE
   direction through three tiers:
-  **(1) Claude Code master-main-brain** (this session + this repo) → **(2) the Google Drive
-  `TELVERGENCE-MASTER-BRAIN` folder** (dallen362@gmail.com — the unified, indexed backup defined in the
-  rule above) → **(3) the external removable hard drive attached to the Lenovo "Excaliber" computer**
+  **(1) Claude Code master-main-brain** (this session + this repo) → **(2) Google Drive — the
+  `AI-Master-Brain/Telvergence/` sub-brain** (David 2026-09-02: umbrella root id `1RVTUgARdGTwpUY1dlanQHaHI-V6DeaJg`,
+  Telvergence sub-brain id `1-y-YRo29hgS8H9i39LjtWR4Dp7kdoph4`; layout in `handoff/AI-MASTER-BRAIN_MASTER-INDEX_2026-09-02.md`;
+  the older `TELVERGENCE-MASTER-BRAIN` folder `1-hKkLBbj…` is LEGACY — read-only reference, no new writes. This session
+  touches ONLY the Telvergence sub-brain; the umbrella's 00_PEOPLE/01_LEGAL/02_MEDICAL domains are out of scope) → **(3) the external removable hard drive attached to the Lenovo "Excaliber" computer**
   (David's local cold copy). Tier 3 is PHYSICAL and David-side: a cloud session CANNOT reach the external
   drive, so the Drive→external-HDD copy is always David's step at the home studio (Claude provides the
   exact procedure, never the copy itself).
