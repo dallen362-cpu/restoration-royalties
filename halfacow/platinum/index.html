@@ -607,20 +607,20 @@ window.googleTranslateElementInit=function(){
 </section>
 
 <section class="wrap" id="livefloor">
-  <div class="k">The Live Floor · Answering Now</div>
-  <h2 data-say="The live floor. This is the network answering itself in real time — calls arriving across every brand, in every language, picked up in one ring, qualified, and booked, while you read this. No hold music, no voicemail, no missed lead.">Watch the network answer itself.</h2>
-  <p class="sub">Every line below is the platform doing what it does all day: catch the call, answer in the caller&rsquo;s language, qualify it, and book it &mdash; <strong style="color:var(--ink)">in about one ring.</strong></p>
+  <div class="k">The Game-Day Floor · Illustrative</div>
+  <h2 data-say="The game-day floor. This is what a Sunday would look like across the network - orders arriving in every city, in every language, picked up in about one ring, held, and routed to a truck. Illustrative demo, not live operating data.">Watch the cities answer themselves.</h2>
+  <p class="sub">Every line below is the platform doing what it would do all game day: catch the call, answer in the guest&rsquo;s language, take the order, and hold the truck &mdash; <strong style="color:var(--ink)">in about one ring.</strong> Illustrative demo.</p>
   <div class="lf">
     <div class="lf-head">
       <span class="lf-live"><span class="lf-dot"></span>LIVE · illustrative</span>
       <div class="lf-stats">
         <div class="lf-st"><span class="lf-v" id="lfCalls">0</span><span class="lf-l">Answered today</span></div>
         <div class="lf-st"><span class="lf-v" id="lfPick">0.9s</span><span class="lf-l">Avg pickup</span></div>
-        <div class="lf-st"><span class="lf-v" id="lfBooked">0</span><span class="lf-l">Booked</span></div>
+        <div class="lf-st"><span class="lf-v" id="lfBooked">0</span><span class="lf-l">Held</span></div>
       </div>
     </div>
     <div class="lf-rows" id="lfRows"></div>
-    <div class="lf-foot">Speaker-separated transcripts, source tags, and CRM hand-off happen on every one of these — on numbers the network owns.</div>
+    <div class="lf-foot">Order notes, lot tags, and the pickup window land on the city board for every one of these. Illustrative concept activity — not live operating data, and the numbers behind it are not provisioned.</div>
   </div>
 </section>
 <style>
@@ -653,20 +653,20 @@ window.googleTranslateElementInit=function(){
   var rowsEl=document.getElementById('lfRows'); if(!rowsEl) return;
   var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
   var POOL=[
-    {e:'🌀',who:'Water damage — burst pipe',brand:'Restoration Royalties',city:'Coral Gables, FL',lang:'English'},
-    {e:'📋',who:'New mold claim',brand:'FAST Adjusting',city:'Hialeah, FL',lang:'Español'},
-    {e:'🍽️',who:'Private dinner, party of 12',brand:'Reservations Engine',city:'Brickell, FL',lang:'English'},
-    {e:'🪟',who:'Impact-window estimate',brand:'Miami Window & Door',city:'Kendall, FL',lang:'Español'},
-    {e:'⚡',who:'Generator install',brand:'YES Electrical',city:'Fort Lauderdale, FL',lang:'English'},
-    {e:'💦',who:'Roof soft-wash quote',brand:'Coastal Crown',city:'Doral, FL',lang:'Español'},
-    {e:'📂',who:'Chapter 7 consult',brand:'Orlando Bankruptcy',city:'Orlando, FL',lang:'English'},
-    {e:'🏠',who:'Storm re-roof inspection',brand:'Roofing',city:'West Palm Beach, FL',lang:'English'},
-    {e:'❄️',who:'No-AC emergency',brand:'HVAC',city:'Miami, FL',lang:'Español'},
-    {e:'🦷',who:'New patient — implant',brand:'Dental',city:'Aventura, FL',lang:'Kreyòl'},
-    {e:'🏛️',who:'Accident — injury case',brand:'Legal Intake',city:'Miami, FL',lang:'Español'},
-    {e:'☀️',who:'Solar quote, $0 down',brand:'Solar',city:'Naples, FL',lang:'English'}
+    {e:'🍖',who:'Tailgate lot 14 — 40 brisket plates',brand:'Half a Cow Dallas',city:'Arlington, TX',lang:'English'},
+    {e:'🥚',who:'Corporate suite lunch, 120 guests',brand:'Half a Cow Philadelphia',city:'South Philly, PA',lang:'Español'},
+    {e:'🍽️',who:'Wedding rehearsal catering',brand:'Half a Cow Kansas City',city:'Kansas City, MO',lang:'English'},
+    {e:'🌮',who:'Pickup window — 3 half-pound smash',brand:'Half a Cow Miami',city:'Miami Gardens, FL',lang:'Español'},
+    {e:'🎸',who:'Post-show late-night lot order',brand:'Half a Cow Nashville',city:'Nashville, TN',lang:'English'},
+    {e:'🏈',who:'Season-opener lot reservation',brand:'Half a Cow Chicago',city:'Chicago, IL',lang:'English'},
+    {e:'🧀',who:'Cheese-curd add-on, party of 30',brand:'Half a Cow Green Bay',city:'Green Bay, WI',lang:'English'},
+    {e:'⛰️',who:'Trailhead crew lunch, 18 boxes',brand:'Half a Cow Denver',city:'Denver, CO',lang:'Español'},
+    {e:'🗽',who:'Office floor order — 45 sandwiches',brand:'Half a Cow New York',city:'East Rutherford, NJ',lang:'Kreyòl'},
+    {e:'🌉',who:'Tailgate lot B — 60 plates',brand:'Half a Cow Pittsburgh',city:'Pittsburgh, PA',lang:'English'},
+    {e:'🌴',who:'Beach-side event catering',brand:'Half a Cow Tampa Bay',city:'Tampa, FL',lang:'Español'},
+    {e:'☕',who:'Pre-kickoff crew feed, 25 boxes',brand:'Half a Cow Seattle',city:'Seattle, WA',lang:'English'}
   ];
-  var STATES=[['ring','◉ Ringing'],['answer','AI answering…'],['qual','Qualified'],['booked','✓ Booked']];
+  var STATES=[['ring','◉ Ringing'],['answer','Chuck answering…'],['qual','Order taken'],['booked','✓ Held']];
   var calls=1287, booked=418, MAX=5, i=0;
   document.getElementById('lfCalls').textContent=calls.toLocaleString();
   document.getElementById('lfBooked').textContent=booked.toLocaleString();
@@ -710,121 +710,127 @@ window.googleTranslateElementInit=function(){
 </script>
 
 <section class="wrap" id="cost">
-  <div class="k">The Cost of the Old Way</div>
-  <h2 data-say="Your communication stack is costing you more than you think. Five tools that don't talk to each other, missed calls that walk to your competitor, calls flagged as spam likely, marketing you can't measure, and downtime that stops the business. It adds up fast.">Your stack is costing you more than you think.</h2>
-  <p class="sub">Disconnected tools and an outdated phone system quietly bleed revenue. Here&rsquo;s what it&rsquo;s actually costing:</p>
+  <div class="k">The Cost of Going It Alone</div>
+  <h2 data-say="A lone truck pays for everything twice. No brand anyone recognizes, a phone nobody answers during the lunch rush, a line the lot does not know to call, guesswork about which lot to park in, and a broken fryer that ends the day. The independent operator carries all of it alone.">One truck, alone, pays for all of it.</h2>
+  <p class="sub">The independent operator carries every one of these by themselves. Here is what the lone-truck model costs — <strong style="color:var(--ink)">described illustratively, not measured:</strong></p>
   <div class="sci">
-    <div class="sc"><b>5 Tools That Don&rsquo;t Talk</b><p>Phone here, texting there, a CRM, call tracking, an AI tool on top — none share data. Five bills for one-fifth the insight.</p><span class="costfig">$2K–$10K/mo redundant tools</span></div>
-    <div class="sc"><b>Missed Calls = Missed Revenue</b><p>A lead calls, nobody answers, no AI to catch them — that customer is gone. Your competitor answers on the first ring.</p><span class="costfig">$250–$1,200 lost per missed call</span></div>
-    <div class="sc"><b>Showing Up as &ldquo;Spam Likely&rdquo;</b><p>A random number — or worse, &ldquo;Spam Likely.&rdquo; Customers don&rsquo;t answer calls they don&rsquo;t trust. Outreach that never connects.</p><span class="costfig">60% of calls go unanswered</span></div>
-    <div class="sc"><b>Optimizing Blind</b><p>Thousands on ads, SEO, mailers — but you can&rsquo;t tell which campaign drove which call. Budget wasted on what doesn&rsquo;t convert.</p><span class="costfig">40% of ad spend wasted</span></div>
-    <div class="sc"><b>Downtime Stops Everything</b><p>No calls in, no calls out, no revenue. Every minute of downtime sends customers to a competitor who won&rsquo;t send them back.</p><span class="costfig">$5,600/min avg. downtime</span></div>
+    <div class="sc"><b>A Name Nobody Knows</b><p>A one-off truck name has to be explained at every lot. A master brand is recognized before the window opens — the first sale is the name.</p><span class="costfig">illustrative · brand built from zero</span></div>
+    <div class="sc"><b>The Rush Nobody Answers</b><p>The catering call comes in the middle of the lunch push. Nobody can step off the flat-top, so it goes to voicemail — and the party books someone else.</p><span class="costfig">illustrative · the call that walks</span></div>
+    <div class="sc"><b>A Line the Lot Doesn&rsquo;t Know</b><p>An out-of-town cell number on a game-day flyer gets ignored. A stadium-local, memorable line gets dialed and gets picked up.</p><span class="costfig">illustrative · the ring that never comes</span></div>
+    <div class="sc"><b>Parking on a Hunch</b><p>Which lot, which gate, which kickoff? One truck guesses. A network reads its own game-day and event calendar across 30 markets.</p><span class="costfig">illustrative · the lot chosen blind</span></div>
+    <div class="sc"><b>One Bad Day Ends the Week</b><p>A broken fryer, a rained-out lot, a permit problem — alone, that is the week. Inside a network there is a playbook and a phone to call.</p><span class="costfig">illustrative · no bench behind you</span></div>
   </div>
+  <p class="sub" style="margin-top:14px;font-size:12px;color:var(--faint)">Illustrative descriptions for discussion only. No figures, statistics, or performance claims are made or implied.</p>
 </section>
 
 <section class="wrap" id="solution">
-  <div class="k">The Solution · One Platform</div>
-  <h2 data-say="Everything your business needs to communicate, automate, and grow. Six capabilities, one platform — capture every lead, cut costs, and scale, without hiring an I T department.">One platform. Every tool. No IT department.</h2>
+  <div class="k">The Solution · One Platform Behind Every Truck</div>
+  <h2 data-say="Everything a city operator needs to answer, book, and run a game day. Six capabilities, one shared platform - so a franchisee cooks and the platform handles the rest.">One platform. Every truck. No back office.</h2>
   <div class="sci">
-    <div class="sc"><b>Never Miss a Customer</b><p>AI answers when you can&rsquo;t — transcribed, captured, followed up. The 11pm Saturday call? Handled. Your business runs 24/7 even when you don&rsquo;t.</p></div>
-    <div class="sc"><b>One Bill. One Login.</b><p>Replace your phone system, texting, fax, call tracking, and CRM integration with one platform. Most businesses save 30%+ and get better tools.</p></div>
-    <div class="sc"><b>Your Brand on Every Call</b><p>Your company name on every outbound call. STIR/SHAKEN verification means your calls get answered, not flagged. Answer rates jump 40%+.</p></div>
-    <div class="sc"><b>Know What&rsquo;s Working</b><p>See exactly which ads, campaigns, and keywords drive calls. Real-time dashboards show where every marketing dollar goes — double down on winners.</p></div>
-    <div class="sc"><b>Security by Design</b><p>Encrypted calls and messages, STIR/SHAKEN-verified identity, compliance-first architecture — disclosures, consent capture, and auditable records built in.</p></div>
-    <div class="sc"><b>Scale Without Breaking</b><p>One location or one hundred, the platform grows with you. Add lines, team members, and locations in minutes — no new contracts, no IT projects.</p></div>
+    <div class="sc"><b>Never Miss a Guest</b><p>The line answers when the window is slammed — order taken, catering held, pickup window sent. The 11pm post-show lot call? Handled.</p></div>
+    <div class="sc"><b>One Brand. One Login.</b><p>Storefront, menu, booking, dispatch, guest line, and translator in one place — instead of six apps and a notebook on the dash.</p></div>
+    <div class="sc"><b>The Master Brand on Every Order</b><p>A guest sees a national name on a local truck. The city operator gets recognition on day one instead of building a name from scratch.</p></div>
+    <div class="sc"><b>Know Where to Park</b><p>Game-day, event, and weather intelligence across the market — so the truck is at the right lot at the right gate before kickoff, not after.</p></div>
+    <div class="sc"><b>Standards by Design</b><p>The menu spec, the sourcing standard, the food-safety checklist, and the guest script travel with the brand — the same Half a Cow in every city.</p></div>
+    <div class="sc"><b>Grow Without Breaking</b><p>One truck or a fleet, the platform is the same. Add a truck, a lot, or a second city without rebuilding anything.</p></div>
   </div>
 </section>
 
 <section class="wrap" id="moat">
-  <div class="k">The Moat · What No One Else Can Do</div>
-  <h2 data-say="What no other platform can do. There are plenty of phone systems. Here is why businesses that switch to Telvergence don't switch back: you own your infrastructure, the A I actually works, it's emergency-ready, it's future-proof on compliance, and you can white-label it as your own.">Why businesses that switch don&rsquo;t switch back.</h2>
+  <div class="k">The Moat · What a Lone Truck Can&rsquo;t Copy</div>
+  <h2 data-say="What one truck cannot copy. A city operator inside this concept holds the market address, the stadium grid, a guest line that answers in fourteen languages, the master standard, and the pull of a national name showing up in more markets. Illustrative concept only.">Why a city, not a truck.</h2>
   <div class="sci">
-    <div class="sc"><b>You Own Your Infrastructure</b><p>Most providers rent you their system — leave and you start over. We build <strong>yours</strong>: the data, the numbers, the brand identity. If you ever leave, everything goes with you. No rental can match that.</p></div>
-    <div class="sc"><b>AI That Actually Works</b><p>Not chatbot fluff — a true speech-to-speech engine. Answers in under a second in 14 languages; interrupt it and it adjusts. It books the job, looks up answers live, and files a speaker-separated transcript to your CRM — all on your own numbers.</p></div>
-    <div class="sc"><b>Emergency-Ready, Always On</b><p>Fully E911 compliant. Hurricane, outage, office fire — calls reroute automatically to mobile, home, or AI. No downtime, ever. Your customers never know anything happened.</p></div>
-    <div class="sc"><b>Future-Proof Compliance</b><p>STIR/SHAKEN verification, recording disclosures and consent capture in the call flow, carrier-grade call-detail records that stand up as an audit trail. While competitors scramble to adapt, you&rsquo;re already ready.</p></div>
-    <div class="sc"><b>White-Label Your Own Platform</b><p>Offer communication services to your clients on your own branded version of the platform. You become the provider — your logo, your pricing — a new revenue stream at zero engineering cost.</p></div>
+    <div class="sc"><b>You Hold the City</b><p>One city URL, one storefront, one operator per NFL market in this concept — the address and the stadium grid sit with the franchisee, not scattered across a dozen delivery apps.</p></div>
+    <div class="sc"><b>A Line That Actually Answers</b><p>Not a voicemail box — a guest line that picks up in under a second in 14 languages, takes the tailgate order, holds the catering date, and sends the pickup window while the window is still slammed.</p></div>
+    <div class="sc"><b>Game-Day Ready, Always On</b><p>Kickoff moves, weather turns, the lot changes gates — the city board reroutes the truck and tells the guests. The lot never finds out anything happened.</p></div>
+    <div class="sc"><b>The Standard Travels</b><p>Menu spec, sourcing, food-safety checklist, guest script, and look — the master carries them, so a new city launches as a credible national brand instead of a first-week experiment.</p></div>
+    <div class="sc"><b>The Name Grows Without You</b><p>Every city that opens makes the name worth more in every other city. A lone truck grows one lot at a time; a network grows every time anyone opens.</p></div>
   </div>
 </section>
 
 <section class="wrap" id="industries">
-  <div class="k">Built for Businesses Like Yours</div>
-  <h2 data-say="Built for businesses like yours. Every industry has unique communication challenges — contractors and home services, healthcare, financial services, real estate, professional services, and multi-location franchises. Not generic features: workflows designed around how your industry actually operates.">Workflows for your industry — not generic features.</h2>
+  <div class="k">The Territories · 30 NFL Cities</div>
+  <h2 data-say="The territories are tier-one N F L cities only - thirty markets, one operator per market in this concept. Each franchisee owns the rate-center grid fanning out from that team's stadium, because the game-day, tailgate, and event demand is the whole point. Illustrative concept only, and not affiliated with the N F L or any club.">Tier-one NFL cities. One operator each.</h2>
+  <p class="sub">The footprint is pro-football markets only — <strong style="color:var(--ink)">30 in all</strong> — and each city owns the grid that fans out from its stadium. Tap any group to see the illustrative inventory.</p>
   <div class="net">
-    <div class="nc"><span class="e">🔨</span><h3>Contractors &amp; Home Services</h3><p>Storm dispatch, job tracking, follow-up, review generation. When a storm hits, AI handles every call and routes crews.</p><span class="go">See it live →</span><a href="https://restorationroyalties.com/" target="_blank" rel="noopener">RR</a></div>
-    <div class="nc"><span class="e">🏥</span><h3>Healthcare &amp; Wellness</h3><p>HIPAA-ready from day one. Reminders that cut no-shows 40%, secure provider messaging, patient follow-up — all encrypted.</p></div>
-    <div class="nc"><span class="e">🏦</span><h3>Financial Services</h3><p>Compliance-grade recording with disclosure + consent in the call flow. Every interaction an auditable trail — answers ready for regulators.</p></div>
-    <div class="nc"><span class="e">🏠</span><h3>Real Estate</h3><p>Lead routing by listing, automated follow-up, a virtual number per property, call tracking per campaign. Know which ad drove which buyer.</p></div>
-    <div class="nc"><span class="e">⚖️</span><h3>Professional Services</h3><p>Law, accounting, consulting. Client-intake automation that qualifies leads, billable call tracking, secure privileged document exchange.</p></div>
-    <div class="nc"><span class="e">🏪</span><h3>Franchise &amp; Multi-Location</h3><p>Centralized management, location-specific routing, unified reporting, one consistent brand experience across every site. Scale without chaos.</p></div>
+    <div class="nc"><span class="e">🏈</span><h3>The East</h3><p>Buffalo · New England · New York · Philadelphia · Washington · Baltimore · Pittsburgh</p><span class="go">See the grids →</span><a href="/halfacow/inventory/">E</a></div>
+    <div class="nc"><span class="e">🧊</span><h3>The North</h3><p>Green Bay · Chicago · Detroit · Minnesota · Cleveland · Cincinnati · Indianapolis</p><span class="go">See the grids →</span><a href="/halfacow/inventory/">N</a></div>
+    <div class="nc"><span class="e">🌞</span><h3>The South</h3><p>Miami · Tampa Bay · Jacksonville · Atlanta · Carolina · New Orleans · Nashville · Houston</p><span class="go">See the grids →</span><a href="/halfacow/inventory/">S</a></div>
+    <div class="nc"><span class="e">🤠</span><h3>The Heartland</h3><p>Dallas · Kansas City · Denver — the barbecue-belt markets where premium beef needs no explanation</p><span class="go">See the grids →</span><a href="/halfacow/inventory/">H</a></div>
+    <div class="nc"><span class="e">🌊</span><h3>The West</h3><p>Los Angeles · San Francisco · Seattle · Las Vegas · Arizona</p><span class="go">See the grids →</span><a href="/halfacow/inventory/">W</a></div>
+    <div class="nc"><span class="e">🏟️</span><h3>The Stadium Grid</h3><p>How a territory is drawn: the rate-center blocks fanning out from the stadium, plus the lots, gates, and event calendar around it.</p><span class="go">See how it works →</span><a href="/halfacow/inventory/">G</a></div>
   </div>
+  <p class="sub" style="margin-top:16px;font-size:12.5px;color:var(--faint)">Illustrative territory concept. Team, city, and stadium names appear in text for reference only — no NFL logos or marks are used, and this concept is not affiliated with, endorsed by, or sponsored by the NFL or any club. &ldquo;Available&rdquo; markets mark open example territory, not committed launches.</p>
 </section>
 
 <section class="wrap" id="winseal">
-  <div class="k">Official Designation · The Weather Intelligence Network</div>
-  <h2 data-say="Every brand on this network carries an official designation: WEATHER INTELLIGENCE NETWORK essential service provider partner - engineered for its own N P A N X X grid. Rate-center Smart-DIDs scored into the local numbering plan, storm telemetry watching the sky those lines answer to, and cross-network dispatch when weather turns demand on. We teach every partner to fish the numbering plan itself - and the network feeds them for life.">🛰️ Every brand: an official WIN partner,<br>engineered for its own grid.</h2>
-  <p class="sub">Each brand the gigapress mints is designated a <strong style="color:var(--ink)">WEATHER INTELLIGENCE NETWORK · Official Essential Service Provider Partner</strong> — its Smart-DIDs scored into its own <strong style="color:var(--ink)">NPA·NXX grid</strong>, live Doppler telemetry over its territory, and cross-network storm dispatch. Essential service, engineered into the numbering plan itself: <strong style="color:var(--ink)">we teach every partner to fish the grid — and the network feeds them for life.</strong></p>
-  <p class="sub" style="margin-top:8px;font-size:12px;color:var(--faint)">WIN designation is a Telvergence network credential, not a government license. In an emergency call 911.</p>
+  <div class="k">Network Designation · Game-Day &amp; Weather Intelligence</div>
+  <h2 data-say="Every city on this network would carry a designation: game-day and weather intelligence partner, engineered for its own stadium grid. The event calendar, kickoff windows, and live weather over the lots that city answers to - plus cross-city dispatch when a market gets slammed. We teach every operator to read their own grid, and the network keeps feeding it.">🛰️ Every city: a game-day intelligence<br>partner on its own grid.</h2>
+  <p class="sub">Each city the network mints is designated a <strong style="color:var(--ink)">GAME-DAY &amp; WEATHER INTELLIGENCE · Network Partner</strong> — its Smart Numbers scored into its own <strong style="color:var(--ink)">stadium rate-center grid</strong>, live weather over the lots it serves, kickoff and event windows on the board, and cross-city dispatch when a market gets slammed. <strong style="color:var(--ink)">We teach every operator to read the grid — and the network keeps feeding it.</strong></p>
+  <p class="sub" style="margin-top:8px;font-size:12px;color:var(--faint)">This designation is an illustrative Half a Cow network credential, not a government license or a public-safety service. Weather and event windows are planning aids only — never rely on them for safety. In an emergency call 911.</p>
 </section>
 
 <section class="wrap" id="engines">
-  <div class="k">Industry Lead Engines · Owned &amp; Answering</div>
-  <h2 data-say="Industry lead engines. These are Telvergence-owned lead-generation properties — our brand, our numbers, our control — one per industry. Each is a ten-line Smart-DID engine that answers, qualifies, and books, then routes the lead to the operator who buys leads in that market. Tap any of them.">Our brand. Our numbers. Your leads, routed to you.</h2>
-  <p class="sub">Each is a <strong style="color:var(--ink)">Telvergence-owned</strong> 10-line Smart-DID engine that answers, qualifies, and books &mdash; then routes the lead to the operator who buys leads in that vertical, over our <strong style="color:var(--ink)">UCCaaS</strong> network. Tap one and see the model.</p>
+  <div class="k">City Grids · Illustrative Smart-Number Inventory</div>
+  <h2 data-say="The city grids. Every market gets a ten-line stadium grid: memorable beef-brand numbers fanning out from the team's stadium rate center, answering in the guest's language, taking the order and holding the catering. Every number shown is an illustrative example - not owned, not reserved, not provisioned.">One master brand. Thirty stadium grids.</h2>
+  <p class="sub">Each city runs a <strong style="color:var(--ink)">10-line stadium grid</strong> that answers, takes the order, and holds the date &mdash; then routes it to the truck working that lot. <strong style="color:var(--ink)">Every number below is an illustrative example.</strong> Tap one and see the model.</p>
   <div class="net">
-    <div class="nc"><span class="e">🍽️</span><h3>Restaurant &amp; Hospitality</h3><p>Reservations, private events, catering · 1-800-RESERVE</p><span class="go">Open →</span><a href="https://restorationroyalties.com/restaurant/" target="_blank" rel="noopener">RS</a></div>
-    <div class="nc"><span class="e">🏛️</span><h3>Legal &amp; Law Firms</h3><p>PI, defense, family, bankruptcy intake · 1-800-JUSTICE</p><span class="go">Open →</span><a href="https://restorationroyalties.com/law/" target="_blank" rel="noopener">LW</a></div>
-    <div class="nc"><span class="e">❄️</span><h3>HVAC</h3><p>Emergency AC, install &amp; maintenance · 1-800-COOLFAST</p><span class="go">Open →</span><a href="https://restorationroyalties.com/hvac/" target="_blank" rel="noopener">HV</a></div>
-    <div class="nc"><span class="e">🏠</span><h3>Roofing · Storm &amp; Hail</h3><p>Storm-spike inspections &amp; claims · 1-800-NEWROOF</p><span class="go">Open →</span><a href="https://restorationroyalties.com/roofing/" target="_blank" rel="noopener">RF</a></div>
-    <div class="nc"><span class="e">☀️</span><h3>Solar &amp; Battery</h3><p>$0-down quotes &amp; backup power · 1-800-GOSOLAR</p><span class="go">Open →</span><a href="https://restorationroyalties.com/solar/" target="_blank" rel="noopener">SL</a></div>
-    <div class="nc"><span class="e">🦷</span><h3>Dental</h3><p>New patients, emergencies, implants · 1-800-NEWSMILE</p><span class="go">Open →</span><a href="https://restorationroyalties.com/dental/" target="_blank" rel="noopener">DN</a></div>
-    <div class="nc"><span class="e">🪟</span><h3>Window &amp; Door</h3><p>Impact windows, hurricane code · 1-800-IMPACT-1</p><span class="go">Open →</span><a href="https://restorationroyalties.com/window/" target="_blank" rel="noopener">WD</a></div>
-    <div class="nc"><span class="e">🏡</span><h3>Real Estate</h3><p>Per-listing lines &amp; lead routing · 786-SOLD-NOW</p><span class="go">Open →</span><a href="https://restorationroyalties.com/realty/" target="_blank" rel="noopener">MR</a></div>
-    <div class="nc"><span class="e">📂</span><h3>Bankruptcy · Debt Relief</h3><p>Fresh-start intake &amp; compliance · 407-FRESH-START</p><span class="go">Open →</span><a href="https://restorationroyalties.com/bankruptcy/" target="_blank" rel="noopener">OB</a></div>
-    <div class="nc"><span class="e">💆</span><h3>Med-Spa &amp; Wellness</h3><p>Aesthetics &amp; recovery bookings · 855-BE-WELL</p><span class="go">Open →</span><a href="https://restorationroyalties.com/bodywellness/" target="_blank" rel="noopener">BW</a></div>
-    <div class="nc"><span class="e">🧠</span><h3>Weight-Loss &amp; Hormone</h3><p>Multi-location wellness intake · 833-NEW-GLOW</p><span class="go">Open →</span><a href="https://restorationroyalties.com/serotonin/" target="_blank" rel="noopener">SC</a></div>
-    <div class="nc"><span class="e">🦴</span><h3>SPINE · Spinal Decompression</h3><p>Non-invasive, no surgery · 1-800-PAINFREE</p><span class="go">Open →</span><a href="https://restorationroyalties.com/spine/" target="_blank" rel="noopener">SP</a></div>
-    <div class="nc"><span class="e">🎯</span><h3>Orlando Archery Academy</h3><p>Lessons, leagues, parties &amp; events · 1-800-TAKEAIM</p><span class="go">Open →</span><a href="https://restorationroyalties.com/archery/" target="_blank" rel="noopener">AA</a></div>
-    <div class="nc"><span class="e">🚴</span><h3>Studio Fitness</h3><p>Class &amp; membership bookings · 786-SPIN-NOW</p><span class="go">Open →</span><a href="https://restorationroyalties.com/spin/" target="_blank" rel="noopener">SM</a></div>
-    <div class="nc"><span class="e">🔧</span><h3>Plumbing</h3><p>Emergency, drains, water heaters · 1-800-PIPEPRO</p><span class="go">Open →</span><a href="https://restorationroyalties.com/plumbing/" target="_blank" rel="noopener">PL</a></div>
-    <div class="nc"><span class="e">🐜</span><h3>Pest Control</h3><p>Termite, rodent, recurring plans · 1-800-BUGFREE</p><span class="go">Open →</span><a href="https://restorationroyalties.com/pestcontrol/" target="_blank" rel="noopener">PC</a></div>
-    <div class="nc"><span class="e">🚗</span><h3>Auto Body · Collision</h3><p>Tow, paint, insurance claims · 1-800-CRASHFIX</p><span class="go">Open →</span><a href="https://restorationroyalties.com/autobody/" target="_blank" rel="noopener">AB</a></div>
-    <div class="nc"><span class="e">📦</span><h3>Moving &amp; Relocation</h3><p>Local, long-distance, storage · 1-800-MOVEDAY</p><span class="go">Open →</span><a href="https://restorationroyalties.com/moving/" target="_blank" rel="noopener">MV</a></div>
-    <div class="nc"><span class="e">🌴</span><h3>Landscaping &amp; Lawn</h3><p>Maintenance, design, irrigation · 1-800-LAWNPRO</p><span class="go">Open →</span><a href="https://restorationroyalties.com/landscaping/" target="_blank" rel="noopener">LS</a></div>
+    <div class="nc"><span class="e">🤠</span><h3>Dallas · Cowboys</h3><p>AT&amp;T Stadium grid · 817-BEEF-XXX (illustrative)</p><span class="go">Open →</span><a href="/halfacow/dallas/">DAL</a></div>
+    <div class="nc"><span class="e">🦅</span><h3>Philadelphia · Eagles</h3><p>Lincoln Financial grid · 215-BRISKET (illustrative)</p><span class="go">Open →</span><a href="/halfacow/philadelphia/">PHI</a></div>
+    <div class="nc"><span class="e">🏟️</span><h3>Kansas City · Chiefs</h3><p>Arrowhead grid · 816-HALF-COW (illustrative)</p><span class="go">Open →</span><a href="/halfacow/kansascity/">KC</a></div>
+    <div class="nc"><span class="e">🌊</span><h3>Miami · Dolphins</h3><p>Hard Rock grid · 305-BEEF-305 (illustrative)</p><span class="go">Open →</span><a href="/halfacow/miami/">MIA</a></div>
+    <div class="nc"><span class="e">🎸</span><h3>Nashville · Titans</h3><p>Nissan Stadium grid · 615-SMOKED (illustrative)</p><span class="go">Open →</span><a href="/halfacow/nashville/">NSH</a></div>
+    <div class="nc"><span class="e">🏈</span><h3>Chicago · Bears</h3><p>Soldier Field grid · 312-BEEF-312 (illustrative)</p><span class="go">See the grid →</span><a href="/halfacow/inventory/">CHI</a></div>
+    <div class="nc"><span class="e">⛰️</span><h3>Denver · Broncos</h3><p>Empower Field grid · 303-RIBEYE (illustrative)</p><span class="go">See the grid →</span><a href="/halfacow/inventory/">DEN</a></div>
+    <div class="nc"><span class="e">🧀</span><h3>Green Bay · Packers</h3><p>Lambeau grid · 920-TAILGATE (illustrative)</p><span class="go">See the grid →</span><a href="/halfacow/inventory/">GB</a></div>
+    <div class="nc"><span class="e">🗽</span><h3>New York · Giants / Jets</h3><p>MetLife grid · 201-HALF-COW (illustrative)</p><span class="go">See the grid →</span><a href="/halfacow/inventory/">NY</a></div>
+    <div class="nc"><span class="e">🌉</span><h3>Pittsburgh · Steelers</h3><p>Acrisure grid · 412-BRISKET (illustrative)</p><span class="go">See the grid →</span><a href="/halfacow/inventory/">PIT</a></div>
+    <div class="nc"><span class="e">🌴</span><h3>Tampa Bay · Buccaneers</h3><p>Raymond James grid · 813-BEEF-813 (illustrative)</p><span class="go">See the grid →</span><a href="/halfacow/inventory/">TB</a></div>
+    <div class="nc"><span class="e">☕</span><h3>Seattle · Seahawks</h3><p>Lumen Field grid · 206-SMOKED (illustrative)</p><span class="go">See the grid →</span><a href="/halfacow/inventory/">SEA</a></div>
+    <div class="nc"><span class="e">🍍</span><h3>Buffalo · Bills</h3><p>Highmark grid · 716-TAILGATE (illustrative)</p><span class="go">See the grid →</span><a href="/halfacow/inventory/">BUF</a></div>
+    <div class="nc"><span class="e">🏛️</span><h3>Washington · Commanders</h3><p>Northwest Stadium grid · 301-HALF-COW (illustrative)</p><span class="go">See the grid →</span><a href="/halfacow/inventory/">WAS</a></div>
+    <div class="nc"><span class="e">🍑</span><h3>Atlanta · Falcons</h3><p>Mercedes-Benz grid · 404-BEEF-404 (illustrative)</p><span class="go">See the grid →</span><a href="/halfacow/inventory/">ATL</a></div>
+    <div class="nc"><span class="e">🎺</span><h3>New Orleans · Saints</h3><p>Superdome grid · 504-SMOKED (illustrative)</p><span class="go">See the grid →</span><a href="/halfacow/inventory/">NO</a></div>
+    <div class="nc"><span class="e">🚀</span><h3>Houston · Texans</h3><p>NRG grid · 713-BRISKET (illustrative)</p><span class="go">See the grid →</span><a href="/halfacow/inventory/">HOU</a></div>
+    <div class="nc"><span class="e">🌟</span><h3>Los Angeles · Rams / Chargers</h3><p>SoFi grid · 310-HALF-COW (illustrative)</p><span class="go">See the grid →</span><a href="/halfacow/inventory/">LA</a></div>
+    <div class="nc"><span class="e">🎰</span><h3>Las Vegas · Raiders</h3><p>Allegiant grid · 702-RIBEYE (illustrative)</p><span class="go">See the grid →</span><a href="/halfacow/inventory/">LV</a></div>
+    <div class="nc"><span class="e">🌉</span><h3>San Francisco · 49ers</h3><p>Levi&rsquo;s Stadium grid · 408-BEEF-408 (illustrative)</p><span class="go">See the grid →</span><a href="/halfacow/inventory/">SF</a></div>
   </div>
-  <p class="sub" style="margin-top:16px;font-size:12.5px;color:var(--faint)">Discussion models · numbers shown are examples pending assignment · new verticals added continuously.</p>
+  <p class="sub" style="margin-top:16px;font-size:12.5px;color:var(--faint)">Discussion models only. Every vanity and area code shown is an illustrative example of what a franchisee could operate — <strong>not owned, not reserved, and not provisioned</strong>. Availability is confirmed only at activation. Team, city, and stadium names appear in text for reference only; no NFL logos or marks are used and this concept is not affiliated with, endorsed by, or sponsored by the NFL or any club.</p>
 </section>
 
 <section class="wrap" id="onboard">
-  <div class="k">Up and Running in 48 Hours</div>
-  <h2 data-say="Up and running in forty-eight hours. No six-month implementation, no I T project. Three steps: we design your blueprint, we build and migrate everything, and then you run your business while we run your phones.">No six-month rollout. Three steps.</h2>
+  <div class="k">How a City Would Open · Illustrative</div>
+  <h2 data-say="How a city would open, in three steps. One: we draw your grid - the market, the stadium rate center, the lots and the event calendar. Two: the master builds your storefront and arms the platform. Three: you cook, and the platform answers, holds, and routes. Illustrative sequence only.">No back office. Three steps.</h2>
   <div class="sci">
-    <div class="sc"><span class="stepn">1</span><h4>We design your blueprint</h4><p>We audit your setup, find what you&rsquo;re overpaying for, and design a system around how your business actually works. No cookie-cutter — yours is as unique as your business.</p></div>
-    <div class="sc"><span class="stepn">2</span><h4>We build and migrate everything</h4><p>We port your numbers, configure your AI, connect your CRM, and set up call tracking. You don&rsquo;t touch a thing — your customers won&rsquo;t even notice the switch, except service gets better.</p></div>
-    <div class="sc"><span class="stepn">3</span><h4>You run your business, we run your phones</h4><p>Monitor everything from one dashboard. Our team handles the infrastructure, updates, and security. You focus on serving customers and growing revenue.</p></div>
+    <div class="sc"><span class="stepn">1</span><h4>We draw your grid</h4><p>Your NFL market, the rate-center blocks fanning out from the stadium, the lots and gates, and the event calendar that drives the year. A territory read, assembled for your city — a lens on the opportunity, never invented figures.</p></div>
+    <div class="sc"><span class="stepn">2</span><h4>The master builds the city</h4><p>Your city URL, your private-label storefront on the gold standard, the menu spec, the guest line in 14 languages, and the city board — all stood up under the master brand so you launch whole.</p></div>
+    <div class="sc"><span class="stepn">3</span><h4>You cook. The platform answers.</h4><p>The line takes the order, holds the catering, sends the pickup window, and routes the truck to the lot. You run the flat-top and the city, not a back office.</p></div>
   </div>
+  <p class="sub" style="margin-top:14px;font-size:12px;color:var(--faint)">Illustrative sequence for discussion only. Nothing here is an offer, a timeline commitment, or a franchise. A franchise can be offered only through a registered Franchise Disclosure Document (FDD).</p>
 </section>
 
 <section class="wrap" id="achievements">
-  <div class="k">What Businesses Are Achieving</div>
-  <h2 data-say="What businesses are achieving. Every call answered, twenty-four seven, in the caller's language. Pickup in one ring by design. Live branded properties on the network, rate-center local numbers, and a hundred percent of calls recorded, logged, and C R M tracked.">Proof, in numbers.</h2>
+  <div class="k">What the Concept Puts in a City&rsquo;s Hands</div>
+  <h2 data-say="What the concept puts in a city operator's hands. Thirty N F L markets mapped. One master brand above every truck. Five concept storefronts you can open right now. A stadium rate-center grid per city. And fourteen languages on the guest line. Structure, not performance claims.">The shape of it, in five numbers.</h2>
   <div class="achv">
-    <div class="ac"><div class="v">24/7</div><div class="l">Every call answered, in the caller&rsquo;s language</div></div>
-    <div class="ac"><div class="v">1 ring</div><div class="l">Pickup by design — no hold, no voicemail</div></div>
-    <div class="ac"><div class="v">6</div><div class="l">Live branded properties on the network</div></div>
-    <div class="ac"><div class="v">Local</div><div class="l">Rate-center numbers in your own market</div></div>
-    <div class="ac"><div class="v">100%</div><div class="l">Of calls recorded, logged &amp; CRM-tracked</div></div>
+    <div class="ac"><div class="v">30</div><div class="l">NFL markets mapped as territories</div></div>
+    <div class="ac"><div class="v">1</div><div class="l">Master brand above every city truck</div></div>
+    <div class="ac"><div class="v">5</div><div class="l">Concept storefronts open right now</div></div>
+    <div class="ac"><div class="v">Grid</div><div class="l">A stadium rate-center grid per city</div></div>
+    <div class="ac"><div class="v">14</div><div class="l">Languages on the guest line</div></div>
   </div>
-  <p class="sub" style="margin-top:22px"><strong style="color:var(--ink)">Case study — Restoration Royalties:</strong> the storm-dispatch command of the Weather Intelligence Network, live today. Rate-center-local lines across Miami-Dade (786-807-MOLD), 24/7 AI intake in the caller&rsquo;s language, and a referred network of branded partners feeding each other work.</p>
+  <p class="sub" style="margin-top:14px;font-size:12px;color:var(--faint)">These describe the structure of the concept, not results. No revenue, income, or profit is represented or implied.</p>
+  <p class="sub" style="margin-top:22px"><strong style="color:var(--ink)">The architecture, proven:</strong> a master brand holding the identity and the standard, with private-label sub-brands operating beneath it on their own city URLs, all sharing one platform — that exact pattern already runs in production today. Half a Cow is that architecture, re-skinned for premium beef on wheels. We keep it to the public fact and publish no private client details.</p>
   <div class="ba">
-    <div class="bax b"><h4>Before</h4><ul><li>Voicemail after hours</li><li>One number, one trade</li><li>Out-of-area caller-ID</li><li>Leads walk to the next firm</li></ul></div>
-    <div class="bax a"><h4>After</h4><ul><li>24/7 AI storm dispatch</li><li>Rate-center local lines</li><li>Weather intelligence (WIN)</li><li>Partner-network referrals</li></ul></div>
+    <div class="bax b"><h4>One truck, alone</h4><ul><li>Voicemail during the rush</li><li>A name nobody recognizes</li><li>An out-of-town cell number</li><li>Parking on a hunch</li></ul></div>
+    <div class="bax a"><h4>A city on the network</h4><ul><li>A guest line that answers 24/7</li><li>A national brand on a local truck</li><li>A stadium-local Smart Number</li><li>Game-day &amp; event intelligence</li></ul></div>
   </div>
-  <div class="tvquote" data-say="The Smart-DID proof. The minute we registered and activated Jimmy's chosen Smart-DID number, his phone rang — a live prospect calling in from Minnesota, before the ink was dry. That is what owning the right number in the right rate center does.">
+  <div class="tvquote" data-say="The whole idea in one line. One master brand at the top, a private-label storefront in every N F L city beneath it, and one shared platform running behind all of them. That is not a sketch - the pattern already runs in production. Half a Cow is that architecture, re-skinned for premium beef on wheels.">
     <div class="tvq-mark">&ldquo;</div>
-    <p class="tvq-body">The minute we activated the Smart-DID number Jimmy picked and programmed it, his phone <strong>rang</strong> — a real prospect, calling in from Minnesota, before we&rsquo;d even finished the paperwork.</p>
-    <p class="tvq-attrib">Jimmy · new activation, first-ring inbound lead — the moment the number went live</p>
-    <p class="tvq-note">That&rsquo;s the Smart-DID moat in one story: the right number, in the right rate center, on the right registries, and the phone starts working the instant it&rsquo;s switched on.</p>
+    <p class="tvq-body">One master brand at the top. A private-label storefront in every NFL city beneath it. <strong>One platform running behind all of them.</strong></p>
+    <p class="tvq-attrib">The master-plus-city architecture — the pattern this concept is built on, already running in production</p>
+    <p class="tvq-note">Not a testimonial and not a performance claim: it is a statement about the architecture. Half a Cow is that proven pattern, re-skinned for premium beef on wheels — the food-truck brand is an illustrative concept, not an operating business.</p>
   </div>
 </section>
 <style>
@@ -838,11 +844,11 @@ window.googleTranslateElementInit=function(){
 
 <section class="wrap" id="drill">
   <div class="k">Territory Drilldown · Interactive</div>
-  <h2 data-say="Pick a market and watch the numbers work. Every area code and exchange maps to a rate center; our AI scores the territory, and the registry chain — branded caller ID, directory listings, AI answer engines — is what makes the phone ring by itself.">Pick a market. Watch the numbers work.</h2>
-  <p class="sub">Tap a Smart-DID market below — see the rate-center read, the territory score, and the chain that ends with <strong style="color:var(--ink)">customers calling your business.</strong></p>
+  <h2 data-say="Pick an N F L city and watch the grid work. Every area code and exchange maps to a rate center; the model scores the stadium territory, and the chain - a memorable local line, a listed city storefront, and a guest line that answers - is what ends with a lot full of people ordering. All meters are illustrative.">Pick a city. Watch the grid work.</h2>
+  <p class="sub">Tap an NFL market below — see the stadium rate-center read, the illustrative territory meters, and the chain that ends with <strong style="color:var(--ink)">a lot calling your truck.</strong></p>
   <div id="ddChips" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:18px;"></div>
   <div class="dd-panel" id="ddPanel" style="max-width:720px;margin:16px auto 0;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line2);border-radius:16px;padding:18px 20px;text-align:left;"></div>
-  <p class="sub" style="margin-top:10px;font-size:11.5px;color:var(--faint);">Territory Value Score meters are an illustrative model of the live scoring engine; rate-center and overlay facts are real.</p>
+  <p class="sub" style="margin-top:10px;font-size:11.5px;color:var(--faint);">Every meter is an illustrative model, not market data. Area codes are public numbering-plan facts; the number grids are examples only — not owned, not reserved, not provisioned. Team and stadium names appear in text for reference; no affiliation with or endorsement by the NFL or any club.</p>
 </section>
 <style>
 .dd-chip{font-family:var(--fm);font-size:12px;border:1px solid var(--line2);border-radius:999px;padding:8px 14px;color:var(--ink);background:transparent;cursor:pointer}
@@ -861,42 +867,42 @@ window.googleTranslateElementInit=function(){
 <script>
 (function(){
   var MK=[
-   {id:"dade",chip:"786 · Miami-Dade",num:"786-807-MOLD",rc:"Rate center: Miami · NPA 786/305 (+645 overlay, 2023)",
-    m:[["NPA trust",92],["Household density",96],["Niche spend (restoration)",90],["Open runway (low saturation)",62]],
-    inv:[["786-807-MOLD",1],["786-938-MOLD",1],["786-340-57XX",1],["305 / 954 blocks",0]],
-    ch:"A flooded Dade kitchen → their AI or their memory resolves the MOLD vanity → CNAM shows RESTORATION ROYALTIES → answered in one ring, tech dispatched from the same rate center.",
-    url:"https://restorationroyalties.com/",label:"See the flagship live →"},
-   {id:"perrine",chip:"786-938 · Perrine",num:"786-938-MOLD",rc:"Rate center: Perrine (Miami-Dade) · NPA 786",
-    m:[["NPA trust",92],["Household density",84],["Niche spend (exterior clean)",74],["Open runway",78]],
-    inv:[["786-938-MOLD",1],["(239) 744-57XX ×5",1]],
-    ch:"The green creep on a driveway → a local 786 ring beats any out-of-area ad → branded caller-ID, booked before dinner, on a maintenance plan by spring.",
-    url:"https://restorationroyalties.com/pressure/live/",label:"See Coastal Crown live →"},
-   {id:"ftmyers",num:"(239) 744-57XX",chip:"239 · Fort Myers",rc:"Rate center: Fort Myers · NPA 239 (SW Florida)",
-    m:[["NPA trust",88],["Household density",76],["Storm exposure value",95],["Open runway",81]],
-    inv:[["(239) 744-5710–14",1],["Storm-surge blocks",0]],
-    ch:"Hurricane alley: when weather hits SW Florida, WIN routes the surge to ready crews holding 239 rate-center lines — local rings, local trucks, booked jobs.",
-    url:"https://restorationroyalties.com/yes/live/",label:"See storm-ready YES live →"},
-   {id:"orlando",chip:"407 · Orlando",num:"407 / 321 / 689",rc:"Rate center: Orlando · NPA 407 + 321/689 overlays",
-    m:[["NPA trust",94],["Population reach",92],["Niche spend (legal)",89],["Open runway",70]],
-    inv:[["407 rate-center blocks",0],["321 / 689 overlays",0],["Legal vanities on request",0]],
-    ch:"A debtor in crisis at 2 a.m. dials a 407 line → answered in their language → consultation booked before fear wins → the firm&#39;s case file opens itself.",
-    url:"https://restorationroyalties.com/telvergence/branson/",label:"See the law-firm build live →"},
-   {id:"645",chip:"645 · Miami overlay",num:"645-251-78XX",rc:"Rate center: Miami · NPA 645 — the 2023 Miami-Dade overlay",
-    m:[["Virgin-number cleanliness",97],["CNAM branding runway",95],["Household density",96],["Open runway",88]],
-    inv:[["645-251-7791",1],["645-251-7824/25",1],["645-231-1770–79 ×10",1]],
-    ch:"The newest Miami-Dade overlay: virgin numbers with no spam history — clean CNAM, clean reputation, full Dade local presence. The freshest inventory in the strongest market.",
-    url:"https://restorationroyalties.com/rr/live/",label:"See a Dade line answer live →"},
-   {id:"national",chip:"855 · National vanity",num:"855-2-ADJUST",rc:"Toll-free vanity · paired with rate-center local lines per market",
-    m:[["Memorability",93],["Brand authority",85],["Coverage",98],["Local-trust (needs pairing)",45]],
-    inv:[["855-2-ADJUST",1],["645-231-77XX ×10",1]],
-    ch:"The national brand line for recall and radio — always paired with rate-center local Smart-DIDs so every market still gets the local ring that gets answered.",
-    url:"https://restorationroyalties.com/fast/live/",label:"See FAST Adjusting live →"}
+   {id:"dallas",chip:"817 · Dallas",num:"817-BEEF-XXX",rc:"Rate center: Arlington · NPA 817 — the AT&T Stadium grid",
+    m:[["Game-day lot volume",94],["Barbecue-belt fit",97],["Event calendar depth",88],["Open runway",71]],
+    inv:[["817-BEEF-XXX",0],["817 stadium blocks ×10",0],["214 / 469 metro overlays",0]],
+    ch:"A tailgate captain in Lot 14 remembers the beef vanity → a local 817 line rings → the order is taken in one ring and the truck is routed to the gate before kickoff.",
+    url:"/halfacow/dallas/",label:"Open the Dallas storefront →"},
+   {id:"philly",chip:"215 · Philadelphia",num:"215-BRISKET",rc:"Rate center: Philadelphia · NPA 215 — the Lincoln Financial grid",
+    m:[["Game-day lot volume",96],["Tailgate culture",98],["Event calendar depth",85],["Open runway",74]],
+    inv:[["215-BRISKET",0],["215 South Philly blocks ×10",0],["267 overlay",0]],
+    ch:"South Philly lots fill before noon → a 215 line is the one that gets dialed → order held, pickup window texted, truck parked where the crowd already is.",
+    url:"/halfacow/philadelphia/",label:"Open the Philadelphia storefront →"},
+   {id:"kc",chip:"816 · Kansas City",num:"816-HALF-COW",rc:"Rate center: Kansas City · NPA 816 — the Arrowhead grid",
+    m:[["Game-day lot volume",95],["Barbecue-belt fit",99],["Event calendar depth",84],["Open runway",79]],
+    inv:[["816-HALF-COW",0],["816 stadium blocks ×10",0],["913 metro overlay",0]],
+    ch:"The barbecue capital knows beef on sight → the local 816 line carries the brand → catering held for the lot, the suite, and the office park the next morning.",
+    url:"/halfacow/kansascity/",label:"Open the Kansas City storefront →"},
+   {id:"miami",chip:"305 · Miami",num:"305-BEEF-305",rc:"Rate center: Miami · NPA 305 — the Hard Rock Stadium grid",
+    m:[["Game-day lot volume",89],["Multilingual guest mix",97],["Event calendar depth",93],["Open runway",76]],
+    inv:[["305-BEEF-305",0],["305 stadium blocks ×10",0],["786 / 645 overlays",0]],
+    ch:"A guest calls in Spanish → the line answers in Spanish → the order and the pickup window land in one call, and the lot never hears hold music.",
+    url:"/halfacow/miami/",label:"Open the Miami storefront →"},
+   {id:"nashville",chip:"615 · Nashville",num:"615-SMOKED",rc:"Rate center: Nashville · NPA 615 — the Nissan Stadium grid",
+    m:[["Game-day lot volume",87],["Night-event demand",96],["Event calendar depth",95],["Open runway",83]],
+    inv:[["615-SMOKED",0],["615 riverfront blocks ×10",0],["629 overlay",0]],
+    ch:"Kickoff on Sunday, Broadway every other night → one 615 line covers both → late-night lot orders and next-day catering on the same city board.",
+    url:"/halfacow/nashville/",label:"Open the Nashville storefront →"},
+   {id:"national",chip:"800 · National vanity",num:"1-800-HALFACOW",rc:"Toll-free brand line · paired with a stadium-local grid per city",
+    m:[["Memorability",96],["Brand authority",90],["National coverage",98],["Local pull (needs pairing)",44]],
+    inv:[["1-800-HALFACOW",0],["City stadium grids ×30",0]],
+    ch:"The national line for recall and radio — always paired with the city stadium grid, because the lot still dials the number that looks local.",
+    url:"/halfacow/inventory/",label:"See the full city inventory →"}
   ];
   var chips=document.getElementById('ddChips'),panel=document.getElementById('ddPanel');
   function render(mk){
-    var h='<div class="dd-h"><span class="dd-num">'+mk.num+'</span><span class="dd-rc">'+mk.rc+'</span></div>';if(mk.inv){h+='<div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;">';mk.inv.forEach(function(iv){h+='<span style="font-family:var(--fm);font-size:11px;border:1px solid '+(iv[1]?'rgba(227,197,121,.5)':'var(--line2)')+';border-radius:8px;padding:4px 9px;color:'+(iv[1]?'var(--lime)':'var(--muted)')+';">'+iv[0]+(iv[1]?' · LIVE':' · READY')+'</span>'});h+='</div>';}h+='<div class="dd-meters">';
+    var h='<div class="dd-h"><span class="dd-num">'+mk.num+'</span><span class="dd-rc">'+mk.rc+'</span></div>';if(mk.inv){h+='<div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;">';mk.inv.forEach(function(iv){h+='<span style="font-family:var(--fm);font-size:11px;border:1px solid '+(iv[1]?'rgba(227,197,121,.5)':'var(--line2)')+';border-radius:8px;padding:4px 9px;color:'+(iv[1]?'var(--lime)':'var(--muted)')+';">'+iv[0]+(iv[1]?' · LIVE':' · EXAMPLE')+'</span>'});h+='</div>';}h+='<div class="dd-meters">';
     mk.m.forEach(function(x){h+='<div class="dd-m"><span>'+x[0]+'</span><div class="dd-bar"><div class="dd-fill" data-w="'+x[1]+'"></div></div><span>'+x[1]+'</span></div>';});
-    h+='</div><div class="dd-chain"><b>Why this phone rings by itself:</b> Smart-DID provisioned in this rate center → <b>CNAM-branded caller-ID</b> → listed in <b>411/e-411 + online directories</b> → structured, verified data that <b>AI answer engines resolve</b> when customers ask their assistant → the call arrives on your line → <b>answered in one ring, booked, logged</b>. '+mk.ch+'</div><a class="dd-go" href="'+mk.url+'" target="_blank" rel="noopener">'+mk.label+'</a>';
+    h+='</div><div class="dd-chain"><b>Why this line would ring on game day:</b> a Smart Number in the stadium rate center → <b>a memorable beef-brand vanity</b> → listed on the <b>city storefront and directories</b> → structured data that <b>assistants resolve</b> when a guest asks where to eat → the call arrives on the city line → <b>answered in one ring, order held, truck routed</b>. '+mk.ch+' <b>Illustrative only.</b></div><a class="dd-go" href="'+mk.url+'">'+mk.label+'</a>';
     panel.innerHTML=h;
     setTimeout(function(){panel.querySelectorAll('.dd-fill').forEach(function(f){f.style.width=f.getAttribute('data-w')+'%'})},60);
   }
@@ -910,36 +916,36 @@ window.googleTranslateElementInit=function(){
 </script>
 
 <section class="wrap" id="command">
-  <div class="k">The Command Deck · Key Operating Indicators</div>
-  <h2 data-say="The command deck. Every key operating indicator of the business, living and breathing on one screen — calls answered, jobs booked, answer speed, lines live — and the number that matters most: return on investment, computed in real time, to the penny. Revenue driven against platform cost, ticking by the second, because a digital asset that answers its own phone appreciates by the second. Your whole company. Live. In the palm of your hand.">Your whole company. Live.<br>In the palm of your hand.</h2>
-  <p class="sub" style="margin-top:10px;">This is the admin&rsquo;s view — the operating system behind every brand on the network. Watch the ROI meter: <strong style="color:var(--ink)">revenue vs. cost, to the penny, ticking by the second.</strong></p>
+  <div class="k">The City Command Center · Illustrative</div>
+  <h2 data-say="The city command center. Every operating indicator of a game-day city on one screen - orders answered, caterings held, answer speed, city lines armed - and an illustrative model of what the economics of a city could look like. Every figure on this board is an illustrative model, not operating data, and no revenue, income, or profit is represented.">Your whole city. Live.<br>In the palm of your hand.</h2>
+  <p class="sub" style="margin-top:10px;">This is the master&rsquo;s view — the operating system behind every truck on the network. <strong style="color:var(--ink)">Every figure on this board is an illustrative model, not operating data.</strong></p>
   <div class="cd-app" id="cdApp">
-    <div class="cd-bar"><span class="ob-dot"></span><span class="ob-dot"></span><span class="ob-dot"></span><b>TELVERGENCE COMMAND DECK — ADMIN</b><span class="cd-live" id="cdClock">LIVE</span></div>
+    <div class="cd-bar"><span class="ob-dot"></span><span class="ob-dot"></span><span class="ob-dot"></span><b>HALF A COW CITY COMMAND — MASTER VIEW (illustrative)</b><span class="cd-live" id="cdClock">LIVE</span></div>
     <div class="cd-kpis">
-      <div class="cd-k"><div class="v" id="cdCalls">—</div><div class="l">Calls answered today</div></div>
+      <div class="cd-k"><div class="v" id="cdCalls">—</div><div class="l">Orders answered today</div></div>
       <div class="cd-k"><div class="v">1 ring</div><div class="l">Avg. answer</div></div>
-      <div class="cd-k"><div class="v" id="cdJobs">—</div><div class="l">Jobs booked today</div></div>
-      <div class="cd-k"><div class="v">6</div><div class="l">Lines live</div></div>
-      <div class="cd-k"><div class="v">25</div><div class="l">Languages</div></div>
-      <div class="cd-k"><div class="v">24/7</div><div class="l">Uptime posture</div></div>
+      <div class="cd-k"><div class="v" id="cdJobs">—</div><div class="l">Caterings held today</div></div>
+      <div class="cd-k"><div class="v">5</div><div class="l">Concept storefronts</div></div>
+      <div class="cd-k"><div class="v">14</div><div class="l">Languages</div></div>
+      <div class="cd-k"><div class="v">24/7</div><div class="l">Guest-line posture</div></div>
     </div>
     <div class="cd-roi">
-      <div class="cd-r"><div class="rv" id="cdRev">$0.00</div><div class="rl">Revenue driven · month to date</div></div>
-      <div class="cd-r"><div class="rv cost" id="cdCost">$0.0000</div><div class="rl">Platform cost · month to date</div></div>
-      <div class="cd-r"><div class="rv" id="cdRoi">115×</div><div class="rl">Return on investment · live</div></div>
+      <div class="cd-r"><div class="rv" id="cdRev">$0.00</div><div class="rl">Illustrative model · month to date</div></div>
+      <div class="cd-r"><div class="rv cost" id="cdCost">$0.0000</div><div class="rl">Illustrative platform fee · month to date</div></div>
+      <div class="cd-r"><div class="rv" id="cdRoi">115×</div><div class="rl">Illustrative ratio · not a performance claim</div></div>
     </div>
     <div class="cd-cols">
-      <div class="cd-feed"><div class="cd-h">Live intake feed</div><div id="cdFeed"></div></div>
-      <div class="cd-lines"><div class="cd-h">Line status</div>
-        <div class="cd-ln"><span class="d"></span><b>Restoration Royalties</b><span class="num">786-807-MOLD</span></div>
-        <div class="cd-ln"><span class="d"></span><b>FAST Adjusting</b><span class="num">855-2-ADJUST</span></div>
-        <div class="cd-ln"><span class="d"></span><b>Coastal Crown</b><span class="num">786-938-MOLD</span></div>
-        <div class="cd-ln"><span class="d"></span><b>YES Electrical</b><span class="num">786-340-57XX</span></div>
-        <div class="cd-ln"><span class="d"></span><b>Branson Ainsworth</b><span class="num">Private line</span></div>
-        <div class="cd-ln"><span class="d"></span><b>645 overlay reserve</b><span class="num">645-251-78XX</span></div>
+      <div class="cd-feed"><div class="cd-h">Order feed (illustrative)</div><div id="cdFeed"></div></div>
+      <div class="cd-lines"><div class="cd-h">City lines (illustrative)</div>
+        <div class="cd-ln"><span class="d"></span><b>Half a Cow Dallas</b><span class="num">817-BEEF-XXX</span></div>
+        <div class="cd-ln"><span class="d"></span><b>Half a Cow Philadelphia</b><span class="num">215-BRISKET</span></div>
+        <div class="cd-ln"><span class="d"></span><b>Half a Cow Kansas City</b><span class="num">816-HALF-COW</span></div>
+        <div class="cd-ln"><span class="d"></span><b>Half a Cow Miami</b><span class="num">305-BEEF-305</span></div>
+        <div class="cd-ln"><span class="d"></span><b>Half a Cow Nashville</b><span class="num">615-SMOKED</span></div>
+        <div class="cd-ln"><span class="d"></span><b>National brand line</b><span class="num">1-800-HALFACOW</span></div>
       </div>
     </div>
-    <div class="cd-note">Live demo interface — activity and ROI are an illustrative planning model (22 jobs/mo × $1,200 avg ticket vs. the $229.50/mo Smart Line plan), computed in real time to the penny. The lines are real — tap any of them in the network section above.</div>
+    <div class="cd-note">Illustrative demo interface. Every figure — activity, the money meters, and the ratio — is a planning model rendered for illustration only, not operating data and not a financial performance representation. <strong>No revenue, income, or profit is represented or implied (FTC Franchise Rule, Item 19.)</strong> The city lines shown are illustrative examples: not owned, not reserved, not provisioned.</div>
   </div>
 </section>
 <script>
@@ -960,9 +966,9 @@ window.googleTranslateElementInit=function(){
     $('cdClock').textContent='LIVE · '+n.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
   }
   tick();setInterval(tick,250);
-  var LINES=['786-807-MOLD','855-2-ADJUST','786-938-MOLD','786-340-57XX','645-251-78XX'];
+  var LINES=['817-BEEF-XXX','215-BRISKET','816-HALF-COW','305-BEEF-305','615-SMOKED'];
   var LANG=['EN','ES','HT','PT','EN','ES'];
-  var OUT=[['BOOKED','bk'],['QUALIFIED','ql'],['BOOKED','bk'],['FOLLOW-UP','fu'],['BOOKED','bk'],['QUALIFIED','ql']];
+  var OUT=[['HELD','bk'],['ORDER','ql'],['HELD','bk'],['CALLBACK','fu'],['HELD','bk'],['ORDER','ql']];
   var feed=$('cdFeed'),i=0;
   function row(){var n=new Date(),o=OUT[i%OUT.length];
     var el=document.createElement('div');el.className='cd-row';
