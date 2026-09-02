@@ -122,6 +122,11 @@
   branch `restore/pre-halfacow-2026-09-02`, `halfacow/` added, showroom card, canonical re-pointed). That session's
   output is David's — never modify it from here without his consent; new Half a Cow pages reach telvergence.com only
   via a Cowork copy of `halfacow/` from this repo (source of truth). Do not disturb the foundation.
+- **★ CUSTOM-BRANDED EDITION EXEMPLAR (2026-09-02):** `halfacow/stefano/` = the first full custom-branded edition of a
+  Silver/Gold model under a named brand owner (Chef Stefano Tedeschi, "The Sports Chef presents Half a Cow") — its own
+  lane: brand JSON `brand-kit/brands/halfacow-stefano.json` (slug `halfacow/stefano`; nested slugs work in build.py) →
+  gold master + copied/re-skinned sub-pages + its own 3-Minute Show; the generic `halfacow/` tree stays byte-identical.
+  Pattern for every future elected client: generic model (Silver) → custom-branded edition tree (Gold/Platinum) beside it.
 - **★ TWO-SESSION LAW (David 2026-09-02):** only the **Cowork (Excaliber) session writes the `telvergence` repo**; the
   QB (this session) never modifies Cowork output. The build shop's `halfacow/` is authoritative for everything EXCEPT
   `halfacow/private/` (Cowork-only gated deck on telvergence.com; never linked, copied, or recreated here). Cowork
