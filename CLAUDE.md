@@ -127,6 +127,8 @@
   lane: brand JSON `brand-kit/brands/halfacow-stefano.json` (slug `halfacow/stefano`; nested slugs work in build.py) →
   gold master + copied/re-skinned sub-pages + its own 3-Minute Show; the generic `halfacow/` tree stays byte-identical.
   Pattern for every future elected client: generic model (Silver) → custom-branded edition tree (Gold/Platinum) beside it.
+  Vanity examples for the Stefano editions (David 2026-09-02, "the telecom is our key"): **800-CHEF-STEF** (primary),
+  833-THE-CHEF, 833-HALF-COW — creative, illustrative, not provisioned; use vanity examples everywhere on every edition.
 - **★ TWO-SESSION LAW (David 2026-09-02):** only the **Cowork (Excaliber) session writes the `telvergence` repo**; the
   QB (this session) never modifies Cowork output. The build shop's `halfacow/` is authoritative for everything EXCEPT
   `halfacow/private/` (Cowork-only gated deck on telvergence.com; never linked, copied, or recreated here). Cowork
