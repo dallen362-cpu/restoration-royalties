@@ -1,9 +1,9 @@
 # HALF A COW → telvergence.com/halfacow/ — STAGED deploy procedure (NOT executed)
 **Status (2026-09-02):** Half a Cow lives, verified, at `restorationroyalties.com/halfacow/` (main `ebf1c6f`,
-tag `halfacow-nfl-evolution-v1`). David's preferred public URL is `telvergence.com/halfacow/…`. That is a
+branch `release/halfacow-nfl-evolution-v1`). David's preferred public URL is `telvergence.com/halfacow/…`. That is a
 CROSS-REPO deploy (repo `dallen362-cpu/telvergence`, Cloudflare Pages) — Class B infra per
 `handoff/SESSION-POLICY-AND-INFRA-BACKLOG.md`, so it is staged here and run only in a dedicated infra session
-with David present. Restore point for the build shop: tag `pre-halfacow-2026-09-02` (main `8f31b6b`).
+with David present. Restore point for the build shop: branch `restore/pre-halfacow-2026-09-02` (main `8f31b6b`; NOTE: the git proxy drops tag pushes — GitHub holds 0 tags — so restore points are pushed as protected-by-convention branches).
 
 ## Why it is safe when run (additive only)
 - The `halfacow/` tree is root-agnostic (all links relative `./` / `../`), so it serves unchanged under any prefix.
