@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Sports Chef presents · Half a Cow — The 3-Minute Show · Chef Stefano Edition</title>
+<meta name="description" content="A narrated, automatic, plain-English walkthrough of the Half a Cow national food-truck franchise concept.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐄</text></svg>">
+<style>
+:root{--red:#D0313B;--amber:#d98b1f;--ink:#0d0a0b;--ink2:#1a1214;--cream:#f7efe4;--muted:#c9b9a8;--ok:#5fbf7a}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--ink);color:var(--cream);font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{display:flex;flex-direction:column;overflow:hidden}
+#bar{position:fixed;top:0;left:0;height:6px;width:0;background:linear-gradient(90deg,var(--red),var(--amber));transition:width .4s;z-index:5}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px 0;font-size:.95rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+header b{color:var(--cream)}
+#counter{font-variant-numeric:tabular-nums}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:18px 22px}
+.packet{max-width:1100px;width:100%;text-align:center;display:none;animation:in .5s ease both}
+.packet.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.k{color:var(--amber);font-weight:700;letter-spacing:.18em;font-size:1rem;text-transform:uppercase;margin-bottom:14px}
+.vis{font-size:clamp(4.5rem,12vw,8.5rem);line-height:1;margin:6px 0 18px;filter:drop-shadow(0 8px 24px rgba(208,49,59,.35))}
+h1{font-size:clamp(2rem,5.2vw,4rem);line-height:1.08;font-weight:800;text-wrap:balance;margin-bottom:18px}
+h1 em{color:var(--red);font-style:normal}
+p.t{font-size:clamp(1.25rem,2.4vw,1.85rem);line-height:1.45;max-width:880px;margin:0 auto;color:var(--cream);text-wrap:balance}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+.chip{background:var(--ink2);border:1px solid #3a2a2c;border-radius:999px;padding:10px 18px;font-size:1.05rem;color:var(--cream)}
+.chip.red{background:var(--red);border-color:var(--red);color:#fff;font-weight:700}
+.chip.ok{border-color:var(--ok);color:var(--ok)}
+a.chip{text-decoration:none}
+.ladder{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:960px;margin:22px auto 0}
+.rung{background:var(--ink2);border:1px solid #3a2a2c;border-radius:14px;padding:16px 14px}
+.rung b{display:block;font-size:1.2rem;margin-bottom:6px;color:var(--amber)}
+.rung span{font-size:1rem;color:var(--muted)}
+#gate{position:fixed;inset:0;background:radial-gradient(ellipse at 50% 40%,#2a1216 0%,var(--ink) 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;z-index:9;text-align:center;padding:24px}
+#gate .vis{font-size:clamp(5rem,16vw,10rem)}
+#gate h1{font-size:clamp(2.2rem,6vw,4.4rem)}
+#gate p{color:var(--muted);font-size:1.2rem;max-width:620px}
+button{font:inherit;cursor:pointer;border:0;border-radius:999px}
+#start{background:var(--red);color:#fff;font-size:1.5rem;font-weight:800;padding:20px 44px;box-shadow:0 12px 40px rgba(208,49,59,.45)}
+#start:hover{filter:brightness(1.08)}
+footer{display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 22px 20px;flex-wrap:wrap}
+footer button{background:var(--ink2);color:var(--cream);border:1px solid #3a2a2c;padding:12px 20px;font-size:1.05rem;min-width:56px}
+footer button.big{background:var(--red);border-color:var(--red);color:#fff;font-weight:700;padding:12px 30px}
+footer button:focus-visible,#start:focus-visible,a.chip:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+#fine{position:fixed;bottom:6px;left:0;right:0;text-align:center;font-size:.72rem;color:#7d6c60;letter-spacing:.04em}
+@media (prefers-reduced-motion:reduce){.packet{animation:none}}
+@media (max-width:600px){header{font-size:.8rem}footer button{padding:10px 14px;font-size:.95rem}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<header><span>🐄 <b>Half a Cow</b> · The Sports Chef Edition</span><span id="counter">0 / 12</span></header>
+
+<main id="stage"></main>
+
+<footer>
+  <button id="prev" title="Back">◀</button>
+  <button id="play" class="big" title="Pause / resume">⏸ Pause</button>
+  <button id="next" title="Next">▶</button>
+  <button id="mute" title="Voice on / off">🔊 Voice</button>
+  <button id="again" title="Start over">🔁 Replay</button>
+</footer>
+<div id="fine">Illustrative concept · Not affiliated with the National Football League · Powered by the Telvergence platform</div>
+
+<div id="gate">
+  <div class="vis">🐄</div>
+  <h1>The Sports Chef. <em>Thirty stadiums.</em> Three minutes.</h1>
+  <p>Chef Stefano, this show is about you. Sit back. It plays itself, and it talks. Tap the button and turn your sound up.</p>
+  <button id="start">▶ Start the show</button>
+</div>
+
+<script>
+(function(){
+'use strict';
+var P=[
+ {k:'1 · The face of the brand · Chef Stefano Tedeschi',v:'🌟👨‍🍳',h:'Chef Stefano. <em>The face of Half a Cow.</em>',
+  t:'Award-winning. On camera. The Sports Chef. Every great food brand has a name and a face. This one has yours. Half a Cow, by Chef Stefano: the best beef in town, parked where the biggest crowds are: football games. Sports plus food. Yours, nationwide.',
+  s:'Chef Stefano. The face of Half a Cow. Award winning. On camera. The Sports Chef. Every great food brand has a name and a face. This one has yours. Half a Cow, by Chef Stefano: a food truck. It sells the best beef in town. And it parks where the biggest crowds are: football games.'},
+ {k:'2 · The crowd',v:'🏟️',h:'Big game. Big crowd. <em>Big hunger.</em>',
+  t:'Every football stadium fills up with tens of thousands of hungry fans. Half a Cow goes where the hungry people already are. Thirty N-F-L cities. One truck brand.',
+  s:'Big game. Big crowd. Big hunger. Every football stadium fills up with tens of thousands of hungry fans. Half a Cow goes where the hungry people already are. Thirty N F L cities. One truck brand.'},
+ {k:'3 · Your city',v:'🗺️📍',h:'One brand. Thirty cities. <em>Each city, one owner.</em>',
+  t:'Each city is a territory. The streets around the stadium, fanning out block by block, belong to one city owner, under your brand. Nobody else gets that city.',
+  s:'One brand. Thirty cities. Each city, one owner. Each city is a territory. The streets around the stadium, fanning out block by block, belong to one city owner, under your brand. Nobody else gets that city.'},
+ {k:'4 · The magic number',v:'☎️',h:'One phone number that <em>spells a word</em>.',
+  t:'Every city gets an easy number, like 833-HALF-COW. Easy to remember. Easy to say. When fans call or text it, someone answers, 24 hours a day, in 14 languages.',
+  s:'One phone number that spells a word. Every city gets an easy number, like 8 3 3, HALF COW. Easy to remember. Easy to say. When fans call or text it, someone answers, 24 hours a day, in 14 languages.',
+  chips:['833-HALF-COW','833-THE-CHEF','833-BIG-BEEF','833-EAT-BEEF']},
+ {k:'5 · Who answers',v:'🎙️🤠',h:'Meet <em>Chuck</em>. He never sleeps.',
+  t:'Chuck is the smart helper who answers the phone and the website. He books the truck for parties and tailgates, answers questions, and never misses a call.',
+  s:'Meet Chuck. He never sleeps. Chuck is the smart helper who answers the phone and the website. He books the truck for parties and tailgates, answers questions, and never misses a call.'},
+ {k:'6 · The command center',v:'🛰️⛈️',h:'The truck always <em>knows where to go</em>.',
+  t:'A command center watches the game schedule, the weather, and big events. It tells each truck where the crowd will be, and when. Rain coming? The plan changes before the rain does.',
+  s:'The truck always knows where to go. A command center watches the game schedule, the weather, and big events. It tells each truck where the crowd will be, and when. Rain coming? The plan changes before the rain does.'},
+ {k:'7 · The app',v:'📱',h:'One app. <em>Book it. Track it. Pay for it.</em>',
+  t:'Cow Connect is the app for owners and customers. Book the truck. Watch it drive to you. Pay with one tap. Everything lives in one place.',
+  s:'One app. Book it. Track it. Pay for it. Cow Connect is the app for owners and customers. Book the truck. Watch it drive to you. Pay with one tap. Everything lives in one place.'},
+ {k:'8 · Owners help owners',v:'🔁🤝',h:'Friends open cities. <em>You earn on all of it.</em>',
+  t:'When a city owner tells a friend, and that friend opens a new city, the first owner earns a reward. And the brand owner earns royalties on the whole network. The brand grows city by city, friend by friend.',
+  s:'Friends open cities. You earn on all of it. When a city owner tells a friend, and that friend opens a new city, the first owner earns a reward. And the brand owner earns royalties on the whole network. The brand grows city by city, friend by friend.'},
+ {k:'9 · Already built',v:'✅',h:'It is built. <em>It is waiting for your name.</em>',
+  t:'The website, the city pages, the phone-number inventory, and the app plan are live right now. Add your name and your face, and it is The Sports Chef, nationwide. Tap any one and see it.',
+  s:'It is built. It is waiting for your name. The website, the city pages, the phone number inventory, and the app plan are live right now. Add your name and your face, and it is The Sports Chef, nationwide. Tap any one and see it.',
+  links:[['../hub/','🏈 The Hub'],['../dallas/','⭐ Dallas'],['../inventory/','📍 City Inventory'],['../connect/','📱 Cow Connect'],['../platinum/','💎 Platinum']]},
+ {k:'10 · The honest part',v:'🤝',h:'The <em>honest</em> part.',
+  t:'Half a Cow is a concept today. The numbers and cities you saw are examples. Before anyone buys a franchise or a truck license, the law requires the full disclosure documents. We never promise how much money you will make. And we are not part of the N-F-L. We just love game day.',
+  s:'The honest part. Half a Cow is a concept today. The numbers and cities you saw are examples. Before anyone buys a franchise or a truck license, the law requires the full disclosure documents. We never promise how much money you will make. And we are not part of the N F L. We just love game day.'},
+ {k:'11 · The ladder',v:'🪜',h:'Start small. <em>Grow big.</em>',
+  t:'You can start with one truck in one city, and climb from there.',
+  s:'Start small. Grow big. You can start with one truck in one city, and climb from there. City brand owner: two hundred fifty thousand dollars for the exclusive city brand. Your own brand, every vanity number in your city, and royalties on your whole network. Then you resell twenty five thousand dollar sub truck licenses, and every truck owner joins the flywheel. Fleet operator: more trucks. Area developer: many cities. Platinum: your own whole brand platform. All illustrative.',
+  ladder:[['City Brand Owner','$250,000: your own exclusive city brand, every vanity number in your city, royalties on your whole network. Then you resell $25,000 sub-truck licenses. (Illustrative.)'],['Fleet Operator','More trucks in your city.'],['Area Developer','Many cities. Your region.'],['Platinum','Your own whole brand platform: The Sports Chef presents Half a Cow.']]},
+ {k:'12 · City number one',v:'🏁',h:'Your name on <em>thirty stadiums</em>. And city number one is open.',
+  t:'A celebrity chef brand, coast to coast, one truck at a time. Every brand has an owner. That is you. And the first city is the owner\'s to take: Tampa Bay? Miami? Jacksonville? Talk with David right now, and let us pick it.',
+  s:'Your name on thirty stadiums. And city number one is open. A celebrity chef brand, coast to coast, one truck at a time. Every brand has an owner. That is you. And the first city is the owner\'s to take: Tampa Bay? Miami? Jacksonville? Talk with David right now, and let us pick it.',
+  chips:['🏴‍☠️ Tampa Bay · 813','🐬 Miami · 305','🐆 Jacksonville · 904'],
+  links:[['../hub/','🏈 Open the Hub'],['../inventory/','📍 See the cities']]}
+];
+var stage=document.getElementById('stage'),bar=document.getElementById('bar'),counter=document.getElementById('counter');
+var i=-1,playing=false,voice=true,timer=null,started=false,token=0;
+var SS=window.speechSynthesis||null;
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function build(){
+  P.forEach(function(p,n){
+    var d=document.createElement('section');d.className='packet';d.setAttribute('aria-hidden','true');
+    var html='<div class="k">'+esc(p.k)+'</div><div class="vis">'+p.v+'</div><h1>'+p.h+'</h1><p class="t">'+esc(p.t)+'</p>';
+    if(p.chips){html+='<div class="chips">'+p.chips.map(function(c,j){return '<span class="chip'+(j===0?' red':'')+'">'+esc(c)+'</span>';}).join('')+'</div>';}
+    if(p.links){html+='<div class="chips">'+p.links.map(function(l){return '<a class="chip ok" href="'+l[0]+'" target="_blank" rel="noopener">'+esc(l[1])+'</a>';}).join('')+'</div>';}
+    if(p.ladder){html+='<div class="ladder">'+p.ladder.map(function(r){return '<div class="rung"><b>'+esc(r[0])+'</b><span>'+esc(r[1])+'</span></div>';}).join('')+'</div>';}
+    d.innerHTML=html;stage.appendChild(d);
+  });
+}
+function pickVoice(){
+  if(!SS) return null;
+  var vs=SS.getVoices()||[],best=null,bs=-1;
+  vs.forEach(function(v){var s=0,n=v.name||'';
+    if(/Online/i.test(n)&&/Natural/i.test(n))s+=12;if(/Google US English/i.test(n))s+=8;if(/natural|neural|enhanced|premium/i.test(n))s+=7;
+    if(/^en-US/i.test(v.lang))s+=5;else if(/^en/i.test(v.lang))s+=2;if(/Samantha|Aria|Jenny|Guy|Davis/i.test(n))s+=3;
+    if(s>bs){bs=s;best=v;}});
+  return best;
+}
+function stopSpeech(){if(SS){try{SS.cancel();}catch(e){}}}
+function estMs(s){return Math.max(4500,s.split(/\s+/).length*420+1200);}
+function show(n){
+  if(n<0)n=0;if(n>=P.length)n=P.length-1;
+  clearTimeout(timer);stopSpeech();token++;
+  i=n;var ps=stage.children;
+  for(var j=0;j<ps.length;j++){ps[j].classList.toggle('on',j===i);ps[j].setAttribute('aria-hidden',j===i?'false':'true');}
+  bar.style.width=((i+1)/P.length*100)+'%';counter.textContent=(i+1)+' / '+P.length;
+  if(playing)narrate();
+}
+function narrate(){
+  var p=P[i],my=token,done=false;
+  function finish(){if(done||my!==token)return;done=true;if(!playing)return;
+    if(i<P.length-1){timer=setTimeout(function(){if(my===token&&playing)show(i+1);},900);}
+    else{playing=false;setPlayBtn();}}
+  var safety=setTimeout(finish,estMs(p.s)+4000);
+  if(voice&&SS){
+    var u=new SpeechSynthesisUtterance(p.s);var v=pickVoice();if(v)u.voice=v;u.rate=0.95;u.pitch=1;u.lang=(v&&v.lang)||'en-US';
+    u.onend=function(){clearTimeout(safety);finish();};u.onerror=function(){clearTimeout(safety);setTimeout(finish,estMs(p.s));};
+    try{SS.speak(u);}catch(e){clearTimeout(safety);timer=setTimeout(finish,estMs(p.s));}
+  }else{clearTimeout(safety);timer=setTimeout(finish,estMs(p.s));}
+}
+function setPlayBtn(){document.getElementById('play').textContent=playing?'⏸ Pause':'▶ Play';}
+function start(){
+  started=true;document.getElementById('gate').style.display='none';
+  if(SS){try{SS.cancel();SS.resume();}catch(e){}}
+  playing=true;setPlayBtn();show(0);
+}
+document.getElementById('start').addEventListener('click',start);
+document.getElementById('play').addEventListener('click',function(){
+  if(!started){start();return;}
+  playing=!playing;setPlayBtn();
+  if(playing)narrate();else{clearTimeout(timer);stopSpeech();token++;}
+});
+document.getElementById('next').addEventListener('click',function(){if(!started)start();else show(i+1);});
+document.getElementById('prev').addEventListener('click',function(){if(!started)start();else show(i-1);});
+document.getElementById('again').addEventListener('click',function(){playing=true;setPlayBtn();started=true;document.getElementById('gate').style.display='none';show(0);});
+document.getElementById('mute').addEventListener('click',function(){
+  voice=!voice;this.textContent=voice?'🔊 Voice':'🔇 Voice off';
+  if(!voice){stopSpeech();}
+  if(playing){token++;clearTimeout(timer);narrate();}
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();document.getElementById('next').click();}
+  else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();document.getElementById('prev').click();}
+  else if(e.key===' '||e.key==='k'){e.preventDefault();document.getElementById('play').click();}
+  else if(e.key==='m'){document.getElementById('mute').click();}
+});
+if(SS){SS.onvoiceschanged=function(){pickVoice();};}
+window.addEventListener('pagehide',stopSpeech);
+build();
+})();
+</script>
+</body>
+</html>
