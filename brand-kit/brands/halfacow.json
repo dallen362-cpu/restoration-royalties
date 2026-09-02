@@ -821,6 +821,6 @@
     "navTrackLabel": "Track Booking",
     "heroQuoteCta": "📸 Plan Your Event · Instant Quote",
     "stormSimBtn": "▶ Simulate an Event Dispatch",
-    "cityInvNav": "\n      <a href=\"/halfacow/inventory/\">📍 City Inventory</a>"
+    "cityInvNav": "\n      <a href=\"./inventory/\">📍 City Inventory</a>"
   }
 }
