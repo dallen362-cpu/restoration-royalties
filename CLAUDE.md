@@ -133,6 +133,8 @@
   re-syncs `halfacow/` from this repo with `/XD private`. **When the two sessions differ, Cowork's direction takes
   priority.** telvergence.com returns a 200 homepage fallback for unknown paths — verify by CONTENT, never status code.
   Cross-session ledgers live in `handoff/HANDOFF_*.md` (summary block: Project/Status/Open Questions/Next Actions/Evidence).
+  The Cowork session keeps its own append-only archive folder `halfacow-cowork-session-2026-09-02/` on Excaliber + the
+  Drive sub-brain (pointer: `handoff/COWORK-SESSION-ARCHIVE-POINTER_2026-09-02.md`).
 - **★ SEQUENCE (David 2026-09-02):** (1) finish TODAY'S Half a Cow **GOLD** demo build (NFL-city model,
   live-noindexed for the 3:30 client meeting); (2) THEN build the Half a Cow **PLATINUM** = the
   telvergence.com white-label rebrand ($250K offering). Platinum comes AFTER the demo.
