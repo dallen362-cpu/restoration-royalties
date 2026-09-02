@@ -19,8 +19,8 @@
   "flagshipNbsp": "833&#8209;425&#8209;3269",
   "didRange": "833-425-3269 → 3278",
   "hosts": {
-    "canonical": "restorationroyalties.com/halfacow",
-    "showroom": "restorationroyalties.com/telvergence/showroom",
+    "canonical": "halfacow.pages.dev",
+    "showroom": "halfacow.telvergence.com",
     "domain": "halfacow.com",
     "email": "hello@halfacow.com",
     "brandNamePlus": "Half+a+Cow"
@@ -41,7 +41,7 @@
     "name": "Half a Cow",
     "alternateName": "Half a Cow Food Trucks",
     "slogan": "America's premium beef, on wheels. A national food-truck franchise concept.",
-    "url": "https://restorationroyalties.com/halfacow/",
+    "url": "https://halfacow.pages.dev/",
     "priceRange": "$$",
     "servesCuisine": "American / Beef",
     "areaServed": [
