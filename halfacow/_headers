@@ -1,0 +1,18 @@
+# Cloudflare Pages headers for the `halfacow` project (build output dir = halfacow/).
+# Mirrors the repo-root _headers (which only applies to the restoration-royalties project).
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(self)
+  X-Robots-Tag: noindex, nofollow
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+# Gated / personalized editions — never cached or archived
+/private/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-store
+/stefano/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+/presentation/stefano/*
+  X-Robots-Tag: noindex, nofollow, noarchive
