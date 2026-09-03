@@ -42,6 +42,8 @@ Deploy = fetch raw → write verbatim → commit → push → verify markers:
 - Members area: **https://restorationroyalties.com/members** (passcode `TELVERGENCE-2026`).
 - Click-to-call proxy: `functions/api/callback.js` (dormant 503 until Cloudflare secrets set).
 
+- **Half a Cow (2026-09-02, CLOSED v1):** generic model `halfacow/` + custom-branded edition `halfacow/stefano/` + shows/pitch; live on telvergence.com/halfacow/ (canonical, Cowork-written), halfacow.pages.dev, restorationroyalties.com/halfacow/; gated `halfacow/private/` is Cowork-only. Close-out: `handoff/HANDOFF_QB_TO_COWORK_HALFACOW-CLOSEOUT_2026-09-02.md`.
+
 ## Rule
 Any telvergence.com HTML change starts HERE (restoration-royalties main), then deploys outward.
 Never hand-edit telvergence.com homepage/members directly — it desyncs from source of truth.
