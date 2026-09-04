@@ -13,11 +13,11 @@
   "accent": "#FFC24B",
   "h1a": "Every outage is a customer.",
   "h1b": "We make it ring to you.",
-  "flagship": "786-353-2874",
-  "flagshipHref": "+17863532874",
-  "flagshipLast": "",
+  "flagship": "645-465-2240",
+  "flagshipHref": "+16454652240",
+  "flagshipLast": "2240",
   "flagshipNbsp": "786&#8209;353&#8209;2874",
-  "didRange": "786 Miami-Dade · pending assignment",
+  "didRange": "645-465-2240 → 2249",
   "hosts": {
     "canonical": "restorationroyalties.com/yes",
     "showroom": "restorationroyalties.com/yes",
@@ -123,94 +123,94 @@
       }
     ]
   },
-  "didFootnote": "These are <b>10 planned Smart-DID lines</b> for YES — Your Electrical Solutions' Miami-Dade block — one line per job type (outage, panel, generator, EV, Spanish, commercial, storm, and ad tracking) so every call can eventually be answered, recorded, and routed to the right truck. The flagship number is reserved as <b>786-ELECTRIC (786-353-2874)</b>; the full block is <b>not yet live</b> — assignment is pending carrier carrier reservation and Google Business Profile verification. (Illustrative concept model, not a provisioned line.)",
+  "didFootnote": "YES — Your Electrical Solutions’ 10 dedicated lines (645-465-2240 → 2249) are assigned and live: every inbound call forwards to the owner’s line (786) 340-5777, capturing each caller’s ANI and statistics. Flagship: 645-465-2240. 24/7 AI answering and two-way SMS are being activated on top of the live forwarding.",
   "phones": [
     {
       "dept": "Flagship · 24/7 Power Emergency",
-      "vn": "786-ELECTRIC (786-353-2874)",
-      "terr": "Miami-Dade · 786",
-      "pending": true,
+      "vn": "645-465-2240",
+      "terr": "Dedicated · YES Electrical",
+      "pending": false,
       "sms": false,
       "desc": "Priority ring, never voicemail — the outage line that owns the #1 promise: someone comes tonight.",
       "icon": "⚡"
     },
     {
       "dept": "Español · Bilingüe",
-      "vn": "1-844-LUZ-YA-1",
-      "terr": "toll-free · vanity concept",
-      "pending": true,
+      "vn": "645-465-2241",
+      "terr": "Dedicated · YES Electrical",
+      "pending": false,
       "sms": false,
       "desc": "Routes Spanish callers to a bilingual path — a South Florida edge nobody else runs.",
       "icon": "🗣️"
     },
     {
       "dept": "Panel Upgrade / Rewire",
-      "vn": "1-800-NEW-PANEL",
-      "terr": "toll-free · vanity concept",
-      "pending": true,
+      "vn": "645-465-2242",
+      "terr": "Dedicated · YES Electrical",
+      "pending": false,
       "sms": false,
       "desc": "The high-ticket residential job, separated and prioritized.",
       "icon": "🔌"
     },
     {
       "dept": "Generator Sales & Install",
-      "vn": "1-800-GENERATOR",
-      "terr": "toll-free · vanity concept",
-      "pending": true,
+      "vn": "645-465-2243",
+      "terr": "Dedicated · YES Electrical",
+      "pending": false,
       "sms": false,
       "desc": "Surges on every storm forecast — capacity scales with the weather.",
       "icon": "🔋"
     },
     {
       "dept": "EV Charger Install",
-      "vn": "1-800-EV-CHARGE",
-      "terr": "toll-free · vanity concept",
-      "pending": true,
+      "vn": "645-465-2244",
+      "terr": "Dedicated · YES Electrical",
+      "pending": false,
       "sms": false,
       "desc": "The fastest-growing residential add-on, tracked on its own.",
       "icon": "🚗"
     },
     {
       "dept": "Commercial / Property Mgmt",
-      "vn": "1-800-BIZ-VOLT",
-      "terr": "toll-free · vanity concept",
-      "pending": true,
+      "vn": "645-465-2245",
+      "terr": "Dedicated · YES Electrical",
+      "pending": false,
       "sms": false,
       "desc": "Contract work routed to the commercial desk, not the retail queue.",
       "icon": "🏢"
     },
     {
       "dept": "Storm Power Restoration",
-      "vn": "1-844-LIGHTS-ON",
-      "terr": "toll-free · vanity concept",
-      "pending": true,
+      "vn": "645-465-2246",
+      "terr": "Dedicated · YES Electrical",
+      "pending": false,
       "sms": false,
       "desc": "Post-storm surge line — the calls that come in waves.",
       "icon": "🌀"
     },
     {
       "dept": "Google / Paid-Ads Tracking",
-      "vn": "1-800-CALL-AMP",
-      "terr": "toll-free · vanity concept",
-      "pending": true,
+      "vn": "645-465-2247",
+      "terr": "Dedicated · YES Electrical",
+      "pending": false,
       "sms": false,
       "desc": "Proves ad ROI to the dollar — swap the number, keep the data.",
       "icon": "📊"
     },
     {
       "dept": "Truck-Wrap / Yard-Sign",
-      "vn": "1-800-24-VOLTS",
-      "terr": "toll-free · vanity concept",
-      "pending": true,
+      "vn": "645-465-2248",
+      "terr": "Dedicated · YES Electrical",
+      "pending": false,
       "sms": false,
       "desc": "Attributes offline campaigns so you stop guessing.",
       "icon": "🚚"
     },
     {
       "dept": "Outbound Branded Caller-ID",
-      "vn": "786-ELECTRIC (786-353-2874)",
-      "terr": "Outbound caller ID",
-      "pending": true,
+      "vn": "645-465-2249",
+      "terr": "Dedicated · YES Electrical",
+      "pending": false,
       "sms": false,
       "desc": "The dialer's outbound face — presents the flagship number as caller ID so callbacks land on a tracked line. Not a separate inbound line.",
       "icon": "📞"
@@ -219,61 +219,61 @@
   "dids": [
     {
       "h": "Flagship / 24-7 power emergency",
-      "vn": "1-800-POWER-ON",
+      "vn": "645-465-2240",
       "p": "Priority ring, never voicemail — the outage line that owns your #1 promise: someone comes tonight.",
       "pending": true
     },
     {
       "h": "Spanish / Bilingüe",
-      "vn": "1-844-LUZ-YA-1",
+      "vn": "645-465-2241",
       "p": "Routes Spanish callers to a bilingual path — a South Florida edge nobody else runs.",
       "pending": true
     },
     {
       "h": "Panel upgrade / rewire",
-      "vn": "1-800-NEW-PANEL",
+      "vn": "645-465-2242",
       "p": "The high-ticket residential job, separated and prioritized.",
       "pending": true
     },
     {
       "h": "Generator sales & install",
-      "vn": "1-800-GENERATOR",
+      "vn": "645-465-2243",
       "p": "Surges on every storm forecast — capacity scales with the weather.",
       "pending": true
     },
     {
       "h": "EV charger install",
-      "vn": "1-800-EV-CHARGE",
+      "vn": "645-465-2244",
       "p": "The fastest-growing residential add-on, tracked on its own.",
       "pending": true
     },
     {
       "h": "Commercial / property management",
-      "vn": "1-800-BIZ-VOLT",
+      "vn": "645-465-2245",
       "p": "Contract work routed to the commercial desk, not the retail queue.",
       "pending": true
     },
     {
       "h": "Storm power restoration",
-      "vn": "1-844-LIGHTS-ON",
+      "vn": "645-465-2246",
       "p": "Post-storm surge line — the calls that come in waves.",
       "pending": true
     },
     {
       "h": "Google / paid-ads DID",
-      "vn": "1-800-CALL-AMP",
+      "vn": "645-465-2247",
       "p": "Proves ad ROI to the dollar — swap the number, keep the data.",
       "pending": true
     },
     {
       "h": "Truck-wrap / yard-sign DID",
-      "vn": "1-800-24-VOLTS",
+      "vn": "645-465-2248",
       "p": "Attributes offline campaigns so you stop guessing.",
       "pending": true
     },
     {
       "h": "Outbound branded caller-ID",
-      "vn": "1-800-POWER-ON",
+      "vn": "645-465-2249",
       "p": "The dialer's outbound face — it presents your flagship number as caller ID so every callback lands on the line you already track.",
       "presents": true
     }
@@ -662,7 +662,7 @@
     "auto_verify": true,
     "verify_method": "search-console-instant",
     "status": "required",
-    "blocked_on": "Reserve OUR vanity Smart-DID 786-ELECTRIC (786-353-2874) in carrier, then create the GBP (Google verify-call needs a working line).",
+    "blocked_on": "Reserve OUR vanity Smart-DID 645-465-2240 in carrier, then create the GBP (Google verify-call needs a working line).",
     "profile_url": "",
     "review_link": "",
     "go_live": "",
@@ -674,7 +674,7 @@
         "Generator shop"
       ],
       "phone": "",
-      "phone_vanity": "786-ELECTRIC (786-353-2874) — OUR Smart-DID, literally spells ELECTRIC · pending carrier reservation",
+      "phone_vanity": "645-465-2240 — OUR Smart-DID, literally spells ELECTRIC · pending carrier reservation",
       "phone_tollfree_option": "1-800-ELECTRIC",
       "website": "https://restorationroyalties.com/yes/",
       "model": "service-area (hide address)",
@@ -879,5 +879,32 @@
     "trackPayoutHTML": "✨ Job Complete<b>Power Restored</b><span style=\"color:var(--muted);font-size:13px\">Your walkthrough is done — power is back on and code-compliant.</span>",
     "trackCompleteFeed": "🎉 Job complete — power restored &amp; inspected",
     "trackCompleteSay": "Great news. Your job is complete and your power is back on safely."
+  },
+  "vitelity": {
+    "status": "active",
+    "npa": "645",
+    "state": "",
+    "ratecenter": "",
+    "cnam_name": "YES — Your Electrical Solutions",
+    "port_out_contact": "telvergence@gmail.com",
+    "roles": {
+      "brand": [
+        "645-465-2240",
+        "645-465-2241",
+        "645-465-2242"
+      ],
+      "dni": [
+        "645-465-2243",
+        "645-465-2244",
+        "645-465-2245",
+        "645-465-2246"
+      ],
+      "local_presence": [
+        "645-465-2247",
+        "645-465-2248"
+      ],
+      "capture": "645-465-2249; all forward to (786) 340-5777"
+    },
+    "provisioned_on": "2026-09-04"
   }
 }
