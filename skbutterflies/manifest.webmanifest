@@ -1,0 +1,37 @@
+{
+  "name": "SK Butterflies",
+  "short_name": "SK Butterflies",
+  "description": "Family-owned Miami butterfly studio, incorporated 2015 — preserved butterfly art, jewelry, and keepsakes, live caterpillar kits, school presentations, gardening clubs, and butterfly release events. Ethical: preserved only after each butterfly's natural life cycle.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#04070f",
+  "theme_color": "#04070f",
+  "lang": "en-US",
+  "categories": [
+    "business",
+    "utilities",
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwNCIgZmlsbD0iIzA0MDcwZiIvPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMTk2IiBmaWxsPSJub25lIiBzdHJva2U9IiNGMkEyMEMiIHN0cm9rZS13aWR0aD0iMTAiIG9wYWNpdHk9IjAuNSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTIlIiBkeT0iMC4zNGVtIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSW50ZXIsU2Vnb2UgVUksc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMDAiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNGMkEyMEMiPvCfpos8L3RleHQ+PC9zdmc+",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwNCIgZmlsbD0iIzA0MDcwZiIvPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMTk2IiBmaWxsPSJub25lIiBzdHJva2U9IiNGMkEyMEMiIHN0cm9rZS13aWR0aD0iMTAiIG9wYWNpdHk9IjAuNSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTIlIiBkeT0iMC4zNGVtIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSW50ZXIsU2Vnb2UgVUksc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMDAiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNGMkEyMEMiPvCfpos8L3RleHQ+PC9zdmc+",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwNCIgZmlsbD0iIzA0MDcwZiIvPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMTk2IiBmaWxsPSJub25lIiBzdHJva2U9IiNGMkEyMEMiIHN0cm9rZS13aWR0aD0iMTAiIG9wYWNpdHk9IjAuNSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTIlIiBkeT0iMC4zNGVtIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSW50ZXIsU2Vnb2UgVUksc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMDAiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNGMkEyMEMiPvCfpos8L3RleHQ+PC9zdmc+",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

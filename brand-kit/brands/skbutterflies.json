@@ -1,0 +1,835 @@
+{
+  "slug": "skbutterflies",
+  "tier": "gold",
+  "lineCount": 10,
+  "brandName": "SK Butterflies",
+  "brandShort": "SK Butterflies",
+  "platformProduct": "Chrysalis Connect",
+  "conciergeName": "Sky",
+  "markLetter": "🦋",
+  "region": "Miami, Florida",
+  "county1": "Miami-Dade",
+  "county2": "Broward",
+  "accent": "#F2A20C",
+  "h1a": "Living wings today.",
+  "h1b": "Lasting art forever.",
+  "flagship": "786-440-9200",
+  "flagshipHref": "+17864409200",
+  "flagshipLast": "786-440-9209",
+  "flagshipNbsp": "786&#8209;440&#8209;9200",
+  "didRange": "786-440-9200 → 9209",
+  "hosts": {
+    "canonical": "skbutterflies.pages.dev",
+    "showroom": "skbutterflies.telvergence.com",
+    "domain": "skbutterflies.com",
+    "email": "contact@skbutterflies.com",
+    "brandNamePlus": "SK+Butterflies"
+  },
+  "seo": {
+    "title": "SK Butterflies | Miami Butterfly Art, Jewelry & Keepsakes · Family-Raised, Respectfully Preserved · Miami-Dade & Broward",
+    "description": "Family-owned Miami butterfly breeders since 2015 — 12+ native species raised in a safe, predator-free habitat, respectfully preserved after their natural life cycle into one-of-a-kind art, jewelry, and keepsakes. Live caterpillar kits, school presentations, gardening clubs, and butterfly release events across Miami-Dade & Broward.",
+    "keywords": "butterfly art, butterfly jewelry, preserved butterfly, framed butterfly art, caterpillar kit, raise and release kit, school butterfly presentation, butterfly gardening club, butterfly release event, Miami butterfly breeder, Miami-Dade butterfly farm, conservation education, native butterfly species, keepsake jewelry",
+    "ogTitle": "SK Butterflies — Living Wings Today. Lasting Art Forever. Miami, Family-Owned Since 2015.",
+    "ogDescription": "Preserved butterfly art, jewelry &amp; keepsakes, live caterpillar kits, school presentations &amp; butterfly release events — a family-owned Miami studio raising 12+ native species since 2015."
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": [
+      "LocalBusiness",
+      "Store"
+    ],
+    "name": "SK Butterflies",
+    "alternateName": "SK Butterflies Inc.",
+    "slogan": "Living wings today. Lasting art forever.",
+    "url": "https://skbutterflies.pages.dev/",
+    "priceRange": "$$",
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Miami-Dade County"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Broward County"
+      },
+      {
+        "@type": "City",
+        "name": "Miami"
+      }
+    ],
+    "knowsAbout": [
+      "butterfly breeding",
+      "native butterfly species",
+      "preserved butterfly art",
+      "butterfly jewelry",
+      "caterpillar raise-and-release kits",
+      "butterfly gardening education",
+      "conservation education",
+      "butterfly release events"
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Preserved Butterfly Art"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Butterfly Jewelry & Keepsakes"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Live Caterpillar Kits"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "School Presentations & Workshops"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Butterfly Release Events"
+        }
+      }
+    ]
+  },
+  "didFootnote": "These are <b>10 dedicated Miami-Dade Smart Numbers</b> — <b>786-440-9200 → 786-440-9209</b>, SK Butterflies’ own reserved local block, one line per program so every family, school, and event call can be answered, recorded, and routed correctly. A separate <b>11th 786 owner-forward line, 786-440-9299</b>, remote-call-forwards every inbound call straight to the owner’s cell, so caller ID and ANI data are captured across the whole grid even before full answering is live. Local 786 presence builds trust with Miami-Dade families and keeps every source measurable. Memorable vanity options exist too — e.g. <b>833-359-2787</b> (spells FLY-ARTS) or <b>786-946-4278</b> (spells WING-ART) — shown purely as illustrative examples, not numbers currently assigned. (All numbers on this page, including the owner-forward line, are illustrative and pending; AI answering and two-way SMS are being provisioned, and nothing here is live yet.)",
+  "phones": [
+    {
+      "dept": "Flagship · Free Consultation",
+      "vn": "786-440-9200",
+      "terr": "Miami-Dade · 786",
+      "pending": true,
+      "sms": true,
+      "desc": "The number on the card — a free consultation, answered promptly.",
+      "icon": "⭐"
+    },
+    {
+      "dept": "Custom Art & Framed Pieces",
+      "vn": "786-440-9201",
+      "terr": "Miami-Dade · 786",
+      "pending": true,
+      "sms": true,
+      "desc": "Framed commissions and wall art, tracked on their own line.",
+      "icon": "🖼️"
+    },
+    {
+      "dept": "Butterfly Jewelry & Keepsakes",
+      "vn": "786-440-9202",
+      "terr": "Miami-Dade · 786",
+      "pending": true,
+      "sms": true,
+      "desc": "Pendants, earrings, and sealed keepsakes on a dedicated route.",
+      "icon": "💍"
+    },
+    {
+      "dept": "Home Décor Commissions",
+      "vn": "786-440-9203",
+      "terr": "Miami-Dade · 786",
+      "pending": true,
+      "sms": true,
+      "desc": "Larger décor pieces for the home, quoted on their own line.",
+      "icon": "🏡"
+    },
+    {
+      "dept": "Live Caterpillar Kits",
+      "vn": "786-440-9204",
+      "terr": "Miami-Dade · 786",
+      "pending": true,
+      "sms": true,
+      "desc": "Raise-and-release kits for families, tracked from order to ship.",
+      "icon": "🐛"
+    },
+    {
+      "dept": "School Presentations & Workshops",
+      "vn": "786-440-9205",
+      "terr": "Miami-Dade · 786",
+      "pending": true,
+      "sms": true,
+      "desc": "Classroom bookings routed straight to scheduling.",
+      "icon": "🏫"
+    },
+    {
+      "dept": "Gardening Clubs & After-School Programs",
+      "vn": "786-440-9206",
+      "terr": "Miami-Dade · 786",
+      "pending": true,
+      "sms": true,
+      "desc": "Multi-week and semester programs on their own intake line.",
+      "icon": "🌱"
+    },
+    {
+      "dept": "Butterfly Release Events",
+      "vn": "786-440-9207",
+      "terr": "Miami-Dade · 786",
+      "pending": true,
+      "sms": true,
+      "desc": "Weddings and celebrations — weather-aware event booking.",
+      "icon": "🎉"
+    },
+    {
+      "dept": "Museum & Organization Partnerships",
+      "vn": "786-440-9208",
+      "terr": "Miami-Dade · 786",
+      "pending": true,
+      "sms": true,
+      "desc": "Museums, nonprofits, and organizations on a priority line.",
+      "icon": "🏛️"
+    },
+    {
+      "dept": "Campaign Tracking / Overflow",
+      "vn": "786-440-9209",
+      "terr": "Miami-Dade · 786",
+      "pending": true,
+      "sms": true,
+      "desc": "Attributes each flyer, post, and referral to the dollar — and catches overflow.",
+      "icon": "🔎"
+    }
+  ],
+  "services": [
+    {
+      "ic": "🦋",
+      "title": "Preserved Butterfly Art",
+      "desc": "Museum-mount framed pieces from butterflies that naturally completed their life cycle in our care — each one a one-of-a-kind display piece."
+    },
+    {
+      "ic": "💍",
+      "title": "Butterfly Jewelry &amp; Keepsakes",
+      "desc": "Pendants, earrings, and sealed keepsakes that turn a butterfly's wing into something worn and remembered."
+    },
+    {
+      "ic": "🏡",
+      "title": "Home Décor Pieces",
+      "desc": "Larger custom-mounted décor pieces designed to fit a specific wall, room, or color palette."
+    },
+    {
+      "ic": "🐛",
+      "title": "Live Caterpillar Kits",
+      "desc": "Raise-and-release kits that let a family watch the full life cycle unfold at home, ending in a real release."
+    },
+    {
+      "ic": "🏫",
+      "title": "School Presentations &amp; Workshops",
+      "desc": "Interactive, age-appropriate classroom programs that teach the real biology and ethics behind every piece."
+    },
+    {
+      "ic": "🌱",
+      "title": "Gardening Clubs &amp; After-School Programs",
+      "desc": "Multi-week and semester-long programs teaching kids to raise native species and their host plants."
+    },
+    {
+      "ic": "🎉",
+      "title": "Butterfly Release Events",
+      "desc": "Live releases for weddings and celebrations — the natural add-on to any special-day moment."
+    },
+    {
+      "ic": "✨",
+      "title": "Custom &amp; Commissioned Orders",
+      "desc": "A piece designed around a species, a color palette, or an occasion — built to spec, start to finish."
+    }
+  ],
+  "faq": [
+    {
+      "open": true,
+      "q": "How many butterfly species do you raise?",
+      "a": "We raise <b>12+ native butterfly species</b> in a safe, predator-free habitat at our Miami studio. Every piece tells you which species it came from."
+    },
+    {
+      "open": false,
+      "q": "Are the butterflies harmed to make these pieces?",
+      "a": "No. Every butterfly lives out its full, natural life cycle in our care. Only <b>after</b> it has naturally completed that life cycle is it respectfully preserved into art, jewelry, or a keepsake — nothing is ever harvested early."
+    },
+    {
+      "open": false,
+      "q": "Can I order a custom piece?",
+      "a": "Yes. Most jewelry, framed art, and keepsakes can be custom designed around a species, a color palette, or an occasion. Reach out and we'll walk you through the options."
+    },
+    {
+      "open": false,
+      "q": "Do you ship?",
+      "a": "Yes. Framed art and jewelry are carefully packed to protect the piece in transit, and live caterpillar kits ship within a couple of days of your order."
+    },
+    {
+      "open": false,
+      "q": "How do I book a school presentation or workshop?",
+      "a": "Call, text, or use the booking button on this page with your school or organization and a rough date, and we'll confirm a time for an interactive, age-appropriate presentation."
+    },
+    {
+      "open": false,
+      "q": "How much does a piece cost?",
+      "a": "Most SK Butterflies pieces run <b>$35 to $1,200+</b>, depending on the piece and its complexity — a caterpillar kit is at the low end, a large commission or museum program at the high end. Every quote is clear before we start."
+    },
+    {
+      "open": false,
+      "q": "Do you do butterfly releases for weddings or events?",
+      "a": "Yes. We provide live butterfly releases for weddings and celebrations. Because releases happen outdoors, we also send a weather advisory ahead of the date so you can plan around it."
+    }
+  ],
+  "process": [
+    {
+      "n": "1",
+      "h": "Raised With Care",
+      "p": "Every butterfly is raised from egg in a safe, predator-free habitat in Miami — one of 12+ native species."
+    },
+    {
+      "n": "2",
+      "h": "A Full Life Cycle",
+      "p": "Each butterfly lives out its complete, natural life cycle before anything else happens — nothing is ever harvested early."
+    },
+    {
+      "n": "3",
+      "h": "Respectfully Preserved",
+      "p": "Only after its natural life cycle is complete is the butterfly respectfully preserved, ready to become something lasting."
+    },
+    {
+      "n": "4",
+      "h": "Handcrafted Into Art",
+      "p": "Framed art, jewelry, keepsakes, or décor — each piece is hand-finished with archival-grade materials and care."
+    },
+    {
+      "n": "5",
+      "h": "Delivered As An Heirloom",
+      "p": "Your piece arrives ready to display, wear, or pass down — with its species story included."
+    }
+  ],
+  "surfaces": [
+    {
+      "name": "Framed Butterfly Art (Small)",
+      "range": "$95 – $250",
+      "method": "Museum-mount framing",
+      "turn": "1–2 weeks",
+      "icon": "🖼️"
+    },
+    {
+      "name": "Framed Butterfly Art (Shadowbox)",
+      "range": "$250 – $650",
+      "method": "Museum-mount framing",
+      "turn": "2–3 weeks",
+      "icon": "🖼️"
+    },
+    {
+      "name": "Butterfly Jewelry",
+      "range": "$65 – $180",
+      "method": "Resin-set preservation",
+      "turn": "1–2 weeks",
+      "icon": "💍"
+    },
+    {
+      "name": "Keepsake Box / Ornament",
+      "range": "$45 – $120",
+      "method": "Sealed keepsake casing",
+      "turn": "1 week",
+      "icon": "🎁"
+    },
+    {
+      "name": "Home Décor Piece",
+      "range": "$120 – $400",
+      "method": "Custom mount",
+      "turn": "2–3 weeks",
+      "icon": "🏡"
+    },
+    {
+      "name": "Live Caterpillar Kit",
+      "range": "$35 – $75",
+      "method": "Habitat + care kit",
+      "turn": "Ships in 2–3 days",
+      "icon": "🐛"
+    },
+    {
+      "name": "School Presentation",
+      "range": "$150 – $450",
+      "method": "In-classroom program",
+      "turn": "Scheduled visit",
+      "icon": "🏫"
+    },
+    {
+      "name": "Gardening Club / After-School Program",
+      "range": "$200 – $600",
+      "method": "Multi-week program",
+      "turn": "Per semester",
+      "icon": "🌱"
+    },
+    {
+      "name": "Butterfly Release (Small Event)",
+      "range": "$150 – $400",
+      "method": "Live release box",
+      "turn": "Event day",
+      "icon": "🎉"
+    },
+    {
+      "name": "Butterfly Release (Wedding / Large)",
+      "range": "$400 – $1,200",
+      "method": "Live release box",
+      "turn": "Event day",
+      "icon": "💒"
+    },
+    {
+      "name": "Museum / Organization Partnership",
+      "range": "$500 – $3,000+",
+      "method": "Custom program",
+      "turn": "Project-based",
+      "icon": "🏛️"
+    },
+    {
+      "name": "Custom Commission",
+      "range": "$75 – $1,200+",
+      "method": "Consultation + design",
+      "turn": "Varies",
+      "icon": "✨"
+    }
+  ],
+  "reviews": [
+    {
+      "n": "Maria R., Kendall",
+      "v": 5,
+      "t": "The pendant they made from one of our butterflies is stunning — you can tell it was made with real care and respect. It's already become a family heirloom."
+    },
+    {
+      "n": "James A., Coral Gables",
+      "v": 5,
+      "t": "Our framed piece is a conversation starter every time someone visits. They walked us through exactly how it was preserved and it put us completely at ease."
+    },
+    {
+      "n": "Denise K., Pinecrest",
+      "v": 5,
+      "t": "SK Butterflies came to my classroom and the kids were mesmerized. Educational, respectful of the animals, and genuinely fun."
+    },
+    {
+      "n": "The Ortiz Family, Weston",
+      "v": 5,
+      "t": "Our caterpillar kit turned into a whole family project. Watching it become a butterfly and releasing it was unforgettable."
+    },
+    {
+      "n": "Priya S., Brickell",
+      "v": 5,
+      "t": "They handled our wedding release beautifully and even gave us a heads-up about the weather so we could adjust the timing. Gorgeous moment."
+    }
+  ],
+  "kb": [
+    [
+      [
+        "price",
+        "cost",
+        "how much",
+        "estimate",
+        "quote",
+        "expensive",
+        "charge",
+        "rate",
+        "pricing",
+        "dollar"
+      ],
+      "Most SK Butterflies pieces run between 35 and 1,200 dollars or more, depending on the piece and its complexity. A caterpillar kit is at the low end, and a large framed commission or museum partnership is at the high end. Every quote is clear and given before we start."
+    ],
+    [
+      [
+        "species",
+        "how many",
+        "kind",
+        "type",
+        "breed",
+        "native"
+      ],
+      "We raise 12 or more native butterfly species in a safe, predator-free habitat here in Miami. Each piece tells you which species it came from."
+    ],
+    [
+      [
+        "ethic",
+        "ethics",
+        "kill",
+        "harm",
+        "cruel",
+        "humane",
+        "natural",
+        "life cycle",
+        "die",
+        "death"
+      ],
+      "Every butterfly lives out its full, natural life cycle in our safe, predator-free habitat. Only after it has naturally completed that life cycle is it respectfully preserved into art, jewelry, or a keepsake. Nothing is ever harvested early."
+    ],
+    [
+      [
+        "custom",
+        "commission",
+        "order",
+        "personalize",
+        "design"
+      ],
+      "Absolutely. Most of our jewelry, framed art, and keepsakes can be custom designed around a species, a color palette, or an occasion. Tell me what you are picturing and I will help you start a commission."
+    ],
+    [
+      [
+        "ship",
+        "shipping",
+        "deliver",
+        "mail",
+        "arrive"
+      ],
+      "Yes, most pieces ship. Framed art and jewelry are carefully packed to protect the piece in transit, and caterpillar kits ship live within a couple of days of your order."
+    ],
+    [
+      [
+        "school",
+        "classroom",
+        "presentation",
+        "teacher",
+        "students",
+        "field trip",
+        "book a visit"
+      ],
+      "We run interactive school presentations and workshops for classrooms of any age, plus museum and organization partnerships. Tell me your school or organization and a rough date and I will help you start a booking."
+    ],
+    [
+      [
+        "garden",
+        "gardening club",
+        "after school",
+        "program",
+        "semester"
+      ],
+      "Our butterfly gardening clubs and after school programs run as multi week or full semester programs, teaching kids to raise native species and their host plants."
+    ],
+    [
+      [
+        "kit",
+        "caterpillar",
+        "raise",
+        "release",
+        "home",
+        "backyard"
+      ],
+      "Our live caterpillar raise and release kits let a family raise a caterpillar at home through its full life cycle and release it as a butterfly, a hands on way to see the whole story."
+    ],
+    [
+      [
+        "release",
+        "wedding",
+        "event",
+        "celebration",
+        "party"
+      ],
+      "We provide live butterfly releases for weddings and celebrations. Because releases happen outdoors, we also send a weather advisory ahead of the date so you can plan around it."
+    ],
+    [
+      [
+        "number",
+        "line",
+        "lines",
+        "smart",
+        "telephone",
+        "phone",
+        "ten",
+        "10"
+      ],
+      "SK Butterflies runs a ten line dedicated Miami-Dade smart number grid so every call is tracked and routed to the right program. You can reach the flagship line at 786, 440, 9200. These numbers are illustrative and pending, and full answering is being provisioned."
+    ],
+    [
+      [
+        "book",
+        "schedule",
+        "appointment",
+        "when",
+        "time",
+        "calendar"
+      ],
+      "You can start a booking or consultation right on this page. Scroll to the schedule section, pick a time, and it drops onto our calendar with an instant confirmation."
+    ],
+    [
+      [
+        "owner",
+        "who",
+        "about",
+        "company",
+        "family",
+        "founder",
+        "kiki",
+        "sedrick"
+      ],
+      "SK Butterflies is a family owned Miami studio, founded by Kiki and Sedrick and incorporated in 2015, with their daughters helping run the business. We raise the butterflies ourselves, then preserve and craft what they naturally leave behind."
+    ],
+    [
+      [
+        "insured",
+        "insurance",
+        "licensed",
+        "trust",
+        "reliable"
+      ],
+      "SK Butterflies is a family owned, incorporated Miami business, and we treat every species and every piece with the same care and respect."
+    ],
+    [
+      [
+        "museum",
+        "organization",
+        "partner",
+        "wholesale",
+        "trade"
+      ],
+      "We partner with museums, schools, and organizations on custom programs and butterfly experiences. Tell me a bit about your organization and I will help you start that conversation."
+    ],
+    [
+      [
+        "spanish",
+        "espanol",
+        "bilingual",
+        "language",
+        "translate",
+        "idioma"
+      ],
+      "Si. We are a bilingual family and run a dedicated Spanish route. Se habla espanol. Pick your language at the top of the page and I answer in it."
+    ]
+  ],
+  "gbp": {
+    "auto_verify": true,
+    "verify_method": "search-console-instant",
+    "status": "required",
+    "profile_url": "",
+    "review_link": "",
+    "go_live": "",
+    "listing": {
+      "name": "SK Butterflies",
+      "primary_category": "Art gallery",
+      "secondary_categories": [
+        "Gift shop",
+        "Education center"
+      ],
+      "phone": "786-440-9200",
+      "website": "https://skbutterflies.pages.dev/",
+      "model": "service-area (hide address)",
+      "service_areas": [
+        "Miami-Dade County",
+        "Broward County"
+      ],
+      "services": [
+        "Preserved butterfly art",
+        "Butterfly jewelry & keepsakes",
+        "Live caterpillar kits",
+        "School presentations & workshops",
+        "Butterfly release events"
+      ],
+      "description": "Family-owned Miami butterfly studio, incorporated 2015 — preserved butterfly art, jewelry, and keepsakes, live caterpillar kits, school presentations, gardening clubs, and butterfly release events. Ethical: preserved only after each butterfly's natural life cycle."
+    },
+    "_note": "First GOLD output for a real elected client, SK Butterflies (family-owned since 2015). Numbers and the owner-forward line are concept-stage/pending — nothing claimed live. GBP not yet established; auto-verify wired for launch."
+  },
+  "photoServices": [
+    {
+      "name": "Framed Art Commission",
+      "range": "$95 – $650",
+      "scope": [
+        "Consultation & species selection",
+        "Preservation & mounting",
+        "Framing & finishing",
+        "Quality check & delivery"
+      ]
+    },
+    {
+      "name": "Jewelry Piece",
+      "range": "$65 – $180",
+      "scope": [
+        "Consultation & piece selection",
+        "Preservation & resin-set",
+        "Detail & finish work",
+        "Quality check & delivery"
+      ]
+    },
+    {
+      "name": "Home Décor Piece",
+      "range": "$120 – $400",
+      "scope": [
+        "Consultation & concept",
+        "Preservation & custom mount",
+        "Finishing touches",
+        "Quality check & delivery"
+      ]
+    },
+    {
+      "name": "Caterpillar Kit",
+      "range": "$35 – $75",
+      "scope": [
+        "Order confirmed",
+        "Habitat & care kit packed",
+        "Live caterpillar shipped",
+        "Care guide included"
+      ]
+    },
+    {
+      "name": "School Presentation / Workshop",
+      "range": "$150 – $450",
+      "scope": [
+        "Booking confirmed",
+        "Program customized to grade level",
+        "On-site presentation delivered",
+        "Follow-up materials sent"
+      ]
+    },
+    {
+      "name": "Butterfly Release Event",
+      "range": "$150 – $1,200",
+      "scope": [
+        "Consultation & headcount",
+        "Weather advisory scheduled",
+        "Live release box delivered",
+        "Event-day support"
+      ]
+    },
+    {
+      "name": "Other",
+      "range": "$75 – $1,200+",
+      "scope": [
+        "Consultation",
+        "Concept & scope",
+        "Craft & preserve",
+        "Deliver & finish"
+      ]
+    }
+  ],
+  "trackStages": [
+    "Order Placed",
+    "Consultation Confirmed",
+    "In Production",
+    "Preserving & Mounting",
+    "Framing / Finishing",
+    "Quality Check",
+    "Complete"
+  ],
+  "trackFeed": [
+    "Order confirmed and queued",
+    "Consultation completed",
+    "Piece added to production",
+    "Preservation in progress",
+    "Mounting & framing started",
+    "Finishing touches applied",
+    "Quality check underway",
+    "Before & after photos logged",
+    "Ready for pickup or delivery"
+  ],
+  "footerServices": [
+    "Preserved Butterfly Art",
+    "Butterfly Jewelry &amp; Keepsakes",
+    "Home Décor Pieces",
+    "Live Caterpillar Kits",
+    "School Presentations &amp; Workshops",
+    "Gardening Clubs &amp; After-School Programs",
+    "Butterfly Release Events"
+  ],
+  "vitelity": {
+    "status": "concept",
+    "account": "",
+    "ratecenter": "Miami, FL",
+    "npa": "786",
+    "state": "FL",
+    "e911_address": "",
+    "port_out_contact": "",
+    "roles": {
+      "brand": [],
+      "dni": [],
+      "local_presence": [],
+      "capture": "786-440-9299 — owner-forward line (RCF to owner's cell), illustrative/pending"
+    },
+    "cnam_name": "SK Butterflies",
+    "e411_listed": false,
+    "loa_on_file": false,
+    "provisioned_on": ""
+  },
+  "copy": {
+    "brandTagline": "Butterfly Art & Education",
+    "crewLabel": "Butterfly Art &amp; Education Studio",
+    "heroLede": "SK Butterflies raises 12+ native species in a safe, predator-free habitat in Miami — and after each butterfly naturally completes its life cycle, it’s respectfully preserved into one-of-a-kind art, jewelry, and keepsakes. And now every call rings to the right program, answered promptly, in the caller’s language. <b>Family-owned since 2015. Custom orders. Schools, museums &amp; families welcome.</b>",
+    "valuesRow": "<span>Ethical</span><i>·</i><span>Educational</span><i>·</i><span>Handcrafted</span><i>·</i><span>Family-Owned</span><i>·</i><span>Bilingual</span><i>·</i><span>Miami</span>",
+    "statJobsNum": "12+",
+    "statJobsLbl": "Native Species Raised On-Site",
+    "safetyBadge": "Life-Cycle Safe · Ethically Preserved",
+    "conciergeIntro": "Hi, I’m Sky — your SK Butterflies concierge for art, jewelry, keepsakes, kits &amp; school programs. Tap the 🔊 to hear me, pick your language above, or choose a button to begin.",
+    "miniQuoteSay": "Tell me what you’re picturing — a framed piece, jewelry, a keepsake, or a school visit — and I’ll give you an instant illustrative estimate.",
+    "askPlaceholder": "Ask me — species, pricing, school visits…",
+    "promiseSafeTitle": "Life-Cycle Safe",
+    "promiseSafeSub": "Preserved only after their natural life cycle",
+    "miamiBandHead": "🦋 Serving South Florida — Miami-Dade &amp; Broward, Egg to Heirloom 🌴",
+    "miamiBandSub": "From a backyard habitat in Miami to classrooms, museums, and weddings across South Florida, families trust <b>SK Butterflies</b> for ethical, family-owned butterfly art and education — bilingual, incorporated since 2015, Miami-Dade &amp; Broward proud.",
+    "ecoSub": "Every touchpoint — call, text, photo, order, and program booking — runs through a single intelligent system. That’s how SK Butterflies answers faster, quotes cleaner, and keeps you posted from first ring to finished heirloom.",
+    "ecoTrackSmall": "Watch it go from ordered to heirloom",
+    "pmRow1": "Kiki’s Studio — framed art order booked · <b>+$40</b>",
+    "pmRow2": "Local school — presentation request sent",
+    "referExample": "Send us a family, school, museum, or event that wants a butterfly experience — we tag the lead back to you.",
+    "stormLede": "Outdoor butterfly release events are weather-sensitive — wind and rain can ground a release or change a wedding-day moment. SK Butterflies is enrolled on the WIN weather-advisory network, so <b>event-day leads and forecast alerts move across the network</b> and land with the family or planner in time to adjust — instead of finding out day-of.",
+    "stormStep1": "The WIN Weather Intelligence Network tracks incoming conditions across South Florida and flags event dates that may need a rain plan or reschedule.",
+    "stormStep2": "Families and planners text a photo or the event details — timestamped and geo-tagged to the venue — and get an advisory back before the big day.",
+    "servicesEyebrow": "Every Wing · One Studio",
+    "servicesH2Lead": "We Create",
+    "servicesSub": "From a single framed keepsake to a full school program, SK Butterflies matches the right craft to every request — ethical preservation, handcrafted art, and real education. Families, schools, museums &amp; organizations across Miami-Dade and Broward.",
+    "quoteEyebrow": "Instant Quote · Piece Selector",
+    "quoteH2": "Pick the Piece. See the Range.",
+    "quoteSub": "Point our piece selector at what you’re picturing — framed art, jewelry, a keepsake, a caterpillar kit, or a school program — and it returns an illustrative estimate range and turnaround in seconds. Then book your free consultation in one tap.",
+    "quoteStatus": "Select or search the piece you’re picturing for an instant estimate…",
+    "quotePlaceholder": "🔎 Search a piece — framed art, jewelry, kit…",
+    "invHeadLabel": "🦋 Pieces &amp; Programs We Offer",
+    "invNote": "Estimate ranges are illustrative — your free consultation confirms the exact price. Most pieces run $35–$1,200+ depending on size and complexity.",
+    "funnelQ1": "What are you picturing?",
+    "funnelPrompt1": "First — what are you picturing?",
+    "why1Body": "Every piece is preserved only after the butterfly naturally completes its life cycle — ethical by design, never rushed.",
+    "why2Body": "We quote before we start — clearly and in writing. No surprises. Pieces run $35 to $1,200+ by size and complexity.",
+    "why5Body": "From a single classroom visit to a full-semester gardening club or museum partnership, on their own scheduled programs.",
+    "compareThemHead": "Generic Gift Shops",
+    "compareSafeCap": "Preserved life-cycle safe",
+    "compareSafeThem": "Sourced without a story",
+    "compareSafeUs": "Raised, respected, and remembered",
+    "standardSub": "Others sell a preserved butterfly with no story behind it. We raise every species ourselves, wait for a natural life cycle, hand-craft the piece, and back it with real education.",
+    "std1Body": "Consultations and quotes in writing, usually same or next day — because a keepsake shouldn’t wait on a callback that never comes.",
+    "stdSafeTitle": "Life-Cycle Safe Practice",
+    "stdSafeBody": "Every butterfly lives out its full, natural life cycle in a safe, predator-free habitat before it is ever preserved — never harvested early.",
+    "stdDetergentTitle": "Archival-Grade Materials",
+    "stdDetergentBody": "Museum-mount framing, UV-protective glass, and sealed resin work that keeps color and detail vivid for generations.",
+    "std6Body": "If a piece isn’t right, we make it right — accountability most novelty butterfly sellers won’t put on paper.",
+    "sbSafeB": "Life-Cycle",
+    "sbSafeSpan": "Naturally completed, always",
+    "processH2": "From Egg to Heirloom in 5 Simple Steps",
+    "photoH2Lead": "Show Us Your Vision. Upload It.",
+    "photoSub": "Upload a photo or description of the piece you’re picturing — the app returns an illustrative preliminary estimate in seconds, then hands you an order number you can track to completion. Backed by our Satisfaction Commitment. This is an illustrative demo; your free consultation confirms the price.",
+    "trackH2Lead": "Track Your Order Live —",
+    "trackH2Hl": "From Ordered to Heirloom",
+    "franchiseSub": "Launch a turnkey butterfly-art &amp; education business powered by the Chrysalis Connect™ platform — Smart Numbers, real-time order tracking, the instant-quote piece selector, and full onboarding. Run it under your own white-labeled brand, or under our licensed program.",
+    "adjBadge": "🎯 For Independent Breeders &amp; Educators",
+    "adjSub": "We market aggressively — Google, social &amp; beyond — and generate a steady stream of qualified Miami-area orders and school bookings. If you’re an independent butterfly breeder or educator without your own branding, get instantly branded under SK Butterflies, fulfill our leads with our complete tech stack, and keep an illustrative share of every gross sale.",
+    "hireRole2": "Workshop Educators",
+    "finalLede": "From a Miami backyard habitat to classrooms, museums, and weddings across South Florida, families count on us for preserved art, jewelry, keepsakes, live kits, school programs &amp; release events — answered promptly, in your language, routed to the right program. Family-owned since 2015. Free consultations.",
+    "footerTagline": "🦋 Miami’s family-owned butterfly art &amp; education studio. Preserved art, jewelry, keepsakes, live caterpillar kits, school presentations &amp; release events across Miami-Dade &amp; Broward — since 2015.",
+    "conciergeFallback": "Great question. The fastest answer is a quick call or text to 786, 440, 9200. Or ask me about pricing, the species we raise, our preservation ethics, custom orders, school bookings, gardening clubs, or a butterfly release event.",
+    "conciergeGreet": "Hi, I’m Sky, your SK Butterflies concierge. Tap a button and I’ll help you with a framed art piece, jewelry, a keepsake, a caterpillar kit, or booking a school program.",
+    "quoteSearchHint": "Type a piece (e.g. \"jewelry\") or tap Estimate on a card below.",
+    "stormSimAlert": "Rain forecast for Saturday’s release near Coral Gables. Event flagged for a rain-plan check.",
+    "stormSimOut1": "Wedding release — Saturday",
+    "stormSimEmoji1": "🌧️",
+    "stormSimReply": "🦋 A rain-plan option is ready — want an indoor release box or a Sunday backup slot?",
+    "stormSimOut2": "Backyard party release",
+    "stormSimEmoji2": "🎈",
+    "trackPayoutHTML": "✨ Order Complete<b>Heirloom Ready</b><span style=\"color:var(--muted);font-size:13px\">Your piece is finished — ready for pickup or delivery.</span>",
+    "trackCompleteFeed": "🎉 Order complete — heirloom ready",
+    "trackCompleteSay": "Great news. Your order is complete and your heirloom piece is ready."
+  }
+}
