@@ -17,7 +17,7 @@
   "flagshipHref": "+17864409200",
   "flagshipLast": "786-440-9209",
   "flagshipNbsp": "786&#8209;440&#8209;9200",
-  "didRange": "786-440-9200 → 9209",
+  "didRange": "645-465-2223 → 2232",
   "hosts": {
     "canonical": "skbutterflies.pages.dev",
     "showroom": "skbutterflies.telvergence.com",
@@ -119,95 +119,95 @@
       }
     ]
   },
-  "didFootnote": "These are <b>10 dedicated Miami-Dade Smart Numbers</b> — <b>786-440-9200 → 786-440-9209</b>, SK Butterflies’ own reserved local block, one line per program so every family, school, and event call can be answered, recorded, and routed correctly. A separate <b>11th 786 owner-forward line, 786-440-9299</b>, remote-call-forwards every inbound call straight to the owner’s cell, so caller ID and ANI data are captured across the whole grid even before full answering is live. Local 786 presence builds trust with Miami-Dade families and keeps every source measurable. Memorable vanity options exist too — e.g. <b>833-359-2787</b> (spells FLY-ARTS) or <b>786-946-4278</b> (spells WING-ART) — shown purely as illustrative examples, not numbers currently assigned. (All numbers on this page, including the owner-forward line, are illustrative and pending; AI answering and two-way SMS are being provisioned, and nothing here is live yet.)",
+  "didFootnote": "SK Butterflies’ 10 dedicated lines (645-465-2223 → 2232) are assigned. 24/7 AI answering and call-forwarding to the owner’s cell — which captures every inbound caller’s ANI and statistics — are being activated now. Flagship line: 645-465-2223. Numbers assigned; routing activation in progress.",
   "phones": [
     {
       "dept": "Flagship · Free Consultation",
-      "vn": "786-440-9200",
-      "terr": "Miami-Dade · 786",
-      "pending": true,
-      "sms": true,
+      "vn": "645-465-2223",
+      "terr": "Dedicated · SK Butterflies",
+      "pending": false,
+      "sms": false,
       "desc": "The number on the card — a free consultation, answered promptly.",
       "icon": "⭐"
     },
     {
       "dept": "Custom Art & Framed Pieces",
-      "vn": "786-440-9201",
-      "terr": "Miami-Dade · 786",
-      "pending": true,
-      "sms": true,
+      "vn": "645-465-2224",
+      "terr": "Dedicated · SK Butterflies",
+      "pending": false,
+      "sms": false,
       "desc": "Framed commissions and wall art, tracked on their own line.",
       "icon": "🖼️"
     },
     {
       "dept": "Butterfly Jewelry & Keepsakes",
-      "vn": "786-440-9202",
-      "terr": "Miami-Dade · 786",
-      "pending": true,
-      "sms": true,
+      "vn": "645-465-2225",
+      "terr": "Dedicated · SK Butterflies",
+      "pending": false,
+      "sms": false,
       "desc": "Pendants, earrings, and sealed keepsakes on a dedicated route.",
       "icon": "💍"
     },
     {
       "dept": "Home Décor Commissions",
-      "vn": "786-440-9203",
-      "terr": "Miami-Dade · 786",
-      "pending": true,
-      "sms": true,
+      "vn": "645-465-2226",
+      "terr": "Dedicated · SK Butterflies",
+      "pending": false,
+      "sms": false,
       "desc": "Larger décor pieces for the home, quoted on their own line.",
       "icon": "🏡"
     },
     {
       "dept": "Live Caterpillar Kits",
-      "vn": "786-440-9204",
-      "terr": "Miami-Dade · 786",
-      "pending": true,
-      "sms": true,
+      "vn": "645-465-2227",
+      "terr": "Dedicated · SK Butterflies",
+      "pending": false,
+      "sms": false,
       "desc": "Raise-and-release kits for families, tracked from order to ship.",
       "icon": "🐛"
     },
     {
       "dept": "School Presentations & Workshops",
-      "vn": "786-440-9205",
-      "terr": "Miami-Dade · 786",
-      "pending": true,
-      "sms": true,
+      "vn": "645-465-2228",
+      "terr": "Dedicated · SK Butterflies",
+      "pending": false,
+      "sms": false,
       "desc": "Classroom bookings routed straight to scheduling.",
       "icon": "🏫"
     },
     {
       "dept": "Gardening Clubs & After-School Programs",
-      "vn": "786-440-9206",
-      "terr": "Miami-Dade · 786",
-      "pending": true,
-      "sms": true,
+      "vn": "645-465-2229",
+      "terr": "Dedicated · SK Butterflies",
+      "pending": false,
+      "sms": false,
       "desc": "Multi-week and semester programs on their own intake line.",
       "icon": "🌱"
     },
     {
       "dept": "Butterfly Release Events",
-      "vn": "786-440-9207",
-      "terr": "Miami-Dade · 786",
-      "pending": true,
-      "sms": true,
+      "vn": "645-465-2230",
+      "terr": "Dedicated · SK Butterflies",
+      "pending": false,
+      "sms": false,
       "desc": "Weddings and celebrations — weather-aware event booking.",
       "icon": "🎉"
     },
     {
       "dept": "Museum & Organization Partnerships",
-      "vn": "786-440-9208",
-      "terr": "Miami-Dade · 786",
-      "pending": true,
-      "sms": true,
+      "vn": "645-465-2231",
+      "terr": "Dedicated · SK Butterflies",
+      "pending": false,
+      "sms": false,
       "desc": "Museums, nonprofits, and organizations on a priority line.",
       "icon": "🏛️"
     },
     {
       "dept": "Campaign Tracking / Overflow",
-      "vn": "786-440-9209",
-      "terr": "Miami-Dade · 786",
-      "pending": true,
-      "sms": true,
+      "vn": "645-465-2232",
+      "terr": "Dedicated · SK Butterflies",
+      "pending": false,
+      "sms": false,
       "desc": "Attributes each flyer, post, and referral to the dollar — and catches overflow.",
       "icon": "🔎"
     }
@@ -739,18 +739,30 @@
     "Butterfly Release Events"
   ],
   "vitelity": {
-    "status": "concept",
+    "status": "ordered",
     "account": "",
-    "ratecenter": "Miami, FL",
-    "npa": "786",
-    "state": "FL",
+    "ratecenter": "",
+    "npa": "645",
+    "state": "",
     "e911_address": "",
     "port_out_contact": "",
     "roles": {
-      "brand": [],
-      "dni": [],
-      "local_presence": [],
-      "capture": "786-440-9299 — owner-forward line (RCF to owner's cell), illustrative/pending"
+      "brand": [
+        "645-465-2223",
+        "645-465-2224",
+        "645-465-2225"
+      ],
+      "dni": [
+        "645-465-2226",
+        "645-465-2227",
+        "645-465-2228",
+        "645-465-2229"
+      ],
+      "local_presence": [
+        "645-465-2230",
+        "645-465-2231"
+      ],
+      "capture": "645-465-2232 (overflow/tracking); owner-forward line pending in batch 2"
     },
     "cnam_name": "SK Butterflies",
     "e411_listed": false,
