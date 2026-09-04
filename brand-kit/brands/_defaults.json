@@ -203,5 +203,24 @@
       "new": "Flat $22.95/line. Own your numbers, port anytime, cancel anytime."
     }
   ],
-  "comparePunch": "Angie's List sells your prospects to your competitors. Slack + Twilio is a toolkit you have to build. Generic SaaS forgets you have a phone. <b>Telvergence gives you a private, Grok-voice-agent-powered network on numbers we create and control for you</b> — where the leads are yours and every partner brand feeds you more."
+  "comparePunch": "Angie's List sells your prospects to your competitors. Slack + Twilio is a toolkit you have to build. Generic SaaS forgets you have a phone. <b>Telvergence gives you a private, Grok-voice-agent-powered network on numbers we create and control for you</b> — where the leads are yours and every partner brand feeds you more.",
+  "vitelity": {
+    "status": "concept",
+    "account": "",
+    "ratecenter": "",
+    "npa": "",
+    "state": "",
+    "e911_address": "",
+    "port_out_contact": "",
+    "roles": {
+      "brand": [],
+      "dni": [],
+      "local_presence": [],
+      "capture": ""
+    },
+    "cnam_name": "",
+    "e411_listed": false,
+    "loa_on_file": false,
+    "provisioned_on": ""
+  }
 }

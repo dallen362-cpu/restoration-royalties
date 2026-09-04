@@ -140,6 +140,11 @@
 - **★ SEQUENCE (David 2026-09-02):** (1) finish TODAY'S Half a Cow **GOLD** demo build (NFL-city model,
   live-noindexed for the 3:30 client meeting); (2) THEN build the Half a Cow **PLATINUM** = the
   telvergence.com white-label rebrand ($250K offering). Platinum comes AFTER the demo.
+- **★ VITELITY BACK-OFFICE BOILERPLATE (David 2026-09-04; skill `brand-kit/skills/vitelity-backoffice/`):** every GOLD
+  brand's 10-line pack provisions the same proven way — **10 sequential DIDs in one rate center (Miami-Dade 786 exemplar) +
+  1 overlapping 786 owner-forward via Brightsound RCF → ANI capture + inbound stats** (Coastal Crown 786-484-7053→7062 →
+  (786) 340-5777 is the exemplar). Per-brand `vitelity` block in `_defaults.json` (inert metadata, gbp-style); portal
+  execution runs in the Cowork/Vitelity session gated on a signed LOA; provider name never on a public page.
 - **Key skills:** `brand-kit/skills/fast-standard/` (the kitchen-sink standard), `telvergence-brand-deploy/`
   (deploy law + QA gates), `vanity-did-generator/`, `.claude/skills/listing-foundation/` (GBP, auto-verify),
   `.claude/skills/prospect-turnkey/`. Governance: `handoff/SYNC-LANES.md`.
