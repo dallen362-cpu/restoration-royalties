@@ -1,11 +1,668 @@
 {
   "slug": "yes",
-  "vanity": {"npa": "786", "industry": "electrical"},
+  "tier": "gold",
+  "lineCount": 10,
+  "brandName": "YES — Your Electrical Solutions",
+  "brandShort": "YES Electrical",
+  "platformProduct": "YES Connect",
+  "conciergeName": "Amp",
+  "markLetter": "Y",
+  "region": "South Florida",
+  "county1": "Miami-Dade",
+  "county2": "Broward",
+  "accent": "#FFC24B",
+  "h1a": "Every outage is a customer.",
+  "h1b": "We make it ring to you.",
+  "flagship": "786-353-2874",
+  "flagshipHref": "+17863532874",
+  "flagshipLast": "",
+  "flagshipNbsp": "786&#8209;353&#8209;2874",
+  "didRange": "786 Miami-Dade · pending assignment",
+  "hosts": {
+    "canonical": "restorationroyalties.com/yes",
+    "showroom": "restorationroyalties.com/yes",
+    "domain": "restorationroyalties.com/yes",
+    "email": "",
+    "brandNamePlus": "YES+Electrical+Solutions"
+  },
+  "seo": {
+    "title": "YES — Your Electrical Solutions | Miami-Dade & Broward Electrician, Panel Upgrades, EV Chargers & Generators",
+    "description": "Licensed electrical contractor across Miami-Dade and Broward — panel upgrades, EV charger installation, generators, whole-home rewiring, lighting, and 24/7 storm power restoration. Residential & commercial. Free estimates.",
+    "keywords": "electrician, panel upgrade, EV charger installation, generator installation, whole home rewire, surge protection, storm power restoration, emergency electrician, Miami-Dade electrician, Broward electrician, licensed electrical contractor, free estimate",
+    "ogTitle": "YES — Your Electrical Solutions — Every Outage Is a Customer. South Florida.",
+    "ogDescription": "Panel upgrades, EV chargers, generators, rewiring & lighting across Miami-Dade & Broward. Residential & commercial. Free estimates, bilingual, licensed."
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": [
+      "Electrician",
+      "HomeAndConstructionBusiness"
+    ],
+    "name": "YES — Your Electrical Solutions",
+    "alternateName": "YES Electrical",
+    "slogan": "Every outage is a customer. We make it ring to you.",
+    "url": "https://restorationroyalties.com/yes/",
+    "priceRange": "$$",
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Miami-Dade County"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Broward County"
+      },
+      {
+        "@type": "City",
+        "name": "Miami"
+      },
+      {
+        "@type": "City",
+        "name": "Fort Lauderdale"
+      }
+    ],
+    "knowsAbout": [
+      "panel upgrades",
+      "EV charger installation",
+      "generator installation",
+      "whole-home rewiring",
+      "lighting installation",
+      "surge protection",
+      "electrical troubleshooting",
+      "storm power restoration"
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Panel Upgrades"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "EV Charger Installation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Generator Sales & Install"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Whole-Home Rewiring"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Commercial & Property Management"
+        }
+      }
+    ]
+  },
+  "didFootnote": "These are <b>10 planned Smart-DID lines</b> for YES — Your Electrical Solutions' Miami-Dade block — one line per job type (outage, panel, generator, EV, Spanish, commercial, storm, and ad tracking) so every call can eventually be answered, recorded, and routed to the right truck. The flagship number is reserved as <b>786-ELECTRIC (786-353-2874)</b>; the full block is <b>not yet live</b> — assignment is pending carrier carrier reservation and Google Business Profile verification. (Illustrative concept model, not a provisioned line.)",
+  "phones": [
+    {
+      "dept": "Flagship · 24/7 Power Emergency",
+      "vn": "786-ELECTRIC (786-353-2874)",
+      "terr": "Miami-Dade · 786",
+      "pending": true,
+      "sms": false,
+      "desc": "Priority ring, never voicemail — the outage line that owns the #1 promise: someone comes tonight.",
+      "icon": "⚡"
+    },
+    {
+      "dept": "Español · Bilingüe",
+      "vn": "1-844-LUZ-YA-1",
+      "terr": "toll-free · vanity concept",
+      "pending": true,
+      "sms": false,
+      "desc": "Routes Spanish callers to a bilingual path — a South Florida edge nobody else runs.",
+      "icon": "🗣️"
+    },
+    {
+      "dept": "Panel Upgrade / Rewire",
+      "vn": "1-800-NEW-PANEL",
+      "terr": "toll-free · vanity concept",
+      "pending": true,
+      "sms": false,
+      "desc": "The high-ticket residential job, separated and prioritized.",
+      "icon": "🔌"
+    },
+    {
+      "dept": "Generator Sales & Install",
+      "vn": "1-800-GENERATOR",
+      "terr": "toll-free · vanity concept",
+      "pending": true,
+      "sms": false,
+      "desc": "Surges on every storm forecast — capacity scales with the weather.",
+      "icon": "🔋"
+    },
+    {
+      "dept": "EV Charger Install",
+      "vn": "1-800-EV-CHARGE",
+      "terr": "toll-free · vanity concept",
+      "pending": true,
+      "sms": false,
+      "desc": "The fastest-growing residential add-on, tracked on its own.",
+      "icon": "🚗"
+    },
+    {
+      "dept": "Commercial / Property Mgmt",
+      "vn": "1-800-BIZ-VOLT",
+      "terr": "toll-free · vanity concept",
+      "pending": true,
+      "sms": false,
+      "desc": "Contract work routed to the commercial desk, not the retail queue.",
+      "icon": "🏢"
+    },
+    {
+      "dept": "Storm Power Restoration",
+      "vn": "1-844-LIGHTS-ON",
+      "terr": "toll-free · vanity concept",
+      "pending": true,
+      "sms": false,
+      "desc": "Post-storm surge line — the calls that come in waves.",
+      "icon": "🌀"
+    },
+    {
+      "dept": "Google / Paid-Ads Tracking",
+      "vn": "1-800-CALL-AMP",
+      "terr": "toll-free · vanity concept",
+      "pending": true,
+      "sms": false,
+      "desc": "Proves ad ROI to the dollar — swap the number, keep the data.",
+      "icon": "📊"
+    },
+    {
+      "dept": "Truck-Wrap / Yard-Sign",
+      "vn": "1-800-24-VOLTS",
+      "terr": "toll-free · vanity concept",
+      "pending": true,
+      "sms": false,
+      "desc": "Attributes offline campaigns so you stop guessing.",
+      "icon": "🚚"
+    },
+    {
+      "dept": "Outbound Branded Caller-ID",
+      "vn": "786-ELECTRIC (786-353-2874)",
+      "terr": "Outbound caller ID",
+      "pending": true,
+      "sms": false,
+      "desc": "The dialer's outbound face — presents the flagship number as caller ID so callbacks land on a tracked line. Not a separate inbound line.",
+      "icon": "📞"
+    }
+  ],
+  "dids": [
+    {
+      "h": "Flagship / 24-7 power emergency",
+      "vn": "1-800-POWER-ON",
+      "p": "Priority ring, never voicemail — the outage line that owns your #1 promise: someone comes tonight.",
+      "pending": true
+    },
+    {
+      "h": "Spanish / Bilingüe",
+      "vn": "1-844-LUZ-YA-1",
+      "p": "Routes Spanish callers to a bilingual path — a South Florida edge nobody else runs.",
+      "pending": true
+    },
+    {
+      "h": "Panel upgrade / rewire",
+      "vn": "1-800-NEW-PANEL",
+      "p": "The high-ticket residential job, separated and prioritized.",
+      "pending": true
+    },
+    {
+      "h": "Generator sales & install",
+      "vn": "1-800-GENERATOR",
+      "p": "Surges on every storm forecast — capacity scales with the weather.",
+      "pending": true
+    },
+    {
+      "h": "EV charger install",
+      "vn": "1-800-EV-CHARGE",
+      "p": "The fastest-growing residential add-on, tracked on its own.",
+      "pending": true
+    },
+    {
+      "h": "Commercial / property management",
+      "vn": "1-800-BIZ-VOLT",
+      "p": "Contract work routed to the commercial desk, not the retail queue.",
+      "pending": true
+    },
+    {
+      "h": "Storm power restoration",
+      "vn": "1-844-LIGHTS-ON",
+      "p": "Post-storm surge line — the calls that come in waves.",
+      "pending": true
+    },
+    {
+      "h": "Google / paid-ads DID",
+      "vn": "1-800-CALL-AMP",
+      "p": "Proves ad ROI to the dollar — swap the number, keep the data.",
+      "pending": true
+    },
+    {
+      "h": "Truck-wrap / yard-sign DID",
+      "vn": "1-800-24-VOLTS",
+      "p": "Attributes offline campaigns so you stop guessing.",
+      "pending": true
+    },
+    {
+      "h": "Outbound branded caller-ID",
+      "vn": "1-800-POWER-ON",
+      "p": "The dialer's outbound face — it presents your flagship number as caller ID so every callback lands on the line you already track.",
+      "presents": true
+    }
+  ],
+  "services": [
+    {
+      "ic": "⚡",
+      "title": "Panel Upgrades &amp; Rewiring",
+      "desc": "Outdated fuse boxes and undersized panels swapped for modern, code-rated service — safer power for the whole house or building."
+    },
+    {
+      "ic": "🔌",
+      "title": "EV Charger Installation",
+      "desc": "Level 2 home and commercial EV charger installs, sized and permitted for your panel and vehicle."
+    },
+    {
+      "ic": "🔋",
+      "title": "Generator Sales &amp; Install",
+      "desc": "Standby and portable generator sizing, installation, and transfer-switch wiring so the lights stay on through the next outage."
+    },
+    {
+      "ic": "💡",
+      "title": "Lighting &amp; Fixture Upgrades",
+      "desc": "Interior, exterior, recessed, and landscape lighting installed and upgraded — brighter, safer, more efficient."
+    },
+    {
+      "ic": "🛡️",
+      "title": "Whole-Home Surge Protection",
+      "desc": "Panel-level surge protection that shields appliances and electronics from lightning and grid spikes."
+    },
+    {
+      "ic": "🌀",
+      "title": "Storm Power Restoration",
+      "desc": "Downed lines, tripped panels, and storm damage assessed and repaired — dispatched through the WIN network."
+    },
+    {
+      "ic": "🏢",
+      "title": "Commercial &amp; Property Management",
+      "desc": "Storefronts, plazas, offices, and community common areas on their own priority lines and callback SLA."
+    },
+    {
+      "ic": "🔍",
+      "title": "Troubleshooting &amp; Code Corrections",
+      "desc": "Flickering lights, tripped breakers, and failed inspections diagnosed and corrected by a licensed electrician."
+    }
+  ],
+  "faq": [
+    {
+      "open": true,
+      "q": "How much does electrical work cost?",
+      "a": "Most YES jobs run between <b>$400 and $15,000+</b>, depending on the scope — a single outlet or fixture is at the low end; a full panel upgrade, whole-home rewire, or generator install is at the high end. Every quote is free and given in writing before we start — no surprises."
+    },
+    {
+      "open": false,
+      "q": "What areas do you serve?",
+      "a": "We serve all of <b>Miami-Dade and Broward counties</b> — from Brickell, Coral Gables, and Pinecrest up through Fort Lauderdale, Pembroke Pines, and Weston. Every call is geo-tagged by ZIP and routed to the nearest available truck."
+    },
+    {
+      "open": false,
+      "q": "Are estimates really free?",
+      "a": "Yes. Estimates are always free and there's no obligation. Call, text, or snap a photo of your panel or the area you need wired and we'll give you an illustrative range up front, then confirm the exact price with a free on-site visit."
+    },
+    {
+      "open": false,
+      "q": "Are your electricians licensed?",
+      "a": "Yes — every job is performed by a licensed electrician, and our Florida electrical contractor license number of record is displayed on all public-facing material. Permits are pulled where required by local code, and work is inspected accordingly."
+    },
+    {
+      "open": false,
+      "q": "Do you have a Spanish line?",
+      "a": "Sí. We're a bilingual team and run a dedicated Spanish route — <b>se habla español</b>. Pick your language at the top of this page and the site and our concierge respond in it."
+    },
+    {
+      "open": false,
+      "q": "Can you install an EV charger or generator?",
+      "a": "Absolutely — Level 2 EV charger installs and standby or portable generator sizing and installation, including transfer-switch wiring, are two of our fastest-growing services."
+    },
+    {
+      "open": false,
+      "q": "What happens during a storm or outage?",
+      "a": "Storm power restoration is one of our specialties, and YES is an enrolled vendor on the WIN storm-dispatch network. When a South Florida storm passes, outage and downed-line leads route straight to the nearest available truck for a fast quote and priority service."
+    }
+  ],
+  "process": [
+    {
+      "n": "1",
+      "h": "Free Diagnostic",
+      "p": "Call, text, or snap a photo of the panel or issue. We quote the job on-site and in writing — no cost, no pressure."
+    },
+    {
+      "n": "2",
+      "h": "We Schedule",
+      "p": "Pick a time that works. The nearest licensed truck is dispatched with the right parts for your job."
+    },
+    {
+      "n": "3",
+      "h": "We Wire",
+      "p": "Panel, rewire, generator, or EV charger — installed and pulled to code, permitted where required, and inspected."
+    },
+    {
+      "n": "4",
+      "h": "You're Powered",
+      "p": "Before-and-after photos logged, walkthrough done, satisfaction guaranteed. Your power is back on, safely."
+    }
+  ],
+  "surfaces": [
+    {
+      "name": "Panel Upgrade",
+      "range": "$1,200 – $4,500",
+      "method": "200A service swap",
+      "turn": "1 day",
+      "icon": "⚡"
+    },
+    {
+      "name": "Whole-Home Rewire",
+      "range": "$4,000 – $15,000+",
+      "method": "Full rewire",
+      "turn": "3–7 days",
+      "icon": "🏠"
+    },
+    {
+      "name": "EV Charger Install",
+      "range": "$600 – $2,200",
+      "method": "Level 2 circuit",
+      "turn": "3–5 hrs",
+      "icon": "🔌"
+    },
+    {
+      "name": "Generator Install",
+      "range": "$3,500 – $12,000+",
+      "method": "Standby + transfer switch",
+      "turn": "1–2 days",
+      "icon": "🔋"
+    },
+    {
+      "name": "Lighting Upgrade",
+      "range": "$250 – $1,500",
+      "method": "Fixture swap/add",
+      "turn": "2–4 hrs",
+      "icon": "💡"
+    },
+    {
+      "name": "Surge Protection",
+      "range": "$300 – $700",
+      "method": "Panel-level SPD",
+      "turn": "1–2 hrs",
+      "icon": "🛡️"
+    },
+    {
+      "name": "Outlet/Switch Repair",
+      "range": "$150 – $450",
+      "method": "Diagnostic + repair",
+      "turn": "1–2 hrs",
+      "icon": "🔍"
+    },
+    {
+      "name": "Ceiling Fan Install",
+      "range": "$200 – $500",
+      "method": "New circuit/box",
+      "turn": "1–2 hrs",
+      "icon": "🌀"
+    },
+    {
+      "name": "Commercial Buildout",
+      "range": "$1,500 – $10,000+",
+      "method": "Code-rated buildout",
+      "turn": "Multi-day",
+      "icon": "🏢"
+    },
+    {
+      "name": "Storm/Outage Repair",
+      "range": "$300 – $3,000",
+      "method": "Assess + repair",
+      "turn": "Same day",
+      "icon": "🌩️"
+    }
+  ],
+  "reviews": [
+    {
+      "n": "Carlos M., Kendall",
+      "v": 5,
+      "t": "Panel upgrade was done in a day, permit pulled and inspected without a hitch. Booking was easy and the electrician showed up on time."
+    },
+    {
+      "n": "Denise K., Fort Lauderdale",
+      "v": 5,
+      "t": "Generator install got us through the next outage without a blink. They explained the transfer switch and sized it right the first time."
+    },
+    {
+      "n": "James A., Pinecrest",
+      "v": 5,
+      "t": "EV charger installed in an afternoon. Bilingual, professional, and a fair free estimate up front."
+    },
+    {
+      "n": "Priya S., Doral",
+      "v": 5,
+      "t": "Whole-home rewire on an older house — clean work, code corrections explained clearly, fast schedule."
+    },
+    {
+      "n": "The Ortiz Family, Weston",
+      "v": 5,
+      "t": "Storm knocked out our panel — booked and fixed the same week. Great communication the whole way."
+    },
+    {
+      "n": "Maria R., Brickell",
+      "v": 5,
+      "t": "Handled our HOA common-area lighting on a priority line. Clean job, off-hours scheduling, easy to work with."
+    }
+  ],
+  "kb": [
+    [
+      [
+        "price",
+        "cost",
+        "how much",
+        "estimate",
+        "quote",
+        "expensive",
+        "charge",
+        "rate",
+        "pricing",
+        "dollar"
+      ],
+      "Most YES jobs run between 400 and 15,000 dollars or more, depending on the scope. A single outlet is at the low end, and a full panel upgrade or whole home rewire is at the high end. Every quote is free and given in writing before we start."
+    ],
+    [
+      [
+        "area",
+        "serve",
+        "where",
+        "location",
+        "miami",
+        "dade",
+        "broward",
+        "zip",
+        "county",
+        "near"
+      ],
+      "We serve all of Miami-Dade and Broward counties, from Brickell and Coral Gables up through Fort Lauderdale, Pembroke Pines, and Weston. Every call is tagged by zip code and routed to the nearest available truck."
+    ],
+    [
+      [
+        "free",
+        "obligation",
+        "no cost"
+      ],
+      "Yes. Estimates are always free and there is no obligation. Call, text, or snap a photo of the panel or area you need wired and I will give you an illustrative range up front, then we confirm the exact price on a free on-site visit."
+    ],
+    [
+      [
+        "license",
+        "licensed",
+        "insurance",
+        "insured",
+        "permit",
+        "trust",
+        "reliable"
+      ],
+      "Yes, every job is performed by a licensed electrician, and our Florida electrical contractor license number of record is displayed on our site. Permits are pulled where required by local code and the work is inspected."
+    ],
+    [
+      [
+        "panel",
+        "upgrade",
+        "breaker box",
+        "fuse box",
+        "service"
+      ],
+      "A panel upgrade replaces an outdated fuse box or undersized panel with a modern, code-rated service — safer power for the whole house or building, usually done in about a day."
+    ],
+    [
+      [
+        "rewire",
+        "wiring",
+        "old house",
+        "knob and tube"
+      ],
+      "A whole home rewire replaces old or unsafe wiring throughout the property, usually over several days, permitted and inspected as it goes."
+    ],
+    [
+      [
+        "ev",
+        "charger",
+        "electric vehicle",
+        "tesla",
+        "charging"
+      ],
+      "We install Level 2 EV chargers for homes and businesses, sized and permitted for your panel and vehicle, usually in a few hours."
+    ],
+    [
+      [
+        "generator",
+        "backup power",
+        "outage",
+        "power out"
+      ],
+      "We size, sell, and install standby and portable generators with transfer switch wiring, so the lights stay on through the next outage."
+    ],
+    [
+      [
+        "lighting",
+        "fixture",
+        "recessed",
+        "landscape light"
+      ],
+      "We install and upgrade interior, exterior, recessed, and landscape lighting — brighter, safer, more efficient."
+    ],
+    [
+      [
+        "surge",
+        "protector",
+        "protection",
+        "lightning"
+      ],
+      "Panel level surge protection shields appliances and electronics from lightning and grid spikes."
+    ],
+    [
+      [
+        "commercial",
+        "hoa",
+        "condo",
+        "community",
+        "plaza",
+        "storefront",
+        "business",
+        "property manager",
+        "office"
+      ],
+      "Absolutely. Storefronts, plazas, offices, and full HOA communities get their own priority lines and a callback commitment. We can schedule off hours so we are never in your customers way."
+    ],
+    [
+      [
+        "spanish",
+        "espanol",
+        "bilingual",
+        "language",
+        "translate",
+        "idioma"
+      ],
+      "Si. We are a bilingual team and run a dedicated Spanish route. Se habla espanol. Pick your language at the top of the page and I answer in it."
+    ],
+    [
+      [
+        "storm",
+        "hurricane",
+        "downed line",
+        "after the storm",
+        "win"
+      ],
+      "Storm power restoration is one of our specialties, and YES is an enrolled vendor on the win storm dispatch network. When a South Florida storm passes, outage leads route straight to the nearest available truck for a fast quote and priority service."
+    ],
+    [
+      [
+        "number",
+        "line",
+        "lines",
+        "smart",
+        "telephone",
+        "phone"
+      ],
+      "YES is building a ten line dedicated Miami-Dade smart number grid so every call can eventually be tracked and routed to the right truck. The flagship line is reserved as seven eight six, ELECTRIC, but the block is pending assignment and not yet live."
+    ],
+    [
+      [
+        "book",
+        "schedule",
+        "appointment",
+        "when",
+        "time",
+        "calendar"
+      ],
+      "You can book a free estimate right on this page. Scroll to the schedule section, pick a time, and it drops onto our calendar with an instant confirmation."
+    ],
+    [
+      [
+        "owner",
+        "who",
+        "about",
+        "company",
+        "local"
+      ],
+      "YES, Your Electrical Solutions, is a South Florida electrical contractor serving Miami-Dade and Broward. Residential, commercial, and emergency."
+    ]
+  ],
   "gbp": {
     "auto_verify": true,
     "verify_method": "search-console-instant",
     "status": "required",
-    "blocked_on": "Reserve OUR vanity Smart-DID 786-ELECTRIC (786-353-2874) in Vitelity, then create the GBP (Google verify-call needs a working line).",
+    "blocked_on": "Reserve OUR vanity Smart-DID 786-ELECTRIC (786-353-2874) in carrier, then create the GBP (Google verify-call needs a working line).",
     "profile_url": "",
     "review_link": "",
     "go_live": "",
@@ -17,7 +674,7 @@
         "Generator shop"
       ],
       "phone": "",
-      "phone_vanity": "786-ELECTRIC (786-353-2874) — OUR Smart-DID, literally spells ELECTRIC · pending Vitelity reservation",
+      "phone_vanity": "786-ELECTRIC (786-353-2874) — OUR Smart-DID, literally spells ELECTRIC · pending carrier reservation",
       "phone_tollfree_option": "1-800-ELECTRIC",
       "website": "https://restorationroyalties.com/yes/",
       "model": "service-area (hide address)",
@@ -47,193 +704,180 @@
     "_note": "OUR gigapress brand — our name, our URL, our Smart-DID.",
     "_flip": "Reserve the vanity DID first; then create GBP, set status 'pending'/'verified', fill phone + profile_url + review_link + go_live."
   },
-  "brandName": "YES \u2014 Your Electrical Solutions",
-  "brandShortBold": "YES",
-  "brandShortRest": " ELECTRICAL",
-  "accent": "#FFC24B",
-  "lineCount": 10,
-  "eyebrow": "TELVERGENCE \u00d7 YES \u2014 Your Electrical Solutions \u00b7 Miami-Dade \u00b7 South Florida",
-  "h1a": "Every outage is a customer.",
-  "h1b": "We make it ring to you.",
-  "tagline": "When the power goes out, nobody shops \u2014 they call the first electrician who answers. We turn YES into a <b>10-line Smart-DID grid</b> across Miami-Dade where every outage, panel, generator, and EV-charger call is answered instantly, in the caller's language, and routed to the nearest available truck.",
-  "demoNote": "Miami electrical campaign \u00b7 outage \u00b7 panel \u00b7 generator \u00b7 EV charger \u00b7 10-line pack \u00b7 numbers pending assignment",
-  "insight": "an electrical job runs <b>$400\u2013$15,000+</b> \u2014 panel upgrades, generators, and EV chargers sit at the top of that range, and the calls spike the moment the power drops or a storm is forecast. Demand arrives all at once, at night, and the electrician on a ladder cannot answer it. A phone number that just rings can't. A <b>Smart DID</b> can.",
-  "benchNowTitle": "The typical electrical contractor \u2014 today",
-  "benchNow": [
-    "One number, <b>untracked</b> \u2014 no idea which ad produced the call",
-    "Crew is on a job, so the outage call goes to <b>voicemail</b>",
-    "No <b>Spanish line</b> in a Spanish-speaking market",
-    "Emergency and scheduled work share one queue",
-    "No after-hours answer \u2014 when outages actually happen",
-    "Inbound only \u2014 no outbound to storm-hit or commercial accounts"
-  ],
-  "benchNextTitle": "The YES Electrical offspring",
-  "benchNext": [
-    "<b>10 Smart DIDs</b>, every call source-tagged, recorded, mapped",
-    "<b>24/7 AI answer</b> \u2014 the outage call is never voicemail",
-    "Dedicated <b>Spanish line</b> with bilingual routing",
-    "<b>Emergency line</b> jumps the queue automatically",
-    "Email + <b>SMS capture</b> and missed-call auto-callback",
-    "<b>Outbound dialer</b> works storm-hit ZIPs and commercial accounts"
-  ],
-  "gridSub": "outage \u00b7 panel \u00b7 generator \u00b7 EV \u00b7 commercial",
-  "dids": [
+  "photoServices": [
     {
-      "h": "Flagship / 24-7 power emergency",
-      "vn": "1-800-POWER-ON",
-      "p": "Priority ring, never voicemail \u2014 the outage line that owns your #1 promise: someone comes tonight.",
-      "pending": true
+      "name": "Panel Upgrade",
+      "range": "$1,200 – $4,500",
+      "scope": [
+        "Site walk & load calc",
+        "Permit pulled (where required)",
+        "Panel swap & labeling",
+        "Final inspection"
+      ]
     },
     {
-      "h": "Spanish / Biling\u00fce",
-      "vn": "1-844-LUZ-YA-1",
-      "p": "Routes Spanish callers to a bilingual path \u2014 a South Florida edge nobody else runs.",
-      "pending": true
+      "name": "EV Charger",
+      "range": "$600 – $2,200",
+      "scope": [
+        "Load assessment",
+        "Circuit run & breaker",
+        "Charger mount & connect",
+        "Test & walkthrough"
+      ]
     },
     {
-      "h": "Panel upgrade / rewire",
-      "vn": "1-800-NEW-PANEL",
-      "p": "The high-ticket residential job, separated and prioritized.",
-      "pending": true
+      "name": "Generator",
+      "range": "$3,500 – $12,000+",
+      "scope": [
+        "Site walk & sizing",
+        "Pad/mount & fuel hookup",
+        "Transfer switch wiring",
+        "Test run & walkthrough"
+      ]
     },
     {
-      "h": "Generator sales & install",
-      "vn": "1-800-GENERATOR",
-      "p": "Surges on every storm forecast \u2014 capacity scales with the weather.",
-      "pending": true
+      "name": "Lighting / Fixture",
+      "range": "$250 – $1,500",
+      "scope": [
+        "Fixture selection",
+        "Circuit/box install",
+        "Fixture mount & wire",
+        "Test & walkthrough"
+      ]
     },
     {
-      "h": "EV charger install",
-      "vn": "1-800-EV-CHARGE",
-      "p": "The fastest-growing residential add-on, tracked on its own.",
-      "pending": true
+      "name": "Commercial / HOA",
+      "range": "$500 – $10,000+",
+      "scope": [
+        "Site walk & scope",
+        "Zoned circuit work",
+        "Off-hours scheduling",
+        "Manager sign-off"
+      ]
     },
     {
-      "h": "Commercial / property management",
-      "vn": "1-800-BIZ-VOLT",
-      "p": "Contract work routed to the commercial desk, not the retail queue.",
-      "pending": true
-    },
-    {
-      "h": "Storm power restoration",
-      "vn": "1-844-LIGHTS-ON",
-      "p": "Post-storm surge line \u2014 the calls that come in waves.",
-      "pending": true
-    },
-    {
-      "h": "Google / paid-ads DID",
-      "vn": "1-800-CALL-AMP",
-      "p": "Proves ad ROI to the dollar \u2014 swap the number, keep the data.",
-      "pending": true
-    },
-    {
-      "h": "Truck-wrap / yard-sign DID",
-      "vn": "1-800-24-VOLTS",
-      "p": "Attributes offline campaigns so you stop guessing.",
-      "pending": true
-    },
-    {
-      "h": "Outbound branded caller-ID",
-      "vn": "1-800-POWER-ON",
-      "p": "The dialer's outbound face \u2014 it presents your flagship number as caller ID so every callback lands on the line you already track.",
-      "presents": true
+      "name": "Other",
+      "range": "$150 – $15,000+",
+      "scope": [
+        "On-site look",
+        "Diagnostic assessment",
+        "Scope & estimate",
+        "Repair & test"
+      ]
     }
   ],
-  "pillars": [
-    {
-      "n": "Outbound",
-      "p": "A compliant dialer works <b>storm-hit ZIPs and commercial accounts</b> \u2014 branded caller-ID, compliant scripting, recordings, callbacks."
-    },
-    {
-      "n": "Inbound",
-      "p": "10 tracked lines + 24/7 AI answer + SMS. Every source measured, emergencies prioritized, every missed call auto-called-back."
-    },
-    {
-      "n": "Command center",
-      "p": "Calls, texts, booked jobs, ad spend and source \u2014 one live dashboard. You finally see which dollar produced which job."
-    }
+  "trackStages": [
+    "Booked",
+    "Estimate Confirmed",
+    "Scheduled",
+    "Truck On the Way",
+    "Wiring",
+    "Testing & Inspect",
+    "Complete"
   ],
+  "trackFeed": [
+    "Technician assigned to your job",
+    "Estimate confirmed on-site",
+    "Job added to the schedule",
+    "Truck en route — geo-tracked",
+    "Panel access & safety lockout started",
+    "Wiring/installation in progress",
+    "Circuit testing underway",
+    "Final inspection underway",
+    "Before & after photos logged"
+  ],
+  "footerServices": [
+    "Panel Upgrades",
+    "EV Charger Installation",
+    "Generator Sales &amp; Install",
+    "Lighting &amp; Fixture Upgrades",
+    "Surge Protection",
+    "Storm Power Restoration",
+    "Commercial &amp; Property Mgmt"
+  ],
+  "license": {
+    "label": "Florida electrical contractor license # of record",
+    "value": ""
+  },
   "complianceChips": [
     "TCPA",
     "Do-Not-Call scrubbed",
     "State electrical license shown",
     "Recorded with disclosure"
   ],
-  "license": {
-    "label": "Florida electrical contractor license # of record",
-    "value": ""
-  },
-  "commandCenter": {
-    "h2": "Your live command center \u2014 the whole operation on one screen",
-    "heroLabel": "Booked job value \u00b7 today",
-    "heroValue": "$18,600.00",
-    "vertical": "electrical",
-    "tiles": [
-      {
-        "k": "9",
-        "l": "Jobs booked today",
-        "c": "cy"
-      },
-      {
-        "k": "$2,067",
-        "l": "Avg. job value",
-        "c": "go"
-      },
-      {
-        "k": "76 \u00b7 9",
-        "l": "Calls \u00b7 jobs booked",
-        "c": "cy"
-      },
-      {
-        "k": "5.8%",
-        "l": "Cost of acquisition",
-        "c": "lm"
-      }
-    ],
-    "controls": [
-      "\u23f8 Stop",
-      "\u25b6 Start",
-      "\u23ec Slow",
-      "\u23eb Speed up",
-      "\ud83d\udd00 Change leads",
-      "\ud83d\udcdd Change script",
-      "\ud83c\udf81 Change offer",
-      "\ud83d\udccd Change territory",
-      "\ud83d\udce1 Change channel"
-    ],
-    "note": "Every call feeds a real-time conduit your customized \"second brain\" analyzes on the fly \u2014 then you, or the AI, adjust the leads, script, offer, territory, or channel instantly and watch your P&amp;L move. <b>You do the work \u2014 we make the phone ring.</b>"
-  },
-  "map": {
-    "h2": "Your Miami service area \u2014 live & geo-routed",
-    "fallback": "Miami Service Area<br>Miami-Dade \u00b7 Broward",
-    "title": "Miami service area",
-    "q": "Miami,+FL",
-    "z": 9,
-    "note": "Every Smart DID is geo-aware: inbound calls are tagged by ZIP and routed to the nearest available truck \u2014 and outbound storm campaigns target the neighborhoods that just lost power."
-  },
-  "videoSub": "A typical electrical site vs. the offspring \u00b7 the 10-line grid \u00b7 an outage call booked in 90 seconds.",
-  "offerLead": "We stand up all ten numbers, the AI answer, the Spanish route, and a starter outbound campaign across your target ZIPs. For 30 days every inbound call is answered and dispatched while the dialer works storm-hit neighborhoods and commercial accounts.",
-  "focusVerb": "running trucks and closing jobs",
-  "referEarn": {
-    "unit": "jobs",
-    "peer": "contractor"
-  },
-  "alternative": "pass, and the next outage call goes to the electrician across town \u2014 who locks your ZIPs during the one week a year demand triples. Territories are exclusive and claimed once.",
-  "seo": {
-    "title": "YES Electrical \u00d7 Telvergence \u2014 10-Line Smart-DID Proposal",
-    "description": "Telvergence proposal: a 10-line Smart-DID grid for a Miami electrical contractor \u2014 24/7 AI answer, bilingual routing, emergency priority, generator and EV lines, and a live command center.",
-    "canonical": "https://restorationroyalties.com/yes/"
-  },
-  "jsonLd": {
-    "@context": "https://schema.org",
-    "@type": "Electrician",
-    "name": "YES \u2014 Your Electrical Solutions",
-    "areaServed": [
-      "Miami-Dade County",
-      "Broward County"
-    ],
-    "description": "Licensed Miami electrical contractor: panel upgrades, generators, EV chargers, storm power restoration, 24/7 emergency service.",
-    "priceRange": "$$"
-  },
-  "disclaimer": "Prepared for YES \u2014 Your Electrical Solutions (Miami-Dade / South Florida) as a discussion proposal. Electrical contracting is licensed and regulated; the state license number of record is displayed on all public-facing material. All solicitation complies with TCPA and Do-Not-Call requirements, reviewed before launch. Numbers shown as pending assignment are reserved slots, not published lines."
+  "copy": {
+    "brandTagline": "Electrical Services",
+    "crewLabel": "Licensed Electrical Crew",
+    "heroLede": "YES — Your Electrical Solutions keeps Miami-Dade and Broward powered — panel upgrades, EV chargers, whole-home rewires, generators, lighting, and surge protection. And now every outage, panel, and generator call rings to the right truck, answered instantly, in the caller's language. <b>Free estimates. Bilingual. Residential &amp; commercial. Licensed electricians.</b>",
+    "valuesRow": "<span>Safe</span><i>·</i><span>Fast</span><i>·</i><span>Licensed</span><i>·</i><span>Bilingual</span><i>·</i><span>Insured</span><i>·</i><span>24/7</span>",
+    "statJobsNum": "$400+",
+    "statJobsLbl": "Jobs From — to $15,000+",
+    "safetyBadge": "Licensed &amp; Insured · Code-Compliant",
+    "conciergeIntro": "Hi, I'm Amp — your YES Electrical concierge for panel upgrades, EV chargers, generators, lighting &amp; surge protection. Tap the 🔊 to hear me, pick your language above, or choose a button to begin.",
+    "miniQuoteSay": "Snap a photo of your panel, meter, or the area you need wired and I'll give you an instant illustrative estimate.",
+    "askPlaceholder": "Ask me — pricing, areas, panel upgrades…",
+    "promiseSafeTitle": "Licensed &amp; Insured",
+    "promiseSafeSub": "Every job pulled to code, permitted &amp; inspected",
+    "miamiBandHead": "🌴 Serving South Florida — Miami-Dade &amp; Broward, Panel-to-Plug Powered 🔌",
+    "miamiBandSub": "From Brickell high-rises to Weston estates, South Florida's storms, aging panels, and EV adoption keep demand high for licensed electrical work. When the power needs to come on — or stay on — the region trusts <b>YES — Your Electrical Solutions</b> — bilingual, licensed, insured, Miami-Dade &amp; Broward proud.",
+    "ecoSub": "Every touchpoint — call, text, photo, quote, and job update — runs through a single intelligent system. That's how YES answers faster, dispatches cleaner, and keeps you posted from first ring to power restored.",
+    "ecoTrackSmall": "Watch it go from booked to powered on",
+    "pmRow1": "Carlos R. — panel upgrade booked · <b>+$1,850</b>",
+    "pmRow2": "J. Alvarez — generator quote sent",
+    "referExample": "Send us a panel upgrade, generator, EV charger, or rewire job.",
+    "stormLede": "South Florida storms knock out power across whole neighborhoods. YES is an enrolled vendor on the WIN network, so <b>storm power-restoration leads move across all three brands</b> and land with the nearest licensed truck — instead of dying in a voicemail box.",
+    "stormStep1": "The WIN Storm Intelligence Network tracks incoming weather across South Florida and flags neighborhoods likely to lose power once it clears.",
+    "stormStep2": "Residents text a photo of the panel, downed line, or outage — timestamped and geo-tagged to the address.",
+    "servicesEyebrow": "Every Circuit · One Crew",
+    "servicesH2Lead": "We Wire",
+    "servicesSub": "From a single outlet to a full panel upgrade, YES matches licensed technicians to every job — safe, permitted, and code-compliant. Residential, commercial &amp; emergency across Miami-Dade and Broward.",
+    "quoteEyebrow": "Instant Quote · Job Selector",
+    "quoteH2": "Snap the Panel. Pick the Service.",
+    "quoteSub": "Point our job selector at what you need — panel, EV charger, generator, rewire, lighting, or emergency outage — and it returns an illustrative estimate range and turnaround in seconds. Then book your free on-site confirmation in one tap.",
+    "quoteStatus": "Select or search the job you need done for an instant estimate…",
+    "quotePlaceholder": "🔎 Search a job — panel, EV charger, generator…",
+    "invHeadLabel": "⚡ Jobs We Handle",
+    "invNote": "Estimate ranges are illustrative — your free on-site visit confirms the exact price. Most jobs run $400–$15,000+ depending on scope.",
+    "funnelQ1": "What do you need done?",
+    "funnelPrompt1": "First — what do you need done?",
+    "why1Body": "Every job is pulled to permit where required, inspected, and matched to a licensed electrician — so power comes back safely, not just quickly.",
+    "why2Body": "We quote before we start — on-site and in writing. No surprises, no upsell games. Jobs run $400 to $15,000+ by scope.",
+    "why5Body": "From a single outlet to a full commercial build-out or property-management contract, on their own priority lines and callback SLA.",
+    "compareThemHead": "Other Electricians",
+    "compareSafeCap": "Licensed on every job",
+    "compareSafeThem": "Uneven licensing",
+    "compareSafeUs": "Licensed tech matched to job",
+    "standardSub": "Others send a number and disappear. We answer 24/7, route to the nearest licensed truck, match the technician to the job, pull permits where required, and back the work in writing.",
+    "std1Body": "On-site quotes in writing, usually same or next day — because a dead panel shouldn't wait on a callback that never comes.",
+    "stdSafeTitle": "Licensed &amp; Permitted",
+    "stdSafeBody": "Every panel, rewire, and generator job pulled to code, permitted where required, and inspected — safe power, not just fast power.",
+    "stdDetergentTitle": "Commercial-Grade Equipment",
+    "stdDetergentBody": "Professional, code-rated panels, breakers, and materials on every job — not a big-box special and a hope.",
+    "std6Body": "If a job isn't right, we come back and make it right — accountability most \"truck-and-a-license-plate\" electricians won't put on paper.",
+    "sbSafeB": "Licensed",
+    "sbSafeSpan": "Code-compliant method",
+    "processH2": "From Spark to Safe in 4 Simple Steps",
+    "photoH2Lead": "Snap the Panel. Upload It.",
+    "photoSub": "Upload photos of the panel, outlet, or area you need wired — the app returns an illustrative preliminary estimate in seconds, then hands you a job number you can track to completion. This is an illustrative demo; your free on-site visit confirms the price.",
+    "trackH2Lead": "Track Your Job Live —",
+    "trackH2Hl": "From Booked to Powered On",
+    "franchiseSub": "Launch a turnkey electrical-services business powered by the YES Connect™ platform — Smart Numbers, real-time job tracking, the instant-quote job selector, and full onboarding. Run it under your own white-labeled brand, or under our proven franchise license.",
+    "adjBadge": "🎯 For Independent Licensed Electricians",
+    "adjSub": "We market aggressively — Google, social &amp; beyond — and generate a steady stream of qualified South Florida electrical jobs. If you're a licensed independent electrician without your own branding, get instantly branded under YES, fulfill our leads with our complete tech stack, and keep <b>50% of every gross sale</b>.",
+    "hireRole2": "Licensed Electricians",
+    "finalLede": "From Brickell high-rises to Weston estates, Miami-Dade &amp; Broward count on us for panel upgrades, EV chargers, generators, lighting &amp; surge protection — answered 24/7, in your language, routed to the nearest licensed truck. Free estimates. Residential, commercial &amp; emergency.",
+    "footerTagline": "🌴 South Florida's electrical crew. Panel upgrades, EV chargers, generators, lighting &amp; surge protection across Miami-Dade &amp; Broward — residential, commercial &amp; emergency. Licensed &amp; insured.",
+    "conciergeFallback": "Great question. The fastest answer is a quick call or text to our flagship line. Or ask me about pricing, the areas we serve, panel upgrades, EV chargers, generators, lighting, or booking a free estimate.",
+    "conciergeGreet": "Hi, I'm Amp, your YES Electrical concierge. Tap a button and I'll help you get a free estimate for a panel upgrade, EV charger, generator, or rewire.",
+    "quoteSearchHint": "Type a job (e.g. \"EV charger\") or tap Estimate on a card below.",
+    "stormSimAlert": "Storm just cleared Kendall. Homes flagged for power restoration across your area.",
+    "stormSimOut1": "Panel — storm outage",
+    "stormSimEmoji1": "⚡",
+    "stormSimReply": "🚚 A YES electrician is about 8 minutes away. Free quote on arrival — want the generator checked too?",
+    "stormSimOut2": "Generator",
+    "stormSimEmoji2": "🔋",
+    "trackPayoutHTML": "✨ Job Complete<b>Power Restored</b><span style=\"color:var(--muted);font-size:13px\">Your walkthrough is done — power is back on and code-compliant.</span>",
+    "trackCompleteFeed": "🎉 Job complete — power restored &amp; inspected",
+    "trackCompleteSay": "Great news. Your job is complete and your power is back on safely."
+  }
 }
